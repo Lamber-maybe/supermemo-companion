@@ -1,0 +1,6 @@
+# Personal learner profile — keep yours private if you fork this repo publicly
+LEARNER.md
+
+# Generated card files land here by convention
+cards/*
+!cards/.gitkeep

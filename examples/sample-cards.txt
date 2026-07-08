@@ -1,0 +1,41 @@
+q: DNS: what does an A record map?
+a: hostname → IPv4 address
+
+q: DNS: record type that maps a hostname to an IPv6 address?
+a: AAAA
+
+q: DNS: why can a stale record keep resolving long after you changed it?
+a: resolvers serve their cache until the TTL expires
+
+q: DNS: CNAME vs A — why can't you use CNAME at a zone apex?
+a: CNAME can't coexist with the apex's SOA/NS records
+
+q: prod incident: users still get the old IP after a DNS change — first thing to check?
+a: TTL / resolver caches
+
+q: DNS: default port?
+a: 53 (UDP and TCP)
+
+q: DNS: classic mistake right before migrating a record?
+a: not lowering the TTL in advance
+
+q: DNS: "www.example.com → example.github.io → 185.199.108.153" — what record chain is this?
+a: CNAME, then A
+
+q: DNS: the [...] record lists the mail servers that accept mail for a domain
+a: MX
+
+q: DNS: why does recursive resolution start at the root servers?
+a: it's a delegation hierarchy — root → TLD → authoritative
+
+q: DNS: classic size limit of a UDP DNS message?
+a: ~512 bytes (EDNS0 raises it)
+
+q: DNS: what problem does DNSSEC solve, and where do the details live?
+a: authenticating that records weren't forged (spoofing/cache poisoning) — details: RFC 4033+ / your resolver docs
+
+q: DNS: which record type forbids other records at the same name?
+a: CNAME
+a1: TXT
+a2: MX
+a3: AAAA
