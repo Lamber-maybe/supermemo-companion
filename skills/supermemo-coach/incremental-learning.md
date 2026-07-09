@@ -6,8 +6,7 @@ SuperMemo works the way it does. Distilled July 2026 from a June 2026
 crawl.
 
 - **Full original, bundled in this repo (works offline):**
-  `docs/wiki/Incremental_learning.html` (English) and
-  `docs/wiki-zh/Incremental_learning.html` (Chinese translation).
+  `docs/wiki/Incremental_learning.html`.
 - **Canonical URL:** https://help.supermemo.org/wiki/Incremental_learning
   (the wiki title `Incremental_learning_(Full)` redirects to the same
   page — this *is* the full text).

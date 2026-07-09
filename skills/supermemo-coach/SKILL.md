@@ -26,11 +26,10 @@ Work downward; stop at the first rung that fully answers.
    HTML (~210 pages), one page per file, named by page title
    (`Extract.html`, `Priority_queue.html`, `Keyboard_shortcuts.html`,
    `Incremental_learning.html` — the ~91,000-word master document, …).
-   `docs/wiki-zh/` holds Chinese translations under the same filenames
-   (roughly two-thirds actually translated); quote it when conversing
-   in Chinese, but verify facts against the English page when precision
-   matters. `docs/articles/20rules.htm` is Wozniak's formulation-rules
-   article. All of it works offline and on fresh clones.
+   `docs/articles/20rules.htm` is Wozniak's formulation-rules article.
+   All of it works offline and on fresh clones. The docs are English;
+   answer in the user's language from the English source (ground
+   rule 1).
    - Find pages by filename first (`ls docs/wiki | grep -i <keyword>`),
      then by content (`grep -li <keyword> docs/wiki/*.html`).
    - The first body line of each wiki page carries its canonical

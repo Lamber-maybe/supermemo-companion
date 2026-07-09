@@ -14,9 +14,6 @@ What's here:
   the method (the wiki title `Incremental_learning_(Full)` is a
   redirect to this same page — it is the full text). Its distilled
   companion lives at `skills/supermemo-coach/incremental-learning.md`.
-- **`wiki-zh/`** — Chinese translations under the same filenames;
-  roughly two-thirds substantially translated. Verify facts against the
-  English page when precision matters.
 - **`articles/20rules.htm`** — Piotr Wozniak, *Effective learning:
   Twenty rules of formulating knowledge*
   (https://super-memory.com/articles/20rules.htm), the source of the

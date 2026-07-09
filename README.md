@@ -148,7 +148,7 @@ skills/
     reference.md                 ← distilled SuperMemo reference (offline)
     incremental-learning.md      ← the method's philosophy, distilled
 docs/
-  wiki/ · wiki-zh/               ← the full official wiki, crawled (EN ~210 pages + ZH, offline)
+  wiki/                          ← the full official wiki, crawled (~210 pages, offline)
   articles/20rules.htm           ← Wozniak's formulation-rules article
 examples/
   LEARNER.example.md             ← personal profile template
@@ -261,8 +261,8 @@ model (Sonnet-class) follows them reliably.
 - **Docs-grounded.** Tool answers come from a distilled offline reference
   (`skills/supermemo-coach/reference.md`) plus a philosophy digest
   (`incremental-learning.md`), both backed by the complete official wiki
-  bundled in `docs/` (~210 pages, EN + ZH) — the online wiki sits behind
-  a Cloudflare challenge, so the repo carries its own ground truth, with
+  bundled in `docs/` (~210 pages) — the online wiki sits behind a
+  Cloudflare challenge, so the repo carries its own ground truth, with
   help.supermemo.org as the final authority. The coach never guesses a
   shortcut.
 - **A coach, not a chauffeur.** It refuses to card offload-grade material,
@@ -453,7 +453,7 @@ skills/
     reference.md                 ← 提炼后的 SuperMemo 离线参考
     incremental-learning.md      ← 渐进学习理念提炼
 docs/
-  wiki/ · wiki-zh/               ← 完整官方 wiki 抓取（英文约 210 页 + 中文，离线可用）
+  wiki/                          ← 完整官方 wiki 抓取（英文，约 210 页，离线可用）
   articles/20rules.htm           ← Wozniak《表述知识的二十条规则》原文
 examples/
   LEARNER.example.md             ← 个人学习档案模板
@@ -546,9 +546,9 @@ cards/                           ← 水蛭诊所的修复文件放这里（已 
 - **以官方文档为据。** 工具问题先查离线精编参考
   （`skills/supermemo-coach/reference.md`）与理念提炼
   （`incremental-learning.md`），其下是仓库自带的完整官方 wiki
-  （`docs/`，英文约 210 页 + 中文翻译）——在线 wiki 有 Cloudflare 拦截，
-  程序化抓取常被挡，所以仓库自带事实底本，最终以 help.supermemo.org 为
-  准。coach 绝不猜快捷键。
+  （`docs/`，英文，约 210 页）——在线 wiki 有 Cloudflare 拦截，程序化抓
+  取常被挡，所以仓库自带事实底本，最终以 help.supermemo.org 为准。coach
+  绝不猜快捷键。
 - **陪练，不代练。** 它拒绝为“外包级”材料制卡，也拒绝替你阅读、替你打初
   稿。这两种拒绝本身就是产品。
 
