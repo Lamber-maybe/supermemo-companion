@@ -3,8 +3,9 @@
 Facts distilled from the official documentation (help.supermemo.org) for
 desktop **SuperMemo for Windows, versions 17–20**. Menu paths are written
 `Menu : Submenu : Option`. Where versions differ it is noted. Anything not
-covered here should be answered with a pointer to https://help.supermemo.org,
-not from memory.
+covered here should be answered via the coach skill's source-of-truth
+ladder — the local wiki mirror if one is configured, then
+https://help.supermemo.org — never from memory.
 
 ## Getting started (the official "ABC")
 
@@ -251,7 +252,10 @@ The learnbar's Next repetition field is color-coded by element state
 - Remedy ladder, least valuable item first: **Delete → Dismiss → Forget →
   Postpone → Reschedule sooner**; the best long-term fix for an item worth
   keeping is **Edit/reformulate** (split it, add contrast or mnemonics —
-  see the formulate skill's principles).
+  see the reading-advisor skill's principles).
+- For rewriting leeches outside SuperMemo: export the leech browser as Q&A
+  text (see § Subset learning & review), re-import the fixes, dismiss the
+  originals.
 
 ## Organizing material
 
@@ -286,6 +290,11 @@ result (**Ctrl+F** search, **Ctrl+Space** branch contents), or a concept.
 - **Review topics** — the same, topics only.
 - Sort the browser first with **Ctrl+S** (applies the default sorting
   criteria, e.g. before review); randomize with **Shift+Ctrl+F11**.
+- A browser subset can be **exported** (browser menu `Export : Q&A text
+  file`, or `Document (HTML)` / `All texts`) and **bulk-processed**: the
+  subset processing menu (`Process browser>`) includes `Learning :
+  Remember / Forget / Dismiss / Undismiss / Done` applied to every element
+  in the browser.
 
 Use for pre-exam compression and for resurrecting neglected branches. The
 docs warn it is **not** for everyday long-term learning — premature reviews

@@ -1,6 +1,6 @@
 # Personal learner profile — keep yours private if you fork this repo publicly
 LEARNER.md
 
-# Generated card files land here by convention
+# Repair files from the leech clinic (and any card drafts) land here
 cards/*
 !cards/.gitkeep
