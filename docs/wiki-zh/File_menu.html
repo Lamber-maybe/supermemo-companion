@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>File menu — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/File_menu" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#File_menu_items"><span class="tocnumber">1</span> <span class="toctext">File menu items</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Open_collection"><span class="tocnumber">1.1</span> <span class="toctext">Open collection</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Favorites"><span class="tocnumber">1.2</span> <span class="toctext">Favorites</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#New_collection"><span class="tocnumber">1.3</span> <span class="toctext">New collection</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Backup"><span class="tocnumber">1.4</span> <span class="toctext">Backup</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Copy_collection"><span class="tocnumber">1.5</span> <span class="toctext">Copy collection</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Delete_collection"><span class="tocnumber">1.6</span> <span class="toctext">Delete collection</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Repair_collection"><span class="tocnumber">1.7</span> <span class="toctext">Repair collection</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Merge_collection"><span class="tocnumber">1.8</span> <span class="toctext">Merge collection</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Import"><span class="tocnumber">1.9</span> <span class="toctext">Import</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Export"><span class="tocnumber">1.10</span> <span class="toctext">Export</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Tools"><span class="tocnumber">1.11</span> <span class="toctext">Tools</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Properties"><span class="tocnumber">1.12</span> <span class="toctext">Properties</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Installation"><span class="tocnumber">1.13</span> <span class="toctext">Installation</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Level"><span class="tocnumber">1.14</span> <span class="toctext">Level</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Process_collection&gt;"><span class="tocnumber">1.15</span> <span class="toctext">Process collection&gt;</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Exit"><span class="tocnumber">1.16</span> <span class="toctext">Exit</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Most_Recently_Used_(MRU)_list"><span class="tocnumber">1.17</span> <span class="toctext">Most Recently Used (MRU) list</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Examples"><span class="tocnumber">2</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#File_:_Properties"><span class="tocnumber">2.1</span> <span class="toctext">File : Properties</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#File_:_Tools_:_Collection_size"><span class="tocnumber">2.2</span> <span class="toctext">File : Tools : Collection size</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>The <b>File</b> submenu on the <a href="Main_menu.html" title="Main menu">main menu</a> provides the options listed below. Most of these options are not visible at the <b>Beginner</b> <a href="Glossary_Level.html" title="Glossary:Level">level</a>. Use <b>File : <a href="Levels.html" title="Levels">Level</a> : Professional</b> to see all the options listed: 
+</p>
+<figure class="mw-default-size mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_File_menu.jpg.html" title="SuperMemo: File menu which you can use to manage your collections"><img alt="SuperMemo: File menu which you can use to manage your collections" class="mw-file-element" decoding="async" height="623" loading="lazy" src="https://help.supermemo.org/images/a/ab/File_menu.jpg" width="603"/></a><figcaption>SuperMemo: File menu which you can use to manage your collections</figcaption></figure>
+<div class="mw-heading mw-heading2"><h2 id="File_menu_items">File menu items</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=1" title="Edit section: File menu items"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=1" title="Edit section's source code: File menu items"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Open_collection">Open collection</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=2" title="Edit section: Open collection"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=2" title="Edit section's source code: Open collection"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Open collection</b> - open a new <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> for use with SuperMemo</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Favorites">Favorites</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=3" title="Edit section: Favorites"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=3" title="Edit section's source code: Favorites"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a href="Collection_chooser.html" title="Collection chooser">Favorites</a></b> (<i>Ctrl+O</i>) - use a single keystroke to open an existing <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> from a predefined list of the collections you frequently work with.</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="New_collection">New collection</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=4" title="Edit section: New collection"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=4" title="Edit section's source code: New collection"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>New collection</b> - create a new empty <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. To create the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>, type in its name and press <i>Enter</i>. Users may find it surprising that SuperMemo features this option only after <b><a href="#Favorites">Favorites</a></b> and not as the first one as the majority of other programs do. This stems from the fact that in the long-run you are far more likely to create a handful of <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a>, which you will later be reopening what might be even a couple of times a day each <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>, instead of creating new <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> again and again.</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Backup">Backup</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=5" title="Edit section: Backup"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=5" title="Edit section's source code: Backup"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a href="Backup.html" title="Backup">Backup</a></b> (<i>Shift+F12</i>) - make a quick backup of the current <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. The default backup folder is the <a href="SuperMemo_files.html#Program_files" title="SuperMemo files"><i>[BACKUP]</i> subfolder</a>, however, you can choose a backup folder at other locations (e.g. flash drives, external hard drives, etc.). The backed-up <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> includes the date stamping in its name for easy review of your backups. The naming makes it easy to sort your backups by the date of creation. If you try to open a back up file, SuperMemo will warn you to make sure you do not learn with a wrong <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. <b>Backup</b> does not back up less important files that do not take part in the learning process (e.g. reports). To back up all files, use <b>File : <a href="#Copy_collection">Copy collection</a></b> (below). <b>Important!!!</b> Please read about <a href="Backup.html" title="Backup">backing up</a>!</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Copy_collection">Copy collection</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=6" title="Edit section: Copy collection"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=6" title="Edit section's source code: Copy collection"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Copy collection</b> (<i>Shift+Ctrl+C</i>) - copy the currently opened <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> to a new location. If the destination <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> already exists, it will be deleted before copying begins. Note that <b>Copy collection</b> is used instead of <b>Save As</b>. The <i>Copy</i> name is used here to indicate that the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> is not kept in computer memory but on the hard disk. After <b>Copy collection</b>, both <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> are always identical</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Delete_collection">Delete collection</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=7" title="Edit section: Delete collection"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=7" title="Edit section's source code: Delete collection"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Delete collection</b> - delete the currently opened <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> after double confirmation. <b><span style="background-color: #ffff00">Important!</span></b> SuperMemo assumes that it owns all files kept in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> folder. Although it will ask you to confirm deleting the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> folder, it will not attempt to search that folder for files that you might have put there manually. You should never keep your private files inside SuperMemo <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> folders</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Repair_collection">Repair collection</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=8" title="Edit section: Repair collection"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=8" title="Edit section's source code: Repair collection"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a href="Repairing_collections.html" title="Repairing collections">Repair collection</a></b> (<i>Ctrl+F12</i>) - test the integrity of the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> and recover from integrity problems (e.g. resulting from physical damage to <a href="SuperMemo_files.html#Collection_files" title="SuperMemo files">collection files</a>). In various documents related to SuperMemo, the term <i>recovery</i> is often used in reference to using <b>Repair collection</b></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Merge_collection">Merge collection</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=9" title="Edit section: Merge collection"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=9" title="Edit section's source code: Merge collection"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Merge collection</b> - copy the contents of the currently opened <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> into another <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. Currently used material will be added to the material stored in the target <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. To merge two <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a>:
+<ol><li>use <b>Open collection</b> to open the smaller of the two <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a>,</li>
+<li>use <b>Merge collection</b> to indicate the name of the larger <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. This sequence ensures that it is the smaller <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> that is transferred at merger. After the operation, the source <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> will remain unchanged. The target <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> will contain the larger <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> with the material from the smaller <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> appended. <b><span style="background-color: #ffff00">Important!</span></b> Not all properties of a <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> can be transferred. Review your material after the merge operation to be sure it can be effectively used in learning</li></ol></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Import">Import</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=10" title="Edit section: Import"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=10" title="Edit section's source code: Import"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Import</b> - import external files in various formats
+<ul><li><b>Files and folders</b> - import a selected folder with all its subfolders and files to SuperMemo. SuperMemo will recreate folder structure in the <a href="Contents.html" title="Contents"><b>Contents</b> window</a> and will import all individual files in such a way that each file will be kept in a single newly created <a href="Glossary_Element.html" title="Glossary:Element">element</a>. Use this option to incrementally clean up your hard disk from archive materials. You can, for example, import an old archive of articles that you never had time to review. You can import your mp3 collection or an archive folder with miscellaneous files that you want to review incrementally within a limited time slot. You can also import your entire family picture album that can later be reviewed in SuperMemo. Picture albums in SuperMemo are far more fun than static albums that offer no systematic review strategy. With <b>Files and folders</b> you may discover an entire new universe of application for SuperMemo. You can extend incremental reading into incremental processing of information, independent of its type and format. For example, as of SuperMemo 20, you can now directly import all your outstanding articles and books in PDF format for incremental processing.</li>
+<li><span id="qa_text"><b>Q&amp;A text</b></span> - import a standard <a href="Glossary_Q&amp;A_format.html" title="Glossary:Q&amp;A format">Q&amp;A text file</a> exported by various versions of SuperMemo or created manually. The Q&amp;A format is simple and is best illustrated by example:<blockquote><blockquote><p><i>q: river</i><br/><i>a: rivero</i><br/><br/><i>q: school</i><br/><i>a: lernejo</i><br/><br/><i>q: hope</i><br/><i>a: esperanto</i></p></blockquote></blockquote>You can include HTML tags in such a file or use UTF-8 encoded texts. Remember not to: use angle brackets for comments as these will be ignored, not to enclose Q: and A: tags with HTML code, not to use HTML editors that add extra HTML tags (e.g. &lt;body&gt;), and not to rename your file from *.txt to *.html. For more see: <a class="external text" href="http://supermemopedia.com/wiki/Formatting_Q%26A">Formatting Q&amp;A with HTML</a>.You will find <b>Q&amp;A text</b> option particularly useful when using speech recognition software to quickly create question-and-answer <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> (e.g. with Dragon Naturally Speaking). Make sure you save the file as plain text (i.e. as with Notepad, not as <i>rtf, doc</i>, etc.). You can also import Multiple Choice Test material. Add wrong answers with <i>a1:, a2:, a3:</i> tags. For example:<blockquote><blockquote><p><i>q: What country borders with Nigeria?</i><br/><i>a: Niger</i><br/><i>a1: Tanzania</i><br/><i>a2: Mozambique</i><br/><i>a3: Iraq</i><br/><i>a4: Somalia</i></p></blockquote></blockquote></li>
+<li><b>XML import</b> - import an XML file with SuperMemo learning material. Use a standard Q&amp;A <a href="Glossary_Template.html" title="Glossary:Template">template</a> to add all <a href="Glossary_Item.html" title="Glossary:Item">items</a>. Use <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a> only as <a href="Glossary_Element.html" title="Glossary:Element">element</a> folders. <b>File : Import : XML import</b> will retain the original folder structure of the <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">knowledge tree</a> if it is included in the XML file; however, some SuperMemos ignore the <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">tree</a> structure. In such cases, SuperMemo will build a regular folder structure for you. <b>File : Import : XML import</b> ignores <a href="Glossary_Element.html" title="Glossary:Element">element</a> IDs. It imports all the material to newly created <a href="Glossary_Element.html" title="Glossary:Element">elements</a>. The learning process is transferred as well (if included). If you would like to transfer only the learning process and update texts edited in other SuperMemos, use <b>File : Import : XML Synchronize</b> (below)</li>
+<li><b>XML Synchronize</b> - import an XML file to update <a href="Glossary_Element.html" title="Glossary:Element">element</a> texts and/or the learning process. See also: <a class="external text" href="http://super-memory.com/articles/soft/pocket.htm">Revolution in the pocket</a></li>
+<li><b>Repetition history</b> - import <a href="Repetition_history.html" title="Repetition history">repetition history</a> exported with <b>File : <a href="#Export">Export</a> : Repetition history</b> (see also: <a href="Repetition_history.html" title="Repetition history">Repetition history</a>)</li>
+<li><b>Learning process</b> - restore the learning process backed up with <b>File : <a href="#Export">Export</a> : Learning process</b> (see <a href="#Export_learning_process">below</a>). If the file with the extension <i>lr1</i> is missing (copy of <a href="SuperMemo_files.html#sm8opt.dat" title="SuperMemo files"><i>[INFO]\sm8opt.dat</i></a>), you can still use this option; however, user profile will be lost. For example, if you export your learning process to file <i>my knowledge.txt</i> it will be accompanied by <i>my knowledge.lr1</i> (which is a copy of the user memory profile <i>[INFO]/sm8opt.dat</i>)</li>
+<li><b>Source code</b> - import a text file previously generated with:
+<ul><li><b>File : <a href="#Export">Export</a> : Source text</b>, <b>File : <a href="#Export">Export</a> : Transfer subset</b>,</li>
+<li><b><a href="Contents_menu.html#Export" title="Contents menu">Export</a> : Source code</b> on the <a href="Contents_menu.html" title="Contents menu">contents menu</a>, or</li>
+<li><b><a href="Browser_menu.html#Export" title="Browser menu">Export</a> : Source text</b> on the <a href="Browser_menu.html" title="Browser menu">browser menu</a></li></ul></li>
+<li><b>Translation</b> - import a file with the translation of the text <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> to a selected language</li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Export">Export</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=11" title="Edit section: Export"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=11" title="Edit section's source code: Export"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Export</b>
+<ul><li><b>Document</b> - export the entire <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> as a single HTML document</li>
+<li><b>Q&amp;A text file</b> - export SuperMemo Q&amp;A files by using first question and first answer <a href="Glossary_Component.html" title="Glossary:Component">component</a> of each <a href="Glossary_Element.html" title="Glossary:Element">element</a> (if any)</li>
+<li><b>XML</b> - export the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> in the XML format that can be imported to other SuperMemos. XML files may also be imported back to SuperMemo for Windows with <b>File : <a href="#Import">Import</a> : XML Import</b> (full import) or <b>File : <a href="#Import">Import</a> : XML Synchronize</b> (learning process only and text edit updates)</li>
+<li><b>HTML</b> - export the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> to HTML files ready to be published on the web. SuperMemo converts individual <a href="Glossary_Item.html" title="Glossary:Item">items</a> to portions of HTML file. Currently only text and image <a href="Glossary_Component.html" title="Glossary:Component">components</a> are exported. Spelling drills, scripts, binary components, videos, shapes, etc. will not be included in the resulting files. Use <b>File : Export : HTML</b> to quickly produce a web-preview for your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. Your preview may include URLs to locations with further information about the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> or <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> download. You can also use any HTML file as a template that will determine the looks of your exported <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. All you need to do to create a template is to insert any or all of the following tags in the text of any HTML file: <i>#Content#</i>, <i>#Element#</i>, <i>#Pages#</i>, <i>#SuperMemo#</i>, <i>#Author#</i>, <i>#Download#</i>. SuperMemo will place relevant information in the place of these tags. Specify the name of the HTML template file in the field below <b>Use Template</b> in the HTML export dialog box (e.g. by clicking the file browser button on the right). See also: <a class="external text" href="http://supermemopedia.com/wiki/Formatting_HTML_export">SuperMemo Wiki</a></li>
+<li><b><span id="Export_learning_process">Learning process</span></b> - store the learning process in a text file. This way, you do not have to back up large <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> such as <a class="external text" href="http://super-memory.com/english/aeintro.htm">Advanced English</a>. It is enough to save the learning process and restore it if necessary. The original <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> (e.g. <a class="external text" href="http://super-memory.com/english/ae.htm">Advanced English</a>) can be taken and provided with learning data restored from the text file. Along the text file, this procedure will also produce a file with the same name as the text file and with the extension <i>lr1</i>. This is the user learning profile (copy of <a href="SuperMemo_files.html#sm8opt.dat" title="SuperMemo files"><i>[INFO]/sm8opt.dat</i></a>). Deleting this file will deprive the learning process backup of information about the user profile; however, it will not prevent restoring the learning process (user profile will have to be built anew). The difference is only in the import: either you can import Q&amp;As as new <a href="Glossary_Item.html" title="Glossary:Item">items</a> or just the learning process of the material that is already in the current <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. Use <b>File : Export : XML</b> for all XML exports</li>
+<li><b>Repetition history</b> - export <a href="Repetition_history.html" title="Repetition history">repetition history</a> to a text file. This file can be re-exported with <b>File : <a href="#Import">Import</a> : Repetition history</b> (NB: currently, this is the only way to reduce the size of <a href="Repetition_history.html" title="Repetition history">repetition history</a> file: <a href="SuperMemo_files.html#RepetitionHist.dat" title="SuperMemo files"><i>[INFO]/RepetitionHist.dat</i></a>)</li>
+<li><b>Source text</b> - export <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> source text in the text format (<a href="Glossary_Element.html" title="Glossary:Element">elements</a>, their position in the <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">knowledge tree</a> and all <a href="Glossary_Component.html" title="Glossary:Component">components</a>). Note that the user profile nor unused <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> entries will not be transferred. This file can later be imported to another <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> with <b>File : <a href="#Import">Import</a> : Source text</b></li>
+<li><b>Transfer subset</b> - export a <a href="Glossary_Element_subset.html" title="Glossary:Element subset">subset</a> as text. This option is the same as <b>File : Export : Source text</b> with this exception that only the <a href="Glossary_Element.html" title="Glossary:Element">elements</a> belonging to a selected <a href="Glossary_Element_subset.html" title="Glossary:Element subset">subset</a> are exported. Read more: <a href="Using_subsets.html" title="Using subsets">Using subsets</a></li>
+<li><b>Lexicon</b> - export the lexicon in the Q&amp;A format for import to SuperMemo. For example, Cross Country's <i>Words</i> <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> has been generated using this option in conjunction with <b>File : <a href="#Import">Import</a> : Q&amp;A text</b></li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Tools">Tools</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=12" title="Edit section: Tools"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=12" title="Edit section's source code: Tools"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Tools </b>
+<ul><li><b>Collection size</b> - display the total size of the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> along with the <a href="Glossary_Primary_storage.html" title="Glossary:Primary storage">primary storage</a> and <a href="Glossary_Secondary_storage.html" title="Glossary:Secondary storage">secondary storage</a> breakdown (see <a href="#File_:_Tools_:_Collection_size">example</a> below)</li>
+<li><b>View as HTML</b> - view the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> as HTML. If HTML files are not available, they will be created first (as with <b>File : <a href="#Export">Export</a> : HTML</b> above)</li>
+<li><b>View report</b> - view any text file, esp. a SuperMemo report file (by default: text files with extension <i>txt</i> from the <a href="SuperMemo_files.html#Collection_files" title="SuperMemo files"><i>[REPORTS]</i> subfolder</a> such as <i><a href="Repairing_collections.html" title="Repairing collections">recover</a>.txt</i>, etc.)</li>
+<li><b>View FAQs</b> - view the HTML file with FAQ questions and answers generated with FAQ options (e.g. <b><a href="Component_menu.html#Reading" title="Component menu">Reading</a> : E-mail FAQ</b> on the <a href="Component_menu.html" title="Component menu">component menu</a>). <a class="external text" href="http://super-memory.com/help/faq/">SuperMemo FAQs</a> at <a class="external text" href="http://super-memory.com">super-memory.com</a> are generated with FAQ options in SuperMemo</li>
+<li><b>Reset collection</b> - remove all learning data from the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> to make it look as if it has not been used by anyone. <b>File : <a href="#Tools">Tools</a> : Reset collection</b> is useful if you would like to pass your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> to someone who would like to use it too. You can also reset your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> if you would like to distribute it commercially. <b>File : Tools : Reset collection</b> will remove all data related to your learning process, and leave all <a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">memorized elements</a> in the <a href="Glossary_Pending_element.html" title="Glossary:Pending element">pending</a> (or <a href="Glossary_Dismissed_element.html" title="Glossary:Dismissed element">dismissed</a>) state. Note that this operation does not remove comments from the comment registry</li>
+<li><b>Move collection</b> - copy the currently opened <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> to a new location and delete the original</li>
+<li><b>Rename collection</b> - rename the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. <b>File : Tools : Rename collection</b> produces the same effect as <b>File : <a href="#Tools">Tools</a> : Move collection</b>, however, <b>Rename</b> is instant as long as the operation does not change the drive on which the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> is located (otherwise <b>Move</b> is used for <b>Rename</b>).</li>
+<li><b>Garbage</b> - delete selected files to reduce the size of the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> (the saving might be the greatest in case you recorded lots of own recordings in the course of training pronunciation)</li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Properties">Properties</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=13" title="Edit section: Properties"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=13" title="Edit section's source code: Properties"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Properties</b> - display information such as <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> path, <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> size, SuperMemo path, SuperMemo version, system information and memory use (see <a href="#File_:_Properties">example</a> below)</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Installation">Installation</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=14" title="Edit section: Installation"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=14" title="Edit section's source code: Installation"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Installation</b> - see: <a href="Unlock_SuperMemo.html" title="Unlock SuperMemo">Unlocking SuperMemo</a> for details
+<ul><li><b>Input password</b> (<i>Ctrl+I</i>) - provide an unlock password. This option is active only in the locked SuperMemo and should be used to supply the unlock password received upon purchasing the product. See: <a href="Unlock_SuperMemo.html" title="Unlock SuperMemo">Unlocking SuperMemo</a></li>
+<li><b>Request password</b> - open dialog box that makes it possible to send an e-mail to SuperMemo World with your registration data. In response you will immediately receive payment instructions</li>
+<li><b>Install icons</b> - install SuperMemo icons on your Windows desktop and on the Start menu</li>
+<li><b>Lock</b> - remove password and registration data from the currently opened <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. You must use this option before redistributing your own <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a>! Redistributing unlocked <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> violates your user license and spreads your registration data to other users. Locked <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> requires a password to get unlocked. It can also be unlocked by opening any unlocked/registered <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a></li>
+<li><b>Publish</b> - reset, clean, and lock the currently opened <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> for publishing</li>
+<li><b>Owner: <i>&lt;the name of the SuperMemo owner&gt;</i></b> - specify the name of the SuperMemo owner. For example, it will be used in mail signatures sent with <b>Send element</b> on the <a href="Navigation_bar.html" title="Navigation bar">navigation bar</a></li>
+<li><b>Author: <i>&lt;the name of the collection's author</i></b> - specify the name of the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>'s author.</li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Level">Level</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=15" title="Edit section: Level"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=15" title="Edit section's source code: Level"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="Levels.html" title="Levels"><b>Level</b></a> - makes it possible to choose between <b>Beginner</b>, <b>Basic</b>, <b>Middle</b> and <b>Professional</b> <a href="Glossary_Level.html" title="Glossary:Level">levels of difficulty</a>. You can start using SuperMemo on the <b>Basic</b> <a href="Glossary_Level.html" title="Glossary:Level">level</a> and gradually jump to higher <a href="Glossary_Level.html" title="Glossary:Level">levels</a> as soon as you master the functionality of a given <a href="Glossary_Level.html" title="Glossary:Level">level</a>. This will make sure you learn SuperMemo starting with most essential functions:
+<ul><li><b>Beginner</b> - the difficulty <a href="Glossary_Level.html" title="Glossary:Level">level</a> recommended for complete beginners. It focuses on adding new material with <b>Add new</b> and learning with <b>Learn</b></li>
+<li><b>Basic</b> - the difficulty <a href="Glossary_Level.html" title="Glossary:Level">level</a> that builds upon the <b>Beginner</b> <a href="Glossary_Level.html" title="Glossary:Level">level</a> and introduces a stripped down <a href="Learnbar.html" title="Learnbar">learnbar</a> with the most important options such as <b>Remember extract</b>, <b>Remember cloze</b>, etc. used in <a href="Incremental_reading.html" title="Incremental reading">incremental reading</a>. It also introduces functions for editing the <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">knowledge tree</a>: <b>Add</b>, <b>Sibling</b>, <b>Insert</b>, etc.</li>
+<li><b>Middle</b> - the <a href="Glossary_Level.html" title="Glossary:Level">level</a> that introduces <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> management functions (<b><a href="#Delete_collection">Delete collection</a></b>, <b><a href="#Merge_collection">Merge collection</a></b>, etc.), editing <a href="Glossary_Component.html" title="Glossary:Component">components</a>, advanced search functions and browsing functions, <b><a href="Options.html" title="Options">Options</a></b>, <b><a href="Postpone.html" title="Postpone">Postpone</a></b> and <a href="Glossary_Layout.html" title="Glossary:Layout">layout</a> management</li>
+<li><b>Professional</b> - the <a href="Glossary_Level.html" title="Glossary:Level">level</a> that comprises full functionality of SuperMemo with all advanced functions such as: <a href="#Import">import</a>-<a href="#Export">export</a>, <a href="Tasklist_manager.html" title="Tasklist manager">tasklists</a>, etc.</li>
+<li><b>Warrior layout</b> - turn on the <b>Professional</b> <a href="Glossary_Level.html" title="Glossary:Level">level</a> and define the <a href="Glossary_Layout.html" title="Glossary:Layout">layout</a> optimizing the use of your screen estate (esp. for <a href="Incremental_reading.html" title="Incremental reading">incremental reading</a>). The new <a href="Glossary_Layout.html" title="Glossary:Layout">layout</a> is called the <i>Warrior layout</i> (compare: <b><a href="Window_menu.html" title="Window menu">Window</a> : <a href="Window_menu.html#Layout" title="Window menu">Layout</a> : Warrior layout</b>)</li>
+<li><b>Next level</b> (<i>Ctrl+Alt+F12</i>) - jump to a higher <a href="Glossary_Level.html" title="Glossary:Level">level</a>. Note that this function is circular and will let you jump back from <b>Professional</b> to <b>Beginner</b> <a href="Glossary_Level.html" title="Glossary:Level">level</a></li>
+<li><b>Previous level</b> (<i>Shift+Ctrl+Alt+F12</i>) - jump to a lower <a href="Glossary_Level.html" title="Glossary:Level">level</a></li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Process_collection&gt;"><span id="Process_collection.3E"></span>Process collection&gt;</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=16" title="Edit section: Process collection&gt;"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=16" title="Edit section's source code: Process collection&gt;"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Process collection&gt;</b> - process all <a href="Glossary_Element.html" title="Glossary:Element">elements</a> in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> using options available from the <a href="Subset_operations.html" title="Subset operations">subset processing menu</a></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Exit">Exit</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=17" title="Edit section: Exit"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=17" title="Edit section's source code: Exit"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Exit</b> (<i>Alt+F4</i>) - exit SuperMemo</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Most_Recently_Used_(MRU)_list"><span id="Most_Recently_Used_.28MRU.29_list"></span>Most Recently Used (MRU) list</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=18" title="Edit section: Most Recently Used (MRU) list"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=18" title="Edit section's source code: Most Recently Used (MRU) list"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>1-10</b> - open one of the ten most recently opened <a href="Glossary.html#collection" title="Glossary">collections</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Examples">Examples</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=19" title="Edit section: Examples"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=19" title="Edit section's source code: Examples"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="File_:_Properties">File : Properties</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=20" title="Edit section: File : Properties"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=20" title="Edit section's source code: File : Properties"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<pre>
+
+Collection name: ALL
+Path: D:\COLLS\ALL
+
+Collection File Structure: SuperMemo 16
+Program File Structure: SuperMemo 16
+Vacated storage slots: 2
+Running SuperMemo: C:\SM16\sm16.exe
+SuperMemo 16 (Build 16.0, Aug 1, 2013)
+
+Windows 8 ver. 6.2 (Build 9200) 
+Internet Explorer MSHTML Engine ver. 7.0 (0)
+IE Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.2; WOW64;
+ Trident/6.0; .NET4.0E; .NET4.0C; .NET CLR 3.5.30729; .NET CLR 2.0.50727; .NET CLR 3.0.30729; InfoPath.3; MDDRJS)
+User language: English (en-US)
+System language: English (en-US)
+Browser language: English (en-US)
+User: SMR
+Computer: SMR2013
+Total physical memory: 17.13 GB
+Free physical memory: 14.91 GB
+Page file: 34.31 GB
+Free page file: 31.69 GB
+Virtual memory: 2.15 GB
+Free virtual memory: 1.68 GB
+Extended virtual memory: 0 bytes
+SuperMemo heap memory: 17 MB
+Free heap memory: 1.82 MB
+Heap memory use: 89.31%
+Active Code Page: 1252
+OEM Code Page: 437
+Host: SMR2013
+Host HD: 77BE-E6FF
+IP Address: 192.168.11.6
+Owner: SMR
+Network installed
+
+</pre>
+<div class="mw-heading mw-heading3"><h3 id="File_:_Tools_:_Collection_size">File : Tools : Collection size</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=21" title="Edit section: File : Tools : Collection size"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=21" title="Edit section's source code: File : Tools : Collection size"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<pre>
+
+Collection name: VIDEO
+Date: Apr 1, 2016, 20:44:15
+Path: D:\COLLS\VIDEO
+
+Primary storage: 32.05 GB
+Secondary storage: 0 bytes
+Total Size: 32.05 GB
+
+Collection File Structure: SuperMemo 17
+Program File Structure: SuperMemo 17
+Vacated storage slots: 1
+Running SuperMemo: C:\SM17\sm17.exe
+SuperMemo 17 (Build 17.0, Apr 1, 2016)
+
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20260610012159
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.051 seconds
+Real time usage: 0.054 seconds
+Preprocessor visited node count: 250/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 1360/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:10:|#|:idhash:canonical and timestamp 20260610012159 and revision id 12060. Rendering was triggered because: page-view
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#File_menu_items"><span class="tocnumber">1</span> <span class="toctext">文件菜单项</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Open_collection"><span class="tocnumber">1.1</span> <span class="toctext">开放收藏</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Favorites"><span class="tocnumber">1.2</span> <span class="toctext">收藏夹</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#New_collection"><span class="tocnumber">1.3</span> <span class="toctext">新系列</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Backup"><span class="tocnumber">1.4</span> <span class="toctext">备份</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Copy_collection"><span class="tocnumber">1.5</span> <span class="toctext">副本收藏</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Delete_collection"><span class="tocnumber">1.6</span> <span class="toctext">删除集合</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Repair_collection"><span class="tocnumber">1.7</span> <span class="toctext">修复合集</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Merge_collection"><span class="tocnumber">1.8</span> <span class="toctext">合并集合</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Import"><span class="tocnumber">1.9</span> <span class="toctext">进口</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Export"><span class="tocnumber">1.10</span> <span class="toctext">出口</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Tools"><span class="tocnumber">1.11</span> <span class="toctext">工具</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Properties"><span class="tocnumber">1.12</span> <span class="toctext">属性</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Installation"><span class="tocnumber">1.13</span> <span class="toctext">安装</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Level"><span class="tocnumber">1.14</span> <span class="toctext">级别</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Process_collection&gt;"><span class="tocnumber">1.15</span> <span class="toctext">工艺收藏&gt;</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Exit"><span class="tocnumber">1.16</span> <span class="toctext">退出</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Most_Recently_Used_(MRU)_list"><span class="tocnumber">1.17</span> <span class="toctext">最近使用 (MRU) 列表</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#Examples"><span class="tocnumber">2</span> <span class="toctext">示例</span></a>
+<ul>
+<li class="toclevel-2 tocsection-20"><a href="#File_:_Properties"><span class="tocnumber">2.1</span> <span class="toctext">文件：属性</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#File_:_Tools_:_Collection_size"><span class="tocnumber">2.2</span> <span class="toctext">文件：工具：集合大小</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>的<b>文件</b>的子菜单<a href="Main_menu.html" title="Main menu">主菜单</a>提供下面列出的选项。大多数这些选项在<b>初学者</b> <a href="Glossary_Level.html" title="Glossary:Level">水平</a>。使用<b>文件：<a href="Levels.html" title="Levels">级别</a> ：专业</b>查看列出的所有选项：</p>
+<figure class="mw-default-size mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_File_menu.jpg.html" title="SuperMemo: File menu which you can use to manage your collections"><img alt="SuperMemo: File menu which you can use to manage your collections" class="mw-file-element" decoding="async" height="623" loading="lazy" src="https://help.supermemo.org/images/a/ab/File_menu.jpg" width="603"/></a><figcaption>SuperMemo：文件菜单，可用于管理您的收藏</figcaption></figure>
+<div class="mw-heading mw-heading2"><h2 id="File_menu_items">文件菜单项</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=1" title="Edit section: File menu items"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=1" title="Edit section's source code: File menu items"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Open_collection">开放收藏</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=2" title="Edit section: Open collection"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=2" title="Edit section's source code: Open collection"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>开放收藏</b>- 打开一个新的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>与 SuperMemo 一起使用</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Favorites">收藏夹</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=3" title="Edit section: Favorites"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=3" title="Edit section's source code: Favorites"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a href="Collection_chooser.html" title="Collection chooser">收藏夹</a></b>（<i>Ctrl+O</i>) - 使用一次击键即可打开现有的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>从您经常使用的集合的预定义列表中。</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="New_collection">新系列</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=4" title="Edit section: New collection"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=4" title="Edit section's source code: New collection"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>新系列</b>- 创建一个新的空<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。要创建<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>，输入其名称并按<i>输入</i>。用户可能会感到惊讶的是，SuperMemo 仅在之后才提供此选项<b><a href="#Favorites">收藏夹</a></b>而不是像大多数其他程序那样第一个程序。这是因为从长远来看，你更有可能创造出一些<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>，稍后您可能会每天重新打开几次<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>，而不是创建新的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>一次又一次。</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Backup">备份</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=5" title="Edit section: Backup"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=5" title="Edit section's source code: Backup"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a href="Backup.html" title="Backup">备份</a></b>（<i>Shift+F12</i>) - 快速备份当前的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。默认备份文件夹是<a href="SuperMemo_files.html#Program_files" title="SuperMemo files"><i>[备份]</i>子文件夹</a>但是，您可以选择其他位置的备份文件夹（例如闪存驱动器、外部硬盘驱动器等）。已备份的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>在其名称中包含日期标记，以便轻松查看备份。命名使您可以轻松地按创建日期对备份进行排序。如果您尝试打开备份文件，SuperMemo 会警告您，以确保您不会学习错误<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。<b>备份</b>不备份不参与学习过程的不太重要的文件（例如报告）。要备份所有文件，请使用<b>文件：<a href="#Copy_collection">副本收藏</a></b>（下）。<b>重要！！！</b>请阅读有关<a href="Backup.html" title="Backup">备份</a>！</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Copy_collection">副本收藏</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=6" title="Edit section: Copy collection"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=6" title="Edit section's source code: Copy collection"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>副本收藏</b>（<i>Shift+Ctrl+C</i>) - 复制当前打开的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>到一个新的地点。如果目的地<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>已存在，将在复制开始之前将其删除。请注意<b>副本收藏</b>被用来代替<b>另存为</b>。的<i>复制</i>此处使用名称来表明<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>不是保存在计算机内存中，而是保存在硬盘上。之后<b>副本收藏</b>, 两者<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>总是相同的</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Delete_collection">删除集合</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=7" title="Edit section: Delete collection"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=7" title="Edit section's source code: Delete collection"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>删除集合</b>- 删除当前打开的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>双重确认后。<b><span style="background-color: #ffff00">重要！</span></b>SuperMemo 假设它拥有保存在 SuperMemo 中的所有文件<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>文件夹。虽然它会要求您确认删除<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>文件夹，它不会尝试在该文件夹中搜索您可能手动放入的文件。你永远不应该将你的私人文件保存在 SuperMemo 中<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>文件夹</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Repair_collection">修复合集</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=8" title="Edit section: Repair collection"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=8" title="Edit section's source code: Repair collection"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a href="Repairing_collections.html" title="Repairing collections">修复合集</a></b>（<i>Ctrl+F12</i>) - 测试完整性<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>并从完整性问题中恢复（例如，由于物理损坏而导致<a href="SuperMemo_files.html#Collection_files" title="SuperMemo files">收集文件</a>）。在与 SuperMemo 相关的各种文档中，术语<i>恢复</i>通常用于参考使用<b>修复合集</b></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Merge_collection">合并集合</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=9" title="Edit section: Merge collection"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=9" title="Edit section's source code: Merge collection"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>合并集合</b>- 复制当前打开的内容<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>进入另一个<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。当前使用的材质将添加到目标中存储的材质中<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。合并两个<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>:<ol><li>使用<b>开放收藏</b>打开两个中较小的一个<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>,</li>
+<li>使用<b>合并集合</b>表示较大的名称<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。这个序列确保它是较小的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>合并时转让。运行后，源<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>将保持不变。目标<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>将包含较大的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>用较小的材料<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>附加。<b><span style="background-color: #ffff00">重要！</span></b>并非 a 的所有属性<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>可以转让。合并操作后检查您的材料，以确保它可以有效地用于学习</li></ol></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Import">进口</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=10" title="Edit section: Import"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=10" title="Edit section's source code: Import"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>进口</b>- 导入各种格式的外部文件<ul><li><b>文件和文件夹</b>- 将选定的文件夹及其所有子文件夹和文件导入到 SuperMemo。 SuperMemo 将在中重新创建文件夹结构<a href="Contents.html" title="Contents"><b>内容</b>窗户</a>并将导入所有单独的文件，每个文件将保存在一个新创建的文件中<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。使用此选项可以逐步清除硬盘上的存档材料。例如，您可以导入您从未有时间查看的旧文章存档。您可以导入您的 mp3 收藏或存档文件夹，其中包含您想要在有限时间段内逐步查看的各种文件。您还可以导入整个家庭相册，稍后可以在 SuperMemo 中查看。 SuperMemo 中的相册比没有提供系统回顾策略的静态相册有趣得多。与<b>文件和文件夹</b>您可能会发现 SuperMemo 的全新应用领域。您可以将增量阅读扩展到信息的增量处理，而与信息的类型和格式无关。例如，从 SuperMemo 20 开始，您现在可以直接导入 PDF 格式的所有优秀文章和书籍进行增量处理。</li>
+<li><span id="qa_text"><b>问答文字</b></span>- 导入标准<a href="Glossary_Q&amp;A_format.html" title="Glossary:Q&amp;A format">问答文本文件</a>由各个版本的 SuperMemo 导出或手动创建。问答格式很简单，最好通过示例来说明：<blockquote><blockquote><p><i>问：河流</i><br/><i>答：里维罗</i><br/><br/><i>问：学校</i><br/><i>答：莱内霍</i><br/><br/><i>问：希望</i><br/><i>a: 世界语</i></p></blockquote></blockquote>您可以在此类文件中包含 HTML 标签或使用 UTF-8 编码文本。请记住不要：在注释中使用尖括号，因为它们会被忽略；不要用 HTML 代码将 Q: 和 A: 标​​签括起来；不要使用添加额外 HTML 标签（例如 &lt;body&gt;）的 HTML 编辑器；不要将文件从 *.txt 重命名为 *.html。更多请参见：<a class="external text" href="http://supermemopedia.com/wiki/Formatting_Q%26A">使用 HTML 设置问答格式</a>.你会发现<b>问答文字</b>当使用语音识别软件快速创建问答时，该选项特别有用<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>（例如，龙自然说话）。确保将文件保存为纯文本（即与记事本一样，而不是与<i>.rtf, 文档</i>等）。您还可以导入多项选择测试材料。添加错误答案<i>a1:、a2:、a3:</i>标签。例如：<blockquote><blockquote><p><i>问：哪个国家与尼日利亚接壤？</i><br/><i>答：尼日尔</i><br/><i>a1: 坦桑尼亚</i><br/><i>a2: 莫桑比克</i><br/><i>a3：伊拉克</i><br/><i>a4：索马里</i></p></blockquote></blockquote></li>
+<li><b>XML导入</b>- 导入带有 SuperMemo 学习材料的 XML 文件。使用标准问答<a href="Glossary_Template.html" title="Glossary:Template">模板</a>添加全部<a href="Glossary_Item.html" title="Glossary:Item">项目</a>。使用<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>仅作为<a href="Glossary_Element.html" title="Glossary:Element">元素</a>文件夹。<b>文件：导入：XML 导入</b>将保留原始文件夹结构<a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">知识树</a>如果它包含在 XML 文件中；然而，一些 SuperMemos 忽略了<a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">树</a>结构。在这种情况下，SuperMemo 将为您构建常规文件夹结构。<b>文件：导入：XML 导入</b>忽略<a href="Glossary_Element.html" title="Glossary:Element">元素</a>身份证。它将所有材料导入到新创建的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。学习过程也会被转移（如果包括的话）。如果您只想转移学习过程并更新在其他 SuperMemos 中编辑的文本，请使用<b>文件：导入：XML 同步</b>（下）</li>
+<li><b>XML同步</b>- 导入 XML 文件进行更新<a href="Glossary_Element.html" title="Glossary:Element">元素</a>文本和/或学习过程。另请参阅：<a class="external text" href="http://super-memory.com/articles/soft/pocket.htm">口袋里的革命</a></li>
+<li><b>重复历史</b>- 导入<a href="Repetition_history.html" title="Repetition history">重复历史</a>导出与<b>文件：<a href="#Export">出口</a> ：重复历史记录</b>（另见：<a href="Repetition_history.html" title="Repetition history">重复历史</a>）</li>
+<li><b>学习过程</b>- 恢复学习过程备份<b>文件：<a href="#Export">出口</a> ：学习过程</b>（见<a href="#Export_learning_process">下面</a>）。如果文件的扩展名是<i>LR1</i>丢失（副本<a href="SuperMemo_files.html#sm8opt.dat" title="SuperMemo files"><i>[信息]\sm8opt.dat</i></a>)，您仍然可以使用此选项；但是，用户配置文件将会丢失。例如，如果您将学习过程导出到文件<i>我的知识.txt</i>它将伴随着<i>我的知识.lr1</i>（这是用户内存配置文件的副本<i>[信息]/sm8opt.dat</i>）</li>
+<li><b>源代码</b>- 导入之前生成的文本文件：<ul><li><b>文件：<a href="#Export">出口</a> ：源文本</b>,<b>文件：<a href="#Export">出口</a> ：传输子集</b>,</li>
+<li><b><a href="Contents_menu.html#Export" title="Contents menu">出口</a> ：源代码</b>于<a href="Contents_menu.html" title="Contents menu">内容菜单</a>, 或</li>
+<li><b><a href="Browser_menu.html#Export" title="Browser menu">出口</a> ：源文本</b>于<a href="Browser_menu.html" title="Browser menu">浏览器菜单</a></li></ul></li>
+<li><b>翻译</b>- 导入包含文本翻译的文件<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>到选定的语言</li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Export">出口</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=11" title="Edit section: Export"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=11" title="Edit section's source code: Export"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>出口</b>
+<ul><li><b>文件</b>- 导出整个<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>作为单个 HTML 文档</li>
+<li><b>问答文本文件</b>- 使用第一个问题和第一个答案导出 SuperMemo 问答文件<a href="Glossary_Component.html" title="Glossary:Component">组件</a>每个的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（如果有的话）</li>
+<li><b>XML</b>- 导出<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>可以导入到其他 SuperMemos 的 XML 格式。 XML 文件也可以通过以下方式导入回 SuperMemo for Windows<b>文件：<a href="#Import">进口</a> ：XML导入</b>（完全导入）或<b>文件：<a href="#Import">进口</a> ：XML同步</b>（仅学习过程和文本编辑更新）</li>
+<li><b>超文本标记语言</b>- 导出<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>准备在网络上发布的 HTML 文件。 SuperMemo 转换个人<a href="Glossary_Item.html" title="Glossary:Item">项目</a>HTML 文件的部分。目前只有文字和图片<a href="Glossary_Component.html" title="Glossary:Component">组件</a>被出口。拼写练习、脚本、二进制组件、视频、形状等将不会包含在生成的文件中。使用<b>文件：导出：HTML</b>快速为您生成网页预览<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。您的预览可能包括指向位置的 URL，其中包含有关该内容的更多信息<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>或<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>下载。您还可以使用任何 HTML 文件作为模板来确定导出的外观<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。创建模板所需要做的就是在任何 HTML 文件的文本中插入以下任何或所有标签：<i>#内容#</i>,<i>#元素#</i>,<i>#页数#</i>,<i>#超级备忘录#</i>,<i>#作者#</i>,<i>#下载#</i>。 SuperMemo 会将相关信息放置在这些标签的位置。在下面的字段中指定 HTML 模板文件的名称<b>使用模板</b>在 HTML 导出对话框中（例如，单击右侧的文件浏览器按钮）。另请参阅：<a class="external text" href="http://supermemopedia.com/wiki/Formatting_HTML_export">超级备忘录维基</a></li>
+<li><b><span id="Export_learning_process">学习过程</span></b>- 将学习过程存储在文本文件中。这样，您就不必备份大量数据<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>比如<a class="external text" href="http://super-memory.com/english/aeintro.htm">高级英语</a>。保存学习过程并在必要时恢复它就足够了。原来的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>（例如<a class="external text" href="http://super-memory.com/english/ae.htm">高级英语</a>）可以获取并提供从文本文件恢复的学习数据。除了文本文件之外，此过程还将生成一个与文本文件同名且扩展名相同的文件<i>LR1</i>。这是用户学习资料（副本<a href="SuperMemo_files.html#sm8opt.dat" title="SuperMemo files"><i>[信息]/sm8opt.dat</i></a>）。删除此文件将剥夺学习过程中有关用户配置文件信息的备份；但是，它不会阻止恢复学习过程（必须重新构建用户配置文件）。区别仅在于导入：您可以将问答导入为新的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>或者只是当前已有材料的学习过程<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。使用<b>文件：导出：XML</b>对于所有 XML 导出</li>
+<li><b>重复历史</b>- 出口<a href="Repetition_history.html" title="Repetition history">重复历史</a>到一个文本文件。该文件可以重新导出<b>文件：<a href="#Import">进口</a> ：重复历史记录</b>（注意：目前，这是减少大小的唯一方法<a href="Repetition_history.html" title="Repetition history">重复历史</a>文件：<a href="SuperMemo_files.html#RepetitionHist.dat" title="SuperMemo files"><i>[信息]/RepetitionHist.dat</i></a>）</li>
+<li><b>源文本</b>- 出口<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>文本格式的源文本 (<a href="Glossary_Element.html" title="Glossary:Element">元素</a>，他们在<a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">知识树</a>和所有<a href="Glossary_Component.html" title="Glossary:Component">组件</a>）。注意，用户配置文件也未使用<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>条目将不会被转移。该文件稍后可以导入到另一个文件<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>与<b>文件：<a href="#Import">进口</a> ：源文本</b></li>
+<li><b>转移子集</b>- 导出一个<a href="Glossary_Element_subset.html" title="Glossary:Element subset">子集</a>作为文本。该选项与<b>文件：导出：源文本</b>但除此之外，只有<a href="Glossary_Element.html" title="Glossary:Element">元素</a>属于选定的<a href="Glossary_Element_subset.html" title="Glossary:Element subset">子集</a>被出口。阅读更多：<a href="Using_subsets.html" title="Using subsets">使用子集</a></li>
+<li><b>词典</b>- 以问答格式导出词典以导入到 SuperMemo。例如，越野<i>话</i> <a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>已使用此选项结合生成<b>文件：<a href="#Import">进口</a> ：问答文字</b></li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Tools">工具</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=12" title="Edit section: Tools"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=12" title="Edit section's source code: Tools"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>工具</b>
+<ul><li><b>收藏尺寸</b>- 显示总大小<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>连同<a href="Glossary_Primary_storage.html" title="Glossary:Primary storage">主存储</a>和<a href="Glossary_Secondary_storage.html" title="Glossary:Secondary storage">二级存储</a>细分（见<a href="#File_:_Tools_:_Collection_size">例子</a>下）</li>
+<li><b>以 HTML 格式查看</b>- 查看<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>作为 HTML。如果 HTML 文件不可用，将首先创建它们（与<b>文件：<a href="#Export">出口</a> ：HTML</b>上面）</li>
+<li><b>查看报告</b>- 查看任何文本文件，尤其是。 SuperMemo 报告文件（默认情况下：扩展名为<i>文本文件</i>从<a href="SuperMemo_files.html#Collection_files" title="SuperMemo files"><i>[报告]</i>子文件夹</a>比如<i><a href="Repairing_collections.html" title="Repairing collections">恢复</a>.txt</i>等）</li>
+<li><b>查看常见问题解答</b>- 查看包含常见问题解答问题和使用常见问题解答选项生成的答案的 HTML 文件（例如<b><a href="Component_menu.html#Reading" title="Component menu">阅读</a> ：电子邮件常见问题解答</b>于<a href="Component_menu.html" title="Component menu">组件菜单</a>）。<a class="external text" href="http://super-memory.com/help/faq/">SuperMemo 常见问题解答</a>在<a class="external text" href="http://super-memory.com">超级记忆网</a>使用 SuperMemo 中的常见问题解答选项生成</li>
+<li><b>重置收藏</b>- 删除所有学习数据<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>让它看起来好像没有被任何人使用过。<b>文件：<a href="#Tools">工具</a> ：重置收藏</b>如果您想通过您的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>给也想使用它的人。您还可以重置您的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>如果您想将其商业化分发。<b>文件：工具：重置集合</b>将删除与您的学习过程相关的所有数据，并保留所有<a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">记忆的元素</a>在<a href="Glossary_Pending_element.html" title="Glossary:Pending element">待定</a>（或<a href="Glossary_Dismissed_element.html" title="Glossary:Dismissed element">被解雇</a>）状态。请注意，此操作不会从评论注册表中删除评论</li>
+<li><b>移动集合</b>- 复制当前打开的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>到新位置并删除原来的</li>
+<li><b>重命名集合</b>- 重命名<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。<b>文件：工具：重命名集合</b>产生与以下相同的效果<b>文件：<a href="#Tools">工具</a> ：移动集合</b>然而，<b>重命名</b>只要操作不改变驱动器，该操作就是即时的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>位于（否则<b>移动</b>用于<b>重命名</b>）。</li>
+<li><b>垃圾</b>- 删除选定的文件以减小文件的大小<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>（如果你在训练发音的过程中自己录了很多录音的话，节省的可能是最大的）</li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Properties">属性</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=13" title="Edit section: Properties"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=13" title="Edit section's source code: Properties"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>属性</b>- 显示信息，例如<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>路径，<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>大小、SuperMemo 路径、SuperMemo 版本、系统信息和内存使用情况（请参阅<a href="#File_:_Properties">例子</a>下）</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Installation">安装</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=14" title="Edit section: Installation"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=14" title="Edit section's source code: Installation"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>安装</b>- 参见：<a href="Unlock_SuperMemo.html" title="Unlock SuperMemo">解锁 SuperMemo</a>欲了解详情<ul><li><b>输入密码</b>（<i>Ctrl+I</i>) - 提供解锁密码。此选项仅在锁定的 SuperMemo 中有效，并应用于提供购买产品时收到的解锁密码。参见：<a href="Unlock_SuperMemo.html" title="Unlock SuperMemo">解锁 SuperMemo</a></li>
+<li><b>索取密码</b>- 打开对话框，可以将包含您的注册数据的电子邮件发送到 SuperMemo World。作为回应，您将立即收到付款指示</li>
+<li><b>安装图标</b>- 在 Windows 桌面和“开始”菜单上安装 SuperMemo 图标</li>
+<li><b>锁</b>- 从当前打开的帐户中删除密码和注册数据<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。您必须在重新分发您自己的版本之前使用此选项<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>！重新分配已解锁<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>违反您的用户许可并将您的注册数据传播给其他用户。锁定<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>需要密码才能解锁。也可以通过打开任何已解锁/注册的来解锁<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a></li>
+<li><b>发布</b>- 重置、清理和锁定当前打开的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>用于出版</li>
+<li><b>业主：<i>&lt;SuperMemo 所有者的姓名&gt;</i></b>- 指定 SuperMemo 所有者的姓名。例如，它将用于发送的邮件签名<b>发送元素</b>于<a href="Navigation_bar.html" title="Navigation bar">导航栏</a></li>
+<li><b>作者：<i>&lt;该集合的作者姓名</i></b>- 指定名称<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>的作者。</li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Level">级别</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=15" title="Edit section: Level"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=15" title="Edit section's source code: Level"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="Levels.html" title="Levels"><b>级别</b></a>- 可以进行选择<b>初学者</b>,<b>基础</b>,<b>中</b>和<b>专业</b> <a href="Glossary_Level.html" title="Glossary:Level">难度级别</a>。您可以开始使用 SuperMemo<b>基础</b> <a href="Glossary_Level.html" title="Glossary:Level">水平</a>并逐渐跳向更高的地方<a href="Glossary_Level.html" title="Glossary:Level">级别</a>一旦您掌握了给定的功能<a href="Glossary_Level.html" title="Glossary:Level">水平</a>。这将确保您从最基本的功能开始学习 SuperMemo：<ul><li><b>初学者</b>- 难度<a href="Glossary_Level.html" title="Glossary:Level">水平</a>推荐给完全的初学者。它的重点是添加新材料<b>添加新的</b>并与学习<b>学习</b></li>
+<li><b>基础</b>- 难度<a href="Glossary_Level.html" title="Glossary:Level">水平</a>建立在<b>初学者</b> <a href="Glossary_Level.html" title="Glossary:Level">水平</a>并介绍了一个精简的<a href="Learnbar.html" title="Learnbar">学习栏</a>最重要的选项，例如<b>记得摘录</b>,<b>记住完形填空</b>等用于<a href="Incremental_reading.html" title="Incremental reading">增量阅读</a>。它还引入了编辑功能<a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">知识树</a>:<b>添加</b>,<b>兄弟姐妹</b>,<b>插入</b>等</li>
+<li><b>中</b>- 的<a href="Glossary_Level.html" title="Glossary:Level">水平</a>介绍了<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>管理职能（<b><a href="#Delete_collection">删除集合</a></b>,<b><a href="#Merge_collection">合并集合</a></b>等），编辑<a href="Glossary_Component.html" title="Glossary:Component">组件</a>、高级搜索功能和浏览功能，<b><a href="Options.html" title="Options">选项</a></b>,<b><a href="Postpone.html" title="Postpone">推迟</a></b>和<a href="Glossary_Layout.html" title="Glossary:Layout">布局</a>管理</li>
+<li><b>专业</b>- 的<a href="Glossary_Level.html" title="Glossary:Level">水平</a>它包含 SuperMemo 的全部功能以及所有高级功能，例如：<a href="#Import">进口</a>-<a href="#Export">出口</a>,<a href="Tasklist_manager.html" title="Tasklist manager">任务列表</a>等</li>
+<li><b>武士布局</b>- 打开<b>专业</b> <a href="Glossary_Level.html" title="Glossary:Level">水平</a>并定义<a href="Glossary_Layout.html" title="Glossary:Layout">布局</a>优化屏幕空间的使用（尤其是<a href="Incremental_reading.html" title="Incremental reading">增量阅读</a>）。新的<a href="Glossary_Layout.html" title="Glossary:Layout">布局</a>被称为<i>武士布局</i>（比较：<b><a href="Window_menu.html" title="Window menu">窗户</a> :<a href="Window_menu.html#Layout" title="Window menu">布局</a> : 战士布局</b>）</li>
+<li><b>下一个级别</b>（<i>Ctrl+Alt+F12</i>) - 跳到更高的地方<a href="Glossary_Level.html" title="Glossary:Level">水平</a>。请注意，这个函数是循环的，可以让你从<b>专业</b>到<b>初学者</b> <a href="Glossary_Level.html" title="Glossary:Level">水平</a></li>
+<li><b>上一级</b>（<i>Shift+Ctrl+Alt+F12</i>) - 跳到较低的位置<a href="Glossary_Level.html" title="Glossary:Level">水平</a></li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Process_collection&gt;"><span id="Process_collection.3E"></span>工艺收藏&gt;</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=16" title="Edit section: Process collection&gt;"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=16" title="Edit section's source code: Process collection&gt;"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>工艺收藏&gt;</b>- 处理所有<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>使用可用的选项<a href="Subset_operations.html" title="Subset operations">子集处理菜单</a></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Exit">退出</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=17" title="Edit section: Exit"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=17" title="Edit section's source code: Exit"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>退出</b>（<i>Alt+F4</i>) - 退出 SuperMemo</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Most_Recently_Used_(MRU)_list"><span id="Most_Recently_Used_.28MRU.29_list"></span>最近使用 (MRU) 列表</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=18" title="Edit section: Most Recently Used (MRU) list"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=18" title="Edit section's source code: Most Recently Used (MRU) list"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>1-10</b>- 打开最近打开的十个之一<a href="Glossary.html#collection" title="Glossary">收藏品</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Examples">示例</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=19" title="Edit section: Examples"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=19" title="Edit section's source code: Examples"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="File_:_Properties">文件：属性</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=20" title="Edit section: File : Properties"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=20" title="Edit section's source code: File : Properties"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<pre>
+
+Collection name: ALL
+Path: D:\COLLS\ALL
+
+Collection File Structure: SuperMemo 16
+Program File Structure: SuperMemo 16
+Vacated storage slots: 2
+Running SuperMemo: C:\SM16\sm16.exe
+SuperMemo 16 (Build 16.0, Aug 1, 2013)
+
+Windows 8 ver. 6.2 (Build 9200) 
+Internet Explorer MSHTML Engine ver. 7.0 (0)
+IE Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.2; WOW64;
+ Trident/6.0; .NET4.0E; .NET4.0C; .NET CLR 3.5.30729; .NET CLR 2.0.50727; .NET CLR 3.0.30729; InfoPath.3; MDDRJS)
+User language: English (en-US)
+System language: English (en-US)
+Browser language: English (en-US)
+User: SMR
+Computer: SMR2013
+Total physical memory: 17.13 GB
+Free physical memory: 14.91 GB
+Page file: 34.31 GB
+Free page file: 31.69 GB
+Virtual memory: 2.15 GB
+Free virtual memory: 1.68 GB
+Extended virtual memory: 0 bytes
+SuperMemo heap memory: 17 MB
+Free heap memory: 1.82 MB
+Heap memory use: 89.31%
+Active Code Page: 1252
+OEM Code Page: 437
+Host: SMR2013
+Host HD: 77BE-E6FF
+IP Address: 192.168.11.6
+Owner: SMR
+Network installed
+
+</pre>
+<div class="mw-heading mw-heading3"><h3 id="File_:_Tools_:_Collection_size">文件：工具：集合大小</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=File_menu&amp;veaction=edit&amp;section=21" title="Edit section: File : Tools : Collection size"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=File_menu&amp;action=edit&amp;section=21" title="Edit section's source code: File : Tools : Collection size"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<pre>
+
+Collection name: VIDEO
+Date: Apr 1, 2016, 20:44:15
+Path: D:\COLLS\VIDEO
+
+Primary storage: 32.05 GB
+Secondary storage: 0 bytes
+Total Size: 32.05 GB
+
+Collection File Structure: SuperMemo 17
+Program File Structure: SuperMemo 17
+Vacated storage slots: 1
+Running SuperMemo: C:\SM17\sm17.exe
+SuperMemo 17 (Build 17.0, Apr 1, 2016)
+
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20260610012159
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.051 seconds
+Real time usage: 0.054 seconds
+Preprocessor visited node count: 250/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 1360/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:10:|#|:idhash:canonical and timestamp 20260610012159 and revision id 12060. Rendering was triggered because: page-view
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

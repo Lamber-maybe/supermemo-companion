@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Language tab in Options — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Language_tab_in_Options" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><b>Language</b> tab in <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Options.html" title="Options">Options</a></b> provides options that make it possible to help international users use a given <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>:
+</p>
+<figure class="mw-default-size mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Options_language.jpg.html" title="SuperMemo: Toolkit : Options : Language tab"><img alt="SuperMemo: Toolkit : Options : Language tab" class="mw-file-element" decoding="async" height="459" loading="lazy" src="https://help.supermemo.org/images/d/d4/Options_language.jpg" width="711"/></a><figcaption>SuperMemo: Toolkit : Options : Language tab</figcaption></figure>
+<p>Here is the interpretation of individual fields in the <b>Language</b> section:
+</p>
+<ul><li><b>Program</b> - this field is provided for information only. It shows the language version of SuperMemo. You cannot change this field</li>
+<li><b>Collection translation</b> - makes it possible to select the language to which the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> will be translated. If registry files with the relevant translation exist, you will be able to see the translation of individual texts (e.g. with a mouse move or middle mouse button depending on the <a href="Mouse_tab_in_Options.html" title="Mouse tab in Options">mouse settings</a>). If such files do not exist, they will be created and you will be able to begin translating your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> with <i>Ctrl+click</i> as long as you use <a href="Using_text_components.html" title="Using text components">plain text components</a>. You can use the button <b>Delete</b> to delete the currently used translation registry. See more: <a href="Translating_collection.html" title="Translating collection">Translating collections to other languages</a></li>
+<li><b>Translation font</b> - choose a font that will be used to display text translations</li>
+<li><b>Translate sounds on mouse move</b> - if this box is checked and the instant translation is used (<b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Options.html" title="Options">Options</a> : <a href="Mouse_tab_in_Options.html" title="Mouse tab in Options">Mouse</a> : <a href="Translating_collection.html" title="Translating collection">Translation</a> : On mouse move</b>), sound <a href="Glossary_Component.html" title="Glossary:Component">components</a> will be translated on mouse move in the same way as text components. If you uncheck this box, only text <a href="Glossary_Component.html" title="Glossary:Component">components</a> will be translated</li>
+<li><b>Localization language</b> - choose the language of the interface used by SuperMemo at the <b>Beginner</b> and <b>Basic</b> <a href="Glossary_Level.html" title="Glossary:Level">levels</a>. You can create a new interface in 5 minutes by using <b><a href="Localization_table.html" title="Localization table">Localization table</a></b></li>
+<li><b><a href="Localization_table.html" title="Localization table">Localization table</a></b> - the full list of strings used by SuperMemo at the <b>Beginner</b> and <b>Basic</b> <a href="Glossary_Level.html" title="Glossary:Level">levels</a>. You can translate this list in 3 minutes to your native language and thus localize SuperMemo. If necessary, you can also choose a translation font in the lower left corner of the localization table dialog box. You can find some national language interfaces</li>
+<li><b>Phonetic transcription</b> - choose the phonetic transcription for the language you are using in your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. We are constantly working on the phonetic transcription registry of English (currently 72,000 entries and still growing). This registry is available from <a class="external text" href="http://super-memo.com/enpron.html">SuperMemo Store</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="FAQ">FAQ</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Language_tab_in_Options&amp;veaction=edit&amp;section=1" title="Edit section: FAQ"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Language_tab_in_Options&amp;action=edit&amp;section=1" title="Edit section's source code: FAQ"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">
+    {{#if: Dusko Ivanisevic | <b>From:</b> Dusko Ivanisevic | }}
+    {{#if: New Zealand | <br/><b>Country:</b> New Zealand | }}
+    {{#if: Oct 1, 1998 | <br/><b>Sent:</b> Oct 1, 1998 | }}
+    {{#if:  | <br/><b>Subject:</b> <span class="mail-subject"></span> | }}
+</p>
+<p><b>Question</b>
+</p><p>How can I add phonetic transcription to some words?
+</p><p><b>Answer</b>
+</p><p>Select <b><a href="Edit_menu.html" title="Edit menu">Edit</a> : <a href="Edit_menu.html#Edit_text" title="Edit menu">Edit text</a> : Add pronunciation</b> and type in the word and its transcription. If the transcription dialog does not appear, you have not chosen phonetic transcription in <b><a href="Options.html" title="Options">Options</a></b>. In such a case do the following: 
+</p>
+<ol><li>Choose <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Options.html" title="Options">Options</a> : Language : Phonetic transcription</b></li>
+<li>Select ready-made transcription file or type in a name for new phonetic transcription registry (in the latter case, you will be building phonetic transcription registry from scratch)</li>
+<li>If necessary, choose <b>Font</b> on the left to select phonetic transcription font (e.g. IPA font available from <a class="external text" href="http://super-memory.com/english/ae.htm">Advanced English</a>)</li>
+<li>Once a given word appears on the screen, press <i>Alt+Y</i> to transliterate all texts (or use on-mouse-move transliteration)</li></ol>
+<!-- 
+NewPP limit report
+Cached time: 20260610111054
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.041 seconds
+Real time usage: 0.044 seconds
+Preprocessor visited node count: 50/1000000
+Post‐expand include size: 290/2097152 bytes
+Template argument size: 76/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    5.594      1 Template:Mail_Header
+100.00%    5.594      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:35:|#|:idhash:canonical and timestamp 20260610111054 and revision id 9974. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><b>语言</b>标签进入<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Options.html" title="Options">选项</a></b>提供选项，可以帮助国际用户使用给定的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>:</p>
+<figure class="mw-default-size mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Options_language.jpg.html" title="SuperMemo: Toolkit : Options : Language tab"><img alt="SuperMemo: Toolkit : Options : Language tab" class="mw-file-element" decoding="async" height="459" loading="lazy" src="https://help.supermemo.org/images/d/d4/Options_language.jpg" width="711"/></a><figcaption>SuperMemo：工具包：选项：语言选项卡</figcaption></figure>
+<p>以下是其中各个字段的解释<b>语言</b>部分：</p>
+<ul><li><b>节目</b>- 该字段仅供参考。它显示了 SuperMemo 的语言版本。您无法更改此字段</li>
+<li><b>合集翻译</b>- 可以选择要使用的语言<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>将被翻译。如果存在具有相关翻译的注册表文件，您将能够看到各个文本的翻译（例如，根据不同的语言，使用鼠标移动或鼠标中键）<a href="Mouse_tab_in_Options.html" title="Mouse tab in Options">鼠标设置</a>）。如果此类文件不存在，则会创建它们，您将能够开始翻译您的文件<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>与<i>Ctrl+单击</i>只要你使用<a href="Using_text_components.html" title="Using text components">纯文本组件</a>。您可以使用按钮<b>删除</b>删除当前使用的翻译注册表。查看更多：<a href="Translating_collection.html" title="Translating collection">将集合翻译成其他语言</a></li>
+<li><b>翻译字体</b>- 选择用于显示文本翻译的字体</li>
+<li><b>翻译鼠标移动时的声音</b>- 如果选中此框并使用即时翻译（<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Options.html" title="Options">选项</a> :<a href="Mouse_tab_in_Options.html" title="Mouse tab in Options">鼠标</a> :<a href="Translating_collection.html" title="Translating collection">翻译</a> ：鼠标移动时</b>), 声音<a href="Glossary_Component.html" title="Glossary:Component">组件</a>将在鼠标移动时以与文本组件相同的方式进行翻译。如果取消选中此框，则仅显示文本<a href="Glossary_Component.html" title="Glossary:Component">组件</a>将被翻译</li>
+<li><b>本地化语言</b>- 选择 SuperMemo 使用的界面语言<b>初学者</b>和<b>基础</b> <a href="Glossary_Level.html" title="Glossary:Level">级别</a>。您可以使用以下命令在 5 分钟内创建一个新界面<b><a href="Localization_table.html" title="Localization table">本地化表</a></b></li>
+<li><b><a href="Localization_table.html" title="Localization table">本地化表</a></b>- SuperMemo 使用的字符串的完整列表<b>初学者</b>和<b>基础</b> <a href="Glossary_Level.html" title="Glossary:Level">级别</a>。您可以在 3 分钟内将此列表翻译成您的母语，从而本地化 SuperMemo。如果需要，您还可以在本地化表对话框的左下角选择翻译字体。你可以找到一些国家语言界面</li>
+<li><b>音标</b>- 选择您所使用的语言的音标<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。我们一直致力于英语音标注册（目前有 72,000 个条目，并且仍在增长）。该注册表可从<a class="external text" href="http://super-memo.com/enpron.html">超级备忘录商店</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="FAQ">常见问题解答</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Language_tab_in_Options&amp;veaction=edit&amp;section=1" title="Edit section: FAQ"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Language_tab_in_Options&amp;action=edit&amp;section=1" title="Edit section's source code: FAQ"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">{{#if：杜斯科·伊万尼塞维奇 |<b>来自：</b>杜斯科·伊万尼塞维奇 | }}
+    {{#if：新西兰 |<br/><b>国家：</b>新西兰 | }}
+    {{#if：1998 年 10 月 1 日 |<br/><b>发送：</b>1998 年 10 月 1 日 | }}
+    {{#如果：|<br/><b>主题：</b> <span class="mail-subject"></span>| }}</p>
+<p><b>问题</b>
+</p><p>如何给某些单词添加音标？</p><p><b>回答</b>
+</p><p>选择<b><a href="Edit_menu.html" title="Edit menu">编辑</a> :<a href="Edit_menu.html#Edit_text" title="Edit menu">编辑文字</a> : 添加发音</b>并输入单词及其转录。如果未出现转录对话框，则表明您未在中选择音标<b><a href="Options.html" title="Options">选项</a></b>。在这种情况下，请执行以下操作：</p>
+<ol><li>选择<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Options.html" title="Options">选项</a> ：语言：音标</b></li>
+<li>选择现成的转录文件或输入新的音标注册表的名称（在后一种情况下，您将从头开始构建音标注册表）</li>
+<li>如果需要，请选择<b>字体</b>左侧可选择音标字体（例如 IPA 字体，可从<a class="external text" href="http://super-memory.com/english/ae.htm">高级英语</a>）</li>
+<li>一旦给定的单词出现在屏幕上，请按<i>Alt+Y</i>音译所有文本（或使用鼠标移动音译）</li></ol>
+<!-- 
+NewPP limit report
+Cached time: 20260610111054
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.041 seconds
+Real time usage: 0.044 seconds
+Preprocessor visited node count: 50/1000000
+Post‐expand include size: 290/2097152 bytes
+Template argument size: 76/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    5.594      1 Template:Mail_Header
+100.00%    5.594      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:35:|#|:idhash:canonical and timestamp 20260610111054 and revision id 9974. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

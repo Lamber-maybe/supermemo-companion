@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SuperMemo Algorithm — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/SuperMemo_Algorithm" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div class="mw-heading mw-heading2"><h2 id="The_Algorithm">The Algorithm</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_Algorithm&amp;veaction=edit&amp;section=1" title="Edit section: The Algorithm"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=SuperMemo_Algorithm&amp;action=edit&amp;section=1" title="Edit section's source code: The Algorithm"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>SuperMemo had a fertile impact on the research of modeling long-term memory. One of the most interesting fruits of that research is the <a class="external text" href="https://www.super-memory.com/english/2vm.htm">two component model of long-term memory</a>. Over the last two decades, it has been hinted on many occasions that the model may provide a sound theoretical basis for a better and more universal approach to <a href="Glossary_Spaced_repetition.html" title="Glossary:Spaced repetition">spaced repetition</a>.
+</p><p>SuperMemo 20 includes 5 algorithms to weigh up optimum intervals:
+</p>
+<ul><li>SM-2 (1987)</li>
+<li>SM-15 (2011)</li>
+<li>FSRS (developed by Jarrett Ye independent of SuperMemo)</li>
+<li>SM-19 (2024)</li>
+<li>SM-20 (2026) (based on machine learning)</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Historical_note:_earlier_releases_of_the_algorithm">Historical note: earlier releases of the algorithm</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_Algorithm&amp;veaction=edit&amp;section=2" title="Edit section: Historical note: earlier releases of the algorithm"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=SuperMemo_Algorithm&amp;action=edit&amp;section=2" title="Edit section's source code: Historical note: earlier releases of the algorithm"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Although the presented algorithm may seem complex, you should find it easier to follow its steps once you understand the evolution of individual concepts such as <a href="Glossary_E-Factor.html" title="Glossary:E-Factor">E-Factor</a>, matrix of optimum intervals, optimum factors, <a href="Glossary_Forgetting_curve.html" title="Glossary:Forgetting curve">forgetting curves</a>, mid-interval repetition, stability, retrievability, etc. 
+</p>
+<ul><li><b>1985</b> - Paper-and-pencil version of SuperMemo is formulated (<a class="external text" href="http://super-memory.com/english/ol/beginning.htm#Algorithm">Algorithm SM-0</a>). Repetitions of whole pages of material proceed along a fixed table of intervals. See also: <a class="external text" href="http://super-memory.com/articles/paper.htm">Using SuperMemo without a computer</a></li>
+<li><b>1987</b> - <a class="external text" href="http://super-memory.com/articles/soft/sm2.htm">First computer implementation</a> makes it possible to divide material into individual items. Items are classified into difficulty categories by means of <a href="Glossary_E-Factor.html" title="Glossary:E-Factor">E-Factor</a>. Each difficulty category has its own optimum spacing of repetitions (<a class="external text" href="http://super-memory.com/english/ol/sm2.htm">Algorithm SM-2</a>)</li>
+<li><b>1989</b> - SuperMemo 4 was able to modify the function of optimum intervals depending on the student's performance (<a class="external text" href="http://super-memory.com/english/ol/sm4.htm">Algorithm SM-4</a>). This was then the first algorithm in which the function of optimal intervals was adaptable</li>
+<li><b>1989</b> - SuperMemo 5 replaced the matrix of optimum intervals with the matrix of optimal factors (an optimum factor is the ratio between successive intervals). This approach accelerated the adaptation of the function of optimum intervals (<a class="external text" href="http://super-memory.com/english/ol/sm5.htm">Algorithm SM-5</a>)</li>
+<li><b>1991</b> - <a class="external text" href="http://super-memory.com/articles/soft/sm6.htm">SuperMemo 6</a> derived optimal factors from <a href="Glossary_Forgetting_curve.html" title="Glossary:Forgetting curve">forgetting curves</a> plotted for each entry of the matrix of optimum factors. This could dramatically speed up the convergence of the function of optimum intervals to its ultimate value (<a class="external text" href="http://super-memory.com/english/ol/sm6.htm">Algorithm SM-6</a>). This was then the first adaptable algorithm that would use regression to find the best fit to the actual memory performance data. Unlike SuperMemo 5, which could keep converging and diverging depending on the quality of the learning material and the learning process, SuperMemo 6 would get closer to the student's ultimate memory model with each day of learning</li>
+<li><b>1995</b> - <a class="external text" href="http://super-memory.com/articles/soft/sm8.htm">SuperMemo 8</a> capitalized on data collected by users of <a class="external text" href="http://super-memory.com/articles/soft/sm6.htm">SuperMemo 6</a> and <a class="external text" href="http://super-memory.com/articles/soft/sm7.htm">SuperMemo 7</a> and added a number of improvements that strengthened the theoretical validity of the function of optimum intervals and made it possible to accelerate its adaptation, esp. in the early stages of learning (<a class="external text" href="http://super-memory.com/english/algsm8.htm">Algorithm SM-8</a>). New concepts:
+<ul><li>replacing <a href="Glossary_E-Factor.html" title="Glossary:E-Factor">E-Factors</a> with absolute difficulty factors: <a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A-Factors</a>. Item difficulty was thus defined in terms of actual properties of human memory, and would not depend on the average difficulty of the learning material</li>
+<li>fast approximation of <a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A-Factors</a> from the <b>First Grade vs. A-Factor</b> correlation graph and <b>Grade vs. Forgetting index graph</b>. This makes it possible to quickly guess item's difficulty before more data is available</li>
+<li>real-time adjustment of the matrix of optimal factors based on the power approximation of the decline of optimum factors</li></ul></li>
+<li><b>2002</b> - SuperMemo 2002 introduced the first SuperMemo algorithm that is resistant to interference from delay or advancement of repetitions. This makes it possible to safely delay repetitions (<b><a href="Postpone.html" title="Postpone">Postpone</a></b>) or advance repetitions (<a href="Subset_learning.html" title="Subset learning"><b>Review</b></a>):
+<ul><li>accounting for delayed repetitions by introducing the concept of repetition categories</li>
+<li>accounting for advanced repetitions by introducing O-Factor decrements derived from the concept of the <i>spacing effect</i></li></ul></li>
+<li><b>2005</b> - <a class="external text" href="http://www.freewarefiles.com/SuperMemo_program_13849.html">SuperMemo 2004</a> introduced boundaries on A and B parameters computed from the <b>Grade vs. Forgetting Index</b> data. This plugs up a weakness in the algorithm that showed when importing repetitions from other applications (e.g. open source MemAid). If a large number of easy repetitions occurred at unnaturally long intervals (as after pre-training with another application), the graph might show reversed monotonicity that would temporarily affect the estimation of <a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A-Factors</a> (the speed of self-correction would be reversely proportional to the amount of flawed data). When boundaries are imposed, self-correction is instant, and the accuracy of <a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A-Factor</a> estimation increases with each repetition executed in SuperMemo</li>
+<li><b>2011 </b>- with <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">Algorithm SM-15</a>, SuperMemo 15 eliminated two weaknesses of Algorithm SM-11 that would show up in heavily overloaded collections with very large item delays:
+<ul><li><a href="Glossary_U-Factor.html" title="Glossary:U-Factor">U-Factors</a> now allow of correctly interpreting repetition delays of up to 15 years (previously 60 days only)</li>
+<li><a href="Glossary_Forgetting_curve.html" title="Glossary:Forgetting curve">forgetting curves</a> are now corrected for repetition delays beyond the maximum registered <a href="Glossary_U-Factor.html" title="Glossary:U-Factor">U-Factor</a> value (preventing failed grades in delayed repetitions decreasing the estimates of the <a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">optimum interval</a> for standardly-scheduled items in the same category)</li></ul></li>
+<li><b>2015</b> - <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-17">Algorithm SM-17</a> is a successor to all prior versions of the algorithm in future SuperMemos. It had passed all important benchmarks, and was part of SuperMemo 17 in 2016</li>
+<li><b>2018</b> - <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-18"><b>Algorithm SM-18</b></a> was an updated version of the spaced repetition algorithm introduced in SuperMemo 18 in 2019. The algorithm improved the way <a class="external text" href="https://supermemo.guru/wiki/Item_difficulty_in_Algorithm_SM-18">item difficulty is estimated</a></li>
+<li><b>2024</b> - <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19"><b>Algorithm SM-19</b></a> is an updated version of the spaced repetition algorithm introduced in SuperMemo 19. The new algorithm improved the way post-lapse stability is estimated. It also improved the metrics by taking the best of Algorithm SM-15 and Algorithm SM-17 in handling the first forgetting curve</li>
+<li><b>2026</b> - <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-20"><b>Algorithm SM-20</b></a> is the first algorithm based solely on the theoretical model of memory with all parameters computed by means of machine learning</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_Algorithm&amp;veaction=edit&amp;section=3" title="Edit section: See also"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=SuperMemo_Algorithm&amp;action=edit&amp;section=3" title="Edit section's source code: See also"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://supermemo.guru/wiki/History_of_spaced_repetition">History of spaced repetition</a></li>
+<li><a class="external text" href="https://supermemo.guru/wiki/History_of_SuperMemo_algorithm">History of SuperMemo Algorithm</a></li>
+<li><a class="external text" href="https://www.supermemopedia.com/wiki/Algorithm_SM-17_FAQs">Algorithm SM-17 FAQs</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Algorithm_SM-20">Algorithm SM-20 FAQs</a></li>
+<li><a class="external text" href="https://super-memory.com/english/ol/sm2.htm">Algorithm SM-2 (first algorithm for spaced repetitions on a computer)</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Comparing_SuperMemo_with_other_applications_based_on_spaced_repetition">Comparing SuperMemo with other applications based on spaced repetition</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Spaced_repetition_algorithm_metric">Spaced repetition algorithm metric</a></li>
+<li><a class="external text" href="https://supermemo.guru/wiki/First_fast-converging_spaced_repetition_algorithm:_Algorithm_SM-5#Criticism_of_Algorithm_SM-5">Superiority of SuperMemo over Anki</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Open_letter_to_spaced_repetition_developers">Open letter to spaced repetition developers</a></li>
+<li><a class="external text" href="https://www.supermemopedia.com/index.php?title=Algorithm_SM-17&amp;action=history">Collaborative edits history of this file at SuperMemopedia</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111242
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.024 seconds
+Real time usage: 0.025 seconds
+Preprocessor visited node count: 24/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:568:|#|:idhash:canonical and timestamp 20260610111242 and revision id 12105. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div class="mw-heading mw-heading2"><h2 id="The_Algorithm">算法</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_Algorithm&amp;veaction=edit&amp;section=1" title="Edit section: The Algorithm"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=SuperMemo_Algorithm&amp;action=edit&amp;section=1" title="Edit section's source code: The Algorithm"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>SuperMemo 对长期记忆建模研究产生了巨大影响。该研究最有趣的成果之一是<a class="external text" href="https://www.super-memory.com/english/2vm.htm">长期记忆的二元模型</a>。在过去的二十年里，人们多次暗示该模型可能为更好、更通用的方法提供良好的理论基础。<a href="Glossary_Spaced_repetition.html" title="Glossary:Spaced repetition">间隔重复</a>。</p><p>SuperMemo 20 包含 5 种算法来权衡最佳间隔：</p>
+<ul><li>SM-2 (1987)</li>
+<li>SM-15 (2011)</li>
+<li>FSRS（由 Jarrett Ye 独立于 SuperMemo 开发）</li>
+<li>SM-19 (2024)</li>
+<li>SM-20 (2026)（基于机器学习）</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Historical_note:_earlier_releases_of_the_algorithm">历史记录：算法的早期版本</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_Algorithm&amp;veaction=edit&amp;section=2" title="Edit section: Historical note: earlier releases of the algorithm"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=SuperMemo_Algorithm&amp;action=edit&amp;section=2" title="Edit section's source code: Historical note: earlier releases of the algorithm"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>尽管所提出的算法可能看起来很复杂，但一旦您了解了各个概念的演变，例如，您应该会发现遵循其步骤会更容易<a href="Glossary_E-Factor.html" title="Glossary:E-Factor">E因子</a>，最佳区间矩阵，最佳因子，<a href="Glossary_Forgetting_curve.html" title="Glossary:Forgetting curve">忘记曲线</a>、中间隔重复、稳定性、可恢复性等。</p>
+<ul><li><b>1985年</b>- 制定了纸笔版 SuperMemo（<a class="external text" href="http://super-memory.com/english/ol/beginning.htm#Algorithm">算法 SM-0</a>）。整页材料的重复按照固定的间隔表进行。另请参阅：<a class="external text" href="http://super-memory.com/articles/paper.htm">无需电脑即可使用 SuperMemo</a></li>
+<li><b>1987年</b>-<a class="external text" href="http://super-memory.com/articles/soft/sm2.htm">第一个计算机实现</a>使得将材料分成单独的项目成为可能。项目通过以下方式分为难度类别<a href="Glossary_E-Factor.html" title="Glossary:E-Factor">E因子</a>。每个难度类别都有其自己的最佳重复间隔（<a class="external text" href="http://super-memory.com/english/ol/sm2.htm">算法 SM-2</a>）</li>
+<li><b>1989年</b>- SuperMemo 4 能够根据学生的表现修改最佳间隔的函数（<a class="external text" href="http://super-memory.com/english/ol/sm4.htm">算法 SM-4</a>）。这是当时第一个自适应最佳间隔函数的算法</li>
+<li><b>1989年</b>- SuperMemo 5 用最佳因子矩阵替换了最佳间隔矩阵（最佳因子是连续间隔之间的比率）。这种方法加速了最佳间隔函数的适应（<a class="external text" href="http://super-memory.com/english/ol/sm5.htm">算法 SM-5</a>）</li>
+<li><b>1991年</b>-<a class="external text" href="http://super-memory.com/articles/soft/sm6.htm">超级备忘录 6</a>得出最优因子<a href="Glossary_Forgetting_curve.html" title="Glossary:Forgetting curve">忘记曲线</a>为最佳因子矩阵的每个条目绘制。这可以极大地加速最佳间隔函数收敛到其最终值的速度（<a class="external text" href="http://super-memory.com/english/ol/sm6.htm">算法 SM-6</a>）。这是当时第一个适应性算法，它使用回归来找到最适合实际内存性能数据的算法。与 SuperMemo 5 不同，SuperMemo 5 可以根据学习材料的质量和学习过程不断收敛和发散，SuperMemo 6 会在每天的学习中更接近学生的最终记忆模型</li>
+<li><b>1995年</b>-<a class="external text" href="http://super-memory.com/articles/soft/sm8.htm">超级备忘录 8</a>利用用户收集的数据<a class="external text" href="http://super-memory.com/articles/soft/sm6.htm">超级备忘录 6</a>和<a class="external text" href="http://super-memory.com/articles/soft/sm7.htm">超级备忘录 7</a>并添加了一些改进，加强了最佳间隔函数的理论有效性，并使其能够加速其适应，特别是。在学习的早期阶段（<a class="external text" href="http://super-memory.com/english/algsm8.htm">算法 SM-8</a>）。新概念：<ul><li>替换<a href="Glossary_E-Factor.html" title="Glossary:E-Factor">E因素</a>具有绝对难度系数：<a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A 因素</a>。因此，项目难度是根据人类记忆的实际属性来定义的，而不取决于学习材料的平均难度</li>
+<li>快速逼近<a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A 因素</a>从<b>一年级 vs. A-Factor</b>相关图和<b>成绩与遗忘指数图</b>。这使得可以在获得更多数据之前快速猜测项目的难度</li>
+<li>基于最优因子下降的幂近似实时调整最优因子矩阵</li></ul></li>
+<li><b>2002年</b>- SuperMemo 2002 引入了第一个 SuperMemo 算法，该算法可以抵抗重复延迟或提前的干扰。这使得可以安全地延迟重复（<b><a href="Postpone.html" title="Postpone">推迟</a></b>）或提前重复（<a href="Subset_learning.html" title="Subset learning"><b>评论</b></a>）：<ul><li>通过引入重复类别的概念来解释延迟重复</li>
+<li>通过引入源自概念的 O 因子递减来解释高级重复<i>间距效应</i></li></ul></li>
+<li><b>2005年</b>-<a class="external text" href="http://www.freewarefiles.com/SuperMemo_program_13849.html">超级备忘录 2004</a>引入了 A 和 B 参数的边界，计算公式为<b>成绩与遗忘指数</b>数据。这弥补了算法中从其他应用程序（例如开源 MemAid）导入重复项时显示的弱点。如果以不自然的长间隔发生大量简单重复（如使用另一个应用程序进行预训练后），则图表可能会显示反向单调性，这会暂时影响对<a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A 因素</a>（自我修正的速度与有缺陷的数据量成反比）。当施加界限时，自我纠正是即时的，并且准确性<a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A因素</a>估计随着 SuperMemo 中执行的每次重复而增加</li>
+<li><b>2011年</b>- 与<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">算法 SM-15</a>，SuperMemo 15 消除了算法 SM-11 的两个弱点，这些弱点会出现在严重超载且项目延迟非常大的集合中：<ul><li><a href="Glossary_U-Factor.html" title="Glossary:U-Factor">U 因素</a>现在允许正确解释长达 15 年的重复延迟（之前仅限 60 天）</li>
+<li><a href="Glossary_Forgetting_curve.html" title="Glossary:Forgetting curve">忘记曲线</a>现在已纠正超出注册最大重复延迟的情况<a href="Glossary_U-Factor.html" title="Glossary:U-Factor">U因子</a>值（防止延迟重复中的不及格成绩，减少对<a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">最佳间隔</a>对于同一类别中的标准计划项目）</li></ul></li>
+<li><b>2015年</b>-<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-17">算法 SM-17</a>是未来 SuperMemos 中所有先前版本算法的继承者。它已通过所有重要基准，并于 2016 年成为 SuperMemo 17 的一部分</li>
+<li><b>2018年</b>-<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-18"><b>算法 SM-18</b></a>是 2019 年 SuperMemo 18 中引入的间隔重复算法的更新版本。该算法改进了方式<a class="external text" href="https://supermemo.guru/wiki/Item_difficulty_in_Algorithm_SM-18">估计项目难度</a></li>
+<li><b>2024年</b>-<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19"><b>算法 SM-19</b></a>是 SuperMemo 19 中引入的间隔重复算法的更新版本。新算法改进了估计失效后稳定性的方式。它还通过利用算法 SM-15 和算法 SM-17 的优点来处理第一条遗忘曲线，从而改进了指标</li>
+<li><b>2026年</b>-<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-20"><b>算法 SM-20</b></a>是第一个完全基于内存理论模型的算法，所有参数均通过机器学习计算得出</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="See_also">另请参阅</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_Algorithm&amp;veaction=edit&amp;section=3" title="Edit section: See also"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=SuperMemo_Algorithm&amp;action=edit&amp;section=3" title="Edit section's source code: See also"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://supermemo.guru/wiki/History_of_spaced_repetition">间隔重复的历史</a></li>
+<li><a class="external text" href="https://supermemo.guru/wiki/History_of_SuperMemo_algorithm">SuperMemo 算法的历史</a></li>
+<li><a class="external text" href="https://www.supermemopedia.com/wiki/Algorithm_SM-17_FAQs">SM-17 算法常见问题解答</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Algorithm_SM-20">SM-20 算法常见问题解答</a></li>
+<li><a class="external text" href="https://super-memory.com/english/ol/sm2.htm">算法 SM-2（计算机上第一个间隔重复算法）</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Comparing_SuperMemo_with_other_applications_based_on_spaced_repetition">SuperMemo 与其他基于间隔重复的应用程序的比较</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Spaced_repetition_algorithm_metric">间隔重复算法度量</a></li>
+<li><a class="external text" href="https://supermemo.guru/wiki/First_fast-converging_spaced_repetition_algorithm:_Algorithm_SM-5#Criticism_of_Algorithm_SM-5">SuperMemo 相对于 Anki 的优越性</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Open_letter_to_spaced_repetition_developers">致间隔重复开发人员的公开信</a></li>
+<li><a class="external text" href="https://www.supermemopedia.com/index.php?title=Algorithm_SM-17&amp;action=history">SuperMemopedia 上该文件的协作编辑历史记录</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111242
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.024 seconds
+Real time usage: 0.025 seconds
+Preprocessor visited node count: 24/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:568:|#|:idhash:canonical and timestamp 20260610111242 and revision id 12105. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

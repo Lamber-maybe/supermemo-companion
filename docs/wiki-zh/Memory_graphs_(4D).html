@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Memory graphs (4D) — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Memory_graphs_(4D)" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Available_memory_graphs"><span class="tocnumber">1</span> <span class="toctext">Available memory graphs</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Graph_analysis_controls"><span class="tocnumber">2</span> <span class="toctext">Graph analysis controls</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Pictures"><span class="tocnumber">3</span> <span class="toctext">Pictures</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Stability_increase_function"><span class="tocnumber">3.1</span> <span class="toctext">Stability increase function</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Stability_increase_function_contour_map"><span class="tocnumber">3.2</span> <span class="toctext">Stability increase function contour map</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Stability_increase_approximation"><span class="tocnumber">3.3</span> <span class="toctext">Stability increase approximation</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Recall"><span class="tocnumber">3.4</span> <span class="toctext">Recall</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Recall_approximation"><span class="tocnumber">3.5</span> <span class="toctext">Recall approximation</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Recall_approximation_curve"><span class="tocnumber">3.6</span> <span class="toctext">Recall approximation curve</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#First_interval"><span class="tocnumber">3.7</span> <span class="toctext">First interval</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#First_interval_approximation"><span class="tocnumber">3.8</span> <span class="toctext">First interval approximation</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>SuperMemo 20 includes two newest <a href="Glossary_Spaced_repetition.html" title="Glossary:Spaced repetition">spaced repetition</a> xxx algorithms: <a class="mw-redirect" href="Algorithm_SM-19.html" title="Algorithm SM-19">Algorithm SM-19</a> and <a href="Algorithm_SM-20.html" title="Algorithm SM-20">Algorithm SM-20</a>. These algorithms are based on entirely different approaches to modeling memory.
+</p><p><a class="mw-redirect" href="Algorithm_SM-19.html" title="Algorithm SM-19">Algorithm SM-19</a> follows the older paradigm based on optimization matrices. In contrast, <a href="Algorithm_SM-20.html" title="Algorithm SM-20">Algorithm SM-20</a> uses a machine-learned memory model. Both algorithms were developed using large datasets collected from thousands of users, with some collections containing up to a million repetitions.
+</p><p><b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Toolkit_menu.html#Memory" title="Toolkit menu">Memory</a> : 4D Graphs</b> played an important role in analyzing and debugging <a class="mw-redirect" href="Algorithm_SM-19.html" title="Algorithm SM-19">Algorithm SM-19</a>. The insights gained from these tools also helped inspire the development of <a href="Algorithm_SM-20.html" title="Algorithm SM-20">Algorithm SM-20</a>.
+</p><p>If you want to understand <a class="mw-redirect" href="Algorithm_SM-19.html" title="Algorithm SM-19">Algorithm SM-19</a> or help improve it further, explore these tools and analyze your own learning data. Human memory is a stochastic system, so perfect prediction is impossible, but analysis can help us approach the optimal scheduling of repetitions.
+</p><p><b>Important:</b> The graphs shown in the <a href="#Pictures">examples below</a> require a <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> with a mature learning history. New collections do not yet contain enough repetition data to produce meaningful graphs.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Available_memory_graphs">Available memory graphs</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=1" title="Edit section: Available memory graphs"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=1" title="Edit section's source code: Available memory graphs"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>All memory graphs provide a 3-dimensional view with rotation along all 2 axes (X and Y), and a slider for animation in the 3rd dimension along <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">item difficulty</a>.
+</p><p>The following memory graphs are available with <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Toolkit_menu.html#Memory" title="Toolkit menu">Memory</a> : 4D Graphs</b> on its individual tabs:
+</p>
+<ul><li>Matrices -
+<ul><li>S90 - stabilization at <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a> of 90%</li>
+<li>SIncMin - minimum stabilization in the stabilization curve</li>
+<li>SIncMax - maximum stabilization in the stabilization curve</li>
+<li>Gain - spacing effect expressed as a stabilization gain in the stabilization curve</li>
+<li>Decay - stabilization decay in the stabilization curve</li>
+<li>OS - optimum stabilization derived from stabilization increase using approximation formulas analogous to those used in deriving the matrix of <a href="Glossary_O-Factor.html" title="Glossary:O-Factor">O-Factors</a> from the matrix of <a href="Glossary_R-Factor.html" title="Glossary:R-Factor">R-Factors</a></li>
+<li>Recall - actual recall measured at the predicted <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a> of 90%</li>
+<li>R90 - predicted <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a> at recall of 90%</li>
+<li>Metric - recall metric that shows the accuracy of recall predictions for different levels of <a href="Glossary_Stability.html" title="Glossary:Stability">stability</a> and <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficulty</a></li>
+<li>Cases - repetition cases used in computing the stabilization matrix</li>
+<li>RF - <a href="Glossary_RF_matrix.html" title="Glossary:RF matrix">R-Factor matrix</a> of <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">Algorithm SM-15</a></li>
+<li>OF - <a href="Glossary_OF_matrix.html" title="Glossary:OF matrix">O-Factor matrix</a> of <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">Algorithm SM-15</a></li>
+<li>Intervals - <a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">optimum intervals</a> matrix</li>
+<li>RF Cases - repetition cases used in computing the <a href="Glossary_RF_matrix.html" title="Glossary:RF matrix">R-Factor matrix</a> of <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">Algorithm SM-15</a></li></ul></li>
+<li><b>Stabilization</b>: the function that tells you how much <a href="Glossary_Stability.html" title="Glossary:Stability">memory stability</a> increases with a <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a>. If you click <b>Compute</b>, all <a href="Repetition_history.html" title="Repetition history">repetition histories</a> will be scanned to compute the <a href="Glossary_Stability_increase_matrix.html" title="Glossary:Stability increase matrix">SInc[] matrix</a>. For a given <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">item difficulty</a>, the increase depends on <a href="Glossary_Stability.html" title="Glossary:Stability">stability</a> and <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievabilty</a>. To view the 3-rd dimension of <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficulty</a>, slide the thumb on the <b>Difficulty</b> slider. See <a href="#Stability_increase_function">example</a></li>
+<li><b>SInc Approx</b>: approximation of the function represented by the <a href="Glossary_Stability_increase_matrix.html" title="Glossary:Stability increase matrix">stability increase matrix</a>. If you click <b>Compute</b>, SuperMemo will look for the best fit to data (which is the SInc[] matrix computed on the <b>Stabilization</b> tab). See <a href="#Stability_increase_function_approximation">example</a></li>
+<li><b>Recall</b>: the function that tells you how well actual recall corresponds with <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a> predicted by SuperMemo. The difference between comes primarily from the difficulty in <a class="external text" href="http://super-memory.com/articles/20rules.htm">formulating perfect items</a> that would produce purely exponential forgetting. In addition, SuperMemo itself is far from perfect in sorting <a href="Glossary_Item.html" title="Glossary:Item">items</a> by <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficulty</a>. See <a href="#Recall">example</a></li>
+<li><b>Recall Approx</b>: approximation of the function represented by the <a href="Glossary_Recall_matrix.html" title="Glossary:Recall matrix">Recall[] matrix</a>. If you click <b>Compute</b>, SuperMemo will look for the best fit to data (which is the Recall[] matrix computed on the <b>Recall</b> tab). See <a href="#Recall_approximation">example</a></li>
+<li><b>First Interval</b>: the function that illustrates <a href="Glossary_Post-lapse_stability.html" title="Glossary:Post-lapse stability">post-lapse stability</a> depending on the number of <a href="Glossary_Lapse.html" title="Glossary:Lapse">lapses</a> and <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a> at failure. It is the equivalent of the first-interval graph extended into the retrievability dimension. <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">Retrievability</a> is important in that a failure at low retrievability does not need to signify the <a href="Glossary_Item.html" title="Glossary:Item">item</a> is difficult and <a href="Glossary_Post-lapse_stability.html" title="Glossary:Post-lapse stability">post-lapse stability</a> is low. See <a href="#First_interval">example</a></li>
+<li><b>PLS Approx</b>: approximation of the function represented by post-lapse stability matrix. If you click <b>Compute</b>, SuperMemo will look for the best fit to data (which is the post-lapse matrix computed on the <b>First Interval</b> tab). See <a href="#First_interval_approximation">example</a></li>
+<li><b>Sleep</b>: correlation between recall and the <a class="mw-redirect" href="SleepChart.html#Two-component_sleep_model" title="SleepChart">two components of sleep</a>. This is a 2-dimensional graph that combines <a class="mw-redirect" href="SleepChart.html#Alertness" title="SleepChart"><b>Alertness (H)</b> and <b>Alertness (C)</b></a> of <b><a href="Sleep_Chart.html" title="Sleep Chart">Sleep Chart</a></b>. As the data is not part of Algorithm SM-18 optimization, you need to click <b>Compute</b> to collect data needed to display this graph</li>
+<li><b>Forgetting</b>: 3D <a href="Glossary_Forgetting_curve.html" title="Glossary:Forgetting curve">forgetting curves</a> collected by <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">Algorithm SM-15</a>. This is the same graph as the one displayed by <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Toolkit_menu.html#Statistics" title="Toolkit menu">Statistics</a> : <a href="Analysis.html" title="Analysis">Analysis</a> : <a href="Analysis.html#3-D_Curves" title="Analysis">3-D Curves</a></b> with the added benefit of 3-axis rotation in space and <b><a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A-Factor</a></b> slider for the 4th dimension.</li>
+<li><b>RF Matrix</b>: 3D <a href="Glossary_RF_matrix.html" title="Glossary:RF matrix">RF matrix</a> collected by <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">Algorithm SM-15</a>. This is the same graph as the one displayed by <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Toolkit_menu.html#Statistics" title="Toolkit menu">Statistics</a> : <a href="Analysis.html" title="Analysis">Analysis</a> : <a href="Analysis.html#3-D_Graphs" title="Analysis">3-D Graphs</a> : R-Factor Matrix</b> with the added benefit of 3-axis rotation in space</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Graph_analysis_controls">Graph analysis controls</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=2" title="Edit section: Graph analysis controls"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=2" title="Edit section's source code: Graph analysis controls"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>X</b> and <b>Y</b> axis rotation (top 2 sliders)</li>
+<li><b>Difficulty</b> slider (for animation in the 3rd dimension)</li>
+<li>Repetition cases in consideration</li>
+<li><b>Cases</b>: the label showing the total number of repetition cases in consideration</li>
+<li><b>Compute</b>: recompute the graph using the data in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a></li>
+<li><b>Reset</b>: reset the memory matrices</li>
+<li><b>Smoothing</b>: average neighboring entries in matrices</li>
+<li><b>Subset</b>: select a <a href="Glossary_Element_subset.html" title="Glossary:Element subset">subset of elements</a> for which matrices should be computed</li>
+<li><b>Reset Cases</b>: reset the count of repetition cases without changing the data (i.e. values of entries in matrices)</li>
+<li><b>Export</b>: export data for analysis in Excel (see: <a class="external text" href="https://supermemopedia.com/wiki/Why_is_the_first_interval_after_forgetting_so_short">exemplary analysis</a>)</li>
+<li><b>Average</b> checkbox: the "golden mean" average of the data with:
+<ol><li>the best-fit approximation, and</li>
+<li>data-rich neighboring entries in proportion to available information</li></ol></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Pictures">Pictures</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=3" title="Edit section: Pictures"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=3" title="Edit section's source code: Pictures"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Stability_increase_function">Stability increase function</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=4" title="Edit section: Stability increase function"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=4" title="Edit section's source code: Stability increase function"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Stability_increase_function.png.html" title="SuperMemo: 3D graph of SInc[] matrix based on 61,768 repetition cases for items with difficulty=0.8"><img alt="SuperMemo: 3D graph of SInc[] matrix based on 61,768 repetition cases for items with difficulty=0.8" class="mw-file-element" decoding="async" height="500" loading="lazy" src="https://help.supermemo.org/images/thumb/2/2b/Stability_increase_function.png/800px-Stability_increase_function.png" srcset="/images/thumb/2/2b/Stability_increase_function.png/1200px-Stability_increase_function.png 1.5x, /images/thumb/2/2b/Stability_increase_function.png/1600px-Stability_increase_function.png 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> <a class="external text" href="https://supermemo.guru/wiki/Stability_increase">Stability increase</a> function as computed by <a class="mw-redirect" href="Algorithm_SM-18.html" title="Algorithm SM-18">Algorithm SM-18</a>. The function takes three arguments: (1) <a href="Glossary_Stability.html" title="Glossary:Stability">stability</a> at review expressed in days (on the left), (2) <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a> at review (on the right), and (3) memory <a class="external text" href="https://supermemo.guru/wiki/Complexity">complexity</a> expressed as <a href="Glossary_Item.html" title="Glossary:Item">item</a> <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficulty</a> (slider labelled <b>Diff</b> currently set at 0.8). In the picture, stability increase peaks at around 15 (vertical axis). For some levels of <a href="Glossary_Stability.html" title="Glossary:Stability">stability</a> and <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a>, the function drops below 1.0 indicating a decrease in <a href="Glossary_Stability.html" title="Glossary:Stability">stability</a> (e.g. due to premature review evoking the <a href="Glossary_Spacing_effect.html" title="Glossary:Spacing effect">spacing effect</a> in massed presentation). 61,768 repetitions of relatively <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficult</a> <a href="Glossary_Item.html" title="Glossary:Item">items</a> were needed to produce this graph (at Diff=0.8). The longest <a href="Glossary_Interval.html" title="Glossary:Interval">intervals</a> reach around 14 years (<a href="Glossary_Stability.html" title="Glossary:Stability">stability</a> quantile 5172)</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Stability_increase_function_contour_map">Stability increase function contour map</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=5" title="Edit section: Stability increase function contour map"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=5" title="Edit section's source code: Stability increase function contour map"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Stability_increase_function_contour_map.jpg.html" title='SuperMemo: A "from above" view at the SInc[] matrix providing a contour map'><img alt='SuperMemo: A "from above" view at the SInc[] matrix providing a contour map' class="mw-file-element" decoding="async" height="500" loading="lazy" src="https://help.supermemo.org/images/thumb/4/4a/Stability_increase_function_contour_map.jpg/800px-Stability_increase_function_contour_map.jpg" srcset="/images/thumb/4/4a/Stability_increase_function_contour_map.jpg/1200px-Stability_increase_function_contour_map.jpg 1.5x, /images/thumb/4/4a/Stability_increase_function_contour_map.jpg/1600px-Stability_increase_function_contour_map.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> A "from above" view at the <a href="Glossary_Stability_increase_matrix.html" title="Glossary:Stability increase matrix">SInc[] matrix</a> providing a <a class="external text" href="https://en.wikipedia.org/wiki/Contour_line">contour map</a>. <span style="padding: 3px; color: #fff; background-color: red;">Red zones</span> indicate high stability increase at review. The picture shows that the greatest <a href="Glossary_Stability.html" title="Glossary:Stability">stability</a> increase occurs for lower stability levels and <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievabilities</a> around 70-90%.</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Stability_increase_approximation">Stability increase approximation</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=6" title="Edit section: Stability increase approximation"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=6" title="Edit section's source code: Stability increase approximation"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Stability_increase_function_approximation.jpg.html" title="SuperMemo: Approximating the SInc[] matrix with the best-fit function used by default in SuperMemo to compute the increase in stability (e.g. in cases of lack of data)"><img alt="SuperMemo: Approximating the SInc[] matrix with the best-fit function used by default in SuperMemo to compute the increase in stability (e.g. in cases of lack of data)" class="mw-file-element" decoding="async" height="500" loading="lazy" src="https://help.supermemo.org/images/thumb/c/c6/Stability_increase_function_approximation.jpg/800px-Stability_increase_function_approximation.jpg" srcset="/images/thumb/c/c6/Stability_increase_function_approximation.jpg/1200px-Stability_increase_function_approximation.jpg 1.5x, /images/thumb/c/c6/Stability_increase_function_approximation.jpg/1600px-Stability_increase_function_approximation.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> Approximating the <a href="Glossary_Stability_increase_matrix.html" title="Glossary:Stability increase matrix">SInc[] matrix</a> with the best-fit function used by default in SuperMemo to compute the increase in <a href="Glossary_Stability.html" title="Glossary:Stability">stability</a> (e.g. in cases of lack of data). The approximation procedure uses a <a class="external text" href="https://en.wikipedia.org/wiki/Hill_climbing">hill-climbing algorithm</a> with parameters <b>A</b>, <b>B</b>, <b>C</b>, <b>D</b> displayed in the picture. Least squares deviation is obtained to assess the progress. <span style="padding: 3px; background-color: lime;">Green circles</span> represent the <a href="Glossary_Stability_increase_matrix.html" title="Glossary:Stability increase matrix">Sinc[] matrix</a> at a chosen <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficulty level</a>. Their size corresponds with repetition cases investigated. The <span style="padding: 3px; color: #FFF; background-color: blue;">blue surface</span> is the best fit of the studied function to the SInc[] data.</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Recall">Recall</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=7" title="Edit section: Recall"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=7" title="Edit section's source code: Recall"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Recall.jpg.html" title="SuperMemo: The Recall[] matrix graph showing actual recall differs from predicted retrievability"><img alt="SuperMemo: The Recall[] matrix graph showing actual recall differs from predicted retrievability" class="mw-file-element" decoding="async" height="500" loading="lazy" src="https://help.supermemo.org/images/thumb/3/3f/Recall.jpg/800px-Recall.jpg" srcset="/images/thumb/3/3f/Recall.jpg/1200px-Recall.jpg 1.5x, /images/thumb/3/3f/Recall.jpg/1600px-Recall.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> The <a href="Glossary_Recall_matrix.html" title="Glossary:Recall matrix">Recall[] matrix</a> graph shows that the actual recall differs from predicted <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a>. For higher <a href="Glossary_Stability.html" title="Glossary:Stability">stabilities</a> and <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficulties</a>, it is harder to reach the desired recall level.</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Recall_approximation">Recall approximation</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=8" title="Edit section: Recall approximation"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=8" title="Edit section's source code: Recall approximation"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Recall_approximation.jpg.html" title="SuperMemo: Approximating the Recall[] matrix with the best-fit function to compute default recall in conditions of data scarcity"><img alt="SuperMemo: Approximating the Recall[] matrix with the best-fit function to compute default recall in conditions of data scarcity" class="mw-file-element" decoding="async" height="500" loading="lazy" src="https://help.supermemo.org/images/thumb/0/0c/Recall_approximation.jpg/800px-Recall_approximation.jpg" srcset="/images/thumb/0/0c/Recall_approximation.jpg/1200px-Recall_approximation.jpg 1.5x, /images/thumb/0/0c/Recall_approximation.jpg/1600px-Recall_approximation.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> Approximating the <a href="Glossary_Recall_matrix.html" title="Glossary:Recall matrix">Recall[] matrix</a> with the best-fit function to compute default recall in conditions of data scarcity. The approximation procedure uses a <a class="external text" href="https://en.wikipedia.org/wiki/Hill_climbing">hill-climbing algorithm</a> with parameters <b>A</b>, <b>B</b>, <b>C</b>, <b>D</b> displayed in the picture. Least squares deviation is obtained to asses the progress. The circles represent the <a href="Glossary_Recall_matrix.html" title="Glossary:Recall matrix">Recall[] matrix</a> at a chosen <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficulty level</a>. Their size corresponds with repetition cases investigated. The <span style="padding: 3px; color: #fff; background-color: red;">red surface</span> is the best fit of the studied function to the Recall[] data.</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Recall_approximation_curve">Recall approximation curve</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=9" title="Edit section: Recall approximation curve"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=9" title="Edit section's source code: Recall approximation curve"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Recall_approximation_curve.jpg.html" title="SuperMemo: Approximating the Recall[] matrix with the best-fit function to compute default recall in conditions of data scarcity"><img alt="SuperMemo: Approximating the Recall[] matrix with the best-fit function to compute default recall in conditions of data scarcity" class="mw-file-element" decoding="async" height="500" loading="lazy" src="https://help.supermemo.org/images/thumb/9/98/Recall_approximation_curve.jpg/800px-Recall_approximation_curve.jpg" srcset="/images/thumb/9/98/Recall_approximation_curve.jpg/1200px-Recall_approximation_curve.jpg 1.5x, /images/thumb/9/98/Recall_approximation_curve.jpg/1600px-Recall_approximation_curve.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> Approximating the <a href="Glossary_Recall_matrix.html" title="Glossary:Recall matrix">Recall[] matrix</a> with the best-fit function to compute default recall in conditions of data scarcity. By choosing the right viewing angle, the curve that reflects the changes to recall with <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a> can be seen in abstraction of <a href="Glossary_Stability.html" title="Glossary:Stability">stability</a>. In this case the relationship is almost linear (the logarithmic bend is a result of the log scale used for <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a>).</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="First_interval">First interval</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=10" title="Edit section: First interval"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=10" title="Edit section's source code: First interval"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>First interval after forgetting is usually very short (1-4 days). It is longest for freshly memorized items that have not been forgotten yet.
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Post-lapse_stability_graph_in_spaced_repetition.png.html"><img class="mw-file-element" decoding="async" height="450" loading="lazy" src="https://help.supermemo.org/images/thumb/0/0d/Post-lapse_stability_graph_in_spaced_repetition.png/800px-Post-lapse_stability_graph_in_spaced_repetition.png" srcset="/images/thumb/0/0d/Post-lapse_stability_graph_in_spaced_repetition.png/1200px-Post-lapse_stability_graph_in_spaced_repetition.png 1.5x, /images/thumb/0/0d/Post-lapse_stability_graph_in_spaced_repetition.png/1600px-Post-lapse_stability_graph_in_spaced_repetition.png 2x" width="800"/></a><figcaption></figcaption></figure>
+<blockquote>
+<p><i><b>Figure:</b> <b>First interval</b> tab in <b>4D Graphs</b> makes it possible to visualize how retrievability and the number of memory lapses affect the first interval after forgetting</i>
+</p>
+</blockquote>
+<p>See: <a class="external text" href="https://supermemopedia.com/wiki/Why_is_the_first_interval_after_forgetting_so_short">Why is my first interval so short?</a>
+</p>
+<div class="mw-heading mw-heading3"><h3 id="First_interval_approximation">First interval approximation</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=11" title="Edit section: First interval approximation"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=11" title="Edit section's source code: First interval approximation"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The tab <b>PLS Approx</b> (post-lapse stability approximation) makes it possible to search for an optimal surface that best models the first post‑lapse interval as a function of retrievability and the number of memory lapses:
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Post-lapse_stability_approximation_in_spaced_repetition.png.html"><img class="mw-file-element" decoding="async" height="450" loading="lazy" src="https://help.supermemo.org/images/thumb/5/54/Post-lapse_stability_approximation_in_spaced_repetition.png/800px-Post-lapse_stability_approximation_in_spaced_repetition.png" srcset="/images/thumb/5/54/Post-lapse_stability_approximation_in_spaced_repetition.png/1200px-Post-lapse_stability_approximation_in_spaced_repetition.png 1.5x, /images/thumb/5/54/Post-lapse_stability_approximation_in_spaced_repetition.png/1600px-Post-lapse_stability_approximation_in_spaced_repetition.png 2x" width="800"/></a><figcaption></figcaption></figure>
+<blockquote>
+<p><i><b>Figure:</b> After forgetting, the optimum new interval is usually very short (less than 4 days). It depends on the number of memory lapses (for many lapses it is nearly always one day). It also depends on the <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a> at the moment of forgetting (high retrievability usually indicates fresh repetitions). In the presented example, the user runs the approximation procedure to optimally fit the post-stability surface to recorded data. In the presented case, the formula is <code>Stability=0.6+3.5*Power(R,1.8)*Exp(-0.27*Laps)</code> (see: <a class="external text" href="https://claude.ai/public/artifacts/443569dd-7f93-4706-8c9a-894c26a8e4e8">visualization</a>)</i>
+</p>
+</blockquote>
+<!-- 
+NewPP limit report
+Cached time: 20260610111120
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.070 seconds
+Real time usage: 0.083 seconds
+Preprocessor visited node count: 165/1000000
+Post‐expand include size: 7492/2097152 bytes
+Template argument size: 2214/2097152 bytes
+Highest expansion depth: 5/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   21.310      1 -total
+ 21.58%    4.599      1 File:Stability_increase_function.png
+ 19.97%    4.256      1 File:Recall_approximation_curve.jpg
+ 10.48%    2.233      4 Template:Fig
+ 10.21%    2.176      1 File:Recall_approximation.jpg
+  9.49%    2.023      1 File:Post-lapse_stability_graph_in_spaced_repetition.png
+  9.45%    2.013      1 File:Recall.jpg
+  9.45%    2.013      1 File:Post-lapse_stability_approximation_in_spaced_repetition.png
+  9.02%    1.921      1 File:Stability_increase_function_approximation.jpg
+  7.73%    1.648      1 File:Stability_increase_function_contour_map.jpg
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:575:|#|:idhash:canonical and timestamp 20260610111120 and revision id 12213. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Available_memory_graphs"><span class="tocnumber">1</span> <span class="toctext">可用内存图</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Graph_analysis_controls"><span class="tocnumber">2</span> <span class="toctext">图形分析控件</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Pictures"><span class="tocnumber">3</span> <span class="toctext">图片</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Stability_increase_function"><span class="tocnumber">3.1</span> <span class="toctext">稳定性增加功能</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Stability_increase_function_contour_map"><span class="tocnumber">3.2</span> <span class="toctext">稳定性增加函数等值线图</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Stability_increase_approximation"><span class="tocnumber">3.3</span> <span class="toctext">稳定性增加近似</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Recall"><span class="tocnumber">3.4</span> <span class="toctext">召回</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Recall_approximation"><span class="tocnumber">3.5</span> <span class="toctext">回忆近似值</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Recall_approximation_curve"><span class="tocnumber">3.6</span> <span class="toctext">回忆近似曲线</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#First_interval"><span class="tocnumber">3.7</span> <span class="toctext">第一个间隔</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#First_interval_approximation"><span class="tocnumber">3.8</span> <span class="toctext">第一个区间近似</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>SuperMemo 20 包括两个最新的<a href="Glossary_Spaced_repetition.html" title="Glossary:Spaced repetition">间隔重复</a>xxx算法：<a class="mw-redirect" href="Algorithm_SM-19.html" title="Algorithm SM-19">算法 SM-19</a>和<a href="Algorithm_SM-20.html" title="Algorithm SM-20">算法 SM-20</a>。这些算法基于完全不同的内存建模方法。</p><p><a class="mw-redirect" href="Algorithm_SM-19.html" title="Algorithm SM-19">算法 SM-19</a>遵循基于优化矩阵的旧范例。相比之下，<a href="Algorithm_SM-20.html" title="Algorithm SM-20">算法 SM-20</a>使用机器学习的记忆模型。这两种算法都是使用从数千名用户收集的大型数据集开发的，其中一些集合包含多达一百万次重复。</p><p><b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Toolkit_menu.html#Memory" title="Toolkit menu">内存</a> : 4D 图表</b>在分析和调试中发挥了重要作用<a class="mw-redirect" href="Algorithm_SM-19.html" title="Algorithm SM-19">算法 SM-19</a>。从这些工具中获得的见解也有助于激发<a href="Algorithm_SM-20.html" title="Algorithm SM-20">算法 SM-20</a>。</p><p>如果你想了解<a class="mw-redirect" href="Algorithm_SM-19.html" title="Algorithm SM-19">算法 SM-19</a>或者帮助进一步改进，探索这些工具并分析您自己的学习数据。人类记忆是一个随机系统，因此完美的预测是不可能的，但分析可以帮助我们实现重复的最佳安排。</p><p><b>重要：</b>图中所示的图表<a href="#Pictures">下面的例子</a>需要一个<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>具有成熟的学习历史。新集合尚未包含足够的重复数据来生成有意义的图表。</p>
+<div class="mw-heading mw-heading2"><h2 id="Available_memory_graphs">可用内存图</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=1" title="Edit section: Available memory graphs"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=1" title="Edit section's source code: Available memory graphs"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>所有内存图表都提供一个 3 维视图，可沿所有 2 个轴（X 和 Y）旋转，以及一个用于沿 3 维动画的滑块<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">项目难度</a>。</p><p>以下内存图表可用<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Toolkit_menu.html#Memory" title="Toolkit menu">内存</a> : 4D 图表</b>在其各个选项卡上：</p>
+<ul><li>矩阵 -<ul><li>S90 - 稳定在<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>90%的</li>
+<li>SIncMin - 稳定曲线中的最小稳定度</li>
+<li>SIncMax - 稳定曲线中的最大稳定性</li>
+<li>增益 - 间隔效应表示为稳定曲线中的稳定增益</li>
+<li>Decay - 稳定曲线中的稳定性衰减</li>
+<li>OS - 使用类似于推导矩阵所使用的近似公式从稳定性增加中得出最佳稳定性<a href="Glossary_O-Factor.html" title="Glossary:O-Factor">O因素</a>从矩阵<a href="Glossary_R-Factor.html" title="Glossary:R-Factor">R 因素</a></li>
+<li>召回率 - 根据预测测量的实际召回率<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>90%的</li>
+<li>R90 - 预测<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>召回率90%时</li>
+<li>指标 - 召回指标，显示不同级别的召回预测的准确性<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>和<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">难度</a></li>
+<li>案例 - 用于计算稳定矩阵的重复案例</li>
+<li>射频-<a href="Glossary_RF_matrix.html" title="Glossary:RF matrix">R 因子矩阵</a>的<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">算法 SM-15</a></li>
+<li>的-<a href="Glossary_OF_matrix.html" title="Glossary:OF matrix">O 因子矩阵</a>的<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">算法 SM-15</a></li>
+<li>间隔 -<a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">最佳间隔</a>矩阵</li>
+<li>RF 案例 - 用于计算的重复案例<a href="Glossary_RF_matrix.html" title="Glossary:RF matrix">R 因子矩阵</a>的<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">算法 SM-15</a></li></ul></li>
+<li><b>稳定化</b>：告诉你多少的函数<a href="Glossary_Stability.html" title="Glossary:Stability">记忆稳定性</a>增加与<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>。如果您点击<b>计算</b>, 全部<a href="Repetition_history.html" title="Repetition history">重复历史</a>将被扫描以计算<a href="Glossary_Stability_increase_matrix.html" title="Glossary:Stability increase matrix">SInc[] 矩阵</a>。对于给定的<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">项目难度</a>，增加取决于<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>和<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>。查看 3 维<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">难度</a>，将拇指滑到<b>难度</b>滑块。参见<a href="#Stability_increase_function">例子</a></li>
+<li><b>Sinc 近似值</b>： 表示的函数的近似值<a href="Glossary_Stability_increase_matrix.html" title="Glossary:Stability increase matrix">稳定性增加矩阵</a>。如果您点击<b>计算</b>，SuperMemo 将寻找最适合数据的数据（这是在<b>稳定化</b>选项卡）。参见<a href="#Stability_increase_function_approximation">例子</a></li>
+<li><b>召回</b>：该函数告诉您实际召回率与实际召回率的对应程度<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>SuperMemo 预测。两者的区别主要来自于难度<a class="external text" href="http://super-memory.com/articles/20rules.htm">制定完美的项目</a>这会产生纯粹的指数遗忘。另外，SuperMemo 本身在排序方面还远未达到完美<a href="Glossary_Item.html" title="Glossary:Item">项目</a>通过<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">难度</a>。参见<a href="#Recall">例子</a></li>
+<li><b>回忆大约</b>： 表示的函数的近似值<a href="Glossary_Recall_matrix.html" title="Glossary:Recall matrix">回忆[]矩阵</a>。如果您点击<b>计算</b>，SuperMemo 将寻找最适合数据的数据（这是在<b>召回</b>选项卡）。参见<a href="#Recall_approximation">例子</a></li>
+<li><b>第一个间隔</b>：说明的功能<a href="Glossary_Post-lapse_stability.html" title="Glossary:Post-lapse stability">失效后稳定性</a>取决于数量<a href="Glossary_Lapse.html" title="Glossary:Lapse">失误</a>和<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>失败时。它相当于扩展到可检索性维度的第一区间图。<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>重要的是，低可恢复性的失败并不一定意味着<a href="Glossary_Item.html" title="Glossary:Item">项目</a>是困难的并且<a href="Glossary_Post-lapse_stability.html" title="Glossary:Post-lapse stability">失效后稳定性</a>是低的。参见<a href="#First_interval">例子</a></li>
+<li><b>PLS 近似值</b>：由失效后稳定性矩阵表示的函数的近似值。如果您点击<b>计算</b>，SuperMemo 将寻找最适合数据的数据（这是在<b>第一个间隔</b>选项卡）。参见<a href="#First_interval_approximation">例子</a></li>
+<li><b>睡眠</b>：召回率和召回率之间的相关性<a class="mw-redirect" href="SleepChart.html#Two-component_sleep_model" title="SleepChart">睡眠的两个组成部分</a>。这是一个二维图，结合了<a class="mw-redirect" href="SleepChart.html#Alertness" title="SleepChart"><b>警觉性（H）</b>和<b>警觉性（C）</b></a>的<b><a href="Sleep_Chart.html" title="Sleep Chart">睡眠图</a></b>。由于数据不是算法 SM-18 优化的一部分，因此您需要单击<b>计算</b>收集显示此图表所需的数据</li>
+<li><b>遗忘</b>: 3D<a href="Glossary_Forgetting_curve.html" title="Glossary:Forgetting curve">忘记曲线</a>收集者<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">算法 SM-15</a>。这与显示的图表相同<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Toolkit_menu.html#Statistics" title="Toolkit menu">统计数据</a> :<a href="Analysis.html" title="Analysis">分析</a> :<a href="Analysis.html#3-D_Curves" title="Analysis">3-D 曲线</a></b>具有空间 3 轴旋转的额外优势，<b><a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A因素</a></b>第四维滑块。</li>
+<li><b>射频矩阵</b>: 3D<a href="Glossary_RF_matrix.html" title="Glossary:RF matrix">射频矩阵</a>收集者<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">算法 SM-15</a>。这与显示的图表相同<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Toolkit_menu.html#Statistics" title="Toolkit menu">统计数据</a> :<a href="Analysis.html" title="Analysis">分析</a> :<a href="Analysis.html#3-D_Graphs" title="Analysis">3-D 图表</a> ：R 因子矩阵</b>具有空间 3 轴旋转的额外优势</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Graph_analysis_controls">图形分析控件</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=2" title="Edit section: Graph analysis controls"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=2" title="Edit section's source code: Graph analysis controls"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>X</b>和<b>是</b>轴旋转（顶部 2 个滑块）</li>
+<li><b>难度</b>滑块（用于第三维动画）</li>
+<li>考虑重复案例</li>
+<li><b>案例</b>：显示考虑的重复案例总数的标签</li>
+<li><b>计算</b>：使用中的数据重新计算图表<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a></li>
+<li><b>重置</b>：重置内存矩阵</li>
+<li><b>平滑</b>：矩阵中的平均相邻条目</li>
+<li><b>子集</b>：选择一个<a href="Glossary_Element_subset.html" title="Glossary:Element subset">元素的子集</a>应计算哪些矩阵</li>
+<li><b>重置案例</b>：重置重复情况的计数而不更改数据（即矩阵中条目的值）</li>
+<li><b>出口</b>：导出数据以在 Excel 中进行分析（请参阅：<a class="external text" href="https://supermemopedia.com/wiki/Why_is_the_first_interval_after_forgetting_so_short">典型分析</a>）</li>
+<li><b>平均</b>复选框：数据的“黄金分割”平均值：<ol><li>最佳拟合近似值，以及</li>
+<li>数据丰富的相邻条目与可用信息成比例</li></ol></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Pictures">图片</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=3" title="Edit section: Pictures"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=3" title="Edit section's source code: Pictures"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Stability_increase_function">稳定性增加功能</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=4" title="Edit section: Stability increase function"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=4" title="Edit section's source code: Stability increase function"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Stability_increase_function.png.html" title="SuperMemo: 3D graph of SInc[] matrix based on 61,768 repetition cases for items with difficulty=0.8"><img alt="SuperMemo: 3D graph of SInc[] matrix based on 61,768 repetition cases for items with difficulty=0.8" class="mw-file-element" decoding="async" height="500" loading="lazy" src="https://help.supermemo.org/images/thumb/2/2b/Stability_increase_function.png/800px-Stability_increase_function.png" srcset="/images/thumb/2/2b/Stability_increase_function.png/1200px-Stability_increase_function.png 1.5x, /images/thumb/2/2b/Stability_increase_function.png/1600px-Stability_increase_function.png 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b> <a class="external text" href="https://supermemo.guru/wiki/Stability_increase">稳定性增加</a>函数计算为<a class="mw-redirect" href="Algorithm_SM-18.html" title="Algorithm SM-18">算法 SM-18</a>。该函数采用三个参数： (1)<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>以天数表示的审核时（左侧），(2)<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>复习时（右侧），以及（3）记忆<a class="external text" href="https://supermemo.guru/wiki/Complexity">复杂性</a>表示为<a href="Glossary_Item.html" title="Glossary:Item">项目</a> <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">难度</a>（滑块标记为<b>差异</b>目前设置为 0.8)。图中，稳定性增加在 15（纵轴）附近达到峰值。对于某些级别的<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>和<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>，该函数降至 1.0 以下，表明<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>（例如，由于过早审查引起<a href="Glossary_Spacing_effect.html" title="Glossary:Spacing effect">间距效应</a>在集中演示中）。 61,768 次相对重复<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">困难</a> <a href="Glossary_Item.html" title="Glossary:Item">项目</a>需要生成该图（Diff=0.8）。最长的<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>达到14岁左右（<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>分位数 5172)</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Stability_increase_function_contour_map">稳定性增加函数等值线图</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=5" title="Edit section: Stability increase function contour map"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=5" title="Edit section's source code: Stability increase function contour map"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Stability_increase_function_contour_map.jpg.html" title='SuperMemo: A "from above" view at the SInc[] matrix providing a contour map'><img alt='SuperMemo: A "from above" view at the SInc[] matrix providing a contour map' class="mw-file-element" decoding="async" height="500" loading="lazy" src="https://help.supermemo.org/images/thumb/4/4a/Stability_increase_function_contour_map.jpg/800px-Stability_increase_function_contour_map.jpg" srcset="/images/thumb/4/4a/Stability_increase_function_contour_map.jpg/1200px-Stability_increase_function_contour_map.jpg 1.5x, /images/thumb/4/4a/Stability_increase_function_contour_map.jpg/1600px-Stability_increase_function_contour_map.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b>“从上面”的视图<a href="Glossary_Stability_increase_matrix.html" title="Glossary:Stability increase matrix">SInc[] 矩阵</a>提供一个<a class="external text" href="https://en.wikipedia.org/wiki/Contour_line">等高线图</a>。<span style="padding: 3px; color: #fff; background-color: red;">红色区域</span>表明审查时稳定性高。从图中可以看出，最大的<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>稳定性水平较低时会增加，并且<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>大约70-90%。</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Stability_increase_approximation">稳定性增加近似</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=6" title="Edit section: Stability increase approximation"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=6" title="Edit section's source code: Stability increase approximation"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Stability_increase_function_approximation.jpg.html" title="SuperMemo: Approximating the SInc[] matrix with the best-fit function used by default in SuperMemo to compute the increase in stability (e.g. in cases of lack of data)"><img alt="SuperMemo: Approximating the SInc[] matrix with the best-fit function used by default in SuperMemo to compute the increase in stability (e.g. in cases of lack of data)" class="mw-file-element" decoding="async" height="500" loading="lazy" src="https://help.supermemo.org/images/thumb/c/c6/Stability_increase_function_approximation.jpg/800px-Stability_increase_function_approximation.jpg" srcset="/images/thumb/c/c6/Stability_increase_function_approximation.jpg/1200px-Stability_increase_function_approximation.jpg 1.5x, /images/thumb/c/c6/Stability_increase_function_approximation.jpg/1600px-Stability_increase_function_approximation.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b>近似<a href="Glossary_Stability_increase_matrix.html" title="Glossary:Stability increase matrix">SInc[] 矩阵</a>使用 SuperMemo 默认使用的最佳拟合函数来计算<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>（例如，在缺乏数据的情况下）。近似过程使用<a class="external text" href="https://en.wikipedia.org/wiki/Hill_climbing">爬山算法</a>带参数<b>一个</b>,<b>乙</b>,<b>C</b>,<b>D</b>显示在图片中。获得最小二乘偏差来评估进度。<span style="padding: 3px; background-color: lime;">绿色圆圈</span>代表<a href="Glossary_Stability_increase_matrix.html" title="Glossary:Stability increase matrix">Sinc[] 矩阵</a>在选定的<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">难度级别</a>。它们的大小与调查的重复案例相对应。的<span style="padding: 3px; color: #FFF; background-color: blue;">蓝色表面</span>是所研究函数与 SInc[] 数据的最佳拟合。</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Recall">召回</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=7" title="Edit section: Recall"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=7" title="Edit section's source code: Recall"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Recall.jpg.html" title="SuperMemo: The Recall[] matrix graph showing actual recall differs from predicted retrievability"><img alt="SuperMemo: The Recall[] matrix graph showing actual recall differs from predicted retrievability" class="mw-file-element" decoding="async" height="500" loading="lazy" src="https://help.supermemo.org/images/thumb/3/3f/Recall.jpg/800px-Recall.jpg" srcset="/images/thumb/3/3f/Recall.jpg/1200px-Recall.jpg 1.5x, /images/thumb/3/3f/Recall.jpg/1600px-Recall.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b>的<a href="Glossary_Recall_matrix.html" title="Glossary:Recall matrix">回忆[]矩阵</a>图表显示实际召回率与预测值不同<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>。对于更高<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>和<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">困难</a>，更难达到期望的召回水平。</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Recall_approximation">回忆近似值</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=8" title="Edit section: Recall approximation"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=8" title="Edit section's source code: Recall approximation"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Recall_approximation.jpg.html" title="SuperMemo: Approximating the Recall[] matrix with the best-fit function to compute default recall in conditions of data scarcity"><img alt="SuperMemo: Approximating the Recall[] matrix with the best-fit function to compute default recall in conditions of data scarcity" class="mw-file-element" decoding="async" height="500" loading="lazy" src="https://help.supermemo.org/images/thumb/0/0c/Recall_approximation.jpg/800px-Recall_approximation.jpg" srcset="/images/thumb/0/0c/Recall_approximation.jpg/1200px-Recall_approximation.jpg 1.5x, /images/thumb/0/0c/Recall_approximation.jpg/1600px-Recall_approximation.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b>近似<a href="Glossary_Recall_matrix.html" title="Glossary:Recall matrix">回忆[]矩阵</a>使用最佳拟合函数来计算数据稀缺条件下的默认召回率。近似过程使用<a class="external text" href="https://en.wikipedia.org/wiki/Hill_climbing">爬山算法</a>带参数<b>一个</b>,<b>乙</b>,<b>C</b>,<b>D</b>显示在图片中。获得最小二乘偏差来评估进度。圆圈代表<a href="Glossary_Recall_matrix.html" title="Glossary:Recall matrix">回忆[]矩阵</a>在选定的<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">难度级别</a>。它们的大小与调查的重复案例相对应。的<span style="padding: 3px; color: #fff; background-color: red;">红色表面</span>是所研究函数与 Recall[] 数据的最佳拟合。</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Recall_approximation_curve">回忆近似曲线</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=9" title="Edit section: Recall approximation curve"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=9" title="Edit section's source code: Recall approximation curve"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Recall_approximation_curve.jpg.html" title="SuperMemo: Approximating the Recall[] matrix with the best-fit function to compute default recall in conditions of data scarcity"><img alt="SuperMemo: Approximating the Recall[] matrix with the best-fit function to compute default recall in conditions of data scarcity" class="mw-file-element" decoding="async" height="500" loading="lazy" src="https://help.supermemo.org/images/thumb/9/98/Recall_approximation_curve.jpg/800px-Recall_approximation_curve.jpg" srcset="/images/thumb/9/98/Recall_approximation_curve.jpg/1200px-Recall_approximation_curve.jpg 1.5x, /images/thumb/9/98/Recall_approximation_curve.jpg/1600px-Recall_approximation_curve.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b>近似<a href="Glossary_Recall_matrix.html" title="Glossary:Recall matrix">回忆[]矩阵</a>使用最佳拟合函数来计算数据稀缺条件下的默认召回率。通过选择正确的视角，反映变化的曲线可以回忆起来<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>可以抽象地看出<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>。在这种情况下，关系几乎是线性的（对数弯曲是用于<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>）。</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="First_interval">第一个间隔</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=10" title="Edit section: First interval"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=10" title="Edit section's source code: First interval"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>遗忘后的第一个间隔通常很短（1-4 天）。对于刚记住但还没有忘记的项目来说，它是最长的。</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Post-lapse_stability_graph_in_spaced_repetition.png.html"><img class="mw-file-element" decoding="async" height="450" loading="lazy" src="https://help.supermemo.org/images/thumb/0/0d/Post-lapse_stability_graph_in_spaced_repetition.png/800px-Post-lapse_stability_graph_in_spaced_repetition.png" srcset="/images/thumb/0/0d/Post-lapse_stability_graph_in_spaced_repetition.png/1200px-Post-lapse_stability_graph_in_spaced_repetition.png 1.5x, /images/thumb/0/0d/Post-lapse_stability_graph_in_spaced_repetition.png/1600px-Post-lapse_stability_graph_in_spaced_repetition.png 2x" width="800"/></a><figcaption></figcaption></figure>
+<blockquote>
+<p><i><b>图：</b> <b>第一个间隔</b>标签进入<b>4D 图表</b>可以直观地看到可提取性和记忆缺失的数量如何影响遗忘后的第一个时间间隔</i>
+</p>
+</blockquote>
+<p>参见：<a class="external text" href="https://supermemopedia.com/wiki/Why_is_the_first_interval_after_forgetting_so_short">为什么我的第一次间隔这么短？</a>
+</p>
+<div class="mw-heading mw-heading3"><h3 id="First_interval_approximation">第一个区间近似</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;veaction=edit&amp;section=11" title="Edit section: First interval approximation"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Memory_graphs_(4D)&amp;action=edit&amp;section=11" title="Edit section's source code: First interval approximation"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>选项卡<b>PLS 近似值</b>（失忆后稳定性近似）使得搜索最佳表面成为可能，该表面能够最好地模拟第一个失忆后间隔作为可检索性和记忆失忆次数的函数：</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Post-lapse_stability_approximation_in_spaced_repetition.png.html"><img class="mw-file-element" decoding="async" height="450" loading="lazy" src="https://help.supermemo.org/images/thumb/5/54/Post-lapse_stability_approximation_in_spaced_repetition.png/800px-Post-lapse_stability_approximation_in_spaced_repetition.png" srcset="/images/thumb/5/54/Post-lapse_stability_approximation_in_spaced_repetition.png/1200px-Post-lapse_stability_approximation_in_spaced_repetition.png 1.5x, /images/thumb/5/54/Post-lapse_stability_approximation_in_spaced_repetition.png/1600px-Post-lapse_stability_approximation_in_spaced_repetition.png 2x" width="800"/></a><figcaption></figcaption></figure>
+<blockquote>
+<p><i><b>图：</b>遗忘后，最佳的新的间隔通常很短（小于4天）。这取决于记忆丧失的次数（对于许多记忆丧失来说，几乎总是一天）。它还取决于<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>在遗忘的时刻（高可恢复性通常表明新的重复）。在所呈现的示例中，用户运行近似程序以最佳地将稳定后表面与记录的数据拟合。在所呈现的情况下，公式为<code>Stability=0.6+3.5*Power(R,1.8)*Exp(-0.27*Laps)</code>（参见：<a class="external text" href="https://claude.ai/public/artifacts/443569dd-7f93-4706-8c9a-894c26a8e4e8">可视化</a>）</i>
+</p>
+</blockquote>
+<!-- 
+NewPP limit report
+Cached time: 20260610111120
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.070 seconds
+Real time usage: 0.083 seconds
+Preprocessor visited node count: 165/1000000
+Post‐expand include size: 7492/2097152 bytes
+Template argument size: 2214/2097152 bytes
+Highest expansion depth: 5/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   21.310      1 -total
+ 21.58%    4.599      1 File:Stability_increase_function.png
+ 19.97%    4.256      1 File:Recall_approximation_curve.jpg
+ 10.48%    2.233      4 Template:Fig
+ 10.21%    2.176      1 File:Recall_approximation.jpg
+  9.49%    2.023      1 File:Post-lapse_stability_graph_in_spaced_repetition.png
+  9.45%    2.013      1 File:Recall.jpg
+  9.45%    2.013      1 File:Post-lapse_stability_approximation_in_spaced_repetition.png
+  9.02%    1.921      1 File:Stability_increase_function_approximation.jpg
+  7.73%    1.648      1 File:Stability_increase_function_contour_map.jpg
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:575:|#|:idhash:canonical and timestamp 20260610111120 and revision id 12213. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

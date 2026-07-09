@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OLE component — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/OLE_component" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#FAQ"><span class="tocnumber">2</span> <span class="toctext">FAQ</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#You_can_use_mind-maps_with_SuperMemo"><span class="tocnumber">2.1</span> <span class="toctext">You can use mind-maps with SuperMemo</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Learning_large_mind-maps"><span class="tocnumber">2.2</span> <span class="toctext">Learning large mind-maps</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#It_is_possible_to_use_Acrobat_Reader_files_with_SuperMemo"><span class="tocnumber">2.3</span> <span class="toctext">It is possible to use Acrobat Reader files with SuperMemo</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#SuperMemo_will_often_not_be_able_to_use_a_given_server_to_display_your_data_correctly"><span class="tocnumber">2.4</span> <span class="toctext">SuperMemo will often not be able to use a given server to display your data correctly</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Overview">Overview</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=OLE_component&amp;veaction=edit&amp;section=1" title="Edit section: Overview"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=OLE_component&amp;action=edit&amp;section=1" title="Edit section's source code: Overview"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If you would like to display files created in MS Word, Excel, Equation, PowerPoint, Corel, <a class="external text" href="http://www.mindman.com">Mind Manager</a>, etc. you can use the OLE <a href="Glossary_Component.html" title="Glossary:Component">component</a>. The OLE component can display files created with any application that supports OLE 2.0. If this application supports in-place activation, you will also be able to edit these files without quitting SuperMemo. For example, if you insert an MS Word document into an OLE <a href="Glossary_Component.html" title="Glossary:Component">component</a> and switch to <a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">editing mode</a>, SuperMemo menus and toolbars will be replaced by Word menus and toolbars.
+</p><p>As all other <a href="Glossary_Component.html" title="Glossary:Component">components</a>, the OLE component is available from the <a href="Compose_toolbar.html" title="Compose toolbar"><b>Compose</b> toolbar</a>. To be able to edit files inserted in the OLE <a href="Glossary_Component.html" title="Glossary:Component">component</a> you will need an appropriate server application (e.g. MS Word, Corel, Mind Manager, etc.). However, you do not need any software to display these files in the <a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">presentation mode</a>.
+</p><p>To add an OLE <a href="Glossary_Component.html" title="Glossary:Component">component</a>, click <b>OLE</b> button on the <a href="Compose_toolbar.html" title="Compose toolbar"><b>Compose</b> toolbar</a>. You might resize and reposition it within the <a href="Glossary_Element.html" title="Glossary:Element">element</a>.
+</p><p>The OLE <a href="Glossary_Component.html" title="Glossary:Component">component</a> will show as an empty rectangle. You may need to turn off <b><a href="Element_menu.html#Scaled" title="Element menu">Scaled</a></b> property on the <a href="Element_menu.html" title="Element menu">element menu</a> or in your <a href="Glossary_Template.html" title="Glossary:Template">template</a> due to sizing problems with various OLE objects.
+</p><p>If you want to import a ready file, right-click the OLE <a href="Glossary_Component.html" title="Glossary:Component">component</a>, and choose <b>Insert OLE object</b>, click <b>Create from File</b> in the <b>Insert Object</b> dialog box and choose the file by typing its name or clicking <b>Browse</b>.
+</p><p>If you want to create a new file and edit its contents, right-click the OLE <a href="Glossary_Component.html" title="Glossary:Component">component</a>, and choose <b>Insert OLE object</b>, and pick from the list of OLE servers available in your Windows installation. When you click <b>OK</b>, the appropriate server will be called and you will be able to edit your file (e.g. Microsoft equation, Excel chart, PowerPoint presentation, etc.). When you press <i>Esc</i>, SuperMemo will display the file in the <a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">presentation mode</a> (i.e. the way it will look during repetitions or on the computer of the users of your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>).
+</p><p>Please note that the pop-up menu in the OLE <a href="Glossary_Component.html" title="Glossary:Component">component</a> is mode sensitive, i.e. it will display the OLE server pop-up menu in the <a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">editing mode</a> and standard SuperMemo options in the <a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">presentation mode</a>. In the presentation mode you will be able to use options such as <b><a href="Component_menu.html#Display_At" title="Component menu">Display At</a></b>, <b><a href="Component_menu.html#Answer" title="Component menu">Answer</a></b>, etc. In the <a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">editing mode</a> you will be able to use options depending on your OLE server (e.g. if your server is MS Excel, you will be able to use <b>Cut</b>, <b>Copy</b>, <b>Format cells</b>, etc.).
+</p><p>The simplest way to switch between presentation and <a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">editing modes</a> is to choose one of the following: 
+</p>
+<ul><li><i>Alt+click</i> over the element display area</li>
+<li>press <i>Ctrl+T</i> until you reach the OLE <a href="Glossary_Component.html" title="Glossary:Component">component</a></li>
+<li>click the <b>Editing mode</b> button (blue-notebook) on the <a href="Edit_toolbar.html" title="Edit toolbar"><b>Edit</b> toolbar</a> (<i>Ctrl+E</i>)</li></ul>
+<p>In the picture below, an OLE <a href="Glossary_Component.html" title="Glossary:Component">component</a> is used to import an editable <span id="mind-map">mind-map</span> created with <a class="external text" href="http://www.mindman.com">Mind Manager</a> (courtesy of John England, TeamLink Australia Pty Ltd):
+</p>
+<figure class="mw-default-size mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_6_steps_mind_map.jpg.html" title='SuperMemo: "6 steps to excellent memory" editable mind map created in Mind Manager and imported in an OLE component'><img alt='SuperMemo: "6 steps to excellent memory" editable mind map created in Mind Manager and imported in an OLE component' class="mw-file-element" decoding="async" height="534" loading="lazy" src="https://help.supermemo.org/images/e/e3/6_steps_mind_map.jpg" width="796"/></a><figcaption>SuperMemo: "6 steps to excellent memory" editable mind map created in Mind Manager and imported in an OLE component</figcaption></figure>
+<p>In the picture below, an Excel spreadsheet is being edited inside SuperMemo (notice the standard Excel toolbars right below the <a href="Navigation_bar.html" title="Navigation bar">navigation bar</a>) via OLE in-place activation:
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Excel_OLE_inplace_activation.jpg.html" title="SuperMemo: An Excel spreadsheet being edited inside SuperMemo via OLE in-place activation"><img alt="SuperMemo: An Excel spreadsheet being edited inside SuperMemo via OLE in-place activation" class="mw-file-element" decoding="async" height="502" loading="lazy" src="https://help.supermemo.org/images/thumb/f/fa/Excel_OLE_inplace_activation.jpg/800px-Excel_OLE_inplace_activation.jpg" srcset="/images/thumb/f/fa/Excel_OLE_inplace_activation.jpg/1200px-Excel_OLE_inplace_activation.jpg 1.5x, /images/f/fa/Excel_OLE_inplace_activation.jpg 2x" width="800"/></a><figcaption>SuperMemo: An Excel spreadsheet being edited inside SuperMemo via OLE in-place activation</figcaption></figure>
+<p>If your OLE server shows stability problems or does not work seamlessly with SuperMemo, your OLE file may still work fine in the <a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">presentation mode</a>. You will be able to redistribute your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> without worrying about its performance on the user's machine.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="FAQ">FAQ</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=OLE_component&amp;veaction=edit&amp;section=2" title="Edit section: FAQ"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=OLE_component&amp;action=edit&amp;section=2" title="Edit section's source code: FAQ"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="You_can_use_mind-maps_with_SuperMemo">You can use mind-maps with SuperMemo</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=OLE_component&amp;veaction=edit&amp;section=3" title="Edit section: You can use mind-maps with SuperMemo"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=OLE_component&amp;action=edit&amp;section=3" title="Edit section's source code: You can use mind-maps with SuperMemo"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">
+    {{#if: Pascal Heimlicher | <b>From:</b> Pascal Heimlicher | }}
+    {{#if: Switzerland | <br/><b>Country:</b> Switzerland | }}
+    {{#if: Tue, Aug 07, 2001 1:53 AM | <br/><b>Sent:</b> Tue, Aug 07, 2001 1:53 AM | }}
+    {{#if:  | <br/><b>Subject:</b> <span class="mail-subject"></span> | }}
+</p>
+<p><b><span id="6029-8637">Question</span></b>
+</p><p>Is there a possibility to learn with mindmaps I've created in MindManager. Where can I find a description?
+</p><p><b>Answer</b>
+</p><p>If you would like to use mindmaps editable with Mind Manager via OLE, see: <a href="#mind-map">OLE component</a>. You can also export mindmaps as graphic files and used them with image <a href="Glossary_Component.html" title="Glossary:Component">components</a>. Some of users use Mind Manager. Remember to turn off the <b><a href="Element_menu.html#Scaled" title="Element menu">Scaled</a></b> parameter in your <a href="Glossary_Template.html" title="Glossary:Template">template</a> (on the <a href="Element_menu.html" title="Element menu">element menu</a>) 
+</p>
+<hr/>
+<div class="mw-heading mw-heading3"><h3 id="Learning_large_mind-maps">Learning large mind-maps</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=OLE_component&amp;veaction=edit&amp;section=4" title="Edit section: Learning large mind-maps"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=OLE_component&amp;action=edit&amp;section=4" title="Edit section's source code: Learning large mind-maps"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">
+    {{#if: Marcelo de Oliveira Azevedo | <b>From:</b> Marcelo de Oliveira Azevedo | }}
+    {{#if: Brazil | <br/><b>Country:</b> Brazil | }}
+    {{#if: Tuesday, August 20, 2002 1:02 AM | <br/><b>Sent:</b> Tuesday, August 20, 2002 1:02 AM | }}
+    {{#if:  | <br/><b>Subject:</b> <span class="mail-subject"></span> | }}
+</p>
+<p><b><span id="12540-3392">Question</span></b>
+</p><p>I'm having troubles with large mindmaps: I can't see the entire one. What's the solution?
+</p><p><b>Answer</b>
+</p><p>If you are using mind-maps with OLE, their behavior will depend on the mind-map OLE server. If you are using mind-maps with HTML or with the image <a href="Glossary_Component.html" title="Glossary:Component">component</a>, you can view the file with <i>F9</i>.
+</p><p>It is important to know that in <a href="Glossary_Active_recall.html" title="Glossary:Active recall">active recall</a>, you only need a small portion of your mind-map to efficiently execute your repetitions. Ideally, you should convert your mind-map to a graphic file and paste only small portions of this file as separate <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a> (alternatively, you can use the image component's <a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">zoom&amp;trim mode</a>). Then, you can use questions referring to individual portions of the map or use <a href="Glossary_Occlusion_test.html" title="Glossary:Occlusion test">occlusion tests</a> to cover parts of the map. Asking questions about the mind-map is by far simpler and often more effective. <a href="Glossary_Occlusion_test.html" title="Glossary:Occlusion test">Occlusion tests</a> are harder to build but easier to recall. Consequently, you may want to use <a href="Glossary_Occlusion_test.html" title="Glossary:Occlusion test">occlusion tests</a> on large volume material where speed of learning is more important than precise map recall.
+</p><p>In any case, large mindmap preview in SuperMemo should not be necessary
+</p>
+<hr/>
+<div class="mw-heading mw-heading3"><h3 id="It_is_possible_to_use_Acrobat_Reader_files_with_SuperMemo">It is possible to use Acrobat Reader files with SuperMemo</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=OLE_component&amp;veaction=edit&amp;section=5" title="Edit section: It is possible to use Acrobat Reader files with SuperMemo"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=OLE_component&amp;action=edit&amp;section=5" title="Edit section's source code: It is possible to use Acrobat Reader files with SuperMemo"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">
+    {{#if: Mala Kaur | <b>From:</b> Mala Kaur | }}
+    {{#if:  | <br/><b>Country:</b>  | }}
+    {{#if: Tuesday, July 24, 2001 6:03 AM | <br/><b>Sent:</b> Tuesday, July 24, 2001 6:03 AM | }}
+    {{#if:  | <br/><b>Subject:</b> <span class="mail-subject"></span> | }}
+</p>
+<p><b><span id="5891-5237">Question</span></b>
+</p><p>I wanted to import PDF files to SuperMemo for reading and copying certain items for further analysis. I initially tried to use <b>Insert OLE object</b> but I found OLE mechanisms unstable
+</p><p><b>Answer</b>
+</p><p>Another approach is to use the <a href="HTML_component.html" title="HTML component">web browser (HTML) component</a>. Then use <b><a href="HTML_link_menu.html" title="HTML link menu">Insert HTML link</a> : HTML file</b> (on the <a href="Component_menu.html" title="Component menu">HTML component pop-up menu</a>) and link to the PDF file. Using this option the PDF file is not immediately visible as only files of type <i>*.txt</i>, <i>*.htm</i>, <i>*.rtf</i> are listed. To visualize the PDF files on your drive type in <i>*.pdf</i> in the file name field and they become visible in the <b>File</b> window. Naturally, you need to have <i>Acrobat Reader</i> installed to view the file in SuperMemo. You can, of course, copy the text with the tools provided for the PDF viewer and use it for further SuperMemo purposes. The same method works for <i>Excel</i> files, <i>Word</i> files, etc.
+</p>
+<hr/>
+<div class="mw-heading mw-heading3"><h3 id="SuperMemo_will_often_not_be_able_to_use_a_given_server_to_display_your_data_correctly">SuperMemo will often not be able to use a given server to display your data correctly</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=OLE_component&amp;veaction=edit&amp;section=6" title="Edit section: SuperMemo will often not be able to use a given server to display your data correctly"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=OLE_component&amp;action=edit&amp;section=6" title="Edit section's source code: SuperMemo will often not be able to use a given server to display your data correctly"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">
+    {{#if: Tomasz Szynalski | <b>From:</b> Tomasz Szynalski | }}
+    {{#if: Poland | <br/><b>Country:</b> Poland | }}
+    {{#if: Dec 2, 1998 | <br/><b>Sent:</b> Dec 2, 1998 | }}
+    {{#if:  | <br/><b>Subject:</b> <span class="mail-subject"></span> | }}
+</p>
+<p><b><span id="MS_Equation">Question</span></b>
+</p><p>When I create an MS Equation formula in the OLE <a href="Glossary_Component.html" title="Glossary:Component">component</a>, the equation is unnaturally large and distorted. How can I go around this bug?
+</p><p><b>Answer</b>
+</p><p>Rendering of the OLE object is done by the server application, MS Equation in this case. You have to fix the problem in MS Equation by adjusting display attributes (e.g. reducing the size of fonts in this case)
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610111128
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.051 seconds
+Real time usage: 0.056 seconds
+Preprocessor visited node count: 185/1000000
+Post‐expand include size: 1236/2097152 bytes
+Template argument size: 380/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   10.391      1 -total
+ 97.82%   10.164      4 Template:Mail_Header
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:123:|#|:idhash:canonical and timestamp 20260610111128 and revision id 10054. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">概述</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#FAQ"><span class="tocnumber">2</span> <span class="toctext">常见问题解答</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#You_can_use_mind-maps_with_SuperMemo"><span class="tocnumber">2.1</span> <span class="toctext">您可以将思维导图与 SuperMemo 结合使用</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Learning_large_mind-maps"><span class="tocnumber">2.2</span> <span class="toctext">学习大型思维导图</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#It_is_possible_to_use_Acrobat_Reader_files_with_SuperMemo"><span class="tocnumber">2.3</span> <span class="toctext">可以将 Acrobat Reader 文件与 SuperMemo 一起使用</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#SuperMemo_will_often_not_be_able_to_use_a_given_server_to_display_your_data_correctly"><span class="tocnumber">2.4</span> <span class="toctext">SuperMemo 通常无法使用给定的服务器正确显示您的数据</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Overview">概述</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=OLE_component&amp;veaction=edit&amp;section=1" title="Edit section: Overview"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=OLE_component&amp;action=edit&amp;section=1" title="Edit section's source code: Overview"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果您想显示在 MS Word、Excel、Equation、PowerPoint、Corel、<a class="external text" href="http://www.mindman.com">心灵经理</a>等等，你可以使用OLE<a href="Glossary_Component.html" title="Glossary:Component">组件</a>。 OLE 组件可以显示使用任何支持 OLE 2.0 的应用程序创建的文件。如果此应用程序支持就地激活，您还可以在不退出 SuperMemo 的情况下编辑这些文件。例如，如果将 MS Word 文档插入 OLE<a href="Glossary_Component.html" title="Glossary:Component">组件</a>并切换到<a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">编辑模式</a>、SuperMemo 菜单和工具栏将被 Word 菜单和工具栏取代。</p><p>与所有其他<a href="Glossary_Component.html" title="Glossary:Component">组件</a>，OLE 组件可从<a href="Compose_toolbar.html" title="Compose toolbar"><b>撰写</b>工具栏</a>。能够编辑 OLE 中插入的文件<a href="Glossary_Component.html" title="Glossary:Component">组件</a>您将需要适当的服务器应用程序（例如 MS Word、Corel、Mind Manager 等）。但是，您不需要任何软件即可在<a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">演示模式</a>。</p><p>添加 OLE<a href="Glossary_Component.html" title="Glossary:Component">组件</a>，点击<b>奥莱</b>按钮上的<a href="Compose_toolbar.html" title="Compose toolbar"><b>撰写</b>工具栏</a>。您可以调整其大小并重新定位它<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。</p><p>欧莱雅<a href="Glossary_Component.html" title="Glossary:Component">组件</a>将显示为空矩形。您可能需要关闭<b><a href="Element_menu.html#Scaled" title="Element menu">缩放</a></b>财产在<a href="Element_menu.html" title="Element menu">元素菜单</a>或者在你的<a href="Glossary_Template.html" title="Glossary:Template">模板</a>由于各种 OLE 对象的大小问题。</p><p>如果要导入准备好的文件，请右键单击 OLE<a href="Glossary_Component.html" title="Glossary:Component">组件</a>，并选择<b>插入 OLE 对象</b>，点击<b>从文件创建</b>在<b>插入对象</b>对话框，然后通过键入文件名或单击来选择文件<b>浏览</b>。</p><p>如果要创建新文件并编辑其内容，请右键单击 OLE<a href="Glossary_Component.html" title="Glossary:Component">组件</a>，并选择<b>插入 OLE 对象</b>，然后从 Windows 安装中可用的 OLE 服务器列表中进行选择。当您点击<b>好的</b>，将调用相应的服务器，您将能够编辑您的文件（例如 Microsoft 方程、Excel 图表、PowerPoint 演示文稿等）。当您按下<i>ESC</i>，SuperMemo 将在<a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">演示模式</a>（即它在重复过程中或在您的用户的计算机上的外观<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>）。</p><p>请注意 OLE 中的弹出菜单<a href="Glossary_Component.html" title="Glossary:Component">组件</a>是模式敏感的，即它将在<a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">编辑模式</a>和标准 SuperMemo 选项<a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">演示模式</a>。在演示模式下，您将能够使用诸如<b><a href="Component_menu.html#Display_At" title="Component menu">显示于</a></b>,<b><a href="Component_menu.html#Answer" title="Component menu">回答</a></b>等。在<a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">编辑模式</a>您将能够根据您的 OLE 服务器使用选项（例如，如果您的服务器是 MS Excel，您将能够使用<b>切</b>,<b>复制</b>,<b>设置单元格格式</b>等）。</p><p>在演示和演示之间切换的最简单方法<a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">编辑模式</a>是选择以下一项：</p>
+<ul><li><i>Alt+单击</i>在元素显示区域上方</li>
+<li>按<i>Ctrl+T</i>直到到达 OLE<a href="Glossary_Component.html" title="Glossary:Component">组件</a></li>
+<li>单击<b>编辑模式</b>按钮（蓝色笔记本）<a href="Edit_toolbar.html" title="Edit toolbar"><b>编辑</b>工具栏</a>（<i>Ctrl+E</i>）</li></ul>
+<p>下图中，一个OLE<a href="Glossary_Component.html" title="Glossary:Component">组件</a>用于导入可编辑的<span id="mind-map">思维导图</span>创建于<a class="external text" href="http://www.mindman.com">心灵经理</a>（由 TeamLink Australia Pty Ltd 约翰·英格兰提供）：</p>
+<figure class="mw-default-size mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_6_steps_mind_map.jpg.html" title='SuperMemo: "6 steps to excellent memory" editable mind map created in Mind Manager and imported in an OLE component'><img alt='SuperMemo: "6 steps to excellent memory" editable mind map created in Mind Manager and imported in an OLE component' class="mw-file-element" decoding="async" height="534" loading="lazy" src="https://help.supermemo.org/images/e/e3/6_steps_mind_map.jpg" width="796"/></a><figcaption>SuperMemo：在 Mind Manager 中创建并导入 OLE 组件的“6 个步骤实现卓越记忆力”可编辑思维导图</figcaption></figure>
+<p>在下图中，正在 SuperMemo 中编辑 Excel 电子表格（请注意标准 Excel 工具栏正下方）<a href="Navigation_bar.html" title="Navigation bar">导航栏</a>) 通过 OLE 就地激活：</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Excel_OLE_inplace_activation.jpg.html" title="SuperMemo: An Excel spreadsheet being edited inside SuperMemo via OLE in-place activation"><img alt="SuperMemo: An Excel spreadsheet being edited inside SuperMemo via OLE in-place activation" class="mw-file-element" decoding="async" height="502" loading="lazy" src="https://help.supermemo.org/images/thumb/f/fa/Excel_OLE_inplace_activation.jpg/800px-Excel_OLE_inplace_activation.jpg" srcset="/images/thumb/f/fa/Excel_OLE_inplace_activation.jpg/1200px-Excel_OLE_inplace_activation.jpg 1.5x, /images/f/fa/Excel_OLE_inplace_activation.jpg 2x" width="800"/></a><figcaption>SuperMemo：通过 OLE 就地激活在 SuperMemo 中编辑的 Excel 电子表格</figcaption></figure>
+<p>如果您的 OLE 服务器出现稳定性问题或无法与 SuperMemo 无缝工作，您的 OLE 文件可能仍然可以在以下环境中正常工作：<a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">演示模式</a>。您将能够重新分配您的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>无需担心其在用户机器上的性能。</p>
+<div class="mw-heading mw-heading2"><h2 id="FAQ">常见问题解答</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=OLE_component&amp;veaction=edit&amp;section=2" title="Edit section: FAQ"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=OLE_component&amp;action=edit&amp;section=2" title="Edit section's source code: FAQ"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="You_can_use_mind-maps_with_SuperMemo">您可以将思维导图与 SuperMemo 结合使用</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=OLE_component&amp;veaction=edit&amp;section=3" title="Edit section: You can use mind-maps with SuperMemo"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=OLE_component&amp;action=edit&amp;section=3" title="Edit section's source code: You can use mind-maps with SuperMemo"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">{{#if：帕斯卡·海姆利彻 |<b>来自：</b>帕斯卡·海姆利彻 | }}
+    {{#if：瑞士 |<br/><b>国家：</b>瑞士 | }}
+    {{#if：2001 年 8 月 7 日星期二上午 1:53 |<br/><b>发送：</b>2001 年 8 月 7 日，星期二 1:53 AM | }}
+    {{#如果：|<br/><b>主题：</b> <span class="mail-subject"></span>| }}</p>
+<p><b><span id="6029-8637">问题</span></b>
+</p><p>是否可以使用我在 MindManager 中创建的思维导图进行学习。在哪里可以找到描述？</p><p><b>回答</b>
+</p><p>如果您想通过 OLE 使用 Mind Manager 可编辑的思维导图，请参阅：<a href="#mind-map">OLE组件</a>。您还可以将思维导图导出为图形文件并将其与图像一起使用<a href="Glossary_Component.html" title="Glossary:Component">组件</a>。一些用户使用 Mind Manager。记得关掉<b><a href="Element_menu.html#Scaled" title="Element menu">缩放</a></b>你的参数<a href="Glossary_Template.html" title="Glossary:Template">模板</a>（关于<a href="Element_menu.html" title="Element menu">元素菜单</a>）</p>
+<hr/>
+<div class="mw-heading mw-heading3"><h3 id="Learning_large_mind-maps">学习大型思维导图</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=OLE_component&amp;veaction=edit&amp;section=4" title="Edit section: Learning large mind-maps"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=OLE_component&amp;action=edit&amp;section=4" title="Edit section's source code: Learning large mind-maps"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">{{#if：马塞洛·德奥利维拉·阿泽维多 |<b>来自：</b>马塞洛·德奥利维拉·阿泽维多 | }}
+    {{#if：巴西 |<br/><b>国家：</b>巴西 | }}
+    {{#if：2002 年 8 月 20 日，星期二 1:02 AM |<br/><b>发送：</b>2002 年 8 月 20 日星期二凌晨 1:02 | }}
+    {{#如果：|<br/><b>主题：</b> <span class="mail-subject"></span>| }}</p>
+<p><b><span id="12540-3392">问题</span></b>
+</p><p>我在处理大型思维导图时遇到了麻烦：我看不到整个思维导图。解决办法是什么？</p><p><b>回答</b>
+</p><p>如果您将思维导图与 OLE 结合使用，它们的行为将取决于思维导图 OLE 服务器。如果您使用带有 HTML 或图像的思维导图<a href="Glossary_Component.html" title="Glossary:Component">组件</a>，您可以使用以下命令查看文件<i>F9</i>。</p><p>重要的是要知道，在<a href="Glossary_Active_recall.html" title="Glossary:Active recall">主动回忆</a>，你只需要思维导图的一小部分就可以有效地执行你的重复。理想情况下，您应该将思维导图转换为图形文件，并仅将该文件的一小部分粘贴为单独的<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>（或者，您可以使用图像组件的<a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">缩放和修剪模式</a>）。然后，您可以使用涉及地图各个部分的问题或使用<a href="Glossary_Occlusion_test.html" title="Glossary:Occlusion test">遮挡测试</a>以覆盖地图的部分区域。询问有关思维导图的问题要简单得多，而且通常更有效。<a href="Glossary_Occlusion_test.html" title="Glossary:Occlusion test">闭塞测试</a>更难构建但更容易回忆。因此，您可能想要使用<a href="Glossary_Occlusion_test.html" title="Glossary:Occlusion test">遮挡测试</a>在大量材料上，学习速度比精确的地图回忆更重要。</p><p>无论如何，SuperMemo 中的大型思维导图预览不是必需的</p>
+<hr/>
+<div class="mw-heading mw-heading3"><h3 id="It_is_possible_to_use_Acrobat_Reader_files_with_SuperMemo">可以将 Acrobat Reader 文件与 SuperMemo 一起使用</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=OLE_component&amp;veaction=edit&amp;section=5" title="Edit section: It is possible to use Acrobat Reader files with SuperMemo"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=OLE_component&amp;action=edit&amp;section=5" title="Edit section's source code: It is possible to use Acrobat Reader files with SuperMemo"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">{{#if：马拉·考尔 |<b>来自：</b>马拉·考尔 | }}
+    {{#如果：|<br/><b>国家：</b>| }}
+    {{#if：2001 年 7 月 24 日星期二上午 6:03 |<br/><b>发送：</b>2001 年 7 月 24 日星期二上午 6:03 | }}
+    {{#如果：|<br/><b>主题：</b> <span class="mail-subject"></span>| }}</p>
+<p><b><span id="5891-5237">问题</span></b>
+</p><p>我想将 PDF 文件导入 SuperMemo 来阅读和复制某些项目以进行进一步分析。我最初尝试使用<b>插入 OLE 对象</b>但我发现OLE机制不稳定</p><p><b>回答</b>
+</p><p>另一种方法是使用<a href="HTML_component.html" title="HTML component">Web 浏览器 (HTML) 组件</a>。然后使用<b><a href="HTML_link_menu.html" title="HTML link menu">插入 HTML 链接</a> : HTML 文件</b>（关于<a href="Component_menu.html" title="Component menu">HTML 组件弹出菜单</a>）并链接到 PDF 文件。使用此选项，PDF 文件不会立即显示为仅类型的文件<i>*.txt</i>,<i>*.htm</i>,<i>*.rtf</i>已列出。要可视化驱动器上的 PDF 文件，请键入<i>*.pdf</i>在文件名字段中，它们在<b>文件</b>窗口。当然，你需要有<i>Acrobat 阅读器</i>安装后可以查看 SuperMemo 中的文件。当然，您可以使用为 PDF 查看器提供的工具复制文本，并将其用于进一步的 SuperMemo 目的。同样的方法适用于<i>Excel</i>文件，<i>词</i>文件等</p>
+<hr/>
+<div class="mw-heading mw-heading3"><h3 id="SuperMemo_will_often_not_be_able_to_use_a_given_server_to_display_your_data_correctly">SuperMemo 通常无法使用给定的服务器正确显示您的数据</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=OLE_component&amp;veaction=edit&amp;section=6" title="Edit section: SuperMemo will often not be able to use a given server to display your data correctly"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=OLE_component&amp;action=edit&amp;section=6" title="Edit section's source code: SuperMemo will often not be able to use a given server to display your data correctly"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">{{#if：托马斯·西纳尔斯基 |<b>来自：</b>托马斯·西纳尔斯基 | }}
+    {{#if：波兰 |<br/><b>国家：</b>波兰 | }}
+    {{#if：1998 年 12 月 2 日 |<br/><b>发送：</b>1998 年 12 月 2 日 | }}
+    {{#如果：|<br/><b>主题：</b> <span class="mail-subject"></span>| }}</p>
+<p><b><span id="MS_Equation">问题</span></b>
+</p><p>当我在 OLE 中创建 MS 方程公式时<a href="Glossary_Component.html" title="Glossary:Component">组件</a>，方程异常大且扭曲。我该如何解决这个错误？</p><p><b>回答</b>
+</p><p>OLE 对象的呈现由服务器应用程序（本例中为 MS Equation）完成。您必须通过调整显示属性来解决 MS Equation 中的问题（例如，在本例中减小字体大小）</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610111128
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.051 seconds
+Real time usage: 0.056 seconds
+Preprocessor visited node count: 185/1000000
+Post‐expand include size: 1236/2097152 bytes
+Template argument size: 380/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   10.391      1 -total
+ 97.82%   10.164      4 Template:Mail_Header
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:123:|#|:idhash:canonical and timestamp 20260610111128 and revision id 10054. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

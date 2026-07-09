@@ -17,7 +17,8 @@ it is context, not a diary.
 - **SuperMemo version:** e.g. 19
 - **Card preferences:** e.g. prefer cloze style; anchors not precise values;
   no multiple-choice
-- **Docs mirror (optional):** local path to a crawled copy of
-  help.supermemo.org for the coach skill, e.g.
-  `~/Documents/supermemo-doc/wiki` (a sibling `wiki-zh` folder with
-  translations is used too, if present)
+- **Docs mirror (optional):** local path to your own crawl of
+  help.supermemo.org, e.g. `~/Documents/supermemo-doc/wiki` (a sibling
+  `wiki-zh` folder with translations is used too, if present). The full
+  wiki already ships with the repo in `docs/` — set this only if you
+  keep a fresher or larger crawl; it then takes precedence.

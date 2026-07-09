@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Find elements — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Find_elements" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Basic_search"><span class="tocnumber">1</span> <span class="toctext">Basic search</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Advanced_search"><span class="tocnumber">2</span> <span class="toctext">Advanced search</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#AND-OR-NOT_search"><span class="tocnumber">2.1</span> <span class="toctext">AND-OR-NOT search</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Search_definitions"><span class="tocnumber">2.2</span> <span class="toctext">Search definitions</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Find_elements_context_menu"><span class="tocnumber">2.3</span> <span class="toctext">Find elements context menu</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Basic_search">Basic search</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Find_elements&amp;veaction=edit&amp;section=1" title="Edit section: Basic search"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Find_elements&amp;action=edit&amp;section=1" title="Edit section's source code: Basic search"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Find text</b> - the text you want to search the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> for
+<ul><li><b>Match whole word only</b> - check this box if you want the search to show matches that are complete words, and not part of another word or phrase</li>
+<li><b>Match case</b> - check this box if you want the search to show matches that use the same combination of capital and lowercase letters that you typed into the <b>Find text</b> text box</li></ul></li>
+<li><b>Find</b> - search the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> and open the <a href="Glossary_Element.html" title="Glossary:Element">elements</a> that match specific search criteria in a <a href="Browser.html" title="Browser">browser</a></li>
+<li><b>Cancel</b> - close the dialog box</li>
+<li><b>Details &gt;&gt;</b> - expand the dialog box with advanced search options</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Advanced_search">Advanced search</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Find_elements&amp;veaction=edit&amp;section=2" title="Edit section: Advanced search"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Find_elements&amp;action=edit&amp;section=2" title="Edit section's source code: Advanced search"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Exemplary_Japanese_collection.jpg.html" title="SuperMemo: SuperMemo 15 provides full Unicode support making it easy for you to work with non-Latin alphabets"><img alt="SuperMemo: SuperMemo 15 provides full Unicode support making it easy for you to work with non-Latin alphabets" class="mw-file-element" decoding="async" height="379" loading="lazy" src="https://help.supermemo.org/images/thumb/b/bc/Exemplary_Japanese_collection.jpg/655px-Exemplary_Japanese_collection.jpg" srcset="/images/thumb/b/bc/Exemplary_Japanese_collection.jpg/983px-Exemplary_Japanese_collection.jpg 1.5x, /images/thumb/b/bc/Exemplary_Japanese_collection.jpg/1310px-Exemplary_Japanese_collection.jpg 2x" width="655"/></a></span>
+</p>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="AND-OR-NOT_search">AND-OR-NOT search</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Find_elements&amp;veaction=edit&amp;section=3" title="Edit section: AND-OR-NOT search"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Find_elements&amp;action=edit&amp;section=3" title="Edit section's source code: AND-OR-NOT search"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Phrases that must be included: AND-Search (Must-Find)</b> - the words and/or phrases, all of which must be included in all matching <a href="Glossary_Element.html" title="Glossary:Element">elements</a>. Separate words and phrases by typing each in a new line (press <i>Enter</i> to move to the next line in the box)</li>
+<li><b>Search for all these phrases: OR-Search (May-Find):</b> - the words and/or phrases, at least one of which will be included in matching <a href="Glossary_Element.html" title="Glossary:Element">elements</a>. Separate words and phrases by typing each in a new line (press <i>Enter</i> to move to the next line in the box)</li>
+<li><b>Phrases that must be excluded: NOT-Search (MustNot-Find):</b> - the words and/or phrases that will exclude the <a href="Glossary_Element.html" title="Glossary:Element">elements</a> which contain them from the search result. Separate words and phrases by typing each in a new line (press <i>Enter</i> to move to the next line in the box)</li>
+<li><b>Google</b> - use Google to search for more pages that match the search criteria (e.g. to import more reading material into SuperMemo)</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Search_definitions">Search definitions</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Find_elements&amp;veaction=edit&amp;section=4" title="Edit section: Search definitions"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Find_elements&amp;action=edit&amp;section=4" title="Edit section's source code: Search definitions"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Recent searches list box</b> (<i>Ctrl+S</i>) - a list of previously saved search definitions. When you select a named search definition, its criteria will be fed into their corresponding fields of the <b>Find elements</b> dialog box saving you time on recreating the original definition</li>
+<li><b>Restore last search definition</b> (<i>Ctrl+R</i>) - restore the most recently used search</li>
+<li><b>Delete</b> - delete the currently selected search definition</li>
+<li><b>Save</b> - save the current search criteria as a search definition for later use</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Find_elements_context_menu">Find elements context menu</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Find_elements&amp;veaction=edit&amp;section=5" title="Edit section: Find elements context menu"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Find_elements&amp;action=edit&amp;section=5" title="Edit section's source code: Find elements context menu"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Restore last</b> (<i>Ctrl+R</i>) - restore the most recently used search</li>
+<li><b>Choose definition</b> (<i>Ctrl+S</i>) - open a list of previously saved search definitions. When you select a named search definition, its criteria will be fed into their corresponding fields of the <b>Find elements</b> dialog box saving you time on recreating the original definition</li></ul>
+<ul><li><b>Edit find text</b> (<i>Alt+X</i>) - quickly move focus to the <b>Find text</b> text box</li>
+<li><b>Edit AND text</b> (<i>Alt+A</i>) - quickly move focus to the <b>AND-Search</b> text field</li>
+<li><b>Edit OR text</b> (<i>Alt+O</i>) - quickly move focus to the <b>OR-Search</b> text field</li>
+<li><b>Edit NOT text</b> (<i>Alt+N</i>) - quickly move focus to the <b>NOT-Search</b> text field</li></ul>
+<ul><li><b>Close</b> (<i>Esc</i>) - close the dialog box</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111001
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.038 seconds
+Real time usage: 0.040 seconds
+Preprocessor visited node count: 23/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:385:|#|:idhash:canonical and timestamp 20260610111001 and revision id 6924. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Basic_search"><span class="tocnumber">1</span> <span class="toctext">基本搜索</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Advanced_search"><span class="tocnumber">2</span> <span class="toctext">高级搜索</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#AND-OR-NOT_search"><span class="tocnumber">2.1</span> <span class="toctext">与或非搜索</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Search_definitions"><span class="tocnumber">2.2</span> <span class="toctext">搜索定义</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Find_elements_context_menu"><span class="tocnumber">2.3</span> <span class="toctext">查找元素上下文菜单</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Basic_search">基本搜索</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Find_elements&amp;veaction=edit&amp;section=1" title="Edit section: Basic search"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Find_elements&amp;action=edit&amp;section=1" title="Edit section's source code: Basic search"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>查找文字</b>- 您要搜索的文本<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>为了<ul><li><b>仅匹配整个单词</b>- 如果您希望搜索显示完整单词的匹配项，而不是其他单词或短语的一部分，请选中此框</li>
+<li><b>火柴盒</b>- 如果您希望搜索显示使用您在搜索中输入的相同大小写字母组合的匹配项，请选中此框。<b>查找文字</b>文本框</li></ul></li>
+<li><b>查找</b>- 搜索<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>并打开<a href="Glossary_Element.html" title="Glossary:Element">元素</a>匹配特定搜索条件<a href="Browser.html" title="Browser">浏览器</a></li>
+<li><b>取消</b>- 关闭对话框</li>
+<li><b>详情&gt;&gt;</b>- 使用高级搜索选项展开对话框</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Advanced_search">高级搜索</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Find_elements&amp;veaction=edit&amp;section=2" title="Edit section: Advanced search"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Find_elements&amp;action=edit&amp;section=2" title="Edit section's source code: Advanced search"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Exemplary_Japanese_collection.jpg.html" title="SuperMemo: SuperMemo 15 provides full Unicode support making it easy for you to work with non-Latin alphabets"><img alt="SuperMemo: SuperMemo 15 provides full Unicode support making it easy for you to work with non-Latin alphabets" class="mw-file-element" decoding="async" height="379" loading="lazy" src="https://help.supermemo.org/images/thumb/b/bc/Exemplary_Japanese_collection.jpg/655px-Exemplary_Japanese_collection.jpg" srcset="/images/thumb/b/bc/Exemplary_Japanese_collection.jpg/983px-Exemplary_Japanese_collection.jpg 1.5x, /images/thumb/b/bc/Exemplary_Japanese_collection.jpg/1310px-Exemplary_Japanese_collection.jpg 2x" width="655"/></a></span>
+</p>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="AND-OR-NOT_search">与或非搜索</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Find_elements&amp;veaction=edit&amp;section=3" title="Edit section: AND-OR-NOT search"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Find_elements&amp;action=edit&amp;section=3" title="Edit section's source code: AND-OR-NOT search"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>必须包含的短语：AND-搜索（必须查找）</b>- 单词和/或短语，所有这些都必须包含在所有匹配中<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。通过在新行中键入每个单词和短语来分隔单词和短语（按<i>输入</i>移动到框中的下一行）</li>
+<li><b>搜索所有这些短语：OR-搜索（May-Find）：</b>- 单词和/或短语，至少其中一个将包含在匹配中<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。通过在新行中键入每个单词和短语来分隔单词和短语（按<i>输入</i>移动到框中的下一行）</li>
+<li><b>必须排除的短语： NOT-Search (MustNot-Find)：</b>- 将排除的单词和/或短语<a href="Glossary_Element.html" title="Glossary:Element">元素</a>其中包含搜索结果中的它们。通过在新行中键入每个单词和短语来分隔单词和短语（按<i>输入</i>移动到框中的下一行）</li>
+<li><b>谷歌</b>- 使用 Google 搜索更多符合搜索条件的页面（例如，将更多阅读材料导入 SuperMemo）</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Search_definitions">搜索定义</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Find_elements&amp;veaction=edit&amp;section=4" title="Edit section: Search definitions"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Find_elements&amp;action=edit&amp;section=4" title="Edit section's source code: Search definitions"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>最近搜索列表框</b>（<i>Ctrl+S</i>) - 先前保存的搜索定义的列表。当您选择命名搜索定义时，其条件将被输入到相应的字段中<b>查找元素</b>对话框节省您重新创建原始定义的时间</li>
+<li><b>恢复上次搜索定义</b>（<i>Ctrl+R</i>) - 恢复最近使用的搜索</li>
+<li><b>删除</b>- 删除当前选择的搜索定义</li>
+<li><b>保存</b>- 将当前搜索条件保存为搜索定义以供以后使用</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Find_elements_context_menu">查找元素上下文菜单</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Find_elements&amp;veaction=edit&amp;section=5" title="Edit section: Find elements context menu"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Find_elements&amp;action=edit&amp;section=5" title="Edit section's source code: Find elements context menu"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>恢复最后一次</b>（<i>Ctrl+R</i>) - 恢复最近使用的搜索</li>
+<li><b>选择定义</b>（<i>Ctrl+S</i>) - 打开以前保存的搜索定义的列表。当您选择命名搜索定义时，其条件将被输入到相应的字段中<b>查找元素</b>对话框节省您重新创建原始定义的时间</li></ul>
+<ul><li><b>编辑查找文本</b>（<i>Alt+X</i>) - 快速将焦点移至<b>查找文字</b>文本框</li>
+<li><b>编辑和文本</b>（<i>阿尔特+A</i>) - 快速将焦点移至<b>AND-搜索</b>文本字段</li>
+<li><b>编辑或文本</b>（<i>阿尔特+O</i>) - 快速将焦点移至<b>OR-搜索</b>文本字段</li>
+<li><b>编辑非文本</b>（<i>Alt+N</i>) - 快速将焦点移至<b>非搜索</b>文本字段</li></ul>
+<ul><li><b>关闭</b>（<i>ESC</i>) - 关闭对话框</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111001
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.038 seconds
+Real time usage: 0.040 seconds
+Preprocessor visited node count: 23/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:385:|#|:idhash:canonical and timestamp 20260610111001 and revision id 6924. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>References — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/References" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Why_need_references?"><span class="tocnumber">1</span> <span class="toctext">Why need references?</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Example"><span class="tocnumber">2</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Reference_system_highlights"><span class="tocnumber">3</span> <span class="toctext">Reference system highlights</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Editing_references"><span class="tocnumber">4</span> <span class="toctext">Editing references</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Image_references"><span class="tocnumber">5</span> <span class="toctext">Image references</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Why_need_references?"><span id="Why_need_references.3F"></span>Why need references?</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=References&amp;veaction=edit&amp;section=1" title="Edit section: Why need references?"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=References&amp;action=edit&amp;section=1" title="Edit section's source code: Why need references?"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>In <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>, you always need to quickly recover the context of a question or a piece of text. The easiest way to recover context quickly is via references. References propagate from <a href="Glossary_Element.html" title="Glossary:Element">element</a> to element as you produce <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> and <a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">cloze deletions</a>. With all <a href="Glossary_Child.html" title="Glossary:Child">child elements</a> produced from a given text marked with references, you would never need to worry about losing the context of the question. 
+</p><p>For example: 
+</p>
+<div class="center"><div class="inset" style="border-bottom: black 1px solid; text-align: left; border-left: black 1px solid; width: 800px; border-top: black 1px solid; border-right: black 1px solid">
+<p><b>Q</b>: He was born in <span class="cloze">[...](year)</span>
+</p>
+</div></div>
+<p>cannot be answered without the context. However, the following question is already easier to understand: 
+</p>
+<div class="center"><div class="inset" style="border-bottom: black 1px solid; text-align: left; border-left: black 1px solid; width: 800px; border-top: black 1px solid; border-right: black 1px solid">
+<p><b>Q</b>: He was born in <span class="cloze">[...](year)</span>
+</p>
+<hr/>
+<p><span class="reference">#Title: Barrack Obama<br/>#Source: Wikipedia</span>
+</p>
+</div></div>
+<p>To speed up learning, in the incremental reading process, the above question should naturally be replaced with: 
+</p>
+<div class="center"><div class="inset" style="border-bottom: black 1px solid; text-align: left; border-left: black 1px solid; width: 800px; border-top: black 1px solid; border-right: black 1px solid">
+<p><b>Q</b>: Obama was born in <span class="cloze">[...](year)</span>
+</p>
+</div></div>
+<p>or 
+</p>
+<div class="center"><div class="inset" style="border-bottom: black 1px solid; text-align: left; border-left: black 1px solid; width: 800px; border-top: black 1px solid; border-right: black 1px solid">
+<p><b>Q</b>: Obama was born in <span class="cloze">[...](year)</span>
+</p>
+<hr/>
+<p><span class="reference">#Title: Barrack Obama<br/>#Source: Wikipedia</span>
+</p>
+</div></div>
+<p>References are not stored in HTML files that hold your articles but in a reference <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> (i.e. in a separate database). The reference registry does not hold the text of references either. All reference texts are held in the text <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> and are available for global text searches. In earlier versions of SuperMemo, each text would keep its own copy of references. In newer SuperMemos, <a href="Glossary_Element.html" title="Glossary:Element">elements</a> keep only pointers to reference <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a>, which in turn keeps pointers to individual text fields in the text registry. As a result, many <a href="Glossary_Element.html" title="Glossary:Element">elements</a> can hold the same reference, and many references can hold the same text. This results in a significant saving in space in your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. More importantly, you can update the reference in a single <a href="Glossary_Element.html" title="Glossary:Element">element</a> and see the change show in all <a href="Glossary_Element.html" title="Glossary:Element">elements</a> using the same reference. This way, you do not need to waste time on search&amp;replace to correct a single misspelling or reference inaccuracy that propagated to many <a href="Glossary_Element.html" title="Glossary:Element">elements</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Example">Example</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=References&amp;veaction=edit&amp;section=2" title="Edit section: Example"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=References&amp;action=edit&amp;section=2" title="Edit section's source code: Example"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If you select the title of the source article and press <i>Alt+T</i> (<b><a href="Component_menu.html#Reference" title="Component menu">Reference</a> : Title</b> on the HTML <a href="Component_menu.html" title="Component menu">component menu</a>), each <a href="Glossary_Extract.html" title="Glossary:Extract">extract</a> will be marked by the title of the source article. If you use <b><a href="Edit_menu.html" title="Edit menu">Edit</a> : <a href="Web_import.html" title="Web import">Web import</a> : All</b>, your articles will be provided with basic references (such as <span class="reference">#Title</span>, <span class="reference">#Link</span>, <span class="reference">#Date</span>, etc.). If you need more context (e.g. to add the author, the journal, etc.), you can use the reference link button (<span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Reference_button.gif.html" title="SuperMemo: Reference button on the navigation bar in the element window"><img alt="SuperMemo: Reference button on the navigation bar in the element window" class="mw-file-element" decoding="async" height="16" loading="lazy" src="https://help.supermemo.org/images/9/9e/Reference_button.gif" width="16"/></a></span>) on the <a href="Navigation_bar.html" title="Navigation bar">navigation bar</a> to jump to the source article from which the <a href="Glossary_Extract.html" title="Glossary:Extract">extract</a> was produced. On the parent article, that button will lead you to the original link on the net. 
+</p>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Incremental_reading_Extract.jpg.html" title="SuperMemo: An extract produced from an article about the greenhouse effect (references (in pink) at the bottom are added automatically)"><img alt="SuperMemo: An extract produced from an article about the greenhouse effect (references (in pink) at the bottom are added automatically)" class="mw-file-element" decoding="async" height="495" loading="lazy" src="https://help.supermemo.org/images/thumb/f/f5/Incremental_reading_Extract.jpg/800px-Incremental_reading_Extract.jpg" srcset="/images/thumb/f/f5/Incremental_reading_Extract.jpg/1200px-Incremental_reading_Extract.jpg 1.5x, /images/f/f5/Incremental_reading_Extract.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> Typical snapshot of <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>. While learning about the greenhouse effect, the student extracts the fragment saying that "An ideal thermally conductive <a class="external text" href="https://en.wikipedia.org/wiki/Blackbody">blackbody</a> at the same distance from the Sun as Earth would have a temperature of about 5.3 °C. However, because Earth reflects about 30%<sup class="reference"><a class="external text" href="https://en.wikipedia.org/wiki/Greenhouse_effect#cite_note-5">[5</a>]</sup><sup class="reference"><a class="external text" href="https://en.wikipedia.org/wiki/Greenhouse_effect#cite_note-6">[6</a>]</sup> of the incoming sunlight, this idealized planet's <a class="external text" href="https://en.wikipedia.org/wiki/Effective_temperature">effective temperature</a> (the temperature of a blackbody that would emit the same amount of radiation) would be about −18 °C.<sup class="reference"><a class="external text" href="https://en.wikipedia.org/wiki/Greenhouse_effect#cite_note-7">[7</a>]</sup><sup class="reference"><a class="external text" href="https://en.wikipedia.org/wiki/Greenhouse_effect#cite_note-8">[8</a>]</sup> The surface temperature of this hypothetical planet is 33 °C below Earth's actual surface temperature of approximately 14 °C.<sup class="reference"><a class="external text" href="https://en.wikipedia.org/wiki/Greenhouse_effect#cite_note-9">[9</a>]</sup>. The mechanism that produces this difference between the actual surface temperature and the effective temperature is due to the atmosphere and is known as <b>greenhouse effect</b>". The extracted fragment will inherit illustrations placed on the right, as well as article <a class="mw-selflink selflink">references</a>. The student can move on to reading another article by pressing Enter. The picture on the right is stored locally in the image <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> (on the user's hard disk) and can be reused to illustrate other articles or questions.</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Reference_system_highlights">Reference system highlights</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=References&amp;veaction=edit&amp;section=3" title="Edit section: Reference system highlights"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=References&amp;action=edit&amp;section=3" title="Edit section's source code: Reference system highlights"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>To mark texts as reference fields use the <b><a href="Component_menu.html#Reference" title="Component menu">Reference</a></b> submenu on the HTML <a href="Component_menu.html" title="Component menu">component menu</a> (e.g. <b><a href="Component_menu.html#Reference" title="Component menu">Reference</a> : Select</b> or <i>Alt+Q</i>)</li>
+<li>Reference fields <span class="reference">#Article</span>, <span class="reference">#Parent</span> and <span class="reference">#Concept group</span> are added automatically and are not stored in the reference <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a>. These fields are not generated in <a href="Glossary_Element.html" title="Glossary:Element">elements</a> that have no other reference fields defined</li>
+<li>References marked with <i>Alt+Q</i> options show up in the reference field and can be deleted from the text's body (if no longer needed)</li>
+<li>Hover your mouse over the <b>Reference link</b> button (<span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Reference_button.gif.html" title="SuperMemo: Reference button on the navigation bar in the element window"><img alt="SuperMemo: Reference button on the navigation bar in the element window" class="mw-file-element" decoding="async" height="16" loading="lazy" src="https://help.supermemo.org/images/9/9e/Reference_button.gif" width="16"/></a></span>) on the <a href="Navigation_bar.html" title="Navigation bar">navigation bar</a> to quickly see the reference in longer extracts.</li>
+<li>From the user's point of view, there is a little difference in the way the references are handled as compared with earlier SuperMemos. SuperMemo 2008 or later differentiates between the following 2 types of references edits:
+<ul><li><b>local edits</b> that affect only the present <a href="Glossary_Element.html" title="Glossary:Element">element</a> and create a new reference record vs.</li>
+<li><b>global edits</b> which change the original reference in all the elements that use it.</li></ul></li></ul>
+<dl><dd>When SuperMemo is not sure if your edits are local or global, it will ask you</dd></dl>
+<ul><li>Note that all <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> generate <a href="Glossary_Element.html" title="Glossary:Element">elements</a> that are <a href="Glossary_Child.html" title="Glossary:Child">children</a> of the original article. If you have problems with recalling the original context of a fragment, you can always call it back by pressing the <b>Parent</b> button on the <a href="Navigation_bar.html" title="Navigation bar">navigation bar</a>. You can also use the <strong>Reference link</strong> button (<span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Reference_button.gif.html" title="SuperMemo: Reference button on the navigation bar in the element window"><img alt="SuperMemo: Reference button on the navigation bar in the element window" class="mw-file-element" decoding="async" height="16" loading="lazy" src="https://help.supermemo.org/images/9/9e/Reference_button.gif" width="16"/></a></span>) to get to the source article, or, if you have already reached it, to get to the original article on the web.</li>
+<li>If you choose an empty selection for the <span class="reference">#Date</span> reference, you will mark the text with the current date and time stamp</li>
+<li>AND-Search in SuperMemo works on texts, not on <a href="Glossary_Element.html" title="Glossary:Element">elements</a>. This means that reference texts do not take part in AND-Search for the main body of text. This may result in false misses. In SuperMemo, texts and individual reference fields are all treated as separate texts and are all searched independently</li>
+<li>Formatting of references can be changed via stylesheets</li>
+<li>Converting HTML to plain text does not affect the formatting of references (i.e. plain text entries can have their references formatted by a stylesheet)</li>
+<li>You can edit references in the reference area or in a dedicated window that you can open by choosing <b><a href="Element_menu.html#Reference" title="Element menu">Reference</a> : Edit</b> from the <a href="Element_menu.html" title="Element menu">element menu</a>. You only need to use legal reference field tags at the beginning of each reference line (e.g. <span class="reference">#Author:</span>). If SuperMemo is not sure if your changes should apply to the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> only, or to all elements that use the reference, it will ask you</li>
+<li>You can quickly modify (i.e. set, merge, and delete) the references across a number of <a href="Glossary_Element.html" title="Glossary:Element">elements</a>. To do that, open them in the <a href="Browser.html" title="Browser">element browser</a>, right-click your mouse and choose:
+<ul><li><b><a href="Subset_operations.html" title="Subset operations">Process browser&gt;</a> : <a href="Subset_operations.html#Reference" title="Subset operations">Reference</a> : Set reference</b> to set the same reference to a subset of elements,</li>
+<li><b><a href="Subset_operations.html" title="Subset operations">Process browser&gt;</a> : <a href="Subset_operations.html#Reference" title="Subset operations">Reference</a> : Merge reference</b> to add reference fields to a subset of elements,</li>
+<li><b><a href="Subset_operations.html" title="Subset operations">Process browser&gt;</a> : <a href="Subset_operations.html#Reference" title="Subset operations">Reference</a> : Delete reference</b> to remove reference fields from all elements in the <a href="Glossary_Subset.html" title="Glossary:Subset">subset</a></li></ul></li>
+<li>References no longer clutter your HTML files. In the past, the size of references would often be greater than the length of the text itself</li>
+<li>Reference <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> keeps the references (see below), and their individual text fields are stored in the text registry</li>
+<li>References are added to HTML texts at load time, so that you can still have references located at the bottom of your texts as in earlier versions of SuperMemo</li>
+<li>Adding an existing reference to an <a href="Glossary_Element.html" title="Glossary:Element">element</a> (e.g. with <b><a href="Element_menu.html#Reference" title="Element menu">Reference</a> : Link</b> from the <a href="Element_menu.html" title="Element menu">element menu</a>) does not add to the size of the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a></li></ul>
+<div class="bs-callout bs-callout-danger">
+<p><b>Important!</b> <b>Do not add your own non-reference texts below the horizontal bar marking the reference area</b>. All reference field area is owned by SuperMemo. Any modifications to that area will be treated as changes to reference fields. Changes that do not conform with reference field formatting will be discarded without warning.
+</p>
+</div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_References.jpg.html" title="SuperMemo: References help you quickly recover the context of a given element as well as track its source and build a list of citations (in the picture: blue marks an incremental reading extract, yellow marks a search string (i.e. GABA-ergic), while pink marks the reference field, which will propagate to all children elements (extracts and clozes))"><img alt="SuperMemo: References help you quickly recover the context of a given element as well as track its source and build a list of citations (in the picture: blue marks an incremental reading extract, yellow marks a search string (i.e. GABA-ergic), while pink marks the reference field, which will propagate to all children elements (extracts and clozes))" class="mw-file-element" decoding="async" height="398" loading="lazy" src="https://help.supermemo.org/images/thumb/5/5b/References.jpg/800px-References.jpg" srcset="/images/thumb/5/5b/References.jpg/1200px-References.jpg 1.5x, /images/5/5b/References.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> <a class="mw-selflink selflink">References</a> help you quickly recover the context of a given <a href="Glossary_Element.html" title="Glossary:Element">element</a> as well as track its source and build a list of citations. In the picture, an <a href="Glossary_Extract.html" title="Glossary:Extract">extract</a> from an article on sleep and dreaming. <span style="padding-bottom: 3px; background-color: #44c2ff; padding-left: 3px; padding-right: 3px; padding-top: 3px">Blue</span> marks an extract produced from the presented text. <span style="padding-bottom: 3px; background-color: yellow; padding-left: 3px; padding-right: 3px; padding-top: 3px">Yellow</span> marks the search string (i.e. REM-on cells) that was used in <b><a href="Search_menu.html" title="Search menu">Search</a> : <a href="Find_elements.html" title="Find elements">Find elements</a></b> (Ctrl+F) to find all the <a href="Glossary_Element.html" title="Glossary:Element">elements</a> (including this one) containing the string. <span style="padding-bottom: 3px; background-color: #ffa6ff; padding-left: 3px; padding-right: 3px; color: #c40000; padding-top: 3px">Pink</span> marks the reference area (consisting of the <span class="reference">#Title</span>, <span class="reference">#Author</span>, <span class="reference">#Date</span>, <span class="reference">#Source</span>, <span class="reference">#Article</span>, <span class="reference">#Parent</span>, and <span class="reference">#Concept group</span> fields), which will propagate to all <a href="Glossary_Child.html" title="Glossary:Child">children elements</a> (<a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> and <a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">clozes</a>) generated from this <a href="Glossary_Element.html" title="Glossary:Element">element</a>.</i>
+</p>
+</blockquote>
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Reference_registry.jpg.html" title="SuperMemo: References are kept in a dedicated registry while their individual text fields (e.g. title, author, date, source, etc.) are stored in the text registry, and thus are available for global text searches"><img alt="SuperMemo: References are kept in a dedicated registry while their individual text fields (e.g. title, author, date, source, etc.) are stored in the text registry, and thus are available for global text searches" class="mw-file-element" decoding="async" height="612" loading="lazy" src="https://help.supermemo.org/images/thumb/7/74/Reference_registry.jpg/800px-Reference_registry.jpg" srcset="/images/thumb/7/74/Reference_registry.jpg/1200px-Reference_registry.jpg 1.5x, /images/7/74/Reference_registry.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> <a class="mw-selflink selflink">References</a> are kept in a dedicated <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> while their individual text fields (e.g. <span class="reference">#Title</span>, <span class="reference">#Author</span>, <span class="reference">#Date</span>, <span class="reference">#Source</span>, etc.) are stored in the text registry, and thus are available for global text searches. In the picture, reference <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> holds 71,791 members. Those highlighted in <span style="padding: 3px; background: yellow;">yellow</span> are <a class="mw-selflink-fragment" href="#Image_references">references of downloaded images</a>. The remaining references describe imported articles. The selected Quantum Biology reference describes and article imported from <a class="external text" href="http://www.nature.com/nphys/index.html">Nature Physics</a> in Feb 2013. The element list panel (bottom-right) displays <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a> generated from that article. All those <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a> share the same reference.</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Editing_references">Editing references</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=References&amp;veaction=edit&amp;section=4" title="Edit section: Editing references"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=References&amp;action=edit&amp;section=4" title="Edit section's source code: Editing references"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>You an use <b>Reference: Edit</b> in <a href="SuperMemo_Commander.html" title="SuperMemo Commander">SuperMemo Commander</a>, however, you can also edit references in the reference area (which is pink in the default stylesheet). You can safely delete reference fields, but you need to decide if that change should be local (for that <a href="Glossary_Element.html" title="Glossary:Element">element</a> only) or global (for all elements using this reference). You will not be able to delete <span class="reference">#Article</span>, <span class="reference">#Parent:</span> or <span class="reference">#Concept group</span> fields because they are added automatically to the reference section (i.e. they are not part of the reference itself). You can freely change the text of references. Illegal changes are all changes that do not comply with the reference format, e.g. lines that do not start with reference field tags, or lines that start with unknown reference field tags (e.g. <i>#Country</i>). If you are unsure how this process works, import a single article from <a class="external text" href="http://en.wikipedia.org">Wikipedia</a> to a newly created <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>, create some <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> and play with editing to see how references are processed.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Image_references">Image references</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=References&amp;veaction=edit&amp;section=5" title="Edit section: Image references"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=References&amp;action=edit&amp;section=5" title="Edit section's source code: Image references"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Image references are created automatically when importing from the web or from an HTML document. In SuperMemo 16, unless you imported images with whole references pages, duplicate detection would depend on image names. If you renamed your images to make reuse easy, duplicate detection wouldn't work. This changed with SuperMemo 17. URLs are kept in the text <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> which can accept a degree of "garbage" as text reuse is automatic.
+The adopted complex solution may make SuperMemo a bit slower when importing images from imported articles or when importing pictures from the web. However, your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> is unlikely to swell with multiple image duplicates. Duplicate imports are automatically prevented and the imported image is replaced with the stored original (wiki thumbs are replaced with their high-resolution originals).
+</p><p>Image references allow of searching for picture names along other texts in <a href="Glossary_Element.html" title="Glossary:Element">elements</a> with <b><a href="Edit_menu.html" title="Edit menu">Edit</a> : <a href="Find_elements.html" title="Find elements">Find elements</a></b> (<i>Ctrl+F</i>).
+</p><p>You can find image references in the reference <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> (choose <b><a href="Search_menu.html" title="Search menu">Search</a> : <a href="Search_menu.html#References" title="Search menu">References</a></b> from the <a href="Main_menu.html" title="Main menu">main menu</a>). Alternatively, you can first locate the image via the image registry (<b><a href="Search_menu.html" title="Search menu">Search</a> : Images</b> from the <a href="Main_menu.html" title="Main menu">main menu</a>), and choose <b><a href="Registry_menu.html#View" title="Registry menu">View</a> : Reference</b> from the <a href="Registry_menu.html" title="Registry menu">registry menu</a> (available with a right-click).
+</p><p>In the reference <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a>, to view the image related to a given reference, click <b>Go to</b> at the bottom of the window.
+</p><p>To see all <a href="Glossary_Element.html" title="Glossary:Element">elements</a> associated with a given image/reference, click <b>List</b> at the bottom of either registry (image or reference).
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260609144151
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.047 seconds
+Real time usage: 0.052 seconds
+Preprocessor visited node count: 152/1000000
+Post‐expand include size: 7066/2097152 bytes
+Template argument size: 2700/2097152 bytes
+Highest expansion depth: 5/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    7.943      1 -total
+ 48.42%    3.846      1 File:Incremental_reading_Extract.jpg
+ 26.55%    2.109      1 File:References.jpg
+ 23.13%    1.837      1 File:Reference_registry.jpg
+ 22.89%    1.818      2 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:126:|#|:idhash:canonical and timestamp 20260609144151 and revision id 10409. Rendering was triggered because: page-view
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Why_need_references?"><span class="tocnumber">1</span> <span class="toctext">为什么需要参考文献？</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Example"><span class="tocnumber">2</span> <span class="toctext">示例</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Reference_system_highlights"><span class="tocnumber">3</span> <span class="toctext">参考系统亮点</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Editing_references"><span class="tocnumber">4</span> <span class="toctext">编辑参考文献</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Image_references"><span class="tocnumber">5</span> <span class="toctext">图片参考</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Why_need_references?"><span id="Why_need_references.3F"></span>为什么需要参考文献？</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=References&amp;veaction=edit&amp;section=1" title="Edit section: Why need references?"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=References&amp;action=edit&amp;section=1" title="Edit section's source code: Why need references?"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>在<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>，您总是需要快速恢复问题或一段文本的上下文。快速恢复上下文的最简单方法是通过引用。引用传播自<a href="Glossary_Element.html" title="Glossary:Element">元素</a>当你生产时的元素<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>和<a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">完形填空删除</a>。与所有<a href="Glossary_Child.html" title="Glossary:Child">子元素</a>从标有参考文献的给定文本生成，您永远不需要担心丢失问题的上下文。</p><p>例如：</p>
+<div class="center"><div class="inset" style="border-bottom: black 1px solid; text-align: left; border-left: black 1px solid; width: 800px; border-top: black 1px solid; border-right: black 1px solid">
+<p><b>问</b>: 他出生于<span class="cloze">[...]（年）</span>
+</p>
+</div></div>
+<p>没有上下文就无法回答。不过，下面的问题已经比较容易理解了：</p>
+<div class="center"><div class="inset" style="border-bottom: black 1px solid; text-align: left; border-left: black 1px solid; width: 800px; border-top: black 1px solid; border-right: black 1px solid">
+<p><b>问</b>: 他出生于<span class="cloze">[...]（年）</span>
+</p>
+<hr/>
+<p><span class="reference">#Title：巴拉克·奥巴马<br/>#来源：维基百科</span>
+</p>
+</div></div>
+<p>为了加快学习速度，在增量阅读过程中，上面的问题自然应该替换为：</p>
+<div class="center"><div class="inset" style="border-bottom: black 1px solid; text-align: left; border-left: black 1px solid; width: 800px; border-top: black 1px solid; border-right: black 1px solid">
+<p><b>问</b>: 奥巴马出生于<span class="cloze">[...]（年）</span>
+</p>
+</div></div>
+<p>或</p>
+<div class="center"><div class="inset" style="border-bottom: black 1px solid; text-align: left; border-left: black 1px solid; width: 800px; border-top: black 1px solid; border-right: black 1px solid">
+<p><b>问</b>: 奥巴马出生于<span class="cloze">[...]（年）</span>
+</p>
+<hr/>
+<p><span class="reference">#Title：巴拉克·奥巴马<br/>#来源：维基百科</span>
+</p>
+</div></div>
+<p>参考文献不是存储在包含您的文章的 HTML 文件中，而是存储在参考文献中<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>（即在单独的数据库中）。参考文献注册表也不保存参考文献的文本。所有参考文献均包含在正文中<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>并可用于全局文本搜索。在 SuperMemo 的早期版本中，每个文本都会保留自己的参考文献副本。在较新的 SuperMemos 中，<a href="Glossary_Element.html" title="Glossary:Element">元素</a>只保留指向引用的指针<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>，这又在文本注册表中保留指向各个文本字段的指针。结果，很多<a href="Glossary_Element.html" title="Glossary:Element">元素</a>可以保存相同的引用，并且许多引用可以保存相同的文本。这会显着节省您的空间<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。更重要的是，您可以在一个单一的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>并查看所有更改显示<a href="Glossary_Element.html" title="Glossary:Element">元素</a>使用相同的参考。这样，您就不需要在搜索和替换上浪费时间来纠正传播到许多人的单个拼写错误或引用不准确之处。<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。</p>
+<div class="mw-heading mw-heading2"><h2 id="Example">示例</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=References&amp;veaction=edit&amp;section=2" title="Edit section: Example"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=References&amp;action=edit&amp;section=2" title="Edit section's source code: Example"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果您选择源文章的标题并按<i>Alt+T</i>（<b><a href="Component_menu.html#Reference" title="Component menu">参考</a> : 标题</b>在 HTML 上<a href="Component_menu.html" title="Component menu">组件菜单</a>），每个<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>将标有源文章的标题。如果你使用<b><a href="Edit_menu.html" title="Edit menu">编辑</a> :<a href="Web_import.html" title="Web import">网页导入</a> ：全部</b>，您的文章将提供基本参考文献（例如<span class="reference">#标题</span>,<span class="reference">#链接</span>,<span class="reference">#日期</span>等）。如果您需要更多上下文（例如添加作者、期刊等），您可以使用参考链接按钮（<span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Reference_button.gif.html" title="SuperMemo: Reference button on the navigation bar in the element window"><img alt="SuperMemo: Reference button on the navigation bar in the element window" class="mw-file-element" decoding="async" height="16" loading="lazy" src="https://help.supermemo.org/images/9/9e/Reference_button.gif" width="16"/></a></span>）在<a href="Navigation_bar.html" title="Navigation bar">导航栏</a>跳转到源文章<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>被生产出来了。在父文章中，该按钮将引导您访问网络上的原始链接。</p>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Incremental_reading_Extract.jpg.html" title="SuperMemo: An extract produced from an article about the greenhouse effect (references (in pink) at the bottom are added automatically)"><img alt="SuperMemo: An extract produced from an article about the greenhouse effect (references (in pink) at the bottom are added automatically)" class="mw-file-element" decoding="async" height="495" loading="lazy" src="https://help.supermemo.org/images/thumb/f/f5/Incremental_reading_Extract.jpg/800px-Incremental_reading_Extract.jpg" srcset="/images/thumb/f/f5/Incremental_reading_Extract.jpg/1200px-Incremental_reading_Extract.jpg 1.5x, /images/f/f5/Incremental_reading_Extract.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b>典型快照<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>。在了解温室效应时，学生提取了这样的片段：“一种理想的导热材料<a class="external text" href="https://en.wikipedia.org/wiki/Blackbody">黑体</a>与地球距太阳相同的距离，其温度约为 5.3 °C。然而，由于地球反射了大约 30%<sup class="reference"><a class="external text" href="https://en.wikipedia.org/wiki/Greenhouse_effect#cite_note-5">[5</a>]</sup><sup class="reference"><a class="external text" href="https://en.wikipedia.org/wiki/Greenhouse_effect#cite_note-6">[6</a>]</sup>入射的阳光，这个理想化的星球<a class="external text" href="https://en.wikipedia.org/wiki/Effective_temperature">有效温度</a>（发出相同辐射量的黑体的温度）约为 -18 °C。<sup class="reference"><a class="external text" href="https://en.wikipedia.org/wiki/Greenhouse_effect#cite_note-7">[7</a>]</sup><sup class="reference"><a class="external text" href="https://en.wikipedia.org/wiki/Greenhouse_effect#cite_note-8">[8</a>]</sup>该假设行星的表面温度比地球实际表面温度约 14°C 低 33°C。<sup class="reference"><a class="external text" href="https://en.wikipedia.org/wiki/Greenhouse_effect#cite_note-9">[9</a>]</sup>。产生实际表面温度和有效温度之间这种差异的机制是由于大气造成的，被称为<b>温室效应</b>”。提取的片段将继承右侧的插图以及文章<a class="mw-selflink selflink">参考文献</a>。学生可以按 Enter 键继续阅读另一篇文章。右图是本地存储的图片<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>（在用户的硬盘上）并且可以重复使用来说明其他文章或问题。</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Reference_system_highlights">参考系统亮点</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=References&amp;veaction=edit&amp;section=3" title="Edit section: Reference system highlights"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=References&amp;action=edit&amp;section=3" title="Edit section's source code: Reference system highlights"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>要将文本标记为参考字段，请使用<b><a href="Component_menu.html#Reference" title="Component menu">参考</a></b>HTML 上的子菜单<a href="Component_menu.html" title="Component menu">组件菜单</a>（例如<b><a href="Component_menu.html#Reference" title="Component menu">参考</a> ：选择</b>或<i>Alt+Q</i>）</li>
+<li>参考字段<span class="reference">#文章</span>,<span class="reference">#家长</span>和<span class="reference">#概念组</span>自动添加并且不存储在参考中<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>。这些字段不是在中生成的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>没有定义其他参考字段</li>
+<li>参考文献标有<i>Alt+Q</i>选项显示在参考字段中，可以从文本正文中删除（如果不再需要）</li>
+<li>将鼠标悬停在<b>参考链接</b>按钮（<span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Reference_button.gif.html" title="SuperMemo: Reference button on the navigation bar in the element window"><img alt="SuperMemo: Reference button on the navigation bar in the element window" class="mw-file-element" decoding="async" height="16" loading="lazy" src="https://help.supermemo.org/images/9/9e/Reference_button.gif" width="16"/></a></span>）在<a href="Navigation_bar.html" title="Navigation bar">导航栏</a>快速查看较长摘录中的参考文献。</li>
+<li>从用户的角度来看，与早期的 SuperMemos 相比，处理引用的方式略有不同。 SuperMemo 2008 或更高版本区分以下 2 种类型的参考编辑：<ul><li><b>本地编辑</b>只影响现在<a href="Glossary_Element.html" title="Glossary:Element">元素</a>并创建一个新的参考记录对比</li>
+<li><b>全局编辑</b>这会更改所有使用它的元素中的原始引用。</li></ul></li></ul>
+<dl><dd>当 SuperMemo 不确定您的编辑是本地的还是全局的时，它会询问您</dd></dl>
+<ul><li>请注意，所有<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>生成<a href="Glossary_Element.html" title="Glossary:Element">元素</a>那是<a href="Glossary_Child.html" title="Glossary:Child">儿童</a>原始文章的。如果您在回忆片段的原始上下文时遇到问题，您可以随时按<b>家长</b>按钮上的<a href="Navigation_bar.html" title="Navigation bar">导航栏</a>。您还可以使用<strong>参考链接</strong>按钮（<span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Reference_button.gif.html" title="SuperMemo: Reference button on the navigation bar in the element window"><img alt="SuperMemo: Reference button on the navigation bar in the element window" class="mw-file-element" decoding="async" height="16" loading="lazy" src="https://help.supermemo.org/images/9/9e/Reference_button.gif" width="16"/></a></span>) 访问源文章，或者，如果您已经访问过它，则访问网络上的原始文章。</li>
+<li>如果您为<span class="reference">#日期</span>参考，您将使用当前日期和时间戳标记文本</li>
+<li>SuperMemo 中的 AND-Search 适用于文本，而不适用于<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。这意味着参考文本不参与文本主体的 AND 搜索。这可能会导致误报。在 SuperMemo 中，文本和单独的参考字段都被视为单独的文本，并且都被独立搜索</li>
+<li>可以通过样式表更改引用的格式</li>
+<li>将 HTML 转换为纯文本不会影响引用的格式（即纯文本条目可以通过样式表对其引用进行格式化）</li>
+<li>您可以在参考区域或通过选择打开的专用窗口中编辑参考<b><a href="Element_menu.html#Reference" title="Element menu">参考</a> ：编辑</b>从<a href="Element_menu.html" title="Element menu">元素菜单</a>。您只需要在每个参考行的开头使用合法的参考字段标签（例如<span class="reference">#作者：</span>）。如果 SuperMemo 不确定您的更改是否应应用于当前<a href="Glossary_Element.html" title="Glossary:Element">元素</a>仅，或对于使用引用的所有元素，它会询问您</li>
+<li>您可以快速修改（即设置、合并和删除）多个引用<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。为此，请在<a href="Browser.html" title="Browser">元素浏览器</a>，右键单击鼠标并选择：<ul><li><b><a href="Subset_operations.html" title="Subset operations">流程浏览器&gt;</a> :<a href="Subset_operations.html#Reference" title="Subset operations">参考</a> ：设置参考</b>对元素子集设置相同的引用，</li>
+<li><b><a href="Subset_operations.html" title="Subset operations">流程浏览器&gt;</a> :<a href="Subset_operations.html#Reference" title="Subset operations">参考</a> ：合并参考</b>将引用字段添加到元素子集，</li>
+<li><b><a href="Subset_operations.html" title="Subset operations">流程浏览器&gt;</a> :<a href="Subset_operations.html#Reference" title="Subset operations">参考</a> ：删除引用</b>从所有元素中删除引用字段<a href="Glossary_Subset.html" title="Glossary:Subset">子集</a></li></ul></li>
+<li>引用不再使您的 HTML 文件变得混乱。过去，参考文献的长度通常大于文本本身的长度</li>
+<li>参考<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>保留引用（见下文），并且它们各自的文本字段存储在文本注册表中</li>
+<li>引用会在加载时添加到 HTML 文本中，因此您仍然可以像早期版本的 SuperMemo 一样将引用置于文本底部</li>
+<li>添加现有引用<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（例如与<b><a href="Element_menu.html#Reference" title="Element menu">参考</a> ：链接</b>从<a href="Element_menu.html" title="Element menu">元素菜单</a>）不会增加尺寸<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a></li></ul>
+<div class="bs-callout bs-callout-danger">
+<p><b>重要！</b> <b>请勿在标记参考区域的水平条下方添加您自己的非参考文本</b>。所有参考字段区域均归 SuperMemo 所有。对该区域的任何修改都将被视为对参考字段的更改。不符合参考字段格式的更改将被丢弃，恕不另行通知。</p>
+</div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_References.jpg.html" title="SuperMemo: References help you quickly recover the context of a given element as well as track its source and build a list of citations (in the picture: blue marks an incremental reading extract, yellow marks a search string (i.e. GABA-ergic), while pink marks the reference field, which will propagate to all children elements (extracts and clozes))"><img alt="SuperMemo: References help you quickly recover the context of a given element as well as track its source and build a list of citations (in the picture: blue marks an incremental reading extract, yellow marks a search string (i.e. GABA-ergic), while pink marks the reference field, which will propagate to all children elements (extracts and clozes))" class="mw-file-element" decoding="async" height="398" loading="lazy" src="https://help.supermemo.org/images/thumb/5/5b/References.jpg/800px-References.jpg" srcset="/images/thumb/5/5b/References.jpg/1200px-References.jpg 1.5x, /images/5/5b/References.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b> <a class="mw-selflink selflink">参考文献</a>帮助您快速恢复给定的上下文<a href="Glossary_Element.html" title="Glossary:Element">元素</a>以及跟踪其来源并建立引用列表。图片中，一个<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>来自一篇关于睡眠和做梦的文章。<span style="padding-bottom: 3px; background-color: #44c2ff; padding-left: 3px; padding-right: 3px; padding-top: 3px">蓝色</span>标记从所呈现的文本中生成的摘录。<span style="padding-bottom: 3px; background-color: yellow; padding-left: 3px; padding-right: 3px; padding-top: 3px">黄色</span>标记用于的搜索字符串（即 REM-on 单元格）<b><a href="Search_menu.html" title="Search menu">搜索</a> :<a href="Find_elements.html" title="Find elements">查找元素</a></b>(Ctrl+F) 查找所有<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（包括这个）包含字符串。<span style="padding-bottom: 3px; background-color: #ffa6ff; padding-left: 3px; padding-right: 3px; color: #c40000; padding-top: 3px">粉色</span>标记参考区域（包括<span class="reference">#标题</span>,<span class="reference">#作者</span>,<span class="reference">#日期</span>,<span class="reference">#来源</span>,<span class="reference">#文章</span>,<span class="reference">#家长</span>, 和<span class="reference">#概念组</span>字段），这将传播到所有<a href="Glossary_Child.html" title="Glossary:Child">儿童元素</a>（<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>和<a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">完型填空</a>）由此生成<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。</i>
+</p>
+</blockquote>
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Reference_registry.jpg.html" title="SuperMemo: References are kept in a dedicated registry while their individual text fields (e.g. title, author, date, source, etc.) are stored in the text registry, and thus are available for global text searches"><img alt="SuperMemo: References are kept in a dedicated registry while their individual text fields (e.g. title, author, date, source, etc.) are stored in the text registry, and thus are available for global text searches" class="mw-file-element" decoding="async" height="612" loading="lazy" src="https://help.supermemo.org/images/thumb/7/74/Reference_registry.jpg/800px-Reference_registry.jpg" srcset="/images/thumb/7/74/Reference_registry.jpg/1200px-Reference_registry.jpg 1.5x, /images/7/74/Reference_registry.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b> <a class="mw-selflink selflink">参考文献</a>都保存在专用的<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>而他们各自的文本字段（例如<span class="reference">#标题</span>,<span class="reference">#作者</span>,<span class="reference">#日期</span>,<span class="reference">#来源</span>等）存储在文本注册表中，因此可用于全局文本搜索。图中，参考<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>拥有 71,791 名会员。那些突出显示在<span style="padding: 3px; background: yellow;">黄色</span>是<a class="mw-selflink-fragment" href="#Image_references">下载图像的参考</a>。其余参考文献描述了导入的文章。所选的量子生物学参考文献描述和文章导入自<a class="external text" href="http://www.nature.com/nphys/index.html">自然物理学</a>2013 年 2 月。元素列表面板（右下角）显示<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>从该文章生成。所有这些<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>共享相同的参考。</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Editing_references">编辑参考文献</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=References&amp;veaction=edit&amp;section=4" title="Edit section: Editing references"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=References&amp;action=edit&amp;section=4" title="Edit section's source code: Editing references"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>你一个用<b>参考：编辑</b>在<a href="SuperMemo_Commander.html" title="SuperMemo Commander">超级备忘录指挥官</a>但是，您也可以在参考区域（在默认样式表中为粉红色）中编辑参考。您可以安全地删除引用字段，但您需要决定该更改是否应该是本地的（为此<a href="Glossary_Element.html" title="Glossary:Element">元素</a>仅）或全局（对于使用此引用的所有元素）。您将无法删除<span class="reference">#文章</span>,<span class="reference">#家长：</span>或<span class="reference">#概念组</span>字段，因为它们会自动添加到参考部分（即它们不是参考本身的一部分）。您可以自由更改参考文献的文本。非法更改是指所有不符合参考格式的更改，例如不以参考字段标签开头的行，或以未知参考字段标签开头的行（例如<i>#国家</i>）。如果您不确定此过程如何运作，请从以下位置导入一篇文章<a class="external text" href="http://en.wikipedia.org">维基百科</a>到一个新创建的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>，创建一些<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>并进行编辑以查看参考文献是如何处理的。</p>
+<div class="mw-heading mw-heading2"><h2 id="Image_references">图片参考</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=References&amp;veaction=edit&amp;section=5" title="Edit section: Image references"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=References&amp;action=edit&amp;section=5" title="Edit section's source code: Image references"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>从 Web 或 HTML 文档导入时会自动创建图像引用。在 SuperMemo 16 中，除非您导入带有整个参考页面的图像，否则重复检测将取决于图像名称。如果您重命名图像以方便重复使用，则重复检测将不起作用。 SuperMemo 17 改变了这一点。URL 保留在文本中<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>它可以接受一定程度的“垃圾”，因为文本重用是自动的。
+采用的复杂解决方案可能会使 SuperMemo 在从导入的文章导入图像或从网络导入图片时速度稍慢。然而，你的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>不太可能因多个图像重复而膨胀。自动防止重复导入，导入的图像将替换为存储的原始图像（维基拇指将替换为其高分辨率原始图像）。</p><p>图像引用允许在其他文本中搜索图片名称<a href="Glossary_Element.html" title="Glossary:Element">元素</a>与<b><a href="Edit_menu.html" title="Edit menu">编辑</a> :<a href="Find_elements.html" title="Find elements">查找元素</a></b>（<i>Ctrl+F</i>）。</p><p>您可以在参考中找到图像参考<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>（选择<b><a href="Search_menu.html" title="Search menu">搜索</a> :<a href="Search_menu.html#References" title="Search menu">参考文献</a></b>从<a href="Main_menu.html" title="Main menu">主菜单</a>）。或者，您可以首先通过图像注册表找到图像（<b><a href="Search_menu.html" title="Search menu">搜索</a> : 图片</b>从<a href="Main_menu.html" title="Main menu">主菜单</a>），然后选择<b><a href="Registry_menu.html#View" title="Registry menu">查看</a> ：参考</b>从<a href="Registry_menu.html" title="Registry menu">注册表菜单</a>（右键单击即可）。</p><p>在参考文献中<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>，要查看与给定参考相关的图像，请单击<b>前往</b>在窗口底部。</p><p>查看全部<a href="Glossary_Element.html" title="Glossary:Element">元素</a>与给定图像/参考相关联，单击<b>列表</b>在任一注册表（图像或参考）的底部。</p>
+<!-- 
+NewPP limit report
+Cached time: 20260609144151
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.047 seconds
+Real time usage: 0.052 seconds
+Preprocessor visited node count: 152/1000000
+Post‐expand include size: 7066/2097152 bytes
+Template argument size: 2700/2097152 bytes
+Highest expansion depth: 5/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    7.943      1 -total
+ 48.42%    3.846      1 File:Incremental_reading_Extract.jpg
+ 26.55%    2.109      1 File:References.jpg
+ 23.13%    1.837      1 File:Reference_registry.jpg
+ 22.89%    1.818      2 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:126:|#|:idhash:canonical and timestamp 20260609144151 and revision id 10409. Rendering was triggered because: page-view
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

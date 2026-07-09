@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Edit toolbar — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Edit_toolbar" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><b>Edit</b> toolbar can be displayed by clicking the <b>Edit</b> tab at the bottom of the <a href="Element_window.html" title="Element window">element window</a> (you need to turn on the <b>Middle</b> or higher <a href="Glossary_Level.html" title="Glossary:Level">level</a> for this to work):
+</p>
+<div class="center">
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Edit_toolbar.jpg.html" title="SuperMemo: The Format toolbar at the bottom of the element window. It hosts operations that you will need to edit HTML and rich text components (fonts, alignment, bullets, etc.) as well as some other editing options such as: copy element, paste element, editing and dragging modes, etc."><img alt="SuperMemo: The Format toolbar at the bottom of the element window. It hosts operations that you will need to edit HTML and rich text components (fonts, alignment, bullets, etc.) as well as some other editing options such as: copy element, paste element, editing and dragging modes, etc." class="mw-file-element" decoding="async" height="51" loading="lazy" src="https://help.supermemo.org/images/thumb/b/b8/Edit_toolbar.jpg/800px-Edit_toolbar.jpg" srcset="/images/b/b8/Edit_toolbar.jpg 1.5x" width="800"/></a><figcaption>SuperMemo: The Format toolbar at the bottom of the element window. It hosts operations that you will need to edit HTML and rich text components (fonts, alignment, bullets, etc.) as well as some other editing options such as: copy element, paste element, editing and dragging modes, etc.</figcaption></figure>
+<blockquote>
+<p><i><b>Figure:</b> The <a class="mw-selflink selflink"><b>Edit</b> toolbar</a> at the bottom of the <a href="Element_window.html" title="Element window">element window</a>. It hosts operations that you will need to edit <a href="Using_text_components.html" title="Using text components">HTML and rich text components</a> (fonts, alignment, bullets, etc.) as well as some other editing options such as: copy <a href="Glossary_Element.html" title="Glossary:Element">element</a>, paste element, <a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">editing</a> and <a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">dragging</a> modes, etc.</i>
+</p>
+</blockquote>
+</div>
+<p>Here is the use of individual buttons:
+</p>
+<ul><li><b>Menu buttons</b> - open menus otherwise available with right-click over the element display area and over individual <a href="Glossary_Component.html" title="Glossary:Component">components</a>:
+<ul><li><b>Element menu</b> (<i>Alt+F10</i>) - open the <a href="Element_menu.html" title="Element menu">element menu</a> with operations related to the currently displayed <a href="Glossary_Element.html" title="Glossary:Element">element</a></li>
+<li><b>Component menu</b> (<i>Alt+F12</i>) - open the current <a href="Component_menu.html" title="Component menu">component menu</a> with operations related to the current <a href="Glossary_Component.html" title="Glossary:Component">component</a></li></ul></li>
+<li><b>Copy element</b> - copy the currently displayed <a href="Glossary_Element.html" title="Glossary:Element">element</a> to the clipboard</li>
+<li><b>Paste element</b> - paste the <a href="Glossary_Element.html" title="Glossary:Element">element</a> from the clipboard (the element is added as a new element to the current <a href="Glossary_Concept_group.html" title="Glossary:Concept group">concept group</a> in the current <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>)</li>
+<li><b>Delete element</b> (<i>Shift+Ctrl+Del</i>) - delete the currently displayed <a href="Glossary_Element.html" title="Glossary:Element">element</a> (and all its <a href="Glossary_Child.html" title="Glossary:Child">children</a> if any)</li>
+<li><b>Text attribute buttons</b> - change properties of texts in the currently selected <a href="Glossary_Component.html" title="Glossary:Component">component</a>:
+<ul><li><b>Bold font</b> (<i>Ctrl+B</i>) - change the bold attribute of the font in text <a href="Glossary_Component.html" title="Glossary:Component">components</a> or in a rich text component selection</li>
+<li><b>Italics font</b> (<i>Ctrl+I</i>) - change the italics attribute of the font in text <a href="Glossary_Component.html" title="Glossary:Component">components</a> or in a rich text component selection</li>
+<li><b>Underlined font</b> (<i>Ctrl+U</i>) - change the underline attribute of the font in text <a href="Glossary_Component.html" title="Glossary:Component">components</a> or in a rich text component selection</li>
+<li><b>Font</b> - change the font in the current text <a href="Glossary_Component.html" title="Glossary:Component">component</a> or in the current selection of the rich text component</li>
+<li><b>Font color</b> - change the color of the font in the current text <a href="Glossary_Component.html" title="Glossary:Component">component</a> or in the current selection of the rich text component</li>
+<li><b>Increase font size</b> (<i>Ctrl+]</i>) - increase the size of the font in a text <a href="Glossary_Component.html" title="Glossary:Component">component</a> or the size of the selected text in a rich text component</li>
+<li><b>Reduce font size</b> (<i>Ctrl+[</i>) - decrease the size of the font in a text <a href="Glossary_Component.html" title="Glossary:Component">component</a> or the size of the selected text in a rich text component</li>
+<li><b>Subscript</b> - change the selected text to subscript (only in <a href="HTML_component.html" title="HTML component">HTML components</a>)</li>
+<li><b>Superscript</b> - change the selected text to superscript (only in <a href="HTML_component.html" title="HTML component">HTML components</a>)</li>
+<li><b>Align left</b> - align the selected text to the left</li>
+<li><b>Align center</b> - center the selected text</li>
+<li><b>Align right</b> - align the selected text to the right</li>
+<li><b>Bullets</b> (<i>Shift+Ctrl+L</i>) - convert the currently selected text to a bulleted text (only in rich text and <a href="HTML_component.html" title="HTML component">HTML components</a>)</li>
+<li><b>Numbering</b> - convert the currently selected text to a numbered list (only in <a href="HTML_component.html" title="HTML component">HTML components</a>)</li>
+<li><b>Outdent</b> - outdent the selected text (only in <a href="HTML_component.html" title="HTML component">HTML components</a>)</li>
+<li><b>Indent</b> - indent the selected text (only in <a href="HTML_component.html" title="HTML component">HTML components</a>)</li></ul></li>
+<li><b>Component color</b> - change the color of the currently selected <a href="Glossary_Component.html" title="Glossary:Component">component</a></li>
+<li><b>Alignment and size</b> - makes it possible to size and align all <a href="Glossary_Component.html" title="Glossary:Component">components</a> that are currently in the <a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">editing</a> or <a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">dragging mode</a></li>
+<li><b>Save as default template</b> - save the current layout and component attributes as a <a href="Glossary_Template.html" title="Glossary:Template">template</a> for future use in other <a href="Glossary_Element.html" title="Glossary:Element">elements</a> in the current <a href="Glossary_Concept_group.html" title="Glossary:Concept group">concept group</a></li>
+<li><b>Apply template</b> (<i>Shift+Ctrl+M</i>) - apply a previously saved <a href="Glossary_Template.html" title="Glossary:Template">template</a> to the current <a href="Glossary_Element.html" title="Glossary:Element">element</a></li>
+<li><b>Component display mode buttons</b> - change the way the <a href="Glossary_Component.html" title="Glossary:Component">components</a> are displayed and acted upon:
+<ul><li><a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode"><b>Presentation mode</b></a> (<i>Esc</i>) - set all <a href="Glossary_Component.html" title="Glossary:Component">components</a> in way they will be seen by the student during repetitions</li>
+<li><a href="Glossary_Editing_mode.html" title="Glossary:Editing mode"><b>Editing mode</b></a> (<i>Alt+click</i>) - set all <a href="Glossary_Component.html" title="Glossary:Component">components</a> in the mode that makes it possible to edit texts, edit <a href="OLE_component.html" title="OLE component">OLE objects</a>, etc.</li>
+<li><a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode"><b>Dragging mode</b></a> (<i>Alt+double click</i>) - set all <a href="Glossary_Component.html" title="Glossary:Component">components</a> in the mode that makes dragging and sizing possible</li>
+<li><b>Switch mode</b> (<i>Ctrl+E</i>) - switch from <a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">presentation</a> to <a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">editing</a> to <a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">drag&amp;size mode</a></li></ul></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610110949
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.036 seconds
+Real time usage: 0.038 seconds
+Preprocessor visited node count: 8/1000000
+Post‐expand include size: 890/2097152 bytes
+Template argument size: 400/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.839      1 File:Edit_toolbar.jpg
+100.00%    3.839      1 -total
+ 41.52%    1.594      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:50:|#|:idhash:canonical and timestamp 20260610110949 and revision id 10216. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><b>编辑</b>可以通过单击显示工具栏<b>编辑</b>底部的选项卡<a href="Element_window.html" title="Element window">元素窗口</a>（您需要打开<b>中</b>或更高<a href="Glossary_Level.html" title="Glossary:Level">水平</a>为此，请执行以下操作）：</p>
+<div class="center">
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Edit_toolbar.jpg.html" title="SuperMemo: The Format toolbar at the bottom of the element window. It hosts operations that you will need to edit HTML and rich text components (fonts, alignment, bullets, etc.) as well as some other editing options such as: copy element, paste element, editing and dragging modes, etc."><img alt="SuperMemo: The Format toolbar at the bottom of the element window. It hosts operations that you will need to edit HTML and rich text components (fonts, alignment, bullets, etc.) as well as some other editing options such as: copy element, paste element, editing and dragging modes, etc." class="mw-file-element" decoding="async" height="51" loading="lazy" src="https://help.supermemo.org/images/thumb/b/b8/Edit_toolbar.jpg/800px-Edit_toolbar.jpg" srcset="/images/b/b8/Edit_toolbar.jpg 1.5x" width="800"/></a><figcaption>SuperMemo：元素窗口底部的格式工具栏。它托管您编辑 HTML 和富文本组件（字体、对齐方式、项目符号等）以及其他一些编辑选项所需的操作，例如：复制元素、粘贴元素、编辑和拖动模式等。</figcaption></figure>
+<blockquote>
+<p><i><b>图：</b>的<a class="mw-selflink selflink"><b>编辑</b>工具栏</a>在底部<a href="Element_window.html" title="Element window">元素窗口</a>。它托管您需要编辑的操作<a href="Using_text_components.html" title="Using text components">HTML 和富文本组件</a>（字体、对齐方式、项目符号等）以及其他一些编辑选项，例如：复制<a href="Glossary_Element.html" title="Glossary:Element">元素</a>, 粘贴元素,<a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">编辑</a>和<a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">拖拽</a>模式等</i>
+</p>
+</blockquote>
+</div>
+<p>以下是各个按钮的使用：</p>
+<ul><li><b>菜单按钮</b>- 打开菜单，否则可以通过右键单击元素显示区域和各个元素来打开菜单<a href="Glossary_Component.html" title="Glossary:Component">组件</a>:<ul><li><b>元素菜单</b>（<i>Alt+F10</i>) - 打开<a href="Element_menu.html" title="Element menu">元素菜单</a>与当前显示相关的操作<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><b>组件菜单</b>（<i>Alt+F12</i>) - 打开当前<a href="Component_menu.html" title="Component menu">组件菜单</a>与当前相关的操作<a href="Glossary_Component.html" title="Glossary:Component">组件</a></li></ul></li>
+<li><b>复制元素</b>- 复制当前显示的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>到剪贴板</li>
+<li><b>粘贴元素</b>- 粘贴<a href="Glossary_Element.html" title="Glossary:Element">元素</a>从剪贴板（该元素作为新元素添加到当前<a href="Glossary_Concept_group.html" title="Glossary:Concept group">概念组</a>在当前的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>）</li>
+<li><b>删除元素</b>（<i>Shift+Ctrl+Del</i>) - 删除当前显示的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（及其所有<a href="Glossary_Child.html" title="Glossary:Child">儿童</a>如果有的话）</li>
+<li><b>文本属性按钮</b>- 更改当前选定文本的属性<a href="Glossary_Component.html" title="Glossary:Component">组件</a>:<ul><li><b>粗体字体</b>（<i>Ctrl+B</i>) - 更改文本中字体的粗体属性<a href="Glossary_Component.html" title="Glossary:Component">组件</a>或在富文本组件选择中</li>
+<li><b>斜体字体</b>（<i>Ctrl+I</i>) - 更改文本中字体的斜体属性<a href="Glossary_Component.html" title="Glossary:Component">组件</a>或在富文本组件选择中</li>
+<li><b>带下划线的字体</b>（<i>Ctrl+U</i>) - 更改文本中字体的下划线属性<a href="Glossary_Component.html" title="Glossary:Component">组件</a>或在富文本组件选择中</li>
+<li><b>字体</b>- 更改当前文本的字体<a href="Glossary_Component.html" title="Glossary:Component">组件</a>或者在当前选择的富文本组件中</li>
+<li><b>字体颜色</b>- 更改当前文本中的字体颜色<a href="Glossary_Component.html" title="Glossary:Component">组件</a>或者在当前选择的富文本组件中</li>
+<li><b>增加字体大小</b>（<i>Ctrl+]</i>) - 增加文本中的字体大小<a href="Glossary_Component.html" title="Glossary:Component">组件</a>或富文本组件中所选文本的大小</li>
+<li><b>减小字体大小</b>（<i>Ctrl+[</i>) - 减小文本中的字体大小<a href="Glossary_Component.html" title="Glossary:Component">组件</a>或富文本组件中所选文本的大小</li>
+<li><b>下标</b>- 将选定的文本更改为下标（仅在<a href="HTML_component.html" title="HTML component">HTML 组件</a>）</li>
+<li><b>上标</b>- 将选定的文本更改为上标（仅在<a href="HTML_component.html" title="HTML component">HTML 组件</a>）</li>
+<li><b>左对齐</b>- 将所选文本左对齐</li>
+<li><b>居中对齐</b>- 将选定的文本居中</li>
+<li><b>右对齐</b>- 将所选文本右对齐</li>
+<li><b>子弹</b>（<i>Shift+Ctrl+L</i>) - 将当前选定的文本转换为项目符号文本（仅限富文本和<a href="HTML_component.html" title="HTML component">HTML 组件</a>）</li>
+<li><b>编号</b>- 将当前选定的文本转换为编号列表（仅在<a href="HTML_component.html" title="HTML component">HTML 组件</a>）</li>
+<li><b>减少缩进</b>- 减少所选文本的缩进（仅在<a href="HTML_component.html" title="HTML component">HTML 组件</a>）</li>
+<li><b>缩进</b>- 缩进所选文本（仅在<a href="HTML_component.html" title="HTML component">HTML 组件</a>）</li></ul></li>
+<li><b>元件颜色</b>- 更改当前选定的颜色<a href="Glossary_Component.html" title="Glossary:Component">组件</a></li>
+<li><b>对齐和尺寸</b>- 可以调整所有尺寸并对齐<a href="Glossary_Component.html" title="Glossary:Component">组件</a>目前在<a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">编辑</a>或<a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">拖动模式</a></li>
+<li><b>另存为默认模板</b>- 将当前布局和组件属性保存为<a href="Glossary_Template.html" title="Glossary:Template">模板</a>以便将来用于其他<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在当前的<a href="Glossary_Concept_group.html" title="Glossary:Concept group">概念组</a></li>
+<li><b>应用模板</b>（<i>Shift+Ctrl+M</i>) - 应用之前保存的<a href="Glossary_Template.html" title="Glossary:Template">模板</a>到目前的<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><b>组件显示模式按钮</b>- 改变方式<a href="Glossary_Component.html" title="Glossary:Component">组件</a>显示并执行：<ul><li><a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode"><b>演示模式</b></a>（<i>ESC</i>) - 设置全部<a href="Glossary_Component.html" title="Glossary:Component">组件</a>学生在重复时会看到它们</li>
+<li><a href="Glossary_Editing_mode.html" title="Glossary:Editing mode"><b>编辑模式</b></a>（<i>Alt+单击</i>) - 设置全部<a href="Glossary_Component.html" title="Glossary:Component">组件</a>在可以编辑文本的模式下，编辑<a href="OLE_component.html" title="OLE component">OLE对象</a>等</li>
+<li><a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode"><b>拖动方式</b></a>（<i>Alt+双击</i>) - 设置全部<a href="Glossary_Component.html" title="Glossary:Component">组件</a>在可以进行拖动和调整大小的模式下</li>
+<li><b>开关模式</b>（<i>Ctrl+E</i>) - 切换自<a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">演示</a>到<a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">编辑</a>到<a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">拖动&amp;调整大小模式</a></li></ul></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610110949
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.036 seconds
+Real time usage: 0.038 seconds
+Preprocessor visited node count: 8/1000000
+Post‐expand include size: 890/2097152 bytes
+Template argument size: 400/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.839      1 File:Edit_toolbar.jpg
+100.00%    3.839      1 -total
+ 41.52%    1.594      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:50:|#|:idhash:canonical and timestamp 20260610110949 and revision id 10216. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

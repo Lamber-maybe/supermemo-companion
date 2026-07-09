@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Element window — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Element_window" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Element_window"><span class="tocnumber">1</span> <span class="toctext">Element window</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Parts_of_the_window"><span class="tocnumber">2</span> <span class="toctext">Parts of the window</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Related_subjects"><span class="tocnumber">3</span> <span class="toctext">Related subjects</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Element_window">Element window</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_window&amp;veaction=edit&amp;section=1" title="Edit section: Element window"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Element_window&amp;action=edit&amp;section=1" title="Edit section's source code: Element window"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The element window displays your learning material. You can see one "page of information" at a time. The displayed page or flashcard is called an <a href="Glossary_Element.html" title="Glossary:Element">element</a>:
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Element_window.jpg.html" title="SuperMemo: The element window displaying a cloze produced from a larger article about sleep dreams"><img alt="SuperMemo: The element window displaying a cloze produced from a larger article about sleep dreams" class="mw-file-element" decoding="async" height="323" loading="lazy" src="https://help.supermemo.org/images/thumb/8/8e/Element_window.jpg/600px-Element_window.jpg" srcset="/images/thumb/8/8e/Element_window.jpg/900px-Element_window.jpg 1.5x, /images/thumb/8/8e/Element_window.jpg/1200px-Element_window.jpg 2x" width="600"/></a><figcaption>SuperMemo: The element window displaying a cloze produced from a larger article about sleep dreams</figcaption></figure>
+<blockquote>
+<p><i><b>Figure:</b> The <a class="mw-selflink selflink">element window</a> displaying a <a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">cloze deletion</a> produced from a larger article titled DREAMING and the BRAIN</i>
+</p>
+</blockquote>
+<div class="mw-heading mw-heading2"><h2 id="Parts_of_the_window">Parts of the window</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_window&amp;veaction=edit&amp;section=2" title="Edit section: Parts of the window"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Element_window&amp;action=edit&amp;section=2" title="Edit section's source code: Parts of the window"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The parts of the element window from the top are:
+</p>
+<ul><li>Caption - displays the title of the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> (e.g. the caption in the picture above shows the title of the element as <i>Ascending reticular activation during REM as compared to waking may favor a more [...] cholinergic route leading from the brainstem to the basal forebrain over a more dorsal ...</i>). Usually, SuperMemo uses the first question <a href="Glossary_Component.html" title="Glossary:Component">component</a> to automatically provide the title for the <a href="Glossary_Element.html" title="Glossary:Element">element</a>. You can always change the title (e.g. with <i>Alt+T</i>)</li>
+<li><a href="Main_menu.html" title="Main menu">Main menu</a> - the main menu of <a href="SuperMemo.html" title="SuperMemo">SuperMemo</a></li>
+<li><a href="Navigation_bar.html" title="Navigation bar">Navigation bar</a> - buttons most often used when navigating through the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> (<b><a href="Contents.html" title="Contents">Contents</a></b>, <b>Search</b>, <b>History</b>, etc.)</li>
+<li>Element display area (in the middle of the window) which hosts <a href="Glossary_Component.html" title="Glossary:Component">components</a> such as the question, the answer, video, <a href="HTML_component.html" title="HTML component">HTML components</a>, etc.</li>
+<li>Bottom panel:
+<ul><li><b><a href="Learn.html" title="Learn">Learn</a></b> - review the <a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">outstanding material</a> and learn new material (same as <i>Ctrl+L</i> or <b><a href="Learn_menu.html" title="Learn menu">Learn</a> : <a href="Learn_menu.html#Learn" title="Learn menu">Learn</a></b> on the <a href="Main_menu.html" title="Main menu">main menu</a>)</li>
+<li><b><a href="Add_new.html" title="Add new">Add new</a></b> - add new <a href="Glossary_Item.html" title="Glossary:Item">items</a> (same as <i>Alt+A</i> or <b><a href="Edit_menu.html" title="Edit menu">Edit</a> : <a href="Edit_menu.html#Add_a_new_item" title="Edit menu">Add a new item</a></b> on the <a href="Main_menu.html" title="Main menu">main menu</a>)</li>
+<li><b>Control bar</b> - featuring a set of toolbars providing a quick access to all the most important functions for reading, learning, and editing (it is not available at the <b>Beginner</b> <a href="Glossary_Level.html" title="Glossary:Level">level</a>). The following toolbars are available:
+<ul><li><a href="Learnbar.html" title="Learnbar"><b>Learn</b></a> - toolbar with the most important functions for reading (import, extract, cloze, etc.), learning (current priority, current interval, etc.), and editing</li>
+<li><a href="Edit_toolbar.html" title="Edit toolbar"><b>Edit</b></a> - toolbar with operations that you will need to edit <a href="Using_text_components.html" title="Using text components">HTML and rich text components</a> (fonts, alignment, bullets, etc.) as well as some other editing options such as: copy <a href="Glossary_Element.html" title="Glossary:Element">element</a>, paste element, <a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">editing</a> and <a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">dragging</a> modes, etc.</li>
+<li><a href="Read_toolbar.html" title="Read toolbar"><b>Read</b></a> - toolbar with options used in <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a></li>
+<li><a href="Compose_toolbar.html" title="Compose toolbar"><b>Compose</b></a> - toolbar with buttons that you will need to build your <a href="Glossary_Element.html" title="Glossary:Element">elements</a> by adding <a href="Glossary_Component.html" title="Glossary:Component">components</a> of different type (e.g. text, sound, image, HTML, etc.) and with different properties (e.g. font, color, transparency, sound file, etc.)</li>
+<li><a href="Tools_toolbar.html" title="Tools toolbar"><b>Tools</b></a> - toolbar with speed-buttons that provide one-click access to the most frequently used operations in SuperMemo.</li>
+<li><a href="Alarm_toolbar.html" title="Alarm toolbar"><b>Alarm</b></a> - toolbar with an alarm timer and stop-watch</li></ul></li></ul></li></ul>
+<p><b><a href="Element_menu.html" title="Element menu">Element menu</a></b>: The element window also provides a number of advanced options from the <a href="Element_menu.html" title="Element menu">element menu</a>. To open this menu right-click over the element area that is not covered with <a href="Glossary_Component.html" title="Glossary:Component">components</a>. If you are not sure what the location of <a href="Glossary_Component.html" title="Glossary:Component">components</a> is or components cover all <a href="Glossary_Element.html" title="Glossary:Element">element</a>'s display area, right-click over the <a href="Navigation_bar.html" title="Navigation bar">navigation bar</a> (e.g. over the <b>Contents</b> button). You can also open this menu by pressing <i>Alt+F10</i>. This menu should not be confused with the <a href="Component_menu.html" title="Component menu">component menu</a> that is opened by a right-click over <a href="Glossary_Component.html" title="Glossary:Component">components</a> (or <i>Alt+F12</i>).
+</p><p><b><a href="Element_menu.html#Edit" title="Element menu">Edit</a> : Element parameters</b> (<i>Ctrl+Shift+P</i>) will open the <a href="Element_parameters.html" title="Element parameters"><b>Element parameters</b> dialog box</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Related_subjects">Related subjects</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_window&amp;veaction=edit&amp;section=3" title="Edit section: Related subjects"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Element_window&amp;action=edit&amp;section=3" title="Edit section's source code: Related subjects"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>swapping questions with answers: <a href="Element_menu.html" title="Element menu">Element menu</a></li>
+<li>deleting <a href="Glossary_Element.html" title="Glossary:Element">elements</a>: <a href="Element_menu.html" title="Element menu">Element menu</a></li>
+<li>adding new <a href="Glossary_Component.html" title="Glossary:Component">components</a>: <a href="Compose_toolbar.html" title="Compose toolbar"><b>Compose</b> toolbar</a></li>
+<li>element <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a>: <a href="Priority_queue.html" title="Priority queue">Priority queue</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_window&amp;veaction=edit&amp;section=4" title="Edit section: See also"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Element_window&amp;action=edit&amp;section=4" title="Edit section's source code: See also"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://supermemopedia.com/wiki/ABC">Beginner questions at SuperMemopedia.com</a></li>
+<li><a class="external text" href="http://super-memory.com/help/faq/begin.htm">Beginner's FAQ at super-memory.com</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610110955
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.047 seconds
+Real time usage: 0.051 seconds
+Preprocessor visited node count: 72/1000000
+Post‐expand include size: 368/2097152 bytes
+Template argument size: 139/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.568      1 File:Element_window.jpg
+100.00%    4.568      1 -total
+ 41.99%    1.918      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:44:|#|:idhash:canonical and timestamp 20260610110955 and revision id 12132. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Element_window"><span class="tocnumber">1</span> <span class="toctext">元素窗口</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Parts_of_the_window"><span class="tocnumber">2</span> <span class="toctext">窗户的部分</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Related_subjects"><span class="tocnumber">3</span> <span class="toctext">相关主题</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#See_also"><span class="tocnumber">4</span> <span class="toctext">另请参阅</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Element_window">元素窗口</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_window&amp;veaction=edit&amp;section=1" title="Edit section: Element window"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Element_window&amp;action=edit&amp;section=1" title="Edit section's source code: Element window"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>元素窗口显示您的学习材料。您一次只能看到一页“信息”。显示的页面或抽认卡称为<a href="Glossary_Element.html" title="Glossary:Element">元素</a>:</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Element_window.jpg.html" title="SuperMemo: The element window displaying a cloze produced from a larger article about sleep dreams"><img alt="SuperMemo: The element window displaying a cloze produced from a larger article about sleep dreams" class="mw-file-element" decoding="async" height="323" loading="lazy" src="https://help.supermemo.org/images/thumb/8/8e/Element_window.jpg/600px-Element_window.jpg" srcset="/images/thumb/8/8e/Element_window.jpg/900px-Element_window.jpg 1.5x, /images/thumb/8/8e/Element_window.jpg/1200px-Element_window.jpg 2x" width="600"/></a><figcaption>SuperMemo：元素窗口显示由一篇有关睡眠梦的较大文章生成的完形填空</figcaption></figure>
+<blockquote>
+<p><i><b>图：</b>的<a class="mw-selflink selflink">元素窗口</a>显示一个<a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">完形填空删除</a>摘自一篇题为“梦想与大脑”的大型文章</i>
+</p>
+</blockquote>
+<div class="mw-heading mw-heading2"><h2 id="Parts_of_the_window">窗户的部分</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_window&amp;veaction=edit&amp;section=2" title="Edit section: Parts of the window"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Element_window&amp;action=edit&amp;section=2" title="Edit section's source code: Parts of the window"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>元素窗口从顶部开始的部分是：</p>
+<ul><li>标题 - 显示当前的标题<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（例如上图中的标题显示元素的标题为<i>与清醒时相比，快速眼动期间的上行网状激活可能有利于从脑干到基底前脑的胆碱能路线，而不是更多的背侧……</i>）。通常，SuperMemo 使用第一个问题<a href="Glossary_Component.html" title="Glossary:Component">组件</a>自动提供标题<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。您可以随时更改标题（例如<i>Alt+T</i>）</li>
+<li><a href="Main_menu.html" title="Main menu">主菜单</a>- 主菜单<a href="SuperMemo.html" title="SuperMemo">超级备忘录</a></li>
+<li><a href="Navigation_bar.html" title="Navigation bar">导航栏</a>- 导航时最常使用的按钮<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>（<b><a href="Contents.html" title="Contents">内容</a></b>,<b>搜索</b>,<b>历史</b>等）</li>
+<li>元素显示区域（窗口中间）承载<a href="Glossary_Component.html" title="Glossary:Component">组件</a>例如问题、答案、视频、<a href="HTML_component.html" title="HTML component">HTML 组件</a>等</li>
+<li>底部面板：<ul><li><b><a href="Learn.html" title="Learn">学习</a></b>- 审查<a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">优秀的材料</a>并学习新材料（与<i>Ctrl+L</i>或<b><a href="Learn_menu.html" title="Learn menu">学习</a> :<a href="Learn_menu.html#Learn" title="Learn menu">学习</a></b>于<a href="Main_menu.html" title="Main menu">主菜单</a>）</li>
+<li><b><a href="Add_new.html" title="Add new">添加新的</a></b>- 添加新的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>（与<i>阿尔特+A</i>或<b><a href="Edit_menu.html" title="Edit menu">编辑</a> :<a href="Edit_menu.html#Add_a_new_item" title="Edit menu">添加新项目</a></b>于<a href="Main_menu.html" title="Main menu">主菜单</a>）</li>
+<li><b>控制栏</b>- 具有一组工具栏，可快速访问所有最重要的阅读、学习和编辑功能（在<b>初学者</b> <a href="Glossary_Level.html" title="Glossary:Level">水平</a>）。可以使用以下工具栏：<ul><li><a href="Learnbar.html" title="Learnbar"><b>学习</b></a>- 具有最重要功能的工具栏，用于阅读（导入、提取、完形填空等）、学习（当前优先级、当前间隔等）和编辑</li>
+<li><a href="Edit_toolbar.html" title="Edit toolbar"><b>编辑</b></a>- 包含您需要编辑的操作的工具栏<a href="Using_text_components.html" title="Using text components">HTML 和富文本组件</a>（字体、对齐方式、项目符号等）以及其他一些编辑选项，例如：复制<a href="Glossary_Element.html" title="Glossary:Element">元素</a>, 粘贴元素,<a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">编辑</a>和<a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">拖拽</a>模式等</li>
+<li><a href="Read_toolbar.html" title="Read toolbar"><b>阅读</b></a>- 带有选项的工具栏<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a></li>
+<li><a href="Compose_toolbar.html" title="Compose toolbar"><b>撰写</b></a>- 带有按钮的工具栏，您需要构建您的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>通过添加<a href="Glossary_Component.html" title="Glossary:Component">组件</a>不同类型（例如文本、声音、图像、HTML 等）和不同属性（例如字体、颜色、透明度、声音文件等）</li>
+<li><a href="Tools_toolbar.html" title="Tools toolbar"><b>工具</b></a>- 带有快速按钮的工具栏，可一键访问 SuperMemo 中最常用的操作。</li>
+<li><a href="Alarm_toolbar.html" title="Alarm toolbar"><b>报警</b></a>- 带有闹钟计时器和秒表的工具栏</li></ul></li></ul></li></ul>
+<p><b><a href="Element_menu.html" title="Element menu">元素菜单</a></b>：元素窗口还提供了许多高级选项<a href="Element_menu.html" title="Element menu">元素菜单</a>。要打开此菜单，请右键单击未被覆盖的元素区域<a href="Glossary_Component.html" title="Glossary:Component">组件</a>。如果您不确定该位置<a href="Glossary_Component.html" title="Glossary:Component">组件</a>是或组件覆盖所有<a href="Glossary_Element.html" title="Glossary:Element">元素</a>的显示区域，右键单击<a href="Navigation_bar.html" title="Navigation bar">导航栏</a>（例如超过<b>内容</b>按钮）。您还可以通过按打开此菜单<i>Alt+F10</i>。该菜单不应与<a href="Component_menu.html" title="Component menu">组件菜单</a>通过右键单击打开<a href="Glossary_Component.html" title="Glossary:Component">组件</a>（或<i>Alt+F12</i>）。</p><p><b><a href="Element_menu.html#Edit" title="Element menu">编辑</a> ：元件参数</b>（<i>Ctrl+Shift+P</i>）将打开<a href="Element_parameters.html" title="Element parameters"><b>元件参数</b>对话框</a>。</p>
+<div class="mw-heading mw-heading2"><h2 id="Related_subjects">相关主题</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_window&amp;veaction=edit&amp;section=3" title="Edit section: Related subjects"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Element_window&amp;action=edit&amp;section=3" title="Edit section's source code: Related subjects"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>问题与答案交换：<a href="Element_menu.html" title="Element menu">元素菜单</a></li>
+<li>删除<a href="Glossary_Element.html" title="Glossary:Element">元素</a>:<a href="Element_menu.html" title="Element menu">元素菜单</a></li>
+<li>添加新的<a href="Glossary_Component.html" title="Glossary:Component">组件</a>:<a href="Compose_toolbar.html" title="Compose toolbar"><b>撰写</b>工具栏</a></li>
+<li>元素<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>:<a href="Priority_queue.html" title="Priority queue">优先队列</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="See_also">另请参阅</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_window&amp;veaction=edit&amp;section=4" title="Edit section: See also"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Element_window&amp;action=edit&amp;section=4" title="Edit section's source code: See also"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://supermemopedia.com/wiki/ABC">SuperMemopedia.com 上的初学者问题</a></li>
+<li><a class="external text" href="http://super-memory.com/help/faq/begin.htm">super-memory.com 的初学者常见问题解答</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610110955
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.047 seconds
+Real time usage: 0.051 seconds
+Preprocessor visited node count: 72/1000000
+Post‐expand include size: 368/2097152 bytes
+Template argument size: 139/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.568      1 File:Element_window.jpg
+100.00%    4.568      1 -total
+ 41.99%    1.918      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:44:|#|:idhash:canonical and timestamp 20260610110955 and revision id 12132. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

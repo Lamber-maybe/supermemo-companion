@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Algorithm SM-20 — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Algorithm_SM-20" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Evolution_from_SM-17_to_SM-19"><span class="tocnumber">2</span> <span class="toctext">Evolution from SM-17 to SM-19</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#The_Pre-training_Approach_(SM-17)"><span class="tocnumber">2.1</span> <span class="toctext">The Pre-training Approach (SM-17)</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Reinforcement_Learning_Implementation_(SM-17_through_SM-19)"><span class="tocnumber">2.2</span> <span class="toctext">Reinforcement Learning Implementation (SM-17 through SM-19)</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Performance_as_Overfitting"><span class="tocnumber">2.3</span> <span class="toctext">Performance as Overfitting</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#The_SM-20_Paradigm_Shift"><span class="tocnumber">3</span> <span class="toctext">The SM-20 Paradigm Shift</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Simplification_Through_Theoretical_Understanding"><span class="tocnumber">3.1</span> <span class="toctext">Simplification Through Theoretical Understanding</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Cross-User_Generalization"><span class="tocnumber">3.2</span> <span class="toctext">Cross-User Generalization</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Conceptual_Inversion"><span class="tocnumber">4</span> <span class="toctext">Conceptual Inversion</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Comment"><span class="tocnumber">5</span> <span class="toctext">Comment</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Overview">Overview</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=1" title="Edit section: Overview"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=1" title="Edit section's source code: Overview"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><b>SuperMemo Algorithm SM-20</b> leverages advances in artificial intelligence to fulfill a long-standing vision: a "neural network SuperMemo" that dates back to the 1990s. Building on data from Algorithm SM-19 and extensive <a href="Glossary_Repetition_history.html" title="Glossary:Repetition history">repetition histories</a> collected at supermemo.com, SM-20 represents a fundamental shift in how SuperMemo optimizes learning schedules.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Evolution_from_SM-17_to_SM-19">Evolution from SM-17 to SM-19</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=2" title="Edit section: Evolution from SM-17 to SM-19"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=2" title="Edit section's source code: Evolution from SM-17 to SM-19"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="The_Pre-training_Approach_(SM-17)"><span id="The_Pre-training_Approach_.28SM-17.29"></span>The Pre-training Approach (SM-17)</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=3" title="Edit section: The Pre-training Approach (SM-17)"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=3" title="Edit section's source code: The Pre-training Approach (SM-17)"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><a href="Algorithm_SM-17.html" title="Algorithm SM-17">Algorithm SM-17</a> can be understood through a machine learning lens as a model optimized during a pre-training stage. It employed approximately 30 hyperparameters that were tuned before release using gradient descent with a universal metric as the objective function.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Reinforcement_Learning_Implementation_(SM-17_through_SM-19)"><span id="Reinforcement_Learning_Implementation_.28SM-17_through_SM-19.29"></span>Reinforcement Learning Implementation (SM-17 through SM-19)</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=4" title="Edit section: Reinforcement Learning Implementation (SM-17 through SM-19)"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=4" title="Edit section's source code: Reinforcement Learning Implementation (SM-17 through SM-19)"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The deployed algorithm uses reinforcement learning to optimize approximately 40,000 parameters, primarily stored in the <i>Alg17</i> folder of the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> (4-8 bytes per parameter). Key characteristics include:
+</p>
+<ul><li><b>Reward signal</b>: User <a href="Glossary_Grade.html" title="Glossary:Grade">grades</a> serve as the reward function</li>
+<li><b>Optimization method</b>: Rather than computationally intensive techniques like backpropagation, the algorithm directly modifies individual matrix entries (just 2-5 at a time)</li>
+<li><b>Local propagation</b>: When appropriate, changes propagate from matrix entries to neighboring entries, maintaining model weights with minimal computational cost</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Performance_as_Overfitting">Performance as Overfitting</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=5" title="Edit section: Performance as Overfitting"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=5" title="Edit section's source code: Performance as Overfitting"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The excellent performance of <a href="Algorithm_SM-17.html" title="Algorithm SM-17">Algorithms SM-17 through SM-19</a> can be interpreted as a form of <b>benign overfitting</b>: the matrix-based function representations fit each user's unique memory characteristics and learning habits precisely, like a glove.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="The_SM-20_Paradigm_Shift">The SM-20 Paradigm Shift</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=6" title="Edit section: The SM-20 Paradigm Shift"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=6" title="Edit section's source code: The SM-20 Paradigm Shift"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Simplification_Through_Theoretical_Understanding">Simplification Through Theoretical Understanding</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=7" title="Edit section: Simplification Through Theoretical Understanding"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=7" title="Edit section's source code: Simplification Through Theoretical Understanding"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><b>Algorithm SM-20</b> dramatically simplifies the complex hierarchical structure of its predecessors. Most model functions, such as the <a href="Glossary_Stabilization_curve.html" title="Glossary:Stabilization curve">stabilization curve</a>, have well-established theoretical foundations. This allows <b>SM-20</b> to move away from matrix representations with minimal impact on the <a class="new" href="https://help.supermemo.org/index.php?title=Universal_metric_for_cross-comparison_of_spaced_repetition_algorithms&amp;action=edit&amp;redlink=1" title="Universal metric for cross-comparison of spaced repetition algorithms (page does not exist)">objective function</a>.
+</p><p>Through systematic simplification, the model has been reduced from 40,000 parameters to approximately 40 parameters. These parameters partially correspond to the pre-training hyperparameters used in SM-17, but with a crucial difference: they are now optimized through machine learning to achieve optimal fit to individual user data.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Cross-User_Generalization">Cross-User Generalization</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=8" title="Edit section: Cross-User Generalization"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=8" title="Edit section's source code: Cross-User Generalization"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>By analyzing patterns across different users and learning styles, combined with massive data collection enabled by supermemo.com, the model will hopefully be pruned down to 10-15 core parameters. Despite this dramatic reduction, AI-optimized fits achieve performance comparable and surpassing that of SM-19. 
+</p>
+<div class="bs-callout bs-callout-highlight">On Feb 27, 2026, <b>Algorithm SM-20</b> reached an unheard-of <a class="new" href="https://help.supermemo.org/index.php?title=Universal_metric&amp;action=edit&amp;redlink=1" title="Universal metric (page does not exist)">universal metric</a> of <b>0.000764%</b> on a <a class="external text" href="https://x.com/SuperMemoWoz/status/2027374526984565201">million repetitions dataset</a></div>
+<div class="mw-heading mw-heading2"><h2 id="Conceptual_Inversion">Conceptual Inversion</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=9" title="Edit section: Conceptual Inversion"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=9" title="Edit section's source code: Conceptual Inversion"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Where SM-19 treated model heuristics as hyperparameters and optimized model weights via reinforcement learning, SM-20 inverts this approach:
+</p>
+<ul><li><b>SM-19</b>: Uses fixed heuristics (hyperparameters) and optimizes weights via reinforcement learning</li>
+<li><b>SM-20</b>: Trusts the theoretical memory model and uses machine learning to fit the parameters specifically to each user's data.</li></ul>
+<p>At this level of algorithmic accuracy, a non-zero metric usually points to a flawed learning process rather than a flaw in the algorithm itself. Bad habits like cramming or skipping repetitions will cause these deviations. In SM-20, the metric serves as more of a diagnostic tool than a simple performance score.
+</p>
+<div class="bs-callout bs-callout-highlight">When the algorithm accurately predicts forgetting, the performance metric can be used to diagnose flaws in the user's learning process.</div>
+<div class="mw-heading mw-heading2"><h2 id="Comment">Comment</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=10" title="Edit section: Comment"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=10" title="Edit section's source code: Comment"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>you can comment on Twitter <a class="external text" href="https://x.com/SuperMemoWoz/status/2027374526984565201">here</a></li>
+<li>you can ask questions at SuperMemopedia <a class="external text" href="https://supermemopedia.com/wiki/Algorithm_SM-20">here</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260609141640
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.010 seconds
+Real time usage: 0.011 seconds
+Preprocessor visited node count: 50/1000000
+Post‐expand include size: 426/2097152 bytes
+Template argument size: 324/2097152 bytes
+Highest expansion depth: 3/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.031      1 -total
+ 96.45%    1.959      2 Template:Important_note
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:729:|#|:idhash:canonical and timestamp 20260609141640 and revision id 12258. Rendering was triggered because: page-view
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">概述</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Evolution_from_SM-17_to_SM-19"><span class="tocnumber">2</span> <span class="toctext">从 SM-17 到 SM-19 的演变</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#The_Pre-training_Approach_(SM-17)"><span class="tocnumber">2.1</span> <span class="toctext">预训练方法 (SM-17)</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Reinforcement_Learning_Implementation_(SM-17_through_SM-19)"><span class="tocnumber">2.2</span> <span class="toctext">强化学习实施（SM-17 至 SM-19）</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Performance_as_Overfitting"><span class="tocnumber">2.3</span> <span class="toctext">过拟合的表现</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#The_SM-20_Paradigm_Shift"><span class="tocnumber">3</span> <span class="toctext">SM-20 范式转变</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Simplification_Through_Theoretical_Understanding"><span class="tocnumber">3.1</span> <span class="toctext">通过理论理解进行简化</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Cross-User_Generalization"><span class="tocnumber">3.2</span> <span class="toctext">跨用户泛化</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Conceptual_Inversion"><span class="tocnumber">4</span> <span class="toctext">概念倒置</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Comment"><span class="tocnumber">5</span> <span class="toctext">评论</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Overview">概述</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=1" title="Edit section: Overview"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=1" title="Edit section's source code: Overview"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><b>SuperMemo 算法 SM-20</b>利用人工智能的进步来实现一个长期的愿景：一个可以追溯到 20 世纪 90 年代的“神经网络 SuperMemo”。基于算法 SM-19 和广泛的数据<a href="Glossary_Repetition_history.html" title="Glossary:Repetition history">重复历史</a>SM-20 收集于 supermemo.com，代表了 SuperMemo 优化学习计划方式的根本转变。</p>
+<div class="mw-heading mw-heading2"><h2 id="Evolution_from_SM-17_to_SM-19">从 SM-17 到 SM-19 的演变</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=2" title="Edit section: Evolution from SM-17 to SM-19"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=2" title="Edit section's source code: Evolution from SM-17 to SM-19"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="The_Pre-training_Approach_(SM-17)"><span id="The_Pre-training_Approach_.28SM-17.29"></span>预训练方法 (SM-17)</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=3" title="Edit section: The Pre-training Approach (SM-17)"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=3" title="Edit section's source code: The Pre-training Approach (SM-17)"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><a href="Algorithm_SM-17.html" title="Algorithm SM-17">算法 SM-17</a>可以通过机器学习镜头将其理解为在预训练阶段优化的模型。它采用了大约 30 个超参数，这些超参数在发布前使用梯度下降法进行了调整，并以通用指标作为目标函数。</p>
+<div class="mw-heading mw-heading3"><h3 id="Reinforcement_Learning_Implementation_(SM-17_through_SM-19)"><span id="Reinforcement_Learning_Implementation_.28SM-17_through_SM-19.29"></span>强化学习实施（SM-17 至 SM-19）</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=4" title="Edit section: Reinforcement Learning Implementation (SM-17 through SM-19)"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=4" title="Edit section's source code: Reinforcement Learning Implementation (SM-17 through SM-19)"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>部署的算法使用强化学习来优化大约 40,000 个参数，这些参数主要存储在<i>阿尔格17</i>的文件夹<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>（每个参数 4-8 个字节）。主要特征包括：</p>
+<ul><li><b>奖励信号</b>: 用户<a href="Glossary_Grade.html" title="Glossary:Grade">成绩</a>作为奖励函数</li>
+<li><b>优化方法</b>：与反向传播等计算密集型技术不同，该算法直接修改各个矩阵条目（一次仅修改 2-5 个）</li>
+<li><b>本地传播</b>：在适当的情况下，更改从矩阵条目传播到相邻条目，以最小的计算成本维持模型权重</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Performance_as_Overfitting">过拟合的表现</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=5" title="Edit section: Performance as Overfitting"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=5" title="Edit section's source code: Performance as Overfitting"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>的优异性能<a href="Algorithm_SM-17.html" title="Algorithm SM-17">算法 SM-17 到 SM-19</a>可以解释为一种形式<b>良性过度拟合</b>：基于矩阵的函数表示精确地适合每个用户独特的记忆特征和学习习惯，就像手套一样。</p>
+<div class="mw-heading mw-heading2"><h2 id="The_SM-20_Paradigm_Shift">SM-20 范式转变</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=6" title="Edit section: The SM-20 Paradigm Shift"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=6" title="Edit section's source code: The SM-20 Paradigm Shift"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Simplification_Through_Theoretical_Understanding">通过理论理解进行简化</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=7" title="Edit section: Simplification Through Theoretical Understanding"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=7" title="Edit section's source code: Simplification Through Theoretical Understanding"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><b>算法 SM-20</b>极大地简化了其前身的复杂层次结构。大多数模型函数，例如<a href="Glossary_Stabilization_curve.html" title="Glossary:Stabilization curve">稳定曲线</a>，具有扎实的理论基础。这允许<b>SM-20</b>远离矩阵表示，对<a class="new" href="https://help.supermemo.org/index.php?title=Universal_metric_for_cross-comparison_of_spaced_repetition_algorithms&amp;action=edit&amp;redlink=1" title="Universal metric for cross-comparison of spaced repetition algorithms (page does not exist)">目标函数</a>。</p><p>通过系统简化，模型已从 40,000 个参数减少到约 40 个参数。这些参数部分对应于 SM-17 中使用的预训练超参数，但有一个关键的区别：它们现在通过机器学习进行优化，以实现对单个用户数据的最佳拟合。</p>
+<div class="mw-heading mw-heading3"><h3 id="Cross-User_Generalization">跨用户泛化</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=8" title="Edit section: Cross-User Generalization"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=8" title="Edit section's source code: Cross-User Generalization"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>通过分析不同用户和学习风格的模式，结合 supermemo.com 提供的海量数据收集，该模型有望被削减至 10-15 个核心参数。尽管大幅减少，AI 优化的贴合性能仍可与 SM-19 相媲美甚至超越。</p>
+<div class="bs-callout bs-callout-highlight">2026 年 2 月 27 日，<b>算法 SM-20</b>达到了闻所未闻的程度<a class="new" href="https://help.supermemo.org/index.php?title=Universal_metric&amp;action=edit&amp;redlink=1" title="Universal metric (page does not exist)">通用度量</a>的<b>0.000764%</b>在一个<a class="external text" href="https://x.com/SuperMemoWoz/status/2027374526984565201">百万次重复数据集</a></div>
+<div class="mw-heading mw-heading2"><h2 id="Conceptual_Inversion">概念倒置</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=9" title="Edit section: Conceptual Inversion"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=9" title="Edit section's source code: Conceptual Inversion"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>SM-19 将模型启发法视为超参数并通过强化学习优化模型权重，而 SM-20 则颠倒了这种方法：</p>
+<ul><li><b>SM-19</b>：使用固定启发式（超参数）并通过强化学习优化权重</li>
+<li><b>SM-20</b>：信任理论记忆模型，并使用机器学习将参数专门适合每个用户的数据。</li></ul>
+<p>在这种算法准确性水平上，非零度量通常表明学习过程有缺陷，而不是算法本身存在缺陷。死记硬背或跳过重复等坏习惯会导致这些偏差。在 SM-20 中，该指标更多地充当诊断工具，而不是简单的性能分数。</p>
+<div class="bs-callout bs-callout-highlight">当算法准确预测遗忘时，性能指标可用于诊断用户学习过程中的缺陷。</div>
+<div class="mw-heading mw-heading2"><h2 id="Comment">评论</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;veaction=edit&amp;section=10" title="Edit section: Comment"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Algorithm_SM-20&amp;action=edit&amp;section=10" title="Edit section's source code: Comment"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>你可以在 Twitter 上发表评论<a class="external text" href="https://x.com/SuperMemoWoz/status/2027374526984565201">这里</a></li>
+<li>您可以在 SuperMemopedia 提问<a class="external text" href="https://supermemopedia.com/wiki/Algorithm_SM-20">这里</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260609141640
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.010 seconds
+Real time usage: 0.011 seconds
+Preprocessor visited node count: 50/1000000
+Post‐expand include size: 426/2097152 bytes
+Template argument size: 324/2097152 bytes
+Highest expansion depth: 3/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.031      1 -total
+ 96.45%    1.959      2 Template:Important_note
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:729:|#|:idhash:canonical and timestamp 20260609141640 and revision id 12258. Rendering was triggered because: page-view
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

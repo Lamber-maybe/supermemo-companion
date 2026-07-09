@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HTML link menu — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/HTML_link_menu" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p>Use <b>Insert HTML link</b> to insert hyperlinks into the text in the <a href="HTML_component.html" title="HTML component">HTML component</a>. Apart from standard hyperlinks, you will also be able to link to other <a href="Glossary_Element.html" title="Glossary:Element">elements</a> or various <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry members</a> in SuperMemo.
+</p><p>The <b>Insert HTML link</b> submenu includes the following options:
+</p>
+<ul><li><b>Web address</b> (<i>Ctrl+K</i>) - insert a standard hyperlink to any address on the Internet. Before choosing <b><a href="Component_menu.html#Insert_HTML_link" title="Component menu">Insert HTML link</a> : Web address</b>, select a text that is to form the hyperlink anchor text. SuperMemo will open a dialog and ask you to type in the Internet address (URL). If you click your hyperlink in the <a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">presentation mode</a> (e.g. after pressing <i>Esc</i>), SuperMemo will load the linked file from the Internet (or execute another relevant action, e.g. open a new e-mail message to send if you use a "<i>mailto:</i>" hyperlink). Example:
+<ol><li>select text in your HTML document,</li>
+<li>press <i>Ctrl+K</i>,</li>
+<li>type <i>http://cnn.com</i> and press <i>Enter</i>,</li>
+<li>press <i>Esc</i> (to return to the <a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">presentation mode</a>),</li>
+<li>click on the hyperlink (<a class="external text" href="http://cnn.com">CNN.com</a> page should show),</li>
+<li>use the <b>Back</b> button or <i>Alt+Left</i> or <i>Esc</i> to return to the original text.</li></ol></li></ul>
+<dl><dd>Note that once SuperMemo loads an external page (e.g. <a class="external text" href="http://cnn.com">CNN.com</a> page), HTML <a href="Component_menu.html" title="Component menu">component menu</a> is automatically replaced with the standard Internet Explorer menu</dd></dl>
+<ul><li><b>Element</b> - insert a hyperlink to another <a href="Glossary_Element.html" title="Glossary:Element">element</a> in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. When you execute this option, SuperMemo will open the <a href="Contents.html" title="Contents"><b>Contents</b> window</a> and ask you to choose an <a href="Glossary_Element.html" title="Glossary:Element">element</a> to link to. Once you have selected the <a href="Glossary_Element.html" title="Glossary:Element">element</a> to link to, double click it or click the button <b>Accept</b> at the bottom of the <a href="Contents.html" title="Contents"><b>Contents</b> window</a>. When you switch back to the <a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">presentation mode</a> (e.g. with <i>Esc</i>), and click your new hyperlink, SuperMemo will display the linked <a href="Glossary_Element.html" title="Glossary:Element">element</a> in the <a href="Element_window.html" title="Element window">element window</a>. To come back to the linking <a href="Glossary_Element.html" title="Glossary:Element">element</a>, click the <b>Back</b> button on the <a href="Navigation_bar.html" title="Navigation bar">navigation bar</a> (or press <i>Alt+Left</i>)</li>
+<li><b>Element number</b> - insert a hyperlink to another <a href="Glossary_Element.html" title="Glossary:Element">element</a> by using that element's physical number. If your text already refers to another <a href="Glossary_Element.html" title="Glossary:Element">element</a>, e.g. <i>#1481</i>, select the element number and choose <b>Element number</b> to immediately link to that element number</li>
+<li><b>Text registry</b> - insert a hyperlink to another text in the text <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a>. Before choosing <b><a href="Component_menu.html#Insert_HTML_link" title="Component menu">Insert HTML link</a> : Text registry</b>, select a text that is supposed to be hyperlinked. When you execute this option, SuperMemo will open the text <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> and ask you to choose a text to link to. Once you have selected the text in the registry, double-click it or click the button <b>Accept</b> at the bottom of the text <a href="Registry_window.html" title="Registry window">registry window</a>. When you switch back to the <a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">presentation mode</a> (e.g. with <i>Esc</i>), and click the new hyperlink, SuperMemo will display the hyperlinked text</li>
+<li><b>HTML file</b> - insert a hyperlink to a stand-alone HTML file. Before choosing <b><a href="Component_menu.html#Insert_HTML_link" title="Component menu">Insert HTML link</a> : HTML file</b>, select a text that is supposed to be hyperlinked. When you execute this option, SuperMemo will open a file dialog and ask you to choose an HTML file available on your hard disk or on a network drive. Once you have located the file, click <b>Open</b>. When you switch back to the <a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">presentation mode</a> (e.g. with <i>Esc</i>), and click the new hyperlink, SuperMemo will load the linked file into the <a href="HTML_component.html" title="HTML component">HTML component</a>. To come back to the previously displayed text, choose <b>Back</b> on the HTML browser menu</li>
+<li><b>Registry image</b> - insert an image from the image <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a>. When you execute this option, SuperMemo will open the image <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> and ask you to choose an image to link to. Once you have selected the image, click the button <b>Accept</b> at the bottom of the image <a href="Registry_window.html" title="Registry window">registry window</a>. Your <a href="HTML_component.html" title="HTML component">HTML component</a> will now display the selected image inserted in your HTML code</li>
+<li><b>Registry script</b> - insert a link to a SuperMemo <a href="Scripts.html" title="Scripts">script</a>. Select a text and choose this option to open the script <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a>. Double-click the script to link to. Once you click on a link to a script, the script will be executed in the same was as it is executed via script <a href="Glossary_Component.html" title="Glossary:Component">components</a></li></ul>
+<p>Using <b><a href="Component_menu.html#Insert_HTML_link" title="Component menu">Insert HTML link</a> : Web address</b>, you can also create hyperlinks based on various protocols such as <i>ftp</i>, <i>file</i>, <i>mailto</i>, etc. You can also link to MS Office applications. For example <i>Outlook:Calendar</i> link will open the calendar in your MS Outlook
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610053513
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.006 seconds
+Real time usage: 0.007 seconds
+Preprocessor visited node count: 4/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 14/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:120:|#|:idhash:canonical and timestamp 20260610053513 and revision id 7826. Rendering was triggered because: page-view
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p>使用<b>插入 HTML 链接</b>将超链接插入到文本中<a href="HTML_component.html" title="HTML component">HTML组件</a>。除了标准的超链接之外，您还可以链接到其他<a href="Glossary_Element.html" title="Glossary:Element">元素</a>或各种<a href="Glossary_Registry_member.html" title="Glossary:Registry member">登记册成员</a>在 SuperMemo 中。</p><p>的<b>插入 HTML 链接</b>子菜单包括以下选项：</p>
+<ul><li><b>网址</b>（<i>Ctrl+K</i>) - 插入指向 Internet 上任何地址的标准超链接。选择之前<b><a href="Component_menu.html#Insert_HTML_link" title="Component menu">插入 HTML 链接</a> : 网址</b>，选择要形成超链接锚文本的文本。 SuperMemo 将打开一个对话框并要求您输入互联网地址 (URL)。如果您单击其中的超链接<a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">演示模式</a>（例如，按下后<i>ESC</i>），SuperMemo 将从互联网加载链接文件（或执行其他相关操作，例如，如果您使用“<i>邮寄地址：</i>“超链接）。示例：<ol><li>选择 HTML 文档中的文本，</li>
+<li>按<i>Ctrl+K</i>,</li>
+<li>类型<i>http://cnn.com</i>并按<i>输入</i>,</li>
+<li>按<i>ESC</i>（返回到<a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">演示模式</a>),</li>
+<li>单击超链接（<a class="external text" href="http://cnn.com">美国有线电视新闻网</a>页面应显示），</li>
+<li>使用<b>返回</b>按钮或<i>Alt+左键</i>或<i>ESC</i>返回原文。</li></ol></li></ul>
+<dl><dd>请注意，一旦 SuperMemo 加载外部页面（例如<a class="external text" href="http://cnn.com">美国有线电视新闻网</a>页面），HTML<a href="Component_menu.html" title="Component menu">组件菜单</a>自动替换为标准 Internet Explorer 菜单</dd></dl>
+<ul><li><b>元素</b>- 插入另一个超链接<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。当您执行此选项时，SuperMemo 将打开<a href="Contents.html" title="Contents"><b>内容</b>窗户</a>并要求您选择一个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>链接到。一旦您选择了<a href="Glossary_Element.html" title="Glossary:Element">元素</a>要链接到，请双击它或单击按钮<b>接受</b>在底部<a href="Contents.html" title="Contents"><b>内容</b>窗户</a>。当您切换回<a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">演示模式</a>（例如与<i>ESC</i>），然后单击您的新超链接，SuperMemo 将显示链接的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在<a href="Element_window.html" title="Element window">元素窗口</a>。回到链接<a href="Glossary_Element.html" title="Glossary:Element">元素</a>，单击<b>返回</b>按钮上的<a href="Navigation_bar.html" title="Navigation bar">导航栏</a>（或按<i>Alt+左键</i>）</li>
+<li><b>元件数量</b>- 插入另一个超链接<a href="Glossary_Element.html" title="Glossary:Element">元素</a>通过使用该元素的物理编号。如果您的文字已经引用了另一个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>，例如<i>第1481章</i>，选择元素编号并选择<b>元件数量</b>立即链接到该元素编号</li>
+<li><b>文本注册表</b>- 在文本中插入另一个文本的超链接<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>。选择之前<b><a href="Component_menu.html#Insert_HTML_link" title="Component menu">插入 HTML 链接</a> ：文本注册表</b>，选择一个应该是超链接的文本。当您执行此选项时，SuperMemo 将打开文本<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>并要求您选择要链接的文本。在注册表中选择文本后，双击它或单击按钮<b>接受</b>在文字的底部<a href="Registry_window.html" title="Registry window">注册表窗口</a>。当您切换回<a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">演示模式</a>（例如与<i>ESC</i>），然后单击新的超链接，SuperMemo 将显示超链接文本</li>
+<li><b>HTML 文件</b>- 插入独立 HTML 文件的超链接。选择之前<b><a href="Component_menu.html#Insert_HTML_link" title="Component menu">插入 HTML 链接</a> : HTML 文件</b>，选择一个应该是超链接的文本。当您执行此选项时，SuperMemo 将打开一个文件对话框，并要求您选择硬盘或网络驱动器上可用的 HTML 文件。找到该文件后，单击<b>打开</b>。当您切换回<a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">演示模式</a>（例如与<i>ESC</i>），然后单击新的超链接，SuperMemo 会将链接文件加载到<a href="HTML_component.html" title="HTML component">HTML组件</a>。要返回之前显示的文本，请选择<b>返回</b>在 HTML 浏览器菜单上</li>
+<li><b>注册表镜像</b>- 从图像中插入图像<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>。当您执行此选项时，SuperMemo 将打开图像<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>并要求您选择要链接的图像。选择图像后，单击按钮<b>接受</b>在图像的底部<a href="Registry_window.html" title="Registry window">注册表窗口</a>。你的<a href="HTML_component.html" title="HTML component">HTML组件</a>现在将显示插入 HTML 代码中的选定图像</li>
+<li><b>注册表脚本</b>- 插入 SuperMemo 的链接<a href="Scripts.html" title="Scripts">脚本</a>。选择文本并选择此选项以打开脚本<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>。双击要链接到的脚本。单击脚本的链接后，该脚本将以与通过脚本执行相同的方式执行<a href="Glossary_Component.html" title="Glossary:Component">组件</a></li></ul>
+<p>使用<b><a href="Component_menu.html#Insert_HTML_link" title="Component menu">插入 HTML 链接</a> : 网址</b>，您还可以创建基于各种协议的超链接，例如<i>文件传输协议</i>,<i>文件</i>,<i>邮寄地址</i>等。您还可以链接到 MS Office 应用程序。例如<i>展望：日历</i>链接将在您的 MS Outlook 中打开日历</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610053513
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.006 seconds
+Real time usage: 0.007 seconds
+Preprocessor visited node count: 4/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 14/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:120:|#|:idhash:canonical and timestamp 20260610053513 and revision id 7826. Rendering was triggered because: page-view
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

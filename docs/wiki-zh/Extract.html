@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Extract — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Extract" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><a href="Glossary_Extract.html" title="Glossary:Extract">Extracts</a> are portions of the learning material that can be processed independently. Extracts can be nested. For example, you can extract chapters from a book, sections from a chapter, paragraphs from a section, and sentences from a paragraph. Sentences can be processed further with <a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">cloze deletions</a>.
+</p><p>To extract a portion of the text in <a href="Incremental_reading.html" title="Incremental reading">incremental reading</a>, select the portion to be extracted and press <i>Alt+X</i> (you can also click the extract icon on the <a href="Learnbar.html" title="Learnbar">learnbar</a>). The extract will be stored in a separate <a href="Glossary_Element.html" title="Glossary:Element">element</a>, which enters the learning process as the <a href="Glossary_Child.html" title="Glossary:Child">child</a> of the extract's origin.
+</p><p>To extract a portion of a <a class="external text" href="https://youtube.com">YouTube</a> video, press <b>Start</b> at the beginning of the extracted clip, <b>Stop</b> at the end, and <b>Extract</b>. The extract will be created when you press <i>Alt+X</i> or go to the next <a href="Glossary_Element.html" title="Glossary:Element">element</a> in the <a href="Glossary_Outstanding_queue.html" title="Glossary:Outstanding queue">outstanding queue</a>.
+</p><p>To extract a portion of an audio or a video file, use the extractor panel of the sound or video component. Press <b>Start</b>, <b>Stop</b> and <b>Extract</b>.
+</p><p>To extract a portion of a picture:
+</p>
+<ol><li>select the picture (click)</li>
+<li>press <i>Alt+X</i></li>
+<li>select a portion by dragging the mouse</li>
+<li>press <i>Esc</i></li></ol>
+<p>For details see: <a href="Visual_learning.html" title="Visual learning">Visual learning</a>
+</p><p>If you navigate to an external site in SuperMemo (e.g. by clicking a link in a <a class="external text" href="https://wikipedia.org">Wikipedia</a> article import), you can also extract a portion of that external site by selecting a portion of the text and pressing the extract icon. This function is useful if your <a href="Web_browser.html" title="Web browser">web browser</a> is not fully supported. For example, you can import article links and then process the article inside SuperMemo.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260609233159
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.004 seconds
+Real time usage: 0.005 seconds
+Preprocessor visited node count: 1/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 1/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:685:|#|:idhash:canonical and timestamp 20260609233159 and revision id 11582. Rendering was triggered because: page-view
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>是学习材料中可以独立处理的部分。提取可以嵌套。例如，您可以从书中提取章节、从章节中提取章节、从章节中提取段落以及从段落中提取句子。句子可以进一步处理<a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">完形填空删除</a>。</p><p>提取文本的一部分<a href="Incremental_reading.html" title="Incremental reading">增量阅读</a>，选择要提取的部分并按<i>Alt+X</i>（您也可以单击提取图标<a href="Learnbar.html" title="Learnbar">学习栏</a>）。提取的内容将存储在单独的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>，进入学习过程<a href="Glossary_Child.html" title="Glossary:Child">孩子</a>提取物的来源。</p><p>提取a的一部分<a class="external text" href="https://youtube.com">YouTube</a>视频、新闻<b>开始</b>在提取的剪辑的开头，<b>停止</b>最后，以及<b>提取物</b>。当您按下时将创建提取<i>Alt+X</i>或转到下一个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在<a href="Glossary_Outstanding_queue.html" title="Glossary:Outstanding queue">未完成的队列</a>。</p><p>要提取音频或视频文件的一部分，请使用声音或视频组件的提取器面板。新闻<b>开始</b>,<b>停止</b>和<b>提取物</b>。</p><p>提取图片的一部分：</p>
+<ol><li>选择图片（单击）</li>
+<li>按<i>Alt+X</i></li>
+<li>拖动鼠标选择一部分</li>
+<li>按<i>ESC</i></li></ol>
+<p>详情请参阅：<a href="Visual_learning.html" title="Visual learning">视觉学习</a>
+</p><p>如果您导航到 SuperMemo 中的外部站点（例如，通过单击<a class="external text" href="https://wikipedia.org">维基百科</a>文章导入），您还可以通过选择文本的一部分并按提取图标来提取该外部站点的一部分。如果您的<a href="Web_browser.html" title="Web browser">网络浏览器</a>不完全支持。例如，您可以导入文章链接，然后在 SuperMemo 中处理文章。</p>
+<!-- 
+NewPP limit report
+Cached time: 20260609233159
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.004 seconds
+Real time usage: 0.005 seconds
+Preprocessor visited node count: 1/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 1/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:685:|#|:idhash:canonical and timestamp 20260609233159 and revision id 11582. Rendering was triggered because: page-view
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

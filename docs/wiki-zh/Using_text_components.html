@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Using text components — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Using_text_components" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p>Text is the primary way in which you represent knowledge in SuperMemo. You will spend a lot of time processing texts, esp. if you learn to employ <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>. This is why your decisions about choosing appropriate text <a href="Glossary_Component.html" title="Glossary:Component">components</a> are important. 
+</p><p>Plain text <a href="Glossary_Component.html" title="Glossary:Component">components</a> have traditionally been the most often used text components in earlier versions of SuperMemo. They consume little space and can be searched at high speeds with SuperMemo low-level search procedures. With the advent of <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>, however, <a href="HTML_component.html" title="HTML component">HTML components</a> have become the default text <a href="Glossary_Component.html" title="Glossary:Component">components</a> in SuperMemo. <a href="HTML_component.html" title="HTML component">HTML components</a> provide many formatting options, however, they consume more disk space. If disk space is very important for you, use <i>Classic</i> <a href="Glossary_Template.html" title="Glossary:Template">template</a> (and its derivatives) for <a href="Glossary_Item.html" title="Glossary:Item">items</a> instead of HTML-based templates (see: <a href="Templates.html" title="Templates">Using templates</a>). Optimally, you should use <a href="HTML_component.html" title="HTML component">HTML components</a> with <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a> and use <i>Classic</i> plain text <a href="Glossary_Template.html" title="Glossary:Template">templates</a> on <a href="Glossary_Item.html" title="Glossary:Item">items</a> that have been completed (i.e. formulated in their final shape). SuperMemo automatically removes formatting from texts used in plain text <a href="Glossary_Component.html" title="Glossary:Component">components</a> when you run <b><a href="File_menu.html" title="File menu">File</a> : <a href="Repairing_collections.html" title="Repairing collections">Repair collection</a></b> with <b>Rebuild registries</b> checked. This practice helps you keep your <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> compact and fast. 
+</p><p>The table below summarizes pros and cons of using various text <a href="Glossary_Component.html" title="Glossary:Component">components</a> in SuperMemo: 
+</p>
+<table border="1" cellpadding="5" cellspacing="5" style="background-color: rgb(192, 192, 192);">
+<tbody><tr>
+<td align="center"><b>Type</b>
+</td>
+<td align="center"><b>Advantages</b>
+</td>
+<td align="center"><b>Disadvantages</b>
+</td>
+<td align="center"><b>Typical use</b>
+</td></tr>
+<tr>
+<td><a href="HTML_component.html" title="HTML component"><b>HTML</b> component</a>
+<p>This <a href="Glossary_Component.html" title="Glossary:Component">component</a> is used by <a href="Glossary_Template.html" title="Glossary:Template">templates</a> such as <i>Item</i>, <i>Article</i>, <i>Item Picture</i>, etc. 
+</p>
+</td>
+<td>
+<ol><li>richest formatting</li>
+<li>full incremental reading support</li>
+<li>full HTML and JavaScript support</li>
+<li>images can be inserted in the text</li>
+<li>Unicode support</li>
+<li>search possible</li>
+<li>search&amp;replace possible</li>
+<li>phonetic transcription possible</li>
+<li>can use stylesheets</li></ol>
+</td>
+<td>
+<ol><li>Internet Explorer 6.0 or later required</li>
+<li>fonts can be modified by <a href="Glossary_Template.html" title="Glossary:Template">templates</a> only before the text is typed in (unless you use a stylesheet with the template)</li>
+<li>all texts kept in separate files (this slows down copying of large <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a>)</li></ol>
+</td>
+<td>
+<ol><li>default text format</li>
+<li><a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a></li>
+<li>richly formatted files with scripts and multimedia</li>
+<li>whole websites</li>
+<li>files that can be displayed in Internet Explorer (e.g. XLS, PDF, DOC, RTF, GIF, etc.)</li></ol>
+</td></tr>
+<tr>
+<td><a href="WebView_component.html" title="WebView component"><b>WebView</b> component</a>
+<p>This <a href="Glossary_Component.html" title="Glossary:Component">component</a> uses a modern browser engine (e.g. Chromium-based WebView) to display HTML content.
+</p>
+</td>
+<td>
+<ol><li>modern HTML, CSS, and JavaScript support</li>
+<li>renders pages more accurately than Internet Explorer</li>
+<li>better security and stability</li>
+<li>full Unicode support</li>
+<li>fast rendering of large documents</li>
+<li>supports modern web standards (HTML5, CSS3)</li>
+<li>search possible</li>
+<li>search&amp;replace possible</li></ol>
+</td>
+<td>
+<ol><li>may not support all legacy Internet Explorer features</li>
+<li>slightly higher memory use than the classic HTML component</li>
+<li>some older scripts or templates may require adaptation</li>
+<li><a href="Incremental_reading.html" title="Incremental reading">incremental reading</a> support is rudimentary</li></ol>
+</td>
+<td>
+<ol><li>modern HTML content</li>
+<li>web pages requiring up‑to‑date browser standards</li>
+<li>items using interactive JavaScript widgets</li>
+<li>incremental reading when modern rendering is preferred</li></ol>
+</td></tr>
+<tr>
+<td><b>Plain text</b> component
+<p>This <a href="Glossary_Component.html" title="Glossary:Component">component</a> is used by the <i>Classic</i> template 
+</p>
+</td>
+<td>
+<ol><li>fonts can be modified globally via <a href="Glossary_Template.html" title="Glossary:Template">templates</a></li>
+<li>small size of data</li>
+<li>speed</li>
+<li>can be made transparent (e.g. to write over images)</li>
+<li>search possible</li>
+<li>search&amp;replace possible (including <a href="Filter_files.html" title="Filter files"><b>Apply filter</b></a>)</li>
+<li>automatic translation and phonetic transcription</li></ol>
+</td>
+<td>
+<ol><li>no rich formatting</li>
+<li>unsuitable for <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a></li></ol>
+</td>
+<td>
+<ol><li>simple question-answer <a href="Glossary_Item.html" title="Glossary:Item">items</a> (e.g. created with <b>Remember cloze</b>)</li>
+<li>transparent labels</li></ol>
+</td></tr>
+<tr>
+<td><b>Rich text (RTF)</b> component
+<p>This <a href="Glossary_Component.html" title="Glossary:Component">component</a> is used in templates such as <i>RTF Article</i>, <i>RTF Item</i>, etc. 
+</p>
+</td>
+<td>
+<ol><li>rich text formatting</li>
+<li>subset of <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a></li>
+<li>search possible</li>
+<li>search&amp;replace possible</li>
+<li>phonetic transcription possible</li></ol>
+</td>
+<td>
+<ol><li>may not be supported in the future</li>
+<li>large size of files</li>
+<li>very slow processing of longer texts or large <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a></li>
+<li>cannot modify font with <a href="Glossary_Template.html" title="Glossary:Template">templates</a> nor stylesheets</li>
+<li>cannot interlace pictures and other multimedia</li></ol>
+</td>
+<td>
+<ol><li><a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a> in the absence of Internet Explorer</li>
+<li>rich formatting in the absence of Internet Explorer</li></ol>
+</td></tr>
+<tr>
+<td><b>Spelling</b> <a href="Glossary_Component.html" title="Glossary:Component">component</a>
+<p>Used in the <a href="Glossary_Template.html" title="Glossary:Template">template</a> <i>Spelling</i>
+</p>
+</td>
+<td>
+<ol><li>used for spelling tests</li>
+<li>small size</li>
+<li>speed</li>
+<li>font modifiable via <a href="Glossary_Template.html" title="Glossary:Template">templates</a></li>
+<li>search possible</li>
+<li>search&amp;replace possible</li></ol>
+</td>
+<td>
+<ol><li>useless beyond spelling tests</li></ol>
+</td>
+<td>
+<ol><li>spelling exercises</li></ol>
+</td></tr>
+<tr>
+<td>Binary <a href="Glossary_Component.html" title="Glossary:Component">component</a>
+</td>
+<td>
+<ol><li>using all possible proprietary formats that are not supported by other <a href="Glossary_Component.html" title="Glossary:Component">components</a></li></ol>
+</td>
+<td>
+<ol><li>clicking the <b>Run</b> button is necessary to view the text</li>
+<li>files can only be edited if the proprietary editor is installed</li>
+<li>words do not enter the lexicon</li>
+<li>search not possible</li>
+<li>search&amp;replace not possible</li>
+<li>translation and phonetic transcription not available</li>
+<li>cannot modify font via <a href="Glossary_Template.html" title="Glossary:Template">templates</a></li></ol>
+</td>
+<td>
+<ol><li>importing all text formats that are not supported by the <a href="HTML_component.html" title="HTML component">HTML component</a> (e.g. mind maps, etc.)</li></ol>
+</td></tr>
+<tr>
+<td><a href="OLE_component.html" title="OLE component"><b>OLE</b> component</a>
+</td>
+<td>
+<ol><li>using proprietary formats that support OLE (e.g. mind maps)</li></ol>
+</td>
+<td>
+<ol><li>requires a relevant OLE server</li>
+<li>very large size of files</li>
+<li>files can only be edited if the proprietary editor is installed</li>
+<li>words do not enter the lexicon</li>
+<li>search not possible</li>
+<li>search&amp;replace not possible</li>
+<li>translation and phonetic transcription not available</li>
+<li>may be annoyingly unstable if there are problems with the OLE server</li>
+<li>cannot modify font via <a href="Glossary_Template.html" title="Glossary:Template">templates</a></li></ol>
+</td>
+<td>
+<ol><li>using data formats that cannot be used with <a href="HTML_component.html" title="HTML component">HTML component</a> but support OLE in the presence of an OLE server</li></ol>
+</td></tr>
+<tr>
+<td><b>Sound</b> <a href="Glossary_Component.html" title="Glossary:Component">component</a>
+</td>
+<td>
+<ol><li>sound can be associated with the text</li>
+<li>search possible</li>
+<li>search&amp;replace possible (including <a href="Filter_files.html" title="Filter files"><b>Apply filter</b></a>)</li>
+<li>font modifiable via <a href="Glossary_Template.html" title="Glossary:Template">templates</a></li>
+<li>phonetic transcription and translation supported</li></ol>
+</td>
+<td>
+<ol><li>slow</li>
+<li>cannot be made transparent</li>
+<li>provides no advantages over plain text if no sound is associated</li></ol>
+</td>
+<td>
+<ol><li>pronunciation exercises</li>
+<li>learning material narration</li></ol>
+</td></tr>
+<tr>
+<td><b>Image</b> <a href="Glossary_Component.html" title="Glossary:Component">component</a>
+</td>
+<td>
+<ol><li>can represent most complex formatting needed for mathematical or chemical formulas (as a picture, e.g. JPG)</li></ol>
+</td>
+<td>
+<ol><li>large size of files</li>
+<li>words do not enter the lexicon</li>
+<li>search not possible</li>
+<li>search&amp;replace not possible</li>
+<li>translation and phonetic transcription not available</li>
+<li>cannot modify font via <a href="Glossary_Template.html" title="Glossary:Template">templates</a></li></ol>
+</td>
+<td>
+<ol><li>complex formulas that are hard to represent in HTML or OLE</li></ol>
+</td></tr></tbody></table>
+<p><br/>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_text_components&amp;veaction=edit&amp;section=1" title="Edit section: See also"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Using_text_components&amp;action=edit&amp;section=1" title="Edit section's source code: See also"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://super-memory.com/help/faq/texts.htm"><b>FAQ</b>: Text components</a></li>
+<li><a href="Using_fonts.html" title="Using fonts">Using fonts</a></li>
+<li><a href="Fonts_tab_in_Options.html" title="Fonts tab in Options">Font options</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Finding_out_the_default_font_size_used_in_HTML_components#Followup">FAQ: Why so many complex components?</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/How_can_I_see_if_a_component_is_plain_or_HTML%3F">How to differentiate between plain text and HTML?</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111329
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.029 seconds
+Real time usage: 0.029 seconds
+Preprocessor visited node count: 56/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:122:|#|:idhash:canonical and timestamp 20260610111329 and revision id 11997. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p>文本是 SuperMemo 中表示知识的主要方式。您将花费大量时间处理文本，尤其是。如果你学会雇用<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>。这就是为什么您决定选择合适的文本<a href="Glossary_Component.html" title="Glossary:Component">组件</a>很重要。</p><p>纯文本<a href="Glossary_Component.html" title="Glossary:Component">组件</a>传统上是 SuperMemo 早期版本中最常用的文本组件。它们占用的空间很小，并且可以通过 SuperMemo 低级搜索程序进行高速搜索。随着<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>然而，<a href="HTML_component.html" title="HTML component">HTML 组件</a>已成为默认文本<a href="Glossary_Component.html" title="Glossary:Component">组件</a>在 SuperMemo 中。<a href="HTML_component.html" title="HTML component">HTML 组件</a>提供许多格式化选项，但是它们会消耗更多磁盘空间。如果磁盘空间对您来说非常重要，请使用<i>经典</i> <a href="Glossary_Template.html" title="Glossary:Template">模板</a>（及其衍生物）对于<a href="Glossary_Item.html" title="Glossary:Item">项目</a>而不是基于 HTML 的模板（请参阅：<a href="Templates.html" title="Templates">使用模板</a>）。最佳情况下，您应该使用<a href="HTML_component.html" title="HTML component">HTML 组件</a>与<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>并使用<i>经典</i>纯文本<a href="Glossary_Template.html" title="Glossary:Template">模板</a>上<a href="Glossary_Item.html" title="Glossary:Item">项目</a>已完成（即以最终形式制定）。 SuperMemo 自动删除纯文本中使用的文本格式<a href="Glossary_Component.html" title="Glossary:Component">组件</a>当你跑步时<b><a href="File_menu.html" title="File menu">文件</a> :<a href="Repairing_collections.html" title="Repairing collections">修复合集</a></b>与<b>重建注册表</b>检查过。这种做法可以帮助您保持<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>紧凑且快速。</p><p>下表总结了使用各种文本的优缺点<a href="Glossary_Component.html" title="Glossary:Component">组件</a>在超级备忘录中：</p>
+<table border="1" cellpadding="5" cellspacing="5" style="background-color: rgb(192, 192, 192);">
+<tbody><tr>
+<td align="center"><b>类型</b>
+</td>
+<td align="center"><b>优点</b>
+</td>
+<td align="center"><b>缺点</b>
+</td>
+<td align="center"><b>典型用途</b>
+</td></tr>
+<tr>
+<td><a href="HTML_component.html" title="HTML component"><b>超文本标记语言</b>组件</a>
+<p>这个<a href="Glossary_Component.html" title="Glossary:Component">组件</a>被使用<a href="Glossary_Template.html" title="Glossary:Template">模板</a>比如<i>项目</i>,<i>文章</i>,<i>物品图片</i>等</p>
+</td>
+<td>
+<ol><li>最丰富的格式</li>
+<li>完整的增量阅读支持</li>
+<li>完整的 HTML 和 JavaScript 支持</li>
+<li>可以在文本中插入图像</li>
+<li>统一码支持</li>
+<li>搜索可能</li>
+<li>可能的搜索和替换</li>
+<li>可以进行音标转写</li>
+<li>可以使用样式表</li></ol>
+</td>
+<td>
+<ol><li>需要 Internet Explorer 6.0 或更高版本</li>
+<li>字体可以通过修改<a href="Glossary_Template.html" title="Glossary:Template">模板</a>仅在输入文本之前（除非您在模板中使用样式表）</li>
+<li>所有文本保存在单独的文件中（这会减慢大型文件的复制速度）<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>）</li></ol>
+</td>
+<td>
+<ol><li>默认文本格式</li>
+<li><a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a></li>
+<li>包含脚本和多媒体的格式丰富的文件</li>
+<li>整个网站</li>
+<li>可以在 Internet Explorer 中显示的文件（例如 XLS、PDF、DOC、RTF、GIF 等）</li></ol>
+</td></tr>
+<tr>
+<td><a href="WebView_component.html" title="WebView component"><b>网页视图</b>组件</a>
+<p>这个<a href="Glossary_Component.html" title="Glossary:Component">组件</a>使用现代浏览器引擎（例如基于 Chromium 的 WebView）来显示 HTML 内容。</p>
+</td>
+<td>
+<ol><li>现代 HTML、CSS 和 JavaScript 支持</li>
+<li>比 Internet Explorer 更准确地呈现页面</li>
+<li>更好的安全性和稳定性</li>
+<li>完整的 Unicode 支持</li>
+<li>快速渲染大型文档</li>
+<li>支持现代网络标准（HTML5、CSS3）</li>
+<li>搜索可能</li>
+<li>可能的搜索和替换</li></ol>
+</td>
+<td>
+<ol><li>可能不支持所有旧版 Internet Explorer 功能</li>
+<li>内存使用量比经典 HTML 组件略高</li>
+<li>一些较旧的脚本或模板可能需要调整</li>
+<li><a href="Incremental_reading.html" title="Incremental reading">增量阅读</a>支持是初级的</li></ol>
+</td>
+<td>
+<ol><li>现代 HTML 内容</li>
+<li>需要最新浏览器标准的网页</li>
+<li>使用交互式 JavaScript 小部件的项目</li>
+<li>当首选现代渲染时增量阅读</li></ol>
+</td></tr>
+<tr>
+<td><b>纯文本</b>组件<p>这个<a href="Glossary_Component.html" title="Glossary:Component">组件</a>被使用的是<i>经典</i>模板</p>
+</td>
+<td>
+<ol><li>字体可以通过全局修改<a href="Glossary_Template.html" title="Glossary:Template">模板</a></li>
+<li>数据量小</li>
+<li>速度</li>
+<li>可以变得透明（例如在图像上书写）</li>
+<li>搜索可能</li>
+<li>可能的搜索和替换（包括<a href="Filter_files.html" title="Filter files"><b>应用过滤器</b></a>）</li>
+<li>自动翻译和音标</li></ol>
+</td>
+<td>
+<ol><li>没有丰富的格式</li>
+<li>不适合<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a></li></ol>
+</td>
+<td>
+<ol><li>简单的问答<a href="Glossary_Item.html" title="Glossary:Item">项目</a>（例如，使用创建<b>记住完形填空</b>）</li>
+<li>透明标签</li></ol>
+</td></tr>
+<tr>
+<td><b>富文本 (RTF)</b>组件<p>这个<a href="Glossary_Component.html" title="Glossary:Component">组件</a>用于模板，例如<i>RTF 文章</i>,<i>RTF项目</i>等</p>
+</td>
+<td>
+<ol><li>富文本格式</li>
+<li>的子集<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a></li>
+<li>搜索可能</li>
+<li>可能的搜索和替换</li>
+<li>可以进行音标转写</li></ol>
+</td>
+<td>
+<ol><li>将来可能不支持</li>
+<li>文件大小较大</li>
+<li>处理较长的文本或较大的文本非常慢<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a></li>
+<li>无法修改字体<a href="Glossary_Template.html" title="Glossary:Template">模板</a>也没有样式表</li>
+<li>无法交错图片和其他多媒体</li></ol>
+</td>
+<td>
+<ol><li><a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>在没有 Internet Explorer 的情况下</li>
+<li>在没有 Internet Explorer 的情况下进行丰富的格式设置</li></ol>
+</td></tr>
+<tr>
+<td><b>拼写</b> <a href="Glossary_Component.html" title="Glossary:Component">组件</a>
+<p>用于<a href="Glossary_Template.html" title="Glossary:Template">模板</a> <i>拼写</i>
+</p>
+</td>
+<td>
+<ol><li>用于拼写测试</li>
+<li>小尺寸</li>
+<li>速度</li>
+<li>字体可通过修改<a href="Glossary_Template.html" title="Glossary:Template">模板</a></li>
+<li>搜索可能</li>
+<li>可能的搜索和替换</li></ol>
+</td>
+<td>
+<ol><li>除了拼写测试之外没用</li></ol>
+</td>
+<td>
+<ol><li>拼写练习</li></ol>
+</td></tr>
+<tr>
+<td>二进制<a href="Glossary_Component.html" title="Glossary:Component">组件</a>
+</td>
+<td>
+<ol><li>使用其他不支持的所有可能的专有格式<a href="Glossary_Component.html" title="Glossary:Component">组件</a></li></ol>
+</td>
+<td>
+<ol><li>单击<b>运行</b>需要按钮才能查看文本</li>
+<li>仅当安装了专有编辑器时才能编辑文件</li>
+<li>单词未进入词典</li>
+<li>无法搜索</li>
+<li>无法搜索和替换</li>
+<li>无法提供翻译和音标</li>
+<li>无法通过修改字体<a href="Glossary_Template.html" title="Glossary:Template">模板</a></li></ol>
+</td>
+<td>
+<ol><li>导入不支持的所有文本格式<a href="HTML_component.html" title="HTML component">HTML组件</a>（例如思维导图等）</li></ol>
+</td></tr>
+<tr>
+<td><a href="OLE_component.html" title="OLE component"><b>奥莱</b>组件</a>
+</td>
+<td>
+<ol><li>使用支持 OLE 的专有格式（例如思维导图）</li></ol>
+</td>
+<td>
+<ol><li>需要相关的OLE服务器</li>
+<li>文件非常大</li>
+<li>仅当安装了专有编辑器时才能编辑文件</li>
+<li>单词未进入词典</li>
+<li>无法搜索</li>
+<li>无法搜索和替换</li>
+<li>无法提供翻译和音标</li>
+<li>如果 OLE 服务器出现问题，可能会非常不稳定</li>
+<li>无法通过修改字体<a href="Glossary_Template.html" title="Glossary:Template">模板</a></li></ol>
+</td>
+<td>
+<ol><li>使用无法使用的数据格式<a href="HTML_component.html" title="HTML component">HTML组件</a>但在存在 OLE 服务器的情况下支持 OLE</li></ol>
+</td></tr>
+<tr>
+<td><b>声音</b> <a href="Glossary_Component.html" title="Glossary:Component">组件</a>
+</td>
+<td>
+<ol><li>声音可以与文字相关联</li>
+<li>搜索可能</li>
+<li>可能的搜索和替换（包括<a href="Filter_files.html" title="Filter files"><b>应用过滤器</b></a>）</li>
+<li>字体可通过修改<a href="Glossary_Template.html" title="Glossary:Template">模板</a></li>
+<li>支持音标和翻译</li></ol>
+</td>
+<td>
+<ol><li>慢</li>
+<li>无法变得透明</li>
+<li>如果没有关联声音，则与纯文本相比没有任何优势</li></ol>
+</td>
+<td>
+<ol><li>发音练习</li>
+<li>学习材料叙述</li></ol>
+</td></tr>
+<tr>
+<td><b>图片</b> <a href="Glossary_Component.html" title="Glossary:Component">组件</a>
+</td>
+<td>
+<ol><li>可以表示数学或化学公式所需的最复杂的格式（作为图片，例如 JPG）</li></ol>
+</td>
+<td>
+<ol><li>文件大小较大</li>
+<li>单词未进入词典</li>
+<li>无法搜索</li>
+<li>无法搜索和替换</li>
+<li>无法提供翻译和音标</li>
+<li>无法通过修改字体<a href="Glossary_Template.html" title="Glossary:Template">模板</a></li></ol>
+</td>
+<td>
+<ol><li>难以用 HTML 或 OLE 表示的复杂公式</li></ol>
+</td></tr></tbody></table>
+<p><br/>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="See_also">另请参阅</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_text_components&amp;veaction=edit&amp;section=1" title="Edit section: See also"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Using_text_components&amp;action=edit&amp;section=1" title="Edit section's source code: See also"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://super-memory.com/help/faq/texts.htm"><b>常见问题解答</b>：文本组件</a></li>
+<li><a href="Using_fonts.html" title="Using fonts">使用字体</a></li>
+<li><a href="Fonts_tab_in_Options.html" title="Fonts tab in Options">字体选项</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Finding_out_the_default_font_size_used_in_HTML_components#Followup">常见问题解答：为什么有这么多复杂的组件？</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/How_can_I_see_if_a_component_is_plain_or_HTML%3F">如何区分纯文本和HTML？</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111329
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.029 seconds
+Real time usage: 0.029 seconds
+Preprocessor visited node count: 56/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:122:|#|:idhash:canonical and timestamp 20260610111329 and revision id 11997. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

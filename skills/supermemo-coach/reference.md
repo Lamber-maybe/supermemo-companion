@@ -4,8 +4,9 @@ Facts distilled from the official documentation (help.supermemo.org) for
 desktop **SuperMemo for Windows, versions 17–20**. Menu paths are written
 `Menu : Submenu : Option`. Where versions differ it is noted. Anything not
 covered here should be answered via the coach skill's source-of-truth
-ladder — the local wiki mirror if one is configured, then
-https://help.supermemo.org — never from memory.
+ladder — the philosophy digest (`incremental-learning.md`), the full
+official wiki bundled in `docs/wiki/`, a personal mirror if one is
+configured, then https://help.supermemo.org — never from memory.
 
 ## Getting started (the official "ABC")
 
@@ -377,9 +378,11 @@ check which window has focus.)
 
 ## When to defer to official docs
 
-Send the user to https://help.supermemo.org (and say you're doing so) for:
-registry internals, sleep chart, Plan, mail/EML workflows, spelling
+Answer from the bundled wiki (`docs/wiki/` — find the page and quote it)
+for: registry internals, sleep chart, Plan, mail/EML workflows, spelling
 components, scripting/Commander details, algorithm mathematics, layout
 management edge cases, localization — and any behavior that looks
-version-specific or contradicts this file. This file wins over an agent's
-memory; the official wiki wins over this file.
+version-specific or contradicts this file. Send the user to
+https://help.supermemo.org (and say you're doing so) only when the
+bundled page is missing or looks stale. This file wins over an agent's
+memory; the official wiki — bundled or online — wins over this file.

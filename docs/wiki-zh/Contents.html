@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contents — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Contents" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><br/>
+The <b>Contents</b> window in SuperMemo displays the <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">knowledge tree</a> (for the current <a href="Glossary_Collection.html" title="Glossary:Collection"> collection</a>).
+</p><p>Operations on the <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">knowledge tree</a> are available from the <a href="Contents_menu.html" title="Contents menu">contents menu</a>. To open the <a href="Contents_menu.html" title="Contents menu">contents menu</a>, right-click over the <b>Contents</b> window or press <a href="Keyboard_shortcuts.html" title="Keyboard shortcuts"> <i>Shift+F10</i></a>.
+</p><p>The <b>Contents</b> window displays:
+</p>
+<ul><li><a href="Glossary.html#knowledge_tree" title="Glossary"> Knowledge tree</a> (in the middle of the window). If you would like to understand the meaning of individual icons or build your own <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">knowledge tree</a>, read: <a href="Building_the_knowledge_tree.html" title="Building the knowledge tree">Building the knowledge tree</a></li>
+<li><a href="#Caption">Caption</a> (at the top of the window)</li>
+<li><a href="#Toolbar">Toolbar</a> (under the caption)</li>
+<li><a href="#Button_panel">Button panel</a> (at the bottom of the window)</li></ul>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Contents_window.jpg.html" title="SuperMemo: The contents window displaying the knowledge tree (i.e. the hierarchical structure of elements) of a collection"><img alt="SuperMemo: The contents window displaying the knowledge tree (i.e. the hierarchical structure of elements) of a collection" class="mw-file-element" decoding="async" height="607" loading="lazy" src="https://help.supermemo.org/images/thumb/9/9b/Contents_window.jpg/558px-Contents_window.jpg" srcset="/images/thumb/9/9b/Contents_window.jpg/837px-Contents_window.jpg 1.5x, /images/9/9b/Contents_window.jpg 2x" width="558"/></a><figcaption>SuperMemo: The contents window displaying the knowledge tree (i.e. the hierarchical structure of elements) of a collection</figcaption></figure>
+<blockquote>
+<p><i> <b>Figure:</b> The <b><a class="mw-selflink selflink">Contents</a></b> window displaying the <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">knowledge tree</a> (i.e. the hierarchical structure of <a href="Glossary_Element.html" title="Glossary:Element">elements</a>) of a <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. In <a class="external text" href="https://super-memory.com/archive/help17/new.htm">SuperMemo 17</a> or later, each <a href="Glossary_Branch.html" title="Glossary:Branch">branch</a> shows the number of its <a href="Glossary_Descendant.html" title="Glossary:Descendant">descendants</a> in the parentheses. <a href="Glossary_Concept.html" title="Glossary:Concept">Concepts</a> use their dedicated icon, which can be seen in the <a href="Glossary_Root_node.html" title="Glossary:Root node">root</a> (collection root is always a concept).</i>
+</p>
+</blockquote>
+<div class="mw-heading mw-heading2"><h2 id="Caption">Caption</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Contents&amp;veaction=edit&amp;section=1" title="Edit section: Caption"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Contents&amp;action=edit&amp;section=1" title="Edit section's source code: Caption"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The caption shows the name of the root element of the whole <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Toolbar">Toolbar</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Contents&amp;veaction=edit&amp;section=2" title="Edit section: Toolbar"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Contents&amp;action=edit&amp;section=2" title="Edit section's source code: Toolbar"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The <a href="Contents_toolbar.html" title="Contents toolbar">toolbar</a> features buttons used in most frequent operations on the knowledge tree (visible on the picture)
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Button_panel">Button panel</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Contents&amp;veaction=edit&amp;section=3" title="Edit section: Button panel"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Contents&amp;action=edit&amp;section=3" title="Edit section's source code: Button panel"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="Subset_learning.html" title="Subset learning"><b>Learn</b></a> (<i>Ctrl+L</i>) - make repetitions for the selected <a href="Glossary_Branch.html" title="Glossary:Branch">branch</a> and memorize <a href="Glossary_Pending_element.html" title="Glossary:Pending element">pending elements</a> belonging to the <a href="Glossary_Branch.html" title="Glossary:Branch">branch</a></li>
+<li><b>Add</b> - add a new <a href="Glossary_Element.html" title="Glossary:Element">element</a> as a <a href="Glossary_Child.html" title="Glossary:Child"> child</a> of the currently selected <a href="Glossary_Element.html" title="Glossary:Element">element</a>. The type of the added <a href="Glossary_Child.html" title="Glossary:Child">child</a> <a href="Glossary_Element.html" title="Glossary:Element">element</a>, whether is going to be an <a href="Glossary_Item.html" title="Glossary:Item">item</a> or a <a href="Glossary_Topic.html" title="Glossary:Topic">topic</a>, is determined by the current selection in the <b>Element type</b> combo box on the right. <i>In the picture, the selected type is Topics. This means that if you click <b>Add</b> you are going to add a <a href="Glossary_Topic.html" title="Glossary:Topic">topic</a> <a href="Glossary_Child.html" title="Glossary:Child">child</a> <a href="Glossary_Element.html" title="Glossary:Element">element</a>.</i></li>
+<li><b>Insert</b> (<i>Ins</i>) - insert a new <a href="Glossary_Element.html" title="Glossary:Element">element</a> in the place of the currently selected <a href="Glossary_Element.html" title="Glossary:Element">element</a> (the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> moves one position down)</li>
+<li><b>Accept</b> (<i>Enter</i>) - accept the choice of the currently selected <a href="Glossary_Element.html" title="Glossary:Element">element</a>. This button is active only if another option in SuperMemo requires selecting an <a href="Glossary_Element.html" title="Glossary:Element">element</a> in the <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">knowledge tree</a>. In such a case, the <b>Contents</b> window is opened and you can point to the <a href="Glossary_Element.html" title="Glossary:Element">element</a> of interest and click <b>Accept</b>). For example, choosing <b><a href="Component_menu.html#Links" title="Component menu">Links</a> : Hyperlink</b> on the <a href="Component_menu.html" title="Component menu">component menu</a> will open the <b>Contents</b> window and ask for selecting an <a href="Glossary_Element.html" title="Glossary:Element">element</a> to link to. Similarly, <i>Shift+Ctrl+V</i> in the <a href="Glossary_Element_window.html" title="Glossary:Element window">element window</a> will ask you where the currently displayed <a href="Glossary_Element.html" title="Glossary:Element">element</a> should be moved in the <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">knowledge tree</a></li>
+<li><b>View</b> (<i>Shift+Enter</i>) - view the currently selected <a href="Glossary_Element.html" title="Glossary:Element">element</a> in the <a href="Glossary_Element_window.html" title="Glossary:Element window">element window</a></li>
+<li><b>Delete</b> (<i>Del</i>) - delete the currently selected <a href="Glossary_Element.html" title="Glossary:Element">element</a> and all its <a href="Glossary_Child.html" title="Glossary:Child"> children</a> (if any)</li>
+<li><b>Element type combo box</b> - select the default type of <a href="Glossary_Element.html" title="Glossary:Element">elements</a> added to the <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree"> knowledge tree</a>. If you choose <i>Topics</i>, the button <b>Add</b> will keep adding <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a>. <i>Items</i> will add <a href="Glossary_Item.html" title="Glossary:Item">items</a>.</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Further_reading">Further reading</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Contents&amp;veaction=edit&amp;section=4" title="Edit section: Further reading"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Contents&amp;action=edit&amp;section=4" title="Edit section's source code: Further reading"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="Building_the_knowledge_tree.html" title="Building the knowledge tree">Building the knowledge tree</a></li>
+<li><a class="external text" href="https://super-memory.com/help/faq/tree.htm">FAQ: Contents window</a></li>
+<li><a class="external text" href="https://en.wikipedia.org/wiki/Tree_(data_structure)">Tree structure</a> at Wikipedia</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Video">Video</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Contents&amp;veaction=edit&amp;section=5" title="Edit section: Video"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Contents&amp;action=edit&amp;section=5" title="Edit section's source code: Video"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://www.youtube.com/watch?v=IUCTq29ORnE">Contents icons</a> at <a class="external text" href="https://supermemopedia.com/wiki/The_Pleasurable_Guide_To_SuperMemo">The Pleasurable Guide To SuperMemo</a></li>
+<li><a class="external text" href="https://youtube.com/watch?v=j-QkcJDVapk">Button panel in Contents</a> at <a class="external text" href="https://supermemopedia.com/wiki/The_Pleasurable_Guide_To_SuperMemo">The Pleasurable Guide To SuperMemo</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610110927
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [no‐toc]
+CPU time usage: 0.048 seconds
+Real time usage: 0.051 seconds
+Preprocessor visited node count: 70/1000000
+Post‐expand include size: 577/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.005      1 File:Contents_window.jpg
+100.00%    3.005      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:86:|#|:idhash:canonical and timestamp 20260610110927 and revision id 11941. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><br/>的<b>内容</b>SuperMemo 中的窗口显示<a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">知识树</a>（对于当前的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>）。</p><p>操作于<a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">知识树</a>可以从<a href="Contents_menu.html" title="Contents menu">内容菜单</a>。要打开<a href="Contents_menu.html" title="Contents menu">内容菜单</a>，右键单击<b>内容</b>窗口或按<a href="Keyboard_shortcuts.html" title="Keyboard shortcuts"> <i>Shift+F10</i></a>。</p><p>的<b>内容</b>窗口显示：</p>
+<ul><li><a href="Glossary.html#knowledge_tree" title="Glossary">知识树</a>（在窗口的中间）。如果您想了解各个图标的含义或构建自己的图标<a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">知识树</a>，读：<a href="Building_the_knowledge_tree.html" title="Building the knowledge tree">构建知识树</a></li>
+<li><a href="#Caption">标题</a>（在窗口顶部）</li>
+<li><a href="#Toolbar">工具栏</a>（在标题下）</li>
+<li><a href="#Button_panel">按键面板</a>（在窗口底部）</li></ul>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Contents_window.jpg.html" title="SuperMemo: The contents window displaying the knowledge tree (i.e. the hierarchical structure of elements) of a collection"><img alt="SuperMemo: The contents window displaying the knowledge tree (i.e. the hierarchical structure of elements) of a collection" class="mw-file-element" decoding="async" height="607" loading="lazy" src="https://help.supermemo.org/images/thumb/9/9b/Contents_window.jpg/558px-Contents_window.jpg" srcset="/images/thumb/9/9b/Contents_window.jpg/837px-Contents_window.jpg 1.5x, /images/9/9b/Contents_window.jpg 2x" width="558"/></a><figcaption>SuperMemo：显示集合的知识树（即元素的层次结构）的内容窗口</figcaption></figure>
+<blockquote>
+<p><i> <b>图：</b>的<b><a class="mw-selflink selflink">内容</a></b>窗口显示<a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">知识树</a>（即层次结构<a href="Glossary_Element.html" title="Glossary:Element">元素</a>）的一个<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。在<a class="external text" href="https://super-memory.com/archive/help17/new.htm">超级备忘录 17</a>或以后，每个<a href="Glossary_Branch.html" title="Glossary:Branch">分行</a>显示其数量<a href="Glossary_Descendant.html" title="Glossary:Descendant">后裔</a>在括号中。<a href="Glossary_Concept.html" title="Glossary:Concept">概念</a>使用他们的专用图标，可以在<a href="Glossary_Root_node.html" title="Glossary:Root node">根</a>（集合根始终是一个概念）。</i>
+</p>
+</blockquote>
+<div class="mw-heading mw-heading2"><h2 id="Caption">标题</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Contents&amp;veaction=edit&amp;section=1" title="Edit section: Caption"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Contents&amp;action=edit&amp;section=1" title="Edit section's source code: Caption"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>标题显示整个根元素的名称<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。</p>
+<div class="mw-heading mw-heading2"><h2 id="Toolbar">工具栏</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Contents&amp;veaction=edit&amp;section=2" title="Edit section: Toolbar"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Contents&amp;action=edit&amp;section=2" title="Edit section's source code: Toolbar"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>的<a href="Contents_toolbar.html" title="Contents toolbar">工具栏</a>知识树上最常用操作中使用的功能按钮（如图所示）</p>
+<div class="mw-heading mw-heading2"><h2 id="Button_panel">按键面板</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Contents&amp;veaction=edit&amp;section=3" title="Edit section: Button panel"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Contents&amp;action=edit&amp;section=3" title="Edit section's source code: Button panel"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="Subset_learning.html" title="Subset learning"><b>学习</b></a>（<i>Ctrl+L</i>) - 对所选内容进行重复<a href="Glossary_Branch.html" title="Glossary:Branch">分行</a>并记住<a href="Glossary_Pending_element.html" title="Glossary:Pending element">待定元素</a>属于<a href="Glossary_Branch.html" title="Glossary:Branch">分行</a></li>
+<li><b>添加</b>- 添加一个新的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>作为<a href="Glossary_Child.html" title="Glossary:Child">孩子</a>当前选定的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。添加的类型<a href="Glossary_Child.html" title="Glossary:Child">孩子</a> <a href="Glossary_Element.html" title="Glossary:Element">元素</a>，是否会成为<a href="Glossary_Item.html" title="Glossary:Item">项目</a>或一个<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>，由当前选择确定<b>元件类型</b>右侧的组合框。<i>图中，选择的类型是Topics。这意味着如果您单击<b>添加</b>你要添加一个<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a> <a href="Glossary_Child.html" title="Glossary:Child">孩子</a> <a href="Glossary_Element.html" title="Glossary:Element">元素</a>。</i></li>
+<li><b>插入</b>（<i>INS</i>) - 插入一个新的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在当前选择的位置<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（当前的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>下移一位）</li>
+<li><b>接受</b>（<i>输入</i>) - 接受当前选择的选择<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。仅当 SuperMemo 中的另一个选项需要选择一个时，此按钮才处于活动状态<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在<a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">知识树</a>。在这种情况下，<b>内容</b>窗口打开，您可以指向<a href="Glossary_Element.html" title="Glossary:Element">元素</a>感兴趣并点击<b>接受</b>）。例如，选择<b><a href="Component_menu.html#Links" title="Component menu">友情链接</a> : 超链接</b>于<a href="Component_menu.html" title="Component menu">组件菜单</a>将打开<b>内容</b>窗口并要求选择<a href="Glossary_Element.html" title="Glossary:Element">元素</a>链接到。同样，<i>Shift+Ctrl+V</i>在<a href="Glossary_Element_window.html" title="Glossary:Element window">元素窗口</a>会询问您当前显示的位置<a href="Glossary_Element.html" title="Glossary:Element">元素</a>应移至<a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">知识树</a></li>
+<li><b>查看</b>（<i>Shift+Enter</i>) - 查看当前选择的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在<a href="Glossary_Element_window.html" title="Glossary:Element window">元素窗口</a></li>
+<li><b>删除</b>（<i>德尔</i>) - 删除当前选定的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>及其所有的<a href="Glossary_Child.html" title="Glossary:Child">儿童</a>（如果有的话）</li>
+<li><b>元素类型组合框</b>- 选择默认类型<a href="Glossary_Element.html" title="Glossary:Element">元素</a>添加到<a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">知识树</a>。如果你选择<i>主题</i>, 按钮<b>添加</b>会持续添加<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>。<i>项目</i>将添加<a href="Glossary_Item.html" title="Glossary:Item">项目</a>。</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Further_reading">进一步阅读</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Contents&amp;veaction=edit&amp;section=4" title="Edit section: Further reading"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Contents&amp;action=edit&amp;section=4" title="Edit section's source code: Further reading"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="Building_the_knowledge_tree.html" title="Building the knowledge tree">构建知识树</a></li>
+<li><a class="external text" href="https://super-memory.com/help/faq/tree.htm">常见问题解答：内容窗口</a></li>
+<li><a class="external text" href="https://en.wikipedia.org/wiki/Tree_(data_structure)">树形结构</a>在维基百科</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Video">视频</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Contents&amp;veaction=edit&amp;section=5" title="Edit section: Video"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Contents&amp;action=edit&amp;section=5" title="Edit section's source code: Video"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://www.youtube.com/watch?v=IUCTq29ORnE">内容图标</a>在<a class="external text" href="https://supermemopedia.com/wiki/The_Pleasurable_Guide_To_SuperMemo">SuperMemo 的愉快指南</a></li>
+<li><a class="external text" href="https://youtube.com/watch?v=j-QkcJDVapk">内容中的按钮面板</a>在<a class="external text" href="https://supermemopedia.com/wiki/The_Pleasurable_Guide_To_SuperMemo">SuperMemo 的愉快指南</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610110927
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [no‐toc]
+CPU time usage: 0.048 seconds
+Real time usage: 0.051 seconds
+Preprocessor visited node count: 70/1000000
+Post‐expand include size: 577/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.005      1 File:Contents_window.jpg
+100.00%    3.005      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:86:|#|:idhash:canonical and timestamp 20260610110927 and revision id 11941. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Compose toolbar — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Compose_toolbar" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Adding_components_(e.g._pictures,_sound,_etc.)"><span class="tocnumber">1</span> <span class="toctext">Adding components (e.g. pictures, sound, etc.)</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Using_the_Compose_toolbar"><span class="tocnumber">2</span> <span class="toctext">Using the Compose toolbar</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Examples"><span class="tocnumber">3</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Compose_toolbar_buttons"><span class="tocnumber">4</span> <span class="toctext">Compose toolbar buttons</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Adding_components_(e.g._pictures,_sound,_etc.)"><span id="Adding_components_.28e.g._pictures.2C_sound.2C_etc..29"></span>Adding components (e.g. pictures, sound, etc.)</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Compose_toolbar&amp;veaction=edit&amp;section=1" title="Edit section: Adding components (e.g. pictures, sound, etc.)"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Compose_toolbar&amp;action=edit&amp;section=1" title="Edit section's source code: Adding components (e.g. pictures, sound, etc.)"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The easiest way to add new <a href="Glossary_Component.html" title="Glossary:Component">components</a> (e.g. texts, pictures, sounds, video, etc.) is to choose options from <b><a href="Edit_menu.html" title="Edit menu">Edit</a> : <a href="Edit_menu.html#Add_components" title="Edit menu">Add components</a></b> submenu (you must choose <b><a href="File_menu.html" title="File menu">File</a> : <a href="Levels.html" title="Levels">Level</a> : Middle</b> or higher for the <b>Edit</b> item to be available on the <a href="Main_menu.html" title="Main menu">main menu</a>).
+</p><p>The fastest way to add texts, pictures or sounds is to paste them directly from the clipboard (with <i>Shift+Ins</i> or <i>Ctrl+V</i>). When you paste texts or pictures from the clipboard, SuperMemo will create new <a href="Glossary_Component.html" title="Glossary:Component">components</a> for you. When you paste pictures, SuperMemo can also automatically apply the relevant picture <a href="Glossary_Template.html" title="Glossary:Template">template</a> (e.g. <i>Geography Picture</i> if the default template is <i>Geography</i>). To paste data to an <a href="Glossary_Element.html" title="Glossary:Element">element</a> you may need to quit the editing of individual <a href="Glossary_Component.html" title="Glossary:Component">components</a>. You can do so by pressing <i>Esc</i> a few times.
+</p><p>You can also use the <b>Compose</b> toolbar to add new <a href="Glossary_Component.html" title="Glossary:Component">components</a>.
+</p>
+<div class="center">
+<p><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Compose_toolbar.jpg.html" title="SuperMemo: Compose toolbar for adding new components to your elements"><img alt="SuperMemo: Compose toolbar for adding new components to your elements" class="mw-file-element" decoding="async" height="64" loading="lazy" src="https://help.supermemo.org/images/6/6c/Compose_toolbar.jpg" width="750"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> The <a class="mw-selflink selflink"><b>Compose</b> toolbar</a> at the bottom of the <a href="Element_window.html" title="Element window">element window</a>. You can use it to build your <a href="Glossary_Element.html" title="Glossary:Element">elements</a> by adding <a href="Glossary_Component.html" title="Glossary:Component">components</a> of different type (e.g. text, sound, image, HTML, etc.)</i>
+</p>
+</blockquote>
+</div>
+<p>If you must add the same <a href="Glossary_Component.html" title="Glossary:Component">components</a> to many <a href="Glossary_Element.html" title="Glossary:Element">elements</a> over and over again, read about <a href="Templates.html" title="Templates">Using templates</a>. Templates automate the process of adding components to many elements.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Using_the_Compose_toolbar">Using the Compose toolbar</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Compose_toolbar&amp;veaction=edit&amp;section=2" title="Edit section: Using the Compose toolbar"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Compose_toolbar&amp;action=edit&amp;section=2" title="Edit section's source code: Using the Compose toolbar"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>All component buttons on the <b>Compose</b> toolbar make it possible to add new <a href="Glossary_Component.html" title="Glossary:Component">components</a> to the element display area (the inside part of the <a href="Element_window.html" title="Element window">element window</a>). 
+</p><p>To add a new <a href="Glossary_Component.html" title="Glossary:Component">component</a> you just need to click the button corresponding to the component type on the <b>Compose</b> toolbar (e.g. <a href="#Text_component"><b>Text component</b></a> button).
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Examples">Examples</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Compose_toolbar&amp;veaction=edit&amp;section=3" title="Edit section: Examples"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Compose_toolbar&amp;action=edit&amp;section=3" title="Edit section's source code: Examples"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>to create a simple text <a href="Glossary_Component.html" title="Glossary:Component">component</a>: click the <a href="#Text_component"><b>Text component</b></a> button on the <b>Compose</b> toolbar</li>
+<li>to create an image <a href="Glossary_Component.html" title="Glossary:Component">component</a>, copy the image to the clipboard and choose <i>Shift+Ins</i> to paste the image. Drag the <a href="Glossary_Component.html" title="Glossary:Component">component</a> with the pasted image to the right location</li>
+<li>to create a simple sound <a href="Glossary_Component.html" title="Glossary:Component">component</a>: click the Sound button on the <b>Compose</b> toolbar, right-click the newly created component rectangle, choose <b><a href="Component_menu.html#File" title="Component menu">File</a> : Import file</b> on the sound <a href="Component_menu.html" title="Component menu">component menu</a> and select a sound file to be played (e.g. <i>mp3</i> or <i>wav</i>)</li>
+<li>to create a simple video <a href="Glossary_Component.html" title="Glossary:Component">component</a>: click the video button, right-click the newly created video rectangle, choose <b><a href="Component_menu.html#File" title="Component menu">File</a> : Import file</b> on the video <a href="Component_menu.html" title="Component menu">component menu</a> and select a video file to play (e.g. <i>avi</i> or <i>mpeg</i>)</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Compose_toolbar_buttons">Compose toolbar buttons</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Compose_toolbar&amp;veaction=edit&amp;section=4" title="Edit section: Compose toolbar buttons"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Compose_toolbar&amp;action=edit&amp;section=4" title="Edit section's source code: Compose toolbar buttons"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-default-size mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Compose_toolbar.jpg.html" title="SuperMemo: Compose toolbar for adding new components to your elements"><img alt="SuperMemo: Compose toolbar for adding new components to your elements" class="mw-file-element" decoding="async" height="64" loading="lazy" src="https://help.supermemo.org/images/6/6c/Compose_toolbar.jpg" width="750"/></a><figcaption>SuperMemo: Compose toolbar for adding new components to your elements</figcaption></figure>
+<p>Here is the use of individual buttons on the <b>Compose</b> toolbar:
+</p>
+<ul><li><b>Menu buttons</b> - open menus available with a right mouse button click:
+<ul><li><b>Element menu</b> (<i>Alt+F10</i>) - open the <a href="Element_menu.html" title="Element menu">element menu</a> with operations related to the currently displayed <a href="Glossary_Element.html" title="Glossary:Element">element</a>. This menu also opens with a right click over the empty element area or over the <a href="Navigation_bar.html" title="Navigation bar">navigation bar</a></li>
+<li><b>Component menu</b> (<i>Alt+F12</i>) - open the <a href="Component_menu.html" title="Component menu">component menu</a> with operations related to the currently selected <a href="Glossary_Component.html" title="Glossary:Component">component</a>. This menu also opens with a right click over the <a href="Glossary_Component.html" title="Glossary:Component">component</a></li></ul></li>
+<li><b>View source</b> - show the source data of the displayed <a href="Glossary_Element.html" title="Glossary:Element">element</a> (i.e. the appearance of the element before a <a href="Glossary_Template.html" title="Glossary:Template">template</a> was applied). If no template was applied on the displayed element, this button has no effect</li>
+<li><b>Component buttons</b> - create <a href="Glossary_Component.html" title="Glossary:Component">components</a> of various types such as text, picture, sound, etc.
+<ul><li><b><a href="HTML_component.html" title="HTML component">HTML component</a></b> - web browser <a href="Glossary_Component.html" title="Glossary:Component">component</a> displaying formatted text, images, frames, tables, scripts (e.g. JavaScript), etc. This is the default component used in <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>. Read about <a href="Using_text_components.html" title="Using text components">text components</a> to decide when to use <a href="HTML_component.html" title="HTML component">HTML text components</a>, and when to use other text components</li>
+<li><b><a href="WebView_component.html" title="WebView component">WebView component</a></b> - is a sister of the HTML component. It extends SuperMemo into areas enabled by modern Chromium‑based browsers.</li>
+<li><b><span id="Text_component">Text component</span></b> - simple unformatted text <a href="Glossary_Component.html" title="Glossary:Component">component</a>. Read about <a href="Using_text_components.html" title="Using text components">text components</a> to decide when to use simple (plain) text components</li>
+<li><b>Spell-Pad component</b> - text <a href="Glossary_Component.html" title="Glossary:Component">component</a> that allows of text input and evaluation (e.g. for spelling exercises)</li>
+<li><b><span id="Image_component">Image component</span></b> - picture <a href="Glossary_Component.html" title="Glossary:Component">component</a>. You can paste images from the clipboard to automatically create an image component of the right size</li>
+<li><b>Sound component</b> - sound <a href="Glossary_Component.html" title="Glossary:Component">component</a> that can play WAV, MP3, MIDI and other sound file formats</li>
+<li><b>Video component</b> - video <a href="Glossary_Component.html" title="Glossary:Component">component</a> playing MP4, MPEG, WMV, AVI and other video file formats</li>
+<li><b>Binary component</b> - universal <a href="Glossary_Component.html" title="Glossary:Component">component</a> that can hold any data that others component can't. It can hold help files, PDF files, e-mail messages, unsupported files, etc. You can also import simple programs to run from within your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> (e.g. you can import <i>C:\windows\system32\CALC.EXE</i> to run <b>Calculator</b> from within your collection)</li>
+<li><b>Script component</b> - SuperMemo <a href="Scripts.html" title="Scripts">script</a> <a href="Glossary_Component.html" title="Glossary:Component">component</a> that can add life to your <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> (e.g. by moving components, providing <a href="Test_elements.html#Drag.26Match_tests" title="Test elements">drag-and-drop exercises</a>, <a href="Test_elements.html#Point.26Click_test" title="Test elements">point-and-click exercises</a>, hiding and displaying components, playing sounds or other scripts, etc.). See: <a href="Scripts.html" title="Scripts">Using scripts in SuperMemo</a></li>
+<li><b><a href="OLE_component.html" title="OLE component">OLE component</a></b> - universal <a href="Glossary_Component.html" title="Glossary:Component">component</a> for displaying and editing objects created with other applications (such as Word documents, Excel spreadsheets, <a class="external text" href="http://www.mindman.com">Mind Manager</a> mind-maps, Corel pictures, equations, structured formulas, and more). Whenever possible, use <a href="HTML_component.html" title="HTML component">HTML components</a> rather than <a href="OLE_component.html" title="OLE component">OLE components</a></li>
+<li><b>Ellipse component</b> - ellipse shape</li>
+<li><b>Rectangle component</b> - rectangle shape</li>
+<li><b>Rounded rectangle component</b> - rounded rectangle shape</li></ul></li>
+<li><b>Component display mode buttons</b> - change the way the <a href="Glossary_Component.html" title="Glossary:Component">components</a> are displayed and acted upon:
+<ul><li><a href="Glossary_Editing_mode.html" title="Glossary:Editing mode"><b>Editing mode</b></a> - set all <a href="Glossary_Component.html" title="Glossary:Component">components</a> in the mode that makes it possible to edit texts, edit <a href="OLE_component.html" title="OLE component">OLE objects</a>, etc.</li>
+<li><a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode"><b>Dragging mode</b></a> - set all <a href="Glossary_Component.html" title="Glossary:Component">components</a> in the mode that makes both dragging and sizing possible</li>
+<li><a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode"><b>Presentation mode</b></a> - set all <a href="Glossary_Component.html" title="Glossary:Component">components</a> in the way they will be seen by the student during repetitions</li>
+<li><b>Switch mode</b> (<i>Ctrl+E</i>) - cycle from <a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">presentation</a> to <a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">editing</a> to <a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">drag&amp;size mode</a></li></ul></li>
+<li><b>Component tags</b> - display component numbers, types, names and registry positions</li>
+<li><b>Alignment and size</b>- size and align all <a href="Glossary_Component.html" title="Glossary:Component">components</a> that are currently in the <a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">editing</a> or <a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">dragging</a> modes</li>
+<li><b>Test repetition cycle</b> (<i>Shift+Alt+L</i>) - see how the <a href="Glossary_Element.html" title="Glossary:Element">element</a> behaves during repetitions (e.g. if it does show the answer at the right time, plays the sound, executes a script, etc.)</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610041713
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.034 seconds
+Real time usage: 0.037 seconds
+Preprocessor visited node count: 51/1000000
+Post‐expand include size: 580/2097152 bytes
+Template argument size: 245/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.238      1 File:Compose_toolbar.jpg
+100.00%    4.238      1 -total
+ 41.15%    1.744      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:48:|#|:idhash:canonical and timestamp 20260610041713 and revision id 12340. Rendering was triggered because: page-view
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Adding_components_(e.g._pictures,_sound,_etc.)"><span class="tocnumber">1</span> <span class="toctext">添加组件（例如图片、声音等）</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Using_the_Compose_toolbar"><span class="tocnumber">2</span> <span class="toctext">使用撰写工具栏</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Examples"><span class="tocnumber">3</span> <span class="toctext">示例</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Compose_toolbar_buttons"><span class="tocnumber">4</span> <span class="toctext">撰写工具栏按钮</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Adding_components_(e.g._pictures,_sound,_etc.)"><span id="Adding_components_.28e.g._pictures.2C_sound.2C_etc..29"></span>添加组件（例如图片、声音等）</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Compose_toolbar&amp;veaction=edit&amp;section=1" title="Edit section: Adding components (e.g. pictures, sound, etc.)"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Compose_toolbar&amp;action=edit&amp;section=1" title="Edit section's source code: Adding components (e.g. pictures, sound, etc.)"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>添加新内容的最简单方法<a href="Glossary_Component.html" title="Glossary:Component">组件</a>（例如文本、图片、声音、视频等）是从中选择选项<b><a href="Edit_menu.html" title="Edit menu">编辑</a> :<a href="Edit_menu.html#Add_components" title="Edit menu">添加组件</a></b>子菜单（您必须选择<b><a href="File_menu.html" title="File menu">文件</a> :<a href="Levels.html" title="Levels">级别</a> ：中</b>或更高的<b>编辑</b>项目可在<a href="Main_menu.html" title="Main menu">主菜单</a>）。</p><p>添加文本、图片或声音的最快方法是直接从剪贴板粘贴它们（使用<i>Shift+Ins</i>或<i>Ctrl+V</i>）。当您从剪贴板粘贴文本或图片时，SuperMemo 会创建新的<a href="Glossary_Component.html" title="Glossary:Component">组件</a>为了你。当您粘贴图片时，SuperMemo 还可以自动应用相关图片<a href="Glossary_Template.html" title="Glossary:Template">模板</a>（例如<i>地理图片</i>如果默认模板是<i>地理</i>）。将数据粘贴到<a href="Glossary_Element.html" title="Glossary:Element">元素</a>您可能需要退出个别的编辑<a href="Glossary_Component.html" title="Glossary:Component">组件</a>。您可以通过按<i>ESC</i>几次。</p><p>您还可以使用<b>撰写</b>工具栏添加新的<a href="Glossary_Component.html" title="Glossary:Component">组件</a>。</p>
+<div class="center">
+<p><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Compose_toolbar.jpg.html" title="SuperMemo: Compose toolbar for adding new components to your elements"><img alt="SuperMemo: Compose toolbar for adding new components to your elements" class="mw-file-element" decoding="async" height="64" loading="lazy" src="https://help.supermemo.org/images/6/6c/Compose_toolbar.jpg" width="750"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b>的<a class="mw-selflink selflink"><b>撰写</b>工具栏</a>在底部<a href="Element_window.html" title="Element window">元素窗口</a>。您可以使用它来构建您的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>通过添加<a href="Glossary_Component.html" title="Glossary:Component">组件</a>不同类型（例如文本、声音、图像、HTML 等）</i>
+</p>
+</blockquote>
+</div>
+<p>如果您必须添加相同的<a href="Glossary_Component.html" title="Glossary:Component">组件</a>对很多人<a href="Glossary_Element.html" title="Glossary:Element">元素</a>一遍又一遍地阅读<a href="Templates.html" title="Templates">使用模板</a>。模板自动执行向许多元素添加组件的过程。</p>
+<div class="mw-heading mw-heading2"><h2 id="Using_the_Compose_toolbar">使用撰写工具栏</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Compose_toolbar&amp;veaction=edit&amp;section=2" title="Edit section: Using the Compose toolbar"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Compose_toolbar&amp;action=edit&amp;section=2" title="Edit section's source code: Using the Compose toolbar"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>上的所有组件按钮<b>撰写</b>工具栏可以添加新的<a href="Glossary_Component.html" title="Glossary:Component">组件</a>到元素显示区域（元素的内部部分）<a href="Element_window.html" title="Element window">元素窗口</a>）。</p><p>添加新的<a href="Glossary_Component.html" title="Glossary:Component">组件</a>您只需点击页面上与组件类型对应的按钮即可<b>撰写</b>工具栏（例如<a href="#Text_component"><b>文本组件</b></a>按钮）。</p>
+<div class="mw-heading mw-heading2"><h2 id="Examples">示例</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Compose_toolbar&amp;veaction=edit&amp;section=3" title="Edit section: Examples"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Compose_toolbar&amp;action=edit&amp;section=3" title="Edit section's source code: Examples"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>创建一个简单的文本<a href="Glossary_Component.html" title="Glossary:Component">组件</a>：单击<a href="#Text_component"><b>文本组件</b></a>按钮上的<b>撰写</b>工具栏</li>
+<li>创建图像<a href="Glossary_Component.html" title="Glossary:Component">组件</a>，将图像复制到剪贴板并选择<i>Shift+Ins</i>粘贴图像。拖动<a href="Glossary_Component.html" title="Glossary:Component">组件</a>将粘贴的图像粘贴到正确的位置</li>
+<li>创建一个简单的声音<a href="Glossary_Component.html" title="Glossary:Component">组件</a>：点击声音按钮<b>撰写</b>工具栏上，右键单击新创建的组件矩形，选择<b><a href="Component_menu.html#File" title="Component menu">文件</a> ：导入文件</b>在声音上<a href="Component_menu.html" title="Component menu">组件菜单</a>并选择要播放的声音文件（例如<i>mp3</i>或<i>声音</i>）</li>
+<li>创建一个简单的视频<a href="Glossary_Component.html" title="Glossary:Component">组件</a>：点击视频按钮，右键点击新建的视频矩形，选择<b><a href="Component_menu.html#File" title="Component menu">文件</a> ：导入文件</b>在视频上<a href="Component_menu.html" title="Component menu">组件菜单</a>并选择要播放的视频文件（例如<i>视频</i>或<i>MPEG</i>）</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Compose_toolbar_buttons">撰写工具栏按钮</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Compose_toolbar&amp;veaction=edit&amp;section=4" title="Edit section: Compose toolbar buttons"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Compose_toolbar&amp;action=edit&amp;section=4" title="Edit section's source code: Compose toolbar buttons"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-default-size mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Compose_toolbar.jpg.html" title="SuperMemo: Compose toolbar for adding new components to your elements"><img alt="SuperMemo: Compose toolbar for adding new components to your elements" class="mw-file-element" decoding="async" height="64" loading="lazy" src="https://help.supermemo.org/images/6/6c/Compose_toolbar.jpg" width="750"/></a><figcaption>SuperMemo：撰写工具栏，用于向元素添加新组件</figcaption></figure>
+<p>下面是各个按钮的使用<b>撰写</b>工具栏：</p>
+<ul><li><b>菜单按钮</b>- 单击鼠标右键可打开菜单：<ul><li><b>元素菜单</b>（<i>Alt+F10</i>) - 打开<a href="Element_menu.html" title="Element menu">元素菜单</a>与当前显示相关的操作<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。右键单击空白元素区域或<a href="Navigation_bar.html" title="Navigation bar">导航栏</a></li>
+<li><b>组件菜单</b>（<i>Alt+F12</i>) - 打开<a href="Component_menu.html" title="Component menu">组件菜单</a>与当前选择相关的操作<a href="Glossary_Component.html" title="Glossary:Component">组件</a>。右键单击该菜单也可以打开该菜单<a href="Glossary_Component.html" title="Glossary:Component">组件</a></li></ul></li>
+<li><b>查看源码</b>- 显示所显示的源数据<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（即元素出现在<a href="Glossary_Template.html" title="Glossary:Template">模板</a>已应用）。如果显示的元素上没有应用模板，则此按钮无效</li>
+<li><b>组件按钮</b>- 创建<a href="Glossary_Component.html" title="Glossary:Component">组件</a>文字、图片、声音等多种类型。<ul><li><b><a href="HTML_component.html" title="HTML component">HTML组件</a></b>- 网络浏览器<a href="Glossary_Component.html" title="Glossary:Component">组件</a>显示格式化文本、图像、框架、表格、脚本（例如 JavaScript）等。这是使用的默认组件<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>。阅读有关<a href="Using_text_components.html" title="Using text components">文本组件</a>决定何时使用<a href="HTML_component.html" title="HTML component">HTML 文本组件</a>，以及何时使用其他文本组件</li>
+<li><b><a href="WebView_component.html" title="WebView component">WebView组件</a></b>- 是 HTML 组件的姐妹。它将 SuperMemo 扩展到现代基于 Chromium 的浏览器支持的领域。</li>
+<li><b><span id="Text_component">文本组件</span></b>- 简单的无格式文本<a href="Glossary_Component.html" title="Glossary:Component">组件</a>。阅读有关<a href="Using_text_components.html" title="Using text components">文本组件</a>决定何时使用简单（纯）文本组件</li>
+<li><b>拼写板组件</b>- 文字<a href="Glossary_Component.html" title="Glossary:Component">组件</a>允许文本输入和评估（例如拼写练习）</li>
+<li><b><span id="Image_component">图片组件</span></b>- 图片<a href="Glossary_Component.html" title="Glossary:Component">组件</a>。您可以从剪贴板粘贴图像以自动创建合适尺寸的图像组件</li>
+<li><b>声音组件</b>- 声音<a href="Glossary_Component.html" title="Glossary:Component">组件</a>可以播放WAV、MP3、MIDI等声音文件格式</li>
+<li><b>视频组件</b>- 视频<a href="Glossary_Component.html" title="Glossary:Component">组件</a>播放MP4、MPEG、WMV、AVI等视频文件格式</li>
+<li><b>二元组件</b>- 通用<a href="Glossary_Component.html" title="Glossary:Component">组件</a>它可以保存其他组件不能保存的任何数据。它可以保存帮助文件、PDF 文件、电子邮件、不支持的文件等。您还可以导入简单的程序以在您的计算机中运行<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>（例如，您可以导入<i>C:\windows\system32\CALC.EXE</i>运行<b>计算器</b>从您的收藏中）</li>
+<li><b>脚本组件</b>- 超级备忘录<a href="Scripts.html" title="Scripts">脚本</a> <a href="Glossary_Component.html" title="Glossary:Component">组件</a>可以给你的生活增添活力<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>（例如通过移动组件，提供<a href="Test_elements.html#Drag.26Match_tests" title="Test elements">拖放练习</a>,<a href="Test_elements.html#Point.26Click_test" title="Test elements">点击练习</a>、隐藏和显示组件、播放声音或其他脚本等）。参见：<a href="Scripts.html" title="Scripts">在 SuperMemo 中使用脚本</a></li>
+<li><b><a href="OLE_component.html" title="OLE component">OLE组件</a></b>- 通用<a href="Glossary_Component.html" title="Glossary:Component">组件</a>用于显示和编辑使用其他应用程序创建的对象（例如 Word 文档、Excel 电子表格、<a class="external text" href="http://www.mindman.com">心灵经理</a>思维导图、Corel 图片、方程式、结构化公式等）。只要有可能，请使用<a href="HTML_component.html" title="HTML component">HTML 组件</a>而不是<a href="OLE_component.html" title="OLE component">OLE组件</a></li>
+<li><b>椭圆组件</b>- 椭圆形</li>
+<li><b>矩形组件</b>- 矩形形状</li>
+<li><b>圆角矩形组件</b>- 圆角矩形形状</li></ul></li>
+<li><b>组件显示模式按钮</b>- 改变方式<a href="Glossary_Component.html" title="Glossary:Component">组件</a>显示并执行：<ul><li><a href="Glossary_Editing_mode.html" title="Glossary:Editing mode"><b>编辑模式</b></a>- 设置全部<a href="Glossary_Component.html" title="Glossary:Component">组件</a>在可以编辑文本的模式下，编辑<a href="OLE_component.html" title="OLE component">OLE对象</a>等</li>
+<li><a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode"><b>拖动方式</b></a>- 设置全部<a href="Glossary_Component.html" title="Glossary:Component">组件</a>在可以进行拖动和调整大小的模式下</li>
+<li><a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode"><b>演示模式</b></a>- 设置全部<a href="Glossary_Component.html" title="Glossary:Component">组件</a>学生在重复过程中看到的方式</li>
+<li><b>开关模式</b>（<i>Ctrl+E</i>) - 循环自<a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">演示</a>到<a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">编辑</a>到<a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">拖动&amp;调整大小模式</a></li></ul></li>
+<li><b>组件标签</b>- 显示组件编号、类型、名称和注册表位置</li>
+<li><b>对齐和尺寸</b>- 调整大小并对齐所有<a href="Glossary_Component.html" title="Glossary:Component">组件</a>目前在<a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">编辑</a>或<a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">拖拽</a>模式</li>
+<li><b>测试重复周期</b>（<i>Shift+Alt+L</i>) - 看看如何<a href="Glossary_Element.html" title="Glossary:Element">元素</a>重复期间的行为（例如，如果它确实在正确的时间显示答案、播放声音、执行脚本等）</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610041713
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.034 seconds
+Real time usage: 0.037 seconds
+Preprocessor visited node count: 51/1000000
+Post‐expand include size: 580/2097152 bytes
+Template argument size: 245/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.238      1 File:Compose_toolbar.jpg
+100.00%    4.238      1 -total
+ 41.15%    1.744      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:48:|#|:idhash:canonical and timestamp 20260610041713 and revision id 12340. Rendering was triggered because: page-view
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

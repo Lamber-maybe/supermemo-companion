@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fonts tab in Options — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Fonts_tab_in_Options" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><b>Fonts</b> tab in <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Options.html" title="Options">Options</a></b> provides the following options: 
+</p>
+<ul><li><b>Stylesheet</b> opens the <b><a href="SuperMemo_stylesheet.html" title="SuperMemo stylesheet">SuperMemo Stylesheet</a></b> editor which makes it possible to define the default stylesheet for those <a href="HTML_component.html" title="HTML component">HTML components</a>, which do not use any stylesheet from the stylesheet <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a></li>
+<li><b>Use question and answer fonts in HTML</b>: This option, when checked, makes sure that each time you start editing HTML text, the fonts specified at <b>Question font</b> and <b>Answer font</b> are used by default. You can uncheck this box if you want to save space and leave HTML texts unformatted whenever possible (you can then use stylesheets or the Internet Explorer default setting to determine the default font used in <a href="HTML_component.html" title="HTML component">HTML components</a>)</li>
+<li><b>Interface font</b> defines the font used in windows and dialog boxes throughout <a href="SuperMemo.html" title="SuperMemo">SuperMemo</a>. To best way to see the impact of this option is to click the button and change the font. If you select a very large font, SuperMemo will ignore your choice so that you are able to read the dialogs and change your setting back. When an increase in the font size starts interfering with vital must-see information, the size of the font may be ignored and will be adjusted to make sure the text fits the allocated area (e.g. <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> name and path on the navigation panel) (see: <a class="external text" href="https://www.youtube.com/watch?v=XL-6R955frc">video</a>)</li>
+<li><b>Question font</b> defines the default font for texts <a href="Glossary_Component.html" title="Glossary:Component">components</a>. This font will be used in all texts <a href="Glossary_Component.html" title="Glossary:Component">components</a> where you do not specify a font yourself. Only answer <a href="Glossary_Component.html" title="Glossary:Component">components</a> will use the font defined with <b>Answer font</b> below. Changing <b>Question font</b> will change the initial font used in editing HTML or RTF <a href="Glossary_Component.html" title="Glossary:Component">components</a> (if the following option above is checked: <b>Use question and answer fonts in HTML</b>). It will also affect <b>all</b> plain text <a href="Glossary_Component.html" title="Glossary:Component">components</a> whose font is not specified. It will not change the appearance of HTML and RTF <a href="Glossary_Component.html" title="Glossary:Component">components</a> created in the past. Whenever SuperMemo is not sure which font to use, it will use <b>Question font</b> in various circumstances</li>
+<li><b>Answer font</b> defines the default font used in texts <a href="Glossary_Component.html" title="Glossary:Component">components</a> serving as answers to questions. It will be used for all plain text answers unless you specifically request another font be used. If you change <b>Answer font</b>, answers of plain text <a href="Glossary_Component.html" title="Glossary:Component">components</a> that do not specify the font will also change throughout your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. This will not affect answers edited as HTML or RTF</li>
+<li><b>Contents font</b> defines the default font used in the <a href="Contents.html" title="Contents"><b>Contents</b> window</a>. This font will also be used to display element titles in <a href="Glossary_Registry.html" title="Glossary:Registry">registries</a></li>
+<li><b>Highlight font</b> defines the font used to highlight texts in <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a> (e.g. with the highlighter icon on the <a href="Read_toolbar.html" title="Read toolbar"><b>Read</b> toolbar</a>). This font may be overridden by the font used in the stylesheet applied to a given <a href="HTML_component.html" title="HTML component">HTML component</a></li></ul>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Options_fonts.jpg.html" title="SuperMemo: Toolkit : Options : Fonts tab"><img alt="SuperMemo: Toolkit : Options : Fonts tab" class="mw-file-element" decoding="async" height="510" loading="lazy" src="https://help.supermemo.org/images/thumb/5/5e/Options_fonts.jpg/800px-Options_fonts.jpg" srcset="/images/5/5e/Options_fonts.jpg 1.5x" width="800"/></a></span>
+</p>
+<blockquote><p><i><b>Figure</b>: Changing the interface font in SuperMemo</i></p></blockquote>
+</div>
+<p>There are four basic font options on the <b><a href="Component_menu.html#Text" title="Component menu">Text</a></b> submenu of the <a href="Component_menu.html" title="Component menu">component menu</a> in all text <a href="Glossary_Component.html" title="Glossary:Component">components</a>. 
+</p>
+<ul><li><b>New font</b> makes it possible to define a new font, add it to the font <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> for later use (see: <b><a href="Search_menu.html" title="Search menu">Search</a> : <a href="Search_menu.html#Other_registries" title="Search menu">Other registries</a> : Font</b>). After the new font is defined it is applied to the current selection in HTML and RTF <a href="Glossary_Component.html" title="Glossary:Component">components</a> or to the whole text in plain text components</li>
+<li><b>Link font</b> (<i>Shift+Ctrl+F</i>) can be used to reuse a font previously stored in the font <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a></li>
+<li><b>Edit font</b> allows you to edit the currently used font in a text <a href="Glossary_Component.html" title="Glossary:Component">component</a>. In HTML and RTF components, the modified font will only affect the current selection. In plain text <a href="Glossary_Component.html" title="Glossary:Component">components</a>], the font in the entire text will change. In addition, the font in the currently used <a href="Glossary_Template.html" title="Glossary:Template">template</a> will be modified</li>
+<li><b>Default font</b> can be used in plain text <a href="Glossary_Component.html" title="Glossary:Component">components</a> to detach a registry font from the current component and the current <a href="Glossary_Template.html" title="Glossary:Template">template</a> (if any). This, for example, will make the modified template use <b>Question font</b> and <b>Answer font</b> as defined in <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Options.html" title="Options">Options</a> : Fonts</b> (see above). This option is of little use in <a href="HTML_component.html" title="HTML component">HTML components</a>, which have their font settings overriden by stylesheets and HTML tags</li></ul>
+<p>RTF and HTML <a href="Glossary_Component.html" title="Glossary:Component">components</a> can use either formatted text with many fonts or space-saving plain text. To convert the text in HTML or RTF <a href="Glossary_Component.html" title="Glossary:Component">components</a> to plain text use <b><a href="Component_menu.html#Text" title="Component menu">Text</a> : Convert : Plain text</b> on the <a href="Component_menu.html" title="Component menu">component menu</a> (e.g. press <i>Ctrl+Shift+F12</i>). To change the default font used in unformatted plain text in your <a href="HTML_component.html" title="HTML component">HTML components</a>, change the stylesheet used in the <a href="Glossary_Component.html" title="Glossary:Component">component</a>, or, if the stylesheet does not define the font, the setting in your Internet Explorer (<b>Tools : Internet Options : Fonts</b>). Once you modify fonts in an unformatted text in <a href="HTML_component.html" title="HTML component">HTML components</a>, the text will be saved as HTML again. 
+</p>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Fonts_tab_in_Options&amp;veaction=edit&amp;section=1" title="Edit section: See also"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Fonts_tab_in_Options&amp;action=edit&amp;section=1" title="Edit section's source code: See also"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="Using_fonts.html" title="Using fonts">Fonts in SuperMemo</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Finding_out_the_default_font_size_used_in_HTML_components">FAQ: How to determine which font is used?</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111002
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.040 seconds
+Real time usage: 0.041 seconds
+Preprocessor visited node count: 50/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:41:|#|:idhash:canonical and timestamp 20260610111002 and revision id 11903. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><b>字体</b>标签进入<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Options.html" title="Options">选项</a></b>提供以下选项：</p>
+<ul><li><b>样式表</b>打开<b><a href="SuperMemo_stylesheet.html" title="SuperMemo stylesheet">SuperMemo 样式表</a></b>编辑器，可以为这些定义默认样式表<a href="HTML_component.html" title="HTML component">HTML 组件</a>，不使用样式表中的任何样式表<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a></li>
+<li><b>在 HTML 中使用问题和答案字体</b>：选中此选项后，可确保每次开始编辑 HTML 文本时，指定的字体<b>问题字体</b>和<b>答案字体</b>默认情况下使用。如果您想节省空间并尽可能保留 HTML 文本不格式化，则可以取消选中此框（然后您可以使用样式表或 Internet Explorer 默认设置来确定中使用的默认字体）<a href="HTML_component.html" title="HTML component">HTML 组件</a>）</li>
+<li><b>界面字体</b>定义整个窗口和对话框中使用的字体<a href="SuperMemo.html" title="SuperMemo">超级备忘录</a>。查看此选项影响的最佳方法是单击按钮并更改字体。如果您选择非常大的字体，SuperMemo 将忽略您的选择，以便您能够阅读对话框并更改回设置。当字体大小的增加开始干扰重要的必看信息时，字体大小可能会被忽略，并会进行调整以确保文本适合分配的区域（例如，<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>导航面板上的名称和路径）（请参阅：<a class="external text" href="https://www.youtube.com/watch?v=XL-6R955frc">视频</a>）</li>
+<li><b>问题字体</b>定义文本的默认字体<a href="Glossary_Component.html" title="Glossary:Component">组件</a>。此字体将用于所有文本<a href="Glossary_Component.html" title="Glossary:Component">组件</a>您自己不指定字体的地方。只回答<a href="Glossary_Component.html" title="Glossary:Component">组件</a>将使用定义的字体<b>答案字体</b>下面。改变<b>问题字体</b>将更改编辑 HTML 或 RTF 时使用的初始字体<a href="Glossary_Component.html" title="Glossary:Component">组件</a>（如果选中上面的以下选项：<b>在 HTML 中使用问题和答案字体</b>）。也会影响<b>全部</b>纯文本<a href="Glossary_Component.html" title="Glossary:Component">组件</a>未指定其字体。它不会改变 HTML 和 RTF 的外观<a href="Glossary_Component.html" title="Glossary:Component">组件</a>过去创建的。每当 SuperMemo 不确定使用哪种字体时，它就会使用<b>问题字体</b>在各种情况下</li>
+<li><b>答案字体</b>定义文本中使用的默认字体<a href="Glossary_Component.html" title="Glossary:Component">组件</a>作为问题的答案。除非您特别要求使用其他字体，否则它将用于所有纯文本答案。如果你改变<b>答案字体</b>，纯文本答案<a href="Glossary_Component.html" title="Glossary:Component">组件</a>不指定字体也会在整个您的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。这不会影响编辑为 HTML 或 RTF 的答案</li>
+<li><b>内容字体</b>定义了使用的默认字体<a href="Contents.html" title="Contents"><b>内容</b>窗户</a>。该字体还将用于显示元素标题<a href="Glossary_Registry.html" title="Glossary:Registry">登记处</a></li>
+<li><b>突出显示字体</b>定义用于突出显示文本的字体<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>（例如，使用荧光笔图标<a href="Read_toolbar.html" title="Read toolbar"><b>阅读</b>工具栏</a>）。该字体可能会被应用于给定的样式表中使用的字体覆盖。<a href="HTML_component.html" title="HTML component">HTML组件</a></li></ul>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Options_fonts.jpg.html" title="SuperMemo: Toolkit : Options : Fonts tab"><img alt="SuperMemo: Toolkit : Options : Fonts tab" class="mw-file-element" decoding="async" height="510" loading="lazy" src="https://help.supermemo.org/images/thumb/5/5e/Options_fonts.jpg/800px-Options_fonts.jpg" srcset="/images/5/5e/Options_fonts.jpg 1.5x" width="800"/></a></span>
+</p>
+<blockquote><p><i><b>图</b>：更改SuperMemo中的界面字体</i></p></blockquote>
+</div>
+<p>页面上有四种基本字体选项<b><a href="Component_menu.html#Text" title="Component menu">文字</a></b>的子菜单<a href="Component_menu.html" title="Component menu">组件菜单</a>在所有文本中<a href="Glossary_Component.html" title="Glossary:Component">组件</a>。</p>
+<ul><li><b>新字体</b>可以定义新字体，将其添加到字体中<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>供以后使用（参见：<b><a href="Search_menu.html" title="Search menu">搜索</a> :<a href="Search_menu.html#Other_registries" title="Search menu">其他登记处</a> ：字体</b>）。定义新字体后，它将应用于 HTML 和 RTF 中的当前选择<a href="Glossary_Component.html" title="Glossary:Component">组件</a>或纯文本组件中的整个文本</li>
+<li><b>链接字体</b>（<i>Shift+Ctrl+F</i>) 可用于重用之前存储在字体中的字体<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a></li>
+<li><b>编辑字体</b>允许您编辑文本中当前使用的字体<a href="Glossary_Component.html" title="Glossary:Component">组件</a>。在HTML和RTF组件中，修改的字体只会影响当前的选择。纯文本形式<a href="Glossary_Component.html" title="Glossary:Component">组件</a>]，整个文本的字体将会改变。另外，当前使用的字体<a href="Glossary_Template.html" title="Glossary:Template">模板</a>将被修改</li>
+<li><b>默认字体</b>可以以纯文本形式使用<a href="Glossary_Component.html" title="Glossary:Component">组件</a>从当前组件和当前组件中分离注册表字体<a href="Glossary_Template.html" title="Glossary:Template">模板</a>（如果有的话）。例如，这将使修改后的模板使用<b>问题字体</b>和<b>答案字体</b>定义如下<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Options.html" title="Options">选项</a> ：字体</b>（见上文）。这个选项在以下情况下用处不大<a href="HTML_component.html" title="HTML component">HTML 组件</a>，其字体设置被样式表和 HTML 标记覆盖</li></ul>
+<p>RTF 和 HTML<a href="Glossary_Component.html" title="Glossary:Component">组件</a>可以使用具有多种字体的格式化文本或节省空间的纯文本。将文本转换为 HTML 或 RTF<a href="Glossary_Component.html" title="Glossary:Component">组件</a>纯文本使用<b><a href="Component_menu.html#Text" title="Component menu">文字</a> ：转换：纯文本</b>于<a href="Component_menu.html" title="Component menu">组件菜单</a>（例如按<i>Ctrl+Shift+F12</i>）。更改未格式化的纯文本中使用的默认字体<a href="HTML_component.html" title="HTML component">HTML 组件</a>，更改中使用的样式表<a href="Glossary_Component.html" title="Glossary:Component">组件</a>，或者，如果样式表未定义字体，则 Internet Explorer 中的设置 (<b>工具：互联网选项：字体</b>）。一旦您修改了未格式化文本中的字体<a href="HTML_component.html" title="HTML component">HTML 组件</a>，文本将再次保存为 HTML。</p>
+<div class="mw-heading mw-heading2"><h2 id="See_also">另请参阅</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Fonts_tab_in_Options&amp;veaction=edit&amp;section=1" title="Edit section: See also"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Fonts_tab_in_Options&amp;action=edit&amp;section=1" title="Edit section's source code: See also"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="Using_fonts.html" title="Using fonts">SuperMemo 中的字体</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Finding_out_the_default_font_size_used_in_HTML_components">常见问题：如何确定使用哪种字体？</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111002
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.040 seconds
+Real time usage: 0.041 seconds
+Preprocessor visited node count: 50/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:41:|#|:idhash:canonical and timestamp 20260610111002 and revision id 11903. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

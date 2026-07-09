@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Options — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Options" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><b><a href="Toolkit_menu.html" title="Toolkit menu"> Toolkit</a> : Options</b> on the <a href="Main_menu.html" title="Main menu">main menu</a> opens the options dialog that makes it possible to customize SuperMemo and the learning process. See: <a class="external text" href="https://www.youtube.com/watch?v=X_9OZs0rA2M">Quick overview</a> (video)
+</p><p><b>Options</b> dialog includes the following tabs:
+</p>
+<ul><li><a href="Learning_tab_in_Options.html" title="Learning tab in Options"> <b>Learning</b></a> - options affecting the learning process such as: <a class="external text" href="https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo">speed of learning</a>, working hours, <a class="external text" href="https://supermemo.guru/wiki/SuperMemo_Algorithm">Algorithm SM-18</a> reporting, etc.</li>
+<li><a href="Access_tab_in_Options.html" title="Access tab in Options"> <b>Access</b></a> - options affecting access to data: CD/DVD path, <a href="Glossary_Level.html" title="Glossary:Level">difficulty level</a>, <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> password, etc.</li>
+<li><a href="Language_tab_in_Options.html" title="Language tab in Options"> <b>Language</b></a> - localization options such as: language to which the current <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> is translated, <a href="Localization_table.html" title="Localization table"> SuperMemo interface language</a>, strings used in translating the interface, etc.</li>
+<li><a href="SuperMemo_tab_in_Options.html" title="SuperMemo tab in Options"> <b>SuperMemo</b></a> - other options such as: <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">knowledge tree</a>'s <a href="Glossary_Branch.html" title="Glossary:Branch">branch</a> <a href="Glossary_Child.html" title="Glossary:Child">children</a> limit, background image, sound feedback, etc.</li>
+<li><a href="Mouse_tab_in_Options.html" title="Mouse tab in Options"> <b>Mouse</b></a> - interpretation of mouse behavior. For example, how <a href="Glossary_Component.html" title="Glossary:Component">components</a> are edited or translated with the mouse, etc.</li>
+<li><b><a href="Leeches.html" title="Leeches">Leeches</a></b> - options that help you eliminate wrongly formulated <a href="Glossary_Item.html" title="Glossary:Item">items</a> from the learning process. If you choose <b>Wizard</b>, all ill-structured <a href="Glossary_Item.html" title="Glossary:Item">items</a> will open a <a href="Leeches.html#Leech_Alert_Wizard" title="Leeches">leech manager dialog</a> that will help you choose optimum processing steps to eliminate problems with difficult <a href="Glossary_Item.html" title="Glossary:Item">items</a></li>
+<li><a href="Fonts_tab_in_Options.html" title="Fonts tab in Options"> <b>Fonts</b></a> - fonts used in SuperMemo interface, in questions, in answers, in the <a href="Contents.html" title="Contents"><b>Contents</b> window</a>, etc.</li>
+<li><a href="Email_tab_in_Options.html" title="Email tab in Options"><b>E-mail</b></a> - options for sending email from SuperMemo (e.g. to forward <a href="Glossary_Element.html" title="Glossary:Element">elements</a>)</li></ul>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Options_learning.jpg.html" title="SuperMemo: Toolkit : Options : Learning tab"><img alt="SuperMemo: Toolkit : Options : Learning tab" class="mw-file-element" decoding="async" height="375" loading="lazy" src="https://help.supermemo.org/images/thumb/9/93/Options_learning.jpg/600px-Options_learning.jpg" srcset="/images/thumb/9/93/Options_learning.jpg/900px-Options_learning.jpg 1.5x, /images/9/93/Options_learning.jpg 2x" width="600"/></a><figcaption>SuperMemo: Toolkit : Options : Learning tab</figcaption></figure>
+<p>Global options of SuperMemo are stored in the file <i>supermemo.ini</i> in the SuperMemo subfolder <i>BIN</i>.<br/>Options that affect only the current <a href="Glossary_Collection.html" title="Glossary:Collection"> collection</a> are stored in the file <i>collection.ini</i> in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> subfolder (named in the same way as the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>). <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Toolkit_menu.html#Options" title="Toolkit menu">Options</a></b> will modify both these files and change relevant settings
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610111129
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.032 seconds
+Real time usage: 0.034 seconds
+Preprocessor visited node count: 2/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 1/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:18:|#|:idhash:canonical and timestamp 20260610111129 and revision id 11899. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> ：选项</b>于<a href="Main_menu.html" title="Main menu">主菜单</a>打开选项对话框，可以自定义 SuperMemo 和学习过程。参见：<a class="external text" href="https://www.youtube.com/watch?v=X_9OZs0rA2M">快速概览</a>（视频）</p><p><b>选项</b>对话框包含以下选项卡：</p>
+<ul><li><a href="Learning_tab_in_Options.html" title="Learning tab in Options"> <b>学习</b></a>- 影响学习过程的选项，例如：<a class="external text" href="https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo">学习速度</a>, 工作时间,<a class="external text" href="https://supermemo.guru/wiki/SuperMemo_Algorithm">算法 SM-18</a>报告等</li>
+<li><a href="Access_tab_in_Options.html" title="Access tab in Options"> <b>访问</b></a>- 影响数据访问的选项：CD/DVD 路径、<a href="Glossary_Level.html" title="Glossary:Level">难度级别</a>,<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>密码等</li>
+<li><a href="Language_tab_in_Options.html" title="Language tab in Options"> <b>语言</b></a>- 本地化选项，例如：当前语言<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>被翻译成，<a href="Localization_table.html" title="Localization table">SuperMemo 界面语言</a>、翻译界面时使用的字符串等。</li>
+<li><a href="SuperMemo_tab_in_Options.html" title="SuperMemo tab in Options"> <b>超级备忘录</b></a>- 其他选项，例如：<a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">知识树</a>的<a href="Glossary_Branch.html" title="Glossary:Branch">分行</a> <a href="Glossary_Child.html" title="Glossary:Child">儿童</a>限制、背景图像、声音反馈等。</li>
+<li><a href="Mouse_tab_in_Options.html" title="Mouse tab in Options"> <b>鼠标</b></a>- 鼠标行为的解释。例如，如何<a href="Glossary_Component.html" title="Glossary:Component">组件</a>用鼠标等进行编辑或翻译。</li>
+<li><b><a href="Leeches.html" title="Leeches">水蛭</a></b>- 帮助您消除错误配方的选项<a href="Glossary_Item.html" title="Glossary:Item">项目</a>从学习过程来看。如果你选择<b>向导</b>, 全部结构不良<a href="Glossary_Item.html" title="Glossary:Item">项目</a>将开设一个<a href="Leeches.html#Leech_Alert_Wizard" title="Leeches">水蛭管理器对话框</a>这将帮助您选择最佳的加工步骤，以消除困难的问题<a href="Glossary_Item.html" title="Glossary:Item">项目</a></li>
+<li><a href="Fonts_tab_in_Options.html" title="Fonts tab in Options"> <b>字体</b></a>- SuperMemo 界面、问题、答案、答案中使用的字体<a href="Contents.html" title="Contents"><b>内容</b>窗户</a>等</li>
+<li><a href="Email_tab_in_Options.html" title="Email tab in Options"><b>电子邮件</b></a>- 从 SuperMemo 发送电子邮件的选项（例如转发<a href="Glossary_Element.html" title="Glossary:Element">元素</a>）</li></ul>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Options_learning.jpg.html" title="SuperMemo: Toolkit : Options : Learning tab"><img alt="SuperMemo: Toolkit : Options : Learning tab" class="mw-file-element" decoding="async" height="375" loading="lazy" src="https://help.supermemo.org/images/thumb/9/93/Options_learning.jpg/600px-Options_learning.jpg" srcset="/images/thumb/9/93/Options_learning.jpg/900px-Options_learning.jpg 1.5x, /images/9/93/Options_learning.jpg 2x" width="600"/></a><figcaption>SuperMemo：工具包：选项：学习选项卡</figcaption></figure>
+<p>SuperMemo的全局选项存储在文件中<i>超级备忘录.ini</i>在 SuperMemo 子文件夹中<i>宾格</i>。<br/>仅影响当前的选项<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>都存储在文件中<i>集合.ini</i>在<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>子文件夹（命名方式与<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>）。<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Toolkit_menu.html#Options" title="Toolkit menu">选项</a></b>将修改这两个文件并更改相关设置</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610111129
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.032 seconds
+Real time usage: 0.034 seconds
+Preprocessor visited node count: 2/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 1/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:18:|#|:idhash:canonical and timestamp 20260610111129 and revision id 11899. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

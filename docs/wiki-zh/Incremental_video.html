@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Incremental video — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Incremental_video" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#What_is_incremental_video?"><span class="tocnumber">1</span> <span class="toctext">What is incremental video?</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Incremental_video_with_YouTube"><span class="tocnumber">1.1</span> <span class="toctext">Incremental video with YouTube</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Incremental_video_with_video_files"><span class="tocnumber">1.2</span> <span class="toctext">Incremental video with video files</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Incremental_video_in_SuperMemo"><span class="tocnumber">2</span> <span class="toctext">Incremental video in SuperMemo</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Incremental_video_with_YouTube:_Outline"><span class="tocnumber">2.1</span> <span class="toctext">Incremental video with YouTube: Outline</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Importing_videos_from_YouTube"><span class="tocnumber">2.1.1</span> <span class="toctext">Importing videos from YouTube</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Importing_references"><span class="tocnumber">2.1.2</span> <span class="toctext">Importing references</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Viewing_YouTube_videos"><span class="tocnumber">2.1.3</span> <span class="toctext">Viewing YouTube videos</span></a>
+<ul>
+<li class="toclevel-4 tocsection-9"><a href="#Extracting_fragments_for_review"><span class="tocnumber">2.1.3.1</span> <span class="toctext">Extracting fragments for review</span></a></li>
+<li class="toclevel-4 tocsection-10"><a href="#Bookmark"><span class="tocnumber">2.1.3.2</span> <span class="toctext">Bookmark</span></a></li>
+<li class="toclevel-4 tocsection-11"><a href="#Sorting_videos"><span class="tocnumber">2.1.3.3</span> <span class="toctext">Sorting videos</span></a></li>
+<li class="toclevel-4 tocsection-12"><a href="#Skipping"><span class="tocnumber">2.1.3.4</span> <span class="toctext">Skipping</span></a></li>
+<li class="toclevel-4 tocsection-13"><a href="#Cross-inspiration"><span class="tocnumber">2.1.3.5</span> <span class="toctext">Cross-inspiration</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-14"><a href="#Forwarding_video_fragments_to_friends"><span class="tocnumber">2.1.4</span> <span class="toctext">Forwarding video fragments to friends</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#Exemplary_YouTube_videos"><span class="tocnumber">2.1.5</span> <span class="toctext">Exemplary YouTube videos</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="#Incremental_video_with_video_files:_Outline"><span class="tocnumber">2.2</span> <span class="toctext">Incremental video with video files: Outline</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="#Video_deletion"><span class="tocnumber">2.2.1</span> <span class="toctext">Video deletion</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#Viewing_video_files_and_learning"><span class="tocnumber">2.2.2</span> <span class="toctext">Viewing video files and learning</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Exemplary_video_files"><span class="tocnumber">2.2.3</span> <span class="toctext">Exemplary video files</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#Hints:_Incremental_video"><span class="tocnumber">3</span> <span class="toctext">Hints: Incremental video</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="#Hints:_Incremental_video_with_YouTube"><span class="tocnumber">3.1</span> <span class="toctext">Hints: Incremental video with YouTube</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Hints:_Incremental_video_with_local_files"><span class="tocnumber">3.2</span> <span class="toctext">Hints: Incremental video with local files</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Problems_with_YouTube-based_incremental_video"><span class="tocnumber">3.3</span> <span class="toctext">Problems with YouTube-based incremental video</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Your_own_incremental_video_script"><span class="tocnumber">3.4</span> <span class="toctext">Your own incremental video script</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Upgrading_to_WebView"><span class="tocnumber">3.5</span> <span class="toctext">Upgrading to WebView</span></a>
+<ul>
+<li class="toclevel-3 tocsection-26"><a href="#Keyboard_Shortcuts"><span class="tocnumber">3.5.1</span> <span class="toctext">Keyboard Shortcuts</span></a>
+<ul>
+<li class="toclevel-4 tocsection-27"><a href="#SuperMemo_WebView_Shortcuts"><span class="tocnumber">3.5.1.1</span> <span class="toctext">SuperMemo WebView Shortcuts</span></a></li>
+<li class="toclevel-4 tocsection-28"><a href="#SuperMemo_Element_Window_Shortcuts"><span class="tocnumber">3.5.1.2</span> <span class="toctext">SuperMemo Element Window Shortcuts</span></a></li>
+<li class="toclevel-4 tocsection-29"><a href="#Native_YouTube_Shortcuts_(player_focus)"><span class="tocnumber">3.5.1.3</span> <span class="toctext">Native YouTube Shortcuts (player focus)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-30"><a href="#Example"><span class="tocnumber">4</span> <span class="toctext">Example</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="What_is_incremental_video?"><span id="What_is_incremental_video.3F"></span>What is incremental video?</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=1" title="Edit section: What is incremental video?"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=1" title="Edit section's source code: What is incremental video?"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Incremental video is a technique for learning or watching video recordings with the view to forming lasting memories of the material viewed. Incremental video makes it possible to learn from multiple sources of video without neglecting any one of them. The processing of individual sources proceeds in parallel and time allocations for individual sources depend on student's priorities. Incremental video is to video as <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a> is to learning from electronic texts. In incremental video, it is the user who decides which portions of a video are important to remember. Those portions are part of a standard learning process known from other applications of SuperMemo. Each portion of the video forms a separate <a href="Glossary_Topic.html" title="Glossary:Topic">topic</a> that is reviewed at increasing <a href="Glossary_Interval.html" title="Glossary:Interval">intervals</a>. Despite working with thousands of videos, you do not ever need to feel lost, ever get bored, or ever miss a valuable scene. You can also use SuperMemo as your video or music jukebox. You can work with individual videos for mere seconds. Just as much as is needed to set the new viewing point, determine the <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> and determine the date of the next viewing. This way, you can process dozens of videos daily and work with thousands of videos in parallel. You shall feel overwhelmed with the richness of <a class="external text" href="http://youtube.com">YouTube</a> never again!
+</p><p>On the face of it, incremental video looks like channel-zapping on steroids. However, it is also a powerful learning technique that makes it easy to process thousands of videos in parallel without getting lost. It also makes it easy to learn individual video scenes for long-term <a href="Glossary_Retention.html" title="Glossary:Retention">retention</a>. It can be used to learn sports, master musical instruments, understand biology, or learn fun dialogs in your favorite movies. Individual videos are processed in small portions. Viewing can be resumed at any time at the last viewing position. Best pieces are preserved for repeat viewing. Individual videos are prioritized and served on a daily basis in manageable portions in order of <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a>.
+</p><p>Although incremental video can roughly be implemented with a pair of digital video recorders working in tandem, only SuperMemo provides a bona fide implementation with the whole set of incremental learning tools. SuperMemo makes it possible to learn from standard video files (e.g. MP4). It also makes it easy to learn from <a class="external text" href="http://youtube.com">YouTube</a> videos. At the moment of writing these words, no other software in the world provides the incremental video learning toolset.
+</p>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Incremental_video.jpg.html" title="SuperMemo: Incremental video in action - Incremental learning about how synapses work based on a video imported from YouTube"><img alt="SuperMemo: Incremental video in action - Incremental learning about how synapses work based on a video imported from YouTube" class="mw-file-element" decoding="async" height="548" loading="lazy" src="https://help.supermemo.org/images/thumb/a/ad/Incremental_video.jpg/800px-Incremental_video.jpg" srcset="/images/thumb/a/ad/Incremental_video.jpg/1200px-Incremental_video.jpg 1.5x, /images/thumb/a/ad/Incremental_video.jpg/1600px-Incremental_video.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure</b>: Exemplary screenshot from an incremental video process in SuperMemo.</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Incremental_video_with_YouTube">Incremental video with YouTube</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=2" title="Edit section: Incremental video with YouTube"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=2" title="Edit section's source code: Incremental video with YouTube"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Incremental video in SuperMemo can use <a class="external text" href="https://youtube.com">YouTube</a> videos. You can capitalize on the video streaming power of <a class="external text" href="https://youtube.com">YouTube</a> and the speed up SuperMemo. You will also dramatically save on the hard disk space. Videos are notorious hogs of space, your <a class="external text" href="https://youtube.com">YouTube</a> <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> will take a <b>tiny fraction of space</b> needed for video based on local files. <a class="external text" href="https://youtube.com">YouTube</a> <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> will actually take less space than <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a> <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> while carrying lots of learning power. Videos in SuperMemo are <b>automatically stripped of advertising</b>. It provides for a smother viewing experience even if you do not plan to use extracts. Last but not least, SuperMemo may encourage you to upload your own educational videos to <a class="external text" href="http://youtube.com">YouTube</a> and thus share them with others.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Incremental_video_with_video_files">Incremental video with video files</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=3" title="Edit section: Incremental video with video files"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=3" title="Edit section's source code: Incremental video with video files"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Incremental video in SuperMemo can use video files from your local drive. You do not need to limit your learning to videos available from <a class="external text" href="http://youtube.com">YouTube</a> that can be notoriously volatile (e.g. with accounts closed for copyright violations, embedding blocked by account holders, videos made private, etc.). You are not limited by the need to access the Internet. You can also process private videos.
+</p><p>Using incremental video with local files requires computers with significant processing power. On a strong PC, processing video files is fast and painless. It may be slower on weaker PCs. Your <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> may grow to be terabytes large, which is the main disadvantage of keeping files local. Make sure you have a big dedicated external drive for a backup of your material. The time-scale resolution of local videos is higher than that of <a class="external text" href="http://youtube.com">YouTube</a>-based videos, which are limited to setting <b>Start</b> and <b>Stop</b> points in increments of 1 second. With local files, you can review fragments that last milliseconds. You can review your best football move at nauseam. Moreover, with local files, you can work when disconnected from the net.
+</p><p>Incremental video can use local files in several video formats (incl. MP4, WMV, AVI, MOV, Mpeg, and more). Not all video formats are supported. Before you commit to SuperMemo, give it a try to see if your files can be processed or converted to acceptable format with third party tools.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Incremental_video_in_SuperMemo">Incremental video in SuperMemo</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=4" title="Edit section: Incremental video in SuperMemo"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=4" title="Edit section's source code: Incremental video in SuperMemo"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>SuperMemo is a pioneer of <b>incremental video</b>. For those who are familiar with <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>, incremental video is an analogous technique. Instead of text <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a>, you generate <a href="Extract.html" title="Extract">video extracts</a>, i.e. portions of a larger video. Video <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> are viewed repeatedly in increasing <a href="Glossary_Interval.html" title="Glossary:Interval">intervals</a> (as it is the case with other pieces of information in SuperMemo).
+</p><p>Individual videos and their <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> are treated in the same way as all other <a href="Glossary_Topic.html" title="Glossary:Topic">topic elements</a> and enter the learning process according to the rules that are known from <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>. Currently, only <a href="Glossary_Passive_review.html" title="Glossary:Passive review">passive review</a> of <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> is supported. There is no equivalent of <a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">cloze deletion</a> in incremental video. However, you can use videos as answers if you choose so.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Incremental_video_with_YouTube:_Outline">Incremental video with YouTube: Outline</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=5" title="Edit section: Incremental video with YouTube: Outline"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=5" title="Edit section's source code: Incremental video with YouTube: Outline"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>This is how you work with incremental video in SuperMemo:
+</p>
+<ol><li>open your favorite YouTube videos in Internet Explorer</li>
+<li>choose YouTube import option to import videos to SuperMemo (e.g. <i>Shift+Ctrl+Y</i>)</li>
+<li>use <b><a href="Learn.html" title="Learn">Learn</a></b> to process individual videos</li>
+<li>use <b>Start</b> and <b>Stop</b> buttons to mark interesting scenes</li>
+<li>use <b>Extract</b> to generate new <a href="Glossary_Element.html" title="Glossary:Element">elements</a> with scenes extending from <b>Start</b> to <b>Stop</b></li>
+<li>use learning tools in SuperMemo to prioritize, schedule, and organize videos and video <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a></li></ol>
+<p>For a demo see this YouTube video: <a class="external text" href="https://youtu.be/qhkM_ZqfmnI">Incremental video with SuperMemo 17</a>.
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Incremental_video_with_YouTube_Extract.jpg.html" title="SuperMemo: An extract created from the &quot;Giulio Tonini's 2011 Allen Institute for Brain Science Symposium&quot; YouTube video in the process of incremental video watching"><img alt="SuperMemo: An extract created from the &quot;Giulio Tonini's 2011 Allen Institute for Brain Science Symposium&quot; YouTube video in the process of incremental video watching" class="mw-file-element" decoding="async" height="551" loading="lazy" src="https://help.supermemo.org/images/thumb/7/7b/Incremental_video_with_YouTube_Extract.jpg/800px-Incremental_video_with_YouTube_Extract.jpg" srcset="/images/thumb/7/7b/Incremental_video_with_YouTube_Extract.jpg/1200px-Incremental_video_with_YouTube_Extract.jpg 1.5x, /images/7/7b/Incremental_video_with_YouTube_Extract.jpg 2x" width="800"/></a><figcaption>SuperMemo: An extract created from the "Giulio Tonini's 2011 Allen Institute for Brain Science Symposium" YouTube video in the process of incremental video watching</figcaption></figure>
+<blockquote>
+<p><i><b>Figure:</b> An <a href="Glossary_Extract.html" title="Glossary:Extract">extract</a> from the "Giulio Tononi's 2011 Allen Institute for Brain Science Symposium" (<span style="padding: 3px; background-color: yellow;">yellow</span> in the <a href="Glossary_Template.html" title="Glossary:Template">template</a> is used to differentiate between <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> and parent videos). SuperMemo will play the fragment between the start time of 10 min. 59 sec. and the stop time of 11 min 18 sec. (of the original <a class="external text" href="http://youtube.com">YouTube</a> video). The checkmark near the <b>Test</b> button indicates that the fragment should be played in a loop. On the right, you can see the description of the video imported from the <a class="external text" href="http://youtube.com">YouTube</a> database. Both the video description and the <a href="References.html" title="References">references</a> (not visible in the picture but generated automatically when importing videos with <b><a href="Edit_menu.html" title="Edit menu">Edit</a> : <a href="Web_import.html" title="Web import">Web import</a> : YouTube</b> (Shift+Ctrl+Y) are propagated from the original video <a href="Glossary_Element.html" title="Glossary:Element">element</a> to all video <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a>.</i>
+</p>
+</blockquote>
+<div class="mw-heading mw-heading4"><h4 id="Importing_videos_from_YouTube">Importing videos from YouTube</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=6" title="Edit section: Importing videos from YouTube"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=6" title="Edit section's source code: Importing videos from YouTube"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>To import videos for incremental learning do the following:
+</p>
+<ol><li>open <a class="external text" href="https://youtube.com">YouTube</a> videos in a supported <a href="Web_browser.html" title="Web browser">web browser</a> (e.g. MS Edge)</li>
+<li>choose one of the following:
+<ul><li>press <i>Shift+F8</i></li>
+<li><b>Import articles</b> on the <a href="Learnbar.html" title="Learnbar">learnbar</a> (right-click over the <b>Add a new article</b> button)</li>
+<li><b><a href="Edit_menu.html" title="Edit menu">Edit</a> : <a href="Web_import.html" title="Web import">Web import</a></b> from the <a href="Main_menu.html" title="Main menu">main menu</a></li></ul></li>
+<li>optionally, set import options (e.g. which videos to import, video <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a>, name of the import <a href="Glossary_Concept.html" title="Glossary:Concept">concept</a>, etc.)</li>
+<li>click <b>Import</b></li></ol>
+<p>If you see a video embedded in a webpage choose <b>Copy video URL</b> on the <a class="external text" href="https://youtube.com">YouTube</a> video context menu (right click), and paste the video to SuperMemo with <i>Ctrl+N</i> (as you would paste any
+webpage).
+</p><p>If you receive a video forward from SuperMemo, you can copy its code from the body of the mail and paste it to your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> with <i>Ctrl+N</i> (as you would paste any text or article).
+</p><p>Versions from Oct 2024 or later, support importing live video (also during the broadcast).
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_YouTube_import.jpg.html" title="SuperMemo: Importing videos from YouTube for incremental learning"><img alt="SuperMemo: Importing videos from YouTube for incremental learning" class="mw-file-element" decoding="async" height="536" loading="lazy" src="https://help.supermemo.org/images/thumb/f/f9/YouTube_import.jpg/800px-YouTube_import.jpg" srcset="/images/thumb/f/f9/YouTube_import.jpg/1200px-YouTube_import.jpg 1.5x, /images/thumb/f/f9/YouTube_import.jpg/1600px-YouTube_import.jpg 2x" width="800"/></a><figcaption>SuperMemo: Importing videos from YouTube for incremental learning</figcaption></figure>
+<blockquote>
+<p><i><b>Figure:</b> In the picture above, 10 <a class="external text" href="https://youtube.com">YouTube</a> videos featuring American biologist and 1972 Nobel prize winner <a class="external text" href="https://en.wikipedia.org/wiki/Gerald_Edelman">Gerald Edelman</a> are available and selected for automatic import into SuperMemo from MS Edge (for easy use with <a href="Glossary_Incremental_video.html" title="Glossary:Incremental video">incremental video</a>). 7 videos have been detected as already imported in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> and marked as a duplicate (red D icon). The selected videos will be imported as <a href="Glossary_Child.html" title="Glossary:Child">children</a> of a newly added <a href="Glossary_Element.html" title="Glossary:Element">element</a> titled "Web import". The <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> of the imported videos will fall in the range of 0.1759-1.2147%</i>
+</p>
+</blockquote>
+<div class="mw-heading mw-heading4"><h4 id="Importing_references">Importing references</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=7" title="Edit section: Importing references"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=7" title="Edit section's source code: Importing references"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>As of SuperMemo 20, references import automatically with your video. At the top of video description (on the right in default <i>YouTube</i> or <i>YouTubeWV</i> template), you should see <i>date</i>, <i>views</i>, and the <i>description</i>, followed by standard SuperMemo references that also include <i>#Author</i>. 
+</p><p>If you imported videos with earlier versions of SuperMemo, you can download references with <b>Reference : Download</b> on the <a href="Component_menu.html" title="Component menu">component menu</a>.
+</p><p><b>Important!</b> If references do not import, and you get the verbatim YouTube page, it means that the API key had been rotated (e.g. due to abuse), and you may need to update SuperMemo (re-run the installer). If your missing references do not update automatically, use <b>Reference : Download</b>.
+</p>
+<div class="mw-heading mw-heading4"><h4 id="Viewing_YouTube_videos">Viewing YouTube videos</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=8" title="Edit section: Viewing YouTube videos"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=8" title="Edit section's source code: Viewing YouTube videos"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Use <b><a href="Learn.html" title="Learn">Learn</a></b> in the same way as when learning with SuperMemo. The videos start automatically. When you get bored or need to watch other videos, press <b>Start</b> to mark the point from which you will resume the video next time you see it. If you find an important fragment that you would like to learn or view again, press <b>Start</b> at the beginning of the fragment, and <b>Stop</b> at the end of the fragment. 
+</p>
+<div class="mw-heading mw-heading5"><h5 id="Extracting_fragments_for_review">Extracting fragments for review</h5><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=9" title="Edit section: Extracting fragments for review"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=9" title="Edit section's source code: Extracting fragments for review"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Use <b>Test</b> to view the fragment again. Press <b>Extract</b> if you would like to create a new fragment that should take part in the learning process as a separate <a href="Glossary_Element.html" title="Glossary:Element">element</a>.
+</p><p>You can generate <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> without interrupting the viewing process. Extract <a href="Glossary_Element.html" title="Glossary:Element">elements</a> are generated only when you move on to the next <a href="Glossary_Element.html" title="Glossary:Element">element</a> or when you press <i>Alt+X</i>.
+</p>
+<div class="mw-heading mw-heading5"><h5 id="Bookmark">Bookmark</h5><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=10" title="Edit section: Bookmark"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=10" title="Edit section's source code: Bookmark"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>You can use <b>Mark</b> and <b>Resume</b> to set a bookmark that will not affect the point from which video starts (e.g. when preparing an <a href="Glossary_Extract.html" title="Glossary:Extract">extract</a>).
+</p>
+<div class="mw-heading mw-heading5"><h5 id="Sorting_videos">Sorting videos</h5><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=11" title="Edit section: Sorting videos"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=11" title="Edit section's source code: Sorting videos"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If you get the same videos over and over again, and you would like to get some variety independent of video <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a>, use <b><a href="Learn_menu.html" title="Learn menu">Learn</a> : <a href="Learn_menu.html#Sorting" title="Learn menu">Sorting</a> : Sorting criteria</b> and increase <b>Randomization</b> (move the thumb from <b>Prioritized topics</b> towards <b>Randomized topics</b>, i.e. to the right).
+</p>
+<div class="mw-heading mw-heading5"><h5 id="Skipping">Skipping</h5><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=12" title="Edit section: Skipping"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=12" title="Edit section's source code: Skipping"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>You can press <kbd>Left</kbd> and <kbd>Right arrow</kbd> keys to skip video 5 seconds back or forward. You can use other <a class="external text" href="https://support.google.com/youtube/answer/7631406">YouTube shortcuts</a> accordingly. For this, the focus must be on the video (if the focus is on the control panel, click the video to re-enable the shortcuts).
+</p>
+<div class="mw-heading mw-heading5"><h5 id="Cross-inspiration">Cross-inspiration</h5><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=13" title="Edit section: Cross-inspiration"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=13" title="Edit section's source code: Cross-inspiration"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If you are not sure how to handle the incremental learning process, <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a> is a good introduction to understanding incremental video.
+</p>
+<div class="mw-heading mw-heading4"><h4 id="Forwarding_video_fragments_to_friends">Forwarding video fragments to friends</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=14" title="Edit section: Forwarding video fragments to friends"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=14" title="Edit section's source code: Forwarding video fragments to friends"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If you forward a <a class="external text" href="http://youtube.com">YouTube</a> <a href="Glossary_Element.html" title="Glossary:Element">element</a> in SuperMemo via e-mail to others, it will include the link and start:stop boundaries of the video. Forwarded videos can be viewed in a web browser or directly in SuperMemo with <b>Start</b> and <b>Stop</b> buttons set to make sure only the recommended fragment plays.
+</p><p>Your e-mail will look similar to this one:
+</p>
+<pre>Please have a look at this YouTube video:
+https://www.youtube.com/embed/yVq4ARIlNVg?start=471&amp;end=3150
+
+See the fragment from 7:51 to 52:30.
+
+If you are using SuperMemo, you can also:
+
+(1) select this code (e.g. triple click): 
+
+        {SuperMemoYouTube:yVq4ARIlNVg,7:51,52:30,0:00,3}
+
+(2) copy the code to clipboard (e.g. Ctrl+C)
+(3) use Ctrl+N to paste the code to SuperMemo
+
+Sender ID: SuperMemo Research
+
+==================================================
+#Subject: #EIE23: Jonathan Haidt: Smartphones vs. Smart Kids - YouTube:
+#Author: Jonathan Haidt
+#Date: Imported on Dec 28, 2023, 17:29:21
+#Source: Edge import from YouTube
+#Link: https://youtube.com/watch?v=yVq4ARIlNVg
+#Comment: recommended at Ja Nauczyciel
+#Collection: YOUTUBE [Element=26660]
+#Generated: Dec 28, 2023, Thu, 23:40:20
+#Software: SuperMemo 19 (Build 19.03, Dec 20, 2023)
+
+</pre>
+<div class="mw-heading mw-heading4"><h4 id="Exemplary_YouTube_videos">Exemplary YouTube videos</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=15" title="Edit section: Exemplary YouTube videos"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=15" title="Edit section's source code: Exemplary YouTube videos"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Incremental video is a video equivalent of <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>. However, there are many things you may wish to learn that are best mastered with video and cannot be substituted with reading. The list is truly endless. However, here are just a few examples taken from <a class="external text" href="http://youtube.com">YouTube</a> to give you the first sense of why incremental video is an important component of incremental learning:
+</p>
+<ul><li>learn a foreign language with the help of movies, speeches, lectures, etc.</li>
+<li>learn recent history with archive footage</li>
+<li>explore the student's video paradise: <a class="external text" href="http://www.youtube.com/user/khanacademy">Khan Academy</a></li>
+<li>learn to play a musical instrument using video tutorial produced by experts or best artists</li>
+<li>learn to play along or sing along your favorite songs</li>
+<li>use <a class="external text" href="http://en.wikipedia.org/wiki/Michael_Phelps">Mike Phelps</a> videos to learn how to swim butterfly</li>
+<li>recover from injuries by learning physiotherapeutic exercises</li>
+<li>watch movies incrementally</li>
+<li>listen to your favorite music</li>
+<li>watch historic sports events</li>
+<li>watch video lectures from reputable universities</li>
+<li>enjoy or learn the best jokes or comedy pieces by Leno, Connan, Jon Stewart, and others</li>
+<li>master speechmaking with videos of MLK, JFK, Reagan, or Obama</li>
+<li>seek motivation from Tony Robbins or other self-help gurus</li>
+<li>learn to cook</li>
+<li>relive memorable moments in the lives of your family and friends</li>
+<li>learn physiology, geology, physics, or history, wherever a video explanation is needed</li>
+<li>learn sign language, volleyball, soccer, etc.</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Incremental_video_with_video_files:_Outline">Incremental video with video files: Outline</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=16" title="Edit section: Incremental video with video files: Outline"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=16" title="Edit section's source code: Incremental video with video files: Outline"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>This is how you work with video files using incremental video in SuperMemo:
+</p>
+<ol><li>put your video files into a single empty folder</li>
+<li>use <b><a href="File_menu.html" title="File menu">File</a> : <a href="File_menu.html#Import" title="File menu">Import</a> : Files and folders</b> to import the contents of that folder to SuperMemo</li>
+<li>use <b><a href="Learn.html" title="Learn">Learn</a></b> to process individual videos</li>
+<li>use <b>Start</b> and <b>End</b> buttons to mark interesting scenes</li>
+<li>use <b>Extract</b> to generate new <a href="Glossary_Element.html" title="Glossary:Element">elements</a> with scenes marked with <b>Start</b> and <b>End</b></li>
+<li>use learning tools of SuperMemo to prioritize, schedule, and organize videos and video <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a></li></ol>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Incremental_video_with_video_file_Extract.jpg.html" title="SuperMemo: An incremental video extract from the 2013 men's singles US Open final between Novak Djokovic and Rafael Nadal"><img alt="SuperMemo: An incremental video extract from the 2013 men's singles US Open final between Novak Djokovic and Rafael Nadal" class="mw-file-element" decoding="async" height="500" loading="lazy" src="https://help.supermemo.org/images/thumb/0/03/Incremental_video_with_video_file_Extract.jpg/800px-Incremental_video_with_video_file_Extract.jpg" srcset="/images/thumb/0/03/Incremental_video_with_video_file_Extract.jpg/1200px-Incremental_video_with_video_file_Extract.jpg 1.5x, /images/thumb/0/03/Incremental_video_with_video_file_Extract.jpg/1600px-Incremental_video_with_video_file_Extract.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> An <a href="Glossary_Incremental_video.html" title="Glossary:Incremental video">incremental video</a> <a href="Glossary_Extract.html" title="Glossary:Extract">extract</a> from the <a class="external text" href="https://en.wikipedia.org/wiki/2013_US_Open_%E2%80%93_Men%27s_Singles">2013 men's singles US Open final</a> between <a class="external text" href="https://en.wikipedia.org/wiki/Novak_Djokovic">Novak Djokovic</a> and <a class="external text" href="https://en.wikipedia.org/wiki/Rafael_Nadal">Rafael Nadal</a> (<span style="padding: 3px; background-color: yellow;">yellow background</span> in the <a href="Glossary_Template.html" title="Glossary:Template">template</a> is used to differentiate between <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> and parent videos). On the right, you can see the import parameters of the video, which should ideally be converted to annotations that will help you locate the video and assist in the training (or learning). In the picture, the 9th game into the 3rd set, the Spanish challenger, down love 40, defends the first of the three consecutive break points with a topspin serve into the ad court to win the point with his trademark forehand down the line upon the Serb's otherwise excellent aggressive return.</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading4"><h4 id="Video_deletion">Video deletion</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=17" title="Edit section: Video deletion"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=17" title="Edit section's source code: Video deletion"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Incremental video is currently most suited for processing video or audio material passively with the most interesting portions extracted for <a href="Glossary_Passive_review.html" title="Glossary:Passive review">passive review</a> as <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a>. Currently you cannot "cloze delete" portions of video or audio files with a keystroke, however, you can easily use video <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> as answers to text questions, or video questions. For that purpose, mark your sound or video <a href="Glossary_Component.html" title="Glossary:Component">components</a> with the <b><a href="Component_menu.html#Answer" title="Component menu">Answer</a></b> attribute. You can also define <a href="Glossary_Template.html" title="Glossary:Template">templates</a> that will make that process easier.
+</p>
+<div class="mw-heading mw-heading4"><h4 id="Viewing_video_files_and_learning">Viewing video files and learning</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=18" title="Edit section: Viewing video files and learning"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=18" title="Edit section's source code: Viewing video files and learning"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Use <b><a href="Learn.html" title="Learn">Learn</a></b> in the same way as when learning with SuperMemo. The videos start automatically if you have <b><a href="Element_menu.html#AutoPlay" title="Element menu">AutoPlay</a></b> checked on the <a href="Element_menu.html" title="Element menu">element menu</a>. When you get bored or need to watch other videos, press <b>Start</b> (on the <b>Extractor</b> panel). <b>Start</b> marks the point from which you will resume the video next time you see it. If you find an important fragment that you would like to learn or view again, press <b>Start</b> at the beginning of the fragment, and <b>End</b> at the end of the fragment. Use <b>Test</b> to view the fragment again. Press <b>Extract</b> if you would like to create a new <a href="Glossary_Element.html" title="Glossary:Element">element</a> with the extracted fragment that should take part in the learning process.
+</p><p>If you get the same videos over and over again, and you would like to get some variety (even though the videos might be of top <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a>), use <b><a href="Learn_menu.html" title="Learn menu">Learn</a> : <a href="Learn_menu.html#Sorting" title="Learn menu">Sorting</a> : Sorting criteria</b> and increase <b>Randomization</b> (move the thumb from <b>Prioritized topics</b> towards <b>Randomized topics</b>).
+</p><p>If you are not sure how to handle the incremental learning process, <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a> is a good introduction to understanding incremental video.
+</p>
+<div class="mw-heading mw-heading4"><h4 id="Exemplary_video_files">Exemplary video files</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=19" title="Edit section: Exemplary video files"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=19" title="Edit section's source code: Exemplary video files"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>For a list of exemplary videos that may be used in incremental learning see: <a href="#Exemplary_YouTube_videos">Exemplary YouTube videos</a>.
+</p><p>Note that not all video material may be learned with the help of <a class="external text" href="http://youtube.com">YouTube</a>. There might be copyright or privacy issues. There is also one pesky problem with <a class="external text" href="http://youtube.com">YouTube</a> that can ruin any long-term learning process: videos can be pulled at any minute (unless you upload them yourself for public viewing with full respect to copyright). Last but not least, the time resolution of local file incremental video is higher that that of <a class="external text" href="http://youtube.com">YouTube</a>-based video. You can set your starting point with millisecond precision (as opposed to 1 second resolution of <a class="external text" href="http://youtube.com">YouTube</a> videos).
+</p><p>Material that might work better with files on your local hard disk include:
+</p>
+<ul><li>lectures or interviews that are available for download but not published at <a class="external text" href="http://youtube.com">YouTube</a></li>
+<li>lectures or interviews that are available for download and you wish to keep local (e.g. to ensure speed, precision, persistence, or offline viewing)</li>
+<li>copyrighted material from <a class="external text" href="http://itunes.com">iTunes</a></li>
+<li>movies</li>
+<li>home video</li>
+<li>language courses</li>
+<li>all other files that you want to learn but cannot upload to <a class="external text" href="http://youtube.com">YouTube</a> (or just you do not want to be bothered with the hassle)</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Hints:_Incremental_video">Hints: Incremental video</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=20" title="Edit section: Hints: Incremental video"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=20" title="Edit section's source code: Hints: Incremental video"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Hints:_Incremental_video_with_YouTube">Hints: Incremental video with YouTube</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=21" title="Edit section: Hints: Incremental video with YouTube"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=21" title="Edit section's source code: Hints: Incremental video with YouTube"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>Define "<i>YouTube Extract</i>" <a href="Glossary_Template.html" title="Glossary:Template">template</a> to have it used for <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> from <a class="external text" href="http://youtube.com">YouTube</a> videos (as long as you use the "<i>YouTube</i>" <a href="Glossary_Template.html" title="Glossary:Template">template</a>). Otherwise, "<i>YouTube</i>" <a href="Glossary_Template.html" title="Glossary:Template">template</a> will be used with the background changed to <span style="padding: 3px; background-color: yellow;">yellow</span>. The simplest approach is to save your "<i>YouTube</i>" <a href="Glossary_Template.html" title="Glossary:Template">template</a> with the new name ("<i>YouTube Extract</i>") and then redefine it (e.g. by changing the element color). Differentiating videos from their <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> (e.g. by color) is important for your strategies in optimizing the learning process.</li>
+<li>Incremental video is less incremental than <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>. Incremental video was designed on the assumption that, unlike in <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>, you go through the main body of the video linearly. This is because of multiple context problems when splitting videos into smaller portions and watching them in unpredictable order. This way, once you make an <a href="Glossary_Extract.html" title="Glossary:Extract">extract</a>, the assumption is, you do not come back to the once viewed portion of the video as it is already part of the <a href="Glossary_Extract.html" title="Glossary:Extract">extract</a>. When you return to process the video, you start from the last position extracted or marked with <b>Start</b>. In other words, as you do not extract without viewing, there should be little needed for sub-extracts</li>
+<li>Check for the availability of additional soundtracks. You can pick your favorite language and continue viewing incrementally. The soundtrack setting is preserved between sessions. The default setting is determined by your past choices (it is not set in SuperMemo).</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Hints:_Incremental_video_with_local_files">Hints: Incremental video with local files</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=22" title="Edit section: Hints: Incremental video with local files"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=22" title="Edit section's source code: Hints: Incremental video with local files"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>Define "<i>Video Extract</i>" <a href="Glossary_Template.html" title="Glossary:Template">template</a> to have your <a href="Glossary_Template.html" title="Glossary:Template">template</a> used for <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a>. Otherwise, The "<i>Video</i>" <a href="Glossary_Template.html" title="Glossary:Template">template</a> will be used with the background changed to <span style="padding: 3px; background-color: yellow;">yellow</span>. The simplest approach is to save your "<i>Video</i>" <a href="Glossary_Template.html" title="Glossary:Template">template</a> with the new name ("<i>Video Extract</i>") and then redefine it (e.g. by changing the element color to the desired extract color). Color differentiation is important for optimizing the strategies in processing videos</li>
+<li>If you want your <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> to run in an infinite loop, make sure you check <b>Continuous</b> on the <a href="Component_menu.html" title="Component menu">component menu</a> in your video extract <a href="Glossary_Template.html" title="Glossary:Template">template</a></li>
+<li>There isn't much performance penalty for processing large video files. You can import whole DVDs too and process them incrementally</li>
+<li>Not all file formats are supported, however, most formats can easily be converted to MP4 (e.g. with <a class="external text" href="http://www.freewarefiles.com/XMedia-Recode_program_47942.html">XMedia Recode</a>).</li>
+<li>Note that some MP4 files may not work correctly in SuperMemo. Please test a trial SuperMemo before you make a major commitment</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Problems_with_YouTube-based_incremental_video">Problems with YouTube-based incremental video</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=23" title="Edit section: Problems with YouTube-based incremental video"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=23" title="Edit section's source code: Problems with YouTube-based incremental video"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Here are some problems you may encounter when learning with <a class="external text" href="http://youtube.com">YouTube</a>-based incremental video:
+</p>
+<ul><li><a class="external text" href="http://youtube.com">YouTube</a> videos can be removed at any time. They can also have embedding disabled. This is a major problem for the present implementation of YouTube-based incremental video in SuperMemo. There are no API tools that could allow of legal localization of YouTube contents (at the moment of writing). However, the problem mostly affects copyrighted material that shows up on <a class="external text" href="http://youtube.com">YouTube</a> illegally (e.g. movies, music, etc.). Occasionally, video authors themselves remove content. This should never be a problem though if you use your own videos. Hopefully, there will be more and more persistent content uploaded for educational purposes.</li>
+<li><i>Alt+Left arrow</i> shortcut is used by Internet Explorer to return to the previously visited page. As a result, it also works like an Undo for your <b>Start:Stop</b> setting. To return to the previous page in SuperMemo, use the <b>Back</b> button (<span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Back.gif.html" title="Back enables you to go back to the most recently visited element"><img alt="Back enables you to go back to the most recently visited element" class="mw-file-element" decoding="async" height="16" loading="lazy" src="https://help.supermemo.org/images/f/f8/Back.gif" width="16"/></a></span>) on the <a href="Navigation_bar.html" title="Navigation bar">navigation bar</a></li>
+<li>it may happen that your network is down or the Internet is slow when working with <a class="external text" href="http://youtube.com">YouTube</a> videos. You may therefore prefer to keep videos in a dedicated incremental video <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> to learn how to handle videos and prevent interruptions to learning in cases of network problems. You can always stop working with your incremental video <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>, return to your regular learning, and resume video learning when the network returns to normal functionality</li>
+<li>if you would like to use SuperMemo as your <a class="external text" href="http://youtube.com">YouTube</a> jukebox, you should also keep music videos in a single <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> (or mark them all with a specific keyword for fast <a href="Subset_learning.html" title="Subset learning">subset learning</a>). You can later hide your jukebox <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> in the system tray. Your jukebox will play only the selected fragments of individual videos in order of <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> as specified in your <a href="Priority_queue.html#Sorting_repetitions" title="Priority queue">sorting criteria</a>. As in <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>, using <a href="Glossary_Interval.html" title="Glossary:Interval">intervals</a> and <a href="Glossary_Priority.html" title="Glossary:Priority">priorities</a> is a good remedy against getting bored with a given song or video</li>
+<li>videos cannot be played in SuperMemo if their embedding is blocked (you will see a message <i>Embedding Disabled By Request</i>). Those videos you can only watch on <a class="external text" href="http://youtube.com">YouTube</a>. This means that those videos are pretty useless in your incremental video learning; however, you can still use prioritization and scheduling tools to choose which videos should be played in which sequence and on which day. Note also that many of those videos are uploaded multiple times by various users, and you only need to search for an alternative that can be embedded</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Your_own_incremental_video_script">Your own incremental video script</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=24" title="Edit section: Your own incremental video script"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=24" title="Edit section's source code: Your own incremental video script"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Videos are handled with the help of <a class="external text" href="https://developers.google.com/youtube/iframe_api_reference">YouTube Player API</a> in <a href="HTML_component.html" title="HTML component">HTML components</a> using a small JavaScript program. When you first run SuperMemo, it writes this script into a file stored in the <i>[BIN]</i> subfolder of the folder in which you installed SuperMemo. The name of the file is <i>YouTube.htm</i>. If you know JavaScript, you can substitute your own incremental video script in that file (e.g. to change the layout, size of buttons, or even add new functions for processing videos). Here are the only components of the script that you need to preserve:
+</p>
+<ul><li>the order of <code>INPUT</code> fields (these are used by SuperMemo to collect extract boundaries)</li>
+<li><code>SELECT</code> and <code>OPTION</code> fields for generating <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a></li>
+<li><code>INPUT</code> field with YouTube video ID substituted by SuperMemo (<code>id="videoid"</code>)</li>
+<li><code>INPUT</code> field that determines the position of video start and end (<code>id="startvideoat"</code> and <code>id="stopvideoat"</code>)(must be "<i>0:00:00</i>")</li></ul>
+<p>The most important change you may wish to introduce is to decide between <code>version=2</code> and <code>version=3</code> of the player. Both have their bugs and disadvantages. For more see <a class="external text" href="https://supermemopedia.com/wiki/Incremental_video_does_not_work">Player Version Issues</a>. The version of the player you choose will be picked by default in all your YouTube <a href="Glossary_Element.html" title="Glossary:Element">elements</a>.
+</p><p>If you would like to share your own script with others, you can upload it to <a class="external text" href="https://supermemopedia.com">SuperMemoPedia</a>.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Upgrading_to_WebView">Upgrading to WebView</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=25" title="Edit section: Upgrading to WebView"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=25" title="Edit section's source code: Upgrading to WebView"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>As of SuperMemo 20, you can improve your YouTube experience by switching from <a href="HTML_component.html" title="HTML component">HTML components</a> to <a href="WebView_component.html" title="WebView component">WebView components</a>. 
+</p><p>This is how you can switch your old collection to WebView:
+</p>
+<ol><li>open <a class="mw-redirect" href="Template.html" title="Template">template</a> <a class="mw-redirect" href="Registry.html" title="Registry">registry</a> over any YouTube element</li>
+<li>use <b>Add predefined templates</b></li>
+<li>choose <i>YouTubeWV</i> (WebView template)</li>
+<li>apply the template with <b>Accept</b></li>
+<li>use <b>Template : Save as default</b> on the <a href="Element_menu.html" title="Element menu">element menu</a></li>
+<li>use the name <i>YouTube</i> (this overwrites the old template based on HTML components, and uses the new <a href="WebView_component.html" title="WebView component">WebView component</a></li></ol>
+<p>The control panel retains the legacy design, but includes many enhancements to improve usability: arrow keys skip playback forward or backward, recommendations remain accessible during browsing, playback continues uninterrupted while you search for the next video, etc.
+</p>
+<div class="mw-heading mw-heading4"><h4 id="Keyboard_Shortcuts">Keyboard Shortcuts</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=26" title="Edit section: Keyboard Shortcuts"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=26" title="Edit section's source code: Keyboard Shortcuts"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading5"><h5 id="SuperMemo_WebView_Shortcuts">SuperMemo WebView Shortcuts</h5><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=27" title="Edit section: SuperMemo WebView Shortcuts"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=27" title="Edit section's source code: SuperMemo WebView Shortcuts"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table class="wikitable">
+<tbody><tr>
+<th>Shortcut</th>
+<th>Action</th>
+<th>Context
+</th></tr>
+<tr>
+<td><kbd>Space</kbd></td>
+<td>Play / Pause</td>
+<td>Element Window / WebView (if not in input field)
+</td></tr>
+<tr>
+<td><kbd>←</kbd></td>
+<td>Jump backward 5 seconds</td>
+<td>Element Window / WebView
+</td></tr>
+<tr>
+<td><kbd>→</kbd></td>
+<td>Jump forward 5 seconds</td>
+<td>Element Window / WebView
+</td></tr>
+<tr>
+<td><kbd>Ctrl</kbd>+<kbd>1</kbd></td>
+<td>Focus the YouTube video player</td>
+<td>Element Window / WebView
+</td></tr>
+<tr>
+<td><kbd>Ctrl</kbd>+<kbd>2</kbd></td>
+<td>Focus the SuperMemo control panel (buttons)</td>
+<td>Element Window / WebView
+</td></tr>
+<tr>
+<td><kbd>Ctrl</kbd>+<kbd>Tab</kbd></td>
+<td>Cycle focus between player and control panel</td>
+<td>WebView
+</td></tr>
+<tr>
+<td><kbd>Ctrl</kbd>+<kbd>3</kbd> / <kbd>Esc</kbd></td>
+<td>Escape / Stop (return focus to SuperMemo)</td>
+<td>Element Window / WebView
+</td></tr>
+<tr>
+<td><kbd>R</kbd></td>
+<td>Toggle "Repeat" checkbox</td>
+<td>WebView (if not in input field)
+</td></tr>
+<tr>
+<td><kbd>Enter</kbd></td>
+<td>Pass Enter to SuperMemo (e.g. Next / Grade)</td>
+<td>WebView (if not in input field)
+</td></tr></tbody></table>
+<p><i>Note: The <kbd>Space</kbd>, <kbd>←</kbd>, and <kbd>→</kbd> shortcuts only work when focus is <b>not</b> inside a text input field (such as the "Extract name" or time fields).</i>
+</p>
+<div class="mw-heading mw-heading5"><h5 id="SuperMemo_Element_Window_Shortcuts">SuperMemo Element Window Shortcuts</h5><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=28" title="Edit section: SuperMemo Element Window Shortcuts"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=28" title="Edit section's source code: SuperMemo Element Window Shortcuts"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table class="wikitable">
+<tbody><tr>
+<th>Shortcut</th>
+<th>Action
+</th></tr>
+<tr>
+<td><kbd>Alt</kbd>+<kbd>X</kbd></td>
+<td>Extract fragment
+</td></tr>
+<tr>
+<td><kbd>Ctrl</kbd>+<kbd>L</kbd></td>
+<td>Learn
+</td></tr>
+<tr>
+<td><kbd>Ctrl</kbd>+<kbd>N</kbd></td>
+<td>Add new article
+</td></tr>
+<tr>
+<td><kbd>Ctrl</kbd>+<kbd>F</kbd></td>
+<td>Find elements
+</td></tr>
+<tr>
+<td><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd></td>
+<td>Element parameters
+</td></tr></tbody></table>
+<div class="mw-heading mw-heading5"><h5 id="Native_YouTube_Shortcuts_(player_focus)"><span id="Native_YouTube_Shortcuts_.28player_focus.29"></span>Native YouTube Shortcuts (player focus)</h5><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=29" title="Edit section: Native YouTube Shortcuts (player focus)"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=29" title="Edit section's source code: Native YouTube Shortcuts (player focus)"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>When the YouTube player has focus (e.g. after clicking the video or pressing <kbd>Ctrl</kbd>+<kbd>1</kbd>), the standard YouTube keyboard shortcuts apply. These work both inside and outside of SuperMemo. See <a class="external text" href="https://support.google.com/youtube/answer/7631406">official list</a>.
+</p>
+<table class="wikitable">
+<tbody><tr>
+<th>Shortcut</th>
+<th>Action
+</th></tr>
+<tr>
+<td><kbd>K</kbd> / <kbd>Space</kbd></td>
+<td>Play / Pause
+</td></tr>
+<tr>
+<td><kbd>J</kbd></td>
+<td>Rewind 10 seconds
+</td></tr>
+<tr>
+<td><kbd>L</kbd></td>
+<td>Fast forward 10 seconds
+</td></tr>
+<tr>
+<td><kbd>F</kbd></td>
+<td>Toggle full screen
+</td></tr>
+<tr>
+<td><kbd>M</kbd></td>
+<td>Mute / Unmute
+</td></tr>
+<tr>
+<td><kbd>0</kbd>–<kbd>9</kbd></td>
+<td>Jump to 0%–90% of the video
+</td></tr>
+<tr>
+<td><kbd>&lt;</kbd> / <kbd>&gt;</kbd></td>
+<td>Decrease / Increase playback rate
+</td></tr>
+<tr>
+<td><kbd>C</kbd></td>
+<td>Toggle captions (if available)
+</td></tr>
+<tr>
+<td><kbd>Shift</kbd>+<kbd>N</kbd></td>
+<td>Next video (if in a playlist)
+</td></tr>
+<tr>
+<td><kbd>Shift</kbd>+<kbd>P</kbd></td>
+<td>Previous video (if in a playlist)
+</td></tr>
+<tr>
+<td><kbd>?</kbd></td>
+<td>Show full native shortcut list overlay
+</td></tr></tbody></table>
+<div class="mw-heading mw-heading2"><h2 id="Example">Example</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=30" title="Edit section: Example"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=30" title="Edit section's source code: Example"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>See:
+</p>
+<ul><li><a class="external text" href="https://www.youtube.com/watch?v=4ojhSl2m3bM">Learning history with SuperMemo 19</a> (YouTube)</li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Incremental_video._Learning_history_with_YouTube">How to upgrade?</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111046
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.081 seconds
+Real time usage: 0.089 seconds
+Preprocessor visited node count: 231/1000000
+Post‐expand include size: 4581/2097152 bytes
+Template argument size: 1673/2097152 bytes
+Highest expansion depth: 5/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 861/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   10.078      1 -total
+ 48.14%    4.852      1 File:Incremental_video_with_YouTube_Extract.jpg
+ 21.57%    2.174      1 File:Incremental_video_with_video_file_Extract.jpg
+ 21.09%    2.126      2 Template:Fig
+ 16.67%    1.680      1 File:YouTube_import.jpg
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:88:|#|:idhash:canonical and timestamp 20260610111046 and revision id 12397. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#What_is_incremental_video?"><span class="tocnumber">1</span> <span class="toctext">什么是增量视频？</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Incremental_video_with_YouTube"><span class="tocnumber">1.1</span> <span class="toctext">YouTube 增量视频</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Incremental_video_with_video_files"><span class="tocnumber">1.2</span> <span class="toctext">带视频文件的增量视频</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Incremental_video_in_SuperMemo"><span class="tocnumber">2</span> <span class="toctext">SuperMemo 中的增量视频</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Incremental_video_with_YouTube:_Outline"><span class="tocnumber">2.1</span> <span class="toctext">YouTube 增量视频：大纲</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#Importing_videos_from_YouTube"><span class="tocnumber">2.1.1</span> <span class="toctext">从 YouTube 导入视频</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#Importing_references"><span class="tocnumber">2.1.2</span> <span class="toctext">导入参考文献</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Viewing_YouTube_videos"><span class="tocnumber">2.1.3</span> <span class="toctext">观看 YouTube 视频</span></a>
+<ul>
+<li class="toclevel-4 tocsection-9"><a href="#Extracting_fragments_for_review"><span class="tocnumber">2.1.3.1</span> <span class="toctext">提取片段以供审查</span></a></li>
+<li class="toclevel-4 tocsection-10"><a href="#Bookmark"><span class="tocnumber">2.1.3.2</span> <span class="toctext">书签</span></a></li>
+<li class="toclevel-4 tocsection-11"><a href="#Sorting_videos"><span class="tocnumber">2.1.3.3</span> <span class="toctext">对视频进行排序</span></a></li>
+<li class="toclevel-4 tocsection-12"><a href="#Skipping"><span class="tocnumber">2.1.3.4</span> <span class="toctext">跳绳</span></a></li>
+<li class="toclevel-4 tocsection-13"><a href="#Cross-inspiration"><span class="tocnumber">2.1.3.5</span> <span class="toctext">交叉灵感</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-14"><a href="#Forwarding_video_fragments_to_friends"><span class="tocnumber">2.1.4</span> <span class="toctext">将视频片段转发给好友</span></a></li>
+<li class="toclevel-3 tocsection-15"><a href="#Exemplary_YouTube_videos"><span class="tocnumber">2.1.5</span> <span class="toctext">YouTube 视频示例</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-16"><a href="#Incremental_video_with_video_files:_Outline"><span class="tocnumber">2.2</span> <span class="toctext">带视频文件的增量视频：大纲</span></a>
+<ul>
+<li class="toclevel-3 tocsection-17"><a href="#Video_deletion"><span class="tocnumber">2.2.1</span> <span class="toctext">视频删除</span></a></li>
+<li class="toclevel-3 tocsection-18"><a href="#Viewing_video_files_and_learning"><span class="tocnumber">2.2.2</span> <span class="toctext">查看视频文件并学习</span></a></li>
+<li class="toclevel-3 tocsection-19"><a href="#Exemplary_video_files"><span class="tocnumber">2.2.3</span> <span class="toctext">示例视频文件</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-20"><a href="#Hints:_Incremental_video"><span class="tocnumber">3</span> <span class="toctext">提示：增量视频</span></a>
+<ul>
+<li class="toclevel-2 tocsection-21"><a href="#Hints:_Incremental_video_with_YouTube"><span class="tocnumber">3.1</span> <span class="toctext">提示：使用 YouTube 增量视频</span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="#Hints:_Incremental_video_with_local_files"><span class="tocnumber">3.2</span> <span class="toctext">提示：使用本地文件增量视频</span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="#Problems_with_YouTube-based_incremental_video"><span class="tocnumber">3.3</span> <span class="toctext">基于 YouTube 的增量视频的问题</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Your_own_incremental_video_script"><span class="tocnumber">3.4</span> <span class="toctext">您自己的增量视频脚本</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Upgrading_to_WebView"><span class="tocnumber">3.5</span> <span class="toctext">升级到WebView</span></a>
+<ul>
+<li class="toclevel-3 tocsection-26"><a href="#Keyboard_Shortcuts"><span class="tocnumber">3.5.1</span> <span class="toctext">键盘快捷键</span></a>
+<ul>
+<li class="toclevel-4 tocsection-27"><a href="#SuperMemo_WebView_Shortcuts"><span class="tocnumber">3.5.1.1</span> <span class="toctext">SuperMemo WebView 快捷方式</span></a></li>
+<li class="toclevel-4 tocsection-28"><a href="#SuperMemo_Element_Window_Shortcuts"><span class="tocnumber">3.5.1.2</span> <span class="toctext">SuperMemo 元素窗口快捷方式</span></a></li>
+<li class="toclevel-4 tocsection-29"><a href="#Native_YouTube_Shortcuts_(player_focus)"><span class="tocnumber">3.5.1.3</span> <span class="toctext">原生 YouTube 快捷方式（玩家焦点）</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-30"><a href="#Example"><span class="tocnumber">4</span> <span class="toctext">示例</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="What_is_incremental_video?"><span id="What_is_incremental_video.3F"></span>什么是增量视频？</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=1" title="Edit section: What is incremental video?"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=1" title="Edit section's source code: What is incremental video?"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>增量视频是一种学习或观看视频记录的技术，旨在形成对所观看内容的持久记忆。增量视频使得从多个视频源中学习而不会忽略其中任何一个成为可能。各个来源的处理是并行进行的，各个来源的时间分配取决于学生的优先事项。增量视频是将视频作为<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>就是从电子文本中学习。在增量视频中，由用户决定视频的哪些部分需要记住。这些部分是 SuperMemo 其他应用程序已知的标准学习过程的一部分。视频的每个部分形成一个单独的<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>审查增加<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>。尽管处理了数千个视频，您永远不会感到迷失、无聊或错过任何有价值的场景。您还可以使用 SuperMemo 作为视频或音乐点唱机。您只需几秒钟即可处理单个视频。正如设置新视点所需的那样，确定<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>并确定下次观看的日期。这样，您每天可以处理数十个视频并并行处理数千个视频。你一定会被它的丰富性所震撼<a class="external text" href="http://youtube.com">YouTube</a>再也不会了！</p><p>从表面上看，增量视频看起来就像是打了类固醇的频道切换。然而，它也是一种强大的学习技术，可以轻松并行处理数千个视频而不会迷失方向。它还可以轻松地长期学习各个视频场景<a href="Glossary_Retention.html" title="Glossary:Retention">保留</a>。它可以用来学习运动、掌握乐器、了解生物学或学习您最喜欢的电影中的有趣对话。单个视频被分成小部分进行处理。可以随时从上次观看位置恢复观看。最好的作品会被保留以供重复观看。各个视频按优先级排列，并按可管理的部分每天按顺序提供<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>。</p><p>虽然增量视频可以粗略地通过一对协同工作的数字录像机来实现，但只有 SuperMemo 提供了真正的增量学习工具集的实现。 SuperMemo 使得从标准视频文件（例如 MP4）中学习成为可能。也方便大家学习<a class="external text" href="http://youtube.com">YouTube</a>视频。在撰写本文时，世界上没有其他软件提供增量视频学习工具集。</p>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Incremental_video.jpg.html" title="SuperMemo: Incremental video in action - Incremental learning about how synapses work based on a video imported from YouTube"><img alt="SuperMemo: Incremental video in action - Incremental learning about how synapses work based on a video imported from YouTube" class="mw-file-element" decoding="async" height="548" loading="lazy" src="https://help.supermemo.org/images/thumb/a/ad/Incremental_video.jpg/800px-Incremental_video.jpg" srcset="/images/thumb/a/ad/Incremental_video.jpg/1200px-Incremental_video.jpg 1.5x, /images/thumb/a/ad/Incremental_video.jpg/1600px-Incremental_video.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图</b>：SuperMemo 中增量视频过程的示例屏幕截图。</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Incremental_video_with_YouTube">YouTube 增量视频</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=2" title="Edit section: Incremental video with YouTube"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=2" title="Edit section's source code: Incremental video with YouTube"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>SuperMemo中的增量视频可以使用<a class="external text" href="https://youtube.com">YouTube</a>视频。您可以利用视频流的强大功能<a class="external text" href="https://youtube.com">YouTube</a>以及 SuperMemo 的加速。您还将大大节省硬盘空间。视频是臭名昭著的占用空间的东西，你的<a class="external text" href="https://youtube.com">YouTube</a> <a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>将采取<b>空间的一小部分</b>基于本地文件的视频需要。<a class="external text" href="https://youtube.com">YouTube</a> <a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>实际上会占用更少的空间<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a> <a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>同时承载着强大的学习力量。 SuperMemo 中的视频是<b>自动去除广告</b>。即使您不打算使用摘录，它也能提供更流畅的观看体验。最后但并非最不重要的一点是，SuperMemo 可能会鼓励您将自己的教育视频上传到<a class="external text" href="http://youtube.com">YouTube</a>并与他人分享。</p>
+<div class="mw-heading mw-heading3"><h3 id="Incremental_video_with_video_files">带视频文件的增量视频</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=3" title="Edit section: Incremental video with video files"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=3" title="Edit section's source code: Incremental video with video files"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>SuperMemo 中的增量视频可以使用本地驱动器中的视频文件。您无需将学习限制于以下网站提供的视频：<a class="external text" href="http://youtube.com">YouTube</a>众所周知，这种情况可能非常不稳定（例如，帐户因侵犯版权而被关闭、嵌入被帐户持有者阻止、视频设为私有等）。您不受访问互联网需求的限制。您还可以处理私人视频。</p><p>将增量视频与本地文件结合使用需要具有强大处理能力的计算机。在功能强大的 PC 上，处理视频文件既快速又轻松。在较弱的电脑上，它可能会更慢。你的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>可能会增长到 TB 大，这是将文件保存在本地的主要缺点。确保您有一个大的专用外部驱动器来备份您的材料。本地视频的时间尺度分辨率高于本地视频<a class="external text" href="http://youtube.com">YouTube</a>基于视频，仅限于设置<b>开始</b>和<b>停止</b>点以 1 秒为增量。使用本地文件，您可以查看持续几毫秒的片段。您可以在恶心时回顾您的最佳足球动作。此外，使用本地文件，您可以在断开网络连接的情况下工作。</p><p>增量视频可以使用多种视频格式的本地文件（包括 MP4、WMV、AVI、MOV、Mpeg 等）。并非所有视频格式都受支持。在您使用 SuperMemo 之前，请尝试一下您的文件是否可以使用第三方工具进行处理或转换为可接受的格式。</p>
+<div class="mw-heading mw-heading2"><h2 id="Incremental_video_in_SuperMemo">SuperMemo 中的增量视频</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=4" title="Edit section: Incremental video in SuperMemo"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=4" title="Edit section's source code: Incremental video in SuperMemo"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>SuperMemo 是<b>增量视频</b>。对于那些熟悉的人<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>，增量视频是一种类似的技术。而不是文字<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>，你生成<a href="Extract.html" title="Extract">视频摘录</a>，即较大视频的部分。视频<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>被反复观看的次数不断增加<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>（就像 SuperMemo 中其他信息的情况一样）。</p><p>个人视频及其<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>与所有其他人一样对待<a href="Glossary_Topic.html" title="Glossary:Topic">主题元素</a>并按照已知的规则进入学习过程<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>。目前，仅<a href="Glossary_Passive_review.html" title="Glossary:Passive review">被动审查</a>的<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>是支持的。没有等效的<a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">完形填空删除</a>在增量视频中。但是，如果您选择的话，可以使用视频作为答案。</p>
+<div class="mw-heading mw-heading3"><h3 id="Incremental_video_with_YouTube:_Outline">YouTube 增量视频：大纲</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=5" title="Edit section: Incremental video with YouTube: Outline"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=5" title="Edit section's source code: Incremental video with YouTube: Outline"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>这是在 SuperMemo 中使用增量视频的方式：</p>
+<ol><li>在 Internet Explorer 中打开您最喜爱的 YouTube 视频</li>
+<li>选择 YouTube 导入选项将视频导入 SuperMemo（例如<i>Shift+Ctrl+Y</i>）</li>
+<li>使用<b><a href="Learn.html" title="Learn">学习</a></b>处理单个视频</li>
+<li>使用<b>开始</b>和<b>停止</b>标记有趣场景的按钮</li>
+<li>使用<b>提取物</b>产生新的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>场景延伸自<b>开始</b>到<b>停止</b></li>
+<li>使用 SuperMemo 中的学习工具对视频和视频进行优先排序、安排和组织<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a></li></ol>
+<p>如需演示，请参阅此 YouTube 视频：<a class="external text" href="https://youtu.be/qhkM_ZqfmnI">使用 SuperMemo 17 进行增量视频</a>。</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Incremental_video_with_YouTube_Extract.jpg.html" title="SuperMemo: An extract created from the &quot;Giulio Tonini's 2011 Allen Institute for Brain Science Symposium&quot; YouTube video in the process of incremental video watching"><img alt="SuperMemo: An extract created from the &quot;Giulio Tonini's 2011 Allen Institute for Brain Science Symposium&quot; YouTube video in the process of incremental video watching" class="mw-file-element" decoding="async" height="551" loading="lazy" src="https://help.supermemo.org/images/thumb/7/7b/Incremental_video_with_YouTube_Extract.jpg/800px-Incremental_video_with_YouTube_Extract.jpg" srcset="/images/thumb/7/7b/Incremental_video_with_YouTube_Extract.jpg/1200px-Incremental_video_with_YouTube_Extract.jpg 1.5x, /images/7/7b/Incremental_video_with_YouTube_Extract.jpg 2x" width="800"/></a><figcaption>SuperMemo：在增量视频观看过程中从“Giulio Tonini 的 2011 年艾伦脑科学研究所研讨会”YouTube 视频中创建的摘录</figcaption></figure>
+<blockquote>
+<p><i><b>图：</b>安<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>来自“Giulio Tononi 2011 年艾伦脑科学研究所研讨会”（<span style="padding: 3px; background-color: yellow;">黄色</span>在<a href="Glossary_Template.html" title="Glossary:Template">模板</a>用于区分<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>和家长视频）。 SuperMemo 将播放开始时间 10 分钟之间的片段。 59秒。停止时间为11分18秒。 （原件的<a class="external text" href="http://youtube.com">YouTube</a>视频）。附近的复选标记<b>测试</b>按钮指示片段应循环播放。右侧可以看到从导入的视频的描述<a class="external text" href="http://youtube.com">YouTube</a>数据库。视频说明和<a href="References.html" title="References">参考文献</a>（在图片中不可见，但在导入视频时自动生成<b><a href="Edit_menu.html" title="Edit menu">编辑</a> :<a href="Web_import.html" title="Web import">网页导入</a> ：YouTube</b>(Shift+Ctrl+Y) 从原始视频传播<a href="Glossary_Element.html" title="Glossary:Element">元素</a>到所有视频<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>。</i>
+</p>
+</blockquote>
+<div class="mw-heading mw-heading4"><h4 id="Importing_videos_from_YouTube">从 YouTube 导入视频</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=6" title="Edit section: Importing videos from YouTube"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=6" title="Edit section's source code: Importing videos from YouTube"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>要导入视频以进行增量学习，请执行以下操作：</p>
+<ol><li>打开<a class="external text" href="https://youtube.com">YouTube</a>支持的视频<a href="Web_browser.html" title="Web browser">网络浏览器</a>（例如 MS Edge）</li>
+<li>选择以下选项之一：<ul><li>按<i>Shift+F8</i></li>
+<li><b>导入文章</b>于<a href="Learnbar.html" title="Learnbar">学习栏</a>（右键单击<b>添加新文章</b>按钮）</li>
+<li><b><a href="Edit_menu.html" title="Edit menu">编辑</a> :<a href="Web_import.html" title="Web import">网页导入</a></b>从<a href="Main_menu.html" title="Main menu">主菜单</a></li></ul></li>
+<li>（可选）设置导入选项（例如要导入哪些视频、视频<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>, 导入名称<a href="Glossary_Concept.html" title="Glossary:Concept">概念</a>等）</li>
+<li>点击<b>进口</b></li></ol>
+<p>如果您看到网页中嵌入视频，请选择<b>复制视频网址</b>于<a class="external text" href="https://youtube.com">YouTube</a>视频上下文菜单（右键单击），然后将视频粘贴到 SuperMemo<i>Ctrl+N</i>（就像你粘贴任何
+网页）。</p><p>如果您收到来自 SuperMemo 的视频转发，您可以从邮件正文中复制其代码并将其粘贴到您的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>与<i>Ctrl+N</i>（就像您粘贴任何文本或文章一样）。</p><p>2024 年 10 月及之后的版本支持导入直播视频（也在直播期间）。</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_YouTube_import.jpg.html" title="SuperMemo: Importing videos from YouTube for incremental learning"><img alt="SuperMemo: Importing videos from YouTube for incremental learning" class="mw-file-element" decoding="async" height="536" loading="lazy" src="https://help.supermemo.org/images/thumb/f/f9/YouTube_import.jpg/800px-YouTube_import.jpg" srcset="/images/thumb/f/f9/YouTube_import.jpg/1200px-YouTube_import.jpg 1.5x, /images/thumb/f/f9/YouTube_import.jpg/1600px-YouTube_import.jpg 2x" width="800"/></a><figcaption>SuperMemo：从 YouTube 导入视频以进行增量学习</figcaption></figure>
+<blockquote>
+<p><i><b>图：</b>上图中，10<a class="external text" href="https://youtube.com">YouTube</a>以美国生物学家和 1972 年诺贝尔奖获得者为主角的视频<a class="external text" href="https://en.wikipedia.org/wiki/Gerald_Edelman">杰拉德·爱德曼</a>可用并选择自动从 MS Edge 导入 SuperMemo（以便于与<a href="Glossary_Incremental_video.html" title="Glossary:Incremental video">增量视频</a>）。已检测到 7 个视频已导入<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>并标记为重复项（红色 D 图标）。所选视频将导入为<a href="Glossary_Child.html" title="Glossary:Child">儿童</a>的一个新添加的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>标题为“Web 导入”。的<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>导入视频的比例将落在 0.1759-1.2147% 范围内</i>
+</p>
+</blockquote>
+<div class="mw-heading mw-heading4"><h4 id="Importing_references">导入参考文献</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=7" title="Edit section: Importing references"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=7" title="Edit section's source code: Importing references"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>从 SuperMemo 20 开始，参考文献会自动随您的视频导入。视频说明顶部（默认在右侧）<i>YouTube</i>或<i>YouTubeWV</i>模板），你应该看到<i>日期</i>,<i>意见</i>，以及<i>描述</i>，随后是标准 SuperMemo 参考文献，其中还包括<i>#作者</i>。</p><p>如果您使用早期版本的 SuperMemo 导入视频，则可以使用以下命令下载参考资料<b>参考：下载</b>于<a href="Component_menu.html" title="Component menu">组件菜单</a>。</p><p><b>重要！</b>如果引用未导入，并且您获得逐字的 YouTube 页面，则意味着 API 密钥已轮换（例如由于滥用），并且您可能需要更新 SuperMemo（重新运行安装程序）。如果您丢失的参考文献没有自动更新，请使用<b>参考：下载</b>。</p>
+<div class="mw-heading mw-heading4"><h4 id="Viewing_YouTube_videos">观看 YouTube 视频</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=8" title="Edit section: Viewing YouTube videos"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=8" title="Edit section's source code: Viewing YouTube videos"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>使用<b><a href="Learn.html" title="Learn">学习</a></b>与使用 SuperMemo 学习时的方式相同。视频自动开始。当您感到无聊或需要观看其他视频时，请按<b>开始</b>标记您下次观看视频时将继续播放的位置。如果您发现想要再次学习或查看的重要片段，请按<b>开始</b>在片段的开头，并且<b>停止</b>在片段的末尾。</p>
+<div class="mw-heading mw-heading5"><h5 id="Extracting_fragments_for_review">提取片段以供审查</h5><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=9" title="Edit section: Extracting fragments for review"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=9" title="Edit section's source code: Extracting fragments for review"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>使用<b>测试</b>再次查看该片段。新闻<b>提取物</b>如果您想创建一个新片段作为单独的片段参与学习过程<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。</p><p>您可以生成<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>不中断观看过程。提取物<a href="Glossary_Element.html" title="Glossary:Element">元素</a>仅当您转到下一个时才会生成<a href="Glossary_Element.html" title="Glossary:Element">元素</a>或者当你按<i>Alt+X</i>。</p>
+<div class="mw-heading mw-heading5"><h5 id="Bookmark">书签</h5><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=10" title="Edit section: Bookmark"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=10" title="Edit section's source code: Bookmark"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>您可以使用<b>马克</b>和<b>简历</b>设置不会影响视频开始点的书签（例如，在准备视频时）<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>）。</p>
+<div class="mw-heading mw-heading5"><h5 id="Sorting_videos">对视频进行排序</h5><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=11" title="Edit section: Sorting videos"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=11" title="Edit section's source code: Sorting videos"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果您一遍又一遍地观看相同的视频，并且您希望获得一些独立于视频的多样性<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>, 使用<b><a href="Learn_menu.html" title="Learn menu">学习</a> :<a href="Learn_menu.html#Sorting" title="Learn menu">排序</a> ：排序标准</b>并增加<b>随机化</b>（将拇指从<b>优先主题</b>朝向<b>随机主题</b>，即向右）。</p>
+<div class="mw-heading mw-heading5"><h5 id="Skipping">跳绳</h5><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=12" title="Edit section: Skipping"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=12" title="Edit section's source code: Skipping"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>您可以按<kbd>左</kbd>和<kbd>右箭头</kbd>键可向后或向前跳过 5 秒视频。您可以使用其他<a class="external text" href="https://support.google.com/youtube/answer/7631406">YouTube 快捷方式</a>因此。为此，焦点必须位于视频上（如果焦点位于控制面板上，请单击视频以重新启用快捷方式）。</p>
+<div class="mw-heading mw-heading5"><h5 id="Cross-inspiration">交叉灵感</h5><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=13" title="Edit section: Cross-inspiration"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=13" title="Edit section's source code: Cross-inspiration"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果您不确定如何处理增量学习过程，<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>是了解增量视频的一个很好的介绍。</p>
+<div class="mw-heading mw-heading4"><h4 id="Forwarding_video_fragments_to_friends">将视频片段转发给好友</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=14" title="Edit section: Forwarding video fragments to friends"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=14" title="Edit section's source code: Forwarding video fragments to friends"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果您转发<a class="external text" href="http://youtube.com">YouTube</a> <a href="Glossary_Element.html" title="Glossary:Element">元素</a>在 SuperMemo 中通过电子邮件发送给其他人时，它将包含视频的链接和开始：停止边界。转发的视频可以在网络浏览器中查看，也可以直接在 SuperMemo 中查看<b>开始</b>和<b>停止</b>设置按钮以确保仅播放推荐的片段。</p><p>您的电子邮件将类似于以下电子邮件：</p>
+<pre>Please have a look at this YouTube video:
+https://www.youtube.com/embed/yVq4ARIlNVg?start=471&amp;end=3150
+
+See the fragment from 7:51 to 52:30.
+
+If you are using SuperMemo, you can also:
+
+(1) select this code (e.g. triple click): 
+
+        {SuperMemoYouTube:yVq4ARIlNVg,7:51,52:30,0:00,3}
+
+(2) copy the code to clipboard (e.g. Ctrl+C)
+(3) use Ctrl+N to paste the code to SuperMemo
+
+Sender ID: SuperMemo Research
+
+==================================================
+#Subject: #EIE23: Jonathan Haidt: Smartphones vs. Smart Kids - YouTube:
+#Author: Jonathan Haidt
+#Date: Imported on Dec 28, 2023, 17:29:21
+#Source: Edge import from YouTube
+#Link: https://youtube.com/watch?v=yVq4ARIlNVg
+#Comment: recommended at Ja Nauczyciel
+#Collection: YOUTUBE [Element=26660]
+#Generated: Dec 28, 2023, Thu, 23:40:20
+#Software: SuperMemo 19 (Build 19.03, Dec 20, 2023)
+
+</pre>
+<div class="mw-heading mw-heading4"><h4 id="Exemplary_YouTube_videos">YouTube 视频示例</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=15" title="Edit section: Exemplary YouTube videos"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=15" title="Edit section's source code: Exemplary YouTube videos"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>增量视频相当于视频<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>。然而，有很多东西你可能希望通过视频来最好地掌握，而不能用阅读来代替。这个清单确实是无穷无尽的。然而，这里只是摘自的几个例子<a class="external text" href="http://youtube.com">YouTube</a>让您初步了解为什么增量视频是增量学习的重要组成部分：</p>
+<ul><li>借助电影、演讲、讲座等学习外语。</li>
+<li>通过档案片段了解近代历史</li>
+<li>探索学生的视频天堂：<a class="external text" href="http://www.youtube.com/user/khanacademy">可汗学院</a></li>
+<li>使用专家或最佳艺术家制作的视频教程学习演奏乐器</li>
+<li>学习演奏或演唱您最喜欢的歌曲</li>
+<li>使用<a class="external text" href="http://en.wikipedia.org/wiki/Michael_Phelps">迈克·菲尔普斯</a>学习如何蝶泳的视频</li>
+<li>通过学习理疗练习从伤害中恢复</li>
+<li>循序渐进地观看电影</li>
+<li>听你最喜欢的音乐</li>
+<li>观看历史性体育赛事</li>
+<li>观看知名大学的视频讲座</li>
+<li>欣赏或学习莱诺、康南、乔恩·斯图尔特等人的最佳笑话或喜剧作品</li>
+<li>通过 MLK、JFK、Reagan 或 Obama 的视频掌握演讲技巧</li>
+<li>向托尼·罗宾斯或其他自助大师寻求动力</li>
+<li>学习做饭</li>
+<li>重温家人和朋友生活中难忘的时刻</li>
+<li>学习生理学、地质学、物理学或历史学，无论何时需要视频解释</li>
+<li>学习手语、排球、足球等。</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Incremental_video_with_video_files:_Outline">带视频文件的增量视频：大纲</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=16" title="Edit section: Incremental video with video files: Outline"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=16" title="Edit section's source code: Incremental video with video files: Outline"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>这是在 SuperMemo 中使用增量视频处理视频文件的方式：</p>
+<ol><li>将您的视频文件放入一个空文件夹中</li>
+<li>使用<b><a href="File_menu.html" title="File menu">文件</a> :<a href="File_menu.html#Import" title="File menu">进口</a> ：文件和文件夹</b>将该文件夹的内容导入到 SuperMemo</li>
+<li>使用<b><a href="Learn.html" title="Learn">学习</a></b>处理单个视频</li>
+<li>使用<b>开始</b>和<b>结束</b>标记有趣场景的按钮</li>
+<li>使用<b>提取物</b>产生新的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>场景标记为<b>开始</b>和<b>结束</b></li>
+<li>使用 SuperMemo 的学习工具对视频和视频进行优先排序、安排和组织<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a></li></ol>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Incremental_video_with_video_file_Extract.jpg.html" title="SuperMemo: An incremental video extract from the 2013 men's singles US Open final between Novak Djokovic and Rafael Nadal"><img alt="SuperMemo: An incremental video extract from the 2013 men's singles US Open final between Novak Djokovic and Rafael Nadal" class="mw-file-element" decoding="async" height="500" loading="lazy" src="https://help.supermemo.org/images/thumb/0/03/Incremental_video_with_video_file_Extract.jpg/800px-Incremental_video_with_video_file_Extract.jpg" srcset="/images/thumb/0/03/Incremental_video_with_video_file_Extract.jpg/1200px-Incremental_video_with_video_file_Extract.jpg 1.5x, /images/thumb/0/03/Incremental_video_with_video_file_Extract.jpg/1600px-Incremental_video_with_video_file_Extract.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b>安<a href="Glossary_Incremental_video.html" title="Glossary:Incremental video">增量视频</a> <a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>从<a class="external text" href="https://en.wikipedia.org/wiki/2013_US_Open_%E2%80%93_Men%27s_Singles">2013年美国公开赛男单决赛</a>之间<a class="external text" href="https://en.wikipedia.org/wiki/Novak_Djokovic">诺瓦克·德约科维奇</a>和<a class="external text" href="https://en.wikipedia.org/wiki/Rafael_Nadal">拉斐尔·纳达尔</a>（<span style="padding: 3px; background-color: yellow;">黄色背景</span>在<a href="Glossary_Template.html" title="Glossary:Template">模板</a>用于区分<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>和家长视频）。在右侧，您可以看到视频的导入参数，理想情况下应将其转换为注释，以帮助您找到视频并协助培训（或学习）。图中，第三盘第9局，西班牙挑战者以40比40落后，用上旋发球进入广告场，捍卫了连续三个破发点中的第一个破发点，并在塞尔维亚人原本出色的侵略性回球后，用他标志性的正手击球线赢得了分数。</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading4"><h4 id="Video_deletion">视频删除</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=17" title="Edit section: Video deletion"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=17" title="Edit section's source code: Video deletion"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>增量视频目前最适合被动处理视频或音频材料，并提取最有趣的部分<a href="Glossary_Passive_review.html" title="Glossary:Passive review">被动审查</a>作为<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>。目前，您无法通过按键“完形删除”视频或音频文件的部分内容，但是，您可以轻松地使用视频<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>作为文本问题或视频问题的答案。为此，标记您的声音或视频<a href="Glossary_Component.html" title="Glossary:Component">组件</a>与<b><a href="Component_menu.html#Answer" title="Component menu">回答</a></b>属性。您还可以定义<a href="Glossary_Template.html" title="Glossary:Template">模板</a>这将使这个过程变得更容易。</p>
+<div class="mw-heading mw-heading4"><h4 id="Viewing_video_files_and_learning">查看视频文件并学习</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=18" title="Edit section: Viewing video files and learning"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=18" title="Edit section's source code: Viewing video files and learning"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>使用<b><a href="Learn.html" title="Learn">学习</a></b>与使用 SuperMemo 学习时的方式相同。如果您有，视频会自动开始<b><a href="Element_menu.html#AutoPlay" title="Element menu">自动播放</a></b>检查了<a href="Element_menu.html" title="Element menu">元素菜单</a>。当您感到无聊或需要观看其他视频时，请按<b>开始</b>（关于<b>提取器</b>面板）。<b>开始</b>标记您下次观看视频时将继续播放该视频的位置。如果您发现想要再次学习或查看的重要片段，请按<b>开始</b>在片段的开头，并且<b>结束</b>在片段的末尾。使用<b>测试</b>再次查看该片段。新闻<b>提取物</b>如果您想创建一个新的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>以及应该参与学习过程的提取片段。</p><p>如果您一遍又一遍地观看相同的视频，并且您希望获得一些多样性（即使这些视频可能是顶级的）<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>），使用<b><a href="Learn_menu.html" title="Learn menu">学习</a> :<a href="Learn_menu.html#Sorting" title="Learn menu">排序</a> ：排序标准</b>并增加<b>随机化</b>（将拇指从<b>优先主题</b>朝向<b>随机主题</b>）。</p><p>如果您不确定如何处理增量学习过程，<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>是了解增量视频的一个很好的介绍。</p>
+<div class="mw-heading mw-heading4"><h4 id="Exemplary_video_files">示例视频文件</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=19" title="Edit section: Exemplary video files"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=19" title="Edit section's source code: Exemplary video files"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>有关可用于增量学习的示例视频列表，请参阅：<a href="#Exemplary_YouTube_videos">YouTube 视频示例</a>。</p><p>请注意，并非所有视频材料都可以借助以下内容来学习<a class="external text" href="http://youtube.com">YouTube</a>。可能存在版权或隐私问题。还有一个令人讨厌的问题<a class="external text" href="http://youtube.com">YouTube</a>这可能会破坏任何长期的学习过程：视频可以随时被提取（除非您自己上传它们以供公众观看并充分尊重版权）。最后但并非最不重要的一点是，本地文件增量视频的时间分辨率高于传统文件增量视频的时间分辨率。<a class="external text" href="http://youtube.com">YouTube</a>基于视频。您可以以毫秒精度设置起点（而不是 1 秒分辨率）<a class="external text" href="http://youtube.com">YouTube</a>视频）。</p><p>可能更适合本地硬盘上的文件的材料包括：</p>
+<ul><li>可供下载但未发布的讲座或访谈<a class="external text" href="http://youtube.com">YouTube</a></li>
+<li>可供下载且您希望保留在本地的讲座或访谈（例如，为了确保速度、精度、持久性或离线观看）</li>
+<li>受版权保护的材料来自<a class="external text" href="http://itunes.com">iTunes</a></li>
+<li>电影</li>
+<li>家庭视频</li>
+<li>语言课程</li>
+<li>您想要学习但无法上传的所有其他文件<a class="external text" href="http://youtube.com">YouTube</a>（或者只是你不想被麻烦所困扰）</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Hints:_Incremental_video">提示：增量视频</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=20" title="Edit section: Hints: Incremental video"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=20" title="Edit section's source code: Hints: Incremental video"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Hints:_Incremental_video_with_YouTube">提示：使用 YouTube 增量视频</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=21" title="Edit section: Hints: Incremental video with YouTube"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=21" title="Edit section's source code: Hints: Incremental video with YouTube"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>定义“<i>YouTube 摘录</i>”<a href="Glossary_Template.html" title="Glossary:Template">模板</a>让它用于<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>来自<a class="external text" href="http://youtube.com">YouTube</a>视频（只要您使用“<i>YouTube</i>”<a href="Glossary_Template.html" title="Glossary:Template">模板</a>）。否则，“<i>YouTube</i>”<a href="Glossary_Template.html" title="Glossary:Template">模板</a>将使用背景更改为<span style="padding: 3px; background-color: yellow;">黄色</span>。最简单的方法就是保存你的“<i>YouTube</i>”<a href="Glossary_Template.html" title="Glossary:Template">模板</a>使用新名称（“<i>YouTube 摘录</i>“），然后重新定义它（例如，通过更改元素颜色）。将视频与它们的视频区分开来<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>（例如按颜色）对于优化学习过程的策略很重要。</li>
+<li>增量视频的增量小于<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>。增量视频的设计假设是，与<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>，您可以线性地浏览视频的主体部分。这是因为将视频分割成更小的部分并以不可预测的顺序观看时会出现多个上下文问题。这样，一旦你做了一个<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>，假设您不会返回到曾经观看过的视频部分，因为它已经是视频的一部分<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>。当您返回处理视频时，您将从最后提取或标记的位置开始<b>开始</b>。换句话说，由于您不查看就不会提取，因此几乎不需要子提取</li>
+<li>检查是否有额外的配乐。您可以选择您最喜欢的语言并继续逐步查看。音轨设置在会话之间保留。默认设置由您过去的选择决定（SuperMemo 中未设置）。</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Hints:_Incremental_video_with_local_files">提示：使用本地文件增量视频</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=22" title="Edit section: Hints: Incremental video with local files"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=22" title="Edit section's source code: Hints: Incremental video with local files"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>定义“<i>视频摘录</i>”<a href="Glossary_Template.html" title="Glossary:Template">模板</a>拥有你的<a href="Glossary_Template.html" title="Glossary:Template">模板</a>用于<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>。否则，“<i>视频</i>”<a href="Glossary_Template.html" title="Glossary:Template">模板</a>将使用背景更改为<span style="padding: 3px; background-color: yellow;">黄色</span>。最简单的方法就是保存你的“<i>视频</i>”<a href="Glossary_Template.html" title="Glossary:Template">模板</a>使用新名称（“<i>视频摘录</i>")，然后重新定义它（例如，通过将元素颜色更改为所需的提取颜色）。颜色区分对于优化视频处理策略非常重要</li>
+<li>如果你想要你的<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>要无限循环运行，请确保检查<b>连续</b>于<a href="Component_menu.html" title="Component menu">组件菜单</a>在您的视频摘录中<a href="Glossary_Template.html" title="Glossary:Template">模板</a></li>
+<li>处理大型视频文件不会造成太大的性能损失。您也可以导入整个 DVD 并增量处理它们</li>
+<li>并非所有文件格式都受支持，但是，大多数格式可以轻松转换为 MP4（例如，使用<a class="external text" href="http://www.freewarefiles.com/XMedia-Recode_program_47942.html">XMedia重新编码</a>）。</li>
+<li>请注意，某些 MP4 文件可能无法在 SuperMemo 中正常工作。在做出重大承诺之前，请测试 SuperMemo 试用版</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Problems_with_YouTube-based_incremental_video">基于 YouTube 的增量视频的问题</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=23" title="Edit section: Problems with YouTube-based incremental video"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=23" title="Edit section's source code: Problems with YouTube-based incremental video"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>以下是您在学习过程中可能遇到的一些问题<a class="external text" href="http://youtube.com">YouTube</a>基于增量视频：</p>
+<ul><li><a class="external text" href="http://youtube.com">YouTube</a>视频可以随时删除。它们还可以禁用嵌入。这是当前在 SuperMemo 中实现基于 YouTube 的增量视频的一个主要问题。没有 API 工具可以合法本地化 YouTube 内容（在撰写本文时）。然而，这个问题主要影响出现在<a class="external text" href="http://youtube.com">YouTube</a>非法（例如电影、音乐等）。有时，视频作者自己会删除内容。不过，如果您使用自己的视频，这永远不会成为问题。希望会有越来越多的持久内容上传用于教育目的。</li>
+<li><i>Alt+向左箭头</i>Internet Explorer 使用快捷方式返回到先前访问的页面。因此，它也可以像撤消您的操作一样工作<b>开始：停止</b>设置。要返回 SuperMemo 中的上一页，请使用<b>返回</b>按钮（<span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Back.gif.html" title="Back enables you to go back to the most recently visited element"><img alt="Back enables you to go back to the most recently visited element" class="mw-file-element" decoding="async" height="16" loading="lazy" src="https://help.supermemo.org/images/f/f8/Back.gif" width="16"/></a></span>）在<a href="Navigation_bar.html" title="Navigation bar">导航栏</a></li>
+<li>使用时可能会出现网络故障或互联网速度缓慢的情况<a class="external text" href="http://youtube.com">YouTube</a>视频。因此，您可能更愿意将视频保存在专用的增量视频中<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>了解如何处理视频并防止出现网络问题时中断学习。您可以随时停止使用增量视频<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>，恢复正常学习，待网络恢复正常后恢复视频学习</li>
+<li>如果您想使用 SuperMemo 作为您的<a class="external text" href="http://youtube.com">YouTube</a>自动点唱机，您还应该将音乐视频保存在一个单一的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>（或者用特定的关键字标记它们以便快速<a href="Subset_learning.html" title="Subset learning">子集学习</a>）。您可以稍后隐藏点唱机<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>在系统托盘中。您的点唱机将仅按以下顺序播放单个视频的选定片段<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>按照您的指定<a href="Priority_queue.html#Sorting_repetitions" title="Priority queue">排序标准</a>。如在<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>，使用<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>和<a href="Glossary_Priority.html" title="Glossary:Priority">优先事项</a>是防止对特定歌曲或视频感到厌倦的好方法</li>
+<li>如果视频的嵌入被阻止，则无法在 SuperMemo 中播放视频（您将看到一条消息<i>根据请求禁用嵌入</i>）。那些你只能观看的视频<a class="external text" href="http://youtube.com">YouTube</a>。这意味着这些视频在您的增量视频学习中几乎没有用处；但是，您仍然可以使用优先级和调度工具来选择应在哪一天以何种顺序播放哪些视频。另请注意，其中许多视频被不同的用户多次上传，您只需搜索可以嵌入的替代方案</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Your_own_incremental_video_script">您自己的增量视频脚本</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=24" title="Edit section: Your own incremental video script"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=24" title="Edit section's source code: Your own incremental video script"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>视频是在以下工具的帮助下处理的<a class="external text" href="https://developers.google.com/youtube/iframe_api_reference">YouTube 播放器 API</a>在<a href="HTML_component.html" title="HTML component">HTML 组件</a>使用一个小的 JavaScript 程序。当您第一次运行 SuperMemo 时，它会将这个脚本写入存储在<i>[存储箱]</i>安装 SuperMemo 的文件夹的子文件夹。文件的名称是<i>YouTube.htm</i>。如果您了解 JavaScript，则可以在该文件中替换您自己的增量视频脚本（例如，更改布局、按钮大小，甚至添加用于处理视频的新函数）。以下是您需要保留的脚本的唯一组件：</p>
+<ul><li>的顺序<code>INPUT</code>字段（SuperMemo 使用这些字段来收集提取边界）</li>
+<li><code>SELECT</code>和<code>OPTION</code>用于生成的字段<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a></li>
+<li><code>INPUT</code>YouTube 视频 ID 的字段替换为 SuperMemo (<code>id="videoid"</code>）</li>
+<li><code>INPUT</code>确定视频开始和结束位置的字段（<code>id="startvideoat"</code>和<code>id="stopvideoat"</code>）（必须是“<i>0:00:00</i>”）</li></ul>
+<p>您可能希望引入的最重要的改变是在以下两者之间做出决定：<code>version=2</code>和<code>version=3</code>玩家的。两者都有各自的错误和缺点。更多请参见<a class="external text" href="https://supermemopedia.com/wiki/Incremental_video_does_not_work">播放器版本问题</a>。您选择的播放器版本将在您的所有 YouTube 中默认选择<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。</p><p>如果您想与其他人分享您自己的脚本，您可以将其上传到<a class="external text" href="https://supermemopedia.com">超级备忘录百科</a>。</p>
+<div class="mw-heading mw-heading3"><h3 id="Upgrading_to_WebView">升级到WebView</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=25" title="Edit section: Upgrading to WebView"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=25" title="Edit section's source code: Upgrading to WebView"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>从 SuperMemo 20 开始，您可以通过从<a href="HTML_component.html" title="HTML component">HTML 组件</a>到<a href="WebView_component.html" title="WebView component">WebView组件</a>。</p><p>这是将旧集合切换到 WebView 的方法：</p>
+<ol><li>打开<a class="mw-redirect" href="Template.html" title="Template">模板</a> <a class="mw-redirect" href="Registry.html" title="Registry">注册表</a>覆盖任何 YouTube 元素</li>
+<li>使用<b>添加预定义模板</b></li>
+<li>选择<i>YouTubeWV</i>（WebView模板）</li>
+<li>应用模板<b>接受</b></li>
+<li>使用<b>模板：保存为默认值</b>于<a href="Element_menu.html" title="Element menu">元素菜单</a></li>
+<li>使用名称<i>YouTube</i>（这会覆盖基于 HTML 组件的旧模板，并使用新的<a href="WebView_component.html" title="WebView component">WebView组件</a></li></ol>
+<p>控制面板保留了传统设计，但包含许多增强功能以提高可用性：箭头键向前或向后跳过播放，在浏览期间仍可访问建议，在搜索下一个视频时继续不间断播放等。</p>
+<div class="mw-heading mw-heading4"><h4 id="Keyboard_Shortcuts">键盘快捷键</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=26" title="Edit section: Keyboard Shortcuts"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=26" title="Edit section's source code: Keyboard Shortcuts"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading5"><h5 id="SuperMemo_WebView_Shortcuts">SuperMemo WebView 快捷方式</h5><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=27" title="Edit section: SuperMemo WebView Shortcuts"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=27" title="Edit section's source code: SuperMemo WebView Shortcuts"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table class="wikitable">
+<tbody><tr>
+<th>快捷方式</th>
+<th>行动</th>
+<th>背景</th></tr>
+<tr>
+<td><kbd>空间</kbd></td>
+<td>播放/暂停</td>
+<td>元素窗口/WebView（如果不在输入字段中）</td></tr>
+<tr>
+<td><kbd>←</kbd></td>
+<td>向后跳5秒</td>
+<td>元素窗口/WebView</td></tr>
+<tr>
+<td><kbd>→</kbd></td>
+<td>向前跳5秒</td>
+<td>元素窗口/WebView</td></tr>
+<tr>
+<td><kbd>控制键</kbd>+<kbd>1</kbd></td>
+<td>聚焦 YouTube 视频播放器</td>
+<td>元素窗口/WebView</td></tr>
+<tr>
+<td><kbd>控制键</kbd>+<kbd>2</kbd></td>
+<td>聚焦 SuperMemo 控制面板（按钮）</td>
+<td>元素窗口/WebView</td></tr>
+<tr>
+<td><kbd>控制键</kbd>+<kbd>选项卡</kbd></td>
+<td>在播放器和控制面板之间循环焦点</td>
+<td>网页视图</td></tr>
+<tr>
+<td><kbd>控制键</kbd>+<kbd>3</kbd>/<kbd>ESC</kbd></td>
+<td>Escape / Stop（将焦点返回到 SuperMemo）</td>
+<td>元素窗口/WebView</td></tr>
+<tr>
+<td><kbd>右</kbd></td>
+<td>切换“重复”复选框</td>
+<td>WebView（如果不在输入字段中）</td></tr>
+<tr>
+<td><kbd>输入</kbd></td>
+<td>将 Enter 传递给 SuperMemo（例如下一个/年级）</td>
+<td>WebView（如果不在输入字段中）</td></tr></tbody></table>
+<p><i>注：<kbd>空间</kbd>,<kbd>←</kbd>, 和<kbd>→</kbd>快捷键仅在焦点位于时才起作用<b>不</b>在文本输入字段内（例如“提取名称”或时间字段）。</i>
+</p>
+<div class="mw-heading mw-heading5"><h5 id="SuperMemo_Element_Window_Shortcuts">SuperMemo 元素窗口快捷方式</h5><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=28" title="Edit section: SuperMemo Element Window Shortcuts"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=28" title="Edit section's source code: SuperMemo Element Window Shortcuts"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table class="wikitable">
+<tbody><tr>
+<th>快捷方式</th>
+<th>行动</th></tr>
+<tr>
+<td><kbd>替代</kbd>+<kbd>X</kbd></td>
+<td>提取片段</td></tr>
+<tr>
+<td><kbd>控制键</kbd>+<kbd>L</kbd></td>
+<td>学习</td></tr>
+<tr>
+<td><kbd>控制键</kbd>+<kbd>氮</kbd></td>
+<td>添加新文章</td></tr>
+<tr>
+<td><kbd>控制键</kbd>+<kbd>F</kbd></td>
+<td>查找元素</td></tr>
+<tr>
+<td><kbd>控制键</kbd>+<kbd>转变</kbd>+<kbd>磷</kbd></td>
+<td>元件参数</td></tr></tbody></table>
+<div class="mw-heading mw-heading5"><h5 id="Native_YouTube_Shortcuts_(player_focus)"><span id="Native_YouTube_Shortcuts_.28player_focus.29"></span>原生 YouTube 快捷方式（玩家焦点）</h5><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=29" title="Edit section: Native YouTube Shortcuts (player focus)"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=29" title="Edit section's source code: Native YouTube Shortcuts (player focus)"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>当 YouTube 播放器获得焦点时（例如，单击视频或按<kbd>控制键</kbd>+<kbd>1</kbd>)，适用标准 YouTube 键盘快捷键。这些在 SuperMemo 内部和外部都有效。参见<a class="external text" href="https://support.google.com/youtube/answer/7631406">官方名单</a>。</p>
+<table class="wikitable">
+<tbody><tr>
+<th>快捷方式</th>
+<th>行动</th></tr>
+<tr>
+<td><kbd>K</kbd>/<kbd>空间</kbd></td>
+<td>播放/暂停</td></tr>
+<tr>
+<td><kbd>J</kbd></td>
+<td>快退 10 秒</td></tr>
+<tr>
+<td><kbd>L</kbd></td>
+<td>快进 10 秒</td></tr>
+<tr>
+<td><kbd>F</kbd></td>
+<td>切换全屏</td></tr>
+<tr>
+<td><kbd>中号</kbd></td>
+<td>静音/取消静音</td></tr>
+<tr>
+<td><kbd>0</kbd>–<kbd>9</kbd></td>
+<td>跳转到视频的 0%–90%</td></tr>
+<tr>
+<td><kbd>&lt;</kbd>/<kbd>&gt;</kbd></td>
+<td>降低/提高播放速率</td></tr>
+<tr>
+<td><kbd>C</kbd></td>
+<td>切换字幕（如果有）</td></tr>
+<tr>
+<td><kbd>转变</kbd>+<kbd>氮</kbd></td>
+<td>下一个视频（如果在播放列表中）</td></tr>
+<tr>
+<td><kbd>转变</kbd>+<kbd>磷</kbd></td>
+<td>上一个视频（如果在播放列表中）</td></tr>
+<tr>
+<td><kbd>？</kbd></td>
+<td>显示完整的本机快捷方式列表覆盖</td></tr></tbody></table>
+<div class="mw-heading mw-heading2"><h2 id="Example">示例</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Incremental_video&amp;veaction=edit&amp;section=30" title="Edit section: Example"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Incremental_video&amp;action=edit&amp;section=30" title="Edit section's source code: Example"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>参见：</p>
+<ul><li><a class="external text" href="https://www.youtube.com/watch?v=4ojhSl2m3bM">使用 SuperMemo 学习历史 19</a>（YouTube）</li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Incremental_video._Learning_history_with_YouTube">如何升级？</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111046
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.081 seconds
+Real time usage: 0.089 seconds
+Preprocessor visited node count: 231/1000000
+Post‐expand include size: 4581/2097152 bytes
+Template argument size: 1673/2097152 bytes
+Highest expansion depth: 5/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 861/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   10.078      1 -total
+ 48.14%    4.852      1 File:Incremental_video_with_YouTube_Extract.jpg
+ 21.57%    2.174      1 File:Incremental_video_with_video_file_Extract.jpg
+ 21.09%    2.126      2 Template:Fig
+ 16.67%    1.680      1 File:YouTube_import.jpg
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:88:|#|:idhash:canonical and timestamp 20260610111046 and revision id 12397. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

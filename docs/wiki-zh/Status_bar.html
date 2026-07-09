@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Status bar — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Status_bar" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Memorized"><span class="tocnumber">1</span> <span class="toctext">Memorized</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Outstanding"><span class="tocnumber">2</span> <span class="toctext">Outstanding</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Panel"><span class="tocnumber">2.1</span> <span class="toctext">Panel</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Progress_bar"><span class="tocnumber">2.2</span> <span class="toctext">Progress bar</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Hints/Basic_element_statistics"><span class="tocnumber">3</span> <span class="toctext">Hints/Basic element statistics</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Video"><span class="tocnumber">4</span> <span class="toctext">Video</span></a></li>
+</ul>
+</div>
+<p>A status bar, aligned at the bottom of the screen, shows basic learning statistics. Additionally, it features a panel displaying hints that explain menu options, buttons or icons used in SuperMemo. Note that you can also find many more statistics in the <a href="Statistics.html" title="Statistics"><b>Statistics</b> window</a>.
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Status_bar.jpg.html" title="SuperMemo: Figure: Status bar displaying how many elements have already been memorized, how many outstanding elements scheduled for the current day have yet to be reviewed or have to be rehearsed with the final drill yet, and hints for menu items, buttons, statistical parameters, etc."><img alt="SuperMemo: Figure: Status bar displaying how many elements have already been memorized, how many outstanding elements scheduled for the current day have yet to be reviewed or have to be rehearsed with the final drill yet, and hints for menu items, buttons, statistical parameters, etc." class="mw-file-element" decoding="async" height="104" loading="lazy" src="https://help.supermemo.org/images/thumb/f/fa/Status_bar.jpg/800px-Status_bar.jpg" srcset="/images/thumb/f/fa/Status_bar.jpg/1200px-Status_bar.jpg 1.5x, /images/f/fa/Status_bar.jpg 2x" width="800"/></a><figcaption>SuperMemo: Figure: Status bar displaying how many elements have already been memorized, how many outstanding elements scheduled for the current day have yet to be reviewed or have to be rehearsed with the final drill yet, and hints for menu items, buttons, statistical parameters, etc.</figcaption></figure>
+<p>You can show/hide the status bar with <b><a href="Window_menu.html" title="Window menu">Window</a> : <a href="Window_menu.html#Status_bar" title="Window menu">Status bar</a></b> available from the <a href="Main_menu.html" title="Main menu">main menu</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Memorized">Memorized</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Status_bar&amp;veaction=edit&amp;section=1" title="Edit section: Memorized"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Status_bar&amp;action=edit&amp;section=1" title="Edit section's source code: Memorized"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The first field shows the total number of <a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">memorized</a> <a href="Glossary_Item.html" title="Glossary:Item">items</a> and <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Outstanding">Outstanding</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Status_bar&amp;veaction=edit&amp;section=2" title="Edit section: Outstanding"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Status_bar&amp;action=edit&amp;section=2" title="Edit section's source code: Outstanding"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Panel">Panel</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Status_bar&amp;veaction=edit&amp;section=3" title="Edit section: Panel"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Status_bar&amp;action=edit&amp;section=3" title="Edit section's source code: Panel"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The second field shows (<b>Outstanding items + Outstanding topics + Final drill items</b>)/(today's original <a href="Statistics.html#Outstanding" title="Statistics"><b>Outstanding</b></a>). It illustrates how many <a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">outstanding elements</a> scheduled for the current day have yet to be reviewed (the first two numbers connected with a plus sign) or have to be rehearsed yet with the <a href="Glossary_Final_drill.html" title="Glossary:Final drill">final drill</a> (the third number, if present). For example, (24+2+3)/45 means that out of 45 <a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">outstanding elements</a>, 24 <a href="Glossary_Item.html" title="Glossary:Item">items</a> and 2 <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a> yet have to be reviewed, while 3 items require additional review in <a href="Glossary_Final_drill.html" title="Glossary:Final drill">final drill</a>.
+</p><p>Note that whether the third final drill statistic is displayed depends on the <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Options.html" title="Options">Options</a> : <a href="Learning_tab_in_Options.html" title="Learning tab in Options">Learning</a> : Skip final drill</b> setting. When it is on/checked (i.e. the final drill is disabled), the number is no longer shown.
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Status_bar2.jpg.html" title="SuperMemo: Status bar displaying what proportion of elements have already been memorized, how many outstanding elements scheduled for the current day have yet to be reviewed or have to be rehearsed yet with the final drill, and hints for menu items, buttons, statistical parameters, etc."><img alt="SuperMemo: Status bar displaying what proportion of elements have already been memorized, how many outstanding elements scheduled for the current day have yet to be reviewed or have to be rehearsed yet with the final drill, and hints for menu items, buttons, statistical parameters, etc." class="mw-file-element" decoding="async" height="24" loading="lazy" src="https://help.supermemo.org/images/thumb/2/2d/Status_bar2.jpg/800px-Status_bar2.jpg" srcset="/images/thumb/2/2d/Status_bar2.jpg/1200px-Status_bar2.jpg 1.5x, /images/2/2d/Status_bar2.jpg 2x" width="800"/></a><figcaption>SuperMemo: Status bar displaying what proportion of elements have already been memorized, how many outstanding elements scheduled for the current day have yet to be reviewed or have to be rehearsed yet with the final drill, and hints for menu items, buttons, statistical parameters, etc.</figcaption></figure>
+<blockquote>
+<p><i><b>Figure:</b> Status bar displaying information in four panels:</i>
+</p>
+<ol><li>total number of <a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">memorized</a> <a href="Glossary_Item.html" title="Glossary:Item">items</a> (<i>193,411 it</i>) and <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a> (<i>341,893 top</i>) in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a></li>
+<li>number of outstanding <a href="Glossary_Item.html" title="Glossary:Item">items</a> (6,159) and <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a> (2,088) in the total of <a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">outstanding elements</a> for the day (19,218). When <b><a href="Subset_operations.html#Learning" title="Subset operations">Learning</a> : <a href="Subset_operations.html#add_to_outstanding" title="Subset operations">Add to outstanding</a></b> in the <a href="Browser.html" title="Browser">browser</a> is used, the number of outstanding elements will increase and their new total will be displayed in parenthesis (8,430). The 183 element difference between the sum of 6,159 <a href="Glossary.html#Item" title="Glossary">items</a> and 2,088 <a href="Glossary.html#Topic" title="Glossary">topics</a> is the number of <a href="Glossary.html#Element" title="Glossary">elements</a> the <b><a href="Subset_operations.html#add_to_outstanding" title="Subset operations">Add to outstanding</a></b> operation added to the <a href="Glossary.html#Outstanding_queue" title="Glossary">outstanding queue</a> ahead of their scheduled reviews.</li>
+<li>the progress bar shows 56.1% of <a href="Glossary_Element.html" title="Glossary:Element">elements</a> have already been reviewed, postponed or auto-postponed</li>
+<li>The hints panel, when unused, displays current element's statistics:
+<ol><li><a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> (15,287 days, i.e. nearly 42 years),</li>
+<li><a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> (0.571%) (and position in the <a href="Glossary_Priority_queue.html" title="Glossary:Priority queue">priority queue</a> (3,494)),</li>
+<li>last and next repetition dates (Jan 16, 2016 and Nov 23, 2057 respectively), and</li>
+<li>the number of repetitions (6) and <a href="Glossary_Lapse.html" title="Glossary:Lapse">memory lapses</a> (0).<i></i></li></ol></li></ol>
+</blockquote>
+<div class="mw-heading mw-heading3"><h3 id="Progress_bar">Progress bar</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Status_bar&amp;veaction=edit&amp;section=4" title="Edit section: Progress bar"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Status_bar&amp;action=edit&amp;section=4" title="Edit section's source code: Progress bar"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The progress bar displays the graphic representation of the same information as the second field. The <span style="color: blue;">blue</span> color shows the proportion of <a href="Glossary_Element.html" title="Glossary:Element">elements</a> passed successfully today (i.e. passed with the grade <b>Great</b> (5) or <b>Good</b> (4)). The <span style="color: red;">red</span> color shows the proportion of <a href="Glossary_Element.html" title="Glossary:Element">elements</a> passed with the <a href="Glossary_Grade.html" title="Glossary:Grade">grade</a> less than <b>Good</b> (4). And the white color shows the proportion of <a href="Glossary_Element.html" title="Glossary:Element">elements</a> that have not yet been passed. The <span style="padding: 3px; background: aqua;">aqua percentage number</span> superimposed over the progress bar shows what proportion of <a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">outstanding elements</a> have already been reviewed, postponed or auto-postponed.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Hints/Basic_element_statistics"><span id="Hints.2FBasic_element_statistics"></span>Hints/Basic element statistics</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Status_bar&amp;veaction=edit&amp;section=5" title="Edit section: Hints/Basic element statistics"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Status_bar&amp;action=edit&amp;section=5" title="Edit section's source code: Hints/Basic element statistics"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The right part of the status bar is used to display either:
+</p>
+<ul><li>hints for elements in the SuperMemo interface (such as menu items, buttons, etc.), or</li>
+<li>the current element's basic statistical parameters.</li></ul>
+<p>The hints are displayed when <b><a href="Window_menu.html" title="Window menu">Window</a> : <a href="Window_menu.html#Hints" title="Window menu">Hints</a></b> is on/checked (you can easily notice that as they are showed against the yellow background). Otherwise, the panel shows the basic statistics for the current element: <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a>, <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a>, number of repetitions, and the dates of the last and next repetitions.
+</p><p>You can also double-click the panel to turn the hints on and off. Note that this is a collection setting. In other words, the hints may be on in one collection while off in the other depending on the value of this setting.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Video">Video</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Status_bar&amp;veaction=edit&amp;section=6" title="Edit section: Video"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Status_bar&amp;action=edit&amp;section=6" title="Edit section's source code: Video"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://youtube.com/watch?v=sp0eoRqyBCU">Status bar</a> at <a class="external text" href="https://supermemopedia.com/wiki/The_Pleasurable_Guide_To_SuperMemo">The Pleasurable Guide To SuperMemo</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260609201058
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.036 seconds
+Real time usage: 0.039 seconds
+Preprocessor visited node count: 53/1000000
+Post‐expand include size: 1595/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.171      1 File:Status_bar2.jpg
+100.00%    3.171      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:55:|#|:idhash:canonical and timestamp 20260609201058 and revision id 11896. Rendering was triggered because: page-view
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Memorized"><span class="tocnumber">1</span> <span class="toctext">已熟记</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Outstanding"><span class="tocnumber">2</span> <span class="toctext">杰出</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Panel"><span class="tocnumber">2.1</span> <span class="toctext">面板</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Progress_bar"><span class="tocnumber">2.2</span> <span class="toctext">进度条</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Hints/Basic_element_statistics"><span class="tocnumber">3</span> <span class="toctext">提示/基本元素统计</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Video"><span class="tocnumber">4</span> <span class="toctext">视频</span></a></li>
+</ul>
+</div>
+<p>状态栏位于屏幕底部，显示基本的学习统计数据。此外，它还具有一个显示提示的面板，用于解释 SuperMemo 中使用的菜单选项、按钮或图标。请注意，您还可以在以下位置找到更多统计信息：<a href="Statistics.html" title="Statistics"><b>统计数据</b>窗户</a>。</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Status_bar.jpg.html" title="SuperMemo: Figure: Status bar displaying how many elements have already been memorized, how many outstanding elements scheduled for the current day have yet to be reviewed or have to be rehearsed with the final drill yet, and hints for menu items, buttons, statistical parameters, etc."><img alt="SuperMemo: Figure: Status bar displaying how many elements have already been memorized, how many outstanding elements scheduled for the current day have yet to be reviewed or have to be rehearsed with the final drill yet, and hints for menu items, buttons, statistical parameters, etc." class="mw-file-element" decoding="async" height="104" loading="lazy" src="https://help.supermemo.org/images/thumb/f/fa/Status_bar.jpg/800px-Status_bar.jpg" srcset="/images/thumb/f/fa/Status_bar.jpg/1200px-Status_bar.jpg 1.5x, /images/f/fa/Status_bar.jpg 2x" width="800"/></a><figcaption>SuperMemo：图：状态栏显示已经记住了多少个元素，当天安排了多少未完成的元素尚未复习或需要在最后的练习中排练，以及菜单项、按钮、统计参数等的提示。</figcaption></figure>
+<p>您可以显示/隐藏状态栏<b><a href="Window_menu.html" title="Window menu">窗户</a> :<a href="Window_menu.html#Status_bar" title="Window menu">状态栏</a></b>可以从<a href="Main_menu.html" title="Main menu">主菜单</a>。</p>
+<div class="mw-heading mw-heading2"><h2 id="Memorized">已熟记</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Status_bar&amp;veaction=edit&amp;section=1" title="Edit section: Memorized"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Status_bar&amp;action=edit&amp;section=1" title="Edit section's source code: Memorized"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>第一个字段显示总数<a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">记住了</a> <a href="Glossary_Item.html" title="Glossary:Item">项目</a>和<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Outstanding">杰出</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Status_bar&amp;veaction=edit&amp;section=2" title="Edit section: Outstanding"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Status_bar&amp;action=edit&amp;section=2" title="Edit section's source code: Outstanding"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Panel">面板</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Status_bar&amp;veaction=edit&amp;section=3" title="Edit section: Panel"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Status_bar&amp;action=edit&amp;section=3" title="Edit section's source code: Panel"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>第二个字段显示（<b>优秀项目+优秀主题+期末演练项目</b>)/(今天的原文<a href="Statistics.html#Outstanding" title="Statistics"><b>杰出</b></a>）。它说明了有多少<a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">突出元素</a>当天安排的日程尚未复习（前两个数字用加号连接）或必须与<a href="Glossary_Final_drill.html" title="Glossary:Final drill">最后演习</a>（第三个数字，如果存在）。例如，(24+2+3)/45 表示 45 中<a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">突出元素</a>, 24<a href="Glossary_Item.html" title="Glossary:Item">项目</a>和 2<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>尚需审核，其中 3 项需要额外审核<a href="Glossary_Final_drill.html" title="Glossary:Final drill">最后演习</a>。</p><p>请注意，是否显示第三次最终钻取统计数据取决于<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Options.html" title="Options">选项</a> :<a href="Learning_tab_in_Options.html" title="Learning tab in Options">学习</a> ：跳过最后的练习</b>设置。当它打开/选中时（即最后的练习被禁用），数字不再显示。</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Status_bar2.jpg.html" title="SuperMemo: Status bar displaying what proportion of elements have already been memorized, how many outstanding elements scheduled for the current day have yet to be reviewed or have to be rehearsed yet with the final drill, and hints for menu items, buttons, statistical parameters, etc."><img alt="SuperMemo: Status bar displaying what proportion of elements have already been memorized, how many outstanding elements scheduled for the current day have yet to be reviewed or have to be rehearsed yet with the final drill, and hints for menu items, buttons, statistical parameters, etc." class="mw-file-element" decoding="async" height="24" loading="lazy" src="https://help.supermemo.org/images/thumb/2/2d/Status_bar2.jpg/800px-Status_bar2.jpg" srcset="/images/thumb/2/2d/Status_bar2.jpg/1200px-Status_bar2.jpg 1.5x, /images/2/2d/Status_bar2.jpg 2x" width="800"/></a><figcaption>SuperMemo：状态栏显示已记住的元素比例、当天安排的未完成元素有多少尚未复习或需要在最后练习中排练，以及菜单项、按钮、统计参数等提示。</figcaption></figure>
+<blockquote>
+<p><i><b>图：</b>状态栏在四个面板中显示信息：</i>
+</p>
+<ol><li>总数<a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">记住了</a> <a href="Glossary_Item.html" title="Glossary:Item">项目</a>（<i>193,411 它</i>）和<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>（<i>341,893 顶</i>）在<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a></li>
+<li>未清偿数<a href="Glossary_Item.html" title="Glossary:Item">项目</a>(6,159) 和<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>总共 (2,088)<a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">突出元素</a>当日（19,218）。当<b><a href="Subset_operations.html#Learning" title="Subset operations">学习</a> :<a href="Subset_operations.html#add_to_outstanding" title="Subset operations">添加到未完成的</a></b>在<a href="Browser.html" title="Browser">浏览器</a>使用后，未完成元素的数量将增加，新的总数将显示在括号中（8,430）。 183个元素之和相差6,159<a href="Glossary.html#Item" title="Glossary">项目</a>和 2,088<a href="Glossary.html#Topic" title="Glossary">主题</a>是的数量<a href="Glossary.html#Element" title="Glossary">元素</a>的<b><a href="Subset_operations.html#add_to_outstanding" title="Subset operations">添加到未完成的</a></b>操作添加到<a href="Glossary.html#Outstanding_queue" title="Glossary">未完成的队列</a>提前他们预定的审查。</li>
+<li>进度条显示56.1%<a href="Glossary_Element.html" title="Glossary:Element">元素</a>已被审核、推迟或自动推迟</li>
+<li>提示面板在未使用时显示当前元素的统计信息：<ol><li><a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>（15,287天，即近42年），</li>
+<li><a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>(0.571%)（以及在<a href="Glossary_Priority_queue.html" title="Glossary:Priority queue">优先队列</a>(3,494)),</li>
+<li>最后一次和下一次重复日期（分别为2016年1月16日和2057年11月23日），以及</li>
+<li>重复次数 (6) 和<a href="Glossary_Lapse.html" title="Glossary:Lapse">记忆衰退</a>(0)。<i></i></li></ol></li></ol>
+</blockquote>
+<div class="mw-heading mw-heading3"><h3 id="Progress_bar">进度条</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Status_bar&amp;veaction=edit&amp;section=4" title="Edit section: Progress bar"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Status_bar&amp;action=edit&amp;section=4" title="Edit section's source code: Progress bar"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>进度条显示与第二个字段相同的信息的图形表示。的<span style="color: blue;">蓝色</span>颜色表示比例<a href="Glossary_Element.html" title="Glossary:Element">元素</a>今天成功通过（即以成绩通过）<b>太棒了</b>(5) 或<b>好</b>(4))。的<span style="color: red;">红色</span>颜色表示比例<a href="Glossary_Element.html" title="Glossary:Element">元素</a>通过了<a href="Glossary_Grade.html" title="Glossary:Grade">等级</a>小于<b>好</b>（4）。白色显示了比例<a href="Glossary_Element.html" title="Glossary:Element">元素</a>尚未通过。的<span style="padding: 3px; background: aqua;">水色百分比数字</span>叠加在进度条上显示了多少比例<a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">突出元素</a>已被审核、推迟或自动推迟。</p>
+<div class="mw-heading mw-heading2"><h2 id="Hints/Basic_element_statistics"><span id="Hints.2FBasic_element_statistics"></span>提示/基本元素统计</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Status_bar&amp;veaction=edit&amp;section=5" title="Edit section: Hints/Basic element statistics"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Status_bar&amp;action=edit&amp;section=5" title="Edit section's source code: Hints/Basic element statistics"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>状态栏的右侧部分用于显示：</p>
+<ul><li>SuperMemo 界面中元素的提示（例如菜单项、按钮等），或者</li>
+<li>当前元素的基本统计参数。</li></ul>
+<p>出现提示时会显示<b><a href="Window_menu.html" title="Window menu">窗户</a> :<a href="Window_menu.html#Hints" title="Window menu">提示</a></b>已打开/选中（您可以很容易地注意到它们显示在黄色背景下）。否则，面板显示当前元素的基本统计信息：<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>,<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>、重复次数以及上次和下一次重复的日期。</p><p>您还可以双击面板来打开和关闭提示。请注意，这是一个集合设置。换句话说，提示可能在一个集合中打开，而在另一个集合中关闭，具体取决于此设置的值。</p>
+<div class="mw-heading mw-heading2"><h2 id="Video">视频</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Status_bar&amp;veaction=edit&amp;section=6" title="Edit section: Video"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Status_bar&amp;action=edit&amp;section=6" title="Edit section's source code: Video"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://youtube.com/watch?v=sp0eoRqyBCU">状态栏</a>在<a class="external text" href="https://supermemopedia.com/wiki/The_Pleasurable_Guide_To_SuperMemo">SuperMemo 的愉快指南</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260609201058
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.036 seconds
+Real time usage: 0.039 seconds
+Preprocessor visited node count: 53/1000000
+Post‐expand include size: 1595/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.171      1 File:Status_bar2.jpg
+100.00%    3.171      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:55:|#|:idhash:canonical and timestamp 20260609201058 and revision id 11896. Rendering was triggered because: page-view
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

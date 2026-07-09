@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mercy criteria — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Mercy_criteria" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Mercy.html" title="Mercy">Mercy</a> : Criteria</b> dialog box can be used to determine the criteria by which <a href="Glossary_Item.html" title="Glossary:Item">items</a> rescheduled with <b><a href="Toolkit_menu.html" title="Toolkit menu"> Toolkit</a> : <a href="Mercy.html" title="Mercy">Mercy</a></b> should be sorted.
+</p><p>If you have just returned from vacation or had a longer break in learning, you will probably want to reschedule <a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">outstanding repetitions</a> over a longer period of time. This way you can avoid piles of work accumulated in SuperMemo.
+</p><p>Depending on the nature of the material stored in your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>, you might want to use completely different criteria. For example, if you have added lots of important job-related information shortly before leaving for vacation, you might want to quickly go through this recently introduced material first. In other cases, you might want to ease the stress related to the return to repetitions by picking the easiest material first. You might also want to minimize the damage to the long-term learning process by starting with <a href="Glossary_Element.html" title="Glossary:Element">elements</a> in which you have invested most, or those whose repetitions have been delayed to the largest degree.
+</p><p>Use the following dialog box to set weight to individual criteria from 0% to 100%:
+</p>
+<figure class="mw-default-size mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Mercy_criteria.jpg.html" title="SuperMemo: Repetition sorting criteria (for Mercy)"><img alt="SuperMemo: Repetition sorting criteria (for Mercy)" class="mw-file-element" decoding="async" height="494" loading="lazy" src="https://help.supermemo.org/images/7/78/Mercy_criteria.jpg" width="687"/></a><figcaption>SuperMemo: Repetition sorting criteria (for Mercy)</figcaption></figure>
+<div class="mw-heading mw-heading2"><h2 id="Sorting_criteria">Sorting criteria</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Mercy_criteria&amp;veaction=edit&amp;section=1" title="Edit section: Sorting criteria"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Mercy_criteria&amp;action=edit&amp;section=1" title="Edit section's source code: Sorting criteria"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ol><li><b>Priority</b> - importance of <a href="Glossary_Element.html" title="Glossary:Element">elements</a> as determined by <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> (as well as some other criteria, including the <a href="Glossary_Forgetting_index.html" title="Glossary:Forgetting index">forgetting index</a>)</li>
+<li><b>Lateness</b> - degree of delay of repetitions. Usually short-<a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> <a href="Glossary_Element.html" title="Glossary:Element">elements</a> are more likely to be forgotten as a result of delay. Use this criterion to minimize the forgetting rate during repetitions of the rescheduled material</li>
+<li><b>Investment</b> - investment of your time in memorizing <a href="Glossary_Item.html" title="Glossary:Item">items</a>. The investment is determined by the number of repetitions, the number of <a href="Glossary_Lapse.html" title="Glossary:Lapse">memory lapses</a>, and most of all, the length of the <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a>. Use this criterion to protect the material you have worked hardest on. Even though this is the material that is least likely to be forgotten, each <a href="Glossary_Lapse.html" title="Glossary:Lapse">memory lapse</a> of high-investment material will result in a most painful increase in workload</li>
+<li><b>Easiness</b> - easiness of the <a href="Glossary_Element.html" title="Glossary:Element">elements</a> as determined by the <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> and the number of <a href="Glossary_Lapse.html" title="Glossary:Lapse">memory lapses</a> (the fewer the lapses and the longer the interval, the easier the element). Use this criterion to maximize the speed of learning, and to minimize the stress of handling the <a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">outstanding material</a>. You can opt for maximizing <b>Easiness</b> at times of crisis (i.e. when you cannot devote sufficient attention to repetitions). This way you can quickly dislodge most of the <a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">outstanding material</a> without adding many repetitions of newly forgotten <a href="Glossary_Element.html" title="Glossary:Element">elements</a>. You can deal with the hardest part only then when the catch-up hardship period comes to the end</li>
+<li><b>Recency</b> - how recently the <a href="Glossary_Element.html" title="Glossary:Element">elements</a> have been introduced into the learning process. The recency is determined by (1) <a href="Glossary_Interval.html" title="Glossary:Interval">intervals</a> (shorter intervals indicate recency), (2) <a href="Glossary_Lapse.html" title="Glossary:Lapse">memory lapses</a> (lapses refute recency) and (3) number of repetitions (recent <a href="Glossary_Item.html" title="Glossary:Item">items</a> have fewer repetitions made). Use this criterion when the most recently introduced material is of highest recall priority (e.g. in cases you memorized some critical job-related material before leaving for vacation). This criterion is also very useful if you are going through a crisis with your repetitions (<i>Do I really need to spend that much time with SuperMemo?</i>). <b>Recency</b> criterion will help you quickly realize what great stuff you have learned recently and what a pity it would be to lose it to forgetting. If the break is long enough, you will also see what a painful proportion of <a href="Glossary_Element.html" title="Glossary:Element">elements</a> you have already lost!</li></ol>
+<div class="bs-callout bs-callout-warning">
+<p><b>Warning!</b> By abusing <b>Recency</b> and <b>Easiness</b> criteria you can indefinitely reschedule some harder long-<a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> <a href="Glossary_Element.html" title="Glossary:Element">elements</a>! You might be very disappointed in a year or two to discover that some <a href="Glossary_Element.html" title="Glossary:Element">elements</a> have gained very long <a href="Glossary_Interval.html" title="Glossary:Interval">intervals</a> without a single repetition and have entirely faded from your memory!
+</p>
+</div>
+<p>The percentage values of the impact of individual criteria on sorting can be seen to the right from the slide-bars. Change those values by moving the sliders. For example, if you want to repeat rescheduled material with the easiest material coming first, put all sliders to the left and the <b>Easiness</b> slider on the right (<b>Easiness</b>=100%).
+</p><p>Note that <b>Investment</b> criterion cannot drop below 2%. This is only to prevent the situation in which all criteria have the value 0%.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Sorting_options">Sorting options</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Mercy_criteria&amp;veaction=edit&amp;section=2" title="Edit section: Sorting options"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Mercy_criteria&amp;action=edit&amp;section=2" title="Edit section's source code: Sorting options"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ol><li><b>Use sorting criteria specified above</b> - sorting will proceed along the criteria determined by the sliders: <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a>, lateness, investment, etc.</li>
+<li><b>Reverse sorting order</b> - sorting will be reversed. This can be used for example to use the <b>Easiness</b> criterion to sort repetitions starting from the most difficult material</li>
+<li><b>Retain current repetition sequence</b> - when using <b><a href="Subset_operations.html#Reschedule" title="Subset operations">Spread</a></b> in the <a href="Browser.html" title="Browser">browser</a>: reschedule without sorting, i.e. without changing the current sorting of <a href="Glossary_Element.html" title="Glossary:Element">elements</a> (i.e. the same repetition sequence will be executed but all repetitions will take place later than originally planned)</li>
+<li><b>Randomize</b> - randomize the sequence of rescheduled repetitions. This criterion might be used if you frequently run short-term rescheduling (e.g. to equalize the number of repetitions per day). Paradoxically, randomizing the sequence of rescheduled repetitions may show minimum side effects. Randomization prevents biased rescheduling that may accumulate over time when frequently using <b><a href="Mercy.html" title="Mercy">Mercy</a></b> with the same set of fixed criteria such as easy-items-first, recent-items-first, etc.</li></ol>
+<div class="mw-heading mw-heading2"><h2 id="Quickly_rescheduling_outstanding_material_using_a_given_set_of_criteria">Quickly rescheduling outstanding material using a given set of criteria</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Mercy_criteria&amp;veaction=edit&amp;section=3" title="Edit section: Quickly rescheduling outstanding material using a given set of criteria"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Mercy_criteria&amp;action=edit&amp;section=3" title="Edit section's source code: Quickly rescheduling outstanding material using a given set of criteria"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ol><li>Choose <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Mercy.html" title="Mercy">Mercy</a></b> (e.g. by pressing <i>Shift+Alt+M</i>)</li>
+<li>Choose <b>Criteria</b> and set the sliders according to your preferences</li>
+<li>Choose the maximum acceptable number of repetitions per day and type it in at <b>Number of elements per day</b>. Alternatively, choose the period in which all <a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">outstanding repetitions</a> should be done and type it in at <b>Rescheduling period</b></li>
+<li>Choose <b>Update</b>, e.g. by pressing <i>Enter</i>. This will display the rescheduling parameters: number of <a href="Glossary_Item.html" title="Glossary:Item">items</a> per day, length of the rescheduling period, the date on which last <a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">outstanding repetitions</a> will be made, etc.</li>
+<li>If you are satisfied with your selection, click <b>OK</b>. Otherwise type in new parameters and choose <b>Update</b> again</li></ol>
+<!-- 
+NewPP limit report
+Cached time: 20260610111122
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.040 seconds
+Real time usage: 0.042 seconds
+Preprocessor visited node count: 48/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:117:|#|:idhash:canonical and timestamp 20260610111122 and revision id 9865. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Mercy.html" title="Mercy">慈悲</a> ：标准</b>对话框可用于确定标准<a href="Glossary_Item.html" title="Glossary:Item">项目</a>重新安排<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Mercy.html" title="Mercy">慈悲</a></b>应该排序。</p><p>如果您刚刚度假回来或学习休息时间较长，您可能需要重新安排时间<a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">突出的重复</a>在较长一段时间内。这样你就可以避免在 SuperMemo 中积累大量的工作。</p><p>根据您存储的材料的性质<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>，您可能想使用完全不同的标准。例如，如果您在出发度假前不久添加了许多与工作相关的重要信息，您可能需要首先快速浏览一下最近介绍的材料。在其他情况下，您可能希望通过首先选择最简单的材料来缓解与返回重复相关的压力。您可能还想通过以下方式开始最大程度地减少对长期学习过程的损害：<a href="Glossary_Element.html" title="Glossary:Element">元素</a>您投入最多的项目，或者重复被延迟最大程度的项目。</p><p>使用以下对话框将各个标准的权重设置为 0% 到 100%：</p>
+<figure class="mw-default-size mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Mercy_criteria.jpg.html" title="SuperMemo: Repetition sorting criteria (for Mercy)"><img alt="SuperMemo: Repetition sorting criteria (for Mercy)" class="mw-file-element" decoding="async" height="494" loading="lazy" src="https://help.supermemo.org/images/7/78/Mercy_criteria.jpg" width="687"/></a><figcaption>SuperMemo：重复排序标准（针对 Mercy）</figcaption></figure>
+<div class="mw-heading mw-heading2"><h2 id="Sorting_criteria">排序标准</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Mercy_criteria&amp;veaction=edit&amp;section=1" title="Edit section: Sorting criteria"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Mercy_criteria&amp;action=edit&amp;section=1" title="Edit section's source code: Sorting criteria"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ol><li><b>优先级</b>- 重要性<a href="Glossary_Element.html" title="Glossary:Element">元素</a>由下式确定<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>（以及其他一些标准，包括<a href="Glossary_Forgetting_index.html" title="Glossary:Forgetting index">遗忘指数</a>）</li>
+<li><b>迟到</b>- 重复的延迟程度。通常很短-<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a> <a href="Glossary_Element.html" title="Glossary:Element">元素</a>更容易因为延误而被遗忘。使用此标准可以最大限度地减少重复重新安排的材料期间的遗忘率</li>
+<li><b>投资</b>- 在记忆上投入时间<a href="Glossary_Item.html" title="Glossary:Item">项目</a>。投资由重复次数、次数决定<a href="Glossary_Lapse.html" title="Glossary:Lapse">记忆衰退</a>，最重要的是，长度<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>。使用此标准来保护您最努力制作的材料。尽管这是最不可能被遗忘的材料，但每个<a href="Glossary_Lapse.html" title="Glossary:Lapse">记忆衰退</a>高投资材料将导致工作量的最痛苦的增加</li>
+<li><b>轻松</b>- 的容易程度<a href="Glossary_Element.html" title="Glossary:Element">元素</a>由<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>和数量<a href="Glossary_Lapse.html" title="Glossary:Lapse">记忆衰退</a>（失误越少，间隔越长，元素就越容易）。使用此标准可以最大限度地提高学习速度，并最大限度地减少处理问题的压力<a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">优秀的材料</a>。您可以选择最大化<b>轻松</b>在危机时刻（即当你无法对重复投入足够的注意力时）。这样你就可以快速去除大部分<a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">优秀的材料</a>不添加许多新遗忘的重复<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。只有当追赶困难期结束时，你才能应对最困难的部分</li>
+<li><b>新近度</b>- 最近多久<a href="Glossary_Element.html" title="Glossary:Element">元素</a>已被引入到学习过程中。新近度由 (1) 确定<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>（较短的间隔表示新近），(2)<a href="Glossary_Lapse.html" title="Glossary:Lapse">记忆衰退</a>（失误反驳最近的情况）和（3）重复次数（最近的情况）<a href="Glossary_Item.html" title="Glossary:Item">项目</a>重复次数较少）。当最近介绍的材料具有最高回忆优先级时（例如，如果您在休假之前记住了一些与工作相关的重要材料），请使用此标准。如果你正经历重复的危机，这个标准也非常有用（<i>我真的需要花那么多时间在 SuperMemo 上吗？</i>）。<b>新近度</b>标准将帮助你快速认识到你最近学到了什么很棒的东西，以及如果忘记了它会是多么遗憾。如果休息的时间足够长，你也会看到有多么痛苦的比例<a href="Glossary_Element.html" title="Glossary:Element">元素</a>你已经输了！</li></ol>
+<div class="bs-callout bs-callout-warning">
+<p><b>警告！</b>通过滥用<b>新近度</b>和<b>轻松</b>您可以无限期地重新安排一些更难的长期标准<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a> <a href="Glossary_Element.html" title="Glossary:Element">元素</a>！一两年后你可能会非常失望地发现有些<a href="Glossary_Element.html" title="Glossary:Element">元素</a>已经收获了很长的时间<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>没有一次重复，并且已经完全从你的记忆中消失了！</p>
+</div>
+<p>各个标准对排序的影响的百分比值可以从滑动条的右侧看到。通过移动滑块来更改这些值。例如，如果您想重复重新安排的材料，并先将最简单的材料放在前面，请将所有滑块放在左侧，然后将滑块放在左侧。<b>轻松</b>右侧滑块（<b>轻松</b>=100%）。</p><p>请注意<b>投资</b>标准不能低于2%。这只是为了防止所有标准的值为 0% 的情况。</p>
+<div class="mw-heading mw-heading2"><h2 id="Sorting_options">排序选项</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Mercy_criteria&amp;veaction=edit&amp;section=2" title="Edit section: Sorting options"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Mercy_criteria&amp;action=edit&amp;section=2" title="Edit section's source code: Sorting options"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ol><li><b>使用上面指定的排序标准</b>- 排序将按照滑块确定的标准进行：<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>、迟到、投资等</li>
+<li><b>逆序排列</b>- 排序将被颠倒。例如，这可以用于使用<b>轻松</b>从最难的材料开始对重复进行排序的标准</li>
+<li><b>保留当前重复序列</b>- 使用时<b><a href="Subset_operations.html#Reschedule" title="Subset operations">传播</a></b>在<a href="Browser.html" title="Browser">浏览器</a>：重新安排而不排序，即不改变当前的排序<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（即，将执行相同的重复序列，但所有重复将比原计划晚进行）</li>
+<li><b>随机化</b>- 随机化重新安排的重复的顺序。如果您经常进行短期重新安排（例如，为了均衡每天的重复次数），则可以使用此标准。矛盾的是，随机化重新安排的重复顺序可能会显示出最小的副作用。随机化可以防止有偏差的重新安排，这种重新安排在频繁使用时可能会随着时间的推移而累积<b><a href="Mercy.html" title="Mercy">慈悲</a></b>具有相同的固定标准，例如简单项目优先、最近项目优先等。</li></ol>
+<div class="mw-heading mw-heading2"><h2 id="Quickly_rescheduling_outstanding_material_using_a_given_set_of_criteria">使用一组给定的标准快速重新安排未完成的材料</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Mercy_criteria&amp;veaction=edit&amp;section=3" title="Edit section: Quickly rescheduling outstanding material using a given set of criteria"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Mercy_criteria&amp;action=edit&amp;section=3" title="Edit section's source code: Quickly rescheduling outstanding material using a given set of criteria"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ol><li>选择<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Mercy.html" title="Mercy">慈悲</a></b>（例如，按<i>Shift+Alt+M</i>）</li>
+<li>选择<b>标准</b>并根据您的喜好设置滑块</li>
+<li>选择每天可接受的最大重复次数并将其输入<b>每天的元素数量</b>。或者，选择所有时间段<a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">突出的重复</a>应该完成并输入<b>改期期间</b></li>
+<li>选择<b>更新</b>，例如通过按<i>输入</i>。这将显示重新安排参数：数量<a href="Glossary_Item.html" title="Glossary:Item">项目</a>每天、重新安排期的长度、最后一次的日期<a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">突出的重复</a>将被制作等</li>
+<li>如果您对您的选择感到满意，请单击<b>好的</b>。否则输入新参数并选择<b>更新</b>再次</li></ol>
+<!-- 
+NewPP limit report
+Cached time: 20260610111122
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.040 seconds
+Real time usage: 0.042 seconds
+Preprocessor visited node count: 48/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:117:|#|:idhash:canonical and timestamp 20260610111122 and revision id 9865. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

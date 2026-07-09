@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Localization table — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Localization_table" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Translating_the_interface_of_SuperMemo"><span class="tocnumber">1</span> <span class="toctext">Translating the interface of SuperMemo</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Downloading_ready-made_interfaces"><span class="tocnumber">2</span> <span class="toctext">Downloading ready-made interfaces</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Changing_the_interface"><span class="tocnumber">3</span> <span class="toctext">Changing the interface</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Translating_the_interface_of_SuperMemo">Translating the interface of SuperMemo</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Localization_table&amp;veaction=edit&amp;section=1" title="Edit section: Translating the interface of SuperMemo"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Localization_table&amp;action=edit&amp;section=1" title="Edit section's source code: Translating the interface of SuperMemo"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>With <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Options.html" title="Options">Options</a> : <a href="Language_tab_in_Options.html" title="Language tab in Options">Language</a> : Localization table</b>, you can quickly translate the entire interface of SuperMemo to your native language (only at the <b>Beginner</b> and <b>Basic</b> <a href="Glossary_Level.html" title="Glossary:Level">levels</a>). 
+</p><p>The whole translation can be done in 5 minutes, as the entire interface of basic SuperMemo consists of only about 50 strings!
+</p><p>This is the procedure:
+</p>
+<ol><li>Choose <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Options.html" title="Options">Options</a> : <a href="Language_tab_in_Options.html" title="Language tab in Options">Language</a></b></li>
+<li>Click the field <b>Localization language</b> (or press <i>Alt+I</i>)</li>
+<li>Type the name of your language (e.g. <i>Spanish</i>)</li>
+<li>Choose <b>Localization table</b></li>
+<li>In the column <b>Translation</b>, type in the translation of texts displayed in the column <b>Original</b></li>
+<li>If necessary, select a localization font by clicking the <b>Font</b> button in the left-bottom corner of the localization table</li>
+<li>Choose <b>OK</b> and your translation will appear in the interface of the program</li></ol>
+<p>The translation file is a text file. It is kept at <a href="SuperMemo_files.html#Program_files" title="SuperMemo files"><i>&lt;SuperMemo folder&gt;\TRANSLAT\&lt;language&gt;.tra</i></a>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Downloading_ready-made_interfaces">Downloading ready-made interfaces</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Localization_table&amp;veaction=edit&amp;section=2" title="Edit section: Downloading ready-made interfaces"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Localization_table&amp;action=edit&amp;section=2" title="Edit section's source code: Downloading ready-made interfaces"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>You can download some SuperMemo interfaces from <a class="external text" href="http://super-memory.com/english/trafiles.htm">International Interfaces for SuperMemo</a>.
+</p><p>If you do not find an interface in your language, we will be happy to add your own translation. You can <a class="external text" href="http://super-memory.com/english/contact.htm">send it via e-mail</a>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Changing_the_interface">Changing the interface</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Localization_table&amp;veaction=edit&amp;section=3" title="Edit section: Changing the interface"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Localization_table&amp;action=edit&amp;section=3" title="Edit section's source code: Changing the interface"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="bs-callout bs-callout-warning">
+<p><b>Important!</b> Localization affects only the options available on the <b>Beginner</b> and <b>Basic</b> <a href="Glossary_Level.html" title="Glossary:Level">levels</a>
+</p>
+</div>
+<p>To change the interface in SuperMemo using a downloaded interface file do the following:
+</p>
+<ol><li>Download an interface file from <a class="external text" href="http://super-memory.com/english/trafiles.htm">International Interfaces for SuperMemo</a> (only 1000 bytes!)</li>
+<li>Copy the interface file to the subfolder <i>TRANSLAT</i> in the <a href="SuperMemo_files.html" title="SuperMemo files">&lt;SuperMemo&gt; folder</a> (the filename is <i>&lt;language name&gt;.tra</i>)</li>
+<li>Choose the interface's name in <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Options.html" title="Options">Options</a> : <a href="Language_tab_in_Options.html" title="Language tab in Options">Language</a> : Localization language</b></li></ol>
+<p>An alternative approach is to:
+</p>
+<ol><li>Download an interface from <a class="external text" href="http://super-memory.com/english/trafiles.htm">International Interfaces for SuperMemo</a> (only 1000 bytes!)</li>
+<li>Choose <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Options.html" title="Options">Options</a> : <a href="Language_tab_in_Options.html" title="Language tab in Options">Language</a> : Localization table</b></li>
+<li>Type the language name in the <b>Localization language</b> field (you do not have to use the name of the downloaded file)</li>
+<li>Choose <b>Import</b> in <b>Localization table</b> and select the downloaded interface file (the filename is <i>&lt;interface name&gt;.tra</i>)</li></ol>
+<!-- 
+NewPP limit report
+Cached time: 20260610111117
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.022 seconds
+Real time usage: 0.022 seconds
+Preprocessor visited node count: 18/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:100:|#|:idhash:canonical and timestamp 20260610111117 and revision id 9856. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Translating_the_interface_of_SuperMemo"><span class="tocnumber">1</span> <span class="toctext">翻译 SuperMemo 的界面</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Downloading_ready-made_interfaces"><span class="tocnumber">2</span> <span class="toctext">下载现成的接口</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Changing_the_interface"><span class="tocnumber">3</span> <span class="toctext">改变接口</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Translating_the_interface_of_SuperMemo">翻译 SuperMemo 的界面</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Localization_table&amp;veaction=edit&amp;section=1" title="Edit section: Translating the interface of SuperMemo"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Localization_table&amp;action=edit&amp;section=1" title="Edit section's source code: Translating the interface of SuperMemo"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>与<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Options.html" title="Options">选项</a> :<a href="Language_tab_in_Options.html" title="Language tab in Options">语言</a> ：本地化表</b>，您可以快速将 SuperMemo 的整个界面翻译成您的母语（仅在<b>初学者</b>和<b>基础</b> <a href="Glossary_Level.html" title="Glossary:Level">级别</a>）。</p><p>整个翻译可以在 5 分钟内完成，因为基本 SuperMemo 的整个界面仅由大约 50 个字符串组成！</p><p>这是程序：</p>
+<ol><li>选择<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Options.html" title="Options">选项</a> :<a href="Language_tab_in_Options.html" title="Language tab in Options">语言</a></b></li>
+<li>单击该字段<b>本地化语言</b>（或按<i>阿尔特+我</i>）</li>
+<li>输入您的语言名称（例如<i>西班牙语</i>）</li>
+<li>选择<b>本地化表</b></li>
+<li>在专栏中<b>翻译</b>，输入该列中显示的文本的翻译<b>原创</b></li>
+<li>如有必要，通过单击选择本地化字体<b>字体</b>本地化表左下角的按钮</li>
+<li>选择<b>好的</b>您的翻译将出现在程序界面中</li></ol>
+<p>翻译文件是文本文件。它被保存在<a href="SuperMemo_files.html#Program_files" title="SuperMemo files"><i>&lt;SuperMemo 文件夹&gt;\TRANSLAT\&lt;语言&gt;.tra</i></a>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Downloading_ready-made_interfaces">下载现成的接口</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Localization_table&amp;veaction=edit&amp;section=2" title="Edit section: Downloading ready-made interfaces"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Localization_table&amp;action=edit&amp;section=2" title="Edit section's source code: Downloading ready-made interfaces"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>您可以从以下位置下载一些 SuperMemo 界面<a class="external text" href="http://super-memory.com/english/trafiles.htm">SuperMemo 的国际接口</a>。</p><p>如果您没有找到您语言的界面，我们将很乐意添加您自己的翻译。你可以<a class="external text" href="http://super-memory.com/english/contact.htm">通过电子邮件发送</a>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Changing_the_interface">改变接口</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Localization_table&amp;veaction=edit&amp;section=3" title="Edit section: Changing the interface"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Localization_table&amp;action=edit&amp;section=3" title="Edit section's source code: Changing the interface"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="bs-callout bs-callout-warning">
+<p><b>重要！</b>本地化仅影响可用的选项<b>初学者</b>和<b>基础</b> <a href="Glossary_Level.html" title="Glossary:Level">级别</a>
+</p>
+</div>
+<p>要使用下载的接口文件更改 SuperMemo 中的接口，请执行以下操作：</p>
+<ol><li>从以下位置下载接口文件<a class="external text" href="http://super-memory.com/english/trafiles.htm">SuperMemo 的国际接口</a>（只有 1000 字节！）</li>
+<li>将接口文件复制到子文件夹中<i>翻译软件</i>在<a href="SuperMemo_files.html" title="SuperMemo files">&lt;SuperMemo&gt; 文件夹</a>（文件名是<i>&lt;语言名称&gt;.tra</i>）</li>
+<li>在中选择接口的名称<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Options.html" title="Options">选项</a> :<a href="Language_tab_in_Options.html" title="Language tab in Options">语言</a> ：本地化语言</b></li></ol>
+<p>另一种方法是：</p>
+<ol><li>从下载接口<a class="external text" href="http://super-memory.com/english/trafiles.htm">SuperMemo 的国际接口</a>（只有 1000 字节！）</li>
+<li>选择<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Options.html" title="Options">选项</a> :<a href="Language_tab_in_Options.html" title="Language tab in Options">语言</a> ：本地化表</b></li>
+<li>在框中输入语言名称<b>本地化语言</b>字段（您不必使用下载文件的名称）</li>
+<li>选择<b>进口</b>在<b>本地化表</b>并选择下载的接口文件（文件名为<i>&lt;接口名称&gt;.tra</i>）</li></ol>
+<!-- 
+NewPP limit report
+Cached time: 20260610111117
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.022 seconds
+Real time usage: 0.022 seconds
+Preprocessor visited node count: 18/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:100:|#|:idhash:canonical and timestamp 20260610111117 and revision id 9856. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SuperMemo 19 Help — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/SuperMemo_19_Help" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><br/>
+</p>
+<div style="text-align: center; padding: 20px; background: #e6f0ff; border: 1px solid #ddd;">
+<div class="mw-heading mw-heading2"><h2 id="Welcome_to_SuperMemo_19">Welcome to SuperMemo 19</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;veaction=edit&amp;section=1" title="Edit section: Welcome to SuperMemo 19"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;action=edit&amp;section=1" title="Edit section's source code: Welcome to SuperMemo 19"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Master anything with the world’s leading learning system, backed by decades of memory science.<br/>
+<a href="Introduction.html" title="Introduction">Take a 3-Minute Tour</a> | <a class="external text" href="https://youtu.be/DoQoeK53bP8">Watch the Intro Video</a>
+</p>
+</div>
+<div style="text-align: center; margin: 20px 0;">
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_SuperMemo_19_with_dual_monitor_support.jpg.html" title="SuperMemo 19 for Windows at the Professional level running on two monitors"><img alt="SuperMemo 19 running on dual monitors" class="mw-file-element" decoding="async" height="255" loading="lazy" src="https://help.supermemo.org/images/thumb/5/57/SuperMemo_19_with_dual_monitor_support.jpg/500px-SuperMemo_19_with_dual_monitor_support.jpg" srcset="/images/thumb/5/57/SuperMemo_19_with_dual_monitor_support.jpg/750px-SuperMemo_19_with_dual_monitor_support.jpg 1.5x, /images/thumb/5/57/SuperMemo_19_with_dual_monitor_support.jpg/1000px-SuperMemo_19_with_dual_monitor_support.jpg 2x" width="500"/></a><figcaption>SuperMemo 19 for Windows at the Professional level running on two monitors</figcaption></figure>
+</div>
+<table style="width: 100%; margin: 20px 0;">
+<tbody><tr>
+<td style="width: 33%; vertical-align: top; padding: 10px; background: #fff; border: 1px solid #ddd;">
+<div class="mw-heading mw-heading3"><h3 id="Get_Started">Get Started</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;veaction=edit&amp;section=2" title="Edit section: Get Started"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;action=edit&amp;section=2" title="Edit section's source code: Get Started"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div style="background: #f0f7ff; padding: 5px; margin-bottom: 10px;">Explore SuperMemo</div>
+<ul><li><a href="SuperMemo.html" title="SuperMemo">What is SuperMemo?</a></li>
+<li><a href="Features.html" title="Features">Key Features</a></li>
+<li><a class="mw-redirect" href="What's_new_in_SuperMemo_.html" title="What's new in SuperMemo?">What’s New in SuperMemo 19</a></li>
+<li><a href="SuperMemo_Screenshot_Tour.html" title="SuperMemo Screenshot Tour">See It in Action</a> (Screen Tour)</li>
+<li><a href="Minimum_requirements.html" title="Minimum requirements">System Requirements</a></li>
+<li><a class="external text" href="https://www.super-memory.com/help/faq/before.htm">FAQ: Before You Buy</a></li></ul>
+</td>
+<td style="width: 33%; vertical-align: top; padding: 10px; background: #fff; border: 1px solid #ddd;">
+<div class="mw-heading mw-heading3"><h3 id="Learn_SuperMemo">Learn SuperMemo</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;veaction=edit&amp;section=3" title="Edit section: Learn SuperMemo"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;action=edit&amp;section=3" title="Edit section's source code: Learn SuperMemo"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div style="background: #f0f7ff; padding: 5px; margin-bottom: 10px;">Start Learning</div>
+<ul><li><a href="Installing_SuperMemo_(in_a_minute).html" title="Installing SuperMemo (in a minute)">Install in 1 Minute</a></li>
+<li><a href="Introduction.html" title="Introduction">Beginner’s Guide (3 min)</a></li>
+<li><a href="Step-by-step_to_SuperMemo_mastery.html" title="Step-by-step to SuperMemo mastery">Mastery Course (1 month)</a></li>
+<li><a href="Incremental_learning.html" title="Incremental learning">Incremental Learning</a></li>
+<li><a href="Hints&amp;Tips.html" title="Hints&amp;Tips">Quick Tips</a></li>
+<li><a class="external text" href="https://supermemo.guru/wiki/20_rules_of_knowledge_formulation">20 Rules for Learning</a></li></ul>
+</td>
+<td style="width: 33%; vertical-align: top; padding: 10px; background: #fff; border: 1px solid #ddd;">
+<div class="mw-heading mw-heading3"><h3 id="Support_&amp;_Resources"><span id="Support_.26_Resources"></span>Support &amp; Resources</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;veaction=edit&amp;section=4" title="Edit section: Support &amp; Resources"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;action=edit&amp;section=4" title="Edit section's source code: Support &amp; Resources"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div style="background: #f0f7ff; padding: 5px; margin-bottom: 10px;">Get Help</div>
+<ul><li><a href="Menus,_buttons,_dialogs,_etc..html" title="Menus, buttons, dialogs, etc.">Interface Guide</a> (menus, windows and buttons)</li>
+<li><a href="Overview_articles.html" title="Overview articles">How-To Guides</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/FAQ">FAQs</a></li>
+<li><a href="Technical_support.html" title="Technical support">Contact Support</a></li></ul>
+<div style="background: #f0f7ff; padding: 5px; margin: 10px 0;">Video</div>
+<ul><li><a class="external text" href="https://www.youtube.com/@SuperMemoVideo">Video Tutorials (<b>SuperMemo Video</b>)</a></li>
+<li><a class="external text" href="https://www.youtube.com/@PleasurableLearning">Video Tips &amp; Overviews (<b>Pleasurable Learning</b>)</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/The_Pleasurable_Guide_To_SuperMemo">Guide to SuperMemo course at "Pleasurable learning"</a></li></ul>
+</td></tr></tbody></table>
+<div style="text-align: center; padding: 20px; background: #e6f0ff; border: 1px solid #ddd;">
+<div class="mw-heading mw-heading2"><h2 id="Ready_to_Transform_Your_Learning?"><span id="Ready_to_Transform_Your_Learning.3F"></span>Ready to Transform Your Learning?</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;veaction=edit&amp;section=5" title="Edit section: Ready to Transform Your Learning?"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;action=edit&amp;section=5" title="Edit section's source code: Ready to Transform Your Learning?"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Join thousands of learners using SuperMemo to master new skills.<br/>
+<a class="external text" href="https://super-memory.com/english/down.htm">Download Now</a>
+</p>
+</div>
+<div style="font-size: 90%; color: #666; text-align: center; margin-top: 20px; padding-top: 10px; border-top: 1px solid #ddd;">
+<p>Need help with an older version? Check our <a class="external text" href="https://help18.supermemo.org/wiki/SuperMemo_18_Help">archive</a>.<br/>
+Have ideas? <a href="Feature_request.html" title="Feature request">Share your feedback</a>.
+</p>
+</div>
+<!-- 
+NewPP limit report
+Cached time: 20260609213551
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [no‐toc]
+CPU time usage: 0.028 seconds
+Real time usage: 0.029 seconds
+Preprocessor visited node count: 49/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:681:|#|:idhash:canonical and timestamp 20260609213551 and revision id 11970. Rendering was triggered because: page-view
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><br/>
+</p>
+<div style="text-align: center; padding: 20px; background: #e6f0ff; border: 1px solid #ddd;">
+<div class="mw-heading mw-heading2"><h2 id="Welcome_to_SuperMemo_19">欢迎来到 SuperMemo 19</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;veaction=edit&amp;section=1" title="Edit section: Welcome to SuperMemo 19"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;action=edit&amp;section=1" title="Edit section's source code: Welcome to SuperMemo 19"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>利用世界领先的学习系统掌握任何知识，并以数十年的记忆科学为后盾。<br/>
+<a href="Introduction.html" title="Introduction">3 分钟游览</a>|<a class="external text" href="https://youtu.be/DoQoeK53bP8">观看介绍视频</a>
+</p>
+</div>
+<div style="text-align: center; margin: 20px 0;">
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_SuperMemo_19_with_dual_monitor_support.jpg.html" title="SuperMemo 19 for Windows at the Professional level running on two monitors"><img alt="SuperMemo 19 running on dual monitors" class="mw-file-element" decoding="async" height="255" loading="lazy" src="https://help.supermemo.org/images/thumb/5/57/SuperMemo_19_with_dual_monitor_support.jpg/500px-SuperMemo_19_with_dual_monitor_support.jpg" srcset="/images/thumb/5/57/SuperMemo_19_with_dual_monitor_support.jpg/750px-SuperMemo_19_with_dual_monitor_support.jpg 1.5x, /images/thumb/5/57/SuperMemo_19_with_dual_monitor_support.jpg/1000px-SuperMemo_19_with_dual_monitor_support.jpg 2x" width="500"/></a><figcaption>SuperMemo 19 for Windows 专业级在两台显示器上运行</figcaption></figure>
+</div>
+<table style="width: 100%; margin: 20px 0;">
+<tbody><tr>
+<td style="width: 33%; vertical-align: top; padding: 10px; background: #fff; border: 1px solid #ddd;">
+<div class="mw-heading mw-heading3"><h3 id="Get_Started">开始使用</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;veaction=edit&amp;section=2" title="Edit section: Get Started"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;action=edit&amp;section=2" title="Edit section's source code: Get Started"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div style="background: #f0f7ff; padding: 5px; margin-bottom: 10px;">探索 SuperMemo</div>
+<ul><li><a href="SuperMemo.html" title="SuperMemo">什么是 SuperMemo？</a></li>
+<li><a href="Features.html" title="Features">主要特点</a></li>
+<li><a class="mw-redirect" href="What's_new_in_SuperMemo_.html" title="What's new in SuperMemo?">SuperMemo 19 的新功能</a></li>
+<li><a href="SuperMemo_Screenshot_Tour.html" title="SuperMemo Screenshot Tour">查看实际效果</a>（银幕巡演）</li>
+<li><a href="Minimum_requirements.html" title="Minimum requirements">系统要求</a></li>
+<li><a class="external text" href="https://www.super-memory.com/help/faq/before.htm">常见问题解答：购买之前</a></li></ul>
+</td>
+<td style="width: 33%; vertical-align: top; padding: 10px; background: #fff; border: 1px solid #ddd;">
+<div class="mw-heading mw-heading3"><h3 id="Learn_SuperMemo">学习 SuperMemo</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;veaction=edit&amp;section=3" title="Edit section: Learn SuperMemo"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;action=edit&amp;section=3" title="Edit section's source code: Learn SuperMemo"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div style="background: #f0f7ff; padding: 5px; margin-bottom: 10px;">开始学习</div>
+<ul><li><a href="Installing_SuperMemo_(in_a_minute).html" title="Installing SuperMemo (in a minute)">1 分钟内安装</a></li>
+<li><a href="Introduction.html" title="Introduction">初学者指南（3 分钟）</a></li>
+<li><a href="Step-by-step_to_SuperMemo_mastery.html" title="Step-by-step to SuperMemo mastery">精通课程（1个月）</a></li>
+<li><a href="Incremental_learning.html" title="Incremental learning">渐进学习</a></li>
+<li><a href="Hints&amp;Tips.html" title="Hints&amp;Tips">快速提示</a></li>
+<li><a class="external text" href="https://supermemo.guru/wiki/20_rules_of_knowledge_formulation">20条学习规则</a></li></ul>
+</td>
+<td style="width: 33%; vertical-align: top; padding: 10px; background: #fff; border: 1px solid #ddd;">
+<div class="mw-heading mw-heading3"><h3 id="Support_&amp;_Resources"><span id="Support_.26_Resources"></span>支持与资源</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;veaction=edit&amp;section=4" title="Edit section: Support &amp; Resources"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;action=edit&amp;section=4" title="Edit section's source code: Support &amp; Resources"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div style="background: #f0f7ff; padding: 5px; margin-bottom: 10px;">获取帮助</div>
+<ul><li><a href="Menus,_buttons,_dialogs,_etc..html" title="Menus, buttons, dialogs, etc.">接口指南</a>（菜单、窗口和按钮）</li>
+<li><a href="Overview_articles.html" title="Overview articles">操作指南</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/FAQ">常见问题解答</a></li>
+<li><a href="Technical_support.html" title="Technical support">联系支持人员</a></li></ul>
+<div style="background: #f0f7ff; padding: 5px; margin: 10px 0;">视频</div>
+<ul><li><a class="external text" href="https://www.youtube.com/@SuperMemoVideo">视频教程（<b>超级备忘录视频</b>）</a></li>
+<li><a class="external text" href="https://www.youtube.com/@PleasurableLearning">视频提示和概述 (<b>愉快的学习</b>）</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/The_Pleasurable_Guide_To_SuperMemo">“快乐学习”中的 SuperMemo 课程指南</a></li></ul>
+</td></tr></tbody></table>
+<div style="text-align: center; padding: 20px; background: #e6f0ff; border: 1px solid #ddd;">
+<div class="mw-heading mw-heading2"><h2 id="Ready_to_Transform_Your_Learning?"><span id="Ready_to_Transform_Your_Learning.3F"></span>准备好改变你的学习方式了吗？</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;veaction=edit&amp;section=5" title="Edit section: Ready to Transform Your Learning?"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=SuperMemo_19_Help&amp;action=edit&amp;section=5" title="Edit section's source code: Ready to Transform Your Learning?"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>与成千上万的学习者一起使用 SuperMemo 掌握新技能。<br/>
+<a class="external text" href="https://super-memory.com/english/down.htm">立即下载</a>
+</p>
+</div>
+<div style="font-size: 90%; color: #666; text-align: center; margin-top: 20px; padding-top: 10px; border-top: 1px solid #ddd;">
+<p>需要有关旧版本的帮助吗？检查我们的<a class="external text" href="https://help18.supermemo.org/wiki/SuperMemo_18_Help">存档</a>。<br/>有想法吗？<a href="Feature_request.html" title="Feature request">分享您的反馈</a>。</p>
+</div>
+<!-- 
+NewPP limit report
+Cached time: 20260609213551
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [no‐toc]
+CPU time usage: 0.028 seconds
+Real time usage: 0.029 seconds
+Preprocessor visited node count: 49/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:681:|#|:idhash:canonical and timestamp 20260609213551 and revision id 11970. Rendering was triggered because: page-view
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

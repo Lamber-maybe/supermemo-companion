@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Toolkit menu — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Toolkit_menu" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Toolkit_menu_items"><span class="tocnumber">1</span> <span class="toctext">Toolkit menu items</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Commander"><span class="tocnumber">1.1</span> <span class="toctext">Commander</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Calendar"><span class="tocnumber">1.2</span> <span class="toctext">Calendar</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Sleep_Chart"><span class="tocnumber">1.3</span> <span class="toctext">Sleep Chart</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Plan"><span class="tocnumber">1.4</span> <span class="toctext">Plan</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Mercy"><span class="tocnumber">1.5</span> <span class="toctext">Mercy</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Tasklist"><span class="tocnumber">1.6</span> <span class="toctext">Tasklist</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Statistics"><span class="tocnumber">1.7</span> <span class="toctext">Statistics</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Memory"><span class="tocnumber">1.8</span> <span class="toctext">Memory</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Neural_analysis"><span class="tocnumber">1.9</span> <span class="toctext">Neural analysis</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Randomize"><span class="tocnumber">1.10</span> <span class="toctext">Randomize</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Random_test"><span class="tocnumber">1.11</span> <span class="toctext">Random test</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Random_review"><span class="tocnumber">1.12</span> <span class="toctext">Random review</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Options"><span class="tocnumber">1.13</span> <span class="toctext">Options</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>The <b>Toolkit</b> submenu on the <a href="Main_menu.html" title="Main menu">main menu</a> provides the following options (assuming <b><a href="File_menu.html" title="File menu">File</a> : <a href="File_menu.html#Level" title="File menu">Level</a> : Professional</b> checked): 
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Toolkit_menu_items">Toolkit menu items</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=1" title="Edit section: Toolkit menu items"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=1" title="Edit section's source code: Toolkit menu items"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Commander">Commander</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=2" title="Edit section: Commander"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=2" title="Edit section's source code: Commander"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a class="mw-redirect" href="Commander.html" title="Commander">Commander</a></b> (<i>Ctrl+Enter</i>) - choose a SuperMemo command to execute</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Calendar">Calendar</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=3" title="Edit section: Calendar"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=3" title="Edit section's source code: Calendar"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a href="Calendar.html" title="Calendar">Calendar</a></b> (<i>Ctrl+W</i>) - the daily and the monthly calendar of repetitions.</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Sleep_Chart">Sleep Chart</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=4" title="Edit section: Sleep Chart"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=4" title="Edit section's source code: Sleep Chart"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a href="Sleep_Chart.html" title="Sleep Chart">Sleep Chart</a></b> (<i>F12</i>) - record of repetition and/or sleep blocks that will help you see your timing pattern in learning and sleeping</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Plan">Plan</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=5" title="Edit section: Plan"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=5" title="Edit section's source code: Plan"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a href="Plan.html" title="Plan">Plan</a></b> (<i>Ctrl+P</i>) - a schedule manager that will help you plan your time by adjusting proportions of time you spend on individual activities</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Mercy">Mercy</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=6" title="Edit section: Mercy"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=6" title="Edit section's source code: Mercy"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a href="Mercy.html" title="Mercy">Mercy</a></b> (<i>Shift+Alt+M</i>) - a dialog box that makes it possible to reschedule repetitions (e.g. before or after a holiday break). Use <b>Mercy</b> only if you want to redistribute the <a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">outstanding material</a> in a selected period of time. If you cannot cope with material <a href="Glossary_Overload.html" title="Glossary:Overload">overload</a>, you should rather use <b><a href="Postpone.html" title="Postpone">Postpone</a></b></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Tasklist">Tasklist</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=7" title="Edit section: Tasklist"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=7" title="Edit section's source code: Tasklist"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="Tasklist_manager.html" title="Tasklist manager"> <b>Tasklist</b></a> (<i>F4</i>) - a tasklist manager to sort or edit the current <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Statistics">Statistics</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=8" title="Edit section: Statistics"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=8" title="Edit section's source code: Statistics"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Statistics</b>
+<ul><li><b><a href="Statistics.html" title="Statistics">Statistics</a></b> - a window with the main statistics of the learning process</li>
+<li><b><a href="Element_data.html" title="Element data">Element data</a></b> - a window with the statistics related to the current <a href="Glossary_Element.html" title="Glossary:Element">element</a>. This window also displays the repetition statistics after a <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a></li>
+<li><b><a href="Analysis.html" title="Analysis">Analysis</a></b> (<i>Shift+Alt+A</i>) - a dialog box with various statistics related to the learning process and the <a class="external text" href="https://supermemo.guru/wiki/SuperMemo_Algorithm">SuperMemo Algorithm</a></li>
+<li><b>Simulation</b> - a dialog box that makes it possible to simulate the course of learning over many years using real data collected during repetitions (see: <a class="external text" href="http://super-memory.com/articles/theory.htm">Theoretical aspects of SuperMemo</a>). Please note that for a low value of the <a href="Glossary_Forgetting_index.html" title="Glossary:Forgetting index">forgetting index</a>, the simulation procedure may be inaccurate (see: <a class="external text" href="http://super-memory.com/help/faq/algorithm.htm#Simulation_inaccurate">FAQ</a>). The simulation uses the OF matrix used by Algorithm SM-15 (i.e. it is not based on Algorithm SM-17)</li>
+<li><b>Report</b> - generate a text file with statistics displayed in the <a href="Statistics.html" title="Statistics"><b>Statistics</b> window</a></li>
+<li><b>Reset data</b>
+<ul><li><b>Forgetting index record</b> - reset the record of repetition grades used in computing the <a href="Glossary_Measured_forgetting_index.html" title="Glossary:Measured forgetting index">measured forgetting index</a></li>
+<li><b>Forgetting index vs priority record</b> - reset the record of the <a href="Glossary_Forgetting_index.html" title="Glossary:Forgetting index">forgetting index</a> measured for different priority categories (as visible in <b><a class="mw-selflink selflink">Toolkit</a> : <a class="mw-selflink-fragment" href="#Statistics">Statistics</a> : <a href="Analysis.html" title="Analysis">Analysis</a> : <a href="Analysis.html#Graphs" title="Analysis">Graphs</a> : <a href="Analysis.html#Forgetting_Index_vs._Priority" title="Analysis">Forgetting Index vs. Priority</a></b>)</li>
+<li><b>First grade vs A-Factor record</b> - reset the record of the correlation between between first grades and <a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A-Factors</a></li>
+<li><b>Grade vs forgetting index</b> - reset the correlation between the <a href="Glossary_Grade.html" title="Glossary:Grade">grades</a> and the <a href="Glossary_Forgetting_index.html" title="Glossary:Forgetting index">forgetting index</a></li>
+<li><b>Average response time</b> - reset the record of the average time it takes to respond to questions in your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a></li>
+<li><b>Repetition statistics</b> - recompute repetition counts in <a class="mw-redirect" href="Workload.html" title="Workload">Workload</a> to account for elements that have been deleted since</li>
+<li><b>Repetitions history calendar</b> - recompute the history of use of elements on individual days (accessible from <a class="mw-redirect" href="Workload.html" title="Workload">Workload</a>). Those statistics are kept as subsets in <i>\history</i> collection subfolder</li>
+<li><b>Repetition history</b> - delete the history of repetitions without affecting the learning process</li>
+<li><b>Optimization matrices</b> - reset the optimization matrices used in the learning process (RF, OF, repetition cases, forgetting curves, etc.)</li></ul></li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Memory">Memory</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=9" title="Edit section: Memory"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=9" title="Edit section's source code: Memory"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Memory</b>
+<ul><li><b><a href="Memory_graphs_(4D).html" title="Memory graphs (4D)">4D Graphs</a></b> (<i>F7</i>) - visual presentation of memory functions, their approximations as used by <a class="external text" href="https://supermemo.guru/wiki/SuperMemo_Algorithm">SuperMemo Algorithm</a>, and options for resetting and re-computing memory data on the basis of <a href="Repetition_history.html" title="Repetition history">repetition histories</a></li>
+<li><b>Memory status</b> (<i>F2</i>) - show changes to memory status over time</li>
+<li><b>Total knowledge</b> - compute the progression timeline of total knowledge</li>
+<li><b>Export data</b> - export memory data for all <a href="Glossary_Item.html" title="Glossary:Item">items</a></li>
+<li><b>Re-compute difficulties</b> - update item difficulties in element data for more accurate display and browsing</li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Neural_analysis">Neural analysis</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=10" title="Edit section: Neural analysis"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=10" title="Edit section's source code: Neural analysis"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Neural analysis</b> - build a neural queue and show how activation spreads in the network</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Randomize">Randomize</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=11" title="Edit section: Randomize"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=11" title="Edit section's source code: Randomize"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Randomize</b>
+<ul><li><b>Drill</b> - randomize the <a href="Glossary_Final_drill_queue.html" title="Glossary:Final drill queue">final drill queue</a></li>
+<li><b>Pending</b> - randomize the <a href="Glossary_Pending_queue.html" title="Glossary:Pending queue">pending queue</a></li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Random_test">Random test</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=12" title="Edit section: Random test"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=12" title="Edit section's source code: Random test"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Random test</b> - run random repetitions on various <a href="Glossary_Element_subset.html" title="Glossary:Element subset">subsets</a> of the current <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> (random repetitions do not count in the learning process). The following tests can be found on the <b>Random test</b> submenu:
+<ul><li><b>Resume test</b></li>
+<li><b>All</b> (<i>Alt+F11</i>) - run a random test on all <a href="Glossary_Element.html" title="Glossary:Element">elements</a></li>
+<li><b>Pending</b> - run a random test on <a href="Glossary_Pending_element.html" title="Glossary:Pending element">pending elements</a></li>
+<li><b>Memorized</b> - run a random test on <a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">memorized elements</a></li>
+<li><b>Dismissed</b> - run a random test on <a href="Glossary_Dismissed_element.html" title="Glossary:Dismissed element">dismissed elements</a></li>
+<li><b>Topics</b> - run a random test on <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a></li>
+<li><b>Items</b> - run a random test on <a href="Glossary_Item.html" title="Glossary:Item">items</a></li>
+<li><b>Filter</b> - use the <a href="Element_filter.html" title="Element filter">element filter</a> and run a random test on a subset of filtered elements</li>
+<li><b>Leeches</b> - run a random test on <a href="Glossary_Leech.html" title="Glossary:Leech">difficult elements</a></li>
+<li><b>Subset</b> - run a random test on a selected element subset</li>
+<li><b>Branch</b> - run a random test on the currently selected <a href="Glossary_Branch.html" title="Glossary:Branch">branch</a> in the <a href="Contents.html" title="Contents"><b>Contents</b> window</a></li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Random_review">Random review</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=13" title="Edit section: Random review"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=13" title="Edit section's source code: Random review"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Random review</b> (<i>F11</i>) - randomly review <a href="Glossary_Element.html" title="Glossary:Element">elements</a> in the current <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Options">Options</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=14" title="Edit section: Options"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=14" title="Edit section's source code: Options"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a href="Options.html" title="Options">Options</a></b> - open a tabbed dialog box with options such as the default interface font, <a class="external text" href="https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo#default_forgetting_index">default forgetting index</a>, path to files on an external drive, default stylesheet, password, sound feedback, background image, translation language, etc.</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610061608
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.018 seconds
+Real time usage: 0.019 seconds
+Preprocessor visited node count: 94/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:15:|#|:idhash:canonical and timestamp 20260610061608 and revision id 12420. Rendering was triggered because: page-view
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Toolkit_menu_items"><span class="tocnumber">1</span> <span class="toctext">工具包菜单项</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Commander"><span class="tocnumber">1.1</span> <span class="toctext">指挥官</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Calendar"><span class="tocnumber">1.2</span> <span class="toctext">日历</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Sleep_Chart"><span class="tocnumber">1.3</span> <span class="toctext">睡眠图</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Plan"><span class="tocnumber">1.4</span> <span class="toctext">计划</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Mercy"><span class="tocnumber">1.5</span> <span class="toctext">慈悲</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Tasklist"><span class="tocnumber">1.6</span> <span class="toctext">任务清单</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Statistics"><span class="tocnumber">1.7</span> <span class="toctext">统计数据</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Memory"><span class="tocnumber">1.8</span> <span class="toctext">内存</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Neural_analysis"><span class="tocnumber">1.9</span> <span class="toctext">神经分析</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Randomize"><span class="tocnumber">1.10</span> <span class="toctext">随机化</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Random_test"><span class="tocnumber">1.11</span> <span class="toctext">随机测试</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Random_review"><span class="tocnumber">1.12</span> <span class="toctext">随机审查</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Options"><span class="tocnumber">1.13</span> <span class="toctext">选项</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>的<b>工具包</b>的子菜单<a href="Main_menu.html" title="Main menu">主菜单</a>提供以下选项（假设<b><a href="File_menu.html" title="File menu">文件</a> :<a href="File_menu.html#Level" title="File menu">级别</a> ：专业</b>检查）：</p>
+<div class="mw-heading mw-heading2"><h2 id="Toolkit_menu_items">工具包菜单项</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=1" title="Edit section: Toolkit menu items"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=1" title="Edit section's source code: Toolkit menu items"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Commander">指挥官</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=2" title="Edit section: Commander"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=2" title="Edit section's source code: Commander"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a class="mw-redirect" href="Commander.html" title="Commander">指挥官</a></b>（<i>Ctrl+Enter</i>) - 选择要执行的 SuperMemo 命令</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Calendar">日历</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=3" title="Edit section: Calendar"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=3" title="Edit section's source code: Calendar"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a href="Calendar.html" title="Calendar">日历</a></b>（<i>Ctrl+W</i>) - 每日和每月的重复日历。</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Sleep_Chart">睡眠图</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=4" title="Edit section: Sleep Chart"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=4" title="Edit section's source code: Sleep Chart"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a href="Sleep_Chart.html" title="Sleep Chart">睡眠图</a></b>（<i>F12</i>) - 重复和/或睡眠障碍的记录，这将帮助您了解学习和睡眠的时间模式</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Plan">计划</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=5" title="Edit section: Plan"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=5" title="Edit section's source code: Plan"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a href="Plan.html" title="Plan">计划</a></b>（<i>Ctrl+P</i>) - 日程管理器，可通过调整您花在个人活动上的时间比例来帮助您计划时间</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Mercy">慈悲</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=6" title="Edit section: Mercy"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=6" title="Edit section's source code: Mercy"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a href="Mercy.html" title="Mercy">慈悲</a></b>（<i>Shift+Alt+M</i>) - 一个对话框，可以重新安排重复时间（例如，在假期之前或之后）。使用<b>慈悲</b>仅当您想重新分发时<a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">优秀的材料</a>在选定的时间段内。如果你无法应付材料<a href="Glossary_Overload.html" title="Glossary:Overload">过载</a>，你应该使用<b><a href="Postpone.html" title="Postpone">推迟</a></b></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Tasklist">任务清单</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=7" title="Edit section: Tasklist"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=7" title="Edit section's source code: Tasklist"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="Tasklist_manager.html" title="Tasklist manager"> <b>任务清单</b></a>（<i>F4</i>) - 任务列表管理器，用于对当前任务进行排序或编辑<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Statistics">统计数据</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=8" title="Edit section: Statistics"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=8" title="Edit section's source code: Statistics"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>统计数据</b>
+<ul><li><b><a href="Statistics.html" title="Statistics">统计数据</a></b>- 一个包含学习过程主要统计数据的窗口</li>
+<li><b><a href="Element_data.html" title="Element data">元素数据</a></b>- 一个窗口，其中包含与当前相关的统计信息<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。此窗口还显示重复统计信息<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a></li>
+<li><b><a href="Analysis.html" title="Analysis">分析</a></b>（<i>Shift+Alt+A</i>) - 一个对话框，其中包含与学习过程和学习相关的各种统计数据<a class="external text" href="https://supermemo.guru/wiki/SuperMemo_Algorithm">SuperMemo 算法</a></li>
+<li><b>模拟</b>- 一个对话框，可以使用重复期间收集的真实数据来模拟多年的学习过程（请参阅：<a class="external text" href="http://super-memory.com/articles/theory.htm">SuperMemo 的理论方面</a>）。请注意，对于较低的值<a href="Glossary_Forgetting_index.html" title="Glossary:Forgetting index">遗忘指数</a>，模拟过程可能不准确（参见：<a class="external text" href="http://super-memory.com/help/faq/algorithm.htm#Simulation_inaccurate">常见问题解答</a>）。模拟使用算法 SM-15 使用的 OF 矩阵（即它不是基于算法 SM-17）</li>
+<li><b>报告</b>- 生成一个文本文件，其中显示统计信息<a href="Statistics.html" title="Statistics"><b>统计数据</b>窗户</a></li>
+<li><b>重置数据</b>
+<ul><li><b>忘记索引记录</b>- 重置用于计算重复成绩的记录<a href="Glossary_Measured_forgetting_index.html" title="Glossary:Measured forgetting index">测量遗忘指数</a></li>
+<li><b>忘记索引与优先记录</b>- 重置记录<a href="Glossary_Forgetting_index.html" title="Glossary:Forgetting index">遗忘指数</a>针对不同优先级类别进行测量（如<b><a class="mw-selflink selflink">工具包</a> :<a class="mw-selflink-fragment" href="#Statistics">统计数据</a> :<a href="Analysis.html" title="Analysis">分析</a> :<a href="Analysis.html#Graphs" title="Analysis">图表</a> :<a href="Analysis.html#Forgetting_Index_vs._Priority" title="Analysis">遗忘索引与优先级</a></b>）</li>
+<li><b>一年级 vs A-Factor 记录</b>- 重置一年级和一年级之间的相关性记录<a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A 因素</a></li>
+<li><b>成绩与遗忘指数</b>- 重置之间的相关性<a href="Glossary_Grade.html" title="Glossary:Grade">成绩</a>和<a href="Glossary_Forgetting_index.html" title="Glossary:Forgetting index">遗忘指数</a></li>
+<li><b>平均响应时间</b>- 重置回答问题的平均时间记录<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a></li>
+<li><b>重复统计</b>- 重新计算重复计数<a class="mw-redirect" href="Workload.html" title="Workload">工作量</a>考虑自此以来已被删除的元素</li>
+<li><b>重复历史日历</b>- 重新计算各个日期元素的使用历史（可从<a class="mw-redirect" href="Workload.html" title="Workload">工作量</a>）。这些统计数据作为子集保存在<i>\历史</i>集合子文件夹</li>
+<li><b>重复历史</b>- 删除重复历史记录而不影响学习过程</li>
+<li><b>优化矩阵</b>- 重置学习过程中使用的优化矩阵（RF、OF、重复案例、遗忘曲线等）</li></ul></li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Memory">内存</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=9" title="Edit section: Memory"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=9" title="Edit section's source code: Memory"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>内存</b>
+<ul><li><b><a href="Memory_graphs_(4D).html" title="Memory graphs (4D)">4D 图表</a></b>（<i>F7</i>) - 记忆函数的视觉呈现，它们的近似值由<a class="external text" href="https://supermemo.guru/wiki/SuperMemo_Algorithm">SuperMemo 算法</a>，以及根据以下内容重置和重新计算内存数据的选项<a href="Repetition_history.html" title="Repetition history">重复历史</a></li>
+<li><b>内存状态</b>（<i>F2</i>) - 显示内存状态随时间的变化</li>
+<li><b>总知识</b>- 计算总知识的进展时间表</li>
+<li><b>导出数据</b>- 导出所有内存数据<a href="Glossary_Item.html" title="Glossary:Item">项目</a></li>
+<li><b>重新计算困难</b>- 更新元素数据中的物品难度，以便更准确的显示和浏览</li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Neural_analysis">神经分析</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=10" title="Edit section: Neural analysis"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=10" title="Edit section's source code: Neural analysis"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>神经分析</b>- 构建一个神经队列并展示激活如何在网络中传播</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Randomize">随机化</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=11" title="Edit section: Randomize"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=11" title="Edit section's source code: Randomize"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>随机化</b>
+<ul><li><b>钻</b>- 随机化<a href="Glossary_Final_drill_queue.html" title="Glossary:Final drill queue">最终演练队列</a></li>
+<li><b>待定</b>- 随机化<a href="Glossary_Pending_queue.html" title="Glossary:Pending queue">等待队列</a></li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Random_test">随机测试</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=12" title="Edit section: Random test"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=12" title="Edit section's source code: Random test"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>随机测试</b>- 在各种情况下随机重复<a href="Glossary_Element_subset.html" title="Glossary:Element subset">子集</a>当前的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>（随机重复不计入学习过程）。可以在以下测试中找到<b>随机测试</b>子菜单：<ul><li><b>恢复测试</b></li>
+<li><b>全部</b>（<i>Alt+F11</i>) - 对所有内容进行随机测试<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><b>待定</b>- 运行随机测试<a href="Glossary_Pending_element.html" title="Glossary:Pending element">待定元素</a></li>
+<li><b>已熟记</b>- 运行随机测试<a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">记忆的元素</a></li>
+<li><b>被解雇</b>- 运行随机测试<a href="Glossary_Dismissed_element.html" title="Glossary:Dismissed element">被驳回的要素</a></li>
+<li><b>主题</b>- 运行随机测试<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a></li>
+<li><b>项目</b>- 运行随机测试<a href="Glossary_Item.html" title="Glossary:Item">项目</a></li>
+<li><b>过滤器</b>- 使用<a href="Element_filter.html" title="Element filter">滤芯</a>并对过滤元素的子集运行随机测试</li>
+<li><b>水蛭</b>- 运行随机测试<a href="Glossary_Leech.html" title="Glossary:Leech">困难的元素</a></li>
+<li><b>子集</b>- 对选定的元素子集运行随机测试</li>
+<li><b>分公司</b>- 对当前选择的运行随机测试<a href="Glossary_Branch.html" title="Glossary:Branch">分行</a>在<a href="Contents.html" title="Contents"><b>内容</b>窗户</a></li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Random_review">随机审查</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=13" title="Edit section: Random review"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=13" title="Edit section's source code: Random review"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>随机审查</b>（<i>F11</i>) - 随机评审<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在当前的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Options">选项</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;veaction=edit&amp;section=14" title="Edit section: Options"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Toolkit_menu&amp;action=edit&amp;section=14" title="Edit section's source code: Options"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a href="Options.html" title="Options">选项</a></b>- 打开一个选项卡式对话框，其中包含默认界面字体等选项，<a class="external text" href="https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo#default_forgetting_index">默认遗忘指数</a>、外部驱动器上的文件路径、默认样式表、密码、声音反馈、背景图像、翻译语言等。</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610061608
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.018 seconds
+Real time usage: 0.019 seconds
+Preprocessor visited node count: 94/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:15:|#|:idhash:canonical and timestamp 20260610061608 and revision id 12420. Rendering was triggered because: page-view
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

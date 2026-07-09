@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Upgrading to Unicode — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Upgrading_to_Unicode" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Make_a_backup!"><span class="tocnumber">2</span> <span class="toctext">Make a backup!</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Conversion_to_Unicode"><span class="tocnumber">3</span> <span class="toctext">Conversion to Unicode</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#More_help_needed"><span class="tocnumber">4</span> <span class="toctext">More help needed</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading1"><h1 id="Introduction">Introduction</h1><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Upgrading_to_Unicode&amp;veaction=edit&amp;section=1" title="Edit section: Introduction"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Upgrading_to_Unicode&amp;action=edit&amp;section=1" title="Edit section's source code: Introduction"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Some very old <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> may need to be upgraded to Unicode. If you have <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> created with SuperMemo 14 (aka SuperMemo 2008) this text is for you. Otherwise, ignore the instructions below.
+</p><p>Starting with SuperMemo 15 (2011), all texts in SuperMemo are represented in Unicode. This means that all older <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> need to be upgraded to the Unicode encoding.
+</p>
+<div class="mw-heading mw-heading1"><h1 id="Make_a_backup!"><span id="Make_a_backup.21"></span>Make a backup!</h1><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Upgrading_to_Unicode&amp;veaction=edit&amp;section=2" title="Edit section: Make a backup!"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Upgrading_to_Unicode&amp;action=edit&amp;section=2" title="Edit section's source code: Make a backup!"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>SuperMemo 18 can only use collections created with SuperMemo 16 or SuperMemo 17. This is why you may need to use SuperMemo 16 Light, or SuperMemo 16 Trial to execute the upgrade to Unicode before you upgrade to SuperMemo 18 (see: <a class="external text" href="https://supermemopedia.com/wiki/Download_SuperMemo">Download SuperMemo</a>). If you are not sure, send <a class="external text" href="https://supermemopedia.com/wiki/E-mail">e-mail</a> to receive help. SuperMemo 16 is free for users of SuperMemo 17 and SuperMemo 18.
+</p><p>Before you upgrade your <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> to Unicode, back up all your learning data! This way will be able to try the upgrade procedure again in case you make wrong choices or the conversion does not bring a desired effect. While upgrading, SuperMemo will ask you if you would like to backup your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. <b>Choose yes</b> (default)! 
+</p><p>For more about backup see: <a href="Backup.html" title="Backup">Backup</a>.
+</p>
+<div class="mw-heading mw-heading1"><h1 id="Conversion_to_Unicode">Conversion to Unicode</h1><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Upgrading_to_Unicode&amp;veaction=edit&amp;section=3" title="Edit section: Conversion to Unicode"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Upgrading_to_Unicode&amp;action=edit&amp;section=3" title="Edit section's source code: Conversion to Unicode"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>As upgrading to Unicode requires some knowledge of <a class="external text" href="http://en.wikipedia.org/wiki/Locale">System Locale</a>, this page provides the ABC rules for the upgrade. 
+</p><p>When you open an old <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>, SuperMemo will automatically beging the upgrade. You will first be asked: 
+</p>
+<pre>SuperMemo 16 needs to convert old collections to Unicode. Please choose:
+
+* I use English. Go ahead with the default conversion
+* I know what code page or system locale I use in this collection
+* Please help me
+* Cancel
+</pre>
+<p>If you never use foreign languages, and your Windows uses English locale (e.g. US, UK, etc.), you can choose the first option <b>Go ahead</b>. However, if you ever created your collections using foreign non-Latin symbols (e.g. Russian, Hebrew, Japanese, Arabic, Chinese, etc.), you will need to tell SuperMemo which <a class="external text" href="http://en.wikipedia.org/wiki/Code_page">code page</a> you want to use for the conversion. If you choose <b>I know what code page or system locale I use in this collection</b>, SuperMemo will help you pick the code page with the following dialog: 
+</p>
+<pre>Choose a code page for conversion to Unicode:
+
+English (old SuperMemos)
+1250 — Central and East European Latin
+1251 — Cyrillic
+1252 — West European Latin
+1253 — Greek
+1254 — Turkish
+1255 — Hebrew
+1256 — Arabic
+1257 — Baltic
+1258 — Vietnamese
+874 — Thai
+932 — Japanese
+936 — Simplified Chinese
+949 — Korean
+950 — Traditional Chinese
+Other
+Cancel
+</pre>
+<p>If your code page is not listed here, choose <b>Other</b>, see <a class="external text" href="http://msdn.microsoft.com/en-us/goglobal/bb964653.aspx">Microsoft documentation</a> and input the correct code page number.
+</p>
+<div class="mw-heading mw-heading1"><h1 id="More_help_needed">More help needed</h1><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Upgrading_to_Unicode&amp;veaction=edit&amp;section=4" title="Edit section: More help needed"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Upgrading_to_Unicode&amp;action=edit&amp;section=4" title="Edit section's source code: More help needed"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If you choose <b>Please help</b> in the Unicode upgrade dialog, you will get a list of hints that will help you make a conversion: 
+</p>
+<pre>Please choose the point you are most certain about:
+
+* I use English in English Windows and with an English locale (e.g. US, UK, etc.)
+* I do not use plain text components, I only use rich formatting (RTF or HTML)
+* I only use incremental reading and I import my texts from my web browser
+* I purchased this collection from SuperMemo World
+* I created my plain text elements using a non-English system locale, which I know
+* I know which code page my collection needs for the upgrade
+* I create my collections myself in non-English Windows and/or with non-English locale
+* My collection uses a mix of different languages that each requires a different code page
+* I have no idea what you are talking about. Please help me
+* I do not know, but I want to risk a default upgrade with English defaults
+* I want to receive personal help via e-mail
+* Cancel
+</pre>
+<p><b>Important!</b>. Several points on this list may hold true for you. Choose the one that you think is closest or which you are most certain of. If the above list does not help, you can always get in touch via e-mail and receive personal help. 
+</p><p>Here is the interpretation of the individual options: 
+</p>
+<ul><li><b>I use English in English Windows and with an English locale (e.g. US, UK, etc.):</b> SuperMemo will proceed with the default upgrade using 1252 — West European Latin code page</li>
+<li><b>I do not use plain text components, I only use rich formatting (RTF or HTML):</b> Only plain text components and titles are affected by the conversion. If you use rich text components, you do not need to care how SuperMemo names registry members. If you ever see incorrect titles in SuperMemo, you can auto-correct each time you make edits to your elements</li>
+<li><b>I only use incremental reading and I import my texts from my web browser:</b> Incremental reading relies on HTML and is unaffected (as in the previous point).</li>
+<li><b>I purchased this collection from SuperMemo World:</b> Choose this option if you purchased this collection from super-memo.com</li>
+<li><b>I created my plain text elements using a non-English system locale, which I know:</b> Use this option if you know the system locale (or the code page) in which you developed your collection (if you used different locales, only locales that were used to create plain text components matter</li>
+<li><b>I know which code page my collection needs for the upgrade:</b> Use this option if you know the exact code page number needed for the upgrade</li>
+<li><b>I create my collections myself in non-English Windows and/or with non-English locale:</b> Use this option if you use non-English Windows and/or non-English locale. Remember that if you used different Windows or locale settings, this qualifies as a "mixed collection" and you should choose: <b>My collection uses a mix of different languages that each requires a different code page:</b></li>
+<li><b>My collection uses a mix of different languages that each requires a different code page:</b> If you mixed many languages, different fonts, different code pages, different locale settings, etc. the upgrade may not be straightfoward. You would do best by choosing this option to get personal assistance in converting your collection.</li>
+<li><b>I have no idea what you are talking about. Please help me:</b> This choice will open the present web page. If this is still not enough, please ask your questions by editing his page or choose <b>I want to receive personal help via e-mail</b> next time the upgrade help dialog shows up again</li>
+<li><b>I do not know, but I want to risk a default upgrade with English defaults:</b> Choose this option if you do not want to waste any more time and you prefer to risk the default upgrade and see how it works out for you. Be sure that you have already made a backup of your collection. Without a backup, you will not be able to reverse the changes!</li>
+<li><b>I want to receive personal help via e-mail:</b> Use this option if you want to get in touch via e-mail and receive personal assistance</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111324
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.022 seconds
+Real time usage: 0.022 seconds
+Preprocessor visited node count: 31/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 1479/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:405:|#|:idhash:canonical and timestamp 20260610111324 and revision id 10846. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">简介</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Make_a_backup!"><span class="tocnumber">2</span> <span class="toctext">做好备份！</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Conversion_to_Unicode"><span class="tocnumber">3</span> <span class="toctext">转换为统一码</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#More_help_needed"><span class="tocnumber">4</span> <span class="toctext">需要更多帮助</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading1"><h1 id="Introduction">简介</h1><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Upgrading_to_Unicode&amp;veaction=edit&amp;section=1" title="Edit section: Introduction"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Upgrading_to_Unicode&amp;action=edit&amp;section=1" title="Edit section's source code: Introduction"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>有些很旧<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>可能需要升级到 Unicode。如果你有<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>使用 SuperMemo 14（又名 SuperMemo 2008）创建此文本适合您。否则，请忽略以下说明。</p><p>从 SuperMemo 15 (2011) 开始，SuperMemo 中的所有文本均以 Unicode 表示。这意味着所有年龄较大的人<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>需要升级为Unicode编码。</p>
+<div class="mw-heading mw-heading1"><h1 id="Make_a_backup!"><span id="Make_a_backup.21"></span>做好备份！</h1><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Upgrading_to_Unicode&amp;veaction=edit&amp;section=2" title="Edit section: Make a backup!"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Upgrading_to_Unicode&amp;action=edit&amp;section=2" title="Edit section's source code: Make a backup!"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>SuperMemo 18 只能使用使用 SuperMemo 16 或 SuperMemo 17 创建的集合。这就是为什么您可能需要在升级到 SuperMemo 18 之前使用 SuperMemo 16 Light 或 SuperMemo 16 Trial 来执行到 Unicode 的升级（请参阅：<a class="external text" href="https://supermemopedia.com/wiki/Download_SuperMemo">下载 SuperMemo</a>）。如果您不确定，请发送<a class="external text" href="https://supermemopedia.com/wiki/E-mail">电子邮件</a>获得帮助。 SuperMemo 16 对 SuperMemo 17 和 SuperMemo 18 的用户免费。</p><p>在升级之前<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>转换为 Unicode，备份您的所有学习数据！这样，如果您做出错误的选择或转换没有带来预期的效果，就可以再次尝试升级过程。升级时，SuperMemo 会询问您是否要备份您的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。<b>选择是</b>（默认）！</p><p>有关备份的更多信息，请参阅：<a href="Backup.html" title="Backup">备份</a>。</p>
+<div class="mw-heading mw-heading1"><h1 id="Conversion_to_Unicode">转换为统一码</h1><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Upgrading_to_Unicode&amp;veaction=edit&amp;section=3" title="Edit section: Conversion to Unicode"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Upgrading_to_Unicode&amp;action=edit&amp;section=3" title="Edit section's source code: Conversion to Unicode"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>由于升级到 Unicode 需要一些知识<a class="external text" href="http://en.wikipedia.org/wiki/Locale">系统区域设置</a>，此页面提供了升级的 ABC 规则。</p><p>当你打开旧的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>，SuperMemo 将自动开始升级。您首先会被问到：</p>
+<pre>SuperMemo 16 needs to convert old collections to Unicode. Please choose:
+
+* I use English. Go ahead with the default conversion
+* I know what code page or system locale I use in this collection
+* Please help me
+* Cancel
+</pre>
+<p>如果您从不使用外语，并且您的 Windows 使用英语区域设置（例如美国、英国等），您可以选择第一个选项<b>继续吧</b>。但是，如果您曾经使用外国非拉丁符号（例如俄语、希伯来语、日语、阿拉伯语、中文等）创建集合，则需要告诉 SuperMemo 哪些符号<a class="external text" href="http://en.wikipedia.org/wiki/Code_page">代码页</a>您想用于转换。如果你选择<b>我知道我在此集合中使用的代码页或系统区域设置</b>，SuperMemo 将通过以下对话框帮助您选择代码页：</p>
+<pre>Choose a code page for conversion to Unicode:
+
+English (old SuperMemos)
+1250 — Central and East European Latin
+1251 — Cyrillic
+1252 — West European Latin
+1253 — Greek
+1254 — Turkish
+1255 — Hebrew
+1256 — Arabic
+1257 — Baltic
+1258 — Vietnamese
+874 — Thai
+932 — Japanese
+936 — Simplified Chinese
+949 — Korean
+950 — Traditional Chinese
+Other
+Cancel
+</pre>
+<p>如果此处未列出您的代码页，请选择<b>其他</b>，参见<a class="external text" href="http://msdn.microsoft.com/en-us/goglobal/bb964653.aspx">微软文档</a>并输入正确的代码页号。</p>
+<div class="mw-heading mw-heading1"><h1 id="More_help_needed">需要更多帮助</h1><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Upgrading_to_Unicode&amp;veaction=edit&amp;section=4" title="Edit section: More help needed"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Upgrading_to_Unicode&amp;action=edit&amp;section=4" title="Edit section's source code: More help needed"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果你选择<b>请帮忙</b>在 Unicode 升级对话框中，您将获得一个提示列表，可帮助您进行转换：</p>
+<pre>Please choose the point you are most certain about:
+
+* I use English in English Windows and with an English locale (e.g. US, UK, etc.)
+* I do not use plain text components, I only use rich formatting (RTF or HTML)
+* I only use incremental reading and I import my texts from my web browser
+* I purchased this collection from SuperMemo World
+* I created my plain text elements using a non-English system locale, which I know
+* I know which code page my collection needs for the upgrade
+* I create my collections myself in non-English Windows and/or with non-English locale
+* My collection uses a mix of different languages that each requires a different code page
+* I have no idea what you are talking about. Please help me
+* I do not know, but I want to risk a default upgrade with English defaults
+* I want to receive personal help via e-mail
+* Cancel
+</pre>
+<p><b>重要！</b>。此列表中的几点可能适合您。选择您认为最接近或最确定的一项。如果上面的列表没有帮助，您可以随时通过电子邮件联系并获得个人帮助。</p><p>以下是各个选项的解释：</p>
+<ul><li><b>我在英语 Windows 和英语区域设置（例如美国、英国等）中使用英语：</b>SuperMemo 将使用 1252（西欧拉丁代码页）继续进行默认升级</li>
+<li><b>我不使用纯文本组件，我只使用丰富的格式（RTF 或 HTML）：</b>只有纯文本组件和标题会受到转换的影响。如果您使用富文本组件，则无需关心 SuperMemo 如何命名注册表成员。如果您在 SuperMemo 中看到不正确的标题，您可以在每次编辑元素时自动更正</li>
+<li><b>我只使用增量阅读，并从网络浏览器导入文本：</b>增量阅读依赖于 HTML 并且不受影响（如上一点）。</li>
+<li><b>我从 SuperMemo World 购买了这个系列：</b>如果您从 super-memo.com 购买了该系列，请选择此选项</li>
+<li><b>我使用非英语系统语言环境创建了纯文本元素，我知道：</b>如果您知道开发集合的系统区域设置（或代码页），请使用此选项（如果您使用不同的区域设置，则只有用于创建纯文本组件的区域设置才重要）</li>
+<li><b>我知道我的集合需要哪个代码页来升级：</b>如果您知道升级所需的确切代码页号，请使用此选项</li>
+<li><b>我自己在非英语 Windows 和/或非英语语言环境中创建我的集合：</b>如果您使用非英语 Windows 和/或非英语区域设置，请使用此选项。请记住，如果您使用不同的 Windows 或区域设置，则这符合“混合集合”，您应该选择：<b>我的集合混合使用了不同的语言，每种语言都需要不同的代码页：</b></li>
+<li><b>我的集合混合使用了不同的语言，每种语言都需要不同的代码页：</b>如果您混合了多种语言、不同的字体、不同的代码页、不同的区域设置等，升级可能不会那么简单。您最好选择此选项，以获得转换您的收藏的个人帮助。</li>
+<li><b>我不知道你在说什么。请帮助我：</b>该选择将打开当前网页。如果这还不够，请通过编辑他的页面来提问或选择<b>我想通过电子邮件获得个人帮助</b>下次再次出现升级帮助对话框时</li>
+<li><b>我不知道，但我想冒险使用英语默认值进行默认升级：</b>如果您不想再浪费时间并且愿意冒险进行默认升级并看看它对您有何效果，请选择此选项。确保您已经对收藏进行了备份。如果没有备份，您将无法撤消更改！</li>
+<li><b>我想通过电子邮件获得个人帮助：</b>如果您想通过电子邮件联系并获得个人帮助，请使用此选项</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111324
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.022 seconds
+Real time usage: 0.022 seconds
+Preprocessor visited node count: 31/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 1479/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:405:|#|:idhash:canonical and timestamp 20260610111324 and revision id 10846. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

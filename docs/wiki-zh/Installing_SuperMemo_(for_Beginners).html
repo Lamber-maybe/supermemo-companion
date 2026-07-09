@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Installing SuperMemo (for Beginners) — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Installing_SuperMemo_(for_Beginners)" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Installation_in_seconds"><span class="tocnumber">1</span> <span class="toctext">Installation in seconds</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Uninstallation_in_seconds"><span class="tocnumber">2</span> <span class="toctext">Uninstallation in seconds</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Installing_SuperMemo_for_Beginners"><span class="tocnumber">3</span> <span class="toctext">Installing SuperMemo for Beginners</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Installing_SuperMemo_20"><span class="tocnumber">4</span> <span class="toctext"><span>Installing SuperMemo</span> 20</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Providing_password"><span class="tocnumber">5</span> <span class="toctext">Providing password</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Installing_SuperMemo_20_over_earlier_installations"><span class="tocnumber">6</span> <span class="toctext"><span>Installing SuperMemo 20 over</span> earlier installations</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Installing_SuperMemo_20_on_a_computer_without_the_Internet"><span class="tocnumber">7</span> <span class="toctext">Installing SuperMemo 20 on a computer without the Internet</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Updating_SuperMemo_20_to_the_latest_release_build"><span class="tocnumber">8</span> <span class="toctext"><span>Updating SuperMemo 20</span> to the latest release build</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Where_is_my_SuperMemo?"><span class="tocnumber">9</span> <span class="toctext"><span>Where is my SuperMemo?</span></span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#FAQ"><span class="tocnumber">10</span> <span class="toctext">FAQ</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#You_need_to_close_SuperMemo_before_continuing_with_the_setup"><span class="tocnumber">10.1</span> <span class="toctext">You need to close SuperMemo before continuing with the setup</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#During_Update_you_can_check_for_the_latest_version_of_SuperMemo_and_change_your_current_SuperMemo_installation"><span class="tocnumber">10.2</span> <span class="toctext">During Update you can check for the latest version of SuperMemo and change your current SuperMemo installation</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#You_can_use_F1_to_access_on-line_help"><span class="tocnumber">10.3</span> <span class="toctext">You can use F1 to access on-line help</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#It_is_not_enough_if_you_just_copy_the_font,_you_need_to_install_it"><span class="tocnumber">10.4</span> <span class="toctext">It is not enough if you just copy the font, you need to install it</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#SuperMemo_Uninstall_Wizard_does_not_remove_all_folders/files"><span class="tocnumber">10.5</span> <span class="toctext">SuperMemo Uninstall Wizard does not remove all folders/files</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#SuperMemo_help_file_may_appear_empty_if_active_content_is_blocked"><span class="tocnumber">10.6</span> <span class="toctext">SuperMemo help file may appear empty if active content is blocked</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Installation_in_seconds">Installation in seconds</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=1" title="Edit section: Installation in seconds"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=1" title="Edit section's source code: Installation in seconds"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><i><b>Important!</b></i> You can install SuperMemo in seconds by simply running the downloaded file <i>sm20inst.exe</i>. 
+</p><p>Skip reading the rest of this text. It was written for those who are less experienced with computers!
+</p><p>Newer Windows may issue warnings like "this application can harm your computer" or "Unknown Publisher". If you are sure you downloaded from supermemo.org, or super-memo.com, or super-memory.com, or immediately after ordering, you can ignore that message.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Uninstallation_in_seconds">Uninstallation in seconds</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=2" title="Edit section: Uninstallation in seconds"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=2" title="Edit section's source code: Uninstallation in seconds"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>You can uninstall SuperMemo (without removing your learning material) in seconds if you follow these steps:
+</p>
+<ol><li>Run <b>Control Panel</b></li>
+<li>In the <b>Control Panel</b> window, choose <b>Uninstall program</b> (in older Windows <b>Uninstall or change a program</b>)</li>
+<li>In the <b>Uninstall or change a program</b> window, scroll down to <i>SuperMemo</i>, and choose <b>Uninstall</b></li></ol>
+<p>If you cannot find <i>SuperMemo</i> entry in Control Panel, use <i>sm20unin.exe</i> located in the <i>[SuperMemo]</i> folder (e.g. <i>C:\Program Files\SuperMemo\sm20unin.exe</i> (Computer administrator) or <i>C:\SuperMemo\sm20unin.exe</i> (Limited account) by default)
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Installing_SuperMemo_for_Beginners">Installing SuperMemo for Beginners</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=3" title="Edit section: Installing SuperMemo for Beginners"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=3" title="Edit section's source code: Installing SuperMemo for Beginners"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If you already know the basics of using Windows such as copying files, creating directories, etc. you can skip blue insert boxes
+</p><p>Depending on the source of your SuperMemo, you will obtain it in one of the three basic forms:
+</p>
+<ul><li><i>sm20inst.exe</i> - install wizard will download all necessary installation components and install, upgrade or update SuperMemo (depending on your current installation and configuration)</li>
+<li><i>sm20zip.exe</i> - self-extracting SuperMemo (once you run it, it will extract its files to the folder in which it is placed, e.g. <i>C:\sm20</i>)</li>
+<li><i>sm20.zip</i> - zipped stand-alone SuperMemo (<i>sm20.exe</i>)</li></ul>
+<p>This text describes the following procedures:
+</p>
+<ol><li><a href="#Installing_SuperMemo"> Installing SuperMemo</a></li>
+<li><a href="#Providing_password"> Providing the password</a></li>
+<li><a href="#Installing_collections"> Installing collections downloaded from SuperMemo Library</a> (including Palm and Windows CE)</li>
+<li><a href="#Over_SM8"> Installing SuperMemo 20 over SuperMemo 8, SuperMemo 98/99 or SuperMemo 2000/2002/2004/2006/2008/15/16/17/18</a></li>
+<li><a href="#Over_SM8"> Installing SuperMemo 20 over Advanced English</a></li>
+<li><a href="#upd_sm"> Updating SuperMemo 20 to the latest release build</a></li>
+<li><a href="#Where"> Where is my SuperMemo?</a></li></ol>
+<p>See also: <a href="#FAQ"> Frequently asked questions</a>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Installing_SuperMemo_20"><span id="Installing_SuperMemo">Installing SuperMemo</span> 20</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=4" title="Edit section: Installing SuperMemo 20"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=4" title="Edit section's source code: Installing SuperMemo 20"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ol>
+<li>Order and download SuperMemo 20 from <a class="external text" href="https://supermemo.store">SuperMemo Store</a></li>
+<div class="inset" style="background-color: #0FF"> This is how you can download SuperMemo 20:
+<ol><li>Go to the <a class="external text" href="https://supermemo.store">SuperMemo Store</a> home page</li>
+<li>Click <b>Add to cart</b> corresponding to <i>SuperMemo 20 for Windows</i> (this will add SuperMemo 20 to your shopping cart)</li>
+<li>Click <b>Check out</b></li>
+<li>Click the large <b>PayPal</b> button at the <i>Express checkout</i> section at the top of the page. This will open a PayPal pop-up box which you will use to log into your PayPal account. Once you are in, review the displayed information, and click the <b>Continue to Review Order</b> at the bottom of the pop-up window. This will redirect you to the Payment page back in <a class="external text" href="https://supermemo.store">SuperMemo Store</a></li>
+<li>Click <b>Pay now</b></li>
+<li>Once your order has been processed and you file(s) prepared, click <b>Download Now</b> under SuperMemo 20</li>
+<li>In the <b>Save As</b> dialog box, in the Navigation pane along the left side of the dialog box, click the <b>Desktop</b> button, then click <b>Save</b> to download SuperMemo 20 Install Wizard (i.e. <i>sm20inst.exe</i>) onto the desktop. Install Wizard is a program that does the entire installation for you</li></ol>
+</div>
+<li>Run the downloaded file <i>sm20inst.exe</i> by double-clicking its icon on your desktop. It will open SuperMemo 20 Install Wizard which will guide you through the setup. <b>Important!</b> Newer Windows might ask if you trust the <i>"Unknown Publisher"</i>. If you download directly from SuperMemo site or immediately after ordering, you can ignore that message and continue the installation.</li>
+<div class="inset" style="background-color: #00FFFF"> These are the steps you will go through:
+<ol><li>In the 1st step, you are greeted with the SuperMemo 20 Install Wizard Welcome page. The page recommends that you close all other programs before continuing with the setup. This is to ensure no conflict during the installation occurs. You can close all other running programs in one of the following ways (choose the one you feel most comfortable with):
+<ul><li>Click the taskbar button corresponding to the program you want to close (this will switch you to the program window) and then click the <b>Close</b> button in the upper-right corner of the window</li>
+<li>Right-click the taskbar button corresponding to the program you want to close and then click the <b>Close</b> item from the context menu that appears</li>
+<li>Press the <i>Alt+Tab</i> shortcut key to switch to the next open program and then <i>Alt+F4</i> to close it. Once you close all other running programs, click the <b>Next</b> button to go forward to the next step</li></ul></li>
+<li>In the 2nd step, you can choose the folder you want to install SuperMemo 20 and all its components to. By default, the install wizard suggests <i>C:\Program Files\SuperMemo</i> if you are running with a Computer administrator account or <i>C:\SuperMemo</i> if you are running with a Limited account. In case the <b>Install to...</b> folder does not exist on your computer, the install wizard will create it.<br/> If you want to choose a different <b>Install to...</b> folder, click the <b>Browse...</b> button to the right. In the <b>Browse for Folder</b> dialog box, select the new folder and click <b>OK</b>. If you want to create a new folder that does not exist yet, click the <b>Make New Folder</b> button in the bottom-left corner.<br/> Once you choose the <b>Install to...</b> folder, click the <b>Next</b> button to go forward to the next step</li>
+<li>In the 3rd step, you can choose the Start menu folder you want to create SuperMemo 20 shortcuts in. By default, the install wizard suggests the folder named <i>SuperMemo</i>. You can rename it however you like it. In case the Start menu folder does not exist on your computer, the install wizard will create it.<br/> If you want to create the Start menu folder as a subfolder of the folder that already exists, click the folder in the list.<br/> In case you do not want to create the Start menu folder (if you rarely or never use it), select the <b>Do not create the Start menu folder</b> checkbox at the bottom of the window.<br/> Once you choose the Start menu folder or select you do not want it, click the <b>Next</b> button to go forward to the next step</li>
+<li>In the 4th step, you can select the additional tasks you want SuperMemo 20 Install Wizard to perform during the setup. These following tasks are available:
+<ul><li><b>Icons</b>
+<ul><li><b>Add desktop icon</b> - select this checkbox (it is checked by default) if you want SuperMemo 20 Install Wizard to put the <i>SuperMemo</i> shortcut onto the desktop</li>
+<li><b>Add Quick Launch bar icon</b> - select this checkbox if you want the install wizard to add the <i>SuperMemo</i> shortcut to the Quick Launch bar located next to the <b>Start</b> button on the taskbar</li></ul></li></ul></li></ol>
+<p>Once you select the additional task(s) you want SuperMemo 20 Install Wizard to perform, click the <b>Next</b> button to go forward to next step. In the next step, the install wizard downloads and installs SuperMemo 20 on your computer. As this step rarely involves any interaction with you, this description skips it.
+</p>
+<ol><li>In the last 5th step, SuperMemo 20 Install Wizard reports to you that the setup has been completed successfully. At this stage, you can yet instruct it to do one of the following two actions:
+<ul><li><b>Run SuperMemo 20</b> - select this checkbox (it is checked by default) if you want to run SuperMemo 20 after you press the <b>Finish</b> button at the very end of the installation process. Alternatively, you can run it by double-clicking its icon on the desktop, in the Quick Launch bar, etc. (whichever you have decided to add during the setup)</li>
+<li><b>Open containing folder</b> - select this checkbox if you want to open a Windows Explorer window displaying the folder which SuperMemo 20 and all its components have been installed in after you press the <b>Finish</b> button at the very end of the installation process</li></ul></li></ol>
+</div>
+<li>Send your <a href="Registration.html" title="Registration">registration</a> to <a href="Unlock_SuperMemo.html" title="Unlock SuperMemo">unlock SuperMemo</a></li>
+<li>Read <a href="Introduction.html" title="Introduction"> ABC of SuperMemo</a> to start your speed-learning adventure</li>
+<li>Within one business day of registering, we will send you instructions on how to input the password (see: <a href="Unlock_SuperMemo.html" title="Unlock SuperMemo">Unlock SuperMemo</a>). Read below about <a href="#Providing_password"> providing the password</a></li>
+<li>If you have any doubts about any of the steps of the installation procedure, please do not hesitate to <a href="E-mail.html" title="E-mail">write</a>. Even if you are a computer novice, you should not be shy of asking questions. By understanding your problems we can better support other users in the future</li>
+</ol>
+<div class="mw-heading mw-heading2"><h2 id="Providing_password">Providing password</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=5" title="Edit section: Providing password"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=5" title="Edit section's source code: Providing password"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>SuperMemo 20 is protected with an unlock password. Without the password, it can only run for a limited period of time. After you submit your <a href="Registration.html" title="Registration">registration</a>, you will receive the unlock password within a business day. For more see: <a href="Unlock_SuperMemo.html" title="Unlock SuperMemo">Unlock SuperMemo</a>.
+</p><p><b>Important!</b> You should not be afraid of losing the password. Once you input it in SuperMemo, you are not likely to ever need it again. If you ever see the red bar again, it is enough to open any of your previously used <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> to restore the program to full functionality. If you lose the password and all your <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a>, you can always get the password <a class="external text" href="https://supermemopedia.com/wiki/E-mail">back from us</a>.
+</p><p>You should input the password using <b><a href="File_menu.html" title="File menu"> File</a> : <a href="File_menu.html#Installation" title="File menu">Installation</a> : Input password</b>. Alternatively, you can just continue using SuperMemo and it will at some point ask you to input the password. If the option <b>Input password</b> is grayed, your SuperMemo has been already unlocked (no action necessary).
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Installing_SuperMemo_20_over_earlier_installations"><span id="Over_SM8">Installing SuperMemo 20 over</span> earlier installations</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=6" title="Edit section: Installing SuperMemo 20 over earlier installations"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=6" title="Edit section's source code: Installing SuperMemo 20 over earlier installations"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>This is how you can install SuperMemo 20 over SuperMemo 8, SuperMemo 98/99 or SuperMemo 2000/2002/2004/2006/2008/15/17/18 (either downloaded from the Internet or installed from SuperMemo CD-ROMs/DVDs such as <a class="external text" href="http://super-memory.com/english/ae.htm">Advanced English</a>, <a class="external text" href="http://super-memory.com/english/megamix.htm">MegaMix</a>, etc.): 
+</p>
+<ol><li>Download SuperMemo 20 from <a class="external text" href="https://supermemo.store">SuperMemo Store</a> and save the downloaded file on your disk</li>
+<li>Run the file <i>sm20inst.exe</i> (e.g. by double-clicking its icon in Windows Explorer). Once you run it, it will detect the existing SuperMemo installations and offer you the choice to upgrade (<b>Upgrade</b>) or install SuperMemo 20 in a new folder (<b>Clean install</b>). You should avoid using older versions of SuperMemo along with SuperMemo 20 therefore it is recommended you choose <b>Upgrade</b> to avoid compatibility issues.</li>
+<li>If your previous SuperMemo for Windows was not SuperMemo 16, you will need to upgrade your <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> to the SuperMemo 16 format first. Only <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> in the SuperMemo 16 format are upgradeable to SuperMemo 20. This is an automatic process. Only the windows layout may change slightly. You can adjust the layout and save it with <i>Ctrl+Shift+F5</i></li>
+<li>Once you open your <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> in the SuperMemo 16 format in SuperMemo 20, they will be upgraded automatically.</li>
+<li>Within one business day of ordering SuperMemo, we will contact you with instructions on how to obtain and input the unlock password needed to continue your work with SuperMemo. Read above about <a href="#Providing_password">providing the password</a></li></ol>
+<div class="mw-heading mw-heading2"><h2 id="Installing_SuperMemo_20_on_a_computer_without_the_Internet">Installing SuperMemo 20 on a computer without the Internet</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=7" title="Edit section: Installing SuperMemo 20 on a computer without the Internet"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=7" title="Edit section's source code: Installing SuperMemo 20 on a computer without the Internet"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>You can install SuperMemo 20 on a computer that is not connected to the net (<b>Standalone PC</b>). However, you will, naturally, need a net-connected PC to download SuperMemo in the first place (<b>Connected PC</b>). You will need a flashdrive, DVD-R, removable hard disk, or any other device (<b>Storage device</b>) to move SuperMemo between the computers.
+</p><p>Follow these steps:
+</p>
+<ol><li>Download and install SuperMemo 20 on a <b>Connected PC</b></li>
+<li>Copy the entire SuperMemo folder onto a <b>Storage device</b> (e.g. copy <i>c:\SuperMemo\</i> and all its subfolders onto a flashdrive)</li>
+<li>Move the <b>Storage device</b> from <b>Connected PC</b> to <b>Standalone PC</b></li>
+<li>Copy SuperMemo folder from the <b>Storage device</b> to <b>Standalone PC</b></li>
+<li>Run SuperMemo (e.g. double-click the file <i>sm20.exe</i> located in the SuperMemo folder)</li>
+<li>Register SuperMemo (see: <a href="Unlock_SuperMemo.html" title="Unlock SuperMemo">Unlock SuperMemo</a>). You can send your registration file from any location</li></ol>
+<p>Note that:
+</p>
+<ul><li>you only need 12.5 MB free on the <b>Storage device</b> to move SuperMemo</li>
+<li>it is recommended that you run SuperMemo <b>As Administrator</b> at least once for it to access the Windows registry and complete the installation</li>
+<li>if you are not sure how to create a shortcut to SuperMemo from you Windows desktop or Start menu, use <b><a href="File_menu.html" title="File menu"> File</a> : <a href="File_menu.html#Installation" title="File menu"> Installation</a> : Install icons</b> (you need to <b>Run as Administrator</b>) for this to work</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Updating_SuperMemo_20_to_the_latest_release_build"><span id="upd_sm">Updating SuperMemo 20</span> to the latest release build</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=8" title="Edit section: Updating SuperMemo 20 to the latest release build"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=8" title="Edit section's source code: Updating SuperMemo 20 to the latest release build"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Run the file <i>sm20inst.exe</i>. It is stored in the <i>[SETUP]</i> subfolder located in the SuperMemo folder (by default, <i>C:\Program Files\SuperMemo\setup\sm20inst.exe</i> if you are running with a Computer administrator account or <i>C:\SuperMemo\setup\sm20inst.exe</i> if you are running with a Limited account). Once you run it, it will detect your current SuperMemo 20 installation and suggest that you update it. If you choose to do so, it will then compare SuperMemo 20 on your computer with the latest available on our server. In case a newer version is available, it will download it and replace the currently installed version with it.
+</p><p>Even if there is no newer version available, the install wizard will allow you to modify your current configuration (e.g. remove or add shortcuts, etc.)
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Where_is_my_SuperMemo?"><span id="Where_is_my_SuperMemo.3F"></span><span id="Where">Where is my SuperMemo?</span></h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=9" title="Edit section: Where is my SuperMemo?"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=9" title="Edit section's source code: Where is my SuperMemo?"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="inset" style="background-color: #00ffff">
+<p>If you are not sure where SuperMemo on your computer is, you can always locate it using Windows: 
+</p>
+<ol><li>Press the <b>Windows logo</b> button</li>
+<li>type in the name of the file using the following selection:
+<ul><li><i>sm20.exe</i> - if you are looking for SuperMemo 20 (remember not to put spaces before or after the dot)</li>
+<li><i>sm18.exe</i> - if you are looking for SuperMemo 18</li>
+<li><i>sm17.exe</i> - if you are looking for SuperMemo 17</li>
+<li><i>sm16.exe</i> - if you are looking for SuperMemo 16</li>
+<li><i>sm15.exe</i> - if you are looking for SuperMemo 15</li>
+<li><i>sm2008.exe</i> - if you are looking for SuperMemo 2008</li>
+<li><i>sm2006.exe</i> - if you are looking for SuperMemo 2006</li>
+<li><i>sm2004.exe</i> - if you are looking for SuperMemo 2004</li>
+<li><i>sm2002.exe</i> - if you are looking for SuperMemo 2002</li>
+<li><i>sm2000.exe</i> - if you are looking for SuperMemo 2000</li>
+<li><i>sm99.exe</i> - if you are looking for SuperMemo 99</li>
+<li><i>sm98.exe</i> - if you are looking for SuperMemo 98</li>
+<li><i>sm8.exe</i> - if you are looking for SuperMemo 8</li>
+<li><i>sm20inst.exe</i> - if you are looking for SuperMemo 20 Install Wizard</li>
+<li><i>sm18inst.exe</i> - if you are looking for SuperMemo 18 Install Wizard</li>
+<li><i>sm17inst.exe</i> - if you are looking for SuperMemo 17 Install Wizard</li>
+<li><i>sm16inst.exe</i> - if you are looking for SuperMemo 16 Install Wizard</li>
+<li><i>sm15inst.exe</i> - if you are looking for SuperMemo 15 Install Wizard</li>
+<li><i>sm08inst.exe</i> - if you are looking for SuperMemo 2008 Install Wizard</li>
+<li><i>sm06inst.exe</i> - if you are looking for SuperMemo 2006 Install Wizard</li>
+<li><i>sm04inst.exe</i> - if you are looking for SuperMemo 2004 Install Wizard</li>
+<li><i>sm17abc.zip</i> - if you want to locate SuperMemo 16 installation file (installation file is a zip archive containing SuperMemo and its files that can be installed manually without the use of the Install Wizard; you receive this file only if you have problems with the Install Wizard or if you cannot access to the Internet)</li>
+<li><i>sm16abc.zip</i> - if you want to locate SuperMemo 16 installation file</li>
+<li><i>sm15abc.zip</i> - if you want to locate SuperMemo 15 installation file</li>
+<li><i>sm2008abc.zip</i> - if you want to locate SuperMemo 2008 installation file</li>
+<li><i>sm2006abc.zip</i> - if you want to locate SuperMemo 2006 installation file</li>
+<li><i>sm2004abc.zip</i> - if you want to locate SuperMemo 2004 installation file</li>
+<li><i>sm2002zip.exe</i> - if you want to locate SuperMemo 2002 self-extracting installation file (self-extracting installation file is an archive that contains SuperMemo and its files that can be installed manually; you receive this file only upon request)</li>
+<li><i>sm2000zip.exe</i> - if you want to locate SuperMemo 2000 self-extracting installation file</li>
+<li><i>sm99zip.exe</i> - if you want to locate SuperMemo 99 self-extracting installation file</li>
+<li><i>smhelp.chm</i> - if you are looking for <a class="external text" href="http://supermemo.com/english/helpdown.htm">SuperMemo Help</a></li>
+<li><i>sm*.exe</i> - if you are looking for SuperMemo downloaded from the Internet and you do not remember exactly what files you have downloaded (see the file date stamping to figure out which has just been downloaded)</li></ul></li>
+<li>All locations of the searched file will be displayed in the column <b>In Folder</b></li>
+<li>You can double-click files located in the column <b>Name</b> to run them. You can also hold down the <i>Alt</i> key and drag them to the desktop to create new icons. For example, if you hold down the <i>Alt</i> key and drag the file named <i>sm20</i>, you will create a new SuperMemo 20 shortcut on the desktop</li>
+<li>If you have problems locating SuperMemo, remember that you might have renamed its original file (e.g. when replacing an earlier version)</li></ol>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="FAQ">FAQ</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=10" title="Edit section: FAQ"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=10" title="Edit section's source code: FAQ"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="You_need_to_close_SuperMemo_before_continuing_with_the_setup">You need to close SuperMemo before continuing with the setup</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=11" title="Edit section: You need to close SuperMemo before continuing with the setup"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=11" title="Edit section's source code: You need to close SuperMemo before continuing with the setup"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><i>Monika, Poland, 2006 asked:</i>
+</p><p><b>Question</b>
+</p><p>I have just tried to install SuperMemo but I received the following message:
+</p>
+<pre><i>You cannot install SuperMemo while it is running.</i>
+
+<i>Close SuperMemo first.</i>
+</pre>
+<p>After I press <b>OK</b>, SuperMemo Install Wizard closes.
+</p><p><b>Answer</b>
+</p><p>Yes, this is the correct behavior. When SuperMemo Install Wizard starts up it checks if SuperMemo is running in the background, and if it does it prompts you to close it before continuing with the setup. This is to prevent any conflicts during the installation process (e.g. when renaming older SuperMemos at <b>Upgrade</b> or overwriting older SuperMemo release builds at <b>Update</b>).
+</p>
+<hr/>
+<div class="mw-heading mw-heading3"><h3 id="During_Update_you_can_check_for_the_latest_version_of_SuperMemo_and_change_your_current_SuperMemo_installation">During Update you can check for the latest version of SuperMemo and change your current SuperMemo installation</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=12" title="Edit section: During Update you can check for the latest version of SuperMemo and change your current SuperMemo installation"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=12" title="Edit section's source code: During Update you can check for the latest version of SuperMemo and change your current SuperMemo installation"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><i>Terje, , 2004 asked:</i>
+</p><p><b>Question</b>
+</p><p>I have just tried to update my current SuperMemo installation to the latest release build but I received the following message:
+</p>
+<pre><i>You have the latest version of SuperMemo.</i>
+</pre>
+<p>When I clicked <b>OK</b>, SuperMemo Install Wizard apparently completed the installation as it reported it as successful. However, when I run SuperMemo and check its version (<b><a href="Help_menu.html" title="Help menu">Help</a> : About</b>), the version ramains the same as the one prior to the installation
+</p><p><b>Answer</b>
+</p><p>When you choose the <b>Update</b> installation path, SuperMemo Install Wizard not only checks for the latest version of SuperMemo but it also lets you change the configuration of your current SuperMemo installation (e.g. if you have not created the <i>SuperMemo</i> Start menu folder during your previous installations, it gives you an opportunity to do it during the <b>Update</b> procedure). When you receive the message as the one in the question, it means the you have the latest version of the software installed on your computer and no newer version is currently made available. Once you click <b>OK</b> to the message, SuperMemo Install Wizard attempts to update your current installation with new settings (if you have modified them). If you have not chosen any new settings, SuperMemo Install Wizard will not do anything (as it can be inspected by clicking <b>Show details</b> during the Installing stage) and still reports the procedure as successful (to reassure users no damage to their current installations has been done).
+</p>
+<hr/>
+<div class="mw-heading mw-heading3"><h3 id="You_can_use_F1_to_access_on-line_help">You can use F1 to access on-line help</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=13" title="Edit section: You can use F1 to access on-line help"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=13" title="Edit section's source code: You can use F1 to access on-line help"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><i>Garry Gross, , 2001 asked:</i>
+</p><p><b>Question</b>
+</p><p>Why I should not be able to just hit <i>F1</i> to get help after installing SuperMemo?
+</p><p><b>Answer</b>
+</p><p><i>F1</i> will work. However, this way you will access the on-line help. This is a recommended way of using the documentation due to daily updates and corrections. 
+</p>
+<hr/>
+<div class="mw-heading mw-heading3"><h3 id="It_is_not_enough_if_you_just_copy_the_font,_you_need_to_install_it"><span id="It_is_not_enough_if_you_just_copy_the_font.2C_you_need_to_install_it"></span>It is not enough if you just copy the font, you need to install it</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=14" title="Edit section: It is not enough if you just copy the font, you need to install it"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=14" title="Edit section's source code: It is not enough if you just copy the font, you need to install it"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><i>Eugene Holst, USA, 1999 asked:</i>
+</p><p><b><span id="Font">Question</span></b>
+</p><p>I am using the Classical Greek but I'm not getting the Greek characters, but some strange symbols instead. I copied the font called <i>graeca.fon </i>from the <i>sm2004\systems\...</i> folders to my <i>d:\Windows\Fonts</i> folder. Is there something else I have to do to have the font available in Windows 95?
+</p><p><b>Answer</b>
+</p><p>Yes. Instead of just copying fonts you should install them. Use <b>Control Panel : Fonts : Install New Font</b>. In the Folders panel, choose the location where your <i>graeca.fon</i> font can be found (here: <i>sm2004\systems\graeca\font\graeca.fon</i>). In rare instances, if <b>Install New Font</b> is not visible, you may have to reinstall Windows or try to set the System attribute on the <i>FONT</i> folder in Windows (this problem appears in some OEM installations of Windows and is not related to SuperMemo)
+</p>
+<hr/>
+<div class="mw-heading mw-heading3"><h3 id="SuperMemo_Uninstall_Wizard_does_not_remove_all_folders/files"><span id="SuperMemo_Uninstall_Wizard_does_not_remove_all_folders.2Ffiles"></span>SuperMemo Uninstall Wizard does not remove all folders/files</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=15" title="Edit section: SuperMemo Uninstall Wizard does not remove all folders/files"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=15" title="Edit section's source code: SuperMemo Uninstall Wizard does not remove all folders/files"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><i>SuperMemo Install Wizard Beta, Poland, 2004 asked:</i>
+</p><p><b>Question</b>
+</p><p>I have decided to uninstall SuperMemo but after the procedure reported complete, I have received the message informing me not all folders/files have been removed.
+</p><p><b>Answer</b>
+</p><p>By default, the uninstaller plays it safe and doesn't remove folders/files that SuperMemo Install Wizard didn't create in the first place. Additionally, SuperMemo Uninstall Wizard will not delete any knowledge collections. They will have to be deleted manually at a later time (e.g. in Windows Explorer).
+</p>
+<hr/>
+<div class="mw-heading mw-heading3"><h3 id="SuperMemo_help_file_may_appear_empty_if_active_content_is_blocked">SuperMemo help file may appear empty if active content is blocked</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=16" title="Edit section: SuperMemo help file may appear empty if active content is blocked"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=16" title="Edit section's source code: SuperMemo help file may appear empty if active content is blocked"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><i>Miko, Poland, 2006 asked:</i>
+</p><p><b>Question</b>
+</p><p>When I double-click on <i>smhelp.chm</i> file, it appears it is empty inside
+</p><p><b>Answer</b>
+</p><p>You need to unblock active content. E.g. in Windows Explorer click <b>Properties</b> and then click <b>Unblock</b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260609194033
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.033 seconds
+Real time usage: 0.033 seconds
+Preprocessor visited node count: 254/1000000
+Post‐expand include size: 116/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:134:|#|:idhash:canonical and timestamp 20260609194033 and revision id 11951. Rendering was triggered because: page-view
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Installation_in_seconds"><span class="tocnumber">1</span> <span class="toctext">几秒钟内即可安装</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Uninstallation_in_seconds"><span class="tocnumber">2</span> <span class="toctext">几秒钟内卸载</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Installing_SuperMemo_for_Beginners"><span class="tocnumber">3</span> <span class="toctext">为初学者安装 SuperMemo</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Installing_SuperMemo_20"><span class="tocnumber">4</span> <span class="toctext"><span>安装 SuperMemo</span>20</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Providing_password"><span class="tocnumber">5</span> <span class="toctext">提供密码</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Installing_SuperMemo_20_over_earlier_installations"><span class="tocnumber">6</span> <span class="toctext"><span>安装 SuperMemo 20 结束</span>早期安装</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Installing_SuperMemo_20_on_a_computer_without_the_Internet"><span class="tocnumber">7</span> <span class="toctext">在没有互联网的计算机上安装 SuperMemo 20</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Updating_SuperMemo_20_to_the_latest_release_build"><span class="tocnumber">8</span> <span class="toctext"><span>更新 SuperMemo 20</span>到最新版本</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Where_is_my_SuperMemo?"><span class="tocnumber">9</span> <span class="toctext"><span>我的 SuperMemo 在哪里？</span></span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#FAQ"><span class="tocnumber">10</span> <span class="toctext">常见问题解答</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#You_need_to_close_SuperMemo_before_continuing_with_the_setup"><span class="tocnumber">10.1</span> <span class="toctext">您需要先关闭 SuperMemo，然后才能继续设置</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#During_Update_you_can_check_for_the_latest_version_of_SuperMemo_and_change_your_current_SuperMemo_installation"><span class="tocnumber">10.2</span> <span class="toctext">在更新期间，您可以检查 SuperMemo 的最新版本并更改当前的 SuperMemo 安装</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#You_can_use_F1_to_access_on-line_help"><span class="tocnumber">10.3</span> <span class="toctext">您可以使用 F1 访问在线帮助</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#It_is_not_enough_if_you_just_copy_the_font,_you_need_to_install_it"><span class="tocnumber">10.4</span> <span class="toctext">仅仅复制字体是不够的，还需要安装</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#SuperMemo_Uninstall_Wizard_does_not_remove_all_folders/files"><span class="tocnumber">10.5</span> <span class="toctext">SuperMemo 卸载向导不会删除所有文件夹/文件</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#SuperMemo_help_file_may_appear_empty_if_active_content_is_blocked"><span class="tocnumber">10.6</span> <span class="toctext">如果活动内容被阻止，SuperMemo 帮助文件可能会显示为空</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Installation_in_seconds">几秒钟内即可安装</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=1" title="Edit section: Installation in seconds"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=1" title="Edit section's source code: Installation in seconds"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><i><b>重要！</b></i>只需运行下载的文件即可在几秒钟内安装 SuperMemo<i>sm20inst.exe</i>。</p><p>跳过阅读本文的其余部分。它是为那些对计算机缺乏经验的人编写的！</p><p>较新的 Windows 可能会发出警告，例如“此应用程序可能会损害您的计算机”或“未知发布者”。如果您确定是从 supermemo.org、super-memo.com、super-memory.com 下载的，或者在订购后立即下载的，则可以忽略该消息。</p>
+<div class="mw-heading mw-heading2"><h2 id="Uninstallation_in_seconds">几秒钟内卸载</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=2" title="Edit section: Uninstallation in seconds"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=2" title="Edit section's source code: Uninstallation in seconds"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果您按照以下步骤操作，您可以在几秒钟内卸载 SuperMemo（无需删除您的学习材料）：</p>
+<ol><li>运行<b>控制面板</b></li>
+<li>在<b>控制面板</b>窗口，选择<b>卸载程序</b>（在较旧的 Windows 中<b>卸载或更改程序</b>）</li>
+<li>在<b>卸载或更改程序</b>窗口，向下滚动到<i>超级备忘录</i>，并选择<b>卸载</b></li></ol>
+<p>如果你找不到<i>超级备忘录</i>在控制面板中输入，使用<i>sm20unin.exe</i>位于<i>[超级备忘录]</i>文件夹（例如<i>C:\Program Files\SuperMemo\sm20unin.exe</i>（计算机管理员）或<i>C:\SuperMemo\sm20unin.exe</i>（有限帐户）默认）</p>
+<div class="mw-heading mw-heading2"><h2 id="Installing_SuperMemo_for_Beginners">为初学者安装 SuperMemo</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=3" title="Edit section: Installing SuperMemo for Beginners"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=3" title="Edit section's source code: Installing SuperMemo for Beginners"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果您已经了解使用 Windows 的基础知识，例如复制文件、创建目录等，则可以跳过蓝色插入框</p><p>根据 SuperMemo 的来源，您将以三种基本形式之一获得它：</p>
+<ul><li><i>sm20inst.exe</i>- 安装向导将下载所有必要的安装组件并安装、升级或更新 SuperMemo（取决于您当前的安装和配置）</li>
+<li><i>sm20zip.exe</i>- 自解压 SuperMemo（一旦运行它，它会将其文件解压到它所在的文件夹中，例如<i>C:\sm20</i>）</li>
+<li><i>sm20.zip</i>- 压缩的独立 SuperMemo (<i>sm20程序</i>）</li></ul>
+<p>本文描述了以下过程：</p>
+<ol><li><a href="#Installing_SuperMemo">安装 SuperMemo</a></li>
+<li><a href="#Providing_password">提供密码</a></li>
+<li><a href="#Installing_collections">安装从 SuperMemo Library 下载的集合</a>（包括 Palm 和 Windows CE）</li>
+<li><a href="#Over_SM8">在 SuperMemo 8、SuperMemo 98/99 或 SuperMemo 2000/2002/2004/2006/2008/15/16/17/18 上安装 SuperMemo 20</a></li>
+<li><a href="#Over_SM8">在高级英语上安装 SuperMemo 20</a></li>
+<li><a href="#upd_sm">将 SuperMemo 20 更新到最新版本</a></li>
+<li><a href="#Where">我的 SuperMemo 在哪里？</a></li></ol>
+<p>另请参阅：<a href="#FAQ">常见问题</a>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Installing_SuperMemo_20"><span id="Installing_SuperMemo">安装 SuperMemo</span>20</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=4" title="Edit section: Installing SuperMemo 20"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=4" title="Edit section's source code: Installing SuperMemo 20"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ol>
+<li>订购并下载 SuperMemo 20：<a class="external text" href="https://supermemo.store">超级备忘录商店</a></li>
+<div class="inset" style="background-color: #0FF">您可以通过以下方式下载 SuperMemo 20：<ol><li>前往<a class="external text" href="https://supermemo.store">超级备忘录商店</a>主页</li>
+<li>点击<b>添加到购物车</b>对应于<i>SuperMemo 20 Windows 版</i>（这会将 SuperMemo 20 添加到您的购物车）</li>
+<li>点击<b>退房</b></li>
+<li>单击大<b>贝宝</b>按钮位于<i>快速结帐</i>页面顶部的部分。这将打开一个 PayPal 弹出框，您将用它来登录您的 PayPal 帐户。进入后，查看显示的信息，然后单击<b>继续审核订单</b>在弹出窗口的底部。这会将您重定向到支付页面<a class="external text" href="https://supermemo.store">超级备忘录商店</a></li>
+<li>点击<b>立即付款</b></li>
+<li>一旦您的订单已处理完毕并准备好文件，请单击<b>立即下载</b>根据 SuperMemo 20</li>
+<li>在<b>另存为</b>对话框中，在对话框左侧的导航窗格中，单击<b>桌面</b>按钮，然后单击<b>保存</b>下载 SuperMemo 20 安装向导（即<i>sm20inst.exe</i>）到桌面上。安装向导是一个为您完成整个安装的程序</li></ol>
+</div>
+<li>运行下载的文件<i>sm20inst.exe</i>双击桌面上的图标。它将打开 SuperMemo 20 安装向导，它将指导您完成设置。<b>重要！</b>较新的 Windows 可能会询问您是否信任<i>“未知出版商”</i>。如果您直接从 SuperMemo 网站下载或订购后立即下载，则可以忽略该消息并继续安装。</li>
+<div class="inset" style="background-color: #00FFFF">您将执行以下步骤：<ol><li>在第一步中，您将看到 SuperMemo 20 安装向导欢迎页面。该页面建议您在继续安装之前关闭所有其他程序。这是为了确保安装过程中不会发生冲突。您可以通过以下方式之一关闭所有其他正在运行的程序（选择您觉得最舒服的一种）：<ul><li>单击与要关闭的程序相对应的任务栏按钮（这会将您切换到程序窗口），然后单击<b>关闭</b>窗口右上角的按钮</li>
+<li>右键单击与要关闭的程序相对应的任务栏按钮，然后单击<b>关闭</b>出现的上下文菜单中的项目</li>
+<li>按<i>Alt+Tab</i>快捷键切换到下一个打开的程序，然后<i>Alt+F4</i>关闭它。关闭所有其他正在运行的程序后，单击<b>下一步</b>按钮前进到下一步</li></ul></li>
+<li>在第二步中，您可以选择要安装 SuperMemo 20 及其所有组件的文件夹。默认情况下，安装向导会建议<i>C:\Program Files\SuperMemo</i>如果您使用计算机管理员帐户运行或<i>C:\SuperMemo</i>如果您使用的是有限帐户。如果<b>安装到...</b>您的计算机上不存在文件夹，安装向导将创建它。<br/>如果你想选择不同的<b>安装到...</b>文件夹，单击<b>浏览...</b>按钮到右侧。在<b>浏览文件夹</b>对话框中，选择新文件夹并单击<b>好的</b>。如果要创建尚不存在的新文件夹，请单击<b>新建文件夹</b>按钮位于左下角。<br/>一旦您选择了<b>安装到...</b>文件夹，单击<b>下一步</b>按钮前进到下一步</li>
+<li>在第三步中，您可以选择要在其中创建 SuperMemo 20 快捷方式的“开始”菜单文件夹。默认情况下，安装向导会建议名为的文件夹<i>超级备忘录</i>。您可以根据自己的喜好重命名它。如果您的计算机上不存在“开始”菜单文件夹，安装向导将创建它。<br/>如果要将“开始”菜单文件夹创建为已存在文件夹的子文件夹，请单击列表中的文件夹。<br/>如果您不想创建“开始”菜单文件夹（如果您很少或从不使用它），请选择<b>不要创建开始菜单文件夹</b>窗口底部的复选框。<br/>选择“开始”菜单文件夹或选择您不需要的文件夹后，单击<b>下一步</b>按钮前进到下一步</li>
+<li>在第四步中，您可以选择希望 SuperMemo 20 安装向导在安装过程中执行的其他任务。可以执行以下任务：<ul><li><b>图标</b>
+<ul><li><b>添加桌面图标</b>- 如果您希望 SuperMemo 20 安装向导将<i>超级备忘录</i>快捷方式到桌面</li>
+<li><b>添加快速启动栏图标</b>- 如果您希望安装向导添加<i>超级备忘录</i>位于旁边的快速启动栏的快捷方式<b>开始</b>任务栏上的按钮</li></ul></li></ul></li></ol>
+<p>选择您希望 SuperMemo 20 安装向导执行的其他任务后，单击<b>下一步</b>按钮前进到下一步。在下一步中，安装向导将下载 SuperMemo 20 并将其安装到您的计算机上。由于此步骤很少涉及与您的任何交互，因此本描述将跳过它。</p>
+<ol><li>在最后 5 步中，SuperMemo 20 安装向导会向您报告安装已成功完成。在此阶段，您还可以指示它执行以下两个操作之一：<ul><li><b>运行 SuperMemo 20</b>- 如果您想在按后运行 SuperMemo 20，请选择此复选框（默认情况下处于选中状态）<b>完成</b>按钮位于安装过程的最后。或者，您可以通过双击桌面上、快速启动栏等处的图标来运行它（无论您在安装过程中决定添加哪个）</li>
+<li><b>打开包含文件夹</b>- 如果您想打开一个 Windows 资源管理器窗口，在按下<b>完成</b>安装过程最后的按钮</li></ul></li></ol>
+</div>
+<li>发送您的<a href="Registration.html" title="Registration">登记</a>到<a href="Unlock_SuperMemo.html" title="Unlock SuperMemo">解锁 SuperMemo</a></li>
+<li>阅读<a href="Introduction.html" title="Introduction">SuperMemo 的基本知识</a>开始你的快速学习冒险</li>
+<li>注册后的一个工作日内，我们将向您发送有关如何输入密码的说明（请参阅：<a href="Unlock_SuperMemo.html" title="Unlock SuperMemo">解锁 SuperMemo</a>）。请阅读以下内容<a href="#Providing_password">提供密码</a></li>
+<li>如果您对安装过程的任何步骤有任何疑问，请随时与我们联系<a href="E-mail.html" title="E-mail">写</a>。即使您是计算机新手，也不应该羞于提出问题。通过了解您的问题，我们可以在未来更好地支持其他用户</li>
+</ol>
+<div class="mw-heading mw-heading2"><h2 id="Providing_password">提供密码</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=5" title="Edit section: Providing password"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=5" title="Edit section's source code: Providing password"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>SuperMemo 20 受解锁密码保护。如果没有密码，它只能运行一段有限的时间。当您提交您的<a href="Registration.html" title="Registration">登记</a>，您将在一个工作日内收到解锁密码。更多请参见：<a href="Unlock_SuperMemo.html" title="Unlock SuperMemo">解锁 SuperMemo</a>。</p><p><b>重要！</b>您不应该害怕丢失密码。一旦您将其输入 SuperMemo，您就不太可能再次需要它。如果您再次看到红色条，则足以打开您以前使用过的任何<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>将程序恢复到全部功能。如果您丢失了密码和所有信息<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>，您随时可以获取密码<a class="external text" href="https://supermemopedia.com/wiki/E-mail">从我们身边回来</a>。</p><p>您应该使用输入密码<b><a href="File_menu.html" title="File menu">文件</a> :<a href="File_menu.html#Installation" title="File menu">安装</a> ：输入密码</b>。或者，您可以继续使用 SuperMemo，它会在某个时候要求您输入密码。如果选项<b>输入密码</b>呈灰色，您的 SuperMemo 已解锁（无需执行任何操作）。</p>
+<div class="mw-heading mw-heading2"><h2 id="Installing_SuperMemo_20_over_earlier_installations"><span id="Over_SM8">安装 SuperMemo 20 结束</span>早期安装</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=6" title="Edit section: Installing SuperMemo 20 over earlier installations"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=6" title="Edit section's source code: Installing SuperMemo 20 over earlier installations"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>这是您如何在 SuperMemo 8、SuperMemo 98/99 或 SuperMemo 2000/2002/2004/2006/2008/15/17/18 上安装 SuperMemo 20（从互联网下载或从 SuperMemo CD-ROM/DVD 安装，例如<a class="external text" href="http://super-memory.com/english/ae.htm">高级英语</a>,<a class="external text" href="http://super-memory.com/english/megamix.htm">超级混合</a>等）：</p>
+<ol><li>从以下位置下载 SuperMemo 20<a class="external text" href="https://supermemo.store">超级备忘录商店</a>并将下载的文件保存到您的磁盘上</li>
+<li>运行文件<i>sm20inst.exe</i>（例如，在 Windows 资源管理器中双击其图标）。运行它后，它将检测现有的 SuperMemo 安装并为您提供升级选择（<b>升级</b>）或在新文件夹中安装 SuperMemo 20（<b>全新安装</b>）。您应该避免将旧版本的 SuperMemo 与 SuperMemo 20 一起使用，因此建议您选择<b>升级</b>以避免兼容性问题。</li>
+<li>如果您之前的 Windows 版 SuperMemo 不是 SuperMemo 16，您将需要升级您的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>首先是 SuperMemo 16 格式。仅<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>SuperMemo 16 格式的文件可以升级到 SuperMemo 20。这是一个自动过程。仅窗口布局可能会略有变化。您可以调整布局并保存<i>Ctrl+Shift+F5</i></li>
+<li>一旦你打开你的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>在 SuperMemo 20 中的 SuperMemo 16 格式中，它们将自动升级。</li>
+<li>订购 SuperMemo 后的一个工作日内，我们将与您联系，并说明如何获取和输入继续使用 SuperMemo 工作所需的解锁密码。阅读上面关于<a href="#Providing_password">提供密码</a></li></ol>
+<div class="mw-heading mw-heading2"><h2 id="Installing_SuperMemo_20_on_a_computer_without_the_Internet">在没有互联网的计算机上安装 SuperMemo 20</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=7" title="Edit section: Installing SuperMemo 20 on a computer without the Internet"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=7" title="Edit section's source code: Installing SuperMemo 20 on a computer without the Internet"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>您可以在未连接网络的计算机上安装 SuperMemo 20 (<b>独立电脑</b>）。然而，您自然需要一台联网的 PC 来下载 SuperMemo（<b>连接电脑</b>）。您将需要闪存驱动器、DVD-R、可移动硬盘或任何其他设备（<b>存储设备</b>）在计算机之间移动 SuperMemo。</p><p>请按照下列步骤操作：</p>
+<ol><li>在计算机上下载并安装 SuperMemo 20<b>连接电脑</b></li>
+<li>将整个 SuperMemo 文件夹复制到<b>存储设备</b>（例如复制<i>c:\SuperMemo\</i>及其所有子文件夹到闪存驱动器上）</li>
+<li>移动<b>存储设备</b>来自<b>连接电脑</b>到<b>独立电脑</b></li>
+<li>从以下位置复制 SuperMemo 文件夹<b>存储设备</b>到<b>独立电脑</b></li>
+<li>运行 SuperMemo（例如双击文件<i>sm20程序</i>位于 SuperMemo 文件夹中）</li>
+<li>注册 SuperMemo（请参阅：<a href="Unlock_SuperMemo.html" title="Unlock SuperMemo">解锁 SuperMemo</a>）。您可以从任何位置发送您的注册文件</li></ol>
+<p>请注意：</p>
+<ul><li>您只需要 12.5 MB 的可用空间<b>存储设备</b>移动 SuperMemo</li>
+<li>建议您运行 SuperMemo<b>作为管理员</b>至少一次访问 Windows 注册表并完成安装</li>
+<li>如果您不确定如何从 Windows 桌面或“开始”菜单创建 SuperMemo 的快捷方式，请使用<b><a href="File_menu.html" title="File menu">文件</a> :<a href="File_menu.html#Installation" title="File menu">安装</a> ：安装图标</b>（你需要<b>以管理员身份运行</b>）为此工作</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Updating_SuperMemo_20_to_the_latest_release_build"><span id="upd_sm">更新 SuperMemo 20</span>到最新版本</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=8" title="Edit section: Updating SuperMemo 20 to the latest release build"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=8" title="Edit section's source code: Updating SuperMemo 20 to the latest release build"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>运行文件<i>sm20inst.exe</i>。它存储在<i>[设置]</i>位于 SuperMemo 文件夹中的子文件夹（默认情况下，<i>C:\Program Files\SuperMemo\setup\sm20inst.exe</i>如果您使用计算机管理员帐户运行或<i>C:\SuperMemo\setup\sm20inst.exe</i>如果您使用的是有限帐户）。运行它后，它将检测您当前的 SuperMemo 20 安装并建议您更新。如果您选择这样做，它会将您计算机上的 SuperMemo 20 与我们服务器上的最新版本进行比较。如果有更新的版本可用，它将下载它并用它替换当前安装的版本。</p><p>即使没有可用的更新版本，安装向导也将允许您修改当前配置（例如删除或添加快捷方式等）</p>
+<div class="mw-heading mw-heading2"><h2 id="Where_is_my_SuperMemo?"><span id="Where_is_my_SuperMemo.3F"></span><span id="Where">我的 SuperMemo 在哪里？</span></h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=9" title="Edit section: Where is my SuperMemo?"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=9" title="Edit section's source code: Where is my SuperMemo?"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="inset" style="background-color: #00ffff">
+<p>如果您不确定 SuperMemo 在计算机上的位置，您始终可以使用 Windows 找到它：</p>
+<ol><li>按<b>视窗标志</b>按钮</li>
+<li>使用以下选择输入文件名：<ul><li><i>sm20程序</i>- 如果您正在寻找 SuperMemo 20（请记住不要在点之前或之后添加空格）</li>
+<li><i>sm18.exe</i>- 如果您正在寻找 SuperMemo 18</li>
+<li><i>sm17程序</i>- 如果您正在寻找 SuperMemo 17</li>
+<li><i>sm16.exe</i>- 如果您正在寻找 SuperMemo 16</li>
+<li><i>sm15程序</i>- 如果您正在寻找 SuperMemo 15</li>
+<li><i>sm2008.exe</i>- 如果您正在寻找 SuperMemo 2008</li>
+<li><i>sm2006.exe</i>- 如果您正在寻找 SuperMemo 2006</li>
+<li><i>sm2004.exe</i>- 如果您正在寻找 SuperMemo 2004</li>
+<li><i>sm2002.exe</i>- 如果您正在寻找 SuperMemo 2002</li>
+<li><i>sm2000.exe</i>- 如果您正在寻找 SuperMemo 2000</li>
+<li><i>sm99程序</i>- 如果您正在寻找 SuperMemo 99</li>
+<li><i>sm98程序</i>- 如果您正在寻找 SuperMemo 98</li>
+<li><i>sm8.exe</i>- 如果您正在寻找 SuperMemo 8</li>
+<li><i>sm20inst.exe</i>- 如果您正在寻找 SuperMemo 20 安装向导</li>
+<li><i>sm18安装程序</i>- 如果您正在寻找 SuperMemo 18 安装向导</li>
+<li><i>sm17inst.exe</i>- 如果您正在寻找 SuperMemo 17 安装向导</li>
+<li><i>sm16安装程序</i>- 如果您正在寻找 SuperMemo 16 安装向导</li>
+<li><i>sm15安装程序</i>- 如果您正在寻找 SuperMemo 15 安装向导</li>
+<li><i>sm08安装程序</i>- 如果您正在寻找 SuperMemo 2008 安装向导</li>
+<li><i>sm06安装程序</i>- 如果您正在寻找 SuperMemo 2006 安装向导</li>
+<li><i>sm04inst.exe</i>- 如果您正在寻找 SuperMemo 2004 安装向导</li>
+<li><i>sm17abc.zip</i>- 如果您想找到 SuperMemo 16 安装文件（安装文件是包含 SuperMemo 及其文件的 zip 存档，可以手动安装而无需使用安装向导；仅当安装向导出现问题或无法访问互联网时，您才会收到此文件）</li>
+<li><i>sm16abc.zip</i>- 如果你想找到 SuperMemo 16 安装文件</li>
+<li><i>sm15abc.zip</i>- 如果你想找到 SuperMemo 15 安装文件</li>
+<li><i>sm2008abc.zip</i>- 如果您想找到 SuperMemo 2008 安装文件</li>
+<li><i>sm2006abc.zip</i>- 如果您想找到 SuperMemo 2006 安装文件</li>
+<li><i>sm2004abc.zip</i>- 如果您想找到 SuperMemo 2004 安装文件</li>
+<li><i>sm2002zip.exe</i>- 如果您想找到 SuperMemo 2002 自解压安装文件（自解压安装文件是包含 SuperMemo 及其可手动安装的文件的存档；您仅在请求时收到此文件）</li>
+<li><i>sm2000zip.exe</i>- 如果您想找到 SuperMemo 2000 自解压安装文件</li>
+<li><i>sm99zip.exe</i>- 如果您想找到 SuperMemo 99 自解压安装文件</li>
+<li><i>smhelp.chm</i>- 如果您正在寻找<a class="external text" href="http://supermemo.com/english/helpdown.htm">SuperMemo 帮助</a></li>
+<li><i>sm*.exe</i>- 如果您正在寻找从互联网下载的 SuperMemo，并且您不记得下载了哪些文件（请参阅文件日期标记以找出刚刚下载的文件）</li></ul></li>
+<li>搜索到的文件的所有位置将显示在该列中<b>在文件夹中</b></li>
+<li>您可以双击位于该列中的文件<b>名称</b>运行它们。您也可以按住<i>替代</i>键并将它们拖到桌面上以创建新图标。例如，如果您按住<i>替代</i>键并拖动名为的文件<i>SM20</i>，您将在桌面上创建一个新的 SuperMemo 20 快捷方式</li>
+<li>如果您在查找 SuperMemo 时遇到问题，请记住您可能已重命名其原始文件（例如，在替换早期版本时）</li></ol>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="FAQ">常见问题解答</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=10" title="Edit section: FAQ"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=10" title="Edit section's source code: FAQ"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="You_need_to_close_SuperMemo_before_continuing_with_the_setup">您需要先关闭 SuperMemo，然后才能继续设置</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=11" title="Edit section: You need to close SuperMemo before continuing with the setup"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=11" title="Edit section's source code: You need to close SuperMemo before continuing with the setup"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><i>莫妮卡，波兰，2006 年询问：</i>
+</p><p><b>问题</b>
+</p><p>我刚刚尝试安装 SuperMemo，但收到以下消息：</p>
+<pre><i>您无法在 SuperMemo 运行时安装它。</i>
+
+<i>首先关闭 SuperMemo。</i>
+</pre>
+<p>我按后<b>好的</b>，SuperMemo 安装向导关闭。</p><p><b>回答</b>
+</p><p>是的，这是正确的行为。当 SuperMemo 安装向导启动时，它会检查 SuperMemo 是否在后台运行，如果运行，它会提示您在继续安装之前将其关闭。这是为了防止安装过程中发生任何冲突（例如，在重命名较旧的 SuperMemos 时）<b>升级</b>或覆盖较旧的 SuperMemo 版本<b>更新</b>）。</p>
+<hr/>
+<div class="mw-heading mw-heading3"><h3 id="During_Update_you_can_check_for_the_latest_version_of_SuperMemo_and_change_your_current_SuperMemo_installation">在更新期间，您可以检查 SuperMemo 的最新版本并更改当前的 SuperMemo 安装</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=12" title="Edit section: During Update you can check for the latest version of SuperMemo and change your current SuperMemo installation"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=12" title="Edit section's source code: During Update you can check for the latest version of SuperMemo and change your current SuperMemo installation"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><i>Terje, , 2004 年问道：</i>
+</p><p><b>问题</b>
+</p><p>我刚刚尝试将当前的 SuperMemo 安装更新到最新版本，但收到以下消息：</p>
+<pre><i>您拥有最新版本的 SuperMemo。</i>
+</pre>
+<p>当我点击时<b>好的</b>，SuperMemo 安装向导显然已完成安装，因为它报告安装成功。但是，当我运行 SuperMemo 并检查其版本时（<b><a href="Help_menu.html" title="Help menu">帮助</a> ：关于</b>），版本与安装前保持一致</p><p><b>回答</b>
+</p><p>当您选择<b>更新</b>安装路径中，SuperMemo 安装向导不仅会检查 SuperMemo 的最新版本，而且还允许您更改当前 SuperMemo 安装的配置（例如，如果您尚未创建<i>超级备忘录</i>在您以前的安装过程中，它使您有机会在开始菜单文件夹中执行此操作<b>更新</b>程序）。当您收到问题中的消息时，这意味着您的计算机上安装了该软件的最新版本，并且当前没有可用的更新版本。一旦你点击<b>好的</b>根据该消息，SuperMemo 安装向导会尝试使用新设置更新您当前的安装（如果您已修改它们）。如果您没有选择任何新设置，SuperMemo 安装向导将不会执行任何操作（因为可以通过单击进行检查）<b>显示详情</b>在安装阶段），并且仍然报告该过程成功（以向用户保证其当前安装不会受到任何损坏）。</p>
+<hr/>
+<div class="mw-heading mw-heading3"><h3 id="You_can_use_F1_to_access_on-line_help">您可以使用 F1 访问在线帮助</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=13" title="Edit section: You can use F1 to access on-line help"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=13" title="Edit section's source code: You can use F1 to access on-line help"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><i>加里·格罗斯 (Garry Gross)，2001 年问道：</i>
+</p><p><b>问题</b>
+</p><p>为什么我不能直接击中<i>F1</i>安装 SuperMemo 后获得帮助？</p><p><b>回答</b>
+</p><p><i>F1</i>会起作用的。但是，这样您就可以访问在线帮助。由于每日更新和更正，这是使用文档的推荐方式。</p>
+<hr/>
+<div class="mw-heading mw-heading3"><h3 id="It_is_not_enough_if_you_just_copy_the_font,_you_need_to_install_it"><span id="It_is_not_enough_if_you_just_copy_the_font.2C_you_need_to_install_it"></span>仅仅复制字体是不够的，还需要安装</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=14" title="Edit section: It is not enough if you just copy the font, you need to install it"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=14" title="Edit section's source code: It is not enough if you just copy the font, you need to install it"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><i>尤金·霍尔斯特 (Eugene Holst)，美国，1999 年问道：</i>
+</p><p><b><span id="Font">问题</span></b>
+</p><p>我使用的是古典希腊语，但我没有得到希腊字符，而是得到了一些奇怪的符号。我复制了名为<i>格雷卡丰</i>从<i>sm2004\系统\...</i>文件夹到我的<i>d:\Windows\字体</i>文件夹。我还需要做些什么才能在 Windows 95 中使用该字体吗？</p><p><b>回答</b>
+</p><p>是的。您应该安装它们，而不是仅仅复制字体。使用<b>控制面板：字体：安装新字体</b>。在“文件夹”面板中，选择您的文件夹所在的位置<i>格雷卡丰</i>可以找到字体（此处：<i>sm2004\系统\graeca\字体\graeca.fon</i>）。在极少数情况下，如果<b>安装新字体</b>不可见，您可能需要重新安装 Windows 或尝试设置系统属性<i>字体</i>Windows 中的文件夹（此问题出现在 Windows 的某些 OEM 安装中，与 SuperMemo 无关）</p>
+<hr/>
+<div class="mw-heading mw-heading3"><h3 id="SuperMemo_Uninstall_Wizard_does_not_remove_all_folders/files"><span id="SuperMemo_Uninstall_Wizard_does_not_remove_all_folders.2Ffiles"></span>SuperMemo 卸载向导不会删除所有文件夹/文件</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=15" title="Edit section: SuperMemo Uninstall Wizard does not remove all folders/files"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=15" title="Edit section's source code: SuperMemo Uninstall Wizard does not remove all folders/files"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><i>SuperMemo 安装向导 Beta，波兰，2004 年询问：</i>
+</p><p><b>问题</b>
+</p><p>我已决定卸载 SuperMemo，但在报告完成后，我收到一条消息，通知我并非所有文件夹/文件都已被删除。</p><p><b>回答</b>
+</p><p>默认情况下，卸载程序会谨慎行事，不会删除 SuperMemo 安装向导最初未创建的文件夹/文件。此外，SuperMemo 卸载向导不会删除任何知识集合。稍后必须手动删除它们（例如在 Windows 资源管理器中）。</p>
+<hr/>
+<div class="mw-heading mw-heading3"><h3 id="SuperMemo_help_file_may_appear_empty_if_active_content_is_blocked">如果活动内容被阻止，SuperMemo 帮助文件可能会显示为空</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;veaction=edit&amp;section=16" title="Edit section: SuperMemo help file may appear empty if active content is blocked"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Installing_SuperMemo_(for_Beginners)&amp;action=edit&amp;section=16" title="Edit section's source code: SuperMemo help file may appear empty if active content is blocked"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><i>Miko，波兰，2006 年询问：</i>
+</p><p><b>问题</b>
+</p><p>当我双击<i>smhelp.chm</i>文件，看起来里面是空的</p><p><b>回答</b>
+</p><p>您需要取消阻止活动内容。例如。在 Windows 资源管理器中单击<b>属性</b>然后单击<b>解锁</b>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260609194033
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.033 seconds
+Real time usage: 0.033 seconds
+Preprocessor visited node count: 254/1000000
+Post‐expand include size: 116/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:134:|#|:idhash:canonical and timestamp 20260609194033 and revision id 11951. Rendering was triggered because: page-view
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

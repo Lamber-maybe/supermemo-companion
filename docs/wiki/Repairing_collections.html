@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Repairing collections — SuperMemo Help</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 960px; margin: 0 auto; padding: 1.5em; color: #202122; line-height: 1.6; }
+h1, h2, h3, h4, h5 { font-family: sans-serif; }
+.source-note { color: #888; font-size: 0.82em; margin-bottom: 1.2em; border-bottom: 1px solid #eee; padding-bottom: 0.5em; }
+a { color: #0645ad; }
+a:visited { color: #0b0080; }
+table { border-collapse: collapse; margin: 1em 0; }
+td, th { border: 1px solid #a2a9b1; padding: 6px 10px; }
+th { background: #eaecf0; }
+img { max-width: 100%; height: auto; }
+.wikitable { width: 100%; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1em; overflow-x: auto; }
+code { background: #f8f9fa; padding: 2px 4px; }
+.toc { background: #f8f9fa; border: 1px solid #aaa; padding: 1em; display: inline-block; min-width: 200px; }
+.mw-parser-output { }
+.navbox { border: 1px solid #aaa; margin: 1em 0; padding: 0.5em; }
+</style>
+</head>
+<body>
+<p class="source-note">Source: <a href="https://help.supermemo.org/wiki/Repairing_collections">https://help.supermemo.org/wiki/Repairing_collections</a></p>
+<div class="mw-parser-output">
+<div class="mw-content-ltr mw-parser-output" lang="en" dir="ltr"><p><b><a href="File_menu.html" title="File menu">File</a>&#160;: Repair collection</b> makes it possible to recover from errors in your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. <b>Repair collection</b> goes through all data in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>, looking for errors and plugging the holes. As much as a spell-checker can fix a badly written text, <b>Repair collection</b> can fix some problems produced by hard disk malfunction, viruses, or errors in copying files. If <b>Repair collection</b> cannot fix a problem, you will have to return to your <a href="Backup.html" title="Backup">most recent backup</a>. Remember to backup often! 
+</p><p>You can quickly execute <b>Repair collection</b> by choosing <i>Ctrl+F12</i>. 
+</p><p><b>Repair collection</b> is only possible in an <a href="Unlock_SuperMemo.html" title="Unlock SuperMemo">unlocked SuperMemo</a>.
+</p><p>Integrity problems in a <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> may appear in case of hardware or system software problems. Bad clusters, lost sectors, data corruption, etc. can often be remedied by replacing affected files (e.g. corrupted <i>Mpeg</i> file, etc.). However, if the problem occurs in SuperMemo index files or files storing optimization data used by <a href="Glossary_Repetition_spacing.html" title="Glossary:Repetition spacing">repetition spacing</a> algorithm, only <b><a href="File_menu.html" title="File menu">File</a>&#160;: Repair collection</b> can remedy the problem. 
+</p>
+<div class="bs-callout bs-callout-warning">
+<p><b>Important!</b> Unless you have a <a href="Backup.html" title="Backup">recent backup</a> handy, you should check the backup option before running <b>Repair collection</b>. You should <b><span style="color: red">never abort SuperMemo manually</span></b> (e.g. with <i>Ctrl+Alt+Del</i>&#160;: <b>Task Manager&#160;: End Process</b>). This is particularly true during <b>Repair collection</b>. If you abort the repair operation while files are being rebuilt, your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> may be damaged beyond repair! 
+</p>
+</div>
+<p>Before you begin the recovery, choose appropriate recovery options in <b><a href="Repair_options.html" title="Repair options">Repair options</a></b> dialog box. 
+</p><p><b>Repair collection</b> does not recover from some error types. Here are some errors that are not remedied with <b>Repair collection</b>: 
+</p>
+<ul><li>damage to binary files such as <i>JPG</i>, <i>MP3</i>, <i>AVI</i>, <i>EXE</i>, etc. Replace these file from the original CD-ROM or from your back-up storage. If you do not have a backup of these files, you will have to remove them by using <b>Delete</b> in the relevant <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a>, or recreate them in another way.</li>
+<li>damage to OF matrix, RF matrix, Cases matrix, etc. These matrices are stored in the file named <i>sm8opt.dat</i>. In case of errors indicating damage to these data structures, use <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a>&#160;: <a href="Toolkit_menu.html#Statistics" title="Toolkit menu">Statistics</a>&#160;: Reset parameters&#160;: Optimization matrices</b>. You will lose some of data collected by SuperMemo about your performance with a given learning material, but you will be able resume your work without losing the learning process. Alternatively, you might restore <i>sm8opt.dat</i> file from one of your earlier backups</li>
+<li>damage to text files such as <i>TRA</i>, <i>SCR</i>, <i>INI</i>, etc. View these files in any text editor and change their contents. You can also edit legal TRA files with <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a>&#160;: <a href="Options.html" title="Options">Options</a>&#160;: <a href="Language_tab_in_Options.html" title="Language tab in Options">Language</a>&#160;: <a href="Localization_table.html" title="Localization table">Localization table</a></b></li>
+<li>Read more: <a href="SuperMemo_files.html" title="SuperMemo files">SuperMemo files</a></li></ul>
+<p>Note: If you encounter problems that could not be remedied with <b><a href="File_menu.html" title="File menu">File</a>&#160;: Repair collection</b> (except for those listed above), please <a class="external text" href="https://supermemopedia.com/wiki/E-mail">report it</a>. Remember to make a <a href="Backup.html" title="Backup">backup</a> of copy of the damaged <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>, e.g. with <b><a href="File_menu.html" title="File menu">File</a>&#160;: <a href="File_menu.html#Backup" title="File menu">Backup</a></b> (<i>Shift+F12</i>) or better yet with <b><a href="File_menu.html" title="File menu">File</a>&#160;: <a href="File_menu.html#Copy_collection" title="File menu">Copy collection</a></b> (<i>Ctrl+Shift+C</i>).
+</p>
+<div class="mw-heading mw-heading2"><h2 id="FAQ">FAQ</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://help.supermemo.org/index.php?title=Repairing_collections&amp;veaction=edit&amp;section=1" title="Edit section: FAQ" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Repairing_collections&amp;action=edit&amp;section=1" title="Edit section&#39;s source code: FAQ"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="http://supermemopedia.com/wiki/Emergency:_interrupted_collection_repair/recovery">Backup before repair is important</a></li>
+<li><a class="external text" href="http://supermemopedia.com/wiki/title=How_to_get_an_alert_that_Repair_collection_is_over%3F">How to raise an alarm at the end of collection repair?</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Example">Example</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://help.supermemo.org/index.php?title=Repairing_collections&amp;veaction=edit&amp;section=2" title="Edit section: Example" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Repairing_collections&amp;action=edit&amp;section=2" title="Edit section&#39;s source code: Example"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>A typical collection checkup report might look like this:
+</p>
+<pre>SuperMemo Report
+   Activity: Checking the integrity of the collection
+   Collection: d:\colls\all
+   Date: Feb 28, 2016, Sun, 01:51:39
+   SuperMemo 17 (Build 17.0, Feb 27, 2016)
+
+Checking 629,260 element records (ElementInfo.dat)
+Turning on tasklist verification along element data integrity checks
+Verifying integrity of element data (629260 elements in ElementInfo.dat)
+Verifying knowledge tree (629,260 elements in Contents.dat)
+Verifying the priority queue of 609,863 elements
+Verifying repetition schedule (Workload.dat and ElementInfo.dat)
+Verifying pending queue (Intact.dat)
+Verifying A-Factor, Lapses and Repetitions distributions
+Recovering registries and filespace references
+Rebuilding Text registry (1109677 members in a 1157580 member file)
+Rebuilding Template registry (123 members in a 134 member file)
+Rebuilding Font registry (74 members in a 10290 member file)
+Rebuilding Reference registry (42257 members in a 43610 member file)
+Rebuilding Style registry (1 members in a 4 member file)
+Rebuilding Script registry (2 members in a 2 member file)
+Rebuilding Program registry (101 members in a 102 member file)
+Rebuilding Ole registry (0 members in a 0 member file)
+Rebuilding Video registry (4 members in a 4 member file)
+Rebuilding Image registry (21593 members in a 22778 member file)
+Rebuilding Sound registry (120768 members in a 123541 member file)
+Redirected sound registry reference:
+   From Member #13328
+   To Sound #41018: ornery
+Redirected sound registry reference:
+   From Member #19792
+   To Sound #103943: hurdy-gurdy
+Rebuilding Tasklist registry (1 members in a 23 member file)
+Rebuilding Concept registry (51 members in a 98 member file)
+Rebuilding Link registry (40 members in a 40 member file)
+Registering components
+Transferring templates
+Registering references
+Registering image references
+Verifying link registry (40 members in a 40 member file)
+Verifying concepts registry (51 members in a 98 member file)
+Verifying Text registry
+++++++++++++++++++++++    ERROR #1   ++++++++++++++++++++++
+   Wrong length of registry usership list for Text #622793: http://upload.wikimedia.org/wikipedia/commons/5/51/Thai_TIS_166-2549_mains_plug.jpg
+   Count: reported=69 found=70
+   Registry: text
+Verifying Sound registry
+Warning! Registry member not used
+   Sound #8661: conjugal
+Warning! Registry member not used
+   Sound #12701: ask for a rain check
+Warning! Registry member not used
+   Sound #20414: scallion
+Warning! Registry member not used
+   Sound #117383: pellucid (wrong!)
+4 unused member(s) in the Sound registry
+Verifying Video registry
+Verifying Style registry
+Verifying Script registry
+Verifying Program registry
+Verifying Template registry
+Verifying Tasklist registry
+Verifying Concept registry
+Verifying Link registry
+Deleting directory: d:\colls\all\registry\RText_users
+Deleting directory: d:\colls\all\registry\RFont_users
+Deleting directory: d:\colls\all\registry\RReference_users
+Deleting directory: d:\colls\all\registry\RImage_users
+Deleting directory: d:\colls\all\registry\RStyle_users
+Deleting directory: d:\colls\all\registry\RTemplate_users
+Verifying OLE filespace
+Verifying image filespace
+Verifying sound filespace
+Verifying video filespace
+Verifying stylesheet filespace
+Verifying script filespace
+Verifying binary filespace
+Verifying text filespace
+Warning! Removing formatting from member #1156992:
+   Text: let U, V be topological spaces. A plateau for a function f: U → V is a path-connected set of points P of U such that for some y we have f (p) = y for all p in P
+   Format: HTML
+Inspecting 515947 filespace slots
+Unused filespace slot count: 6
+Checking for empty filespace slots
+Inspecting 6 empty filespace slots
+Formatting removed from 1 text
+   Including 0 RTF text(s) and 1 HTML text(s)
+Verifying repetition history
+++++++++++++++++++++++    ERROR #2   ++++++++++++++++++++++
+   Wrong sequence of repetitions!
+   Repetition date: Jul 18, 1998
+   Item #12,348: derog: a rustic fellow (esp. if gullible or provincial)
+++++++++++++++++++++++    ERROR #3   ++++++++++++++++++++++
+   Wrong sequence of repetitions!
+   Repetition date: Nov 04, 2002
+   Item #177,001: Semicolons are optional and are required only if you want to [...]
+Repetition history compressed from 60.819 MB to 60.817 MB
+Deleting temporary folders
+Deleting directory: d:\colls\all\temp
+The size of remaining temporary files is 8.85 MB
+   These files can be deleted with File&#160;: Tools&#160;: Garbage
+Removing empty collection directories
+Deleting directory: d:\colls\all\elements\2\4\30\
+Deleting directory: d:\colls\all\subsets\tmp\
+Removing empty secondary storage directories
+
+Process completed at 03:01:20 in 01:09:41 sec (Feb 28, 2016, Sun)
+
+3 ERRORS (Checking the integrity of the collection)
+</pre>
+<!-- 
+NewPP limit report
+Cached time: 20260610111157
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.021 seconds
+Real time usage: 0.022 seconds
+Preprocessor visited node count: 37/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 4740/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key guru_Help20:pcache:104:|#|:idhash:canonical and timestamp 20260610111157 and revision id 10949. Rendering was triggered because: api-parse
+ -->
+</div>
+</div>
+</body>
+</html>

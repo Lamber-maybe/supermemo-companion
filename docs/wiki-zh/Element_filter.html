@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Element filter — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Element_filter" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><b><a href="View_menu.html" title="View menu"> View</a> : Filter</b> (from the <a href="Main_menu.html" title="Main menu">main menu</a>) can be used to find all <a href="Glossary_Element.html" title="Glossary:Element">elements</a> meeting a specific set of criteria such as the number of repetitions, <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a>, number of <a href="Glossary_Lapse.html" title="Glossary:Lapse">memory lapses</a>, length of the current <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a>, status (<a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">memorized</a>, <a href="Glossary_Pending_element.html" title="Glossary:Pending element">pending</a>, or <a href="Glossary_Dismissed_element.html" title="Glossary:Dismissed element">dismissed</a>), type (<a href="Glossary_Item.html" title="Glossary:Item">item</a>, <a href="Glossary_Topic.html" title="Glossary:Topic">topic</a> or <a href="Glossary_Task.html" title="Glossary:Task">task</a>), etc.
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Element_filter.jpg.html" title="SuperMemo: Element filter dialog box which you can use to browse all elements that meet your search criteria (e.g. in leech hunting)"><img alt="SuperMemo: Element filter dialog box which you can use to browse all elements that meet your search criteria (e.g. in leech hunting)" class="mw-file-element" decoding="async" height="600" loading="lazy" src="https://help.supermemo.org/images/thumb/f/f9/Element_filter.jpg/594px-Element_filter.jpg" srcset="/images/f/f9/Element_filter.jpg 1.5x" width="594"/></a><figcaption>SuperMemo: Element filter dialog box which you can use to browse all elements that meet your search criteria (e.g. in leech hunting)</figcaption></figure>
+<p>The following fields can be used to select the minimum and the maximum values that fall into the searched range:
+</p>
+<ul><li><b>Priority</b> - <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> of a given <a href="Glossary_Element.html" title="Glossary:Element">element</a></li>
+<li><b>Repetitions</b> - number of <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetitions</a> made with a given <a href="Glossary_Element.html" title="Glossary:Element">element</a></li>
+<li><b>Lapses</b> - number of times a given <a href="Glossary_Element.html" title="Glossary:Element">element</a> was forgotten</li>
+<li><b>Interval</b> - number of days between the last repetition and the next repetition</li>
+<li><b>Last repetition</b> - the date of the last repetition (note that dates before 1987 are considered an error and the year is replaced with the current year)</li>
+<li><b>Next repetition</b> - the date of the next repetition (note that dates before 1987 and after 2099 are considered an error and the year is replaced with the current year)</li>
+<li><b>A-Factor</b> - value of <a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A-Factor</a> assigned to a given <a href="Glossary_Element.html" title="Glossary:Element">element</a></li>
+<li><b>Forgetting index</b> - probability of forgetting a given <a href="Glossary_Element.html" title="Glossary:Element">element</a> during each repetition</li>
+<li><b>Ordinal number</b> - <a href="Glossary_Ordinal_number.html" title="Glossary:Ordinal number">ordinal number</a> assigned to a given <a href="Glossary_Element.html" title="Glossary:Element">element</a></li>
+<li><b>U-Factor</b> - <a href="Glossary_U-Factor.html" title="Glossary:U-Factor">U-Factor</a> associated with an <a href="Glossary_Element.html" title="Glossary:Element">element</a></li>
+<li><b>Postpones</b> - the number of times a given <a href="Glossary_Element.html" title="Glossary:Element">element</a> has been postponed (with <b><a href="Postpone.html" title="Postpone">Postpone</a></b>)</li></ul>
+<p>If you do not want to use a given criterion, deselect the check-box associated with a given field. If you do want to use it, select the check-box and specify appropriate minimum and maximum values.
+</p><p>The fields <b>Type</b> and <b>Status</b> make it possible to find <a href="Glossary_Item.html" title="Glossary:Item">items</a>, <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a> or <a href="Glossary_Task.html" title="Glossary:Task">tasks</a> with different <a href="Glossary_Pending_element.html" title="Glossary:Pending element">pending</a>, <a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">memorized</a> or <a href="Glossary_Dismissed_element.html" title="Glossary:Dismissed element">dismissed</a> status. For example, to find all memorized non-task elements, check <b>Item</b>, <b>Topic</b> and <b>Memorized</b> and leave the remaining fields unchecked.
+</p><p>Once you click <b>OK</b>, all <a href="Glossary_Element.html" title="Glossary:Element">elements</a> meeting the specified criteria will be found and displayed in a <a href="Browser.html" title="Browser">browser</a>.
+</p><p>You can save filter settings for future use by clicking the diskette button at the bottom of the dialog. The settings are kept in the file <i>filter.ini</i> in the <a href="SuperMemo_files.html#Collection_files" title="SuperMemo files"><i>&lt;collection name&gt;</i> folder</a>.
+</p><p>The filter dialog box is also used with <b><a href="View_menu.html" title="View menu">View</a> : <a href="View_menu.html#Other" title="View menu">Other</a> : <a href="Leeches.html" title="Leeches">Leeches</a></b> (<i>Shift+F3</i>) to locate all most difficult items in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. It can also be used to filter <a href="Glossary_Element.html" title="Glossary:Element">elements</a> in the <a href="Browser.html" title="Browser">browser</a> with <b><a href="Browser_menu.html#Child" title="Browser menu">Child</a> : Filter</b> on the <a href="Browser_menu.html" title="Browser menu">browser menu</a>.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610110952
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.032 seconds
+Real time usage: 0.033 seconds
+Preprocessor visited node count: 1/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 1/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:129:|#|:idhash:canonical and timestamp 20260610110952 and revision id 7515. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><b><a href="View_menu.html" title="View menu">查看</a> ：过滤器</b>（来自<a href="Main_menu.html" title="Main menu">主菜单</a>) 可用于查找所有<a href="Glossary_Element.html" title="Glossary:Element">元素</a>满足一组特定的标准，例如重复次数，<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>, 数量<a href="Glossary_Lapse.html" title="Glossary:Lapse">记忆衰退</a>，电流长度<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>，状态（<a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">记住了</a>,<a href="Glossary_Pending_element.html" title="Glossary:Pending element">待定</a>, 或<a href="Glossary_Dismissed_element.html" title="Glossary:Dismissed element">被解雇</a>），输入（<a href="Glossary_Item.html" title="Glossary:Item">项目</a>,<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>或<a href="Glossary_Task.html" title="Glossary:Task">任务</a>）等</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Element_filter.jpg.html" title="SuperMemo: Element filter dialog box which you can use to browse all elements that meet your search criteria (e.g. in leech hunting)"><img alt="SuperMemo: Element filter dialog box which you can use to browse all elements that meet your search criteria (e.g. in leech hunting)" class="mw-file-element" decoding="async" height="600" loading="lazy" src="https://help.supermemo.org/images/thumb/f/f9/Element_filter.jpg/594px-Element_filter.jpg" srcset="/images/f/f9/Element_filter.jpg 1.5x" width="594"/></a><figcaption>SuperMemo：元素过滤器对话框，您可以使用它来浏览满足您的搜索条件的所有元素（例如在水蛭狩猎中）</figcaption></figure>
+<p>以下字段可用于选择搜索范围内的最小值和最大值：</p>
+<ul><li><b>优先级</b>-<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>给定的<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><b>重复次数</b>- 数量<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>用给定的<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><b>失误</b>- 给定的次数<a href="Glossary_Element.html" title="Glossary:Element">元素</a>被遗忘了</li>
+<li><b>间隔</b>- 上次重复与下一次重复之间的天数</li>
+<li><b>最后一次重复</b>- 最后一次重复的日期（请注意，1987 年之前的日期被视为错误，年份将替换为当前年份）</li>
+<li><b>下一次重复</b>- 下一次重复的日期（请注意，1987 年之前和 2099 年之后的日期被视为错误，年份将替换为当前年份）</li>
+<li><b>A因素</b>- 价值<a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A因素</a>分配给给定的<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><b>遗忘指数</b>- 忘记给定的概率<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在每次重复过程中</li>
+<li><b>序数</b>-<a href="Glossary_Ordinal_number.html" title="Glossary:Ordinal number">序数</a>分配给给定的<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><b>U因子</b>-<a href="Glossary_U-Factor.html" title="Glossary:U-Factor">U因子</a>与一个相关联<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><b>推迟</b>- 给定的次数<a href="Glossary_Element.html" title="Glossary:Element">元素</a>已被推迟（与<b><a href="Postpone.html" title="Postpone">推迟</a></b>）</li></ul>
+<p>如果您不想使用给定条件，请取消选择与给定字段关联的复选框。如果您确实想使用它，请选中该复选框并指定适当的最小值和最大值。</p><p>田野<b>类型</b>和<b>状态</b>使找到成为可能<a href="Glossary_Item.html" title="Glossary:Item">项目</a>,<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>或<a href="Glossary_Task.html" title="Glossary:Task">任务</a>与不同的<a href="Glossary_Pending_element.html" title="Glossary:Pending element">待定</a>,<a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">记住了</a>或<a href="Glossary_Dismissed_element.html" title="Glossary:Dismissed element">被解雇</a>状态。例如，要查找所有记忆的非任务元素，请检查<b>项目</b>,<b>主题</b>和<b>已熟记</b>并将其余字段保留为未选中状态。</p><p>一旦你点击<b>好的</b>, 全部<a href="Glossary_Element.html" title="Glossary:Element">元素</a>满足指定条件的将被发现并显示在<a href="Browser.html" title="Browser">浏览器</a>。</p><p>您可以通过单击对话框底部的软盘按钮保存过滤器设置以供将来使用。设置保存在文件中<i>过滤器.ini</i>在<a href="SuperMemo_files.html#Collection_files" title="SuperMemo files"><i>&lt;集合名称&gt;</i>文件夹</a>。</p><p>过滤器对话框也可用于<b><a href="View_menu.html" title="View menu">查看</a> :<a href="View_menu.html#Other" title="View menu">其他</a> :<a href="Leeches.html" title="Leeches">水蛭</a></b>（<i>Shift+F3</i>）找到所有最困难的项目<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。也可以用来过滤<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在<a href="Browser.html" title="Browser">浏览器</a>与<b><a href="Browser_menu.html#Child" title="Browser menu">儿童</a> ：过滤器</b>于<a href="Browser_menu.html" title="Browser menu">浏览器菜单</a>。</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610110952
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.032 seconds
+Real time usage: 0.033 seconds
+Preprocessor visited node count: 1/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 1/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:129:|#|:idhash:canonical and timestamp 20260610110952 and revision id 7515. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

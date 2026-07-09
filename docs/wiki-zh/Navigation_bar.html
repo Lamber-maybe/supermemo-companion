@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Navigation bar — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Navigation_bar" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p>At the top of the <a href="Element_window.html" title="Element window">element window</a> you will find the element toolbar called the <b>navigation bar</b> (to differentiate from the control bar at the bottom): 
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Element_window.jpg.html" title="SuperMemo: SuperMemo: The element window displaying a cloze deletion produced from a larger article titled DREAMING and the BRAIN"><img alt="SuperMemo: SuperMemo: The element window displaying a cloze deletion produced from a larger article titled DREAMING and the BRAIN" class="mw-file-element" decoding="async" height="431" loading="lazy" src="https://help.supermemo.org/images/thumb/8/8e/Element_window.jpg/800px-Element_window.jpg" srcset="/images/thumb/8/8e/Element_window.jpg/1200px-Element_window.jpg 1.5x, /images/thumb/8/8e/Element_window.jpg/1600px-Element_window.jpg 2x" width="800"/></a><figcaption>SuperMemo: SuperMemo: The element window displaying a cloze deletion produced from a larger article titled DREAMING and the BRAIN</figcaption></figure>
+<div class="mw-heading mw-heading2"><h2 id="Available_buttons">Available buttons</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Navigation_bar&amp;veaction=edit&amp;section=1" title="Edit section: Available buttons"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Navigation_bar&amp;action=edit&amp;section=1" title="Edit section's source code: Available buttons"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Favorites</b> (<i>Ctrl+O</i>) - pick a <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> from the list of favorites</li>
+<li><b>Contents</b> - open the <a href="Contents.html" title="Contents"><b>Contents</b> window</a> with the <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">tree structure of knowledge</a> stored in your current <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a></li>
+<li><b><span id="search">Search</span></b> - search for texts in your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>.<br/>This button features a context menu. Right-click it to open the menu with the following options:
+<ul><li><b><a href="Find_elements.html" title="Find elements">Find elements</a></b> (<i>Ctrl+F</i>) - find all <a href="Glossary_Element.html" title="Glossary:Element">elements</a> containing a given text. Note that some texts in SuperMemo can be displayed by means of images or <a href="OLE_component.html" title="OLE component">OLE objects</a>. Those will not show up in the search. The results of the search will be displayed in the <a href="Browser.html" title="Browser">element browser</a>. If you quit the <a href="Browser.html" title="Browser">browser</a>, you can always return to the results of your last search with <b><a href="View_menu.html" title="View menu">View</a> : <a href="View_menu.html#Search_results" title="View menu">Search results</a></b>. The texts found in the search can also be viewed in the text <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> as the first <a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">registry subset</a>.</li>
+<li><b>Find words</b> - open the lexicon <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> that makes it possible to locate individual words used in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> (except for words used in pictures, <a href="OLE_component.html" title="OLE component">OLE objects</a>, etc.). Note that if on-the-fly lexicon compilation is turned off (to speed up SuperMemo), some words might be missing from the list (see: <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Options.html" title="Options">Options</a> : <a href="Access_tab_in_Options.html" title="Access tab in Options">Access</a> : Compile lexicon on-the-fly</b>)! In such cases run: <b><a href="File_menu.html" title="File menu">File</a> : <a href="Repairing_collections.html" title="Repairing collections">Repair collection</a></b> with <b>Rebuild lexicon</b> checked</li>
+<li><b>Search text registry</b> (<i>Ctrl+S</i>) - open the text <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> with all texts used in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. The texts for the registry are contributed by the following <a href="Glossary_Component.html" title="Glossary:Component">components</a>: plain text, Spell-Pad, RTF rich text, <a href="HTML_component.html" title="HTML component">HTML text</a>, and sound component</li>
+<li><b>Open text registry</b> - review texts in the text <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> (same as <b><a href="Search_menu.html" title="Search menu">Search</a> : <a href="Search_menu.html#Texts" title="Search menu">Texts</a></b> from the <a href="Main_menu.html" title="Main menu">main menu</a>)</li>
+<li><b>Find in article</b> (<i>F3</i>) - find a string in the currently selected text <a href="Glossary_Component.html" title="Glossary:Component">component</a>. Use this option to search the contents of particularly long articles.</li>
+<li><b>Search and replace</b> (<i>Ctrl+R</i>) - search all entries of the text <a href="Glossary_Registry.html" title="Glossary:Registry">registries</a> and replace the occurrence of one string with another</li>
+<li><b>Ancestors</b> (<i>Shift+Ctrl+X</i>) - open the <b>Ancestors</b> window that makes it possible to go to a given <a href="Glossary_Ancestor.html" title="Glossary:Ancestor">ancestor</a> of the currently displayed <a href="Glossary_Element.html" title="Glossary:Element">element</a> with a single click</li></ul></li>
+<li><b>Back (&lt;)</b> (<i>Alt+Left</i>) - move back to the most recently visited <a href="Glossary_Element.html" title="Glossary:Element">element</a></li>
+<li><b>Forward (&gt;)</b> (<i>Alt+Right</i>) - revisit <a href="Glossary_Element.html" title="Glossary:Element">elements</a> that have been viewed before with the button <b>Back (&lt;)</b></li>
+<li><b>History</b> - view the list of the recently visited <a href="Glossary_Element.html" title="Glossary:Element">elements</a></li>
+<li><b>Home</b> (<i>Alt+Home</i> or <i>Ctrl+Home</i>) - go to the <a href="Glossary_Root_node.html" title="Glossary:Root node">root</a> of the whole <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>, i.e. the <a href="Glossary_Element.html" title="Glossary:Element">element</a> that is the parent of the whole <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">knowledge tree</a></li>
+<li><b>Previous element</b> (<i>Alt+Page Up</i>) - go to the previous <a href="Glossary_Element.html" title="Glossary:Element">element</a> in the <a href="Contents.html" title="Contents"><b>Contents</b> window</a></li>
+<li><b>Parent</b> (<i>Ctrl+Up</i>) - go to the parent of the currently displayed <a href="Glossary_Element.html" title="Glossary:Element">element</a></li>
+<li><b>Next element</b> (<i>Alt+Page Down</i>) - go to the next <a href="Glossary_Element.html" title="Glossary:Element">element</a> in the <a href="Contents.html" title="Contents"><b>Contents</b> window</a></li>
+<li><b>End</b> (<i>Alt+End</i> or <i>Ctrl+End</i>) - go to the last <a href="Glossary_Element.html" title="Glossary:Element">element</a> in the <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">knowledge tree</a> in the <a href="Contents.html" title="Contents"><b>Contents</b> window</a></li>
+<li><b>Find in article</b> (<i>F3</i>) - search the current text in the displayed <a href="Glossary_Element.html" title="Glossary:Element">element</a> for a specific string and highlight all its occurrences. To highlight search strings in an <a href="HTML_component.html" title="HTML component">HTML component</a>, you may need to define <code>SearchHighlight</code> in the stylesheet used by the <a href="Glossary_Component.html" title="Glossary:Component">component</a> (e.g. in <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Options.html" title="Options">Options</a> : <a href="Fonts_tab_in_Options.html" title="Fonts tab in Options">Fonts</a> : Stylesheet</b>). This button features the same <a href="#search">context menu</a> the <b>Search</b> button does.</li>
+<li><b>Search and replace</b> (<i>Ctrl+R</i>) - search all entries of the text <a href="Glossary_Registry.html" title="Glossary:Registry">registries</a> and replace the occurrence of one string with another. This button features the same <a href="#search">context menu</a> the <b>Search</b> button has.</li>
+<li><b>Reference link</b> - go to the source <a href="Glossary_Element.html" title="Glossary:Element">element</a> from which a given element has been extracted in the process of <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>. By clicking the <b>Reference link</b> button, you can go to the article from which a given <a href="Glossary_Extract.html" title="Glossary:Extract">extract</a> was taken. In original root elements, this button also opens the page from which the article had been imported from the web (if any). This button is not active in independent <a href="Glossary_Element.html" title="Glossary:Element">elements</a>. If you pause the mouse over this button, you shall see the current <a href="References.html" title="References">reference</a> for the <a href="Glossary_Element.html" title="Glossary:Element">element</a>. To parse the article, <i>Shift+click</i> on this button. To reset the reference hyperlink, <i>Ctrl+Shift+click</i> on this button.<br/>This button features a context menu. Right-click it to open the menu with the following options:
+<ul><li><b>Open hyperlink</b> - opens the webpage that acted as the primary reference for the currently displayed <a href="Glossary_Element.html" title="Glossary:Element">element</a></li>
+<li><b>Open parsed</b> - opens the parsed webpage that originally provided the source information for the currently displayed <a href="Glossary_Element.html" title="Glossary:Element">element</a> (same as <i>Shift+click</i> on the <b>Reference link</b> button)</li>
+<li><b>Go to origin</b> - go to the SuperMemo <a href="Glossary_Element.html" title="Glossary:Element">element</a> that provided the source material for the currently displayed element</li>
+<li><b>Change origin</b> - changes the SuperMemo <a href="Glossary_Element.html" title="Glossary:Element">element</a> acting as the primary material for the currently displayed element. In the dialog that appears, type in the number associated with the new element. You can find the element number by choosing <b>Search : Go to element</b> (<i>Ctrl+G</i>) when the element is displayed in the <a href="Element_window.html" title="Element window">element window</a>. The number prefed in the dialog box is the number associated with the current element. Alternatively, if you have <a href="Element_data.html" title="Element data"><b>Element data</b> window</a> on display, you can find that number in the caption of that window.</li>
+<li><b>Reset origin</b> - deletes the association between the currently displayed <a href="Glossary_Element.html" title="Glossary:Element">element</a> and the SuperMemo element serving as its primary reference</li></ul></li>
+<li><b>Web search</b> (Ctrl+F3) - searches the web for the currently selected text</li>
+<li><b>E-mail</b> (<i>Ctrl+Shift+E</i>) - forward the <a href="Glossary_Element.html" title="Glossary:Element">element</a> via e-mail.<br/>This button features a context menu. Right-click it to open the menu with the following options:
+<ul><li><b>Send element</b> (<i>Ctrl+Shift+E</i>) - same as above</li>
+<li><b>Send picture</b> - send a scaled picture via e-mail</li>
+<li><b>Send texts (unformatted)</b> - e-mail all texts of the <a href="Glossary_Element.html" title="Glossary:Element">element</a> in mail body</li>
+<li><b>Send texts (HTML)</b> -  convert the <a href="Glossary_Element.html" title="Glossary:Element">element</a> to HTML and send it via e-mail. Only references to object files (such as pictures) will be sent. To send the object files, use <b>Send element</b> (above)</li>
+<li><b>Reply to selection</b> -  reply to the selected text via e-mail</li>
+<li><b>FAQ</b> - use the selected text as the basis of an FAQ question, and send the answer to the author of the question. Your response will automatically be added to an FAQ file of your choice. All <a class="external text" href="http://super-memory.com/help/faq">FAQs</a> at <a class="external text" href="http://super-memory.com">SuperMemo Website</a> have been created by means of <b>(E-mail) FAQ</b></li></ul></li>
+<li><b><a href="SuperMemo_Commander.html" title="SuperMemo Commander">SuperMemo Commander</a></b> (<i>Ctrl+Enter</i>) - choose a SuperMemo command to execute.<br/>This button features a context menu. Right-click it to open the menu with the following options:
+<ul><li><b><a href="SuperMemo_Commander.html" title="SuperMemo Commander">Commander</a></b> (<i>Ctrl+Enter</i>) - same as above</li>
+<li><b><a href="Options.html" title="Options">Options</a></b> - open a tabbed dialog box with options such as default interface font, <a class="external text" href="https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo#default_forgetting_index">default forgetting index</a>, path to files on the CD-ROM, translation language, etc.</li>
+<li><b>Element menu</b> (<i>Alt+F10</i>) - open the <a href="Element_menu.html" title="Element menu">element menu</a></li>
+<li><b>Component menu</b> (<i>Alt+F12</i>) - open the <a href="Component_menu.html" title="Component menu">component menu</a> for the current <a href="Glossary_Component.html" title="Glossary:Component">component</a></li></ul></li>
+<li><b>Download original page</b> - download the original of the page displayed in the current <a href="Glossary_Element.html" title="Glossary:Element">element</a>. It makes it possible to update the imported page.</li>
+<li><b>Layout manager</b> - open a layout manager that makes it possible to select, apply, save or delete <a href="Glossary_Layout.html" title="Glossary:Layout">layouts</a>.<br/>This button features a context menu. Right-click it to open the menu with the following options:
+<ul><li><b>Layout manager</b> - same as above</li>
+<li><b>Apply default layout</b> (<i>Ctrl+F5</i>) - restore the windows layout last saved with <b>Save default default</b> (below)</li>
+<li><b>Save layout</b> - save the current windows' layout under a selected name</li>
+<li><b>Save default layout</b> (<i>Shift+Ctrl+F5</i>) - save the current layout of windows as your default <a href="Glossary_Layout.html" title="Glossary:Layout">layout</a>. Each time you enter the currently used <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>, this layout will be applied</li></ul></li>
+<li><b>Help</b> - view the help file. At the <b>Beginner</b> and <b>Basic</b> <a href="Glossary_Level.html" title="Glossary:Level">levels</a>, introduction to SuperMemo is shown. At higher levels, SuperMemo help index is shown.</li>
+<li><b><span id="concepts">Link concept</span></b> - link the currently displayed <a href="Glossary_Element.html" title="Glossary:Element">element</a> with any <a href="Glossary_Concept.html" title="Glossary:Concept">concept</a> from the concept <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a>.<br/>This button features a context menu. Right-click it to open the menu with the following options:
+<ul><li><b>Link concept</b> - same as above</li>
+<li><b>List links</b> - list links associated with the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> and display them in the <a href="Browser.html" title="Browser">browser</a></li>
+<li><b>Unlink concept</b> - sever a link from the displayed <a href="Glossary_Element.html" title="Glossary:Element">element</a> to a <a href="Glossary_Concept.html" title="Glossary:Concept">concept</a></li>
+<li><b>Unlink element</b> - sever a link from the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> to another element</li>
+<li><b>Create concept</b> - convert the current <a href="Glossary_Element.html" title="Glossary:Element">Element</a> into a new <a href="Glossary_Concept.html" title="Glossary:Concept">concept</a></li>
+<li><b>Map</b> - display the concept map or the content map for the current <a href="Glossary_Element.html" title="Glossary:Element">element</a></li></ul></li>
+<li><b>Choose default concept group</b> - choose the default <a href="Glossary_Concept_group.html" title="Glossary:Concept group">concept group</a> for adding new <a href="Glossary_Element.html" title="Glossary:Element">elements</a>. This button features the same <a href="#concepts">context menu</a> the <b>Link concept</b> button has.</li>
+<li><i>Default concept group</i> in the <b><a href="Concepts.html" title="Concepts">Concept box</a></b> - displays the current default <a href="Glossary_Concept_group.html" title="Glossary:Concept group">concept group</a> to which new <a href="Glossary_Element.html" title="Glossary:Element">elements</a> are added (e.g. when you click <b>Add new</b>). This box features the same <a href="#concepts">context menu</a> the <b>Link concept</b> button has. Moreover, when you enter the box, you will open a search selection list which allows you to incrementally search through the collection's concepts without opening the concept registry. Once the concept is selected in the list, SuperMemo will display additional menu with the following concept management options:
+<ul><li><b>View the root</b> - go to the <a href="Glossary_Root_node.html" title="Glossary:Root node">root</a> <a href="Glossary_Element.html" title="Glossary:Element">element</a> of the selected <a href="Glossary_Concept.html" title="Glossary:Concept">concept</a></li>
+<li><b>Learn elements in concept</b> - review the <a href="Glossary_Element.html" title="Glossary:Element">elements</a> in the selected <a href="Glossary_Concept_group.html" title="Glossary:Concept group">concept group</a></li>
+<li><b>Transfer element under concept</b> - move the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> to selected <a href="Glossary_Concept_group.html" title="Glossary:Concept group">concept group</a></li>
+<li><b>Link element to selected concept</b> - link the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> to the selected <a href="Glossary_Concept.html" title="Glossary:Concept">concept</a></li>
+<li><b>View the last element</b> - go to the last <a href="Glossary_Element.html" title="Glossary:Element">element</a> under <a href="Glossary_Concept.html" title="Glossary:Concept">concept</a>'s <a href="Glossary_Hook_node.html" title="Glossary:Hook node">hook</a></li>
+<li><b>Close the concept selection list (<i>Esc</i>)</b></li></ul></li>
+<li><b>Information panel</b> - displays the name of the currently opened collection, the current version of SuperMemo, as well as the path to the collection. Right click over this panel opens the <a href="Element_menu.html" title="Element menu">Element menu</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Notes">Notes</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Navigation_bar&amp;veaction=edit&amp;section=2" title="Edit section: Notes"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Navigation_bar&amp;action=edit&amp;section=2" title="Edit section's source code: Notes"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Use a <i>right-click</i> over the <b>information panel</b> on the navigation bar to open the <a href="Element_menu.html" title="Element menu">element menu</a>. Note that several toolbar buttons (i.e. <b>Search</b>, <b>Find in article</b>, <b>Search and replace</b>, <b>Reference link</b>, <b>E-mail</b>, <b>SuperMemo Commander</b>, and <b>Layout manager</b>) have their own context menus. This means that if you happen to right-click on one of those buttons, its own context menu will open
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610042638
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.037 seconds
+Real time usage: 0.039 seconds
+Preprocessor visited node count: 126/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:46:|#|:idhash:canonical and timestamp 20260610042638 and revision id 11313. Rendering was triggered because: page-view
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p>在顶部<a href="Element_window.html" title="Element window">元素窗口</a>您会发现名为的元素工具栏<b>导航栏</b>（与底部的控制栏区分开）：</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Element_window.jpg.html" title="SuperMemo: SuperMemo: The element window displaying a cloze deletion produced from a larger article titled DREAMING and the BRAIN"><img alt="SuperMemo: SuperMemo: The element window displaying a cloze deletion produced from a larger article titled DREAMING and the BRAIN" class="mw-file-element" decoding="async" height="431" loading="lazy" src="https://help.supermemo.org/images/thumb/8/8e/Element_window.jpg/800px-Element_window.jpg" srcset="/images/thumb/8/8e/Element_window.jpg/1200px-Element_window.jpg 1.5x, /images/thumb/8/8e/Element_window.jpg/1600px-Element_window.jpg 2x" width="800"/></a><figcaption>SuperMemo：SuperMemo：显示完形填空删除的元素窗口，该删除是从标题为 DREAMING and the BRAIN 的较大文章生成的</figcaption></figure>
+<div class="mw-heading mw-heading2"><h2 id="Available_buttons">可用按钮</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Navigation_bar&amp;veaction=edit&amp;section=1" title="Edit section: Available buttons"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Navigation_bar&amp;action=edit&amp;section=1" title="Edit section's source code: Available buttons"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>收藏夹</b>（<i>Ctrl+O</i>) - 选择一个<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>从收藏夹列表中</li>
+<li><b>内容</b>- 打开<a href="Contents.html" title="Contents"><b>内容</b>窗户</a>与<a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">知识树结构</a>存储在您当前的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a></li>
+<li><b><span id="search">搜索</span></b>- 搜索您的文本<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。<br/>该按钮具有上下文菜单。右键单击它打开带有以下选项的菜单：<ul><li><b><a href="Find_elements.html" title="Find elements">查找元素</a></b>（<i>Ctrl+F</i>) - 查找所有<a href="Glossary_Element.html" title="Glossary:Element">元素</a>包含给定的文本。请注意，SuperMemo 中的某些文本可以通过图像或<a href="OLE_component.html" title="OLE component">OLE对象</a>。这些不会出现在搜索中。搜索结果将显示在<a href="Browser.html" title="Browser">元素浏览器</a>。如果您退出<a href="Browser.html" title="Browser">浏览器</a>，您可以随时返回到上次搜索的结果<b><a href="View_menu.html" title="View menu">查看</a> :<a href="View_menu.html#Search_results" title="View menu">搜索结果</a></b>。搜索到的文字也可以在文字中查看<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>作为第一个<a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">注册表子集</a>。</li>
+<li><b>找词</b>- 打开词典<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>这使得可以找到其中使用的各个单词<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>（除了图片中使用的文字，<a href="OLE_component.html" title="OLE component">OLE对象</a>等）。请注意，如果关闭动态词典编译（以加速 SuperMemo），则列表中可能会丢失某些单词（请参阅：<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Options.html" title="Options">选项</a> :<a href="Access_tab_in_Options.html" title="Access tab in Options">访问</a> ：即时编译词典</b>）！在这种情况下运行：<b><a href="File_menu.html" title="File menu">文件</a> :<a href="Repairing_collections.html" title="Repairing collections">修复合集</a></b>与<b>重建词典</b>检查过</li>
+<li><b>搜索文本注册表</b>（<i>Ctrl+S</i>) - 打开文本<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>以及中使用的所有文本<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。注册表的文本由以下人员提供<a href="Glossary_Component.html" title="Glossary:Component">组件</a>：纯文本、Spell-Pad、RTF 富文本、<a href="HTML_component.html" title="HTML component">HTML 文本</a>，和声音分量</li>
+<li><b>打开文本注册表</b>- 复习课文中的文字<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>（与<b><a href="Search_menu.html" title="Search menu">搜索</a> :<a href="Search_menu.html#Texts" title="Search menu">文本</a></b>从<a href="Main_menu.html" title="Main menu">主菜单</a>）</li>
+<li><b>在文章中查找</b>（<i>F3</i>) - 在当前选定的文本中查找字符串<a href="Glossary_Component.html" title="Glossary:Component">组件</a>。使用此选项可以搜索特别长的文章的内容。</li>
+<li><b>搜索和替换</b>（<i>Ctrl+R</i>) - 搜索文本的所有条目<a href="Glossary_Registry.html" title="Glossary:Registry">登记处</a>并将出现的一个字符串替换为另一个字符串</li>
+<li><b>祖先</b>（<i>Shift+Ctrl+X</i>) - 打开<b>祖先</b>可以转到给定的窗口<a href="Glossary_Ancestor.html" title="Glossary:Ancestor">祖先</a>当前显示的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>只需单击一下</li></ul></li>
+<li><b>返回 (&lt;)</b>（<i>Alt+左键</i>) - 移回到最近访问过的位置<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><b>转发 (&gt;)</b>（<i>Alt+右</i>) - 重温<a href="Glossary_Element.html" title="Glossary:Element">元素</a>之前已使用 按钮查看过的内容<b>返回 (&lt;)</b></li>
+<li><b>历史</b>- 查看最近访问过的列表<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><b>首页</b>（<i>Alt+Home</i>或<i>Ctrl+Home</i>) - 转到<a href="Glossary_Root_node.html" title="Glossary:Root node">根</a>整体的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>，即<a href="Glossary_Element.html" title="Glossary:Element">元素</a>这是整体的父级<a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">知识树</a></li>
+<li><b>上一个元素</b>（<i>Alt+向上翻页</i>) - 转到上一个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在<a href="Contents.html" title="Contents"><b>内容</b>窗户</a></li>
+<li><b>家长</b>（<i>Ctrl+向上键</i>) - 转到当前显示的父级<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><b>下一个元素</b>（<i>Alt+向下翻页</i>) - 转到下一个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在<a href="Contents.html" title="Contents"><b>内容</b>窗户</a></li>
+<li><b>结束</b>（<i>Alt+结束</i>或<i>Ctrl+结束</i>) - 转到最后一个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在<a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">知识树</a>在<a href="Contents.html" title="Contents"><b>内容</b>窗户</a></li>
+<li><b>在文章中查找</b>（<i>F3</i>) - 在显示的内容中搜索当前文本<a href="Glossary_Element.html" title="Glossary:Element">元素</a>对于特定字符串并突出显示其所有出现的地方。要突出显示搜索字符串<a href="HTML_component.html" title="HTML component">HTML组件</a>，您可能需要定义<code>SearchHighlight</code>在使用的样式表中<a href="Glossary_Component.html" title="Glossary:Component">组件</a>（例如在<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Options.html" title="Options">选项</a> :<a href="Fonts_tab_in_Options.html" title="Fonts tab in Options">字体</a> ：样式表</b>）。该按钮的功能相同<a href="#search">上下文菜单</a>的<b>搜索</b>按钮可以。</li>
+<li><b>搜索和替换</b>（<i>Ctrl+R</i>) - 搜索文本的所有条目<a href="Glossary_Registry.html" title="Glossary:Registry">登记处</a>并将出现的一个字符串替换为另一个字符串。该按钮的功能相同<a href="#search">上下文菜单</a>的<b>搜索</b>按钮有。</li>
+<li><b>参考链接</b>- 去源头<a href="Glossary_Element.html" title="Glossary:Element">元素</a>从中提取给定元素的过程<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>。通过单击<b>参考链接</b>按钮，您可以转到给定的文章<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>被带走了。在原始根元素中，此按钮还会打开从网络导入文章的页面（如果有）。该按钮在独立模式下无效<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。如果将鼠标悬停在该按钮上，您将看到当前<a href="References.html" title="References">参考</a>为<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。为了解析这篇文章，<i>Shift+单击</i>在此按钮上。要重置参考超链接，<i>Ctrl+Shift+单击</i>在此按钮上。<br/>该按钮具有上下文菜单。右键单击它打开带有以下选项的菜单：<ul><li><b>打开超链接</b>- 打开作为当前显示的主要参考的网页<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><b>打开已解析</b>- 打开最初为当前显示的内容提供源信息的解析网页<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（与<i>Shift+单击</i>于<b>参考链接</b>按钮）</li>
+<li><b>前往原点</b>- 转到 SuperMemo<a href="Glossary_Element.html" title="Glossary:Element">元素</a>为当前显示的元素提供源材料</li>
+<li><b>更改原产地</b>- 更改 SuperMemo<a href="Glossary_Element.html" title="Glossary:Element">元素</a>充当当前显示元素的主要材质。在出现的对话框中，输入与新元素关联的编号。您可以通过选择找到元素编号<b>搜索：转到元素</b>（<i>Ctrl+G</i>) 当元素显示在<a href="Element_window.html" title="Element window">元素窗口</a>。对话框中首选的数字是与当前元素关联的数字。或者，如果您有<a href="Element_data.html" title="Element data"><b>元素数据</b>窗户</a>在显示时，您可以在该窗口的标题中找到该数字。</li>
+<li><b>重置原点</b>- 删除当前显示的关联<a href="Glossary_Element.html" title="Glossary:Element">元素</a>以及 SuperMemo 元素作为其主要参考</li></ul></li>
+<li><b>网页搜索</b>(Ctrl+F3) - 在网络上搜索当前选定的文本</li>
+<li><b>电子邮件</b>（<i>Ctrl+Shift+E</i>) - 转发<a href="Glossary_Element.html" title="Glossary:Element">元素</a>通过电子邮件。<br/>该按钮具有上下文菜单。右键单击它打开带有以下选项的菜单：<ul><li><b>发送元素</b>（<i>Ctrl+Shift+E</i>) - 与上面相同</li>
+<li><b>发送图片</b>- 通过电子邮件发送缩放图片</li>
+<li><b>发送文本（无格式）</b>- 通过电子邮件发送所有文本<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在邮件正文中</li>
+<li><b>发送文本 (HTML)</b>- 转换<a href="Glossary_Element.html" title="Glossary:Element">元素</a>转换为 HTML 并通过电子邮件发送。仅发送对目标文件（例如图片）的引用。要发送目标文件，请使用<b>发送元素</b>（上）</li>
+<li><b>回复选择</b>- 通过电子邮件回复所选文本</li>
+<li><b>常见问题解答</b>- 使用所选文本作为常见问题解答问题的基础，并将答案发送给问题的作者。您的回复将自动添加到您选择的常见问题解答文件中。全部<a class="external text" href="http://super-memory.com/help/faq">常见问题解答</a>在<a class="external text" href="http://super-memory.com">SuperMemo 网站</a>是通过以下方式创建的<b>（电子邮件）常见问题解答</b></li></ul></li>
+<li><b><a href="SuperMemo_Commander.html" title="SuperMemo Commander">超级备忘录指挥官</a></b>（<i>Ctrl+Enter</i>) - 选择要执行的 SuperMemo 命令。<br/>该按钮具有上下文菜单。右键单击它打开带有以下选项的菜单：<ul><li><b><a href="SuperMemo_Commander.html" title="SuperMemo Commander">指挥官</a></b>（<i>Ctrl+Enter</i>) - 与上面相同</li>
+<li><b><a href="Options.html" title="Options">选项</a></b>- 打开一个选项卡式对话框，其中包含默认界面字体等选项，<a class="external text" href="https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo#default_forgetting_index">默认遗忘指数</a>、CD-ROM 上文件的路径、翻译语言等。</li>
+<li><b>元素菜单</b>（<i>Alt+F10</i>) - 打开<a href="Element_menu.html" title="Element menu">元素菜单</a></li>
+<li><b>组件菜单</b>（<i>Alt+F12</i>) - 打开<a href="Component_menu.html" title="Component menu">组件菜单</a>对于当前的<a href="Glossary_Component.html" title="Glossary:Component">组件</a></li></ul></li>
+<li><b>下载原版页面</b>- 下载当前显示页面的原件<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。它使得更新导入的页面成为可能。</li>
+<li><b>布局管理器</b>- 打开布局管理器，可以选择、应用、保存或删除<a href="Glossary_Layout.html" title="Glossary:Layout">布局</a>。<br/>该按钮具有上下文菜单。右键单击它打开带有以下选项的菜单：<ul><li><b>布局管理器</b>- 与上面相同</li>
+<li><b>应用默认布局</b>（<i>Ctrl+F5</i>) - 恢复上次保存的窗口布局<b>保存默认值</b>（下）</li>
+<li><b>保存布局</b>- 以选定的名称保存当前窗口的布局</li>
+<li><b>保存默认布局</b>（<i>Shift+Ctrl+F5</i>) - 将当前窗口布局保存为默认布局<a href="Glossary_Layout.html" title="Glossary:Layout">布局</a>。每次输入当前使用的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>，将应用此布局</li></ul></li>
+<li><b>帮助</b>- 查看帮助文件。在<b>初学者</b>和<b>基础</b> <a href="Glossary_Level.html" title="Glossary:Level">级别</a>，显示了 SuperMemo 的介绍。在较高级别，显示 SuperMemo 帮助索引。</li>
+<li><b><span id="concepts">链接概念</span></b>- 链接当前显示的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>与任何<a href="Glossary_Concept.html" title="Glossary:Concept">概念</a>从概念上<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>。<br/>该按钮具有上下文菜单。右键单击它打开带有以下选项的菜单：<ul><li><b>链接概念</b>- 与上面相同</li>
+<li><b>列出链接</b>- 列出与当前关联的链接<a href="Glossary_Element.html" title="Glossary:Element">元素</a>并将它们显示在<a href="Browser.html" title="Browser">浏览器</a></li>
+<li><b>取消链接概念</b>- 从显示的链接中切断链接<a href="Glossary_Element.html" title="Glossary:Element">元素</a>到一个<a href="Glossary_Concept.html" title="Glossary:Concept">概念</a></li>
+<li><b>取消链接元素</b>- 切断当前的链接<a href="Glossary_Element.html" title="Glossary:Element">元素</a>到另一个元素</li>
+<li><b>创造概念</b>- 转换电流<a href="Glossary_Element.html" title="Glossary:Element">元素</a>进入一个新的<a href="Glossary_Concept.html" title="Glossary:Concept">概念</a></li>
+<li><b>地图</b>- 显示当前的概念图或内容图<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li></ul></li>
+<li><b>选择默认概念组</b>- 选择默认值<a href="Glossary_Concept_group.html" title="Glossary:Concept group">概念组</a>用于添加新的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。该按钮的功能相同<a href="#concepts">上下文菜单</a>的<b>链接概念</b>按钮有。</li>
+<li><i>默认概念组</i>在<b><a href="Concepts.html" title="Concepts">概念盒</a></b>- 显示当前默认值<a href="Glossary_Concept_group.html" title="Glossary:Concept group">概念组</a>到哪个新的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>添加（例如，当您单击<b>添加新的</b>）。这个盒子的特点是一样的<a href="#concepts">上下文菜单</a>的<b>链接概念</b>按钮有。此外，当您输入该框时，您将打开一个搜索选择列表，该列表允许您增量搜索集合的概念，而无需打开概念注册表。在列表中选择概念后，SuperMemo 将显示带有以下概念管理选项的附加菜单：<ul><li><b>查看根</b>- 前往<a href="Glossary_Root_node.html" title="Glossary:Root node">根</a> <a href="Glossary_Element.html" title="Glossary:Element">元素</a>所选的<a href="Glossary_Concept.html" title="Glossary:Concept">概念</a></li>
+<li><b>学习概念中的元素</b>- 审查<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在选定的<a href="Glossary_Concept_group.html" title="Glossary:Concept group">概念组</a></li>
+<li><b>概念下的转移元素</b>- 移动当前<a href="Glossary_Element.html" title="Glossary:Element">元素</a>至选定的<a href="Glossary_Concept_group.html" title="Glossary:Concept group">概念组</a></li>
+<li><b>将元素链接到选定的概念</b>- 链接当前<a href="Glossary_Element.html" title="Glossary:Element">元素</a>到选定的<a href="Glossary_Concept.html" title="Glossary:Concept">概念</a></li>
+<li><b>查看最后一个元素</b>- 转到最后一个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>下<a href="Glossary_Concept.html" title="Glossary:Concept">概念</a>的<a href="Glossary_Hook_node.html" title="Glossary:Hook node">钩子</a></li>
+<li><b>关闭概念选择列表（<i>ESC</i>）</b></li></ul></li>
+<li><b>信息面板</b>- 显示当前打开的集合的名称、SuperMemo 的当前版本以及集合的路径。右键单击该面板将打开<a href="Element_menu.html" title="Element menu">元素菜单</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Notes">注释</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Navigation_bar&amp;veaction=edit&amp;section=2" title="Edit section: Notes"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Navigation_bar&amp;action=edit&amp;section=2" title="Edit section's source code: Notes"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>使用一个<i>右键单击</i>超过<b>信息面板</b>在导航栏上打开<a href="Element_menu.html" title="Element menu">元素菜单</a>。请注意，几个工具栏按钮（即<b>搜索</b>,<b>在文章中查找</b>,<b>搜索和替换</b>,<b>参考链接</b>,<b>电子邮件</b>,<b>超级备忘录指挥官</b>, 和<b>布局管理器</b>）有自己的上下文菜单。这意味着，如果您碰巧右键单击这些按钮之一，则会打开其自己的上下文菜单</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610042638
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.037 seconds
+Real time usage: 0.039 seconds
+Preprocessor visited node count: 126/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:46:|#|:idhash:canonical and timestamp 20260610042638 and revision id 11313. Rendering was triggered because: page-view
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

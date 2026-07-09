@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Element data — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Element_data" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Available_element_data_groups"><span class="tocnumber">1</span> <span class="toctext">Available element data groups</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Priority"><span class="tocnumber">1.1</span> <span class="toctext">Priority</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Dates"><span class="tocnumber">1.2</span> <span class="toctext">Dates</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Interval"><span class="tocnumber">1.3</span> <span class="toctext">Interval</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#DSR_Stats"><span class="tocnumber">1.4</span> <span class="toctext">DSR Stats</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Repetitions"><span class="tocnumber">1.5</span> <span class="toctext">Repetitions</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Difficulty"><span class="tocnumber">1.6</span> <span class="toctext">Difficulty</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Status"><span class="tocnumber">1.7</span> <span class="toctext">Status</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Element_data_context_menu"><span class="tocnumber">2</span> <span class="toctext">Element data context menu</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Further_reading"><span class="tocnumber">3</span> <span class="toctext">Further reading</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#FAQs"><span class="tocnumber">4</span> <span class="toctext">FAQs</span></a></li>
+</ul>
+</div>
+<p>The <b>Element data</b> window can most conveniently be viewed by pressing <i>F5</i> (<b><a href="Window_menu.html" title="Window menu">Window</a> : <a href="Window_menu.html#Layout" title="Window menu">Layout</a> : Warrior layout</b>). Note that you can collapse/expand individual data groups, and save your arrangement in a custom window <a href="Glossary_Layout.html" title="Glossary:Layout">layout</a>.
+</p>
+<div class="center">
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Element_data.jpg.html" title="SuperMemo: The Element data window for an item about immunity"><img alt="SuperMemo: The Element data window for an item about immunity" class="mw-file-element" decoding="async" height="193" loading="lazy" src="https://help.supermemo.org/images/thumb/c/c8/Element_data.jpg/800px-Element_data.jpg" srcset="/images/thumb/c/c8/Element_data.jpg/1200px-Element_data.jpg 1.5x, /images/c/c8/Element_data.jpg 2x" width="800"/></a><figcaption>SuperMemo: The Element data window for an item about immunity</figcaption></figure>
+<blockquote>
+<p><i><b>Figure:</b> The <a class="mw-selflink selflink"><b>Element data</b> window</a> for an <a href="Glossary_Item.html" title="Glossary:Item">item</a> about immunity. In the presented example, the <a href="Glossary_Element.html" title="Glossary:Element">element</a> is listed at position #44576 in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> and its title is "immun: Are T cells involved in regulating the immune response?". Element titles are automatically generated from the first question text. Item's priority is 5%. Next repetition in 2047 (interval of 32 years). The <a href="Glossary_Item.html" title="Glossary:Item">item</a> has been repeated 8 times and scored zero memory <a href="Glossary_Lapse.html" title="Glossary:Lapse">lapses</a>.</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Available_element_data_groups">Available element data groups</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=1" title="Edit section: Available element data groups"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=1" title="Edit section's source code: Available element data groups"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Priority">Priority</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=2" title="Edit section: Priority"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=2" title="Edit section's source code: Priority"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table style="width: 100%">
+<tbody><tr>
+<td>
+<dl><dt>Priority</dt>
+<dd><a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> of the <a href="Glossary_Element.html" title="Glossary:Element">element</a> in percent in the <a href="Glossary_Priority_queue.html" title="Glossary:Priority queue">priority queue</a>. <i>In the picture, the <a href="Glossary_Item.html" title="Glossary:Item">item</a> has a <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> of 42.4888%. This means that over 40% of <a href="Glossary_Element.html" title="Glossary:Element">elements</a> in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> have a higher <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a>.</i></dd>
+<dt>Posit</dt>
+<dd><a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> of the <a href="Glossary_Element.html" title="Glossary:Element">element</a> as a position in the <a href="Glossary_Priority_queue.html" title="Glossary:Priority queue">priority queue</a>. <i>The <a href="Glossary_Item.html" title="Glossary:Item">item</a> sits on the position 260,961 in the <a href="Glossary_Priority_queue.html" title="Glossary:Priority queue">priority queue</a>. This means that 260,960 <a href="Glossary_Element.html" title="Glossary:Element">elements</a> in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> have a higher <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a>.</i></dd>
+<dt>New pr.</dt>
+<dd>new <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> in percent after just executed <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a>. Good grades automatically decrease the <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> of <a href="Glossary_Item.html" title="Glossary:Item">items</a>. <a href="Glossary_Priority.html" title="Glossary:Priority">Priority</a> of <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a> is reduced gradually unless their <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> is shortened manually or some <a href="Incremental_reading.html" title="Incremental reading">incremental reading</a> operations are executed on the topic. <i>There is no change to the <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> since no repetition has been executed on the <a href="Glossary_Item.html" title="Glossary:Item">item</a> yet.</i></dd>
+<dt>New pos.</dt>
+<dd>new <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> as a position after just executed <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a>.</dd>
+<dt><span id="Change">Change</span></dt>
+<dd>change in priority positions (i.e. the difference between <b>Posit</b> and <b>New pos.</b>).</dd></dl>
+</td>
+<td style="text-align: right;"><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Element_Priority_data_group.jpg.html" title="SuperMemo: The Priority data group of the Element data window"><img alt="SuperMemo: The Priority data group of the Element data window" class="mw-file-element" decoding="async" height="190" loading="lazy" src="https://help.supermemo.org/images/3/3f/Element_Priority_data_group.jpg" width="157"/></a></span>
+</td></tr></tbody></table>
+<div class="mw-heading mw-heading3"><h3 id="Dates">Dates</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=3" title="Edit section: Dates"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=3" title="Edit section's source code: Dates"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table style="width: 100%">
+<tbody><tr>
+<td>
+<dl><dt>Next</dt>
+<dd>date when the next <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a> of the <a href="Glossary_Element.html" title="Glossary:Element">element</a> should take place. If the review on the schedule date is missed, this field will remain unchanged unless auto-postpone changes the review date. <i>In the picture, the next repetition has been scheduled for Apr 29, 2016. <a href="Glossary_Element.html" title="Glossary:Element">Elements</a> which are due for review on a given day have their next repetition date additionally prefixed with Now:</i></dd>
+<dt><span id="Last">Last</span></dt>
+<dd>date of the last <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a>. <i>The last repetition took place on Mar 12, 1997.</i></dd>
+<dt><span id="Time">Time</span></dt>
+<dd>time of the last <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a>. <i>The precise time of the last repetition is unavailable since this piece of data has started being collected only with SuperMemo 13 (2006).</i></dd>
+<dt><span id="First">First</span></dt>
+<dd>first <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a> ever recorded in the <a href="Repetition_history.html" title="Repetition history">repetition history</a> (usually also: first ever repetition). <i>The first repetition recorded in this <a href="Glossary_Item.html" title="Glossary:Item">item</a>'s <a href="Repetition_history.html" title="Repetition history">repetition history</a> was made on Mar 12, 1997.</i> <b>Warning!</b> <a href="Glossary_Item.html" title="Glossary:Item">Items</a> repeated before 1996 may not carry repetition history record and the first repetition on the list may not be the first repetition ever made. <i>In this particular case, the <a href="Glossary_Item.html" title="Glossary:Item">item</a> was repeated 7 times before 1997 (before switching to SuperMemo with repetition history record). This information can be inspected only in the <a href="Glossary_Element.html" title="Glossary:Element">element</a>'s <a href="Repetition_history.html" title="Repetition history"><b>Repetition history</b> window</a> (e.g. available with Ctrl+Shift+H)</i>.</dd>
+<dt><span id="Outstanding_Queue_Posit">Due (or Posit)</span></dt>
+<dd>position of the <a href="Glossary_Element.html" title="Glossary:Element">element</a> in the <a href="Glossary_Outstanding_queue.html" title="Glossary:Outstanding queue">outstanding queue</a>. <i>Here the <a href="Glossary_Item.html" title="Glossary:Item">item</a> is the 3,147th <a href="Glossary_Element.html" title="Glossary:Element">element</a> in the queue of 9,073 <a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">outstanding elements</a> scheduled for review on Apr 29, 2016.</i></dd>
+<dt>Workload</dt>
+<dd>the number of <a href="Glossary_Element.html" title="Glossary:Element">elements</a> scheduled for review on the day of the next repetition (<b>Next</b>). <i>There are 9,073 <a href="Glossary_Element.html" title="Glossary:Element">elements</a> scheduled for review on Apr 29, 2016.</i></dd></dl>
+</td>
+<td style="text-align: right;"><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Element_Dates_data_group.jpg.html" title="SuperMemo: The Dates data group of the Element data window"><img alt="SuperMemo: The Dates data group of the Element data window" class="mw-file-element" decoding="async" height="190" loading="lazy" src="https://help.supermemo.org/images/6/6f/Element_Dates_data_group.jpg" width="158"/></a></span>
+</td></tr></tbody></table>
+<div class="mw-heading mw-heading3"><h3 id="Interval">Interval</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=4" title="Edit section: Interval"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=4" title="Edit section's source code: Interval"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table style="width: 100%">
+<tbody><tr>
+<td>
+<dl><dt>Int</dt>
+<dd>current <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> of the <a href="Glossary_Element.html" title="Glossary:Element">element</a> (i.e. the number of days between <b>Last</b> and <b>Next</b>). <i>The presented <a href="Glossary_Item.html" title="Glossary:Item">item</a> has last been repeated in 1997 (for the 8th time) and the next repetition has been scheduled in 19 years 1 month and 18 days.</i></dd>
+<dt>Prev</dt>
+<dd>previous <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a>. <i>The <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> between the 7th and 8th <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a> lasted 3 years 11 months and 26 days (it was deduced from the value of <a href="Glossary_U-Factor.html" title="Glossary:U-Factor">U-Factor</a> <a href="#U-Factor">below</a>).</i></dd>
+<dt><span id="Passed">Passed</span></dt>
+<dd>the actual <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> that have passed since the last repetition (i.e. the time between <i>now</i> and <b>Last</b>). Note that this <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> may be as short as 10 sec. if you revisit the <a href="Glossary_Element.html" title="Glossary:Element">element</a>'s data 10 seconds after the recently executed <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a> (e.g. by pressing <i>Alt+Left arrow</i>). <i>19 years 1 month and 16 days have passed since the item was last repeated on Mar 12, 1997.</i></dd>
+<dt>New</dt>
+<dd>new <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> that will separate the repetitions of the element. Note that the new interval may differ from the optimum interval (<b>Int18</b>) due (1) the forgetting index different than 10% (compare <b>Int (FI)</b>), (2) random interval dispersion (most visible for short intervals)(compare <b>Int (Disp)</b>), (3) anti-cramming mechanisms that ensure sufficient interval increase, and (4) manual interventions in the length of the interval. If you reissue the grade several times, you will notice that <b>Int18</b> remains the same, while <b>New</b> keeps changing slightly at random. <i>As the item has not been reviewed yet, its next repetition has not been scheduled, and <b>New</b> remains undefined.</i></dd>
+<dt>Int15</dt>
+<dd><a href="Glossary_Item.html" title="Glossary:Item">item</a>'s next <a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">optimum interval</a> for the <a href="Glossary_Grade.html" title="Glossary:Grade">grade</a> <b>Good</b> (<i>4</i>) as proposed by the <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">Algorithm 15</a>. <b>Important!</b>. This value is dispersed and is not adjusted for the <a href="Forgetting_index.html" title="Forgetting index">forgetting index</a>. This field is empty for <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a>. <i>Here, the <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">Algorithm 15</a> would schedule the <a href="Glossary_Item.html" title="Glossary:Item">item</a> to be repeated in 64 years 7 months and 1 day.</i></dd>
+<dt>Int19</dt>
+<dd><a href="Glossary_Item.html" title="Glossary:Item">item</a>'s next <a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">optimum interval</a> for the <a href="Glossary_Grade.html" title="Glossary:Grade">grade</a> <b>Good</b> (<i>4</i>) if the repetition was to take place at the moment of inspection. The interval is set as proposed by the <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-18">Algorithm 18</a> (on the basis of other fields, e.g. <b>R</b>, <b>S</b>, etc.). The optimum interval is based on the <a href="Forgetting_index.html" title="Forgetting index">forgetting index</a> of 10%. This field is empty for <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a>. <i>Here, the <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19">Algorithm 19</a> would schedule the <a href="Glossary_Item.html" title="Glossary:Item">item</a> for repetition in 29 years 4 months and 1 day. Shorter <a href="Glossary_Interval.html" title="Glossary:Interval">intervals</a> for very high <a href="Glossary_Stability.html" title="Glossary:Stability">stabilities</a> occur pretty often in SuperMemo 19</i></dd>
+<dt><span id="Int18_vs_Int16">Int19 vs Int15</span></dt>
+<dd>percentage difference in <a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">optimum intervals</a> proposed by the two algorithms (<b>(Int19-Int15)/Int15</b>). This difference can be used to trigger manual choices of <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> by users who want to micromanage their intervals (the threshold values can be set in <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Options.html" title="Options">Options</a> : <a href="Learning_tab_in_Options.html" title="Learning tab in Options">Learning</a> : Algorithm SM-20 Alerts</b>) or who want to be sure <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">Algorithm SM-15</a> interval "cheating" is possible. <i>Here, the <a href="Glossary_Item.html" title="Glossary:Item">item</a>'s next <a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">optimum interval</a> proposed by <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19">Algorithm SM-19</a> is 55% shorter from the one suggested by the <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">Algorithm SM-15</a>.</i></dd></dl>
+</td>
+<td style="text-align: right;"><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Element_Interval_data_group.jpg.html" title="SuperMemo: The Interval data group of the Element data window"><img alt="SuperMemo: The Interval data group of the Element data window" class="mw-file-element" decoding="async" height="190" loading="lazy" src="https://help.supermemo.org/images/d/dd/Element_Interval_data_group.jpg" width="158"/></a></span>
+</td></tr></tbody></table>
+<div class="mw-heading mw-heading3"><h3 id="DSR_Stats">DSR Stats</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=5" title="Edit section: DSR Stats"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=5" title="Edit section's source code: DSR Stats"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table style="width: 100%">
+<tbody><tr>
+<td>
+<dl><dt>S</dt>
+<dd><a href="Glossary_Item.html" title="Glossary:Item">item</a>'s current <a href="Glossary_Stability.html" title="Glossary:Stability">stability</a> expressed as the <a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">optimum interval</a> in <a href="Glossary_Spaced_repetition.html" title="Glossary:Spaced repetition">spaced repetition</a>. <i>In the picture, the <a href="Glossary_Stability.html" title="Glossary:Stability">stability</a> for the <a href="Glossary_Item.html" title="Glossary:Item">item</a> amounts to 18 years 9 months and 19 days. It might be lower than the current interval due to multiple postpones</i></dd>
+<dt>R</dt>
+<dd>current estimation of present <a href="Glossary_Item.html" title="Glossary:Item">item</a>'s <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a>. If <b>Passed</b> is short as compared with <b>S</b>, retrievability can be very high. <i>The probability of recall of the <a href="Glossary_Item.html" title="Glossary:Item">item</a> after the passed <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> of 19 years and 1 month stands at 89.8% (see: <a class="external text" href="https://supermemopedia.com/wiki/Apparent_discrepancy_in_the_Retrievability_displayed_in_the_UI">Why is R so high?</a>)</i></dd>
+<dt>SInc</dt>
+<dd>best estimate of the <a href="Glossary_Item.html" title="Glossary:Item">item</a>'s stability increase. <i>Here the <a href="Glossary_Item.html" title="Glossary:Item">item</a>'s <a href="Glossary_Stability.html" title="Glossary:Stability">stability</a> (expressed as the <a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">optimum interval</a>) is estimated to best increase at a factor of 1.5151 (i.e. 51%) after the repetition.</i></dd>
+<dt>SInc[]</dt>
+<dd>entry in the <a href="Glossary_Stability_increase_matrix.html" title="Glossary:Stability increase matrix">stability increase matrix</a>. <i>Based on the corresponding entry in the <a href="Glossary_Stability_increase_matrix.html" title="Glossary:Stability increase matrix">stability increase matrix</a>, after the repetition the <a href="Glossary_Item.html" title="Glossary:Item">item</a>'s <a href="Glossary_Stability.html" title="Glossary:Stability">stability</a> is expected to increase by a factor of 1.1711 (i.e. 17%). Note that where data is scarce (e.g. as in this case of unusually long <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a>), the difference between <b>SInc[]</b> and <b>SInc</b> may be large due to a larger impact of neighboring entries and the theoretical prediction based on the SInc approximation.</i></dd>
+<dt>Next S</dt>
+<dd><a href="Glossary_Item.html" title="Glossary:Item">item</a>'s expected new <a href="Glossary_Stability.html" title="Glossary:Stability">stability</a> after the scheduled next repetition (<b>Next</b>). <code><b>Next S</b> := <b>S</b> * SInc(<b>Diff</b>,<b>Int</b>,<b>R</b>)</code>. <i>The new stability (i.e. <a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">optimum interval</a>) of the <a href="Glossary_Item.html" title="Glossary:Item">item</a> repeated on Apr 29, 2016 after the <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> of 19 years 1 month and 18 days is expected to be 10,403 days.</i></dd>
+<dt>Next R</dt>
+<dd><a href="Glossary_Item.html" title="Glossary:Item">item</a>'s expected <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a> after the scheduled next repetition (<b>Next</b>). If the date of <b>Next</b> results in an interval that is much larger than <b>S</b>, <b>Next R</b> can be very low. <i>The expected <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a> (i.e. probability of recall) of the <a href="Glossary_Item.html" title="Glossary:Item">item</a> at the next repetition in 10,403 days stands at 89.8%.</i></dd></dl>
+</td>
+<td style="text-align: right;"><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Element_DSR_Stats_data_group.jpg.html" title="SuperMemo: The DSR Stats data group of the Element data window"><img alt="SuperMemo: The DSR Stats data group of the Element data window" class="mw-file-element" decoding="async" height="190" loading="lazy" src="https://help.supermemo.org/images/4/4f/Element_DSR_Stats_data_group.jpg" width="157"/></a></span>
+</td></tr></tbody></table>
+<div class="mw-heading mw-heading3"><h3 id="Repetitions">Repetitions</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=6" title="Edit section: Repetitions"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=6" title="Edit section's source code: Repetitions"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table style="width: 100%">
+<tbody><tr>
+<td>
+<dl><dt><span id="Reps">Reps</span></dt>
+<dd>number of repetitions of the displayed <a href="Glossary_Element.html" title="Glossary:Element">element</a>. For <a href="Glossary_Item.html" title="Glossary:Item">items</a>, once the item is forgotten, the count of repetitions begins from scratch (i.e. <b>Reps</b> equals 1 again). <i>In the enclosed example, the <a href="Glossary_Item.html" title="Glossary:Item">item</a> has been repeated with a passing grade 8 successive times.</i></dd>
+<dt><span id="Lapses">Lapses</span></dt>
+<dd>number of <a href="Glossary_Lapse.html" title="Glossary:Lapse">memory lapses</a>. <i>0 lapses means the <a href="Glossary_Item.html" title="Glossary:Item">item</a> has never been forgotten before.</i></dd>
+<dt>Grade</dt>
+<dd><a href="Glossary_Grade.html" title="Glossary:Grade">grade</a> used in the optimization procedure (the value used in parentheses shows the recent grade given by the user, which can be overridden in rare circumstances)</dd>
+<dt><span id="Postpones">Postpones</span></dt>
+<dd>total and recent number of times the <a href="Glossary_Element.html" title="Glossary:Element">element</a> has been postponed. <i>The presented <a href="Glossary_Item.html" title="Glossary:Item">item</a> has been postponed 174 times since the last repetition, and 180 times in its lifetime. In this case, 6 postpones occurred since total postpone count begun as a result of implementing this new statistic starting with SuperMemo 17.</i></dd>
+<dt>Future</dt>
+<dd>estimated number of <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetitions</a> of the <a href="Glossary_Item.html" title="Glossary:Item">item</a> in the next 30 years. <b>Future</b> value is easily derived from the <a href="Glossary_DSR_model.html" title="Glossary:DSR model">DSR model</a>. For <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a>, the number of presentations depends on <b><a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A-Factor</a></b> only. Note that the value is the estimate from before the execution of a <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a>. Note also that the estimate assumes no forgetting, and that the <a href="Forgetting_index.html" title="Forgetting index">forgetting index</a> matters only in estimating the length of intervals. <i>After the repetition, the estimate is likely to go to zero, meaning, this <a href="Glossary_Item.html" title="Glossary:Item">item</a> became a part of "permastore" (i.e. it might be remembered till the end of an average life). </i>SuperMemo roughly predicts that there will still be 1 <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a> of the presented <a href="Glossary_Item.html" title="Glossary:Item">item</a> in the next 30 years.<i></i></dd>
+<dt>Future Sec</dt>
+<dd>time needed for executing the estimated number of <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetitions</a> (<b>Future</b>) of the <a href="Glossary_Item.html" title="Glossary:Item">item</a> in the next 30 years. <code>Future Sec=Future*Avg time</code>. <i>The <a href="Statistics.html" title="Statistics"><b>Statistics</b> window</a>'s <a href="Statistics.html#avg_time" title="Statistics"><b>Avg time</b> parameter</a> makes it possible to estimate the cost of retaining the presented <a href="Glossary_Item.html" title="Glossary:Item">item</a> in memory until 2046 is 9 seconds on the assumption it will not be forgotten in the meantime.</i></dd>
+<dt><span id="U-Factor">U-Factor</span></dt>
+<dd>quotient of the previous <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> and the next interval. In <a href="Glossary_Item.html" title="Glossary:Item">items</a> that have been repeated only once, U-Factor equals the first <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> (in days).  <i>Here U-Factor is 4.795.</i></dd></dl>
+</td>
+<td style="text-align: right;"><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Element_Repetitions_data_group.jpg.html" title="SuperMemo: The Repetitions data group of the Element data window"><img alt="SuperMemo: The Repetitions data group of the Element data window" class="mw-file-element" decoding="async" height="190" loading="lazy" src="https://help.supermemo.org/images/b/b0/Element_Repetitions_data_group.jpg" width="157"/></a></span>
+</td></tr></tbody></table>
+<div class="mw-heading mw-heading3"><h3 id="Difficulty">Difficulty</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=7" title="Edit section: Difficulty"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=7" title="Edit section's source code: Difficulty"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table style="width: 100%">
+<tbody><tr>
+<td>
+<dl><dt><span id="diff">Diff</span></dt>
+<dd>current estimation of the <a href="Glossary_Item.html" title="Glossary:Item">item</a>'s absolute <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficulty</a> estimated by <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-17">Algorithm SM-17</a>. This number ranges from 0 (for easy <a href="Glossary_Item.html" title="Glossary:Item">items</a>) to 1 (for difficult ones). <i>In the picture, the <a href="Glossary_Item.html" title="Glossary:Item">item</a>'s <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficulty</a> is estimated to be at 0.0% which means it is very easy to remember.</i></dd>
+<dt>Old</dt>
+<dd>heuristic measure of the <a href="Glossary_Item.html" title="Glossary:Item">item</a>'s <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficulty</a> known from SuperMemo 16 or earlier. It is estimated on the basis of the following parameters: <b>Interval</b>, <b>Lapses</b>, <b>Repetitions</b>, <b>A-Factor</b>, and <b>First grade</b>. The theoretical minimum for the difficulty is 0% and the theoretical maximum is 100%. This number decreases gradually with successful <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetitions</a>. Conversely, it increases with <a href="Glossary_Lapse.html" title="Glossary:Lapse">memory lapses</a>. In a typical <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>, the <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficulty</a> of <a href="Glossary_Item.html" title="Glossary:Item">items</a> usually ranges from 16% to 64%. If the <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficulty</a> reaches beyond 65% you should have a closer look at the formulation of the <a href="Glossary_Item.html" title="Glossary:Item">item</a> (e.g. memory interference, ambiguity, excessive wording, complex answer, etc.). See also: <a class="external text" href="http://super-memory.com/articles/20rules.htm">20 rules of formulating knowledge</a>. <i>Here the <a href="Glossary_Item.html" title="Glossary:Item">item</a> is estimated to be at 18.4% difficulty which indicates it is relatively easy to remember</i>.</dd>
+<dt>A-Factor</dt>
+<dd><a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A-Factor</a> associated with the current <a href="Glossary_Element.html" title="Glossary:Element">element</a>. In <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">Algorithm SM-15</a>, <a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A-Factor</a> is a rough measure of <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">item difficulty</a> and a measure of the rate at which inter-repetition <a href="Glossary_Interval.html" title="Glossary:Interval">intervals</a> increase. The higher the <a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A-Factor</a>, the faster the increase in <a href="Glossary_Interval.html" title="Glossary:Interval">intervals</a>. The most difficult <a href="Glossary_Item.html" title="Glossary:Item">items</a> have <a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A-Factor</a> equal to 1.2 while the easiest ones 6.9. For <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a>, <a href="Glossary_Concept.html" title="Glossary:Concept">concepts</a> and <a href="Glossary_Task.html" title="Glossary:Task">tasks</a>, <a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A-Factors</a> equal the increase in <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> in a single <a href="Glossary_Review.html" title="Glossary:Review">review</a> and may be as low as 1.01. Note that <b>Diff</b> (<a href="#Diff">above</a>) is much more an accurate measure of <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">item difficulty</a> (as perceived by the user). <i><a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A-Factor</a> of 4.307 indicates that the <a href="Glossary_Item.html" title="Glossary:Item">item</a> is relatively easy to remember.</i></dd></dl>
+</td>
+<td style="text-align: right;"><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Element_Difficulty_data_group.jpg.html" title="SuperMemo: The Difficulty data group of the Element data window"><img alt="SuperMemo: The Difficulty data group of the Element data window" class="mw-file-element" decoding="async" height="190" loading="lazy" src="https://help.supermemo.org/images/7/7b/Element_Difficulty_data_group.jpg" width="157"/></a></span>
+</td></tr></tbody></table>
+<div class="mw-heading mw-heading3"><h3 id="Status">Status</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=8" title="Edit section: Status"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=8" title="Edit section's source code: Status"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table style="width: 100%">
+<tbody><tr>
+<td>
+<dl><dt>Type</dt>
+<dd>type of the <a href="Glossary_Element.html" title="Glossary:Element">element</a>: <a href="Glossary_Item.html" title="Glossary:Item">item</a>, <a href="Glossary_Topic.html" title="Glossary:Topic">topic</a>, <a href="Glossary_Concept.html" title="Glossary:Concept">concept</a> or <a href="Glossary_Task.html" title="Glossary:Task">task</a> (see also: <a href="Items,_topics,_concepts,_and_tasks.html" title="Items, topics, concepts, and tasks">Topics vs. items</a>) and its current status: <a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">memorized</a>, <a href="Glossary_Dismissed_element.html" title="Glossary:Dismissed element">dismissed</a> or <a href="Glossary_Pending_element.html" title="Glossary:Pending element">pending</a>. See also: <a href="Building_the_knowledge_tree.html#Status_icons:_pending,_memorized_and_dismissed" title="Building the knowledge tree">Status icons: pending, memorized and dismissed</a>. <i>The <a href="Glossary_Element.html" title="Glossary:Element">element</a> in the picture is an example of a <a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">memorized</a> <a href="Glossary_Item.html" title="Glossary:Item">item</a>.</i></dd>
+<dt><span id="Concept_group">Concept group</span></dt>
+<dd>name of the <a href="Glossary_Concept_group.html" title="Glossary:Concept group">concept group</a> to which the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> belongs. An element added to a concept group may, or may not have the group assignment set. In general, specific group transfers set the concept group affiliation. Mass element transfers, do not set the group affiliation even if the elements are added to a group hook. <i>The current <a href="Glossary_Element.html" title="Glossary:Element">element</a> is associated with the <a href="Glossary_Concept_group.html" title="Glossary:Concept group">concept group</a> called "History collection".</i></dd>
+<dt><span id="Template">Template</span></dt>
+<dd><a href="Glossary_Template.html" title="Glossary:Template">template</a> applied to the current <a href="Glossary_Element.html" title="Glossary:Element">element</a>. <i>Here the <a href="Glossary_Item.html" title="Glossary:Item">item</a> uses a <a href="Glossary_Template.html" title="Glossary:Template">template</a> called "History Picture".</i> See also: <a href="Templates.html" title="Templates">Using templates</a></dd>
+<dt>FI</dt>
+<dd>maximum acceptable probability of forgetting the <a href="Glossary_Item.html" title="Glossary:Item">item</a> at each <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a> (in percent). <a href="Glossary_Forgetting_index.html" title="Glossary:Forgetting index">Forgetting index</a> can be changed to a desired value (e.g. with <i>Ctrl+Shift+P</i> via <b><a href="Element_parameters.html" title="Element parameters">Element parameters</a></b>). If the <a href="Glossary_Forgetting_index.html" title="Glossary:Forgetting index">forgetting index</a> is 10%, you stand a 90% chance that you will remember the <a href="Glossary_Item.html" title="Glossary:Item">item</a> during the optimally scheduled <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a>. The probability of forgetting will increase if you delay a <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a>. <i>Here the <a href="Glossary_Forgetting_index.html" title="Glossary:Forgetting index">forgetting index</a> has been set at 10% (collection's default).</i> See also: <a class="external text" href="https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo">Forgetting index</a>. Note that (<b>Int (FI)</b> is the optimum interval modified for the forgetting index, while <b>Int (Rand)</b> is the same interval after applying interval dispersion.</dd>
+<dt>Int (FI)</dt>
+<dd><a href="Glossary_Item.html" title="Glossary:Item">item</a>'s next <a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">optimum interval</a> modified for the forgetting index for the <a href="Glossary_Grade.html" title="Glossary:Grade">grade</a> <b>Good</b> (<i>4</i>) (compare <b>Int18</b>). The optimum interval <b>Int18</b> is based on the <a href="Forgetting_index.html" title="Forgetting index">forgetting index</a> of 10%, while <b>Int (FI</b>) is based on the requested forgetting index. This field is filled only at repetition time for items. <i>Here, the <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-18">Algorithm 18</a> would schedule the <a href="Glossary_Item.html" title="Glossary:Item">item</a> for repetition in 42 years and 1 month for the forgetting index of 10%. Shorter <a href="Glossary_Interval.html" title="Glossary:Interval">intervals</a> for very low values of the forgetting index occur pretty often in SuperMemo </i></dd>
+<dt>Int (Rand)</dt>
+<dd><a href="Glossary_Item.html" title="Glossary:Item">item</a>'s next <a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">optimum interval</a> modified for the <a href="Glossary_Forgetting_index.html" title="Glossary:Forgetting index">forgetting index</a> and dispersed randomly (compare <b>Int18</b> and <b>Int (FI)</b>). The optimum interval <b>Int18</b> is based on the <a href="Forgetting_index.html" title="Forgetting index">forgetting index</a> of 10%, while <b>Int (Rand)</b> is a dispersed value based on the <a href="Glossary_Requested_forgetting_index.html" title="Glossary:Requested forgetting index">requested forgetting index</a>. This field is filled only at repetition time for items. <i>In the picture, the <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-18">Algorithm 18</a> would schedule the <a href="Glossary_Item.html" title="Glossary:Item">item</a> for repetition in 42 years and 10 months for the forgetting index of 10% (which is collection's default). Value higher than 41 years and 1 month at <b>Int (FI)</b> is a result of random dispersion</i>. <b>Important!</b> This value is different each time you execute or cancel-and-repeat a repetition.</dd>
+<dt>Ord</dt>
+<dd>current <a href="Glossary_Ordinal_number.html" title="Glossary:Ordinal number">ordinal number</a> assigned to the <a href="Glossary_Element.html" title="Glossary:Element">element</a>. You can use <a href="Glossary_Ordinal_number.html" title="Glossary:Ordinal number">ordinals</a> to sort the <a href="Glossary_Pending_queue.html" title="Glossary:Pending queue">pending queue</a>. This is particularly useful if you plan to release your own <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> for use by others. You can change the <a href="Glossary_Ordinal_number.html" title="Glossary:Ordinal number">Ordinal</a> by pressing <i>Ctrl+Shift+P</i> via <b><a href="Element_parameters.html" title="Element parameters">Element parameters</a></b>. <i>The displayed <a href="Glossary_Item.html" title="Glossary:Item">item</a> has <a href="Glossary_Ordinal_number.html" title="Glossary:Ordinal number">ordinal</a> 819</i>.</dd></dl>
+</td>
+<td style="text-align: right;"><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Element_Status_in_the_Element_Data_window.jpg.html" title="SuperMemo: The Status data group of the Element data window"><img alt="SuperMemo: The Status data group of the Element data window" class="mw-file-element" decoding="async" height="211" loading="lazy" src="https://help.supermemo.org/images/f/fa/Element_Status_in_the_Element_Data_window.jpg" width="233"/></a></span>
+</td></tr></tbody></table>
+<div class="mw-heading mw-heading2"><h2 id="Element_data_context_menu">Element data context menu</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=9" title="Edit section: Element data context menu"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=9" title="Edit section's source code: Element data context menu"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Difficulty</b> - show the estimation of the <a href="Glossary_Element.html" title="Glossary:Element">element</a>'s <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficulty</a></li>
+<li><b>Restore layout</b> (<i>Ctrl+F5</i>) - restore the SuperMemo windows layout chosen as the default one</li>
+<li><b>Element window</b> (<i>Esc</i>) - shift focus to the <a href="Element_window.html" title="Element window">element window</a></li>
+<li><b>Format intervals</b> - format <a href="Glossary_Interval.html" title="Glossary:Interval">intervals</a> as years, months, days, etc. If the formatted interval no longer fits within the field, click the field to display its entire value in a dialog box. Alternatively, hover the mouse over the field and read its value from the yellow hints panel in the <a href="Status_bar.html" title="Status bar">status bar</a> (<b><a href="Window_menu.html" title="Window menu">Window</a> : <a href="Window_menu.html#Hints" title="Window menu">Hints</a></b> must be checked for it to work).</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Further_reading">Further reading</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=10" title="Edit section: Further reading"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=10" title="Edit section's source code: Further reading"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="Statistics.html" title="Statistics"><b>Statistics</b> window</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="FAQs">FAQs</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=11" title="Edit section: FAQs"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=11" title="Edit section's source code: FAQs"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://supermemopedia.com/wiki/What_is_the_interpretation_of_New,_Int17,_and_S_in_Algorithm_SM-17%3F">What is the interpretation of New, Int17, and S in Algorithm SM-17?</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610110950
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.080 seconds
+Real time usage: 0.095 seconds
+Preprocessor visited node count: 297/1000000
+Post‐expand include size: 1194/2097152 bytes
+Template argument size: 552/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.241      1 File:Element_data.jpg
+100.00%    4.241      1 -total
+ 41.57%    1.763      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:111:|#|:idhash:canonical and timestamp 20260610110950 and revision id 12233. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Available_element_data_groups"><span class="tocnumber">1</span> <span class="toctext">可用元素数据组</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Priority"><span class="tocnumber">1.1</span> <span class="toctext">优先级</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Dates"><span class="tocnumber">1.2</span> <span class="toctext">枣子</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Interval"><span class="tocnumber">1.3</span> <span class="toctext">间隔</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#DSR_Stats"><span class="tocnumber">1.4</span> <span class="toctext">DSR 统计数据</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Repetitions"><span class="tocnumber">1.5</span> <span class="toctext">重复次数</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Difficulty"><span class="tocnumber">1.6</span> <span class="toctext">难度</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Status"><span class="tocnumber">1.7</span> <span class="toctext">状态</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Element_data_context_menu"><span class="tocnumber">2</span> <span class="toctext">元素数据上下文菜单</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Further_reading"><span class="tocnumber">3</span> <span class="toctext">进一步阅读</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#FAQs"><span class="tocnumber">4</span> <span class="toctext">常见问题解答</span></a></li>
+</ul>
+</div>
+<p>的<b>元素数据</b>可以通过按最方便地查看窗口<i>F5</i>（<b><a href="Window_menu.html" title="Window menu">窗户</a> :<a href="Window_menu.html#Layout" title="Window menu">布局</a> : 战士布局</b>）。请注意，您可以折叠/展开各个数据组，并将您的排列保存在自定义窗口中<a href="Glossary_Layout.html" title="Glossary:Layout">布局</a>。</p>
+<div class="center">
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Element_data.jpg.html" title="SuperMemo: The Element data window for an item about immunity"><img alt="SuperMemo: The Element data window for an item about immunity" class="mw-file-element" decoding="async" height="193" loading="lazy" src="https://help.supermemo.org/images/thumb/c/c8/Element_data.jpg/800px-Element_data.jpg" srcset="/images/thumb/c/c8/Element_data.jpg/1200px-Element_data.jpg 1.5x, /images/c/c8/Element_data.jpg 2x" width="800"/></a><figcaption>SuperMemo：有关免疫的项目的元素数据窗口</figcaption></figure>
+<blockquote>
+<p><i><b>图：</b>的<a class="mw-selflink selflink"><b>元素数据</b>窗户</a>对于一个<a href="Glossary_Item.html" title="Glossary:Item">项目</a>关于免疫力。在所提出的示例中，<a href="Glossary_Element.html" title="Glossary:Element">元素</a>列在位置#44576<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>它的标题是“免疫：T细胞参与调节免疫反应吗？”。元素标题是根据第一个问题文本自动生成的。项目的优先级为 5%。下一次重复是在 2047 年（间隔 32 年）。的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>已重复8次记忆力为零<a href="Glossary_Lapse.html" title="Glossary:Lapse">失误</a>。</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Available_element_data_groups">可用元素数据组</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=1" title="Edit section: Available element data groups"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=1" title="Edit section's source code: Available element data groups"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Priority">优先级</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=2" title="Edit section: Priority"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=2" title="Edit section's source code: Priority"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table style="width: 100%">
+<tbody><tr>
+<td>
+<dl><dt>优先级</dt>
+<dd><a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>以百分比表示<a href="Glossary_Priority_queue.html" title="Glossary:Priority queue">优先队列</a>。<i>图片中，<a href="Glossary_Item.html" title="Glossary:Item">项目</a>有一个<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>42.4888%。这意味着超过 40%<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>有较高的<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>。</i></dd>
+<dt>位置</dt>
+<dd><a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>作为一个位置在<a href="Glossary_Priority_queue.html" title="Glossary:Priority queue">优先队列</a>。<i>的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>位于 260,961 的位置<a href="Glossary_Priority_queue.html" title="Glossary:Priority queue">优先队列</a>。这意味着 260,960<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>有较高的<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>。</i></dd>
+<dt>新公关。</dt>
+<dd>新的<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>刚刚执行后的百分比<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>。好成绩会自动降低<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>。<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>的<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>逐渐减少，除非他们<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>手动缩短或缩短一些<a href="Incremental_reading.html" title="Incremental reading">增量阅读</a>操作是在主题上执行的。<i>没有变化<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>因为没有重复执行<a href="Glossary_Item.html" title="Glossary:Item">项目</a>还没有。</i></dd>
+<dt>新职位。</dt>
+<dd>新的<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>作为刚刚执行后的位置<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>。</dd>
+<dt><span id="Change">改变</span></dt>
+<dd>优先位置的变化（即<b>位置</b>和<b>新职位。</b>）。</dd></dl>
+</td>
+<td style="text-align: right;"><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Element_Priority_data_group.jpg.html" title="SuperMemo: The Priority data group of the Element data window"><img alt="SuperMemo: The Priority data group of the Element data window" class="mw-file-element" decoding="async" height="190" loading="lazy" src="https://help.supermemo.org/images/3/3f/Element_Priority_data_group.jpg" width="157"/></a></span>
+</td></tr></tbody></table>
+<div class="mw-heading mw-heading3"><h3 id="Dates">枣子</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=3" title="Edit section: Dates"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=3" title="Edit section's source code: Dates"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table style="width: 100%">
+<tbody><tr>
+<td>
+<dl><dt>下一步</dt>
+<dd>下一次的日期<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>应该发生。如果错过了计划日期的审核，则该字段将保持不变，除非自动推迟更改审核日期。<i>图中，下一次重复安排在 2016 年 4 月 29 日。<a href="Glossary_Element.html" title="Glossary:Element">元素</a>需要在某一天进行审核的项目的下一个重复日期还带有“现在”前缀：</i></dd>
+<dt><span id="Last">最后</span></dt>
+<dd>最后一次的日期<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>。<i>最后一次重复发生在 1997 年 3 月 12 日。</i></dd>
+<dt><span id="Time">时间</span></dt>
+<dd>最后的时间<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>。<i>由于仅使用 SuperMemo 13 (2006) 开始收集该数据，因此无法获得最后一次重复的精确时间。</i></dd>
+<dt><span id="First">第一</span></dt>
+<dd>第一<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>曾经记录在<a href="Repetition_history.html" title="Repetition history">重复历史</a>（通常也：第一次重复）。<i>在此记录的第一次重复<a href="Glossary_Item.html" title="Glossary:Item">项目</a>的<a href="Repetition_history.html" title="Repetition history">重复历史</a>制作于1997年3月12日。</i> <b>警告！</b> <a href="Glossary_Item.html" title="Glossary:Item">项目</a>1996年之前的重复可能没有重复历史记录，并且列表中的第一次重复可能不是有史以来的第一次重复。<i>在这种特殊情况下，<a href="Glossary_Item.html" title="Glossary:Item">项目</a>1997 年之前重复了 7 次（在切换到具有重复历史记录的 SuperMemo 之前）。该信息只能在<a href="Glossary_Element.html" title="Glossary:Element">元素</a>的<a href="Repetition_history.html" title="Repetition history"><b>重复历史</b>窗户</a>（例如，可使用 Ctrl+Shift+H）</i>。</dd>
+<dt><span id="Outstanding_Queue_Posit">到期（或正值）</span></dt>
+<dd>的位置<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在<a href="Glossary_Outstanding_queue.html" title="Glossary:Outstanding queue">未完成的队列</a>。<i>这里的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>是第 3,147 个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在 9,073 人的队列中<a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">突出元素</a>预计2016年4月29日进行审核。</i></dd>
+<dt>工作量</dt>
+<dd>的数量<a href="Glossary_Element.html" title="Glossary:Element">元素</a>安排在下次重复的当天进行审核（<b>下一步</b>）。<i>有 9,073 个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>预计2016年4月29日进行审核。</i></dd></dl>
+</td>
+<td style="text-align: right;"><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Element_Dates_data_group.jpg.html" title="SuperMemo: The Dates data group of the Element data window"><img alt="SuperMemo: The Dates data group of the Element data window" class="mw-file-element" decoding="async" height="190" loading="lazy" src="https://help.supermemo.org/images/6/6f/Element_Dates_data_group.jpg" width="158"/></a></span>
+</td></tr></tbody></table>
+<div class="mw-heading mw-heading3"><h3 id="Interval">间隔</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=4" title="Edit section: Interval"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=4" title="Edit section's source code: Interval"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table style="width: 100%">
+<tbody><tr>
+<td>
+<dl><dt>INT</dt>
+<dd>当前<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（即之间的天数<b>最后</b>和<b>下一步</b>）。<i>所呈现的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>上一次重复是在 1997 年（第 8 次），下一次重复安排在 19 年 1 月 18 天。</i></dd>
+<dt>上一篇</dt>
+<dd>上一个<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>。<i>的<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>7号到8号之间<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>历时3年11个月零26天（根据价值推算）<a href="Glossary_U-Factor.html" title="Glossary:U-Factor">U因子</a> <a href="#U-Factor">下面</a>）。</i></dd>
+<dt><span id="Passed">通过</span></dt>
+<dd>实际的<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>自上次重复以来已经过去的时间（即之间的时间<i>现在</i>和<b>最后</b>）。请注意，这<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>可能短至 10 秒。如果你重新访问<a href="Glossary_Element.html" title="Glossary:Element">元素</a>最近执行后10秒的数据<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>（例如，按<i>Alt+向左箭头</i>）。<i>自1997年3月12日最后一次重复该项目以来，已经过去了19年零1个月零16天。</i></dd>
+<dt>新</dt>
+<dd>新的<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>这将分隔元素的重复项。请注意，新间隔可能与最佳间隔不同（<b>整数18</b>）由于（1）遗忘指数不同于10%（比较<b>国际 (FI)</b>), (2) 随机区间离散度（短区间最明显）（比较<b>智力（显示）</b>），（3）确保足够的间隔增加的反填塞机制，以及（4）间隔长度的手动干预。如果您多次重新发布成绩，您会注意到<b>整数18</b>保持不变，同时<b>新</b>不断随机地略有变化。<i>由于该项目尚未经过审核，因此尚未安排下一次重复，并且<b>新</b>仍然未定义。</i></dd>
+<dt>整数15</dt>
+<dd><a href="Glossary_Item.html" title="Glossary:Item">项目</a>下一个<a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">最佳间隔</a>为<a href="Glossary_Grade.html" title="Glossary:Grade">等级</a> <b>好</b>（<i>4</i>）按照建议<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">算法15</a>。<b>重要！</b>。该值是分散的并且未针对<a href="Forgetting_index.html" title="Forgetting index">遗忘指数</a>。该字段为空<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>。<i>在这里，<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">算法15</a>将安排<a href="Glossary_Item.html" title="Glossary:Item">项目</a>64年7个月零1天重复一次。</i></dd>
+<dt>整数19</dt>
+<dd><a href="Glossary_Item.html" title="Glossary:Item">项目</a>下一个<a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">最佳间隔</a>为<a href="Glossary_Grade.html" title="Glossary:Grade">等级</a> <b>好</b>（<i>4</i>）如果在检查时进行重复。该间隔按照建议设置<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-18">算法18</a>（基于其他领域，例如<b>右</b>,<b>S</b>等）。最佳间隔基于<a href="Forgetting_index.html" title="Forgetting index">遗忘指数</a>10%。该字段为空<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>。<i>在这里，<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19">算法19</a>将安排<a href="Glossary_Item.html" title="Glossary:Item">项目</a>重复29年4个月零1天。较短<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>对于非常高的<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>SuperMemo 中经常出现 19</i></dd>
+<dt><span id="Int18_vs_Int16">Int19 与 Int15</span></dt>
+<dd>百分比差异<a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">最佳间隔</a>两种算法提出的（<b>(Int19-Int15)/Int15</b>）。这种差异可以用来触发手动选择<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>由想要微观管理其间隔的用户（可以在中设置阈值）<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Options.html" title="Options">选项</a> :<a href="Learning_tab_in_Options.html" title="Learning tab in Options">学习</a> ：算法 SM-20 警报</b>）或者想要确定的人<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">算法 SM-15</a>间隔“作弊”是可能的。<i>在这里，<a href="Glossary_Item.html" title="Glossary:Item">项目</a>下一个<a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">最佳间隔</a>提议者<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19">算法 SM-19</a>比建议的短 55%<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">算法 SM-15</a>。</i></dd></dl>
+</td>
+<td style="text-align: right;"><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Element_Interval_data_group.jpg.html" title="SuperMemo: The Interval data group of the Element data window"><img alt="SuperMemo: The Interval data group of the Element data window" class="mw-file-element" decoding="async" height="190" loading="lazy" src="https://help.supermemo.org/images/d/dd/Element_Interval_data_group.jpg" width="158"/></a></span>
+</td></tr></tbody></table>
+<div class="mw-heading mw-heading3"><h3 id="DSR_Stats">DSR 统计数据</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=5" title="Edit section: DSR Stats"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=5" title="Edit section's source code: DSR Stats"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table style="width: 100%">
+<tbody><tr>
+<td>
+<dl><dt>S</dt>
+<dd><a href="Glossary_Item.html" title="Glossary:Item">项目</a>的电流<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>表示为<a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">最佳间隔</a>在<a href="Glossary_Spaced_repetition.html" title="Glossary:Spaced repetition">间隔重复</a>。<i>图片中，<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>为<a href="Glossary_Item.html" title="Glossary:Item">项目</a>共计18年9个月零19天。由于多次推迟，它可能低于当前间隔</i></dd>
+<dt>右</dt>
+<dd>目前的估计<a href="Glossary_Item.html" title="Glossary:Item">项目</a>的<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>。如果<b>通过</b>与相比较短<b>S</b>，可检索性可能非常高。<i>回忆的概率<a href="Glossary_Item.html" title="Glossary:Item">项目</a>经过之后<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>19 年零 1 个月的比例为 89.8%（参见：<a class="external text" href="https://supermemopedia.com/wiki/Apparent_discrepancy_in_the_Retrievability_displayed_in_the_UI">为什么R这么高？</a>）</i></dd>
+<dt>新加坡公司</dt>
+<dd>的最佳估计<a href="Glossary_Item.html" title="Glossary:Item">项目</a>的稳定性增加。<i>这里的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>的<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>（表示为<a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">最佳间隔</a>）估计重复后最好以 1.5151 倍（即 51%）增加。</i></dd>
+<dt>SInc[]</dt>
+<dd>条目在<a href="Glossary_Stability_increase_matrix.html" title="Glossary:Stability increase matrix">稳定性增加矩阵</a>。<i>基于相应的条目<a href="Glossary_Stability_increase_matrix.html" title="Glossary:Stability increase matrix">稳定性增加矩阵</a>，重复之后<a href="Glossary_Item.html" title="Glossary:Item">项目</a>的<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>预计将增加 1.1711 倍（即 17%）。请注意，在数据稀缺的情况下（例如，在这种情况下，数据异常长）<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>），之间的差异<b>SInc[]</b>和<b>新加坡公司</b>由于相邻条目的影响较大以及基于 SInc 近似的理论预测，可能会很大。</i></dd>
+<dt>下一个S</dt>
+<dd><a href="Glossary_Item.html" title="Glossary:Item">项目</a>预计新<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>在预定的下一次重复之后（<b>下一步</b>）。<code><b>下一个S</b> := <b>S</b> * SInc(<b>差异</b>,<b>INT</b>,<b>右</b>)</code>。<i>新的稳定性（即<a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">最佳间隔</a>）的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>2016 年 4 月 29 日重复<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>19年1个月零18天预计为10,403天。</i></dd>
+<dt>下一个R</dt>
+<dd><a href="Glossary_Item.html" title="Glossary:Item">项目</a>预计<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>在预定的下一次重复之后（<b>下一步</b>）。如果日期为<b>下一步</b>结果的间隔远大于<b>S</b>,<b>下一个R</b>可以非常低。<i>预期的<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>（即回忆的概率）<a href="Glossary_Item.html" title="Glossary:Item">项目</a>10,403 天后的下一次重复率为 89.8%。</i></dd></dl>
+</td>
+<td style="text-align: right;"><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Element_DSR_Stats_data_group.jpg.html" title="SuperMemo: The DSR Stats data group of the Element data window"><img alt="SuperMemo: The DSR Stats data group of the Element data window" class="mw-file-element" decoding="async" height="190" loading="lazy" src="https://help.supermemo.org/images/4/4f/Element_DSR_Stats_data_group.jpg" width="157"/></a></span>
+</td></tr></tbody></table>
+<div class="mw-heading mw-heading3"><h3 id="Repetitions">重复次数</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=6" title="Edit section: Repetitions"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=6" title="Edit section's source code: Repetitions"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table style="width: 100%">
+<tbody><tr>
+<td>
+<dl><dt><span id="Reps">代表</span></dt>
+<dd>显示的重复次数<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。对于<a href="Glossary_Item.html" title="Glossary:Item">项目</a>，一旦忘记该项目，则重复次数从头开始（即<b>代表</b>再次等于 1）。<i>在所附示例中，<a href="Glossary_Item.html" title="Glossary:Item">项目</a>已连续重复8次并取得及格成绩。</i></dd>
+<dt><span id="Lapses">失误</span></dt>
+<dd>数量<a href="Glossary_Lapse.html" title="Glossary:Lapse">记忆衰退</a>。<i>0 次失败意味着<a href="Glossary_Item.html" title="Glossary:Item">项目</a>以前从未被遗忘过。</i></dd>
+<dt>等级</dt>
+<dd><a href="Glossary_Grade.html" title="Glossary:Grade">等级</a>在优化过程中使用（括号中使用的值显示用户给出的最近等级，在极少数情况下可以覆盖）</dd>
+<dt><span id="Postpones">推迟</span></dt>
+<dd>总次数和最近次数<a href="Glossary_Element.html" title="Glossary:Element">元素</a>已被推迟。<i>所呈现的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>自上次重复以来已被推迟 174 次，在其生命周期中已被推迟 180 次。在这种情况下，自 SuperMemo 17 实施这一新统计数据开始总延迟计数以来，发生了 6 次延迟。</i></dd>
+<dt>未来</dt>
+<dd>估计数量<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>未来30年。<b>未来</b>值很容易从<a href="Glossary_DSR_model.html" title="Glossary:DSR model">DSR型号</a>。对于<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>，演示文稿的数量取决于<b><a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A因素</a></b>仅。请注意，该值是执行之前的估计值<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>。另请注意，估计假设没有遗忘，并且<a href="Forgetting_index.html" title="Forgetting index">遗忘指数</a>仅在估计间隔长度时起作用。<i>重复之后，估计值可能会变为零，这意味着，<a href="Glossary_Item.html" title="Glossary:Item">项目</a>成为“永久存储”的一部分（即它可能会被记住直到平均寿命结束）。</i>SuperMemo 粗略预测仍然会有 1<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>所呈现的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>未来30年。<i></i></dd>
+<dt>未来中学</dt>
+<dd>执行预计数量所需的时间<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>（<b>未来</b>）的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>未来30年。<code>Future Sec=Future*Avg time</code>。<i>的<a href="Statistics.html" title="Statistics"><b>统计数据</b>窗户</a>的<a href="Statistics.html#avg_time" title="Statistics"><b>平均时间</b>参数</a>使得可以估算保留所呈现的内容的成本<a href="Glossary_Item.html" title="Glossary:Item">项目</a>假设在 2046 年之前它不会被遗忘，则在内存中的时间为 9 秒。</i></dd>
+<dt><span id="U-Factor">U因子</span></dt>
+<dd>前一个的商<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>和下一个间隔。在<a href="Glossary_Item.html" title="Glossary:Item">项目</a>仅重复一次，U 因子等于第一个<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>（以天为单位）。<i>这里 U 因子是 4.795。</i></dd></dl>
+</td>
+<td style="text-align: right;"><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Element_Repetitions_data_group.jpg.html" title="SuperMemo: The Repetitions data group of the Element data window"><img alt="SuperMemo: The Repetitions data group of the Element data window" class="mw-file-element" decoding="async" height="190" loading="lazy" src="https://help.supermemo.org/images/b/b0/Element_Repetitions_data_group.jpg" width="157"/></a></span>
+</td></tr></tbody></table>
+<div class="mw-heading mw-heading3"><h3 id="Difficulty">难度</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=7" title="Edit section: Difficulty"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=7" title="Edit section's source code: Difficulty"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table style="width: 100%">
+<tbody><tr>
+<td>
+<dl><dt><span id="diff">差异</span></dt>
+<dd>目前的估计<a href="Glossary_Item.html" title="Glossary:Item">项目</a>是绝对的<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">难度</a>估计由<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-17">算法 SM-17</a>。这个数字的范围从0（为了方便<a href="Glossary_Item.html" title="Glossary:Item">项目</a>) 到 1（对于困难的）。<i>图片中，<a href="Glossary_Item.html" title="Glossary:Item">项目</a>的<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">难度</a>估计为 0.0%，这意味着它很容易记住。</i></dd>
+<dt>老</dt>
+<dd>启发式测量<a href="Glossary_Item.html" title="Glossary:Item">项目</a>的<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">难度</a>从 SuperMemo 16 或更早版本已知。它是根据以下参数估计的：<b>间隔</b>,<b>失误</b>,<b>重复次数</b>,<b>A因素</b>, 和<b>一年级</b>。难度的理论最小值为 0%，理论最大值为 100%。随着成功，这个数字逐渐减少<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>。相反，它随着<a href="Glossary_Lapse.html" title="Glossary:Lapse">记忆衰退</a>。在一个典型的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>, 的<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">难度</a>的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>通常范围为 16% 至 64%。如果<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">难度</a>达到65%以上你应该仔细看看配方<a href="Glossary_Item.html" title="Glossary:Item">项目</a>（例如记忆干扰、歧义、措辞过多、答案复杂等）。另请参阅：<a class="external text" href="http://super-memory.com/articles/20rules.htm">制定知识的20条规则</a>。<i>这里的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>估计难度为18.4%，这表明它相对容易记住</i>。</dd>
+<dt>A因素</dt>
+<dd><a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A因素</a>与当前相关的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。在<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">算法 SM-15</a>,<a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A因素</a>是一个粗略的衡量<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">项目难度</a>以及相互重复率的衡量标准<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>增加。越高<a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A因素</a>，增加得越快<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>。最困难的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>有<a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A因素</a>等于 1.2，而最简单的为 6.9。对于<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>,<a href="Glossary_Concept.html" title="Glossary:Concept">概念</a>和<a href="Glossary_Task.html" title="Glossary:Task">任务</a>,<a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A 因素</a>等于增加<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>在一个单一的<a href="Glossary_Review.html" title="Glossary:Review">评论</a>并且可能低至 1.01。请注意<b>差异</b>（<a href="#Diff">上面</a>）更准确地衡量<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">项目难度</a>（如用户所感知）。<i><a href="Glossary_A-Factor.html" title="Glossary:A-Factor">A因素</a>4.307 表明<a href="Glossary_Item.html" title="Glossary:Item">项目</a>比较容易记住。</i></dd></dl>
+</td>
+<td style="text-align: right;"><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Element_Difficulty_data_group.jpg.html" title="SuperMemo: The Difficulty data group of the Element data window"><img alt="SuperMemo: The Difficulty data group of the Element data window" class="mw-file-element" decoding="async" height="190" loading="lazy" src="https://help.supermemo.org/images/7/7b/Element_Difficulty_data_group.jpg" width="157"/></a></span>
+</td></tr></tbody></table>
+<div class="mw-heading mw-heading3"><h3 id="Status">状态</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=8" title="Edit section: Status"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=8" title="Edit section's source code: Status"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<table style="width: 100%">
+<tbody><tr>
+<td>
+<dl><dt>类型</dt>
+<dd>的类型<a href="Glossary_Element.html" title="Glossary:Element">元素</a>:<a href="Glossary_Item.html" title="Glossary:Item">项目</a>,<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>,<a href="Glossary_Concept.html" title="Glossary:Concept">概念</a>或<a href="Glossary_Task.html" title="Glossary:Task">任务</a>（另见：<a href="Items,_topics,_concepts,_and_tasks.html" title="Items, topics, concepts, and tasks">主题与项目</a>）及其当前状态：<a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">记住了</a>,<a href="Glossary_Dismissed_element.html" title="Glossary:Dismissed element">被解雇</a>或<a href="Glossary_Pending_element.html" title="Glossary:Pending element">待定</a>。另请参阅：<a href="Building_the_knowledge_tree.html#Status_icons:_pending,_memorized_and_dismissed" title="Building the knowledge tree">状态图标：待处理、已记忆和已取消</a>。<i>的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>图片中是一个示例<a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">记住了</a> <a href="Glossary_Item.html" title="Glossary:Item">项目</a>。</i></dd>
+<dt><span id="Concept_group">概念组</span></dt>
+<dd>的名称<a href="Glossary_Concept_group.html" title="Glossary:Concept group">概念组</a>当前的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>属于.添加到概念组的元素可能具有也可能不具有组分配集。一般来说，特定的组转移设置概念组从属关系。批量元素转移，即使将元素添加到组钩子中，也不要设置组从属关系。<i>目前的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>与<a href="Glossary_Concept_group.html" title="Glossary:Concept group">概念组</a>称为“史集”。</i></dd>
+<dt><span id="Template">模板</span></dt>
+<dd><a href="Glossary_Template.html" title="Glossary:Template">模板</a>应用于当前<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。<i>这里的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>使用一个<a href="Glossary_Template.html" title="Glossary:Template">模板</a>称为“历史图画”。</i>另请参阅：<a href="Templates.html" title="Templates">使用模板</a></dd>
+<dt>FI</dt>
+<dd>忘记的最大可接受概率<a href="Glossary_Item.html" title="Glossary:Item">项目</a>在每个<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>（以百分比表示）。<a href="Glossary_Forgetting_index.html" title="Glossary:Forgetting index">遗忘指数</a>可以更改为所需的值（例如<i>Ctrl+Shift+P</i>通过<b><a href="Element_parameters.html" title="Element parameters">元件参数</a></b>）。如果<a href="Glossary_Forgetting_index.html" title="Glossary:Forgetting index">遗忘指数</a>是 10%，那么你有 90% 的机会会记住<a href="Glossary_Item.html" title="Glossary:Item">项目</a>在最佳安排期间<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>。如果你推迟了，遗忘的可能性就会增加<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>。<i>这里的<a href="Glossary_Forgetting_index.html" title="Glossary:Forgetting index">遗忘指数</a>已设置为 10%（集合的默认值）。</i>另请参阅：<a class="external text" href="https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo">遗忘指数</a>。请注意（<b>国际 (FI)</b>是针对遗忘指数修改的最佳间隔，而<b>整数（兰德）</b>是应用区间离散后的相同区间。</dd>
+<dt>国际 (FI)</dt>
+<dd><a href="Glossary_Item.html" title="Glossary:Item">项目</a>下一个<a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">最佳间隔</a>修改为遗忘指数<a href="Glossary_Grade.html" title="Glossary:Grade">等级</a> <b>好</b>（<i>4</i>) (比较<b>整数18</b>）。最佳间隔<b>整数18</b>是基于<a href="Forgetting_index.html" title="Forgetting index">遗忘指数</a>10%，同时<b>积分（FI</b>）是基于所请求的遗忘指数。仅在项目重复时填充此字段。<i>在这里，<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-18">算法18</a>将安排<a href="Glossary_Item.html" title="Glossary:Item">项目</a>42年零1个月重复，遗忘指数为10%。较短<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>SuperMemo 中经常出现遗忘指数非常低的情况</i></dd>
+<dt>整数（兰德）</dt>
+<dd><a href="Glossary_Item.html" title="Glossary:Item">项目</a>下一个<a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">最佳间隔</a>修改为<a href="Glossary_Forgetting_index.html" title="Glossary:Forgetting index">遗忘指数</a>并随机分散（比较<b>整数18</b>和<b>国际 (FI)</b>）。最佳间隔<b>整数18</b>是基于<a href="Forgetting_index.html" title="Forgetting index">遗忘指数</a>10%，同时<b>整数（兰德）</b>是基于的分散值<a href="Glossary_Requested_forgetting_index.html" title="Glossary:Requested forgetting index">要求遗忘指数</a>。仅在项目重复时填充此字段。<i>图片中，<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-18">算法18</a>将安排<a href="Glossary_Item.html" title="Glossary:Item">项目</a>42 年零 10 个月内重复，遗忘指数为 10%（这是馆藏的默认值）。价值高于 41 年零 1 个月<b>国际 (FI)</b>是随机分散的结果</i>。<b>重要！</b>每次执行或取消并重复重复时，该值都会不同。</dd>
+<dt>奥德</dt>
+<dd>当前<a href="Glossary_Ordinal_number.html" title="Glossary:Ordinal number">序数</a>分配给<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。您可以使用<a href="Glossary_Ordinal_number.html" title="Glossary:Ordinal number">序数词</a>来排序<a href="Glossary_Pending_queue.html" title="Glossary:Pending queue">等待队列</a>。如果您打算发布自己的版本，这尤其有用<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>供他人使用。您可以更改<a href="Glossary_Ordinal_number.html" title="Glossary:Ordinal number">序数</a>通过按<i>Ctrl+Shift+P</i>通过<b><a href="Element_parameters.html" title="Element parameters">元件参数</a></b>。<i>显示的<a href="Glossary_Item.html" title="Glossary:Item">项目</a>有<a href="Glossary_Ordinal_number.html" title="Glossary:Ordinal number">序数</a>819</i>。</dd></dl>
+</td>
+<td style="text-align: right;"><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Element_Status_in_the_Element_Data_window.jpg.html" title="SuperMemo: The Status data group of the Element data window"><img alt="SuperMemo: The Status data group of the Element data window" class="mw-file-element" decoding="async" height="211" loading="lazy" src="https://help.supermemo.org/images/f/fa/Element_Status_in_the_Element_Data_window.jpg" width="233"/></a></span>
+</td></tr></tbody></table>
+<div class="mw-heading mw-heading2"><h2 id="Element_data_context_menu">元素数据上下文菜单</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=9" title="Edit section: Element data context menu"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=9" title="Edit section's source code: Element data context menu"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>难度</b>- 显示估计值<a href="Glossary_Element.html" title="Glossary:Element">元素</a>的<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">难度</a></li>
+<li><b>恢复布局</b>（<i>Ctrl+F5</i>) - 恢复选择为默认布局的 SuperMemo 窗口布局</li>
+<li><b>元素窗口</b>（<i>ESC</i>) - 将焦点转移到<a href="Element_window.html" title="Element window">元素窗口</a></li>
+<li><b>格式化间隔</b>- 格式<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>如年、月、日等。如果格式化的时间间隔不再适合该字段，请单击该字段以在对话框中显示其整个值。或者，将鼠标悬停在该字段上，然后从黄色提示面板中读取其值。<a href="Status_bar.html" title="Status bar">状态栏</a>（<b><a href="Window_menu.html" title="Window menu">窗户</a> :<a href="Window_menu.html#Hints" title="Window menu">提示</a></b>必须检查其是否正常工作）。</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Further_reading">进一步阅读</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=10" title="Edit section: Further reading"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=10" title="Edit section's source code: Further reading"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="Statistics.html" title="Statistics"><b>统计数据</b>窗户</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="FAQs">常见问题解答</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Element_data&amp;veaction=edit&amp;section=11" title="Edit section: FAQs"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Element_data&amp;action=edit&amp;section=11" title="Edit section's source code: FAQs"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://supermemopedia.com/wiki/What_is_the_interpretation_of_New,_Int17,_and_S_in_Algorithm_SM-17%3F">算法 SM-17 中 New、Int17 和 S 的解释是什么？</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610110950
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.080 seconds
+Real time usage: 0.095 seconds
+Preprocessor visited node count: 297/1000000
+Post‐expand include size: 1194/2097152 bytes
+Template argument size: 552/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.241      1 File:Element_data.jpg
+100.00%    4.241      1 -total
+ 41.57%    1.763      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:111:|#|:idhash:canonical and timestamp 20260610110950 and revision id 12233. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

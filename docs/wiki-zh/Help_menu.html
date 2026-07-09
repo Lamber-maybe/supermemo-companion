@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Help menu — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Help_menu" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Help_menu_items"><span class="tocnumber">1</span> <span class="toctext">Help menu items</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Welcome_-_ABC"><span class="tocnumber">1.1</span> <span class="toctext">Welcome - ABC</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Guide"><span class="tocnumber">1.2</span> <span class="toctext">Guide</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Contents"><span class="tocnumber">1.3</span> <span class="toctext">Contents</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#FAQ"><span class="tocnumber">1.4</span> <span class="toctext">FAQ</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Hints_and_tips"><span class="tocnumber">1.5</span> <span class="toctext">Hints and tips</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Context"><span class="tocnumber">1.6</span> <span class="toctext">Context</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#User_survey"><span class="tocnumber">1.7</span> <span class="toctext">User survey</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Web"><span class="tocnumber">1.8</span> <span class="toctext">Web</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#E-mail"><span class="tocnumber">1.9</span> <span class="toctext">E-mail</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Question_of_the_Day"><span class="tocnumber">1.10</span> <span class="toctext">Question of the Day</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#About"><span class="tocnumber">1.11</span> <span class="toctext">About</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Help_menu_items">Help menu items</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=1" title="Edit section: Help menu items"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=1" title="Edit section's source code: Help menu items"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><b>Help</b> submenu on the <a href="Main_menu.html" title="Main menu">main menu</a> provides the following options: 
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Welcome_-_ABC">Welcome - ABC</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=2" title="Edit section: Welcome - ABC"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=2" title="Edit section's source code: Welcome - ABC"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Welcome - ABC</b> - open the <a href="Introduction.html" title="Introduction">welcome page</a> of SuperMemo help with a 3-minute introduction to SuperMemo</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Guide">Guide</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=3" title="Edit section: Guide"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=3" title="Edit section's source code: Guide"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Guide</b> - open the <a href="Step-by-step_to_SuperMemo_mastery.html" title="Step-by-step to SuperMemo mastery">step-by-step guide</a> with the most important steps towards mastering SuperMemo (one month course)</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Contents">Contents</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=4" title="Edit section: Contents"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=4" title="Edit section's source code: Contents"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Contents</b> - open the help's <a class="mw-redirect" href="Main_Page.html" title="Main Page">table of contents</a></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="FAQ">FAQ</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=5" title="Edit section: FAQ"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=5" title="Edit section's source code: FAQ"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>FAQ</b> - open the page with the most <a class="external text" href="http://super-memory.com/help/faq/index.htm">frequently asked questions about SuperMemo</a></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Hints_and_tips">Hints and tips</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=6" title="Edit section: Hints and tips"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=6" title="Edit section's source code: Hints and tips"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Hints and tips</b> - open the page with the <a href="Hints&amp;Tips.html" title="Hints&amp;Tips">most useful hints and tips</a></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Context">Context</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=7" title="Edit section: Context"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=7" title="Edit section's source code: Context"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Context</b> (<i>F1</i>) - open the page most relevant to the current context. For example, if you are in the <b>Contents</b> window, pressing <i>F1</i> will open the <a href="Contents.html" title="Contents"><b>Contents</b> page</a>. To open context help for menus, you need to first select an active menu item for <i>F1</i> to work (inactive or disabled menu items do not activate help). For example, choose <b><a href="Component_menu.html#Answer" title="Component menu">Answer</a></b> on the <a href="Component_menu.html" title="Component menu">component menu</a> and press <i>F1</i> to get the help page describing the menu.</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="User_survey">User survey</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=8" title="Edit section: User survey"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=8" title="Edit section's source code: User survey"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>User survey</b> - open the <a class="external text" href="https://supermemopedia.com/wiki/User_Survey">questionnaire page at SuperMemopedia.com</a>. You can send your feedback via mail, leave it at SuperMemopedia.com, or read notes left by other users. Thank you in advance for your help in improving SuperMemo</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Web">Web</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=9" title="Edit section: Web"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=9" title="Edit section's source code: Web"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Web</b>
+<ul><li><b>On-line help</b> - open the help file directly from SuperMemo Website</li>
+<li><b>YouTube</b> - open a <a class="external text" href="https://www.youtube.com/channel/UCqmYtieCc3liSTYxLwk_MLw/videos">dedicated YouTube channel</a> with video tutorials about SuperMemo</li>
+<li><b>Search Wiki Help</b> (<i>Shift+F2</i>) - search <a class="mw-redirect" href="Main_Page.html" title="Main Page">SuperMemo Help</a> at <a class="external text" href="http://supermemo.org">supermemo.org</a>. This is a wiki version of help and may include comments made by users of SuperMemo. To search the original unchanged help file use <b>Search HTML Help</b> below</li>
+<li><b>Search HTML Help</b> - search SuperMemo Help at <a class="external text" href="http://super-memory.com">SuperMemo Website</a></li>
+<li><b>Search SuperMemoPedia</b> - search <a class="external text" href="https://supermemopedia.com">SuperMemoPedia</a>, i.e. a wiki system created to help users solve their problems</li>
+<li><b>Search Web</b> - use Google to search for articles about SuperMemo</li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="E-mail">E-mail</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=10" title="Edit section: E-mail"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=10" title="Edit section's source code: E-mail"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>E-mail</b>
+<ul><li><b>Support</b> - open <a href="Technical_support.html" title="Technical support">this page</a> on the web</li>
+<li><b>Bug report</b> - send a bug report. When reporting a bug, remember to always use this option to ensure your system data and the bug context are included</li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Question_of_the_Day">Question of the Day</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=11" title="Edit section: Question of the Day"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=11" title="Edit section's source code: Question of the Day"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="mw-redirect" href="Question_of_the_Day.html" title="Question of the Day"><b>Question of the Day</b></a> - equivalent of the tip of the day in other programs. In SuperMemo, tips are formulated as simple questions-and-answers. If you decide to introduce some tips into the learning process, just click the button <b>Remember</b> in the <b>Question of the Day</b> dialog box. If you think a tip is not worth knowing, click <b>Delete</b>. Note that tips in SuperMemo are a mini-metaphor of the SuperMemo paradigm! If you click <b>Remember</b>, questions will enter the learning process as <a href="Glossary_Item.html" title="Glossary:Item">items</a>.</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="About">About</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=12" title="Edit section: About"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=12" title="Edit section's source code: About"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>About</b> - dialog box with the release date of your current SuperMemo. Click <b>Choose picture</b> to change the picture displayed when SuperMemo starts up. If you downloaded SuperMemo from a franchising website, you will also find here the address of your local distributor and information about technical support in your native language; click the underlined reseller's name</li></ul>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Help_Web_submenu.jpg.html" title="SuperMemo: Help : Web submenu that you can use to get more help on SuperMemo on the web"><img alt="SuperMemo: Help : Web submenu that you can use to get more help on SuperMemo on the web" class="mw-file-element" decoding="async" height="486" loading="lazy" src="https://help.supermemo.org/images/thumb/9/9e/Help_Web_submenu.jpg/800px-Help_Web_submenu.jpg" srcset="/images/thumb/9/9e/Help_Web_submenu.jpg/1200px-Help_Web_submenu.jpg 1.5x, /images/9/9e/Help_Web_submenu.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> <b><a class="mw-selflink selflink">Help</a> : <a class="mw-selflink-fragment" href="#Web">Web</a></b> submenu that you can use to get more help on SuperMemo on the web</i>
+</p>
+</blockquote>
+</div>
+<!-- 
+NewPP limit report
+Cached time: 20260610111033
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.040 seconds
+Real time usage: 0.043 seconds
+Preprocessor visited node count: 54/1000000
+Post‐expand include size: 318/2097152 bytes
+Template argument size: 114/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.898      1 File:Help_Web_submenu.jpg
+100.00%    3.898      1 -total
+ 42.33%    1.650      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:17:|#|:idhash:canonical and timestamp 20260610111033 and revision id 11929. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Help_menu_items"><span class="tocnumber">1</span> <span class="toctext">帮助菜单项</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Welcome_-_ABC"><span class="tocnumber">1.1</span> <span class="toctext">欢迎 - ABC</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Guide"><span class="tocnumber">1.2</span> <span class="toctext">指南</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Contents"><span class="tocnumber">1.3</span> <span class="toctext">内容</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#FAQ"><span class="tocnumber">1.4</span> <span class="toctext">常见问题解答</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Hints_and_tips"><span class="tocnumber">1.5</span> <span class="toctext">提示和技巧</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Context"><span class="tocnumber">1.6</span> <span class="toctext">背景</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#User_survey"><span class="tocnumber">1.7</span> <span class="toctext">用户调查</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Web"><span class="tocnumber">1.8</span> <span class="toctext">网络</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#E-mail"><span class="tocnumber">1.9</span> <span class="toctext">电子邮件</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Question_of_the_Day"><span class="tocnumber">1.10</span> <span class="toctext">今日问题</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#About"><span class="tocnumber">1.11</span> <span class="toctext">关于</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Help_menu_items">帮助菜单项</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=1" title="Edit section: Help menu items"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=1" title="Edit section's source code: Help menu items"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><b>帮助</b>的子菜单<a href="Main_menu.html" title="Main menu">主菜单</a>提供以下选项：</p>
+<div class="mw-heading mw-heading3"><h3 id="Welcome_-_ABC">欢迎 - ABC</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=2" title="Edit section: Welcome - ABC"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=2" title="Edit section's source code: Welcome - ABC"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>欢迎 - ABC</b>- 打开<a href="Introduction.html" title="Introduction">欢迎页面</a>SuperMemo 帮助提供 3 分钟的 SuperMemo 介绍</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Guide">指南</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=3" title="Edit section: Guide"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=3" title="Edit section's source code: Guide"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>指南</b>- 打开<a href="Step-by-step_to_SuperMemo_mastery.html" title="Step-by-step to SuperMemo mastery">分步指南</a>掌握 SuperMemo 的最重要步骤（一个月课程）</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Contents">内容</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=4" title="Edit section: Contents"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=4" title="Edit section's source code: Contents"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>内容</b>- 打开帮助<a class="mw-redirect" href="Main_Page.html" title="Main Page">目录</a></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="FAQ">常见问题解答</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=5" title="Edit section: FAQ"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=5" title="Edit section's source code: FAQ"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>常见问题解答</b>- 打开最多的页面<a class="external text" href="http://super-memory.com/help/faq/index.htm">有关 SuperMemo 的常见问题</a></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Hints_and_tips">提示和技巧</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=6" title="Edit section: Hints and tips"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=6" title="Edit section's source code: Hints and tips"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>提示和技巧</b>- 打开页面<a href="Hints&amp;Tips.html" title="Hints&amp;Tips">最有用的提示和技巧</a></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Context">背景</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=7" title="Edit section: Context"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=7" title="Edit section's source code: Context"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>背景</b>（<i>F1</i>) - 打开与当前上下文最相关的页面。例如，如果您位于<b>内容</b>窗口，按<i>F1</i>将打开<a href="Contents.html" title="Contents"><b>内容</b>页面</a>。要打开菜单的上下文帮助，您需要首先选择一个活动菜单项<i>F1</i>工作（非活动或禁用的菜单项不会激活帮助）。例如，选择<b><a href="Component_menu.html#Answer" title="Component menu">回答</a></b>于<a href="Component_menu.html" title="Component menu">组件菜单</a>并按<i>F1</i>获取描述菜单的帮助页面。</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="User_survey">用户调查</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=8" title="Edit section: User survey"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=8" title="Edit section's source code: User survey"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>用户调查</b>- 打开<a class="external text" href="https://supermemopedia.com/wiki/User_Survey">SuperMemopedia.com 的调查问卷页面</a>。您可以通过邮件发送反馈、将其留在 SuperMemopedia.com 或阅读其他用户留下的注释。预先感谢您对改进 SuperMemo 的帮助</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Web">网络</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=9" title="Edit section: Web"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=9" title="Edit section's source code: Web"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>网络</b>
+<ul><li><b>在线帮助</b>- 直接从 SuperMemo 网站打开帮助文件</li>
+<li><b>YouTube</b>- 打开一个<a class="external text" href="https://www.youtube.com/channel/UCqmYtieCc3liSTYxLwk_MLw/videos">专用 YouTube 频道</a>有关 SuperMemo 的视频教程</li>
+<li><b>搜索维基帮助</b>（<i>Shift+F2</i>) - 搜索<a class="mw-redirect" href="Main_Page.html" title="Main Page">SuperMemo 帮助</a>在<a class="external text" href="http://supermemo.org">supermemo.org</a>。这是帮助的 wiki 版本，可能包含 SuperMemo 用户的评论。要搜索原始未更改的帮助文件，请使用<b>搜索 HTML 帮助</b>下面</li>
+<li><b>搜索 HTML 帮助</b>- 在以下位置搜索 SuperMemo 帮助<a class="external text" href="http://super-memory.com">SuperMemo 网站</a></li>
+<li><b>搜索 SuperMemoPedia</b>- 搜索<a class="external text" href="https://supermemopedia.com">超级备忘录百科</a>，即为帮助用户解决问题而创建的 wiki 系统</li>
+<li><b>搜索网页</b>- 使用Google搜索有关SuperMemo的文章</li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="E-mail">电子邮件</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=10" title="Edit section: E-mail"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=10" title="Edit section's source code: E-mail"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>电子邮件</b>
+<ul><li><b>支持</b>- 打开<a href="Technical_support.html" title="Technical support">本页</a>在网络上</li>
+<li><b>错误报告</b>- 发送错误报告。报告错误时，请记住始终使用此选项以确保包含系统数据和错误上下文</li></ul></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Question_of_the_Day">今日问题</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=11" title="Edit section: Question of the Day"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=11" title="Edit section's source code: Question of the Day"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="mw-redirect" href="Question_of_the_Day.html" title="Question of the Day"><b>今日问题</b></a>- 相当于其他程序中的每日提示。在 SuperMemo 中，提示被表述为简单的问题和答案。如果您决定在学习过程中引入一些提示，只需单击按钮<b>记住</b>在<b>今日问题</b>对话框。如果您认为某个提示不值得了解，请单击<b>删除</b>。请注意，SuperMemo 中的提示是 SuperMemo 范式的迷你隐喻！如果您点击<b>记住</b>，问题将进入学习过程<a href="Glossary_Item.html" title="Glossary:Item">项目</a>。</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="About">关于</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Help_menu&amp;veaction=edit&amp;section=12" title="Edit section: About"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Help_menu&amp;action=edit&amp;section=12" title="Edit section's source code: About"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>关于</b>- 包含当前 SuperMemo 发布日期的对话框。点击<b>选择图片</b>更改 SuperMemo 启动时显示的图片。如果您从特许经营网站下载 SuperMemo，您还可以在这里找到您当地经销商的地址以及有关您母语的技术支持的信息；单击带下划线的经销商名称</li></ul>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Help_Web_submenu.jpg.html" title="SuperMemo: Help : Web submenu that you can use to get more help on SuperMemo on the web"><img alt="SuperMemo: Help : Web submenu that you can use to get more help on SuperMemo on the web" class="mw-file-element" decoding="async" height="486" loading="lazy" src="https://help.supermemo.org/images/thumb/9/9e/Help_Web_submenu.jpg/800px-Help_Web_submenu.jpg" srcset="/images/thumb/9/9e/Help_Web_submenu.jpg/1200px-Help_Web_submenu.jpg 1.5x, /images/9/9e/Help_Web_submenu.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b> <b><a class="mw-selflink selflink">帮助</a> :<a class="mw-selflink-fragment" href="#Web">网络</a></b>您可以使用子菜单获取有关网络上 SuperMemo 的更多帮助</i>
+</p>
+</blockquote>
+</div>
+<!-- 
+NewPP limit report
+Cached time: 20260610111033
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.040 seconds
+Real time usage: 0.043 seconds
+Preprocessor visited node count: 54/1000000
+Post‐expand include size: 318/2097152 bytes
+Template argument size: 114/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    3.898      1 File:Help_Web_submenu.jpg
+100.00%    3.898      1 -total
+ 42.33%    1.650      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:17:|#|:idhash:canonical and timestamp 20260610111033 and revision id 11929. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

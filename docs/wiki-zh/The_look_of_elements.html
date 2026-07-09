@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The look of elements — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/The_look_of_elements" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p>After you add new <a href="Glossary_Element.html" title="Glossary:Element">elements</a>, you will often want to make them look differently.
+</p><p>If you want to change the way your new <a href="Glossary_Element.html" title="Glossary:Element">elements</a> look, you will need to learn some more advanced options of SuperMemo. This way you will be able to change colors, change fonts, add pictures, add sounds, take advantage of multiple choice tests, etc.
+</p>
+<div class="bs-callout bs-callout-warning">
+<p><b>Important!</b> You may need to change the <a href="Glossary_Level.html" title="Glossary:Level">difficulty level</a> with <b><a href="File_menu.html" title="File menu">File</a> : <a href="Levels.html" title="Levels">Level</a></b> to make sure that some of the options below become available.
+</p>
+</div>
+<p>This is the list of skills that will help you change the way your learning material looks, and the way it is organized:
+</p>
+<ol><li><a href="Component_menu.html" title="Component menu">Component menu</a> - if you right-click over a question or an answer, you will see a <a href="Component_menu.html" title="Component menu">component menu</a>. For example, select some text, right-click the selection, and choose <b><a href="Component_menu.html#Text" title="Component menu">Text</a> : Font : Edit font</b> on the <a href="Component_menu.html" title="Component menu">component menu</a>. This way you will be able to change the font in the selected text (this method will only work in <a href="Using_text_components.html" title="Using text components">HTML and RTF text components</a>)</li>
+<li><a href="Element_menu.html" title="Element menu">Element menu</a> - if you press <i>Alt+F10</i> (or right-click over the <a href="Navigation_bar.html" title="Navigation bar">navigation bar</a>), you will see the <a href="Element_menu.html" title="Element menu">element menu</a>. For example, choose <b><a href="Element_menu.html#Color" title="Element menu">Color</a></b> on the <a href="Element_menu.html" title="Element menu">element menu</a>. This way you will be able the change the color of the <a href="Glossary_Element.html" title="Glossary:Element">element</a></li>
+<li><a href="Compose_toolbar.html" title="Compose toolbar"><b>Compose</b> toolbar</a> - at the bottom panel of the <a href="Element_window.html" title="Element window">element window</a> you can find the <a href="Compose_toolbar.html" title="Compose toolbar"><b>Compose</b> toolbar</a>. It will help you add various component types to your <a href="Glossary_Element.html" title="Glossary:Element">elements</a> (e.g. pictures, sounds, video, etc.). You can also use <b><a href="Edit_menu.html" title="Edit menu">Edit</a> : <a href="Edit_menu.html#Add_components" title="Edit menu">Add components</a></b> from the <a href="Main_menu.html" title="Main menu">main menu</a> for the same purpose. There is more. For example, to paste a picture from the clipboard, press <i>Shift+Ins</i> or <i>Ctrl+V</i>. If a new image does not paste, press <i>Esc</i> a few times (e.g. to complete the current editing operation). If the image still does not paste, make sure it is indeed stored in the clipboard.</li>
+<li><a href="Templates.html" title="Templates">Templates</a> - a template is a definition of an <a href="Glossary_Element.html" title="Glossary:Element">element</a>'s appearance. For example, you can define an <a href="Glossary_Element.html" title="Glossary:Element">element</a> that contains a description text, a picture and a spelling-test <a href="Glossary_Component.html" title="Glossary:Component">component</a>. You can save such an <a href="Glossary_Element.html" title="Glossary:Element">element</a> as a <a href="Glossary_Template.html" title="Glossary:Template">template</a> and make sure all your new elements look this way. See it in action: change the colors of one of your <a href="Glossary_Item.html" title="Glossary:Item">items</a> and choose <b><a href="Element_menu.html#Template" title="Element menu">Template</a> : Save as default</b> on the <a href="Element_menu.html" title="Element menu">element menu</a>. <b>Add new</b> will now add <a href="Glossary_Item.html" title="Glossary:Item">items</a> that look like your modified item</li>
+<li><a href="Concepts.html" title="Concepts">Concepts</a> - if you want to divide your learning material into sections such as <i>Biology</i>, <i>Geography</i>, <i>Chemistry</i>, etc. you can use concepts. A concept group is a group of elements that have a similar look and belong to the same section of the <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">knowledge tree</a></li></ol>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=The_look_of_elements&amp;veaction=edit&amp;section=1" title="Edit section: See also"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=The_look_of_elements&amp;action=edit&amp;section=1" title="Edit section's source code: See also"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="http://super-memory.com/help/faq/begin.htm">Beginner FAQ</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111256
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.020 seconds
+Real time usage: 0.021 seconds
+Preprocessor visited node count: 39/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:128:|#|:idhash:canonical and timestamp 20260610111256 and revision id 10844. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p>添加新的后<a href="Glossary_Element.html" title="Glossary:Element">元素</a>，您经常想让它们看起来不同。</p><p>如果你想改变你的新方式<a href="Glossary_Element.html" title="Glossary:Element">元素</a>看，你需要学习 SuperMemo 的一些更高级的选项。这样您就可以更改颜色、更改字体、添加图片、添加声音、利用多项选择测试等。</p>
+<div class="bs-callout bs-callout-warning">
+<p><b>重要！</b>您可能需要更改<a href="Glossary_Level.html" title="Glossary:Level">难度级别</a>与<b><a href="File_menu.html" title="File menu">文件</a> :<a href="Levels.html" title="Levels">级别</a></b>以确保以下某些选项可用。</p>
+</div>
+<p>以下技能列表将帮助您改变学习材料的外观及其组织方式：</p>
+<ol><li><a href="Component_menu.html" title="Component menu">组件菜单</a>- 如果您右键单击问题或答案，您将看到<a href="Component_menu.html" title="Component menu">组件菜单</a>。例如，选择一些文本，右键单击所选内容，然后选择<b><a href="Component_menu.html#Text" title="Component menu">文字</a> ：字体 ：编辑字体</b>于<a href="Component_menu.html" title="Component menu">组件菜单</a>。这样您就可以更改所选文本中的字体（此方法仅适用于<a href="Using_text_components.html" title="Using text components">HTML 和 RTF 文本组件</a>）</li>
+<li><a href="Element_menu.html" title="Element menu">元素菜单</a>- 如果你按<i>Alt+F10</i>（或右键单击<a href="Navigation_bar.html" title="Navigation bar">导航栏</a>），你会看到<a href="Element_menu.html" title="Element menu">元素菜单</a>。例如，选择<b><a href="Element_menu.html#Color" title="Element menu">颜色</a></b>于<a href="Element_menu.html" title="Element menu">元素菜单</a>。这样你就可以改变颜色<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><a href="Compose_toolbar.html" title="Compose toolbar"><b>撰写</b>工具栏</a>- 在底部面板<a href="Element_window.html" title="Element window">元素窗口</a>你可以找到<a href="Compose_toolbar.html" title="Compose toolbar"><b>撰写</b>工具栏</a>。它将帮助您将各种组件类型添加到您的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（例如图片、声音、视频等）。您还可以使用<b><a href="Edit_menu.html" title="Edit menu">编辑</a> :<a href="Edit_menu.html#Add_components" title="Edit menu">添加组件</a></b>从<a href="Main_menu.html" title="Main menu">主菜单</a>出于同样的目的。还有更多。例如，要从剪贴板粘贴图片，请按<i>Shift+Ins</i>或<i>Ctrl+V</i>。如果未粘贴新图像，请按<i>ESC</i>几次（例如完成当前的编辑操作）。如果图像仍然无法粘贴，请确保它确实存储在剪贴板中。</li>
+<li><a href="Templates.html" title="Templates">模板</a>- 模板是一个定义<a href="Glossary_Element.html" title="Glossary:Element">元素</a>的出现。例如，您可以定义一个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>包含描述文本、图片和拼写测试<a href="Glossary_Component.html" title="Glossary:Component">组件</a>。你可以保存这样一个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>作为<a href="Glossary_Template.html" title="Glossary:Template">模板</a>并确保所有新元素都是这样的。看看它的实际效果：改变你的其中一个的颜色<a href="Glossary_Item.html" title="Glossary:Item">项目</a>并选择<b><a href="Element_menu.html#Template" title="Element menu">模板</a> : 保存为默认值</b>于<a href="Element_menu.html" title="Element menu">元素菜单</a>。<b>添加新的</b>现在将添加<a href="Glossary_Item.html" title="Glossary:Item">项目</a>看起来像您修改过的项目</li>
+<li><a href="Concepts.html" title="Concepts">概念</a>- 如果您想将学习材料分为几个部分，例如<i>生物学</i>,<i>地理</i>,<i>化学</i>等等，你可以使用概念。概念组是具有相似外观且属于同一部分的一组元素。<a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">知识树</a></li></ol>
+<div class="mw-heading mw-heading2"><h2 id="See_also">另请参阅</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=The_look_of_elements&amp;veaction=edit&amp;section=1" title="Edit section: See also"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=The_look_of_elements&amp;action=edit&amp;section=1" title="Edit section's source code: See also"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="http://super-memory.com/help/faq/begin.htm">初学者常见问题解答</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111256
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.020 seconds
+Real time usage: 0.021 seconds
+Preprocessor visited node count: 39/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:128:|#|:idhash:canonical and timestamp 20260610111256 and revision id 10844. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

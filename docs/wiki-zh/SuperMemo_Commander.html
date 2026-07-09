@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SuperMemo Commander — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/SuperMemo_Commander" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducing_SuperMemo_Commander"><span class="tocnumber">1</span> <span class="toctext">Introducing SuperMemo Commander</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Available_commands"><span class="tocnumber">2</span> <span class="toctext">Available commands</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#SuperMemo_Commander_dialog_box"><span class="tocnumber">3</span> <span class="toctext">SuperMemo Commander dialog box</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#SuperMemo_Commander_context_menu"><span class="tocnumber">4</span> <span class="toctext">SuperMemo Commander context menu</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Introducing_SuperMemo_Commander">Introducing SuperMemo Commander</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_Commander&amp;veaction=edit&amp;section=1" title="Edit section: Introducing SuperMemo Commander"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=SuperMemo_Commander&amp;action=edit&amp;section=1" title="Edit section's source code: Introducing SuperMemo Commander"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Throughout its 24 year development (the Delphi line), SuperMemo for Windows has been enabled with a multitude of options available in a myriad of contexts. All of them implemented with an intention to improve the learning experience. The feature set is always being reorganized and often pruned. By embracing the NUI (Natural User Interface) design philosophy we have gone as far as to intentionally avoid adding new buttons, menu items, options, etc. Yet we keep receiving complaints from confused students.
+</p><p>Newer SuperMemos attempt to relieve the feature bloat by introducing <b>SuperMemo Commander</b> (available with <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Toolkit_menu.html#Commander" title="Toolkit menu">Commander</a></b>; alternatively, and more quickly, press <i>Ctrl+Enter</i>). The tool makes it possible for you to quickly execute (often deeply-buried) commands via mnemonic keyboard shortcuts. Only the hardest to access options have been included in <a href="#Available_commands">the Commander list</a>. The list is open to changes upon user suggestions. The names of commands can be changed by the user.
+</p>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_SuperMemo_Commander.jpg.html" title="SuperMemo: SuperMemo Commander (available with Toolkit : Commander; alternatively, and more quickly, with Ctrl+Enter) allows of fast execution of commands via mnemonic keyboard shortcuts"><img alt="SuperMemo: SuperMemo Commander (available with Toolkit : Commander; alternatively, and more quickly, with Ctrl+Enter) allows of fast execution of commands via mnemonic keyboard shortcuts" class="mw-file-element" decoding="async" height="355" loading="lazy" src="https://help.supermemo.org/images/thumb/7/78/SuperMemo_Commander.jpg/800px-SuperMemo_Commander.jpg" srcset="/images/thumb/7/78/SuperMemo_Commander.jpg/1200px-SuperMemo_Commander.jpg 1.5x, /images/7/78/SuperMemo_Commander.jpg 2x" width="800"/></a></span>
+</p>
+</div>
+<p><br/>
+For example, to open the <a class="mw-redirect" href="SleepChart.html" title="SleepChart">Sleep Chart</a> press:
+</p>
+<ol><li><i>Ctrl+Enter</i> - to open SuperMemo Commander</li>
+<li><i>S</i> - for <a class="mw-redirect" href="SleepChart.html" title="SleepChart">Sleep Chart</a> mnemonic. This will limit the list to only those commands beginning with <i>s</i></li>
+<li><i>Down arrow</i> repeatedly to move down to <i>Sleep Chart'</i></li>
+<li><i>Enter</i></li></ol>
+<p>You can create an alias for a selected mnemonic keyboard shortcut. To do that:
+</p>
+<ol><li>Select the command in the first <b>Command</b> column</li>
+<li>Click <b>Rename</b> (<i>Alt+R</i>) to the right</li>
+<li>In the <b>Command name</b> dialog box, type the new name, and click <b>OK</b></li></ol>
+<div class="mw-heading mw-heading2"><h2 id="Available_commands">Available commands</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_Commander&amp;veaction=edit&amp;section=2" title="Edit section: Available commands"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=SuperMemo_Commander&amp;action=edit&amp;section=2" title="Edit section's source code: Available commands"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The command set is easily expandable in future updates to SuperMemo. If you cannot remember a shortcut or need to often use a command available from a deeply nested menu or a button that is not part of your layout, send your request for new commands via e-mail.
+</p>
+<ul><li><b>Alarm: Cancel</b> - cancel the alarm setting to make sure the alarm does not sound</li>
+<li><b>Alarm: Set</b> - determine the time that should elapse before the alarm is sounded</li>
+<li><b>Ancestors: Show</b> - show the window with the list of <a href="Glossary_Ancestor.html" title="Glossary:Ancestor">ancestors</a> of the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> (same as <i>Ctrl+Shift+X</i>)</li>
+<li><b>Bullet</b> - insert a bullet into an <a href="HTML_component.html" title="HTML component">HTML component</a> (same as <i>Ctrl+Shift+L</i>)</li>
+<li><b>Capitalize text</b> - convert a text to a lowercase with the first character in uppercase (Sentence case.)</li>
+<li><b>Compress images</b> - compress all images to a predetermined maximum size</li>
+<li><b>Concept: Link</b> - associate the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> with a selected <a href="Glossary_Concept.html" title="Glossary:Concept">concept</a></li>
+<li><b>Concept: Make</b> - create a new <a href="Glossary_Concept.html" title="Glossary:Concept">concept</a> based on the current <a href="Glossary_Element.html" title="Glossary:Element">element</a></li>
+<li><b>Delete after cursor</b> - delete all text after the current selection or cursor position in an <a href="HTML_component.html" title="HTML component">HTML component</a> (same as <i>Alt+.</i>)</li>
+<li><b><a href="Delete_before_cursor.html" title="Delete before cursor">Delete before cursor</a></b> - delete all text before the current selection or cursor position in an <a href="HTML_component.html" title="HTML component">HTML component</a> (same as <i>Alt+\</i>)</li>
+<li><b>Deprecate article</b> - mark an article reference as "outdated" so that its newer versions might be imported (e.g. from <a class="external text" href="http://en.wikipedia.org">Wikipedia</a>)</li>
+<li><b>Dismember</b> - separate <a href="Glossary_Component.html" title="Glossary:Component">components</a> in individual <a href="Glossary_Element.html" title="Glossary:Element">elements</a> (e.g. to split an e-mail with multiple attachments to separate elements each holding a single attachment)</li>
+<li><b>Done!</b> - delete all <a href="Glossary_Component.html" title="Glossary:Component">components</a>, <a href="Glossary_Dismiss.html" title="Glossary:Dismiss">dismiss</a> the <a href="Glossary_Element.html" title="Glossary:Element">element</a>, or delete the childless element (same as <i>Ctrl+Shift+Enter</i>)</li>
+<li><b>Duplicate element</b> - create a copy of the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> and make it a <a href="Glossary_Child.html" title="Glossary:Child">child</a> of the original (same as <i>Alt+D</i>)</li>
+<li><b>E-mail: Answer</b> - reply to a selected text or forward the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> via e-mail (same as <i>Ctrl+Shift+E</i>)</li>
+<li><b>E-mail: Paste</b> - paste e-mail stored in the clipboard (Outlook, Windows (Live) Mail, etc.)</li>
+<li><b>Explain</b> - explain the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> or text selection using AI (see: <a href="Using_AI_in_SuperMemo.html" title="Using AI in SuperMemo">Using AI in SuperMemo</a>)</li>
+<li><b>Fit all pictures</b> - adjust the size of selected image <a href="Glossary_Component.html" title="Glossary:Component">components</a> to the size of pictures</li>
+<li><b>Fit picture</b> - save space in the <a href="Glossary_Element.html" title="Glossary:Element">element</a> by reducing the size of the image <a href="Glossary_Component.html" title="Glossary:Component">component</a> to the size of the picture</li>
+<li><b>Fit to component</b> - adjust the size of <a href="Glossary_Component.html" title="Glossary:Component">components</a> around a selected component</li>
+<li><b>Highlight: Clear</b> - clear search highlights</li>
+<li><b>Highlight: Show</b> - show search highlights</li>
+<li><b>Highlighter font</b> - apply the highlighter font to the selected text</li>
+<li><b>Horizontal line</b> - insert a horizontal line into an <a href="HTML_component.html" title="HTML component">HTML component</a> (same as <i>Shift+Alt+H</i>)</li>
+<li><b>Hyperlink: Element</b> - create a link from the selected text to an <a href="Glossary_Element.html" title="Glossary:Element">element</a> in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a></li>
+<li><b>Import file</b> - import a file from the web or from a disk</li>
+<li><b>Link: Contents</b> - create a link between the <a href="Glossary_Element.html" title="Glossary:Element">element</a> and another one in the <a href="Contents.html" title="Contents"><b>Contents</b> window</a></li>
+<li><b>Markdown</b> - transform plain text formatted in <a class="external text" href="https://en.wikipedia.org/wiki/Markdown">markdown</a> to <a class="external text" href="https://en.wikipedia.org/wiki/HTML">richly formatted text</a> (e.g. <i>"*Plaque Formation*: In Alzheimer's disease"</i> will become <i>"<b>Plaque Formation</b>: In Alzheimer's disease"')</i></li>
+<li><b>Occlusion test</b> - creates a set of occlusion tests based on a template item (see <a href="File_Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg.html" title="File:Learning anatomy with occlusion tests in SuperMemo 19.jpg">picture</a>)</li>
+<li><b>Outstanding</b> - show <a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">outstanding element</a> in the <a href="Browser.html" title="Browser">browser</a></li>
+<li><b>Parse HTML</b> - convert HTML code to formatted text (same as <i>Shift+Ctrl+1</i>)</li>
+<li><b>Paste: Article</b> - paste the text of an article stored in the clipboard into a new <a href="Glossary_Element.html" title="Glossary:Element">element</a> (same as <i>Ctrl+N</i>)</li>
+<li><b>Plan</b> - open the <a href="Plan.html" title="Plan">plan</a> of the day (same as <i>Ctrl+P</i>)</li>
+<li><b>Pronunciation: Add</b> - add a new word-transcription pair to the phonetic <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a></li>
+<li><b>Reference: Edit</b> - edit <a href="References.html" title="References">references</a> associated with the <a href="Glossary_Element.html" title="Glossary:Element">element</a></li>
+<li><b>Reference: Show</b> - show <a href="References.html" title="References">references</a> associated with the <a href="Glossary_Element.html" title="Glossary:Element">element</a></li>
+<li><b>Remove formatting: Front</b> - remove HTML formatting from before the text (all tags before the actual text will be removed)</li>
+<li><b>Remove formatting: Plain text</b> - remove HTML formatting from the entire text (same as <i>Shift+Ctrl+F12</i>)</li>
+<li><b>Remove formatting: Selection</b> - remove HTML formatting from the selected text</li>
+<li><b>Reopen favorite</b> - choose from a list of the most often used <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> (same as <i>Ctrl+O</i>)</li>
+<li><b>Save file</b> - save file associated with the current <a href="Glossary_Component.html" title="Glossary:Component">component</a></li>
+<li><b>Search web</b> - search the web for the selected text with a chosen service (same as <i>Ctrl+F3</i>)</li>
+<li><b>Sleep Chart</b> - open the <a href="Sleep_Chart.html" title="Sleep Chart">timeline of sleep and learning</a> (same as <i>F12</i>)</li>
+<li><b>Sort repetitions</b> - sort the <a href="Glossary_Outstanding_queue.html" title="Glossary:Outstanding queue">outstanding queue</a> using <a href="Priority_queue.html#Sorting_repetitions" title="Priority queue">current sorting criteria</a></li>
+<li><b>Split: Split the article</b> - split the article into portions marked by <a href="Glossary_Splitmark.html" title="Glossary:Splitmark">split-marks</a></li>
+<li><b>Style: Apply style</b> - apply a selected style from the Style <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> to the currently selected HTML text</li>
+<li><b>Subset: Add</b> - add the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> to a chosen <a href="Glossary_Subset.html" title="Glossary:Subset">subset</a></li>
+<li><b>Tasklist: Add task</b> - add a new <a href="Glossary_Task.html" title="Glossary:Task">task</a> to the current <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> (same as <i>Alt+F1</i>)</li>
+<li><b>Template: Apply</b> - choose a <a href="Glossary_Template.html" title="Glossary:Template">template</a> that should be used with the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> (same as <i>Shift+Ctrl+M</i>)</li>
+<li><b>Template: Detach</b> - detach the <a href="Glossary_Template.html" title="Glossary:Template">template</a> from the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> to expose the original looks</li>
+<li><b>Template: Impose</b> - detach the <a href="Glossary_Template.html" title="Glossary:Template">template</a> from the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> without changing its looks (same as <i>Shift+Ctrl+F2</i>)</li>
+<li><b>Tile components</b> - arrange selected <a href="Glossary_Component.html" title="Glossary:Component">components</a> in equally sizes rows and columns (same as <i>Shift+Alt+T</i>)</li>
+<li><b>Undo repetition</b> - undo the effects of the most recent <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a></li>
+<li><b>Unit: Convert</b> - performs all imperial unit conversions with 4 keystrokes</li>
+<li><b>Unzoom image</b> - remove trim/zoom from the current image</li>
+<li><b>Zoom image mode</b> - enter the <a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">zoom mode</a> for the current image to trim, zoom or crop images</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="SuperMemo_Commander_dialog_box">SuperMemo Commander dialog box</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_Commander&amp;veaction=edit&amp;section=3" title="Edit section: SuperMemo Commander dialog box"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=SuperMemo_Commander&amp;action=edit&amp;section=3" title="Edit section's source code: SuperMemo Commander dialog box"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>In the top part of the dialog box, you can see the following three columns:
+</p>
+<ul><li><b>Command</b>
+<ul><li>Command text box - the text box which you start typing the name of the SuperMemo command you want to execute in</li>
+<li>Command list box - the list of available commands (the list gets filtered by the name that you can type in the text box above)</li></ul></li>
+<li><b>Custom name</b>
+<ul><li>Custom name text box - the text box which you start typing the custom name for the command you want to execute in (to quickly move to this field, press <i>Alt+U</i>)</li>
+<li>Custom name list box - the list of available custom names (the list gets filtered by the name that you type in the text box above)</li></ul></li>
+<li>Buttons
+<ul><li><b>OK</b> (<i>Enter</i>) - close the commander and execute the selected command</li>
+<li><b>Cancel</b> (<i>Esc</i>) - close the commander without executing any command</li>
+<li><b>Rename</b> (<i>Alt+R</i>) - give your own name to a given command (the custom names are stored in the <i>commands.ini</i> file located in the <i>[BIN]</i> subfolder of your SuperMemo installation)</li>
+<li><b>Default</b> - restore the default command names in the <b>Custom name</b> column (it effectively deletes the <i>commands.ini</i> file from the <i>[BIN]</i> subfolder)</li></ul></li></ul>
+<p>At the bottom, you can read the description of the currently selected command.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="SuperMemo_Commander_context_menu">SuperMemo Commander context menu</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_Commander&amp;veaction=edit&amp;section=4" title="Edit section: SuperMemo Commander context menu"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=SuperMemo_Commander&amp;action=edit&amp;section=4" title="Edit section's source code: SuperMemo Commander context menu"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Right click anywhere within the dialog box to display the menu
+</p>
+<ul><li><b>Execute</b> (<code>Enter</code>) - execute the selected command and close the commander</li>
+<li><b>Close</b> (<code>Esc</code>) - close the commander without executing any command</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260609145451
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.032 seconds
+Real time usage: 0.034 seconds
+Preprocessor visited node count: 81/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:392:|#|:idhash:canonical and timestamp 20260609145451 and revision id 12452. Rendering was triggered because: page-view
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducing_SuperMemo_Commander"><span class="tocnumber">1</span> <span class="toctext">SuperMemo Commander 简介</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Available_commands"><span class="tocnumber">2</span> <span class="toctext">可用命令</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#SuperMemo_Commander_dialog_box"><span class="tocnumber">3</span> <span class="toctext">SuperMemo 命令对话框</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#SuperMemo_Commander_context_menu"><span class="tocnumber">4</span> <span class="toctext">SuperMemo Commander 上下文菜单</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Introducing_SuperMemo_Commander">SuperMemo Commander 简介</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_Commander&amp;veaction=edit&amp;section=1" title="Edit section: Introducing SuperMemo Commander"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=SuperMemo_Commander&amp;action=edit&amp;section=1" title="Edit section's source code: Introducing SuperMemo Commander"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>在其 24 年的开发过程中（Delphi 系列），SuperMemo for Windows 已在无数环境中提供了多种可用选项。所有这些都是为了改善学习体验而实施的。功能集总是在重新组织并经常被修剪。通过拥抱 NUI（自然用户界面）设计理念，我们甚至有意避免添加新的按钮、菜单项、选项等。然而，我们不断收到困惑的学生的抱怨。</p><p>较新的 SuperMemos 试图通过引入来缓解功能膨胀<b>超级备忘录指挥官</b>（可与<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Toolkit_menu.html#Commander" title="Toolkit menu">指挥官</a></b>;或者，更快地按<i>Ctrl+Enter</i>）。该工具使您可以通过助记符键盘快捷键快速执行（通常是深埋的）命令。仅包含最难访问的选项<a href="#Available_commands">指挥官名单</a>。该列表可以根据用户建议进行更改。用户可以更改命令的名称。</p>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_SuperMemo_Commander.jpg.html" title="SuperMemo: SuperMemo Commander (available with Toolkit : Commander; alternatively, and more quickly, with Ctrl+Enter) allows of fast execution of commands via mnemonic keyboard shortcuts"><img alt="SuperMemo: SuperMemo Commander (available with Toolkit : Commander; alternatively, and more quickly, with Ctrl+Enter) allows of fast execution of commands via mnemonic keyboard shortcuts" class="mw-file-element" decoding="async" height="355" loading="lazy" src="https://help.supermemo.org/images/thumb/7/78/SuperMemo_Commander.jpg/800px-SuperMemo_Commander.jpg" srcset="/images/thumb/7/78/SuperMemo_Commander.jpg/1200px-SuperMemo_Commander.jpg 1.5x, /images/7/78/SuperMemo_Commander.jpg 2x" width="800"/></a></span>
+</p>
+</div>
+<p><br/>例如，要打开<a class="mw-redirect" href="SleepChart.html" title="SleepChart">睡眠图</a>按：</p>
+<ol><li><i>Ctrl+Enter</i>- 打开 SuperMemo Commander</li>
+<li><i>S</i>- 为<a class="mw-redirect" href="SleepChart.html" title="SleepChart">睡眠图</a>助记符。这会将列表限制为仅以以下命令开头的命令<i>s</i></li>
+<li><i>向下箭头</i>反复向下移动到<i>睡眠图'</i></li>
+<li><i>输入</i></li></ol>
+<p>您可以为选定的助记符键盘快捷键创建别名。为此：</p>
+<ol><li>选择第一个命令<b>命令</b>专栏</li>
+<li>点击<b>重命名</b>（<i>Alt+R</i>) 向右</li>
+<li>在<b>命令名称</b>对话框中，输入新名称，然后单击<b>好的</b></li></ol>
+<div class="mw-heading mw-heading2"><h2 id="Available_commands">可用命令</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_Commander&amp;veaction=edit&amp;section=2" title="Edit section: Available commands"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=SuperMemo_Commander&amp;action=edit&amp;section=2" title="Edit section's source code: Available commands"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>该命令集可以在 SuperMemo 的未来更新中轻松扩展。如果您不记得快捷方式或需要经常使用深层嵌套菜单中可用的命令或不属于布局的按钮，请通过电子邮件发送新命令的请求。</p>
+<ul><li><b>报警：取消</b>- 取消闹钟设置以确保闹钟不会响起</li>
+<li><b>闹钟：设置</b>- 确定警报响起之前应该经过的时间</li>
+<li><b>祖先：表演</b>- 显示带有列表的窗口<a href="Glossary_Ancestor.html" title="Glossary:Ancestor">祖先</a>当前的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（与<i>Ctrl+Shift+X</i>）</li>
+<li><b>子弹</b>- 将子弹插入<a href="HTML_component.html" title="HTML component">HTML组件</a>（与<i>Ctrl+Shift+L</i>）</li>
+<li><b>将文本大写</b>- 将文本转换为小写，第一个字符为大写（句子大小写。）</li>
+<li><b>压缩图像</b>- 将所有图像压缩到预定的最大尺寸</li>
+<li><b>概念：链接</b>- 关联当前<a href="Glossary_Element.html" title="Glossary:Element">元素</a>与选定的<a href="Glossary_Concept.html" title="Glossary:Concept">概念</a></li>
+<li><b>概念：制造</b>- 创建一个新的<a href="Glossary_Concept.html" title="Glossary:Concept">概念</a>基于当前的<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><b>删除光标后的内容</b>- 删除当前选择或光标位置之后的所有文本<a href="HTML_component.html" title="HTML component">HTML组件</a>（与<i>Alt+。</i>）</li>
+<li><b><a href="Delete_before_cursor.html" title="Delete before cursor">删除光标前的内容</a></b>- 删除当前选择或光标位置之前的所有文本<a href="HTML_component.html" title="HTML component">HTML组件</a>（与<i>Alt+\</i>）</li>
+<li><b>弃用文章</b>- 将文章参考标记为“过时”，以便可以导入其较新的版本（例如，从<a class="external text" href="http://en.wikipedia.org">维基百科</a>）</li>
+<li><b>肢解</b>- 分开<a href="Glossary_Component.html" title="Glossary:Component">组件</a>在个人中<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（例如，将包含多个附件的电子邮件拆分为单独的元素，每个元素包含一个附件）</li>
+<li><b>完成！</b>- 删除全部<a href="Glossary_Component.html" title="Glossary:Component">组件</a>,<a href="Glossary_Dismiss.html" title="Glossary:Dismiss">解雇</a>的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>，或删除无子元素（与<i>Ctrl+Shift+Enter</i>）</li>
+<li><b>重复元素</b>- 创建当前的副本<a href="Glossary_Element.html" title="Glossary:Element">元素</a>并使其成为<a href="Glossary_Child.html" title="Glossary:Child">孩子</a>原来的（与<i>Alt+D</i>）</li>
+<li><b>电子邮箱： 回复</b>- 回复选定的文本或转发当前的文本<a href="Glossary_Element.html" title="Glossary:Element">元素</a>通过电子邮件（与<i>Ctrl+Shift+E</i>）</li>
+<li><b>电子邮件：粘贴</b>- 粘贴存储在剪贴板中的电子邮件（Outlook、Windows（Live）Mail 等）</li>
+<li><b>解释一下</b>- 解释当前<a href="Glossary_Element.html" title="Glossary:Element">元素</a>或使用 AI 进行文本选择（请参阅：<a href="Using_AI_in_SuperMemo.html" title="Using AI in SuperMemo">在 SuperMemo 中使用人工智能</a>）</li>
+<li><b>适合所有图片</b>- 调整所选图像的大小<a href="Glossary_Component.html" title="Glossary:Component">组件</a>到图片的大小</li>
+<li><b>适合图片</b>- 节省空间<a href="Glossary_Element.html" title="Glossary:Element">元素</a>通过减小图像的大小<a href="Glossary_Component.html" title="Glossary:Component">组件</a>到图片的大小</li>
+<li><b>适合组件</b>- 调整大小<a href="Glossary_Component.html" title="Glossary:Component">组件</a>围绕选定的组件</li>
+<li><b>亮点：清晰</b>- 清晰的搜索亮点</li>
+<li><b>亮点：展示</b>- 显示搜索亮点</li>
+<li><b>荧光笔字体</b>- 将荧光笔字体应用于所选文本</li>
+<li><b>水平线</b>- 将水平线插入<a href="HTML_component.html" title="HTML component">HTML组件</a>（与<i>Shift+Alt+H</i>）</li>
+<li><b>超链接：元素</b>- 创建从所选文本到某个文本的链接<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a></li>
+<li><b>导入文件</b>- 从网络或磁盘导入文件</li>
+<li><b>链接： 内容</b>- 在之间创建链接<a href="Glossary_Element.html" title="Glossary:Element">元素</a>和另一个在<a href="Contents.html" title="Contents"><b>内容</b>窗户</a></li>
+<li><b>降价</b>- 转换纯文本格式<a class="external text" href="https://en.wikipedia.org/wiki/Markdown">降价</a>到<a class="external text" href="https://en.wikipedia.org/wiki/HTML">格式丰富的文本</a>（例如<i>“*斑块形成*：阿尔茨海默病”</i>将成为<i>”<b>斑块形成</b>：阿尔茨海默病”')</i></li>
+<li><b>咬合测试</b>- 基于模板项创建一组遮挡测试（请参阅<a href="File_Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg.html" title="File:Learning anatomy with occlusion tests in SuperMemo 19.jpg">图片</a>）</li>
+<li><b>杰出</b>- 显示<a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">突出元素</a>在<a href="Browser.html" title="Browser">浏览器</a></li>
+<li><b>解析 HTML</b>- 将 HTML 代码转换为格式化文本（与<i>Shift+Ctrl+1</i>）</li>
+<li><b>粘贴：文章</b>- 将剪贴板中存储的文章文本粘贴到新的文本中<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（与<i>Ctrl+N</i>）</li>
+<li><b>计划</b>- 打开<a href="Plan.html" title="Plan">计划</a>当日（与<i>Ctrl+P</i>）</li>
+<li><b>发音： 添加</b>- 在语音中添加一个新的单词转录对<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a></li>
+<li><b>参考：编辑</b>- 编辑<a href="References.html" title="References">参考文献</a>与相关的<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><b>参考：显示</b>- 显示<a href="References.html" title="References">参考文献</a>与相关的<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><b>删除格式：正面</b>- 删除文本之前的 HTML 格式（实际文本之前的所有标签都将被删除）</li>
+<li><b>删除格式：纯文本</b>- 从整个文本中删除 HTML 格式（与<i>Shift+Ctrl+F12</i>）</li>
+<li><b>删除格式：选择</b>- 从所选文本中删除 HTML 格式</li>
+<li><b>重新打开收藏夹</b>- 从最常用的列表中选择<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>（与<i>Ctrl+O</i>）</li>
+<li><b>保存文件</b>- 保存与当前关联的文件<a href="Glossary_Component.html" title="Glossary:Component">组件</a></li>
+<li><b>搜索网页</b>- 使用所选服务在网络上搜索所选文本（与<i>Ctrl+F3</i>）</li>
+<li><b>睡眠图</b>- 打开<a href="Sleep_Chart.html" title="Sleep Chart">睡眠和学习的时间表</a>（与<i>F12</i>）</li>
+<li><b>对重复项进行排序</b>- 排序<a href="Glossary_Outstanding_queue.html" title="Glossary:Outstanding queue">未完成的队列</a>使用<a href="Priority_queue.html#Sorting_repetitions" title="Priority queue">当前排序标准</a></li>
+<li><b>拆分：拆分文章</b>- 将文章分成几个部分，标记为<a href="Glossary_Splitmark.html" title="Glossary:Splitmark">分裂标记</a></li>
+<li><b>风格: 应用风格</b>- 应用从样式中选择的样式<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>到当前选定的 HTML 文本</li>
+<li><b>子集：添加</b>- 添加当前的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>到一个选定的<a href="Glossary_Subset.html" title="Glossary:Subset">子集</a></li>
+<li><b>任务列表：添加任务</b>- 添加一个新的<a href="Glossary_Task.html" title="Glossary:Task">任务</a>到目前的<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>（与<i>Alt+F1</i>）</li>
+<li><b>模板：申请</b>- 选择一个<a href="Glossary_Template.html" title="Glossary:Template">模板</a>应该与当前使用<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（与<i>Shift+Ctrl+M</i>）</li>
+<li><b>模板：分离</b>- 分离<a href="Glossary_Template.html" title="Glossary:Template">模板</a>从目前的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>暴露本来面目</li>
+<li><b>模板：强加</b>- 分离<a href="Glossary_Template.html" title="Glossary:Template">模板</a>从目前的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>不改变其外观（与<i>Shift+Ctrl+F2</i>）</li>
+<li><b>瓷砖组件</b>- 安排选定的<a href="Glossary_Component.html" title="Glossary:Component">组件</a>行和列大小相同（与<i>Shift+Alt+T</i>）</li>
+<li><b>撤消重复</b>- 撤消最近的影响<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a></li>
+<li><b>单位： 换算</b>- 通过 4 次按键执行所有英制单位转换</li>
+<li><b>取消缩放图像</b>- 从当前图像中删除修剪/缩放</li>
+<li><b>缩放图像模式</b>- 输入<a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">变焦模式</a>对当前图像进行修剪、缩放或裁剪图像</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="SuperMemo_Commander_dialog_box">SuperMemo 命令对话框</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_Commander&amp;veaction=edit&amp;section=3" title="Edit section: SuperMemo Commander dialog box"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=SuperMemo_Commander&amp;action=edit&amp;section=3" title="Edit section's source code: SuperMemo Commander dialog box"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>在对话框的顶部，您可以看到以下三列：</p>
+<ul><li><b>命令</b>
+<ul><li>命令文本框 - 您开始输入要在其中执行的 SuperMemo 命令名称的文本框</li>
+<li>命令列表框 - 可用命令的列表（该列表按您可以在上面的文本框中键入的名称进行过滤）</li></ul></li>
+<li><b>自定义名称</b>
+<ul><li>自定义名称文本框 - 您开始输入要在其中执行的命令的自定义名称的文本框（要快速移动到此字段，请按<i>Alt+U</i>）</li>
+<li>自定义名称列表框 - 可用自定义名称的列表（该列表将根据您在上面的文本框中输入的名称进行过滤）</li></ul></li>
+<li>按钮<ul><li><b>好的</b>（<i>输入</i>) - 关闭指挥官并执行所选命令</li>
+<li><b>取消</b>（<i>ESC</i>) - 关闭指挥官而不执行任何命令</li>
+<li><b>重命名</b>（<i>Alt+R</i>) - 为给定命令指定您自己的名称（自定义名称存储在<i>命令.ini</i>文件位于<i>[存储箱]</i>SuperMemo 安装的子文件夹）</li>
+<li><b>默认</b>- 恢复默认命令名称<b>自定义名称</b>列（它有效地删除了<i>命令.ini</i>文件来自<i>[存储箱]</i>子文件夹）</li></ul></li></ul>
+<p>在底部，您可以阅读当前所选命令的说明。</p>
+<div class="mw-heading mw-heading2"><h2 id="SuperMemo_Commander_context_menu">SuperMemo Commander 上下文菜单</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=SuperMemo_Commander&amp;veaction=edit&amp;section=4" title="Edit section: SuperMemo Commander context menu"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=SuperMemo_Commander&amp;action=edit&amp;section=4" title="Edit section's source code: SuperMemo Commander context menu"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>右键单击对话框中的任意位置以显示菜单</p>
+<ul><li><b>执行</b>（<code>Enter</code>) - 执行所选命令并关闭指挥官</li>
+<li><b>关闭</b>（<code>Esc</code>) - 关闭指挥官而不执行任何命令</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260609145451
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.032 seconds
+Real time usage: 0.034 seconds
+Preprocessor visited node count: 81/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:392:|#|:idhash:canonical and timestamp 20260609145451 and revision id 12452. Rendering was triggered because: page-view
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

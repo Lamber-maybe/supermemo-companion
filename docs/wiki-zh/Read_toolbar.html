@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Read toolbar — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Read_toolbar" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p>You can display the <b>Read</b> toolbar by clicking the <b>Read</b> tab at the bottom of the <a href="Element_window.html" title="Element window">element window</a> (at <b>Middle</b> or higher <a href="Glossary_Level.html" title="Glossary:Level">level</a>).
+</p>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Read_toolbar.jpg.html" title="SuperMemo: The Read toolbar at the bottom of the element window. It features options used in incremental reading"><img alt="SuperMemo: The Read toolbar at the bottom of the element window. It features options used in incremental reading" class="mw-file-element" decoding="async" height="178" loading="lazy" src="https://help.supermemo.org/images/thumb/5/5b/Read_toolbar.jpg/800px-Read_toolbar.jpg" srcset="/images/5/5b/Read_toolbar.jpg 1.5x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> The <a class="mw-selflink selflink"><b>Read</b> toolbar</a> at the bottom of the <a href="Element_window.html" title="Element window">element window</a>. It features options used in <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a></i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Toolbar_buttons">Toolbar buttons</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Read_toolbar&amp;veaction=edit&amp;section=1" title="Edit section: Toolbar buttons"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Read_toolbar&amp;action=edit&amp;section=1" title="Edit section's source code: Toolbar buttons"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul>
+<li><b>Paste article</b> (<i>Ctrl+N</i>) - paste a new article from the clipboard to the current <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a></li>
+<li><b>Remember extract</b> (<i>Alt+X</i>) - use the selected part of the text to create a new <a href="Glossary_Element.html" title="Glossary:Element">element</a> and introduce this new element into the learning process. This is one of the most important options used in <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>. Use <i>Alt+X</i> on a selected text to tell SuperMemo that the selection is important and that you want to better remember it in the future</li>
+<li><b>Schedule extract</b> (<i>Alt+Shift+X</i>) - use the selected text to create a new <a href="Glossary_Topic.html" title="Glossary:Topic">topic</a> and schedule its <a href="Glossary_Review.html" title="Glossary:Review">review</a> on a selected day with a selected <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a>. <b>Schedule extract</b> is the same as <b>Remember extract</b> but you can manually select the first <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a>, <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a>, and more</li>
+<li><b>Remember cloze</b> (<i>Alt+Z</i>) - create a new <a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">cloze deletion element</a> based on the current keyword selection and introduce that new <a href="Glossary_Element.html" title="Glossary:Element">element</a> into the learning process
+
+<blockquote>
+<p><b>Example</b>: You can convert the following sentence:
+</p>
+<blockquote><p><i>In 1947 the UN voted to divide Palestine into Arab and Jewish states</i></p></blockquote>
+<p>to question:
+</p>
+<blockquote><p><i>In 1947 the UN voted to divide Palestine into Arab and <span class="cloze">[...]</span> states</i></p></blockquote>
+<p>by:
+</p>
+<ol><li>selecting the word <i>Jewish</i> and</li>
+<li>choosing <b>Cloze</b> (or pressing <i>Alt+Z</i>).</li></ol>
+</blockquote>
+<p>In addition to <b>Extract</b> (<a href="#extract">above</a>), this is the most important option of <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>.
+</p>
+</li>
+<li><b>Schedule cloze</b> - create a new <a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">cloze deletion</a> and schedule it for <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a> on a selected day</li>
+<li><b>Task extract</b> - use the selected part of the text to create a new <a href="Glossary_Task.html" title="Glossary:Task">task element</a> and put this element on the current <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a></li>
+<li><b>Split article</b> - split the article into multiple <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a> using various chapter markers such as headlines, horizontal lines, Wikipedia sections, <a href="Glossary_Splitmark.html" title="Glossary:Splitmark">SuperMemo splitmarks</a>, etc. This can substantially accelerate decomposition of very long articles and prioritization of article chapters</li>
+<li><b><a href="Incremental_mail_processing.html" title="Incremental mail processing">E-mail</a></b> (<i>Shift+Ctrl+E</i>) - send the <a href="Glossary_Element.html" title="Glossary:Element">element</a> or the selected text via e-mail (you can annotate the <a href="Glossary_Element.html" title="Glossary:Element">element</a> or comment on the selected text)</li>
+<li><b><a href="Incremental_mail_processing.html#Responding_with_FAQs" title="Incremental mail processing">E-mail FAQ</a></b> - use the selected text as the basis of an FAQ question and send the answer to the question's author. Your response will automatically be added to an FAQ file of your choice. It can also produce a Wiki version. All FAQs at SuperMemo Website have been created by means of <b>E-mail FAQ</b>. Many FAQs at <a class="external text" href="https://supermemopedia.com">SuperMemoPedia</a> have been created using this option as well</li>
+<li><b>Highlight</b> - highlight the currently selected text</li>
+<li><b>Change highlight style</b> - change the highlight style (i.e. font, font style, font size, font color, and text highlight color)</li>
+<li><b>Ignore</b> (<i>Shift+Ctrl+I</i>) - ignore the selected text in reading by marking it with the <span class="ignore">ignore</span> style</li>
+<li><b>Delete before cursor</b> (<i>Alt+\</i>) - delete texts before the cursor (e.g. after processing it). When the cursor is placed at the very beginning of the text, it can also delete HTML formatting tags to clean up the text</li>
+<li><b>Delete after cursor</b> (<i>Alt+.</i>) - delete texts after the cursor (e.g. footnotes, external links, literature references, etc.). SuperMemo references located at the bottom of the text will not be affected</li>
+<li><b>Set read-point</b> (<i>Ctrl+F7</i>) - mark the selected text as the point from which you will resume reading the next time you return to the presented article. In <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>, you rarely need to use <b>Set read-point</b> as all extract, cloze, highlight, and other operations will automatically set the read-point for you</li>
+<li><b>Go to read-point</b> (<i>Alt+F7</i>) - go to the text that has been selected as the read-point</li>
+<li><b>Clear read-point</b> (<i>Shift+Ctrl+F7</i>) - remove the read-point from the currently processed text</li>
+</ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610082011
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.032 seconds
+Real time usage: 0.035 seconds
+Preprocessor visited node count: 17/1000000
+Post‐expand include size: 412/2097152 bytes
+Template argument size: 161/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.116      1 File:Read_toolbar.jpg
+100.00%    4.116      1 -total
+ 40.36%    1.661      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:434:|#|:idhash:canonical and timestamp 20260610082011 and revision id 12445. Rendering was triggered because: page-view
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p>您可以显示<b>阅读</b>工具栏，通过单击<b>阅读</b>底部的选项卡<a href="Element_window.html" title="Element window">元素窗口</a>（在<b>中</b>或更高<a href="Glossary_Level.html" title="Glossary:Level">水平</a>）。</p>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Read_toolbar.jpg.html" title="SuperMemo: The Read toolbar at the bottom of the element window. It features options used in incremental reading"><img alt="SuperMemo: The Read toolbar at the bottom of the element window. It features options used in incremental reading" class="mw-file-element" decoding="async" height="178" loading="lazy" src="https://help.supermemo.org/images/thumb/5/5b/Read_toolbar.jpg/800px-Read_toolbar.jpg" srcset="/images/5/5b/Read_toolbar.jpg 1.5x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b>的<a class="mw-selflink selflink"><b>阅读</b>工具栏</a>在底部<a href="Element_window.html" title="Element window">元素窗口</a>。它具有以下用途的选项<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a></i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Toolbar_buttons">工具栏按钮</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Read_toolbar&amp;veaction=edit&amp;section=1" title="Edit section: Toolbar buttons"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Read_toolbar&amp;action=edit&amp;section=1" title="Edit section's source code: Toolbar buttons"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul>
+<li><b>粘贴文章</b>（<i>Ctrl+N</i>) - 将新文章从剪贴板粘贴到当前<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a></li>
+<li><b>记得摘录</b>（<i>Alt+X</i>) - 使用文本的选定部分创建新的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>并将这个新元素引入学习过程中。这是最重要的选项之一<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>。使用<i>Alt+X</i>在选定的文本上告诉 SuperMemo 该选择很重要并且您希望将来更好地记住它</li>
+<li><b>时间表摘录</b>（<i>Alt+Shift+X</i>) - 使用选定的文本创建新的<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>并安排其<a href="Glossary_Review.html" title="Glossary:Review">评论</a>在选定的一天与选定的<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>。<b>时间表摘录</b>是一样的<b>记得摘录</b>但你可以手动选择第一个<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>,<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>，以及更多</li>
+<li><b>记住完形填空</b>（<i>Alt+Z</i>) - 创建一个新的<a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">完形填空删除元素</a>基于当前的关键字选择并引入新的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>进入学习过程<blockquote>
+<p><b>示例</b>: 您可以转换以下句子：</p>
+<blockquote><p><i>1947年，联合国投票将巴勒斯坦分为阿拉伯国家和犹太国家</i></p></blockquote>
+<p>提问：</p>
+<blockquote><p><i>1947年，联合国投票将巴勒斯坦分为阿拉伯和阿拉伯两部分。<span class="cloze">[...]</span>州</i></p></blockquote>
+<p>通过：</p>
+<ol><li>选择单词<i>犹太人</i>和</li>
+<li>选择<b>完型填空</b>（或按<i>Alt+Z</i>）。</li></ol>
+</blockquote>
+<p>除了<b>提取物</b>（<a href="#extract">上面</a>），这是最重要的选项<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>。</p>
+</li>
+<li><b>安排完形填空</b>- 创建一个新的<a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">完形填空删除</a>并安排它<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>在选定的一天</li>
+<li><b>任务摘录</b>- 使用文本的选定部分创建新的<a href="Glossary_Task.html" title="Glossary:Task">任务要素</a>并将这个元素放在当前元素上<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a></li>
+<li><b>拆分文章</b>- 将文章拆分为多篇<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>使用各种章节标记，例如标题、水平线、维基百科部分，<a href="Glossary_Splitmark.html" title="Glossary:Splitmark">SuperMemo 分裂标记</a>等等。这可以大大加速很长文章的分解和文章章节的优先级排序</li>
+<li><b><a href="Incremental_mail_processing.html" title="Incremental mail processing">电子邮件</a></b>（<i>Shift+Ctrl+E</i>) - 发送<a href="Glossary_Element.html" title="Glossary:Element">元素</a>或通过电子邮件选择的文本（您可以注释<a href="Glossary_Element.html" title="Glossary:Element">元素</a>或对所选文本发表评论）</li>
+<li><b><a href="Incremental_mail_processing.html#Responding_with_FAQs" title="Incremental mail processing">电子邮件常见问题解答</a></b>- 使用选定的文本作为常见问题解答问题的基础，并将答案发送给问题的作者。您的回复将自动添加到您选择的常见问题解答文件中。它还可以生成 Wiki 版本。 SuperMemo 网站上的所有常见问题解答均通过以下方式创建<b>电子邮件常见问题解答</b>。许多常见问题解答位于<a class="external text" href="https://supermemopedia.com">超级备忘录百科</a>也是使用此选项创建的</li>
+<li><b>亮点</b>- 突出显示当前选定的文本</li>
+<li><b>更改突出显示样式</b>- 更改突出显示样式（即字体、字体样式、字体大小、字体颜色和文本突出显示颜色）</li>
+<li><b>忽略</b>（<i>Shift+Ctrl+I</i>) - 通过用 标记来忽略阅读中选定的文本<span class="ignore">忽略</span>风格</li>
+<li><b>删除光标前的内容</b>（<i>Alt+\</i>) - 删除光标之前的文本（例如处理后）。当光标置于文本最开头时，还可以删除 HTML 格式标记以清理文本</li>
+<li><b>删除光标后的内容</b>（<i>Alt+。</i>) - 删除光标后的文本（例如脚注、外部链接、文献参考等）。位于文本底部的 SuperMemo 引用不会受到影响</li>
+<li><b>设置读取点</b>（<i>Ctrl+F7</i>) - 将所选文本标记为您下次返回当前文章时将继续阅读的点。在<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>，你很少需要使用<b>设置读取点</b>因为所有摘录、完形填空、突出显示和其他操作都会自动为您设置阅读点</li>
+<li><b>转到读取点</b>（<i>Alt+F7</i>) - 转到已选择作为读取点的文本</li>
+<li><b>清除读数点</b>（<i>Shift+Ctrl+F7</i>) - 从当前处理的文本中删除读取点</li>
+</ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610082011
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.032 seconds
+Real time usage: 0.035 seconds
+Preprocessor visited node count: 17/1000000
+Post‐expand include size: 412/2097152 bytes
+Template argument size: 161/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.116      1 File:Read_toolbar.jpg
+100.00%    4.116      1 -total
+ 40.36%    1.661      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:434:|#|:idhash:canonical and timestamp 20260610082011 and revision id 12445. Rendering was triggered because: page-view
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

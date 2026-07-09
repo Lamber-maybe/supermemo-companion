@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Features — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Features" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div class="mw-heading mw-heading2"><h2 id="Main_features_of_SuperMemo_20">Main features  of SuperMemo 20</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Features&amp;veaction=edit&amp;section=1" title="Edit section: Main features  of SuperMemo 20"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Features&amp;action=edit&amp;section=1" title="Edit section's source code: Main features  of SuperMemo 20"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>efficient learning:</b> SuperMemo started in 1987 as the first freeware and later commercial software to implement <a class="external text" href="http://en.wikipedia.org/wiki/Spaced_repetition">spaced repetition</a>. Spaced repetition is a method that maximizes the speed of learning by choosing the best moments for review of knowledge that is to be remembered</li>
+<li><b>Knowledge Machine</b>: SuperMemo implements a number of mechanisms inspired by the concept of <a class="external text" href="http://www.super-memory.com/english/ol/knowmachine.htm">Knowledge Machine</a> described in Dr Wozniak's <i><a class="external text" href="http://www.super-memory.com/english/el.htm">Economics of Learning</a></i> (1994). Knowledge Machine is a system for gathering, processing, and optimally learning all forms of knowledge</li>
+<li><b>information management:</b> SuperMemo helps you create a hypermedia database of flashcards, articles, pictures, videos, vocabulary, mail, etc. Up to 2 billion <a href="Glossary_Element.html" title="Glossary:Element">elements</a> including up to 8 million hypermedia objects of virtually unlimited size</li>
+<li><b>incremental learning:</b> as of 2000, SuperMemo implements the concept of <a href="Incremental_reading.html" title="Incremental reading">incremental reading</a>. With <a href="Incremental_reading.html" title="Incremental reading">incremental reading</a>, you can read thousands of articles without getting lost, and convert the processed information into rock-solid knowledge. SuperMemo 2008 expanded the concept of incremental learning into the domains of <a href="Incremental_video.html" title="Incremental video">incremental video</a> and <a href="Visual_learning.html" title="Visual learning">visual learning</a>. SuperMemo 16 further expanded the incremental learning toolset by <a href="Incremental_learning.html#Incremental_audio" title="Incremental learning">incremental audio</a> and <a href="Incremental_video.html" title="Incremental video">incremental video</a> of local/offline video files. For more see: <a href="Incremental_learning.html" title="Incremental learning">Incremental learning</a></li>
+<li><b>contents tree:</b> knowledge in SuperMemo is organized into a <a href="Building_the_knowledge_tree.html" title="Building the knowledge tree">tree structure</a>. In <a href="Incremental_reading.html" title="Incremental reading">incremental reading</a>, the structure is created automatically and reflects the semantic connections between pieces of processed knowledge (as of 1995)</li>
+<li><b>concept maps:</b> you can connect concepts of interest into a graph structure (as of 2016). This will help you organize knowledge and execute semantic learning (see <b>neural learning</b> below)</li>
+<li><b><a href="Neural_creativity.html" title="Neural creativity">neural learning and neural creativity</a>:</b> you can ask SuperMemo to <b>Go neural</b>, and it will employ <i><a class="external text" href="https://en.wikipedia.org/wiki/Spreading_activation">spreading activation</a></i> (as of 2016). This will help you learn in a neural way by following links in your SuperMemo <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. In this case,<a href="Building_the_knowledge_tree.html" title="Building the knowledge tree">knowledge tree</a> structure and concept maps will play a role in guiding your semantic learning. The process of <a href="Glossary_Neural_review.html" title="Glossary:Neural review">neural review</a> can be used in enhancing creativity and problem-solving. Once you encounter a difficult problem, load SuperMemo with all the necessary knowledge and <b>Go neural</b></li>
+<li><b>priority queue:</b> all knowledge in SuperMemo is strictly <a href="Priority_queue.html" title="Priority queue">prioritized</a> to make sure that the quality of your knowledge is retained in conditions when you have to reduce the time spent on learning (as of 2006). Concepts such as <b><a href="Glossary_Auto-postpone.html" title="Glossary:Auto-postpone">auto-postpone</a></b> and <b><a href="Glossary_Auto-sort.html" title="Glossary:Auto-sort">auto-sort</a></b> help you automatically reduce the learning load without affecting your top-priority knowledge</li>
+<li><b>element difficulty:</b> all pieces of knowledge are automatically classified by <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficulty</a>, which is an integral part of the spaced repetition algorithm. Understanding difficulty helps you distinguish between knowledge that is easily remembered and knowledge that is poorly formulated and hard to learn. SuperMemo provides tools for the detection and resolution of material that is hard to learn (in the process called <i><a href="Leeches.html" title="Leeches">leech hunting</a></i>)</li>
+<li><b>imports from the web:</b> SuperMemo makes it easy to <a href="Web_import.html" title="Web import">import knowledge from the web</a>. Dedicated import filters are used to import from <a class="external text" href="https://en.wikipedia.org">Wikipedia</a>, <a class="external text" href="https://youtube.com">YouTube</a>, pictures, <a class="external text" href="https://supermemopedia.com">SuperMemopedia</a>, and more. You can also import all file archives for incremental processing</li>
+<li><b>references:</b> <a href="References.html" title="References">knowledge references</a> help you learn in context and to retrieve sources of information (as of 2002)</li>
+<li><b>levels:</b> to minimize intimidation with complex functions of SuperMemo, you can use <b>Beginner</b> and <b>Basic</b> <a href="Levels.html" title="Levels">levels</a> in which SuperMemo's interface is minimized to expose only the most essential options used in basic learning. You can move to higher <a href="Glossary_Level.html" title="Glossary:Level">levels</a> with a single click</li>
+<li><b>rescheduling:</b> SuperMemo helps you manage excess workload or breaks in learning with rescheduling tools such as <b>Advance</b> (to speed up learning before an exam), <b><a href="Postpone.html" title="Postpone">Postpone</a></b> (to reduce the learning load), <b><a href="Mercy.html" title="Mercy">Spread</a></b> (to equally redistribute work over a period of time, e.g. after or before a break in learning), etc.</li>
+<li><b>review calendar:</b> all future material review can be inspected in the <a href="Calendar.html" title="Calendar">calendar of repetitions</a>. This calendar also shows the history of past learning, <a href="Glossary_Retention.html" title="Glossary:Retention">retention</a>, workload, and individual pieces of knowledge that were reviewed. History of repetitions as well as future review estimates, are also available for individual pieces of knowledge</li>
+<li><b>registries:</b> so-called object <a href="Using_registries.html" title="Using registries">registries</a> are used to minimize the size of the database with object reuse and automatic housekeeping. Exemplary registries include the lexicon, text registry, picture registry, sound registry, reference registry, or comment registry</li>
+<li><b>sleep analysis:</b> sleep is vital for learning. Users of SuperMemo can optionally log their sleep data and use sleep analysis tools such as <a href="Sleep_Chart.html" title="Sleep Chart">sleep timeline</a>, circadian cycle graphs, homeostatic sleep drive, alertness graph, 2-component sleep model graphs, and more (as of 2008). Sleep analysis tools can be used to optimize learning. They can also be used to optimize the timing of sleep for the best sleep quality</li>
+<li><b>statistics:</b> SuperMemo holds rich knowledge <a href="Statistics.html" title="Statistics">statistics</a> such as <a href="Glossary_Retention.html" title="Glossary:Retention">retention</a>, learning speed, <a class="mw-redirect" href="Workload.html" title="Workload">workload</a>, and <a href="Analysis.html" title="Analysis">dozens of other parameters</a>. <a href="Glossary_Forgetting_curve.html" title="Glossary:Forgetting curve">Forgetting curve</a> graphs help you see how your memory works (as of 1991). <a class="external text" href="https://supermemo.guru/wiki/SuperMemo_Algorithm">SuperMemo Algorithm</a> adds <a href="Memory_graphs_(4D).html" title="Memory graphs (4D)">4D memory</a> function visualizations (as of 2016)</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Other_functions">Other functions</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Features&amp;veaction=edit&amp;section=2" title="Edit section: Other functions"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Features&amp;action=edit&amp;section=2" title="Edit section's source code: Other functions"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>programmable degree of recall (as of 1991)(see: <a class="external text" href="https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo">Forgetting index</a>)</li>
+<li>various forms of knowledge <a href="Test_elements.html" title="Test elements">tests</a> (e.g. spelling tests, multiple choice tests, <a href="Glossary_Occlusion_test.html" title="Glossary:Occlusion test">occlusion tests</a>, <a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">cloze deletions</a>, etc.)</li>
+<li><a href="Subset_operations.html" title="Subset operations">subset operations</a> (memorize, forget, review, transfer, apply template, etc.)</li>
+<li><a href="Browser.html" title="Browser"> element browser</a> with table and thumb display modes</li>
+<li>workload management with <a class="mw-redirect" href="Tasklists.html" title="Tasklists"> tasklists</a> (as of 1999)</li>
+<li>time management with <a href="Plan.html" title="Plan"> schedule planning</a> based on proportional time allocations (as of 2000)</li>
+<li><a href="Incremental_mail_processing.html" title="Incremental mail processing"> incremental e-mail processing</a> (note that automated imports require Windows (Live) Mail (or other e-mail client supporting EML) or MS Outlook 2000 or later, otherwise manual imports are necessary)(as of 2000)</li>
+<li>learning timeline (automatically generated <a class="external text" href="http://en.wikipedia.org/wiki/Gantt_chart">Gantt chart</a> analogous to the optional sleep timeline)</li>
+<li>functions typical to other Windows software: search&amp;replace, copy&amp;paste, clone, navigation tools (incl. history list), file pick list, templates, stylesheets, operations for the entire database: copy, move, merge, rename, etc.</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="SuperMemo_in_pictures">SuperMemo in pictures</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Features&amp;veaction=edit&amp;section=3" title="Edit section: SuperMemo in pictures"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Features&amp;action=edit&amp;section=3" title="Edit section's source code: SuperMemo in pictures"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>See: <a href="SuperMemo_Screenshot_Tour.html" title="SuperMemo Screenshot Tour">SuperMemo Screenshot Tour</a>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="What's_new:_from_SuperMemo_9_to_SuperMemo_19"><span id="What.27s_new:_from_SuperMemo_9_to_SuperMemo_19"></span>What's new: from SuperMemo 9 to SuperMemo 19</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Features&amp;veaction=edit&amp;section=4" title="Edit section: What's new: from SuperMemo 9 to SuperMemo 19"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Features&amp;action=edit&amp;section=4" title="Edit section's source code: What's new: from SuperMemo 9 to SuperMemo 19"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>For details, see "What's new" of individual versions (note that some features have been removed over time): 
+</p>
+<ul><li><a class="external text" href="http://super-memory.com/articles/soft/sm9.htm">SuperMemo 9</a> (1998)</li>
+<li><a class="external text" href="http://super-memory.com/articles/soft/sm10.htm">SuperMemo 10</a> (2000)</li>
+<li><a class="external text" href="http://super-memory.com/articles/soft/sm11.htm">SuperMemo 11</a> (2002)</li>
+<li><a class="external text" href="http://super-memory.com/articles/soft/sm12.htm">SuperMemo 12</a> (2004)</li>
+<li><a class="external text" href="http://super-memory.com/articles/soft/sm13.htm">SuperMemo 13</a> (2006)</li>
+<li><a class="external text" href="http://super-memory.com/articles/soft/sm14.htm">SuperMemo 14</a> (2008)</li>
+<li><a class="external text" href="http://super-memory.com/articles/soft/sm15.htm">SuperMemo 15</a> (2011)</li>
+<li><a class="external text" href="http://www.super-memory.com/archive/help16/new16.htm">SuperMemo 16</a> (2013)</li>
+<li><a class="external text" href="http://super-memory.com/archive/help17/new.htm">SuperMemo 17</a> (2017)</li>
+<li><a class="external text" href="https://help18.supermemo.org/wiki/What's_new_in_SuperMemo_18?">SuperMemo 18</a> (2020)</li>
+<li><a href="What's_new_in_SuperMemo_19_.html" title="What's new in SuperMemo 19?">SuperMemo 19</a> (2023)</li></ul>
+<p><br/>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610110958
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [no‐toc]
+CPU time usage: 0.027 seconds
+Real time usage: 0.028 seconds
+Preprocessor visited node count: 56/1000000
+Post‐expand include size: 2/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:365:|#|:idhash:canonical and timestamp 20260610110958 and revision id 12017. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div class="mw-heading mw-heading2"><h2 id="Main_features_of_SuperMemo_20">SuperMemo 20 的主要特点</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Features&amp;veaction=edit&amp;section=1" title="Edit section: Main features  of SuperMemo 20"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Features&amp;action=edit&amp;section=1" title="Edit section's source code: Main features  of SuperMemo 20"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>高效学习：</b>SuperMemo 始于 1987 年，是第一个免费软件，后来是商业软件<a class="external text" href="http://en.wikipedia.org/wiki/Spaced_repetition">间隔重复</a>。间隔重复是一种通过选择复习要记住的知识的最佳时刻来最大化学习速度的方法</li>
+<li><b>知识机器</b>：SuperMemo 实现了许多受以下概念启发的机制：<a class="external text" href="http://www.super-memory.com/english/ol/knowmachine.htm">知识机器</a>沃兹尼亚克博士的书中描述<i><a class="external text" href="http://www.super-memory.com/english/el.htm">学习经济学</a></i>（1994）。知识机器是一个收集、处理和优化学习各种形式知识的系统</li>
+<li><b>信息管理：</b>SuperMemo 帮助您创建抽认卡、文章、图片、视频、词汇、邮件等超媒体数据库，多达 20 亿条<a href="Glossary_Element.html" title="Glossary:Element">元素</a>包括多达 800 万个几乎无限大小的超媒体对象</li>
+<li><b>增量学习：</b>自 2000 年起，SuperMemo 实现了以下概念：<a href="Incremental_reading.html" title="Incremental reading">增量阅读</a>。与<a href="Incremental_reading.html" title="Incremental reading">增量阅读</a>，你可以阅读数千篇文章而不会迷失方向，并将处理后的信息转化为坚如磐石的知识。 SuperMemo 2008 将增量学习的概念扩展到以下领域<a href="Incremental_video.html" title="Incremental video">增量视频</a>和<a href="Visual_learning.html" title="Visual learning">视觉学习</a>。 SuperMemo 16 进一步扩展了增量学习工具集：<a href="Incremental_learning.html#Incremental_audio" title="Incremental learning">增量音频</a>和<a href="Incremental_video.html" title="Incremental video">增量视频</a>本地/离线视频文件。更多请参见：<a href="Incremental_learning.html" title="Incremental learning">渐进学习</a></li>
+<li><b>内容树：</b>SuperMemo 中的知识被组织成<a href="Building_the_knowledge_tree.html" title="Building the knowledge tree">树结构</a>。在<a href="Incremental_reading.html" title="Incremental reading">增量阅读</a>，该结构是自动创建的，反映了经过处理的知识片段之间的语义联系（截至 1995 年）</li>
+<li><b>概念图：</b>您可以将感兴趣的概念连接到图形结构中（截至 2016 年）。这将帮助您组织知识并执行语义学习（请参阅<b>神经学习</b>下）</li>
+<li><b><a href="Neural_creativity.html" title="Neural creativity">神经学习和神经创造力</a>:</b>你可以要求 SuperMemo<b>神经化</b>，并且它将采用<i><a class="external text" href="https://en.wikipedia.org/wiki/Spreading_activation">扩散激活</a></i>（截至 2016 年）。这将帮助您通过关注 SuperMemo 中的链接以神经方式学习<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。在这种情况下，<a href="Building_the_knowledge_tree.html" title="Building the knowledge tree">知识树</a>结构图和概念图将在指导你的语义学习中发挥作用。的过程<a href="Glossary_Neural_review.html" title="Glossary:Neural review">神经回顾</a>可用于增强创造力和解决问题的能力。一旦遇到难题，请加载 SuperMemo 所需的所有知识并<b>神经化</b></li>
+<li><b>优先队列：</b>SuperMemo 中的所有知识都是严格的<a href="Priority_queue.html" title="Priority queue">优先的</a>确保在您必须减少学习时间的情况下保持您的知识质量（截至 2006 年）。诸如此类的概念<b><a href="Glossary_Auto-postpone.html" title="Glossary:Auto-postpone">自动推迟</a></b>和<b><a href="Glossary_Auto-sort.html" title="Glossary:Auto-sort">自动排序</a></b>帮助你自动减轻学习负担，而不影响你最优先的知识</li>
+<li><b>元素难度：</b>所有知识都会自动分类<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">难度</a>，它是间隔重复算法的一个组成部分。了解难度可以帮助您区分容易记住的知识和结构不佳且难以学习的知识。 SuperMemo 提供了用于检测和解决难以学习的材料的工具（在此过程中称为<i><a href="Leeches.html" title="Leeches">水蛭狩猎</a></i>）</li>
+<li><b>从网络导入：</b>SuperMemo 让一切变得简单<a href="Web_import.html" title="Web import">从网络导入知识</a>。专用的导入过滤器用于从<a class="external text" href="https://en.wikipedia.org">维基百科</a>,<a class="external text" href="https://youtube.com">YouTube</a>、图片、<a class="external text" href="https://supermemopedia.com">超级记忆百科</a>，等等。您还可以导入所有文件档案以进行增量处理</li>
+<li><b>参考文献：</b> <a href="References.html" title="References">知识参考</a>帮助您在上下文中学习并检索信息源（截至 2002 年）</li>
+<li><b>级别：</b>为了最大程度地减少 SuperMemo 复杂功能的恐吓，您可以使用<b>初学者</b>和<b>基础</b> <a href="Levels.html" title="Levels">级别</a>其中 SuperMemo 的界面被最小化，只暴露基础学习中使用的最基本的选项。你可以转到更高的<a href="Glossary_Level.html" title="Glossary:Level">级别</a>只需单击一下</li>
+<li><b>重新安排：</b>SuperMemo 通过重新安排工具帮助您管理过量的工作量或学习中断，例如<b>提前</b>（在考试前加快学习速度），<b><a href="Postpone.html" title="Postpone">推迟</a></b>（减少学习负担），<b><a href="Mercy.html" title="Mercy">传播</a></b>（在一段时间内平均重新分配工作，例如在学习中断之后或之前）等。</li>
+<li><b>回顾日历：</b>所有未来的材料审查都可以在<a href="Calendar.html" title="Calendar">重复日历</a>。这个日历还显示了过去的学习历史，<a href="Glossary_Retention.html" title="Glossary:Retention">保留</a>、工作量以及所审查的个别知识。重复的历史以及未来的复习估计也可用于单个知识片段</li>
+<li><b>注册表：</b>所谓的对象<a href="Using_registries.html" title="Using registries">登记处</a>用于通过对象重用和自动内务管理来最小化数据库的大小。示例性注册表包括词典、文本注册表、图片注册表、声音注册表、参考注册表或评论注册表</li>
+<li><b>睡眠分析：</b>睡眠对于学习至关重要。 SuperMemo 的用户可以选择记录他们的睡眠数据并使用睡眠分析工具，例如<a href="Sleep_Chart.html" title="Sleep Chart">睡眠时间表</a>、昼夜节律周期图、稳态睡眠驱动力、警觉性图、2 分量睡眠模型图等（截至 2008 年）。睡眠分析工具可用于优化学习。它们还可用于优化睡眠时间，以获得最佳睡眠质量</li>
+<li><b>统计数据：</b>SuperMemo蕴含着丰富的知识<a href="Statistics.html" title="Statistics">统计</a>比如<a href="Glossary_Retention.html" title="Glossary:Retention">保留</a>, 学习速度,<a class="mw-redirect" href="Workload.html" title="Workload">工作量</a>, 和<a href="Analysis.html" title="Analysis">数十个其他参数</a>。<a href="Glossary_Forgetting_curve.html" title="Glossary:Forgetting curve">遗忘曲线</a>图表可以帮助您了解您的记忆力如何运作（截至 1991 年）。<a class="external text" href="https://supermemo.guru/wiki/SuperMemo_Algorithm">SuperMemo 算法</a>添加<a href="Memory_graphs_(4D).html" title="Memory graphs (4D)">4D记忆</a>函数可视化（截至 2016 年）</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Other_functions">其他功能</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Features&amp;veaction=edit&amp;section=2" title="Edit section: Other functions"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Features&amp;action=edit&amp;section=2" title="Edit section's source code: Other functions"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>可编程回忆程度（截至 1991 年）（参见：<a class="external text" href="https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo">遗忘指数</a>）</li>
+<li>各种形式的知识<a href="Test_elements.html" title="Test elements">测试</a>（例如拼写测试、多项选择测试、<a href="Glossary_Occlusion_test.html" title="Glossary:Occlusion test">遮挡测试</a>,<a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">完形填空删除</a>等）</li>
+<li><a href="Subset_operations.html" title="Subset operations">子集运算</a>（记忆、忘记、复习、转移、应用模板等）</li>
+<li><a href="Browser.html" title="Browser">元素浏览器</a>具有表格和拇指显示模式</li>
+<li>工作负载管理<a class="mw-redirect" href="Tasklists.html" title="Tasklists">任务列表</a>（截至 1999 年）</li>
+<li>时间管理与<a href="Plan.html" title="Plan">日程规划</a>基于比例时间分配（截至 2000 年）</li>
+<li><a href="Incremental_mail_processing.html" title="Incremental mail processing">增量电子邮件处理</a>（请注意，自动导入需要 Windows (Live) Mail（或其他支持 EML 的电子邮件客户端）或 MS Outlook 2000 或更高版本，否则需要手动导入）（截至 2000 年）</li>
+<li>学习时间表（自动生成<a class="external text" href="http://en.wikipedia.org/wiki/Gantt_chart">甘特图</a>类似于可选的睡眠时间线）</li>
+<li>其他 Windows 软件的典型功能：搜索和替换、复制和粘贴、克隆、导航工具（包括历史列表）、文件选择列表、模板、样式表、整个数据库的操作：复制、移动、合并、重命名等。</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="SuperMemo_in_pictures">图片中的 SuperMemo</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Features&amp;veaction=edit&amp;section=3" title="Edit section: SuperMemo in pictures"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Features&amp;action=edit&amp;section=3" title="Edit section's source code: SuperMemo in pictures"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>参见：<a href="SuperMemo_Screenshot_Tour.html" title="SuperMemo Screenshot Tour">SuperMemo 截图之旅</a>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="What's_new:_from_SuperMemo_9_to_SuperMemo_19"><span id="What.27s_new:_from_SuperMemo_9_to_SuperMemo_19"></span>新变化：从 SuperMemo 9 到 SuperMemo 19</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Features&amp;veaction=edit&amp;section=4" title="Edit section: What's new: from SuperMemo 9 to SuperMemo 19"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Features&amp;action=edit&amp;section=4" title="Edit section's source code: What's new: from SuperMemo 9 to SuperMemo 19"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>有关详细信息，请参阅各个版本的“新增功能”（请注意，随着时间的推移，一些功能已被删除）：</p>
+<ul><li><a class="external text" href="http://super-memory.com/articles/soft/sm9.htm">超级备忘录 9</a>(1998)</li>
+<li><a class="external text" href="http://super-memory.com/articles/soft/sm10.htm">超级备忘录 10</a>(2000)</li>
+<li><a class="external text" href="http://super-memory.com/articles/soft/sm11.htm">超级备忘录 11</a>(2002)</li>
+<li><a class="external text" href="http://super-memory.com/articles/soft/sm12.htm">超级备忘录 12</a>(2004)</li>
+<li><a class="external text" href="http://super-memory.com/articles/soft/sm13.htm">超级备忘录 13</a>(2006)</li>
+<li><a class="external text" href="http://super-memory.com/articles/soft/sm14.htm">超级备忘录 14</a>(2008)</li>
+<li><a class="external text" href="http://super-memory.com/articles/soft/sm15.htm">超级备忘录 15</a>(2011)</li>
+<li><a class="external text" href="http://www.super-memory.com/archive/help16/new16.htm">超级备忘录 16</a>(2013)</li>
+<li><a class="external text" href="http://super-memory.com/archive/help17/new.htm">超级备忘录 17</a>(2017)</li>
+<li><a class="external text" href="https://help18.supermemo.org/wiki/What's_new_in_SuperMemo_18?">超级备忘录 18</a>(2020)</li>
+<li><a href="What's_new_in_SuperMemo_19_.html" title="What's new in SuperMemo 19?">超级备忘录 19</a>(2023)</li></ul>
+<p><br/>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610110958
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [no‐toc]
+CPU time usage: 0.027 seconds
+Real time usage: 0.028 seconds
+Preprocessor visited node count: 56/1000000
+Post‐expand include size: 2/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 3/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:365:|#|:idhash:canonical and timestamp 20260610110958 and revision id 12017. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

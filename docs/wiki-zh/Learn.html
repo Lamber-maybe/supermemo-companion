@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Learn — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Learn" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Repetition_cycle"><span class="tocnumber">1</span> <span class="toctext">Repetition cycle</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Grades"><span class="tocnumber">2</span> <span class="toctext">Grades</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Grading_tips"><span class="tocnumber">2.1</span> <span class="toctext">Grading tips</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Regular_repetitions_are_the_key_to_success_with_SuperMemo"><span class="tocnumber">3</span> <span class="toctext">Regular repetitions are the key to success with SuperMemo</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Learning_stages"><span class="tocnumber">3.1</span> <span class="toctext">Learning stages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Incremental_learning"><span class="tocnumber">4</span> <span class="toctext">Incremental learning</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Further_reading"><span class="tocnumber">5</span> <span class="toctext">Further reading</span></a></li>
+</ul>
+</div>
+<p>Learning with SuperMemo is based on repetition (see <a class="external text" href="http://super-memory.com/english/smintro.htm">why</a>).
+</p><p>The button <b>Learn</b> (bottom-left in the picture) makes it possible to learn the material stored in SuperMemo.
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Element_window.jpg.html" title="SuperMemo: The element window displaying an extract produced from a larger article titled Chloroplast imported from Wikipedia"><img alt="SuperMemo: The element window displaying an extract produced from a larger article titled Chloroplast imported from Wikipedia" class="mw-file-element" decoding="async" height="431" loading="lazy" src="https://help.supermemo.org/images/thumb/8/8e/Element_window.jpg/800px-Element_window.jpg" srcset="/images/thumb/8/8e/Element_window.jpg/1200px-Element_window.jpg 1.5x, /images/thumb/8/8e/Element_window.jpg/1600px-Element_window.jpg 2x" width="800"/></a><figcaption>SuperMemo: The element window displaying an extract produced from a larger article titled Chloroplast imported from Wikipedia</figcaption></figure>
+<div class="mw-heading mw-heading2"><h2 id="Repetition_cycle">Repetition cycle</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Learn&amp;veaction=edit&amp;section=1" title="Edit section: Repetition cycle"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Learn&amp;action=edit&amp;section=1" title="Edit section's source code: Repetition cycle"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>When you press <b>Learn</b>, SuperMemo will ask you to <i>make repetitions</i> (i.e. review due material). In each repetition you will do the following:
+</p>
+<ol><li>Look at the question and try to answer it (mentally or verbally)</li>
+<li>Choose <b>Show answer</b> (at the bottom of the screen) to see the correct answer</li>
+<li>Compare your response (from Step 1) with the answer displayed on the screen (in Step 2)</li>
+<li>Choose a <a href="Glossary_Grade.html" title="Glossary:Grade">grade</a> that will reflect the accuracy of your response (e.g. <b>Good</b>, <b>Fail</b>, etc.) (see: <a href="#Grades">grade descriptions</a>)</li>
+<li>Choose <b>Next repetition</b> to continue (and go back to Step 1)</li></ol>
+<p>The repetition cycle may be shorter. If the repetition is passive (e.g. reading an article), you may immediately jump to the <b>Next repetition</b> stage.
+</p><p>Remember:
+</p>
+<ul><li>Your first repetitions will usually come up only in 3-5 days after you first add new material. Before they are due, you will only see "<i>Nothing more to learn</i>". This is normal. If <b>Learn</b> does not ask any questions, use <b><a href="Add_new.html" title="Add new">Add new</a></b> to add more material</li>
+<li>Do not look at the timer, the response time is ignored when measuring your performance.</li>
+<li>If you keep cycling through <a href="Glossary_Item.html" title="Glossary:Item">items</a> and you never see "<i>Nothing more to learn</i>", you are in the <a href="Glossary_Final_drill.html" title="Glossary:Final drill">final drill</a> stage and you must start giving passing grades (<b>Good</b> or <b>Great</b>)</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Grades">Grades</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Learn&amp;veaction=edit&amp;section=2" title="Edit section: Grades"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Learn&amp;action=edit&amp;section=2" title="Edit section's source code: Grades"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The grades are defined as follows (keyboard shortcuts in parentheses):
+</p>
+<table align="center" cellpadding="5" style="width: 80%;">
+<tbody><tr>
+<th style="width: 50%; background-color: #DAF7A6;">REMEMBERING
+</th>
+<th style="width: 50%; background-color: #FF5733;">FORGETTING
+</th></tr>
+<tr>
+<td style="background-color: #DAF7A6;">
+<dl><dt><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Grade_5_great.png.html" title="Great grade's smiling emoji"><img alt="Great grade's smiling emoji" class="mw-file-element" decoding="async" height="32" loading="lazy" src="https://help.supermemo.org/images/0/07/Grade_5_great.png" width="32"/></a></span> <b>Great</b> (press <i>5</i>)</dt>
+<dd>excellent response</dd>
+<dt><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Grade_4_good.png.html" title="Good grade's slightly smiling emoji"><img alt="Good grade's slightly smiling emoji" class="mw-file-element" decoding="async" height="32" loading="lazy" src="https://help.supermemo.org/images/6/65/Grade_4_good.png" width="32"/></a></span> <b>Good</b> (press <i>4</i>)</dt>
+<dd>correct response provided with some hesitation</dd>
+<dt><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Grade_3_pass.png.html" title="Pass grade's thumbs-up emoji"><img alt="Pass grade's thumbs-up emoji" class="mw-file-element" decoding="async" height="32" loading="lazy" src="https://help.supermemo.org/images/a/a2/Grade_3_pass.png" width="32"/></a></span> <b>Pass</b> (press <i>3</i>)</dt>
+<dd>answer recalled with difficulty; perhaps, slightly incorrect</dd></dl>
+</td>
+<td style="background-color: #FF5733;">
+<dl><dt><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Grade_2_fail.png.html" title="Fail grade's thumbs-down emoji"><img alt="Fail grade's thumbs-down emoji" class="mw-file-element" decoding="async" height="32" loading="lazy" src="https://help.supermemo.org/images/d/dc/Grade_2_fail.png" width="32"/></a></span> <b> Fail</b> (press <i>2</i>)</dt>
+<dd>wrong response that makes you say <i>I knew it!</i></dd>
+<dt><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Grade_1_bad.png.html" title="Bad grade's angry emoji"><img alt="Bad grade's angry emoji" class="mw-file-element" decoding="async" height="32" loading="lazy" src="https://help.supermemo.org/images/5/5c/Grade_1_bad.png" width="32"/></a></span> <b>Bad</b> (press <i>1</i>)</dt>
+<dd>wrong response; the correct answer seems to be familiar</dd>
+<dt><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Grade_0_null.gif.html"><img class="mw-file-element" decoding="async" height="32" loading="lazy" src="https://help.supermemo.org/images/f/f9/Grade_0_null.gif" width="32"/></a></span> <b>Null</b> (press <i>0</i>)</dt>
+<dd>complete blackout; you do not even recall ever knowing the answer.</dd>
+<dd>If you stick to the rules of SuperMemo, you should rarely or never need this grade. This is why it is not displayed on the standard grade panel. To issue that grade, use the keyboard.</dd></dl>
+</td></tr>
+</tbody></table>
+<div class="center">
+<p><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Emoji-based_grade_panel.jpg.html" title="Emoji-based grade panel in SuperMemo 18"><img alt="Emoji-based grade panel in SuperMemo 18" class="mw-file-element" decoding="async" height="47" loading="lazy" src="https://help.supermemo.org/images/c/c9/Emoji-based_grade_panel.jpg" width="501"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> As of <a class="external text" href="https://help18.supermemo.org/wiki/What's_new_in_SuperMemo_18?">SuperMemo 18</a>, grades are illustrated with vivid emojis by default. If you prefer the old text-based grades (i.e. <b>Great</b>, <b>Pass</b>, <b>Bad</b>, etc.), uncheck <b>Grade icons</b> in <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Options.html" title="Options">Options</a> : <a href="SuperMemo_tab_in_Options.html" title="SuperMemo tab in Options">SuperMemo</a></b>.</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Grading_tips">Grading tips</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Learn&amp;veaction=edit&amp;section=3" title="Edit section: Grading tips"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Learn&amp;action=edit&amp;section=3" title="Edit section's source code: Grading tips"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Important!</b> You only have to understand the difference between <b>Pass</b> and <b>Fail</b>!
+<ul><li><b>Pass</b> and more means <b><span style="color: red;">remembering!</span></b></li>
+<li><b>Fail</b> and less means <b><span style="color: red;">forgetting!</span></b></li></ul></li>
+<li>your grading will work as long as you always grade yourself consistently and clearly differentiate between <b>Pass</b> and <b>Fail</b>. Over time, you will develop strong habits that will help you select grades automatically without much thinking</li>
+<li>instead of clicking a grade button you can just press a keyboard shortcut (e.g. <i>5</i> to choose <b>Great</b> or <i>2</i> to choose <b>Fail</b>)</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Regular_repetitions_are_the_key_to_success_with_SuperMemo">Regular repetitions are the key to success with SuperMemo</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Learn&amp;veaction=edit&amp;section=4" title="Edit section: Regular repetitions are the key to success with SuperMemo"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Learn&amp;action=edit&amp;section=4" title="Edit section's source code: Regular repetitions are the key to success with SuperMemo"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>In SuperMemo you first memorize the material and then review it when the program asks you to do so.
+</p><p>You memorize new material at your own pace but once it is memorized, you must <i>make repetitions</i> exactly as demanded by SuperMemo. This is not a limitation of the program. This is a limitation of human memory!
+</p><p>The power of SuperMemo is in providing the best timing for <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetitions</a>. Optimally, you should work with SuperMemo every day! This way you will not accumulate <a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">outstanding material</a> and you will not deviate from the optimum schedule of repetitions!
+</p><p>Your repetitions should proceed daily until the following equivalent conditions are met:
+</p>
+<ul><li>you see the message: <i>Nothing more to learn</i></li>
+<li><a href="Statistics.html#Outstanding" title="Statistics"><b>Outstanding</b></a> equals to <i><b>0+0</b></i> in the <a href="Statistics.html" title="Statistics"><b>Statistics</b> window</a> (or simply <i><b>0</b></i>)</li>
+<li>the second field of the <a href="Status_bar.html" title="Status bar">status bar</a> displays <i><b>(0+0)/x</b></i>, for example: <i><b>(0+0)/23</b></i> (or simply <i><b>0</b></i>)</li>
+<li>the progress bar on the <a href="Status_bar.html" title="Status bar">status bar</a> becomes blue (or is inactive)</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Learning_stages">Learning stages</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Learn&amp;veaction=edit&amp;section=5" title="Edit section: Learning stages"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Learn&amp;action=edit&amp;section=5" title="Edit section's source code: Learning stages"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Each day, your learning will proceed in three stages:
+</p>
+<ol><li><b>Repetitions</b> - reviewing material that has been memorized earlier (to make sure you do not forget it)</li>
+<li><b>Memorizing</b> - if you have time, you can memorize new material by answering <i>Yes</i> to <i>Do you want to learn new material?</i> (this message is suppressed until you memorize your first 100 <a href="Glossary_Element.html" title="Glossary:Element">elements</a>)</li>
+<li><b>Final drill</b> - reviewing material that caused most problems in the first two stages of learning (<b>Skip final drill</b> must be unchecked in <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Options.html" title="Options">Options</a> : <a href="Learning_tab_in_Options.html" title="Learning tab in Options">Learning</a></b>)</li></ol>
+<div class="mw-heading mw-heading2"><h2 id="Incremental_learning">Incremental learning</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Learn&amp;veaction=edit&amp;section=6" title="Edit section: Incremental learning"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Learn&amp;action=edit&amp;section=6" title="Edit section's source code: Incremental learning"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Once you master the above basic learning process, you should consider learning about <a href="Incremental_learning.html" title="Incremental learning">incremental learning</a>.
+</p><p>The main differences between classical SuperMemo, as described above, and incremental learning:
+</p>
+<ul><li>less typing, higher learning speed</li>
+<li>reading new articles or watching new videos may be interleaved with standard repetitions (as described above)</li>
+<li>the role of <b>Memorizing</b> and <b>Final drill</b> stages is diminished. All material is memorized by default and your work is more mnemonic. This requires far less drilling</li>
+<li>with the help of the <a href="Glossary_Priority_queue.html" title="Glossary:Priority queue">priority queue</a>, you can add far more material to your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> than you can possibly review. This is why, in <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>, you will often still have lots of lower priority <a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">outstanding material</a> in the queue at the end of the day</li></ul>
+<p>As incremental learning is rather complex, you should first sense the power of SuperMemo by mastering the basic learning process as described on this page.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Further_reading">Further reading</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Learn&amp;veaction=edit&amp;section=7" title="Edit section: Further reading"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Learn&amp;action=edit&amp;section=7" title="Edit section's source code: Further reading"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="http://super-memory.com/help/faq/index.htm">FAQs</a></li>
+<li><a href="Incremental_learning.html" title="Incremental learning">Incremental learning</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111057
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.052 seconds
+Real time usage: 0.057 seconds
+Preprocessor visited node count: 60/1000000
+Post‐expand include size: 772/2097152 bytes
+Template argument size: 341/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.163      1 File:Emoji-based_grade_panel.jpg
+100.00%    4.163      1 -total
+ 40.77%    1.697      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:65:|#|:idhash:canonical and timestamp 20260610111057 and revision id 10664. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Repetition_cycle"><span class="tocnumber">1</span> <span class="toctext">重复周期</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Grades"><span class="tocnumber">2</span> <span class="toctext">成绩</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Grading_tips"><span class="tocnumber">2.1</span> <span class="toctext">评分技巧</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Regular_repetitions_are_the_key_to_success_with_SuperMemo"><span class="tocnumber">3</span> <span class="toctext">定期重复是 SuperMemo 成功的关键</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Learning_stages"><span class="tocnumber">3.1</span> <span class="toctext">学习阶段</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Incremental_learning"><span class="tocnumber">4</span> <span class="toctext">渐进学习</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Further_reading"><span class="tocnumber">5</span> <span class="toctext">进一步阅读</span></a></li>
+</ul>
+</div>
+<p>使用 SuperMemo 进行学习是基于重复（参见<a class="external text" href="http://super-memory.com/english/smintro.htm">为什么</a>）。</p><p>按钮<b>学习</b>（图中左下角）可以学习 SuperMemo 中存储的材料。</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Element_window.jpg.html" title="SuperMemo: The element window displaying an extract produced from a larger article titled Chloroplast imported from Wikipedia"><img alt="SuperMemo: The element window displaying an extract produced from a larger article titled Chloroplast imported from Wikipedia" class="mw-file-element" decoding="async" height="431" loading="lazy" src="https://help.supermemo.org/images/thumb/8/8e/Element_window.jpg/800px-Element_window.jpg" srcset="/images/thumb/8/8e/Element_window.jpg/1200px-Element_window.jpg 1.5x, /images/thumb/8/8e/Element_window.jpg/1600px-Element_window.jpg 2x" width="800"/></a><figcaption>SuperMemo：元素窗口显示从维基百科导入的标题为 Chloroplast 的较大文章生成的摘录</figcaption></figure>
+<div class="mw-heading mw-heading2"><h2 id="Repetition_cycle">重复周期</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Learn&amp;veaction=edit&amp;section=1" title="Edit section: Repetition cycle"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Learn&amp;action=edit&amp;section=1" title="Edit section's source code: Repetition cycle"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>当您按下<b>学习</b>, SuperMemo 会要求你<i>重复</i>（即审查应有的材料）。在每次重复中，您将执行以下操作：</p>
+<ol><li>查看问题并尝试回答它（在心里或口头上）</li>
+<li>选择<b>显示答案</b>（在屏幕底部）查看正确答案</li>
+<li>将您的回答（步骤 1 中的答案）与屏幕上显示的答案（步骤 2 中的答案）进行比较</li>
+<li>选择一个<a href="Glossary_Grade.html" title="Glossary:Grade">等级</a>这将反映您回答的准确性（例如<b>好</b>,<b>失败</b>等）（参见：<a href="#Grades">等级描述</a>）</li>
+<li>选择<b>下一次重复</b>继续（并返回步骤 1）</li></ol>
+<p>重复周期可以更短。如果重复是被动的（例如阅读一篇文章），您可以立即跳到<b>下一次重复</b>阶段。</p><p>记住：</p>
+<ul><li>您的第一次重复通常只会在您首次添加新材料后 3-5 天内出现。在它们到期之前，您只会看到“<i>没什么可学的了</i>”。这是正常的。如果<b>学习</b>不问任何问题，使用<b><a href="Add_new.html" title="Add new">添加新的</a></b>添加更多材料</li>
+<li>不要看计时器，在衡量您的表现时，响应时间会被忽略。</li>
+<li>如果你继续骑车经过<a href="Glossary_Item.html" title="Glossary:Item">项目</a>而你永远不会看到“<i>没什么可学的了</i>“，你在<a href="Glossary_Final_drill.html" title="Glossary:Final drill">最后演习</a>阶段，您必须开始给出及格分数（<b>好</b>或<b>太棒了</b>）</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Grades">成绩</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Learn&amp;veaction=edit&amp;section=2" title="Edit section: Grades"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Learn&amp;action=edit&amp;section=2" title="Edit section's source code: Grades"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>等级定义如下（括号内为键盘快捷键）：</p>
+<table align="center" cellpadding="5" style="width: 80%;">
+<tbody><tr>
+<th style="width: 50%; background-color: #DAF7A6;">记住</th>
+<th style="width: 50%; background-color: #FF5733;">遗忘</th></tr>
+<tr>
+<td style="background-color: #DAF7A6;">
+<dl><dt><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Grade_5_great.png.html" title="Great grade's smiling emoji"><img alt="Great grade's smiling emoji" class="mw-file-element" decoding="async" height="32" loading="lazy" src="https://help.supermemo.org/images/0/07/Grade_5_great.png" width="32"/></a></span> <b>太棒了</b>（按<i>5</i>）</dt>
+<dd>反应良好</dd>
+<dt><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Grade_4_good.png.html" title="Good grade's slightly smiling emoji"><img alt="Good grade's slightly smiling emoji" class="mw-file-element" decoding="async" height="32" loading="lazy" src="https://help.supermemo.org/images/6/65/Grade_4_good.png" width="32"/></a></span> <b>好</b>（按<i>4</i>）</dt>
+<dd>稍稍犹豫后给出了正确的回答</dd>
+<dt><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Grade_3_pass.png.html" title="Pass grade's thumbs-up emoji"><img alt="Pass grade's thumbs-up emoji" class="mw-file-element" decoding="async" height="32" loading="lazy" src="https://help.supermemo.org/images/a/a2/Grade_3_pass.png" width="32"/></a></span> <b>通行证</b>（按<i>3</i>）</dt>
+<dd>很难回忆起答案；也许，有点不正确</dd></dl>
+</td>
+<td style="background-color: #FF5733;">
+<dl><dt><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Grade_2_fail.png.html" title="Fail grade's thumbs-down emoji"><img alt="Fail grade's thumbs-down emoji" class="mw-file-element" decoding="async" height="32" loading="lazy" src="https://help.supermemo.org/images/d/dc/Grade_2_fail.png" width="32"/></a></span> <b>失败</b>（按<i>2</i>）</dt>
+<dd>错误的反应让你说<i>我就知道！</i></dd>
+<dt><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Grade_1_bad.png.html" title="Bad grade's angry emoji"><img alt="Bad grade's angry emoji" class="mw-file-element" decoding="async" height="32" loading="lazy" src="https://help.supermemo.org/images/5/5c/Grade_1_bad.png" width="32"/></a></span> <b>不好</b>（按<i>1</i>）</dt>
+<dd>错误的反应；正确答案似乎很熟悉</dd>
+<dt><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Grade_0_null.gif.html"><img class="mw-file-element" decoding="async" height="32" loading="lazy" src="https://help.supermemo.org/images/f/f9/Grade_0_null.gif" width="32"/></a></span> <b>空</b>（按<i>0</i>）</dt>
+<dd>完全停电；你甚至不记得曾经知道答案。</dd>
+<dd>如果你遵守 SuperMemo 的规则，你应该很少或永远不需要这个成绩。这就是为什么它不显示在标准等级面板上的原因。要发布该成绩，请使用键盘。</dd></dl>
+</td></tr>
+</tbody></table>
+<div class="center">
+<p><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Emoji-based_grade_panel.jpg.html" title="Emoji-based grade panel in SuperMemo 18"><img alt="Emoji-based grade panel in SuperMemo 18" class="mw-file-element" decoding="async" height="47" loading="lazy" src="https://help.supermemo.org/images/c/c9/Emoji-based_grade_panel.jpg" width="501"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b>截至<a class="external text" href="https://help18.supermemo.org/wiki/What's_new_in_SuperMemo_18?">超级备忘录 18</a>，成绩默认用生动的表情符号表示。如果您更喜欢旧的基于文本的成绩（即<b>太棒了</b>,<b>通行证</b>,<b>不好</b>等），取消选中<b>等级图标</b>在<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Options.html" title="Options">选项</a> :<a href="SuperMemo_tab_in_Options.html" title="SuperMemo tab in Options">超级备忘录</a></b>。</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Grading_tips">评分技巧</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Learn&amp;veaction=edit&amp;section=3" title="Edit section: Grading tips"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Learn&amp;action=edit&amp;section=3" title="Edit section's source code: Grading tips"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>重要！</b>您只需要了解之间的区别<b>通行证</b>和<b>失败</b>！<ul><li><b>通行证</b>以及更多的手段<b><span style="color: red;">记得！</span></b></li>
+<li><b>失败</b>和更少的手段<b><span style="color: red;">忘记了！</span></b></li></ul></li>
+<li>只要您始终一致地对自己进行评分并清楚地区分不同的人，您的评分就会发挥作用<b>通行证</b>和<b>失败</b>。随着时间的推移，您将养成强烈的习惯，这将帮助您无需太多思考即可自动选择成绩</li>
+<li>您无需单击成绩按钮，只需按键盘快捷键即可（例如<i>5</i>选择<b>太棒了</b>或<i>2</i>选择<b>失败</b>）</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Regular_repetitions_are_the_key_to_success_with_SuperMemo">定期重复是 SuperMemo 成功的关键</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Learn&amp;veaction=edit&amp;section=4" title="Edit section: Regular repetitions are the key to success with SuperMemo"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Learn&amp;action=edit&amp;section=4" title="Edit section's source code: Regular repetitions are the key to success with SuperMemo"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>在 SuperMemo 中，您首先记住材料，然后在程序要求您这样做时进行复习。</p><p>您按照自己的节奏记忆新材料，但一旦记住，您必须<i>重复</i>完全按照 SuperMemo 的要求。这不是程序的限制。这是人类记忆力的限制！</p><p>SuperMemo 的力量在于提供最佳时机<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>。最理想的是，您应该每天使用 SuperMemo！这样你就不会积累<a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">优秀的材料</a>并且您不会偏离最佳的重复时间表！</p><p>您应该每天进行重复，直到满足以下等效条件：</p>
+<ul><li>您会看到以下消息：<i>没什么可学的了</i></li>
+<li><a href="Statistics.html#Outstanding" title="Statistics"><b>杰出</b></a>equals to<i><b>0+0</b></i>在<a href="Statistics.html" title="Statistics"><b>统计数据</b>窗户</a>（或者简单地<i><b>0</b></i>）</li>
+<li>的第二个字段<a href="Status_bar.html" title="Status bar">状态栏</a>显示<i><b>(0+0)/x</b></i>，例如：<i><b>(0+0)/23</b></i>（或者简单地<i><b>0</b></i>）</li>
+<li>上的进度条<a href="Status_bar.html" title="Status bar">状态栏</a>变成蓝色（或处于非活动状态）</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Learning_stages">学习阶段</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Learn&amp;veaction=edit&amp;section=5" title="Edit section: Learning stages"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Learn&amp;action=edit&amp;section=5" title="Edit section's source code: Learning stages"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>每天，您的学习将分三个阶段进行：</p>
+<ol><li><b>重复次数</b>- 复习之前记住的材料（以确保你不会忘记）</li>
+<li><b>Memorizing</b>- 如果你有时间，你可以通过回答来记忆新材料<i>是的</i>到<i>您想学习新材料吗？</i>（此消息将被隐藏，直到您记住前 100 个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>）</li>
+<li><b>最后演练</b>- 复习在前两个学习阶段引起大多数问题的材料（<b>跳过最后的练习</b>必须取消签入<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Options.html" title="Options">选项</a> :<a href="Learning_tab_in_Options.html" title="Learning tab in Options">学习</a></b>）</li></ol>
+<div class="mw-heading mw-heading2"><h2 id="Incremental_learning">渐进学习</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Learn&amp;veaction=edit&amp;section=6" title="Edit section: Incremental learning"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Learn&amp;action=edit&amp;section=6" title="Edit section's source code: Incremental learning"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>一旦掌握了上述基本学习流程，您就应该考虑学习<a href="Incremental_learning.html" title="Incremental learning">渐进学习</a>。</p><p>如上所述，经典 SuperMemo 与增量学习之间的主要区别：</p>
+<ul><li>打字更少，学习速度更快</li>
+<li>阅读新文章或观看新视频可能会与标准重复交错（如上所述）</li>
+<li>的作用<b>记忆</b>和<b>Final drill</b>阶段减少了。所有材料均默认记忆，您的作品更容易记忆。这需要更少的钻孔</li>
+<li>在的帮助下<a href="Glossary_Priority_queue.html" title="Glossary:Priority queue">优先队列</a>，您可以添加更多的材料到您的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>比你可能评论的要多。 This is why, in<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>，您通常还会有很多优先级较低的任务<a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">优秀的材料</a>在一天结束时排队</li></ul>
+<p>由于增量学习相当复杂，您应该首先通过掌握本页所述的基本学习过程来感受 SuperMemo 的强大功能。</p>
+<div class="mw-heading mw-heading2"><h2 id="Further_reading">进一步阅读</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Learn&amp;veaction=edit&amp;section=7" title="Edit section: Further reading"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Learn&amp;action=edit&amp;section=7" title="Edit section's source code: Further reading"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="http://super-memory.com/help/faq/index.htm">常见问题解答</a></li>
+<li><a href="Incremental_learning.html" title="Incremental learning">渐进学习</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111057
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.052 seconds
+Real time usage: 0.057 seconds
+Preprocessor visited node count: 60/1000000
+Post‐expand include size: 772/2097152 bytes
+Template argument size: 341/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.163      1 File:Emoji-based_grade_panel.jpg
+100.00%    4.163      1 -total
+ 40.77%    1.697      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:65:|#|:idhash:canonical and timestamp 20260610111057 and revision id 10664. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

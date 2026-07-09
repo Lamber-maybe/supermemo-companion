@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Registry window — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Registry_window" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Parts_of_the_registry_window"><span class="tocnumber">1</span> <span class="toctext">Parts of the registry window</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Status_bar"><span class="tocnumber">2</span> <span class="toctext">Status bar</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Button_panel"><span class="tocnumber">3</span> <span class="toctext">Button panel</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Exemplary_registry_windows"><span class="tocnumber">4</span> <span class="toctext">Exemplary registry windows</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Concept_registry_window"><span class="tocnumber">4.1</span> <span class="toctext">Concept registry window</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Translation_registry_window"><span class="tocnumber">4.2</span> <span class="toctext">Translation registry window</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Registries in SuperMemo are sorted sets of objects used such as texts, images, sounds, fonts, etc. By using registries, SuperMemo reduces the overall size of <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a>, and makes it easy to reuse objects already introduced into the current collection. For more information about registries see: <a href="Using_registries.html" title="Using registries">Using registries</a>.
+</p><p>All existing registries can be accessed from the <a href="Search_menu.html" title="Search menu"><b>Search</b></a> menu.
+</p><p>A registry window is used to access individual <a href="Glossary_Registry_member.html" title="Glossary:Registry member">members of a registry</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Parts_of_the_registry_window">Parts of the registry window</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Registry_window&amp;veaction=edit&amp;section=1" title="Edit section: Parts of the registry window"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Registry_window&amp;action=edit&amp;section=1" title="Edit section's source code: Parts of the registry window"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Image_registry.jpg.html" title="SuperMemo: Image registry which you can use to review images used in your collection"><img alt="SuperMemo: Image registry which you can use to review images used in your collection" class="mw-file-element" decoding="async" height="497" loading="lazy" src="https://help.supermemo.org/images/thumb/1/19/Image_registry.jpg/650px-Image_registry.jpg" srcset="/images/thumb/1/19/Image_registry.jpg/975px-Image_registry.jpg 1.5x, /images/thumb/1/19/Image_registry.jpg/1300px-Image_registry.jpg 2x" width="650"/></a><figcaption>SuperMemo: Image registry which you can use to review images used in your collection</figcaption></figure>
+<blockquote>
+<p><i><b>Figure:</b> An image <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> is a set of image files sorted by their names. The picture presents a typical image registry. There are 21,645 pictures in the <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> (as displayed in the caption). Image names are displayed on the left.  Most of pictures are stored in the <a class="external text" href="https://en.wikipedia.org/wiki/JPEG">JP(E)G</a> format. Other formats show in different colors: <a class="external text" href="https://en.wikipedia.org/wiki/GIF">GIFs</a> in <span style="padding: 3px; background: rgb(255, 200, 144);">orange</span>, <a class="external text" href="https://en.wikipedia.org/wiki/Portable_Network_Graphics">PNGs</a> in <span style="padding: 3px; background: yellow;">yellow</span> and <a class="external text" href="https://en.wikipedia.org/wiki/BMP_file_format">BMPs</a> in <span style="padding: 3px; background: lime;">lime</span>. Pictures with checkmarks can be extracted into a picture <a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">subset</a> (e.g. to illustrate a chosen <a href="Glossary_Element.html" title="Glossary:Element">element</a>). The currently displayed picture is one of citric acid cycle (Krebs cycle, TCA cycle). Individual <a href="Glossary_Element.html" title="Glossary:Element">elements</a> in SuperMemo can focus on small portions of this large picture. The list of elements using a given picture can be displayed in the bottom-right panel by clicking <b>List</b> at the very bottom of the <a class="mw-selflink selflink">registry window</a>. The status bar displays selected information about the current image. It is the 3637th image in the alphabetical order. It is reused by 55 <a href="Glossary_Element.html" title="Glossary:Element">elements</a>. It is located on physical position 2270 in the <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a>. It occupies the file slot 196353 in the <a href="SuperMemo_files.html#elements" title="SuperMemo files">[ELEMENTS] subfolder</a>. Its path and filename in the [ELEMENTS] subfolder is displayed next. The file is 121,712 bytes large. It was imported or created on Oct 21, 2006 at 17:54:34.</i>
+</p>
+</blockquote>
+<ul><li>caption - name of the <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> and the total number of <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry members</a>. <i>Here the image registry keeps 21,645 pictures</i></li>
+<li><a href="Registry_toolbar.html" title="Registry toolbar">registry toolbar</a> (below the caption) - tool buttons providing mouse shortcuts to the most often used registry options (incl. access to the <a href="Registry_menu.html" title="Registry menu">registry menu</a>)</li>
+<li>editing field (under the toolbar) - field used in incremental search, i.e. searching for <a href="Glossary_Registry_member.html" title="Glossary:Registry member">members</a> by typing in initial characters of their names</li>
+<li>list of member names (left panel) - alphabetically sorted list of names of individual <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry members</a>. <i>Here the list displays images from "Citric acid cycle (Krebs cycle, TCA cycle)" to "Climate scientists poll". The scrollbar on the right side of the list box shows the approximate position of this subset of images in the alphabetical list</i></li>
+<li>object display field (right top panel) - field that is used to display the object that is currently selected in the list of <a href="Glossary_Registry_member.html" title="Glossary:Registry member">members</a> (on the left side). In some <a href="Glossary_Registry.html" title="Glossary:Registry">registries</a> this field is empty (e.g. sound registry, program registry, etc.) or is divided into two parts (e.g. text registry displays text translations, lexical registry displays phonetic transcription of individual words, translation registry displays the original texts, etc.). <i>Here the Citric acid cycle (Krebs cycle, TCA cycle) is presented</i></li>
+<li>element list (right bottom panel) - upon clicking <b>List</b> at the bottom of the registry window, the element list is filled out with all <a href="Glossary_Element.html" title="Glossary:Element">elements</a> that use a given <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry member</a>.</li>
+<li><a href="#Status_bar">status bar</a> (above the button panel) - information about the currently selected <a href="Glossary_Registry_member.html" title="Glossary:Registry member">member</a></li>
+<li><a href="#Button_panel">button panel</a> (at the very bottom)</li></ul>
+<p>A right click over the registry window opens the <a href="Registry_menu.html" title="Registry menu">registry menu</a> with advanced operations on the <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Status_bar">Status bar</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Registry_window&amp;veaction=edit&amp;section=2" title="Edit section: Status bar"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Registry_window&amp;action=edit&amp;section=2" title="Edit section's source code: Status bar"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="Glossary_Registry_index.html" title="Glossary:Registry index">registry index</a> (i.e. the ordinal position of the <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry member</a> in the <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a>)</li>
+<li>number of <a href="Glossary_Element.html" title="Glossary:Element">elements</a> that use the <a href="Glossary_Registry_member.html" title="Glossary:Registry member">member</a></li>
+<li><a href="Glossary_Registry_position.html" title="Glossary:Registry position">physical position in the registry</a></li>
+<li>number of the filespace slot (if any) - a numbered position of a file in the <a href="SuperMemo_files.html#elements" title="SuperMemo files"><i>[ELEMENTS]</i> subfolder</a>. The first file will get the slot one, second slot two, etc. (e.g. <i>1.jpg</i>, <i>2.htm</i>, <i>3.wav</i>, etc.), and</li>
+<li>(if relevant) path to the <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry member</a> file with the file size <i>In the example above, the picture is alphabetically the 3637th picture in the registry, it is used by 55 <a href="Glossary_Element.html" title="Glossary:Element">elements</a>, it is physically placed at the position 2270 in the <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a>, and it uses the filespace slot number 196,353. The actual jpg file is located in the folder c:\colls\All\elements\21\24\15\ and is named 196353.jpg (note that the name is the same as the number of the filespace slot). The size of this file is 121,712 bytes and it was created on Oct 21, 2006 at 17:54:34</i></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Button_panel">Button panel</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Registry_window&amp;veaction=edit&amp;section=3" title="Edit section: Button panel"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Registry_window&amp;action=edit&amp;section=3" title="Edit section's source code: Button panel"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><span id="Browse">Browse</span></b> - display all <a href="Glossary_Element.html" title="Glossary:Element">elements</a> that use the currently selected <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry member</a> in an <a href="Browser.html" title="Browser">element browser</a>. Note that the <a href="Registry_toolbar.html#Browse_button" title="Registry toolbar"><b>Browse</b> button</a> on the <a href="Registry_toolbar.html" title="Registry toolbar">toolbar</a> can be used to display all <a href="Glossary_Element.html" title="Glossary:Element">elements</a> that use all <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry members</a> belonging to the current <a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">subset</a></li>
+<li><b>List</b> - list the <a href="Glossary_Element.html" title="Glossary:Element">elements</a> that use the currently selected <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry member</a> (the list is displayed in the element list at the bottom right panel of the window)</li>
+<li><b>Go to</b> - go to the first <a href="Glossary_Element.html" title="Glossary:Element">element</a> using the currently selected <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry member</a></li>
+<li><b>Neural</b> (<i>Alt+N</i>) - execute the <a href="Subset_learning.html#Neural_review" title="Subset learning">neural review</a> over the selected <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry member</a></li>
+<li><b>Rename</b> (<i>Alt+R</i>) - change the name of the currently selected <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry member</a></li>
+<li><b>Insert</b> - create a new <a href="Glossary_Component.html" title="Glossary:Component">component</a> with a link to the currently selected <a href="Glossary_Registry_member.html" title="Glossary:Registry member">member</a>. SuperMemo will ask you if the component should be created in the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> displayed in the <a href="Element_window.html" title="Element window">element window</a> or if a new element should be created</li>
+<li><b>Add</b> - add a new <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry member</a> to the <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a></li>
+<li><b><span id="Apply">Accept</span></b> - link the currently selected <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry member</a> with the requesting source (e.g. if you choose <b><a href="Component_menu.html#Links" title="Component menu">Links</a> : Registry member</b> on the sound <a href="Component_menu.html" title="Component menu">component menu</a>, the component will be linked with a sound object associated with the sound registry member selected at the moment of pressing <b>Accept</b>)</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Exemplary_registry_windows">Exemplary registry windows</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Registry_window&amp;veaction=edit&amp;section=4" title="Edit section: Exemplary registry windows"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Registry_window&amp;action=edit&amp;section=4" title="Edit section's source code: Exemplary registry windows"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Concept_registry_window">Concept registry window</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Registry_window&amp;veaction=edit&amp;section=5" title="Edit section: Concept registry window"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Registry_window&amp;action=edit&amp;section=5" title="Edit section's source code: Concept registry window"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Concept_registry.jpg.html" title="SuperMemo: Concept registry which you can use to execute neural review on selected members and change their properties"><img alt="SuperMemo: Concept registry which you can use to execute neural review on selected members and change their properties" class="mw-file-element" decoding="async" height="656" loading="lazy" src="https://help.supermemo.org/images/thumb/7/71/Concept_registry.jpg/800px-Concept_registry.jpg" srcset="/images/7/71/Concept_registry.jpg 1.5x" width="800"/></a><figcaption>SuperMemo: Concept registry which you can use to execute neural review on selected members and change their properties</figcaption></figure>
+<div class="mw-heading mw-heading3"><h3 id="Translation_registry_window">Translation registry window</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Registry_window&amp;veaction=edit&amp;section=6" title="Edit section: Translation registry window"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Registry_window&amp;action=edit&amp;section=6" title="Edit section's source code: Translation registry window"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Translation_registry.jpg.html" title="SuperMemo: Translation registry stores translation texts that correspond with the text registry in the currently selected translation language"><img alt="SuperMemo: Translation registry stores translation texts that correspond with the text registry in the currently selected translation language" class="mw-file-element" decoding="async" height="595" loading="lazy" src="https://help.supermemo.org/images/thumb/7/7c/Translation_registry.jpg/800px-Translation_registry.jpg" srcset="/images/7/7c/Translation_registry.jpg 1.5x" width="800"/></a><figcaption>SuperMemo: Translation registry stores translation texts that correspond with the text registry in the currently selected translation language</figcaption></figure>
+<!-- 
+NewPP limit report
+Cached time: 20260610111156
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.050 seconds
+Real time usage: 0.054 seconds
+Preprocessor visited node count: 82/1000000
+Post‐expand include size: 1804/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.274      1 File:Image_registry.jpg
+100.00%    4.274      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:91:|#|:idhash:canonical and timestamp 20260610111156 and revision id 10966. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Parts_of_the_registry_window"><span class="tocnumber">1</span> <span class="toctext">注册表窗口的部分内容</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Status_bar"><span class="tocnumber">2</span> <span class="toctext">状态栏</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Button_panel"><span class="tocnumber">3</span> <span class="toctext">按键面板</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Exemplary_registry_windows"><span class="tocnumber">4</span> <span class="toctext">示例性注册表窗口</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Concept_registry_window"><span class="tocnumber">4.1</span> <span class="toctext">概念注册表窗口</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Translation_registry_window"><span class="tocnumber">4.2</span> <span class="toctext">翻译登记窗口</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>SuperMemo 中的注册表是所使用的对象的排序集，例如文本、图像、声音、字体等。通过使用注册表，SuperMemo 减少了总体大小<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>，并且可以轻松重用已引入当前集合的对象。有关注册表的更多信息，请参阅：<a href="Using_registries.html" title="Using registries">使用注册表</a>。</p><p>所有现有的注册表都可以从<a href="Search_menu.html" title="Search menu"><b>搜索</b></a>菜单。</p><p>注册表窗口用于访问个人<a href="Glossary_Registry_member.html" title="Glossary:Registry member">登记处的成员</a>。</p>
+<div class="mw-heading mw-heading2"><h2 id="Parts_of_the_registry_window">注册表窗口的部分内容</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Registry_window&amp;veaction=edit&amp;section=1" title="Edit section: Parts of the registry window"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Registry_window&amp;action=edit&amp;section=1" title="Edit section's source code: Parts of the registry window"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Image_registry.jpg.html" title="SuperMemo: Image registry which you can use to review images used in your collection"><img alt="SuperMemo: Image registry which you can use to review images used in your collection" class="mw-file-element" decoding="async" height="497" loading="lazy" src="https://help.supermemo.org/images/thumb/1/19/Image_registry.jpg/650px-Image_registry.jpg" srcset="/images/thumb/1/19/Image_registry.jpg/975px-Image_registry.jpg 1.5x, /images/thumb/1/19/Image_registry.jpg/1300px-Image_registry.jpg 2x" width="650"/></a><figcaption>SuperMemo：图像注册表，您可以使用它来查看收藏中使用的图像</figcaption></figure>
+<blockquote>
+<p><i><b>图：</b>一张图片<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>是一组按名称排序的图像文件。该图展示了一个典型的图像注册表。共有 21,645 张图片<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>（如标题所示）。图像名称显示在左侧。  大部分图片都存储在<a class="external text" href="https://en.wikipedia.org/wiki/JPEG">JP(E)G</a>格式。其他格式以不同颜色显示：<a class="external text" href="https://en.wikipedia.org/wiki/GIF">动图</a>在<span style="padding: 3px; background: rgb(255, 200, 144);">橙色</span>,<a class="external text" href="https://en.wikipedia.org/wiki/Portable_Network_Graphics">PNG</a>在<span style="padding: 3px; background: yellow;">黄色</span>和<a class="external text" href="https://en.wikipedia.org/wiki/BMP_file_format">骨形态发生蛋白</a>在<span style="padding: 3px; background: lime;">石灰</span>。带有勾号的图片可以提取成图片<a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">子集</a>（例如，为了说明所选的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>）。当前显示的图片是柠檬酸循环（克雷布斯循环、TCA循环）之一。个人<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在 SuperMemo 中可以专注于这张大图片的一小部分。使用给定图片的元素列表可以通过单击显示在右下面板中<b>列表</b>在最底部<a class="mw-selflink selflink">注册表窗口</a>。状态栏显示有关当前图像的选定信息。这是按字母顺序排列的第 3637 张图像。被 55 人重复使用<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。它位于物理位置2270<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>。它占用了文件槽196353<a href="SuperMemo_files.html#elements" title="SuperMemo files">[元素] 子文件夹</a>。接下来显示其在 [ELEMENTS] 子文件夹中的路径和文件名。该文件大小为 121,712 字节。它是在 2006 年 10 月 21 日 17:54:34 导入或创建的。</i>
+</p>
+</blockquote>
+<ul><li>标题 - 名称<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>和总数<a href="Glossary_Registry_member.html" title="Glossary:Registry member">登记册成员</a>。<i>这里的图像注册表保存了 21,645 张图片</i></li>
+<li><a href="Registry_toolbar.html" title="Registry toolbar">注册表工具栏</a>（标题下方）- 工具按钮，提供最常用的注册表选项的鼠标快捷方式（包括访问<a href="Registry_menu.html" title="Registry menu">注册表菜单</a>）</li>
+<li>编辑字段（工具栏下方）- 用于增量搜索的字段，即搜索<a href="Glossary_Registry_member.html" title="Glossary:Registry member">会员</a>通过输入名字的首字母</li>
+<li>成员姓名列表（左面板） - 按字母顺序排序的个人姓名列表<a href="Glossary_Registry_member.html" title="Glossary:Registry member">登记册成员</a>。<i>此处列表显示从“柠檬酸循环（克雷布斯循环、TCA 循环）”到“气候科学家民意调查”的图像。列表框右侧的滚动条显示该图像子集在字母列表中的大致位置</i></li>
+<li>对象显示字段（右上面板）- 用于显示当前在列表中选择的对象的字段<a href="Glossary_Registry_member.html" title="Glossary:Registry member">会员</a>（在左侧）。在一些<a href="Glossary_Registry.html" title="Glossary:Registry">登记处</a>该字段为空（例如声音注册表、程序注册表等）或分为两部分（例如文本注册表显示文本翻译，词汇注册表显示单个单词的音标，翻译注册表显示原始文本等）。<i>这里介绍了柠檬酸循环（克雷布斯循环、TCA 循环）</i></li>
+<li>元素列表（右下面板）- 单击后<b>列表</b>在注册表窗口的底部，元素列表填写了所有<a href="Glossary_Element.html" title="Glossary:Element">元素</a>使用给定的<a href="Glossary_Registry_member.html" title="Glossary:Registry member">注册会员</a>。</li>
+<li><a href="#Status_bar">状态栏</a>（按钮面板上方）- 有关当前所选内容的信息<a href="Glossary_Registry_member.html" title="Glossary:Registry member">会员</a></li>
+<li><a href="#Button_panel">按钮面板</a>（在最底部）</li></ul>
+<p>右键单击注册表窗口将打开<a href="Registry_menu.html" title="Registry menu">注册表菜单</a>与先进的操作<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>。</p>
+<div class="mw-heading mw-heading2"><h2 id="Status_bar">状态栏</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Registry_window&amp;veaction=edit&amp;section=2" title="Edit section: Status bar"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Registry_window&amp;action=edit&amp;section=2" title="Edit section's source code: Status bar"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="Glossary_Registry_index.html" title="Glossary:Registry index">注册表索引</a>（即顺序位置<a href="Glossary_Registry_member.html" title="Glossary:Registry member">注册会员</a>在<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>）</li>
+<li>数量<a href="Glossary_Element.html" title="Glossary:Element">元素</a>那些使用<a href="Glossary_Registry_member.html" title="Glossary:Registry member">会员</a></li>
+<li><a href="Glossary_Registry_position.html" title="Glossary:Registry position">在注册表中的物理位置</a></li>
+<li>文件空间槽的编号（如果有）- 文件空间槽中的编号位置<a href="SuperMemo_files.html#elements" title="SuperMemo files"><i>[元素]</i>子文件夹</a>。第一个文件将获得插槽一，第二个文件将获得插槽二，依此类推（例如<i>1.jpg</i>,<i>2.htm</i>,<i>3.wav</i>等），以及</li>
+<li>（如果相关）路径<a href="Glossary_Registry_member.html" title="Glossary:Registry member">注册会员</a>文件大小<i>在上面的示例中，该图片按字母顺序是注册表中的第 3637 张图片，已被 55 个使用<a href="Glossary_Element.html" title="Glossary:Element">元素</a>，它物理上放置在位置 2270<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>，并且它使用文件空间槽号 196,353。实际的 jpg 文件位于文件夹 c:\colls\All\elements\21\24\15\ 中，名称为 196353.jpg（请注意，该名称与文件空间槽的编号相同）。该文件的大小为 121,712 字节，创建于 2006 年 10 月 21 日 17:54:34</i></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Button_panel">按键面板</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Registry_window&amp;veaction=edit&amp;section=3" title="Edit section: Button panel"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Registry_window&amp;action=edit&amp;section=3" title="Edit section's source code: Button panel"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><span id="Browse">浏览</span></b>- 显示全部<a href="Glossary_Element.html" title="Glossary:Element">元素</a>使用当前选择的<a href="Glossary_Registry_member.html" title="Glossary:Registry member">注册会员</a>在一个<a href="Browser.html" title="Browser">元素浏览器</a>。请注意，<a href="Registry_toolbar.html#Browse_button" title="Registry toolbar"><b>浏览</b>按钮</a>于<a href="Registry_toolbar.html" title="Registry toolbar">工具栏</a>可以用来显示所有<a href="Glossary_Element.html" title="Glossary:Element">元素</a>使用所有<a href="Glossary_Registry_member.html" title="Glossary:Registry member">登记册成员</a>属于当前的<a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">子集</a></li>
+<li><b>列表</b>- 列出<a href="Glossary_Element.html" title="Glossary:Element">元素</a>使用当前选择的<a href="Glossary_Registry_member.html" title="Glossary:Registry member">注册会员</a>（列表显示在窗口右下面板的元素列表中）</li>
+<li><b>前往</b>- 转到第一个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>使用当前选择的<a href="Glossary_Registry_member.html" title="Glossary:Registry member">注册会员</a></li>
+<li><b>神经</b>（<i>Alt+N</i>) - 执行<a href="Subset_learning.html#Neural_review" title="Subset learning">神经回顾</a>超过所选的<a href="Glossary_Registry_member.html" title="Glossary:Registry member">注册会员</a></li>
+<li><b>重命名</b>（<i>Alt+R</i>) - 更改当前选定的名称<a href="Glossary_Registry_member.html" title="Glossary:Registry member">注册会员</a></li>
+<li><b>插入</b>- 创建一个新的<a href="Glossary_Component.html" title="Glossary:Component">组件</a>带有指向当前所选内容的链接<a href="Glossary_Registry_member.html" title="Glossary:Registry member">会员</a>。 SuperMemo 会询问您是否应在当前创建组件<a href="Glossary_Element.html" title="Glossary:Element">元素</a>显示在<a href="Element_window.html" title="Element window">元素窗口</a>或者是否应该创建一个新元素</li>
+<li><b>添加</b>- 添加一个新的<a href="Glossary_Registry_member.html" title="Glossary:Registry member">注册会员</a>到<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a></li>
+<li><b><span id="Apply">接受</span></b>- 链接当前选择的<a href="Glossary_Registry_member.html" title="Glossary:Registry member">注册会员</a>与请求源（例如，如果您选择<b><a href="Component_menu.html#Links" title="Component menu">友情链接</a> : 注册会员</b>在声音上<a href="Component_menu.html" title="Component menu">组件菜单</a>，该组件将与与按下时选择的声音注册表成员关联的声音对象链接<b>接受</b>）</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Exemplary_registry_windows">示例性注册表窗口</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Registry_window&amp;veaction=edit&amp;section=4" title="Edit section: Exemplary registry windows"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Registry_window&amp;action=edit&amp;section=4" title="Edit section's source code: Exemplary registry windows"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Concept_registry_window">概念注册表窗口</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Registry_window&amp;veaction=edit&amp;section=5" title="Edit section: Concept registry window"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Registry_window&amp;action=edit&amp;section=5" title="Edit section's source code: Concept registry window"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Concept_registry.jpg.html" title="SuperMemo: Concept registry which you can use to execute neural review on selected members and change their properties"><img alt="SuperMemo: Concept registry which you can use to execute neural review on selected members and change their properties" class="mw-file-element" decoding="async" height="656" loading="lazy" src="https://help.supermemo.org/images/thumb/7/71/Concept_registry.jpg/800px-Concept_registry.jpg" srcset="/images/7/71/Concept_registry.jpg 1.5x" width="800"/></a><figcaption>SuperMemo：概念注册表，您可以使用它对选定的成员执行神经审查并更改其属性</figcaption></figure>
+<div class="mw-heading mw-heading3"><h3 id="Translation_registry_window">翻译登记窗口</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Registry_window&amp;veaction=edit&amp;section=6" title="Edit section: Translation registry window"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Registry_window&amp;action=edit&amp;section=6" title="Edit section's source code: Translation registry window"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Translation_registry.jpg.html" title="SuperMemo: Translation registry stores translation texts that correspond with the text registry in the currently selected translation language"><img alt="SuperMemo: Translation registry stores translation texts that correspond with the text registry in the currently selected translation language" class="mw-file-element" decoding="async" height="595" loading="lazy" src="https://help.supermemo.org/images/thumb/7/7c/Translation_registry.jpg/800px-Translation_registry.jpg" srcset="/images/7/7c/Translation_registry.jpg 1.5x" width="800"/></a><figcaption>SuperMemo：翻译注册表以当前选择的翻译语言存储与文本注册表相对应的翻译文本</figcaption></figure>
+<!-- 
+NewPP limit report
+Cached time: 20260610111156
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.050 seconds
+Real time usage: 0.054 seconds
+Preprocessor visited node count: 82/1000000
+Post‐expand include size: 1804/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.274      1 File:Image_registry.jpg
+100.00%    4.274      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:91:|#|:idhash:canonical and timestamp 20260610111156 and revision id 10966. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

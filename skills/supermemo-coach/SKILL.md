@@ -14,30 +14,40 @@ into fighting the tool.
 
 Work downward; stop at the first rung that fully answers.
 
-1. **`reference.md` in this folder** — the distilled official
-   documentation; covers ~90% of everyday questions. Read the relevant
-   section before answering anything factual about the tool.
-2. **Local wiki mirror** (optional). If `LEARNER.md` lists a `Docs mirror`
-   path, that folder holds flat HTML copies of help.supermemo.org, one
-   page per file, named by page title (`Extract.html`,
-   `Priority_queue.html`, `Keyboard_shortcuts.html`,
-   `Incremental_reading.html`, …). Use it when the question needs detail
-   beyond the reference: exact dialog options, version notes, design
-   rationale.
-   - Find pages by filename first (`ls <mirror> | grep -i <keyword>`),
-     then by content (`grep -li <keyword> <mirror>/*.html`).
-   - The first body line of each page carries its canonical
+1. **Distilled files in this folder.**
+   - `reference.md` — tool facts (shortcuts, menu paths, workflows);
+     covers ~90% of everyday questions. Read the relevant section
+     before answering anything factual about the tool.
+   - `incremental-learning.md` — the method's philosophy, condensed
+     from the official master document. Start there for "why is
+     SuperMemo designed this way?" questions.
+2. **Bundled official docs in `docs/` (ship with this repo).**
+   `docs/wiki/` holds the whole help.supermemo.org wiki crawled as flat
+   HTML (~210 pages), one page per file, named by page title
+   (`Extract.html`, `Priority_queue.html`, `Keyboard_shortcuts.html`,
+   `Incremental_learning.html` — the ~91,000-word master document, …).
+   `docs/wiki-zh/` holds Chinese translations under the same filenames
+   (roughly two-thirds actually translated); quote it when conversing
+   in Chinese, but verify facts against the English page when precision
+   matters. `docs/articles/20rules.htm` is Wozniak's formulation-rules
+   article. All of it works offline and on fresh clones.
+   - Find pages by filename first (`ls docs/wiki | grep -i <keyword>`),
+     then by content (`grep -li <keyword> docs/wiki/*.html`).
+   - The first body line of each wiki page carries its canonical
      help.supermemo.org URL — cite it when you rely on the page.
-   - A sibling folder named like `wiki-zh` holds translations under the
-     same filenames (roughly two-thirds actually translated). Quote it
-     when conversing in that language, but verify facts against the
-     English page when precision matters.
-   - The mirror may be incomplete: a missing page means "look online",
-     not "the feature doesn't exist".
-3. **Online.** help.supermemo.org — fetch it if your environment can
-   browse, otherwise give the user the exact URL. For method philosophy
-   beyond the wiki: supermemo.guru (Piotr Wozniak's writing); for
-   formulation rules: super-memory.com/articles/20rules.htm.
+   - The crawl can lag or miss pages: a missing page means "check the
+     personal mirror or look online", not "the feature doesn't exist".
+3. **Personal mirror** (optional). If `LEARNER.md` lists a `Docs mirror`
+   path, that is the user's own crawl — possibly fresher or larger than
+   `docs/`. Same layout and lookup tricks; when both have a page and
+   they disagree, prefer the fresher crawl.
+4. **Online — unreliable for programmatic access.** help.supermemo.org
+   sits behind a Cloudflare challenge: plain HTTP fetches usually
+   return a "Just a moment…" page instead of content. Prefer the local
+   rungs; if you must go online and the fetch fails, give the user the
+   exact URL rather than concluding the page doesn't exist. For method
+   philosophy beyond the wiki: supermemo.guru (Piotr Wozniak's
+   writing).
 
 Rules on every rung:
 
@@ -72,9 +82,12 @@ priorities do nothing. Whether the material deserves attention *at all* is
 Priorities & overload.
 
 **"Why is SuperMemo designed this way?"** (design-philosophy questions)
-Answer from the docs, not from vibes. Doc anchors: the mirror/wiki pages
-`Incremental_learning.html` (the big one), `Incremental_reading.html`,
-`Priority_queue.html`; supermemo.guru for the essays. Recurring answers:
+Answer from the docs, not from vibes. Start with
+`incremental-learning.md` in this folder; for the full argument, search
+the bundled master document `docs/wiki/Incremental_learning.html`, plus
+`docs/wiki/Incremental_reading.html` and
+`docs/wiki/Priority_queue.html`; supermemo.guru for the essays.
+Recurring answers:
 interruption is a feature (spacing strengthens memory; the queue always
 brings material back), one collection so the priority queue can see
 everything, priorities instead of folders because review time — not disk

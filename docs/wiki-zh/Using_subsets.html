@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Using subsets — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Using_subsets" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Choosing_a_subset"><span class="tocnumber">1</span> <span class="toctext">Choosing a subset</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Creating_subset_files"><span class="tocnumber">2</span> <span class="toctext">Creating subset files</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Using_subsets"><span class="tocnumber">3</span> <span class="toctext">Using subsets</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Video"><span class="tocnumber">4</span> <span class="toctext">Video</span></a></li>
+</ul>
+</div>
+<p>In SuperMemo, subsets are sets of <a href="Glossary_Element.html" title="Glossary:Element">elements</a>. Subsets are usually viewed in the <a href="Browser.html" title="Browser">browser</a>. Subsets are processed with <a href="Subset_operations.html" title="Subset operations">subset operations</a>. Subsets can be stored in subset files for later use. The default extension of subset files is <i>sub</i>. Each <a href="Glossary_Element.html" title="Glossary:Element">element</a> in a subset file is stored as a four-byte element number. This way, subset file size in bytes is four times the number of <a href="Glossary_Element.html" title="Glossary:Element">elements</a> in the subset. The same subset files can be used by different <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a>, but such use is meaningful only if the collections have the same numbering of <a href="Glossary_Element.html" title="Glossary:Element">elements</a> (e.g. if these are copies of the same collection).
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Choosing_a_subset">Choosing a subset</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_subsets&amp;veaction=edit&amp;section=1" title="Edit section: Choosing a subset"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Using_subsets&amp;action=edit&amp;section=1" title="Edit section's source code: Choosing a subset"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>To select a <a href="Glossary_Subset.html" title="Glossary:Subset">subset</a> and open it in the <a href="Browser.html" title="Browser">browser</a>, you may use many options that are too numerous to list. Here are only a few frequently used examples:
+</p>
+<ul><li><b><a href="Search_menu.html" title="Search menu">Search</a> : <a href="Find_elements.html" title="Find elements">Find elements</a></b> (<i>Ctrl+F</i>) - to collect <a href="Glossary_Element.html" title="Glossary:Element">elements</a> containing the same text (e.g. "<i>Eisenhower</i>")</li>
+<li><b><a href="View_menu.html" title="View menu">View</a> : <a href="View_menu.html#Outstanding" title="View menu">Outstanding</a></b> - to inspect all <a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">outstanding elements</a></li>
+<li><b><a href="Contents_menu.html#View" title="Contents menu">View</a> : <a href="Contents_menu.html#Branch" title="Contents menu">Branch</a></b> in the <a href="Contents.html" title="Contents"><b>Contents</b> window</a> - to inspect <a href="Glossary_Element.html" title="Glossary:Element">elements</a> belonging to a single <a href="Glossary_Branch.html" title="Glossary:Branch">branch</a></li>
+<li><b><a href="View_menu.html" title="View menu">View</a> : <a href="Element_filter.html" title="Element filter">Filter</a></b> - to inspect all <a href="Glossary_Element.html" title="Glossary:Element">elements</a> that fall into a selected range of <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a>, <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a>, repetition date, <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficulty</a>, etc.</li>
+<li><b><a href="View_menu.html" title="View menu">View</a> : <a href="View_menu.html#Subset" title="View menu">Subset</a></b> - to open a given subset file in the <a href="Browser.html" title="Browser">browser</a></li>
+<li><a href="Browser_menu.html#Child" title="Browser menu">Child</a> options on the <a href="Browser_menu.html" title="Browser menu">browser menu</a> - to create a sub-browser with all <a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">memorized</a>, <a href="Glossary_Pending_element.html" title="Glossary:Pending element">pending</a>, <a href="Glossary_Dismissed_element.html" title="Glossary:Dismissed element">dismissed</a> or selected <a href="Glossary_Element.html" title="Glossary:Element">elements</a> from the current <a href="Browser.html" title="Browser">browser</a></li>
+<li>Subset operations in <a href="Glossary_Registry.html" title="Glossary:Registry">registries</a> with <b><a href="Registry_menu.html#View" title="Registry menu">View</a> : <a href="Registry_menu.html#Browse_current" title="Registry menu">Browse current</a></b>, <b><a href="Registry_menu.html#View" title="Registry menu">View</a> : <a href="Registry_menu.html#Browse_selected" title="Registry menu">Browse selected</a></b>, and <b><a href="Registry_menu.html#View" title="Registry menu">View</a> : <a href="Registry_menu.html#Browse_all" title="Registry menu">Browse all</a></b> - to create <a href="Browser.html" title="Browser">browsers</a> with <a href="Glossary_Element.html" title="Glossary:Element">elements</a> using a given subset of <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry members</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Creating_subset_files">Creating subset files</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_subsets&amp;veaction=edit&amp;section=2" title="Edit section: Creating subset files"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Using_subsets&amp;action=edit&amp;section=2" title="Edit section's source code: Creating subset files"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>To create a subset file use one of the following options:
+</p>
+<ul><li><b><a href="Browser_menu.html#Subset" title="Browser menu">Subset</a> : Save all</b> on the <a href="Browser_menu.html" title="Browser menu">browser menu</a> saves the contents of the <a href="Browser.html" title="Browser">browser</a> in a subset file (e.g. this option used on the browser opened with <b><a href="View_menu.html" title="View menu">View</a> : <a href="View_menu.html#Memorized" title="View menu">Memorized</a></b> will create a <a href="Glossary_Subset.html" title="Glossary:Subset">subset</a> with all <a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">memorized elements</a>)</li>
+<li><b><a href="Browser_menu.html#Select" title="Browser menu">Select</a> : Save selection</b> on the <a href="Browser_menu.html" title="Browser menu">browser menu</a> saves all selected <a href="Glossary_Element.html" title="Glossary:Element">elements</a> in the <a href="Browser.html" title="Browser">browser</a>. Selections are made by clicking the leftmost browser column or with subset operations such as <b><a href="Browser_menu.html#Select" title="Browser menu">Select</a> : Browser range</b>, etc.</li>
+<li><b><a href="Contents_menu.html#Export" title="Contents menu">Export</a> : Subset</b> on the <a href="Contents_menu.html" title="Contents menu">contents menu</a> saves a <a href="Glossary_Branch.html" title="Glossary:Branch">contents branch</a> in a subset file</li></ul>
+<p>Some subset files are created automatically for you. You can view them with <b><a href="View_menu.html" title="View menu">View</a> : <a href="View_menu.html#Subset" title="View menu">Subset</a></b>. For example: <i>last_browser</i> (<a href="Glossary_Subset.html" title="Glossary:Subset">subset</a> with all <a href="Glossary_Element.html" title="Glossary:Element">elements</a> displayed in the last opened <a href="Browser.html" title="Browser">browser</a>), <i>searched</i> (subset with all elements found with the last <i>Ctrl+F</i> search), <i>last_child</i> (subset with elements extracted with the last <b><a href="Browser_menu.html#Child" title="Browser menu">Child</a></b> operation in the <a href="Browser.html" title="Browser">browser</a>), <i>tasklist</i> (subset will all <a href="Glossary_Task.html" title="Glossary:Task">tasks</a> extracted with <b>Tools : Open in browser</b> on the <a href="Tasklist_manager.html#Tasklist_manager_menu" title="Tasklist manager">tasklist manager menu</a>), etc.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Using_subsets">Using subsets</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_subsets&amp;veaction=edit&amp;section=3" title="Edit section: Using subsets"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Using_subsets&amp;action=edit&amp;section=3" title="Edit section's source code: Using subsets"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><a href="Glossary_Subset.html" title="Glossary:Subset">Subset</a> can be processed using a nearly infinite combination of options and commands in SuperMemo. Here are only a few examples:
+</p>
+<ul><li><b><a href="Subset_operations.html" title="Subset operations">Process browser&gt;</a> : <a href="Subset_operations.html#Learning" title="Subset operations">Learning</a> : Learn</b> (<i>Ctrl+L</i>) on the <a href="Browser_menu.html" title="Browser menu">browser processing menu</a> makes it possible to make repetitions on a <a href="Glossary_Element_subset.html" title="Glossary:Element subset">subset of elements</a></li>
+<li><b><a href="Subset_operations.html" title="Subset operations">Process browser&gt;</a> : <a href="Subset_operations.html#Learning" title="Subset operations">Learning</a> : Review all</b> on the <a href="Browser_menu.html" title="Browser menu">browser processing menu</a> makes it possible to execute repetitions on the whole <a href="Glossary_Subset.html" title="Glossary:Subset">subset</a>. <a href="Glossary_Element.html" title="Glossary:Element">Elements</a> that are not <a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">outstanding</a> will be subject to <a href="Glossary_Mid-interval_repetition.html" title="Glossary:Mid-interval repetition">mid-interval repetition</a>. Only <a href="Glossary_Dismissed_element.html" title="Glossary:Dismissed element">dismissed elements</a> will not be processed</li>
+<li><b><a href="Subset_operations.html" title="Subset operations">Process browser&gt;</a> : <a href="Postpone.html" title="Postpone">Postpone</a></b> on the <a href="Browser_menu.html" title="Browser menu">browser processing menu</a> postpones <a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">outstanding repetitions</a> in a <a href="Glossary_Element_subset.html" title="Glossary:Element subset">subset of elements</a></li>
+<li><b><a href="Browser_menu.html#Export" title="Browser menu">Export</a> : Transfer elements</b> on the <a href="Browser_menu.html" title="Browser menu">browser menu</a> makes it possible to transfer the <a href="Glossary_Element_subset.html" title="Glossary:Element subset">subset of element</a> to another <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a></li>
+<li><b><a href="Browser_menu.html#Export" title="Browser menu">Export</a> : XML</b> on the <a href="Browser_menu.html" title="Browser menu">browser menu</a> makes it possible to export a <a href="Glossary_Element_subset.html" title="Glossary:Element subset">subset of elements</a> in the XML format (e.g. for using it with other SuperMemos such as <a class="external text" href="http://www.super-memo.com/supforpocpc.html">SuperMemo for Pocket PC</a>, etc.)</li>
+<li><b><a href="Browser_menu.html#Export" title="Browser menu">Export</a> : Q&amp;A text file</b> on the <a href="Browser_menu.html" title="Browser menu">browser menu</a> makes it possible to export a <a href="Glossary_Element_subset.html" title="Glossary:Element subset">subset of elements</a> as a text file of questions and answers</li>
+<li><b><a href="Browser_menu.html#Sort" title="Browser menu">Sort</a></b> options on the <a href="Browser_menu.html" title="Browser menu">browser menu</a> help you review a <a href="Glossary_Element_subset.html" title="Glossary:Element subset">subset of elements</a> sorted by <a href="Glossary_Interval.html" title="Glossary:Interval">intervals</a>, <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficulty</a>, <a href="Glossary_Lapse.html" title="Glossary:Lapse">memory lapses</a>, etc.</li>
+<li><b><a href="Registry_menu.html#Subset" title="Registry menu">Subset</a> : <a href="Registry_menu.html#Match_to_subset" title="Registry menu">Match to subset</a></b> on the <a href="Registry_menu.html" title="Registry menu">registry menu</a> displays all <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry members</a> that are in use by the <a href="Glossary_Element.html" title="Glossary:Element">elements</a> of a given <a href="Glossary_Subset.html" title="Glossary:Subset">subset</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Video">Video</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_subsets&amp;veaction=edit&amp;section=4" title="Edit section: Video"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Using_subsets&amp;action=edit&amp;section=4" title="Edit section's source code: Video"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://www.youtube.com/watch?v=ffy4vskpYZk">Introduction to subset files</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111328
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.029 seconds
+Real time usage: 0.030 seconds
+Preprocessor visited node count: 122/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:82:|#|:idhash:canonical and timestamp 20260610111328 and revision id 11781. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Choosing_a_subset"><span class="tocnumber">1</span> <span class="toctext">选择一个子集</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Creating_subset_files"><span class="tocnumber">2</span> <span class="toctext">创建子集文件</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Using_subsets"><span class="tocnumber">3</span> <span class="toctext">使用子集</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Video"><span class="tocnumber">4</span> <span class="toctext">视频</span></a></li>
+</ul>
+</div>
+<p>在 SuperMemo 中，子集是一组<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。子集通常在<a href="Browser.html" title="Browser">浏览器</a>。子集处理为<a href="Subset_operations.html" title="Subset operations">子集运算</a>。子集可以存储在子集文件中以供以后使用。子集文件的默认扩展名是<i>子</i>。每个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>子集文件中的元素号存储为四字节元素号。这样，子集文件大小（以字节为单位）是子集文件数量的四倍<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在子集中。不同的子集可以使用相同的子集文件<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>，但只有当集合具有相同的编号时，这种使用才有意义<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（例如，如果这些是同一集合的副本）。</p>
+<div class="mw-heading mw-heading2"><h2 id="Choosing_a_subset">选择一个子集</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_subsets&amp;veaction=edit&amp;section=1" title="Edit section: Choosing a subset"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Using_subsets&amp;action=edit&amp;section=1" title="Edit section's source code: Choosing a subset"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>要选择一个<a href="Glossary_Subset.html" title="Glossary:Subset">子集</a>并在中打开它<a href="Browser.html" title="Browser">浏览器</a>，您可能会使用很多选项，无法一一列出。这里仅举几个常用的例子：</p>
+<ul><li><b><a href="Search_menu.html" title="Search menu">搜索</a> :<a href="Find_elements.html" title="Find elements">查找元素</a></b>（<i>Ctrl+F</i>) - 收集<a href="Glossary_Element.html" title="Glossary:Element">元素</a>包含相同的文本（例如“<i>艾森豪威尔</i>”）</li>
+<li><b><a href="View_menu.html" title="View menu">查看</a> :<a href="View_menu.html#Outstanding" title="View menu">杰出</a></b>- 检查所有<a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">突出元素</a></li>
+<li><b><a href="Contents_menu.html#View" title="Contents menu">查看</a> :<a href="Contents_menu.html#Branch" title="Contents menu">分公司</a></b>在<a href="Contents.html" title="Contents"><b>内容</b>窗户</a>- 检查<a href="Glossary_Element.html" title="Glossary:Element">元素</a>属于单个<a href="Glossary_Branch.html" title="Glossary:Branch">分行</a></li>
+<li><b><a href="View_menu.html" title="View menu">查看</a> :<a href="Element_filter.html" title="Element filter">过滤器</a></b>- 检查所有<a href="Glossary_Element.html" title="Glossary:Element">元素</a>属于选定范围的<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>,<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>, 重复日期,<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">难度</a>等</li>
+<li><b><a href="View_menu.html" title="View menu">查看</a> :<a href="View_menu.html#Subset" title="View menu">子集</a></b>- 打开给定的子集文件<a href="Browser.html" title="Browser">浏览器</a></li>
+<li><a href="Browser_menu.html#Child" title="Browser menu">儿童</a>上的选项<a href="Browser_menu.html" title="Browser menu">浏览器菜单</a>- 创建一个包含所有内容的子浏览器<a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">记住了</a>,<a href="Glossary_Pending_element.html" title="Glossary:Pending element">待定</a>,<a href="Glossary_Dismissed_element.html" title="Glossary:Dismissed element">被解雇</a>或选定的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>从目前的<a href="Browser.html" title="Browser">浏览器</a></li>
+<li>子集运算<a href="Glossary_Registry.html" title="Glossary:Registry">登记处</a>与<b><a href="Registry_menu.html#View" title="Registry menu">查看</a> :<a href="Registry_menu.html#Browse_current" title="Registry menu">浏览当前</a></b>,<b><a href="Registry_menu.html#View" title="Registry menu">查看</a> :<a href="Registry_menu.html#Browse_selected" title="Registry menu">浏览选定的</a></b>, 和<b><a href="Registry_menu.html#View" title="Registry menu">查看</a> :<a href="Registry_menu.html#Browse_all" title="Registry menu">浏览全部</a></b>- 创造<a href="Browser.html" title="Browser">浏览器</a>与<a href="Glossary_Element.html" title="Glossary:Element">元素</a>使用给定的子集<a href="Glossary_Registry_member.html" title="Glossary:Registry member">登记册成员</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Creating_subset_files">创建子集文件</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_subsets&amp;veaction=edit&amp;section=2" title="Edit section: Creating subset files"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Using_subsets&amp;action=edit&amp;section=2" title="Edit section's source code: Creating subset files"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>要创建子集文件，请使用以下选项之一：</p>
+<ul><li><b><a href="Browser_menu.html#Subset" title="Browser menu">子集</a> : 全部保存</b>于<a href="Browser_menu.html" title="Browser menu">浏览器菜单</a>保存的内容<a href="Browser.html" title="Browser">浏览器</a>在子集文件中（例如，在使用以下命令打开的浏览器上使用此选项<b><a href="View_menu.html" title="View menu">查看</a> :<a href="View_menu.html#Memorized" title="View menu">已熟记</a></b>将创建一个<a href="Glossary_Subset.html" title="Glossary:Subset">子集</a>与所有<a href="Glossary_Memorized_element.html" title="Glossary:Memorized element">记忆的元素</a>）</li>
+<li><b><a href="Browser_menu.html#Select" title="Browser menu">选择</a> ：保存选择</b>于<a href="Browser_menu.html" title="Browser menu">浏览器菜单</a>保存所有选定的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在<a href="Browser.html" title="Browser">浏览器</a>。通过单击最左侧的浏览器列或使用子集操作（例如<b><a href="Browser_menu.html#Select" title="Browser menu">选择</a> ：浏览器范围</b>等</li>
+<li><b><a href="Contents_menu.html#Export" title="Contents menu">出口</a> ：子集</b>于<a href="Contents_menu.html" title="Contents menu">内容菜单</a>节省一个<a href="Glossary_Branch.html" title="Glossary:Branch">内容分支</a>在子集文件中</li></ul>
+<p>一些子集文件是自动为您创建的。您可以使用以下命令查看它们<b><a href="View_menu.html" title="View menu">查看</a> :<a href="View_menu.html#Subset" title="View menu">子集</a></b>。例如：<i>最后一个浏览器</i>（<a href="Glossary_Subset.html" title="Glossary:Subset">子集</a>与所有<a href="Glossary_Element.html" title="Glossary:Element">元素</a>显示在最后打开的<a href="Browser.html" title="Browser">浏览器</a>),<i>搜索过</i>（包含最后一个找到的所有元素的子集<i>Ctrl+F</i>搜索），<i>最后一个孩子</i>（最后一个提取的元素的子集<b><a href="Browser_menu.html#Child" title="Browser menu">儿童</a></b>操作在<a href="Browser.html" title="Browser">浏览器</a>),<i>任务列表</i>（子集将全部<a href="Glossary_Task.html" title="Glossary:Task">任务</a>提取与<b>工具：在浏览器中打开</b>于<a href="Tasklist_manager.html#Tasklist_manager_menu" title="Tasklist manager">任务列表管理器菜单</a>）等</p>
+<div class="mw-heading mw-heading2"><h2 id="Using_subsets">使用子集</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_subsets&amp;veaction=edit&amp;section=3" title="Edit section: Using subsets"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Using_subsets&amp;action=edit&amp;section=3" title="Edit section's source code: Using subsets"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><a href="Glossary_Subset.html" title="Glossary:Subset">子集</a>可以使用 SuperMemo 中几乎无限的选项和命令组合进行处理。这里仅举几个例子：</p>
+<ul><li><b><a href="Subset_operations.html" title="Subset operations">流程浏览器&gt;</a> :<a href="Subset_operations.html#Learning" title="Subset operations">学习</a> ：学习</b>（<i>Ctrl+L</i>）在<a href="Browser_menu.html" title="Browser menu">浏览器处理菜单</a>使得可以在一个上重复<a href="Glossary_Element_subset.html" title="Glossary:Element subset">元素的子集</a></li>
+<li><b><a href="Subset_operations.html" title="Subset operations">流程浏览器&gt;</a> :<a href="Subset_operations.html#Learning" title="Subset operations">学习</a> ：查看全部</b>于<a href="Browser_menu.html" title="Browser menu">浏览器处理菜单</a>使得整体重复执行成为可能<a href="Glossary_Subset.html" title="Glossary:Subset">子集</a>。<a href="Glossary_Element.html" title="Glossary:Element">元素</a>那些不是<a href="Glossary_Outstanding_element.html" title="Glossary:Outstanding element">杰出的</a>将受到<a href="Glossary_Mid-interval_repetition.html" title="Glossary:Mid-interval repetition">中间间隔重复</a>。仅<a href="Glossary_Dismissed_element.html" title="Glossary:Dismissed element">被驳回的要素</a>将不会被处理</li>
+<li><b><a href="Subset_operations.html" title="Subset operations">流程浏览器&gt;</a> :<a href="Postpone.html" title="Postpone">推迟</a></b>于<a href="Browser_menu.html" title="Browser menu">浏览器处理菜单</a>推迟<a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">突出的重复</a>在一个<a href="Glossary_Element_subset.html" title="Glossary:Element subset">元素的子集</a></li>
+<li><b><a href="Browser_menu.html#Export" title="Browser menu">出口</a>：转移元件</b>于<a href="Browser_menu.html" title="Browser menu">浏览器菜单</a>使转移成为可能<a href="Glossary_Element_subset.html" title="Glossary:Element subset">元素的子集</a>到另一个<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a></li>
+<li><b><a href="Browser_menu.html#Export" title="Browser menu">出口</a> ：XML</b>于<a href="Browser_menu.html" title="Browser menu">浏览器菜单</a>使得可以导出<a href="Glossary_Element_subset.html" title="Glossary:Element subset">元素的子集</a>XML 格式（例如，与其他 SuperMemos 一起使用，例如<a class="external text" href="http://www.super-memo.com/supforpocpc.html">适用于掌上电脑的 SuperMemo</a>等）</li>
+<li><b><a href="Browser_menu.html#Export" title="Browser menu">出口</a> ：问答文本文件</b>于<a href="Browser_menu.html" title="Browser menu">浏览器菜单</a>使得可以导出<a href="Glossary_Element_subset.html" title="Glossary:Element subset">元素的子集</a>作为问题和答案的文本文件</li>
+<li><b><a href="Browser_menu.html#Sort" title="Browser menu">排序</a></b>上的选项<a href="Browser_menu.html" title="Browser menu">浏览器菜单</a>帮助您审查<a href="Glossary_Element_subset.html" title="Glossary:Element subset">元素的子集</a>排序依据<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>,<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">难度</a>,<a href="Glossary_Lapse.html" title="Glossary:Lapse">记忆衰退</a>等</li>
+<li><b><a href="Registry_menu.html#Subset" title="Registry menu">子集</a> :<a href="Registry_menu.html#Match_to_subset" title="Registry menu">匹配子集</a></b>于<a href="Registry_menu.html" title="Registry menu">注册表菜单</a>显示全部<a href="Glossary_Registry_member.html" title="Glossary:Registry member">登记册成员</a>正在使用的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>给定的<a href="Glossary_Subset.html" title="Glossary:Subset">子集</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Video">视频</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_subsets&amp;veaction=edit&amp;section=4" title="Edit section: Video"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Using_subsets&amp;action=edit&amp;section=4" title="Edit section's source code: Video"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://www.youtube.com/watch?v=ffy4vskpYZk">子集文件简介</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111328
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.029 seconds
+Real time usage: 0.030 seconds
+Preprocessor visited node count: 122/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:82:|#|:idhash:canonical and timestamp 20260610111328 and revision id 11781. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

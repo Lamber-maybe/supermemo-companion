@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Backup — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Backup" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Safety_of_your_knowledge_stored_in_SuperMemo"><span class="tocnumber">1</span> <span class="toctext">Safety of your knowledge stored in SuperMemo</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Terminology"><span class="tocnumber">2</span> <span class="toctext">Terminology</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Check_your_backup!"><span class="tocnumber">3</span> <span class="toctext">Check your backup!</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#SuperMemo_owns_its_folders!"><span class="tocnumber">4</span> <span class="toctext">SuperMemo owns its folders!</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#File_:_Copy_collection"><span class="tocnumber">5</span> <span class="toctext">File : Copy collection</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Example"><span class="tocnumber">5.1</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#File_:_Backup"><span class="tocnumber">6</span> <span class="toctext">File : Backup</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Making_a_quick_backup"><span class="tocnumber">6.1</span> <span class="toctext">Making a quick backup</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#SuperMemo_warns_you_if_you_open_a_quick_backup"><span class="tocnumber">6.2</span> <span class="toctext">SuperMemo warns you if you open a quick backup</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Restoring_a_quick_backup"><span class="tocnumber">6.3</span> <span class="toctext">Restoring a quick backup</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Where_shall_I_put_my_backup?"><span class="tocnumber">6.4</span> <span class="toctext">Where shall I put my backup?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Using_WinZip,_PKZip,_etc."><span class="tocnumber">7</span> <span class="toctext">Using WinZip, PKZip, etc.</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Learning_process_backup"><span class="tocnumber">8</span> <span class="toctext">Learning process backup</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Example:_Archiving_with_Total_Commander"><span class="tocnumber">9</span> <span class="toctext">Example: Archiving with Total Commander</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Further_reading"><span class="tocnumber">10</span> <span class="toctext">Further reading</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#FAQs"><span class="tocnumber">11</span> <span class="toctext">FAQs</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Safety_of_your_knowledge_stored_in_SuperMemo">Safety of your knowledge stored in SuperMemo</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=1" title="Edit section: Safety of your knowledge stored in SuperMemo"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=1" title="Edit section's source code: Safety of your knowledge stored in SuperMemo"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Knowledge you store in SuperMemo might belong to your most precious data on your hard disk! After all, it has cost you months or years of editing and repetitions. You must continue your repetitions indefinitely to make sure you do not forget what you have learned. This is why your skills in making a backup copy are so vital! 
+</p>
+<div class="bs-callout bs-callout-warning">
+<p><b>Everyday you should pause for a moment and imagine the consequences of losing your work since you made your last backup</b>. 
+</p>
+</div>
+<p>In SuperMemo you can backup your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> with <b><a href="File_menu.html" title="File menu">File</a> : <a href="File_menu.html#Copy_collection" title="File menu">Copy collection</a></b> (e.g. when you want to choose a specific location on your disk where the copy should be located) or with <b><a href="File_menu.html" title="File menu">File</a> : <a href="File_menu.html#Backup" title="File menu">Backup</a></b> (e.g. if you want to back your collection up often at a specific location with a time stamp). See below for details.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Terminology">Terminology</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=2" title="Edit section: Terminology"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=2" title="Edit section's source code: Terminology"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>To prevent losing your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> (e.g. to a disk failure), you should make regular copies of that collection (e.g. on a flash drive). Such a copy is called a <i>backup</i> and making it is called <i>making a backup</i>. 
+</p><p>If you lose your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> (e.g. to a disk failure), you can always get it back from your <i>backup</i>. This process is called <i>restoring the backup</i>. 
+</p><p>It is much easier to handle <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> for backup if you put them into a single file. This process may be called <i>packing</i>, <i>zipping</i>, <i>archiving</i> or <i>compressing</i> in the documentation of the program used in combining collection files into one (e.g. WinZip, Total Commander, etc.). Compression used in archiving is <i>lossless</i> by default (this means you do not lose data, only reduce its size).
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Check_your_backup!"><span id="Check_your_backup.21"></span>Check your backup!</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=3" title="Edit section: Check your backup!"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=3" title="Edit section's source code: Check your backup!"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="bs-callout bs-callout-warning">
+<p><b>Remember to retrieve and review your backup from time to time to make sure your backup files are stored correctly! Some users backed up only their <i>KNO</i> files for months thinking their backups are safe and complete!</b>
+</p>
+</div>
+<p>For example, if you create a <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> called <i>Biology</i>, SuperMemo will create a file <i>Biology.kno</i> and a folder called <i>[BIOLOGY]</i>. Your backup must include both the <i>Biology.kno</i> file and the <i>[BIOLOGY]</i> folder.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="SuperMemo_owns_its_folders!"><span id="SuperMemo_owns_its_folders.21"></span>SuperMemo owns its folders!</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=4" title="Edit section: SuperMemo owns its folders!"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=4" title="Edit section's source code: SuperMemo owns its folders!"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="bs-callout bs-callout-warning">
+<p><b>Remember that SuperMemo owns the folders it creates for its <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a>. Never store there your own files. Those folders can be deleted at any minute. At best, you will be asked for a confirmation. At worst, you will lose your files!</b>
+</p>
+</div>
+<p>For example, if you create a <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> called <i>Chemistry</i>, SuperMemo will create a file <i>Chemistry.kno</i> and a folder called <i>[CHEMISTRY]</i>. You should leave the management of the insides of the <i>[CHEMISTRY]</i> folder to SuperMemo (unless you truly understand <a href="SuperMemo_files.html" title="SuperMemo files">SuperMemo files and folders</a> and how SuperMemo uses them).
+</p>
+<div class="mw-heading mw-heading2"><h2 id="File_:_Copy_collection">File : Copy collection</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=5" title="Edit section: File : Copy collection"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=5" title="Edit section's source code: File : Copy collection"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Use <b><a href="File_menu.html" title="File menu">File</a> : <a href="File_menu.html#Copy_collection" title="File menu">Copy collection</a></b> (<i>Shift+Ctrl+C</i>) to copy your learning material to some new location. You should copy to a different computer, to a flash drive, or to a DVD-R from time to time to prevent losing your work in case of a hard disk crash. If your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> is named <i>Physics</i> and you choose <b><a href="File_menu.html" title="File menu">File</a> : <a href="File_menu.html#Copy_collection" title="File menu">Copy collection</a></b>, SuperMemo will suggest a new name <i>Physics (copy)</i>. If you accept that name (e.g. by choosing <b>OK</b> or pressing <i>Enter</i>), a copy of the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> will be created at the same place as the original collection with the name expanded by <i>(copy)</i> (e.g. <i>Physics (copy)</i>). However, this backup is useful only for cases such as a software crash that might damage the original <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. This copy is not safe from a hard disk failure (it is located on the same disk), and is not safe from a virus attack (that might wipe out or scramble the entire folder with your <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a>). This is why you could at least change <b>Drive:</b> field in the file browser to select another drive to make your copy.<b> </b>
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Example">Example</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=6" title="Edit section: Example"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=6" title="Edit section's source code: Example"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>To backup your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> to a network drive named <i>F:</i>, you can press <i>Shift+Ctrl+C</i>, type "<i>f:\my_July5_backup</i>" and press <i>Enter</i>. Naturally, it would be nicer to backup to a dedicated folder, e.g. "<i>f:\SM17\backup\July5</i>".
+</p>
+<div class="mw-heading mw-heading2"><h2 id="File_:_Backup">File : Backup</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=7" title="Edit section: File : Backup"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=7" title="Edit section's source code: File : Backup"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>To prevent losing your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> (e.g. to a disk failure), you should make regular copies of that collection (e.g. on a flash drive). Such a copy is called a <i>backup</i> and making it is called <i>making a backup</i>. 
+</p><p>The fastest and simplest way to make a backup is to use <b><a href="File_menu.html" title="File menu">File</a> : <a href="File_menu.html#Backup" title="File menu">Backup</a></b> in SuperMemo as described below. 
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Making_a_quick_backup">Making a quick backup</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=8" title="Edit section: Making a quick backup"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=8" title="Edit section's source code: Making a quick backup"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The fastest way to quickly backup your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> is to use <i>Shift+F12</i> (or <b><a href="File_menu.html" title="File menu">File</a> : <a href="File_menu.html#Backup" title="File menu">Backup</a></b> from the <a href="Main_menu.html" title="Main menu">main menu</a>). <b>Backup</b> will skip non-essential files (e.g. temporary files). It will also name your backup with the date on which it was created. For example, if your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>'s name is <i>Incremental Learning.kno</i> your backup might get named <i>(((Backup of Incremental Learning created on 2013-08-12 03-55-40)))</i>. This name tells you that the backed up <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>'s name is <i>Incremental Learning</i>, and that the collection was backed up on Aug 12, 2013 after 3:55.
+</p>
+<div class="center">
+<p><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Quick_backup.jpg.html" title="SuperMemo: The Incremental Learning collection to be archived at at g:\colls\Incremental Learning folder"><img alt="SuperMemo: The Incremental Learning collection to be archived at at g:\colls\Incremental Learning folder" class="mw-file-element" decoding="async" height="525" loading="lazy" src="https://help.supermemo.org/images/e/e3/Quick_backup.jpg" width="772"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure</b>: In the examplary picture above, the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> INCREMENTAL LEARNING will be archived in the folder g:\colls\Incremental Learning\</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="SuperMemo_warns_you_if_you_open_a_quick_backup">SuperMemo warns you if you open a quick backup</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=9" title="Edit section: SuperMemo warns you if you open a quick backup"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=9" title="Edit section's source code: SuperMemo warns you if you open a quick backup"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>In the past, users often made a mistake of learning with their backup, instead of their original <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. To avoid this confusion, SuperMemo will warn you each time you try to open a backup collection. 
+</p><p>You can easily eliminate that warning by renaming the backup <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. Always rename the collection to its original name when you restore a backup. For example, if your [[Glossary:Collection|collection]'s name is <i>YouTube.kno</i>, and your backup is named <i>(((Backup of YOUTUBE created on 2009-04-28 15-15-55))),</i> name the collection back to <i>YouTube.kno</i> or similar at the time when you restore the backup.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Restoring_a_quick_backup">Restoring a quick backup</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=10" title="Edit section: Restoring a quick backup"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=10" title="Edit section's source code: Restoring a quick backup"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If you lose your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> (e.g. to a disk failure), you can always get it back from your backup. This process is called <i>restoring the backup</i>. 
+</p><p>You can restore the backup by opening the backup <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> with <b><a href="File_menu.html" title="File menu">File</a> : <a href="File_menu.html#Open_collection" title="File menu">Open collection</a></b> (ignore the warning), and using <b><a href="File_menu.html" title="File menu">File</a> : <a href="File_menu.html#Copy_collection" title="File menu">Copy collection</a></b> (<i>Shift+Ctrl+C</i>). You should then copy the backup to your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> folder within the SuperMemo folder (e.g. <i>c:\sm17\systems\</i>), and give it the name of the original collection (e.g. <i>c:\sm17\systems\YouTube.kno</i>).
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Where_shall_I_put_my_backup?"><span id="Where_shall_I_put_my_backup.3F"></span>Where shall I put my backup?</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=11" title="Edit section: Where shall I put my backup?"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=11" title="Edit section's source code: Where shall I put my backup?"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Remember that the safety of your backup depends on its location. Here is a short list of examples from the safest to the least safe: 
+</p>
+<ul><li>backup on different media on different continents (e.g. flash drive in America, DVD in Europe, Internet server in Asia, etc.)</li>
+<li>backup in a different city (e.g. on a friend's computer)</li>
+<li>backup on different media in the same location (e.g. DVD in the same office might be vulnerable to office fire)</li>
+<li>backup on a flash drive (might be vulnerable to theft if the flash drive is placed in the same computer as the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>)</li>
+<li>backup on another hard disk (might be vulnerable to power surge, fire or flooding that will damage both disks)</li>
+<li>backup on the same disk (may be lost at any minute due to hard disk failure)</li>
+<li>backup in the same folder (might be deleted accidentally when deleting the folder)</li></ul>
+<p>Conclusion: always keep your backup as far away from your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> as it is feasible and reasonable. 
+</p><p>If you need to back up on the same PC, keep the backup on separate drives, e.g. 
+</p><p>Collection:<i><b>D:</b>\sm17\systems\youtube.kno</i>
+</p><p>Backup:<i><b>C:</b>\backups\supermemo\collections\(((Backup of YOUTUBE created on 2009-04-28 15-15-55))).kno</i>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Using_WinZip,_PKZip,_etc."><span id="Using_WinZip.2C_PKZip.2C_etc."></span>Using WinZip, PKZip, etc.</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=12" title="Edit section: Using WinZip, PKZip, etc."><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=12" title="Edit section's source code: Using WinZip, PKZip, etc."><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If you would like to use archiving tools to reduce the size of your backup and keep it in a single file, remember to do the following: 
+</p>
+<ul><li>copy the file <i>&lt;your collection&gt;.kno</i> and the <a href="SuperMemo_files.html#Collection_files" title="SuperMemo files">folder <i>&lt;your collection&gt;</i></a> into one archive. <b>Many users make a cardinal mistake of archiving only the <i>kno</i> file which is useless without the files in the accompanying folder</b>. For example, remember to copy the folder <i>[BIOLOGY-CLASS]</i> when backing up <i>biology-class.kno</i></li>
+<li>remember to <b>preserve the paths in archiving</b>. If you fail to do this, you will most likely be unable to reassemble hundreds of files into appropriate folders</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Learning_process_backup">Learning process backup</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=13" title="Edit section: Learning process backup"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=13" title="Edit section's source code: Learning process backup"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><b>For advanced users:</b> If you are using a commercial <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> available on a CD or DVD, you can save lots of space if you backup only the learning process. You can do it with <b><a href="File_menu.html" title="File menu">File</a> : <a href="File_menu.html#Export" title="File menu">Export</a> : Learning process</b>. Note that this will not preserve changes you have made to texts in your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. In case of a mishap, you can reinstall your commercial <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> and restore the learning process with <b><a href="File_menu.html" title="File menu">File</a> : <a href="File_menu.html#Import" title="File menu">Import</a> : Learning process</b>. For example, a copy of <a class="external text" href="http://www.super-memo.com/ae2002.html">Advanced English</a> without its <a href="Glossary_Secondary_storage.html" title="Glossary:Secondary storage">secondary storage</a> multimedia files takes nearly 50 MB while the learning process backup takes from 0.1 to 3 MB depending on how much work you have put in repetitions.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Example:_Archiving_with_Total_Commander">Example: Archiving with Total Commander</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=14" title="Edit section: Example: Archiving with Total Commander"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=14" title="Edit section's source code: Example: Archiving with Total Commander"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>To archive your <i>Physics</i> <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> with <a class="external text" href="https://ghisler.com/picture.htm"><i>Total Commander</i></a> by <a class="external text" href="https://ghisler.com/index.htm">Christian Ghisler</a> do the following: 
+</p>
+<ul><li>find <i>physics.kno</i> (e.g. with <i>Alt+F7</i> search)</li>
+<li>in the panel displaying <i>physics.kno</i>, select <i>physics.kno</i> and <i>[PHYSICS]</i> folder (e.g. with <i>Ins</i> or with <i>Ctrl+click</i>)</li>
+<li>choose <i>Alt+F5</i> for <b>Files : Pack...</b></li>
+<li>make sure <b>Also pack path names (only recursed)</b> and <b>Recursively pack subdirectories</b> are checked (to preserve paths and folders)</li>
+<li>choose <b>OK</b>.</li></ul>
+<p>Your newly created archive should appear as a <i>ZIP</i> file with the default name <i>&lt;collections folder&gt;.zip</i> (this is <i>systems.zip</i> by default)
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Further_reading">Further reading</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=15" title="Edit section: Further reading"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=15" title="Edit section's source code: Further reading"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://super-memory.com/help/faq/files.htm">FAQ: Backup copy</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Manual_backup">Manual backup</a></li>
+<li><a class="external text" href="https://supermemo.wiki/sma/#/qs-backup-setup">supermemo.wiki's backup guide</a></li>
+<li><a href="SuperMemo_files.html" title="SuperMemo files">SuperMemo files</a></li>
+<li><a href="File_menu.html" title="File menu">File menu</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="FAQs">FAQs</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=16" title="Edit section: FAQs"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=16" title="Edit section's source code: FAQs"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="http://supermemopedia.com/wiki/How_to_recover_from_repetitions_in_a_backup%3F">Swapping collections</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610110916
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.050 seconds
+Real time usage: 0.052 seconds
+Preprocessor visited node count: 86/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:130:|#|:idhash:canonical and timestamp 20260610110916 and revision id 10914. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Safety_of_your_knowledge_stored_in_SuperMemo"><span class="tocnumber">1</span> <span class="toctext">SuperMemo 中存储的知识的安全性</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Terminology"><span class="tocnumber">2</span> <span class="toctext">术语</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Check_your_backup!"><span class="tocnumber">3</span> <span class="toctext">检查你的备份！</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#SuperMemo_owns_its_folders!"><span class="tocnumber">4</span> <span class="toctext">SuperMemo 拥有它的文件夹！</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#File_:_Copy_collection"><span class="tocnumber">5</span> <span class="toctext">文件：复制集合</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Example"><span class="tocnumber">5.1</span> <span class="toctext">示例</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#File_:_Backup"><span class="tocnumber">6</span> <span class="toctext">文件：备份</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Making_a_quick_backup"><span class="tocnumber">6.1</span> <span class="toctext">进行快速备份</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#SuperMemo_warns_you_if_you_open_a_quick_backup"><span class="tocnumber">6.2</span> <span class="toctext">如果您打开快速备份，SuperMemo 会发出警告</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Restoring_a_quick_backup"><span class="tocnumber">6.3</span> <span class="toctext">恢复快速备份</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Where_shall_I_put_my_backup?"><span class="tocnumber">6.4</span> <span class="toctext">我应该把备份放在哪里？</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12"><a href="#Using_WinZip,_PKZip,_etc."><span class="tocnumber">7</span> <span class="toctext">使用 WinZip、PKZip 等</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Learning_process_backup"><span class="tocnumber">8</span> <span class="toctext">学习过程备份</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Example:_Archiving_with_Total_Commander"><span class="tocnumber">9</span> <span class="toctext">示例：使用 Total Commander 存档</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Further_reading"><span class="tocnumber">10</span> <span class="toctext">进一步阅读</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#FAQs"><span class="tocnumber">11</span> <span class="toctext">常见问题解答</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Safety_of_your_knowledge_stored_in_SuperMemo">SuperMemo 中存储的知识的安全性</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=1" title="Edit section: Safety of your knowledge stored in SuperMemo"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=1" title="Edit section's source code: Safety of your knowledge stored in SuperMemo"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>您存储在 SuperMemo 中的知识可能属于您硬盘上最珍贵的数据！毕竟，它花费了您数月或数年的编辑和重复。你必须无限期地继续重复，以确保你不会忘记所学的内容。这就是为什么制作备份副本的技能如此重要！</p>
+<div class="bs-callout bs-callout-warning">
+<p><b>每天您都应该停下来想象一下自上次备份以来丢失工作的后果</b>。</p>
+</div>
+<p>在 SuperMemo 中，您可以备份您的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>与<b><a href="File_menu.html" title="File menu">文件</a> :<a href="File_menu.html#Copy_collection" title="File menu">副本收藏</a></b>（例如，当您想在磁盘上选择副本应位于的特定位置时）或使用<b><a href="File_menu.html" title="File menu">文件</a> :<a href="File_menu.html#Backup" title="File menu">备份</a></b>（例如，如果您想经常在带有时间戳的特定位置备份您的收藏）。详情请参阅下文。</p>
+<div class="mw-heading mw-heading2"><h2 id="Terminology">术语</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=2" title="Edit section: Terminology"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=2" title="Edit section's source code: Terminology"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>为了防止丢失您的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>（例如磁盘故障），您应该定期制作该集合的副本（例如在闪存驱动器上）。这样的副本称为<i>备份</i>并制作它称为<i>进行备份</i>。</p><p>如果你失去了你的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>（例如磁盘故障），您随时可以从您的<i>备份</i>。这个过程称为<i>恢复备份</i>。</p><p>处理起来容易多了<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>如果将它们放入单个文件中，则用于备份。这个过程可以称为<i>包装</i>,<i>拉链</i>,<i>归档</i>或<i>压缩</i>在用于将集合文件合并为一个的程序的文档中（例如 WinZip、Total Commander 等）。归档中使用的压缩是<i>无损的</i>默认情况下（这意味着您不会丢失数据，只会减小其大小）。</p>
+<div class="mw-heading mw-heading2"><h2 id="Check_your_backup!"><span id="Check_your_backup.21"></span>检查你的备份！</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=3" title="Edit section: Check your backup!"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=3" title="Edit section's source code: Check your backup!"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="bs-callout bs-callout-warning">
+<p><b>请记住不时检索和检查您的备份，以确保您的备份文件存储正确！一些用户只备份他们的<i>硝酸钾</i>文件数月，认为他们的备份是安全且完整的！</b>
+</p>
+</div>
+<p>例如，如果您创建一个<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>被称为<i>生物学</i>, SuperMemo 将创建一个文件<i>生物学知识</i>和一个名为<i>[生物学]</i>。您的备份必须包括<i>生物学知识</i>文件和<i>[生物学]</i>文件夹。</p>
+<div class="mw-heading mw-heading2"><h2 id="SuperMemo_owns_its_folders!"><span id="SuperMemo_owns_its_folders.21"></span>SuperMemo 拥有它的文件夹！</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=4" title="Edit section: SuperMemo owns its folders!"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=4" title="Edit section's source code: SuperMemo owns its folders!"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="bs-callout bs-callout-warning">
+<p><b>请记住，SuperMemo 拥有为其创建的文件夹<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>。切勿在那里存储您自己的文件。这些文件夹可以随时删除。最好的情况是，系统会要求您进行确认。最坏的情况是，您将丢失文件！</b>
+</p>
+</div>
+<p>例如，如果您创建一个<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>被称为<i>化学</i>, SuperMemo 将创建一个文件<i>化学知识</i>和一个名为<i>[化学]</i>。你应该把内部管理留给<i>[化学]</i>文件夹到 SuperMemo（除非你真正理解<a href="SuperMemo_files.html" title="SuperMemo files">SuperMemo 文件和文件夹</a>以及 SuperMemo 如何使用它们）。</p>
+<div class="mw-heading mw-heading2"><h2 id="File_:_Copy_collection">文件：复制集合</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=5" title="Edit section: File : Copy collection"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=5" title="Edit section's source code: File : Copy collection"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>使用<b><a href="File_menu.html" title="File menu">文件</a> :<a href="File_menu.html#Copy_collection" title="File menu">副本收藏</a></b>（<i>Shift+Ctrl+C</i>）将您的学习材料复制到某个新位置。您应该不时复制到另一台计算机、闪存驱动器或 DVD-R，以防止在硬盘崩溃时丢失工作。如果你的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>被命名为<i>物理学</i>你选择<b><a href="File_menu.html" title="File menu">文件</a> :<a href="File_menu.html#Copy_collection" title="File menu">副本收藏</a></b>, SuperMemo 会建议一个新名字<i>物理（副本）</i>。如果您接受该名称（例如通过选择<b>好的</b>或按<i>输入</i>），副本<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>将在与原始集合相同的位置创建，名称扩展为<i>（副本）</i>（例如<i>物理（副本）</i>）。但是，此备份仅适用于可能损坏原始数据的软件崩溃等情况。<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。此副本不能避免硬盘故障（它位于同一磁盘上），并且不能避免病毒攻击（这可能会清除或打乱整个文件夹）<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>）。这就是为什么你至少可以改变<b>驱动器：</b>文件浏览器中的字段以选择另一个驱动器来制作副本。<b> </b>
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Example">示例</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=6" title="Edit section: Example"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=6" title="Edit section's source code: Example"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>备份您的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>到名为的网络驱动器<i>女：</i>，您可以按<i>Shift+Ctrl+C</i>，输入“<i>f:\my_July5_backup</i>”并按<i>输入</i>。当然，最好备份到专用文件夹，例如”<i>f:\SM17\备份\July5</i>”。</p>
+<div class="mw-heading mw-heading2"><h2 id="File_:_Backup">文件：备份</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=7" title="Edit section: File : Backup"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=7" title="Edit section's source code: File : Backup"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>为了防止丢失您的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>（例如磁盘故障），您应该定期制作该集合的副本（例如在闪存驱动器上）。这样的副本称为<i>备份</i>并制作它称为<i>进行备份</i>。</p><p>最快、最简单的备份方法是使用<b><a href="File_menu.html" title="File menu">文件</a> :<a href="File_menu.html#Backup" title="File menu">备份</a></b>在 SuperMemo 中，如下所述。</p>
+<div class="mw-heading mw-heading3"><h3 id="Making_a_quick_backup">进行快速备份</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=8" title="Edit section: Making a quick backup"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=8" title="Edit section's source code: Making a quick backup"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>快速备份您的文件的最快方法<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>是使用<i>Shift+F12</i>（或<b><a href="File_menu.html" title="File menu">文件</a> :<a href="File_menu.html#Backup" title="File menu">备份</a></b>从<a href="Main_menu.html" title="Main menu">主菜单</a>）。<b>备份</b>将跳过非必要文件（例如临时文件）。它还会使用创建日期来命名您的备份。例如，如果您的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>的名字是<i>渐进学习.kno</i>您的备份可能会被命名<i>(((2013-08-12 03-55-40创建的增量学习备份)))</i>。这个名字告诉你备份的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>的名字是<i>渐进学习</i>，并且该集合是在 2013 年 8 月 12 日 3:55 后备份的。</p>
+<div class="center">
+<p><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Quick_backup.jpg.html" title="SuperMemo: The Incremental Learning collection to be archived at at g:\colls\Incremental Learning folder"><img alt="SuperMemo: The Incremental Learning collection to be archived at at g:\colls\Incremental Learning folder" class="mw-file-element" decoding="async" height="525" loading="lazy" src="https://help.supermemo.org/images/e/e3/Quick_backup.jpg" width="772"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图</b>: 在上面的示例图中，<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>增量学习将存档在文件夹 g:\colls\增量学习\</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="SuperMemo_warns_you_if_you_open_a_quick_backup">如果您打开快速备份，SuperMemo 会发出警告</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=9" title="Edit section: SuperMemo warns you if you open a quick backup"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=9" title="Edit section's source code: SuperMemo warns you if you open a quick backup"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>过去，用户经常犯这样的错误：用备份而不是原来的内容来学习<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。为了避免这种混乱，SuperMemo 会在您每次尝试打开备份集合时发出警告。</p><p>您可以通过重命名备份轻松消除该警告<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。还原备份时，请务必将集合重命名为其原始名称。例如，如果您的 [[Glossary:Collection|collection] 的名称是<i>YouTube.kno</i>，并且您的备份名为<i>(((2009-04-28 15-15-55 创建的 YOUTUBE 备份))),</i>将集合重新命名为<i>YouTube.kno</i>或在恢复备份时进行类似操作。</p>
+<div class="mw-heading mw-heading3"><h3 id="Restoring_a_quick_backup">恢复快速备份</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=10" title="Edit section: Restoring a quick backup"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=10" title="Edit section's source code: Restoring a quick backup"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果你失去了你的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>（例如磁盘故障），您始终可以从备份中恢复它。这个过程称为<i>恢复备份</i>。</p><p>您可以通过打开备份来恢复备份<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>与<b><a href="File_menu.html" title="File menu">文件</a> :<a href="File_menu.html#Open_collection" title="File menu">开放收藏</a></b>（忽略警告），并使用<b><a href="File_menu.html" title="File menu">文件</a> :<a href="File_menu.html#Copy_collection" title="File menu">副本收藏</a></b>（<i>Shift+Ctrl+C</i>）。然后您应该将备份复制到您的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>SuperMemo 文件夹中的文件夹（例如<i>c:\sm17\系统\</i>），并给出原始集合的名称（例如<i>c:\sm17\systems\YouTube.kno</i>）。</p>
+<div class="mw-heading mw-heading3"><h3 id="Where_shall_I_put_my_backup?"><span id="Where_shall_I_put_my_backup.3F"></span>我应该把备份放在哪里？</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=11" title="Edit section: Where shall I put my backup?"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=11" title="Edit section's source code: Where shall I put my backup?"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>请记住，备份的安全性取决于其位置。以下是从最安全到最不安全的示例的简短列表：</p>
+<ul><li>备份在不同大陆的不同介质上（例如美国的闪存驱动器、欧洲的 DVD、亚洲的互联网服务器等）</li>
+<li>在不同城市备份（例如在朋友的计算机上）</li>
+<li>在同一位置的不同介质上进行备份（例如同一办公室的 DVD 可能容易受到办公室火灾的影响）</li>
+<li>闪存驱动器上的备份（如果闪存驱动器与备份放在同一台计算机上，则可能容易被盗）<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>）</li>
+<li>备份到另一个硬盘上（可能容易受到电涌、火灾或洪水的影响，从而损坏两个磁盘）</li>
+<li>同一磁盘上的备份（随时可能因硬盘故障而丢失）</li>
+<li>备份在同一个文件夹中（删除文件夹时可能会被意外删除）</li></ul>
+<p>结论：始终让您的备份远离您的设备<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>因为这是可行且合理的。</p><p>如果您需要在同一台 PC 上进行备份，请将备份保存在不同的驱动器上，例如</p><p>收藏：<i><b>d:</b>\sm17\systems\youtube.kno</i>
+</p><p>备份：<i><b>C:</b>\backups\supermemo\collections\(((2009-04-28 15-15-55 创建的 YOUTUBE 备份))).kno</i>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Using_WinZip,_PKZip,_etc."><span id="Using_WinZip.2C_PKZip.2C_etc."></span>使用 WinZip、PKZip 等</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=12" title="Edit section: Using WinZip, PKZip, etc."><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=12" title="Edit section's source code: Using WinZip, PKZip, etc."><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果您想使用归档工具来减小备份的大小并将其保存在单个文件中，请记住执行以下操作：</p>
+<ul><li>复制文件<i>&lt;你的收藏&gt;.kno</i>和<a href="SuperMemo_files.html#Collection_files" title="SuperMemo files">文件夹<i>&lt;你的收藏&gt;</i></a>到一个档案中。<b>许多用户犯了一个重大错误，即只归档<i>知道</i>如果没有随附文件夹中的文件，该文件将毫无用处</b>。例如，记得复制文件夹<i>[生物课]</i>备份时<i>生物学类.kno</i></li>
+<li>记得<b>保留存档路径</b>。如果您不这样做，您很可能无法将数百个文件重新组装到适当的文件夹中</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Learning_process_backup">学习过程备份</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=13" title="Edit section: Learning process backup"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=13" title="Edit section's source code: Learning process backup"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><b>对于高级用户：</b>如果您使用的是商业广告<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>可以在 CD 或 DVD 上找到，如果仅备份学习过程，可以节省大量空间。你可以这样做<b><a href="File_menu.html" title="File menu">文件</a> :<a href="File_menu.html#Export" title="File menu">出口</a> ：学习过程</b>。请注意，这不会保留您对文本中所做的更改<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。如果发生意外，您可以重新安装您的广告<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>并恢复学习过程<b><a href="File_menu.html" title="File menu">文件</a> :<a href="File_menu.html#Import" title="File menu">进口</a> ：学习过程</b>。例如，副本<a class="external text" href="http://www.super-memo.com/ae2002.html">高级英语</a>没有它的<a href="Glossary_Secondary_storage.html" title="Glossary:Secondary storage">二级存储</a>多媒体文件需要近 50 MB，而学习过程备份则需要 0.1 到 3 MB，具体取决于您重复的工作量。</p>
+<div class="mw-heading mw-heading2"><h2 id="Example:_Archiving_with_Total_Commander">示例：使用 Total Commander 存档</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=14" title="Edit section: Example: Archiving with Total Commander"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=14" title="Edit section's source code: Example: Archiving with Total Commander"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>存档您的<i>物理学</i> <a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>与<a class="external text" href="https://ghisler.com/picture.htm"><i>总指挥官</i></a>通过<a class="external text" href="https://ghisler.com/index.htm">克里斯蒂安·吉斯勒</a>执行以下操作：</p>
+<ul><li>找到<i>物理知识</i>（例如与<i>Alt+F7</i>搜索）</li>
+<li>在面板中显示<i>物理知识</i>，选择<i>物理知识</i>和<i>[物理]</i>文件夹（例如<i>INS</i>或与<i>Ctrl+单击</i>）</li>
+<li>选择<i>Alt+F5</i>为了<b>文件：打包...</b></li>
+<li>确保<b>还打包路径名（仅递归）</b>和<b>递归打包子目录</b>被选中（以保留路径和文件夹）</li>
+<li>选择<b>好的</b>。</li></ul>
+<p>您新创建的存档应该显示为<i>邮政编码</i>使用默认名称的文件<i>&lt;集合文件夹&gt;.zip</i>（这是<i>系统.zip</i>默认情况下）</p>
+<div class="mw-heading mw-heading2"><h2 id="Further_reading">进一步阅读</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=15" title="Edit section: Further reading"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=15" title="Edit section's source code: Further reading"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://super-memory.com/help/faq/files.htm">常见问题解答：备份副本</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Manual_backup">手动备份</a></li>
+<li><a class="external text" href="https://supermemo.wiki/sma/#/qs-backup-setup">supermemo.wiki 的备份指南</a></li>
+<li><a href="SuperMemo_files.html" title="SuperMemo files">SuperMemo 文件</a></li>
+<li><a href="File_menu.html" title="File menu">文件菜单</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="FAQs">常见问题解答</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Backup&amp;veaction=edit&amp;section=16" title="Edit section: FAQs"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Backup&amp;action=edit&amp;section=16" title="Edit section's source code: FAQs"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="http://supermemopedia.com/wiki/How_to_recover_from_repetitions_in_a_backup%3F">交换集合</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610110916
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.050 seconds
+Real time usage: 0.052 seconds
+Preprocessor visited node count: 86/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:130:|#|:idhash:canonical and timestamp 20260610110916 and revision id 10914. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

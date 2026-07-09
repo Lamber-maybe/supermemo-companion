@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tasklist manager — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Tasklist_manager" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducing_Tasklist_manager"><span class="tocnumber">1</span> <span class="toctext">Introducing Tasklist manager</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Tasklist_manager_toolbar"><span class="tocnumber">1.1</span> <span class="toctext">Tasklist manager toolbar</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Tasklist_manager_menu"><span class="tocnumber">1.2</span> <span class="toctext">Tasklist manager menu</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Example:_Creating_a_shopping_list"><span class="tocnumber">1.3</span> <span class="toctext">Example: Creating a shopping list</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Video"><span class="tocnumber">2</span> <span class="toctext">Video</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#FAQ"><span class="tocnumber">3</span> <span class="toctext">FAQ</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Deadlines_in_tasklists_are_not_impassable"><span class="tocnumber">3.1</span> <span class="toctext">Deadlines in tasklists are not impassable</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Estimating_task_value_is_up_to_the_user"><span class="tocnumber">3.2</span> <span class="toctext">Estimating task value is up to the user</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Do_not_use_the_numbering_column_in_the_task_manager_to_double-click_tasks"><span class="tocnumber">3.3</span> <span class="toctext">Do not use the numbering column in the task manager to double-click tasks</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Determining_tasklist_valuation_becomes_instinctive_in_time"><span class="tocnumber">3.4</span> <span class="toctext"><span>Determining</span> tasklist valuation becomes instinctive in time</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Tasks_can_be_scheduled_on_a_specific_date"><span class="tocnumber">3.5</span> <span class="toctext">Tasks can be scheduled on a specific date</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Reading_list"><span class="tocnumber">3.6</span> <span class="toctext">Reading list</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Virtual_knowledge_market_can_help_you_with_tasklists"><span class="tocnumber">3.7</span> <span class="toctext">Virtual knowledge market can help you with tasklists</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Deadlines_in_tasklists_are_measured_in_real_time"><span class="tocnumber">3.8</span> <span class="toctext">Deadlines in tasklists are measured in real time</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Tasklist_should_hold_all_your_ideas_and_inspirations"><span class="tocnumber">3.9</span> <span class="toctext">Tasklist should hold all your ideas and inspirations</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Introducing_Tasklist_manager">Introducing Tasklist manager</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=1" title="Edit section: Introducing Tasklist manager"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=1" title="Edit section's source code: Introducing Tasklist manager"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><i>Tasklist manager</i> available from <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a class="mw-redirect" href="Tasklists.html" title="Tasklists">Tasklist</a></b> (e.g. by pressing <i>F4</i>) can be used to edit, prioritize and sort <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklists</a> and all sorts of to-do lists. For example, your prioritized shopping list can be kept in SuperMemo as a <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a>. To be sure that you go on with your major investments starting with those of highest benefit, you might list your planned purchases using price of the purchase in the <b>Time</b> field and, for example, daily time savings in minutes in <b>Value</b>. You could also use other measures of value. For example: degree of satisfaction from the purchase, the maximum price you would be ready to pay, or annual return on investment, etc. This approach would make sure that you never waste your time or money on petty impulse purchases. With <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklists</a>, you can always be sure that you proceed methodically starting from the most valuable investments. Last but not least, <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklists</a> are invaluable for those studying at school or university, where most learning material is not presented in electronic form (e.g. in paper textbooks). In such cases, subject topics (e.g. "Pythagoras' theorem", "Kennedy assasination", etc.) must be prioritized before importing to SuperMemo (in contrast to the <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading process</a>, which allows prioritization after importing). For example, if you have 20 minutes to study, you can spend 3 minutes importing <a href="Glossary_Task.html" title="Glossary:Task">tasks</a>, and 17 minutes importing the learning material, as prioritized by your <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a>. During the importing stage you may either choose to manually type in the most important material, or else simply see if you can find an electronic version of it. 
+</p>
+<div class="center">
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Tasklist.jpg.html" title="SuperMemo: Tasklist manager displaying the SuperMemo 18 implementation list where individual to-do tasks are sorted by their priority as determined by the ratio of the value of a given task divided by the time necessary to complete it"><img alt="SuperMemo: Tasklist manager displaying the SuperMemo 18 implementation list where individual to-do tasks are sorted by their priority as determined by the ratio of the value of a given task divided by the time necessary to complete it" class="mw-file-element" decoding="async" height="436" loading="lazy" src="https://help.supermemo.org/images/thumb/6/6b/Tasklist.jpg/589px-Tasklist.jpg" srcset="/images/thumb/6/6b/Tasklist.jpg/884px-Tasklist.jpg 1.5x, /images/thumb/6/6b/Tasklist.jpg/1178px-Tasklist.jpg 2x" width="589"/></a><figcaption>SuperMemo: Tasklist manager displaying the SuperMemo 18 implementation list where individual to-do tasks are sorted by their priority as determined by the ratio of the value of a given task divided by the time necessary to complete it</figcaption></figure>
+<blockquote>
+<p><i><b>Figure:</b> <b><a class="mw-selflink selflink">Tasklist manager</a></b> displaying the <a class="external text" href="https://help18.supermemo.org/wiki/What's_new_in_SuperMemo_18?">SuperMemo 18</a> implementation list where individual to-do <a href="Glossary_Task.html" title="Glossary:Task">tasks</a> are sorted by their <b>Priority=Time/Value</b> as determined by the ratio of the value of a given task divided by the time necessary to complete it. In the picture, you can see a portion of 3554 tasks from the SuperMemo 18 <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a>.</i>
+</p>
+</blockquote>
+</div>
+<p>Basic operations: 
+</p>
+<ul><li>To edit a selected field, click it, type in a new value and press <i>Enter</i>.</li>
+<li>To sort the <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> choose <i>Ctrl+S</i>.</li>
+<li>To <a href="Element_parameters.html" title="Element parameters">edit the parameters</a> of a <a href="Glossary_Task.html" title="Glossary:Task">task</a>, choose <i>Ctrl+Shift+P</i> in the same way as you do it in the <a href="Element_window.html" title="Element window">element window</a> (or <i>Ctrl+E</i> as in <b><a href="Plan.html" title="Plan">Plan</a></b>). Note that you need to press <b>OK</b> to save the parameters (<i>Esc</i> will cancel the changes).</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Tasklist_manager_toolbar">Tasklist manager toolbar</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=2" title="Edit section: Tasklist manager toolbar"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=2" title="Edit section's source code: Tasklist manager toolbar"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Here are the most important controls on the tasklist manager toolbar: 
+</p>
+<ul><li><b>Tasklist combo box</b> (<i>Tab</i>) - list of available <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklists</a>. If you select another tasklist, it will be displayed in the tasklist manager and ready for editing</li>
+<li><b>Set</b> - set the current <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> as the default one</li>
+<li><b>Menu</b> - tasklist manager menu (see <a href="#Tasklist_manager_menu">below</a>)</li>
+<li><b>View</b> (<i>Ctrl+Enter</i>) - view the selected <a href="Glossary_Task.html" title="Glossary:Task">task</a> in the <a href="Element_window.html" title="Element window">element window</a></li>
+<li><b>Go to</b> (<i>Shift+Ctrl+Enter</i>) - close the tasklist manager and view the selected <a href="Glossary_Task.html" title="Glossary:Task">task</a> in the <a href="Element_window.html" title="Element window">element window</a></li>
+<li><b>Add task</b> (<i>Alt+F1</i>) - add a new <a href="Glossary_Task.html" title="Glossary:Task">task</a> to the current <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> (default value of tasks is 0, which sets its position to <i>max</i> for prioritization)</li>
+<li><b>Delete task</b> - delete the currently selected <a href="Glossary_Task.html" title="Glossary:Task">task</a></li>
+<li><b>Find task</b> (<i>Ctrl+F</i>) - find a <a href="Glossary_Task.html" title="Glossary:Task">task</a> containing a given string</li>
+<li><b>Sort tasks</b> (<i>Ctrl+S</i>) - sort the <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> by priority</li>
+<li><b>Export</b> - export <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> into an HTML file</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Tasklist_manager_menu">Tasklist manager menu</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=3" title="Edit section: Tasklist manager menu"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=3" title="Edit section's source code: Tasklist manager menu"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The tasklist manager menu provides the following options: 
+</p>
+<ul><li><b>View</b> (<i>Ctrl+Enter</i>) - view the selected <a href="Glossary_Task.html" title="Glossary:Task">task</a> in the <a href="Element_window.html" title="Element window">element window</a></li>
+<li><b>Go to</b> (<i>Shift+Ctrl+Enter</i>) - close the tasklist manager and view the selected <a href="Glossary_Task.html" title="Glossary:Task">task</a> in the <a href="Element_window.html" title="Element window">element window</a></li>
+<li><b>Dismiss task</b> (<i>Ctrl+D</i>) - <a href="Glossary_Dismiss.html" title="Glossary:Dismiss">dismiss</a> the selected <a href="Glossary_Task.html" title="Glossary:Task">task</a></li>
+<li><b>Memorize task</b> (<i>Ctrl+M</i>) - introduce the selected <a href="Glossary_Task.html" title="Glossary:Task">task</a> into the learning process</li>
+<li><b>Edit parameters</b> (<i>Shift+Ctrl+P</i> or <i>Ctrl+E</i>) - edit task parameters (value, time, priority, deadline, etc.)</li>
+<li><b>Add task</b> (<i>Alt+F1</i>) - add a new <a href="Glossary_Task.html" title="Glossary:Task">task</a> to the current <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a></li>
+<li><b>Transfer task</b> (<i>Ctrl+T</i>) - transfer the currently selected <a href="Glossary_Task.html" title="Glossary:Task">task</a> to another <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a></li>
+<li><b>Sort</b> (<i>Ctrl+S</i>) - sort the <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> by priority</li>
+<li><b>Find task</b> (<i>Ctrl+F</i>) - find a <a href="Glossary_Task.html" title="Glossary:Task">task</a> containing a given string</li>
+<li><b>Find next</b> (<i>F3</i>) - repeat the last search initiated with <b>Find task</b></li>
+<li><b>Find all</b> (<i>Shift+Ctrl+F</i>) - find all <a href="Glossary_Task.html" title="Glossary:Task">tasks</a> with a given text in their description</li>
+<li><b>Set as default</b> - set the current <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> as the default tasklist</li>
+<li><b>Jump</b> - select another <a href="Glossary_Task.html" title="Glossary:Task">task</a> in the <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a>
+<ul><li><b>Random jump</b> (<i>F11</i>) - jump to a randomly selected <a href="Glossary_Task.html" title="Glossary:Task">task</a> (e.g. for fast tasklist review)</li>
+<li><b>Random preferred</b> (<i>Shift+F11</i>) - jump to a random <a href="Glossary_Task.html" title="Glossary:Task">task</a> with preference for high priority tasks</li>
+<li><b>Selected row</b> (<i>Ctrl+G</i>) - jump to a selected row in the tasklist manager</li></ul></li>
+<li><b>Tools</b>
+<ul><li><b>Open in browser</b> (<i>Shift+Ctrl+B</i>) - put all <a href="Glossary_Task.html" title="Glossary:Task">tasks</a> from the currently opened <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> in the <a href="Browser.html" title="Browser">browser</a></li>
+<li><b>Export as HTML</b> - export the <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> as an HTML file</li>
+<li><b>Export as text</b> - export the <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> as a text file</li>
+<li><b>Import text</b> - import a text file tasklist exported with <b>Export as text</b></li>
+<li><b>Transfer task</b> (<i>Ctrl+T</i>) - transfer the selected <a href="Glossary_Task.html" title="Glossary:Task">task</a> to another <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a>. First time you transfer a <a href="Glossary_Task.html" title="Glossary:Task">task</a>, SuperMemo will ask you to select a new <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> from the <b>Tasklist</b> combo box. Next time, SuperMemo will ask if the <a href="Glossary_Task.html" title="Glossary:Task">task</a> should be transferred to the <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> that was the last target of a task transfer</li>
+<li><b>Transfer tasklist</b> - transfer the entire <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> to another tasklist (for the purpose of tasklist merging)</li>
+<li><b>Verify tasklist</b> - verify the integrity of the <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a></li></ul></li>
+<li><b>Close</b> (<i>Esc</i>) - close the tasklist manager</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Example:_Creating_a_shopping_list">Example: Creating a shopping list</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=4" title="Edit section: Example: Creating a shopping list"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=4" title="Edit section's source code: Example: Creating a shopping list"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If you plan to use more than one <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> in one <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>, you should also learn about using <a href="Concepts.html" title="Concepts">concepts</a>. Here are the steps to keep your shopping list in SuperMemo (as a separate <a href="Glossary_Concept_group.html" title="Glossary:Concept group">concept group</a>): 
+</p>
+<ol><li>Choose <b><a href="File_menu.html" title="File menu">File</a> : <a href="File_menu.html#New_collection" title="File menu">New collection</a></b> to create a new <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. Name it <i>Shopping</i></li>
+<li>Choose <b><a href="Edit_menu.html" title="Edit menu">Edit</a> : <a href="Edit_menu.html#Create_a_tasklist" title="Edit menu">Create a tasklist</a></b></li>
+<li>Name your <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> (e.g. <i>Shopping</i>) and press <b>OK</b>. The new <a href="Glossary_Concept.html" title="Glossary:Concept">concept</a>, which is going to store your <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a>, will be appended as a <a href="Glossary_Child.html" title="Glossary:Child">child</a> of the collection <a href="Glossary_Root_node.html" title="Glossary:Root node">root</a></li>
+<li>Note that at this point your current <a href="Glossary_Concept_group.html" title="Glossary:Concept group">concept group</a> is <i>Shopping</i> and your current <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> is <i>Shopping</i>.</li>
+<li>Press <i>F4</i> to open the tasklist manager</li>
+<li>Choose <b>Add task</b> (<i>Alt+F1</i>) to add your first item on the shopping list</li>
+<li>Type <i>New computer</i> in the <b>Description</b> field</li>
+<li>Type <i>30</i> in the <b>Value</b> field. Let us assume that your new computer will save you 30 minutes per day on average</li>
+<li>Type <i>1.5</i> in the <b>Time</b> field. We will assume that your computer will cost you $1500</li>
+<li>Press <i>Enter</i> and note that the <b>Priority</b> field is now set to 20. As <code>priority=value/time</code>, you will know that every thousand dollars spent on your new computer will earn you 20 minutes per day. Note also that strangely we assigned time to value and value (price) to time. This is to express the fact that the interpretation of the <b>Value</b> field is as profit while the interpretation of the <b>Time</b> field is as cost</li>
+<li>Add more items that you want to purchase with <b>Add task</b> and sort the list with <b>Sort tasks</b></li></ol>
+<p>If this is your first experience with the approach based on <code>priority=value/time</code>, the order of your shopping list may be a surprise! 
+</p><p>For exemplary <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklists</a> and their use, see: <a class="external text" href="http://super-memory.com/articles/tasklists.htm">Break free from work overload!</a>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Video">Video</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=5" title="Edit section: Video"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=5" title="Edit section's source code: Video"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://youtube.com/watch?v=tkIwKk8toX4">Working with tasklists</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="FAQ">FAQ</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=6" title="Edit section: FAQ"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=6" title="Edit section's source code: FAQ"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Deadlines_in_tasklists_are_not_impassable">Deadlines in tasklists are not impassable</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=7" title="Edit section: Deadlines in tasklists are not impassable"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=7" title="Edit section's source code: Deadlines in tasklists are not impassable"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">
+    {{#if: MM | <b>From:</b> MM | }}
+    {{#if: Netherlands | <br/><b>Country:</b> Netherlands | }}
+    {{#if: Monday, February 09, 2004 11:39 PM | <br/><b>Sent:</b> Monday, February 09, 2004 11:39 PM | }}
+    {{#if:  | <br/><b>Subject:</b> <span class="mail-subject"></span> | }}
+</p>
+<p><b><span id="20811-5689">Question</span></b>
+</p><p>I would like to see a possibility of giving an alarm message when the deadline of a certain task in the tasklist has been reached
+</p><p><b>Answer</b>
+</p><p>Your proposition would quarrel with the concept of a tasklist. The underlying principle is that you never do things if there are things with a higher efficiency tab (i.e. value/time). Tasklists should ideally be deadline-less. What deadlines do in the present implementation is to reduce the value of tasks before a certain moment in time. For example, if a task makes little sense before a certain date (e.g. assembling software modules before all individual components arrive), the deadline will degrade the position of the task on the tasklist. If the deadline is reached and the task still does not come top on the list, by definition, the tasks of higher priority should be executed. Naturally, some projects may be strongly time-dependent and as such not suitable for being managed via tasklists. Tasklists are primarily suitable for handling massive numbers of deadline-less and independent tasks. See also: <a href="#502-2102">Scheduling tasks with incremental reading</a>
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Estimating_task_value_is_up_to_the_user">Estimating task value is up to the user</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=8" title="Edit section: Estimating task value is up to the user"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=8" title="Edit section's source code: Estimating task value is up to the user"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">
+    {{#if: Reinhard | <b>From:</b> Reinhard | }}
+    {{#if: Germany | <br/><b>Country:</b> Germany | }}
+    {{#if: Thursday, July 26, 2001 12:06 PM | <br/><b>Sent:</b> Thursday, July 26, 2001 12:06 PM | }}
+    {{#if:  | <br/><b>Subject:</b> <span class="mail-subject"></span> | }}
+</p>
+<p><b><span id="5946-6123">Question</span></b>
+</p><p>You mention the value of tasks. How do I know how much a task is worth?
+</p><p><b>Answer</b>
+</p><p>Estimating value of tasks is entirely up to you. The simplest approach is to ask yourself a question: <i>How much would I be ready to pay for having this task done?</i> For example, how much would I be ready to pay to have this article read and processed? Value estimation is a skill that is worth developing independent of SuperMemo. Is your time valuable enough not to pick up a nickel? Or perhaps not? Is the value of comfort high enough to justify a bus fare or should you just walk two bus stops? Or perhaps the walk has an added health value? We must make similar estimations on a daily basis to function efficiently. This is why a little training with SuperMemo will probably not be wasted time
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Do_not_use_the_numbering_column_in_the_task_manager_to_double-click_tasks">Do not use the numbering column in the task manager to double-click tasks</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=9" title="Edit section: Do not use the numbering column in the task manager to double-click tasks"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=9" title="Edit section's source code: Do not use the numbering column in the task manager to double-click tasks"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">
+    {{#if: Zoran Maksimovic | <b>From:</b> Zoran Maksimovic | }}
+    {{#if: Serbia and Montenegro | <br/><b>Country:</b> Serbia and Montenegro | }}
+    {{#if: Fri, Aug 31, 2001 19:47 | <br/><b>Sent:</b> Fri, Aug 31, 2001 19:47 | }}
+    {{#if:  | <br/><b>Subject:</b> <span class="mail-subject"></span> | }}
+</p>
+<p><b><span id="6261-1449">Question</span></b>
+</p><p>Double-clicking on the number of an individual task results in opening the selected task instead of the one I have clicked on
+</p><p><b>Answer</b>
+</p><p>Yes. As the number column does not change the selection, you should rather double-click anywhere else on the task to ensure the clicked task gets opened
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Determining_tasklist_valuation_becomes_instinctive_in_time"><span id="Instinctive">Determining</span> tasklist valuation becomes instinctive in time</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=10" title="Edit section: Determining tasklist valuation becomes instinctive in time"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=10" title="Edit section's source code: Determining tasklist valuation becomes instinctive in time"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">
+    {{#if: Prof. Chris Houser | <b>From:</b> Prof. Chris Houser | }}
+    {{#if: Japan | <br/><b>Country:</b> Japan | }}
+    {{#if: March 16, 2000 | <br/><b>Sent:</b> March 16, 2000 | }}
+    {{#if:  | <br/><b>Subject:</b> <span class="mail-subject"></span> | }}
+</p>
+<p><b>Question</b>
+</p><p>In reference to <a class="external text" href="http://super-memory.com/articles/tasklists.htm">How to break free from work overload</a>: It seems to me that the greatest difficulty in the presented approach is in assigning values. For example, in case of SuperMemo features, you could value each feature as the number of email messages requesting the feature. This is comfortingly exact. But it's wildly inaccurate! I believe that Time Management authors have recognized this difficulty of pinning down exact numbers, and so recommend the A B C prioritization scheme
+</p><p><b>Answer</b>
+</p><p>The process of assigning values becomes quick and intuitive with a dose of training. If it is not accurate, it is still more accurate than the A B C scheme. For example, in choosing the value of a given feature in SuperMemo, many criteria will be taken into account with the overall intent to maximize the benefit to the user. Very often, new features are introduced without customer requests (e.g. tasklists!). Others, despite significant customer pressure, will not be included (e.g. many repetition rescheduling options have been proposed and rejected due to their potentially harmful effects on the results in learning). An average man in the street often takes similar multicriterial decisions without much effort. For example, if you would like to take a week vacation on Hawaii, you will quickly make an overall valuation of benefits and reject offers that seem too pricey. Valuating tasks, with some training, is equally automatic and straightforward
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Tasks_can_be_scheduled_on_a_specific_date">Tasks can be scheduled on a specific date</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=11" title="Edit section: Tasks can be scheduled on a specific date"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=11" title="Edit section's source code: Tasks can be scheduled on a specific date"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">
+    {{#if: hudson | <b>From:</b> hudson | }}
+    {{#if: Poland | <br/><b>Country:</b> Poland | }}
+    {{#if: Monday, October 16, 2000 10:14 PM | <br/><b>Sent:</b> Monday, October 16, 2000 10:14 PM | }}
+    {{#if:  | <br/><b>Subject:</b> <span class="mail-subject"></span> | }}
+</p>
+<p><b><span id="502-2102">Question</span></b>
+</p><p>Some tasks need to be executed on certain dates. Giving the tasks higher priority or using the deadline option may be a substitute, but this makes it impossible to see the tasks in a weekly table, etc. I would like SuperMemo to take care of this
+</p><p><b>Answer</b>
+</p><p>You can combine tasklists with <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>. Tasks can be scheduled in the learning process. If you keep tasks in a separate collection, you can also view the number of tasks scheduled on a given day or month. You can prioritize individual tasks via incremental reading, via tasklist or using both mechanisms. For example, you can use incremental reading to back up the tasklist mechanism. This way you can execute tasks down the list of priority, but still take time to review some lower priority tasks. Those selectively reviewed tasks may then have their priority upgraded, be deleted, be built upon (e.g. if tasks take part in a creative process) or simply be executed
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Reading_list">Reading list</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=12" title="Edit section: Reading list"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=12" title="Edit section's source code: Reading list"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">
+    {{#if: Luis Gustavo Neves da Silva | <b>From:</b> Luis Gustavo Neves da Silva | }}
+    {{#if: Brazil | <br/><b>Country:</b> Brazil | }}
+    {{#if: Sep 17, 1999 | <br/><b>Sent:</b> Sep 17, 1999 | }}
+    {{#if:  | <br/><b>Subject:</b> <span class="mail-subject"></span> | }}
+</p>
+<p><b>Question</b>
+</p><p>What is the difference between a reading list and a tasklist?
+</p><p><b>Answer</b>
+</p><p>Reading list is a special case of a tasklist. All tasklists are sorted sets of tasks. Each task is composed of: title/description, priority and task body. In reading list, the body of the task has a form of a single article (e.g. <a class="external text" href="http://super-memory.com/articles/read.htm">imported from the Internet</a>). You can use tasklist in the <a class="external text" href="http://super-memory.com/articles/tasklists.htm">management of to-do lists</a>. A reading list is your prioritized to-do sequence of most important articles you want to read. However, with the advent of <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>, the role of reading lists is declining. <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">Incremental reading</a> eliminates the greatest weakness of reading lists: difficulty in estimating the value of articles before actually reading them. <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">Incremental reading</a> makes it possible to continually update article valuations as reading progresses
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Virtual_knowledge_market_can_help_you_with_tasklists">Virtual knowledge market can help you with tasklists</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=13" title="Edit section: Virtual knowledge market can help you with tasklists"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=13" title="Edit section's source code: Virtual knowledge market can help you with tasklists"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">
+    {{#if: Reinhard K. Koehler (neusob) | <b>From:</b> Reinhard K. Koehler (neusob) | }}
+    {{#if: Germany | <br/><b>Country:</b> Germany | }}
+    {{#if: Saturday, August 11, 2001 1:06 PM | <br/><b>Sent:</b> Saturday, August 11, 2001 1:06 PM | }}
+    {{#if:  | <br/><b>Subject:</b> <span class="mail-subject"></span> | }}
+</p>
+<p><b><span id="6534-1004">Question</span></b>
+</p><p>You suggest that tasklist valuations can be used to prioritize material for learning. But for categorizing the material in a exam there is no market! So how do I evaluate the prices?
+</p><p><b>Answer</b>
+</p><p>You can create a virtual market in your mind. Imagine that you use your spending power for shopping for knowledge. You go to individual shops offering "<i>Biology at $X</i>" or "<i>Mathematics at $Y</i>". You must answer the question: "<i>How much money would I be ready to pay for instantly memorizing this piece of learning material?</i>" Would you pay $100,000 for a 5-page article on cancer? Or would it rather only be $0.1? In most cases the answer will fall in-between. With time you will hone your valuation skills and assign values effortlessly. Clearly, one buyer is enough to make a market. Virtual knowledge sellers will adapt prices to your demand. The demand is up to you. It is determined by your spending power and your need for new knowledge
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Deadlines_in_tasklists_are_measured_in_real_time">Deadlines in tasklists are measured in real time</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=14" title="Edit section: Deadlines in tasklists are measured in real time"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=14" title="Edit section's source code: Deadlines in tasklists are measured in real time"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">
+    {{#if: P.W. | <b>From:</b> P.W. | }}
+    {{#if: Poland | <br/><b>Country:</b> Poland | }}
+    {{#if: Apr 24, 2002 | <br/><b>Sent:</b> Apr 24, 2002 | }}
+    {{#if:  | <br/><b>Subject:</b> <span class="mail-subject"></span> | }}
+</p>
+<p><b>Question</b>
+</p><p>Why don't I get the priority halved in tasklists if I set the deadline half-time to today?
+</p><p><b>Answer</b>
+</p><p>Unlike the learning process, deadlines in tasklists are measured by your system time. If you open the same task again to inspect its priority a few seconds after setting the deadline, the priority will already have changed. In other words, the deadlined task priority is changing all the time as your system clock ticks
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Tasklist_should_hold_all_your_ideas_and_inspirations">Tasklist should hold all your ideas and inspirations</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=15" title="Edit section: Tasklist should hold all your ideas and inspirations"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=15" title="Edit section's source code: Tasklist should hold all your ideas and inspirations"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">
+    {{#if: ZM | <b>From:</b> ZM | }}
+    {{#if:  | <br/><b>Country:</b>  | }}
+    {{#if: Sat, Jan 19, 2002 10:00 | <br/><b>Sent:</b> Sat, Jan 19, 2002 10:00 | }}
+    {{#if:  | <br/><b>Subject:</b> <span class="mail-subject"></span> | }}
+</p>
+<p><b>Question</b>
+</p><p>Does it make sense to put on tasklists things that are not feasible in a near future?
+</p><p><b>Answer</b>
+</p><p>Yes. You never know how your priorities change, how feasibilities change, etc. You never know if and when the task becomes feasible or inspirational. The only cost of a task on a tasklist is that you may occasionally see it when randomly reviewing valuations. Otherwise, the idea of tasklists is to put <b>all your ideas and inventions</b> there and just estimate the value and time as accurately as possible. The main value of tasklists is that you do not have to come back with your mind to lower priority tasks unless you choose so. At the same time, you never lose a record of your creative effort. The length of the tasklist does not matter. It may be a hundred times longer than your execution capacity. The longer it is, the better it testifies to your creativity
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610111251
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.076 seconds
+Real time usage: 0.085 seconds
+Preprocessor visited node count: 401/1000000
+Post‐expand include size: 3687/2097152 bytes
+Template argument size: 1231/2097152 bytes
+Highest expansion depth: 5/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   20.654      1 -total
+ 74.20%   15.326      9 Template:Mail_Header
+ 22.50%    4.648      1 File:Tasklist.jpg
+ 10.83%    2.236      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:148:|#|:idhash:canonical and timestamp 20260610111251 and revision id 12154. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducing_Tasklist_manager"><span class="tocnumber">1</span> <span class="toctext">任务列表管理器简介</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Tasklist_manager_toolbar"><span class="tocnumber">1.1</span> <span class="toctext">任务列表管理器工具栏</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Tasklist_manager_menu"><span class="tocnumber">1.2</span> <span class="toctext">任务列表管理器菜单</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Example:_Creating_a_shopping_list"><span class="tocnumber">1.3</span> <span class="toctext">示例：创建购物清单</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Video"><span class="tocnumber">2</span> <span class="toctext">视频</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#FAQ"><span class="tocnumber">3</span> <span class="toctext">常见问题解答</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#Deadlines_in_tasklists_are_not_impassable"><span class="tocnumber">3.1</span> <span class="toctext">任务列表中的最后期限并非不可逾越</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Estimating_task_value_is_up_to_the_user"><span class="tocnumber">3.2</span> <span class="toctext">估计任务价值由用户决定</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Do_not_use_the_numbering_column_in_the_task_manager_to_double-click_tasks"><span class="tocnumber">3.3</span> <span class="toctext">不要使用任务管理器中的编号列来双击任务</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Determining_tasklist_valuation_becomes_instinctive_in_time"><span class="tocnumber">3.4</span> <span class="toctext"><span>确定</span>任务清单评估及时变得本能</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Tasks_can_be_scheduled_on_a_specific_date"><span class="tocnumber">3.5</span> <span class="toctext">任务可以安排在特定日期</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Reading_list"><span class="tocnumber">3.6</span> <span class="toctext">阅读清单</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Virtual_knowledge_market_can_help_you_with_tasklists"><span class="tocnumber">3.7</span> <span class="toctext">虚拟知识市场可以帮助您处理任务列表</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Deadlines_in_tasklists_are_measured_in_real_time"><span class="tocnumber">3.8</span> <span class="toctext">任务列表中的截止日期是实时测量的</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Tasklist_should_hold_all_your_ideas_and_inspirations"><span class="tocnumber">3.9</span> <span class="toctext">任务列表应该包含您所有的想法和灵感</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Introducing_Tasklist_manager">任务列表管理器简介</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=1" title="Edit section: Introducing Tasklist manager"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=1" title="Edit section's source code: Introducing Tasklist manager"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><i>任务列表管理器</i>可以从<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a class="mw-redirect" href="Tasklists.html" title="Tasklists">任务清单</a></b>（例如，按<i>F4</i>) 可用于编辑、优先排序和排序<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>以及各种待办事项列表。例如，您的优先购物清单可以保存在 SuperMemo 中作为<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>。为了确保您继续进行主要投资，从收益最高的投资开始，您可以使用购买价格列出您的计划购买<b>时间</b>领域，例如每天节省的时间（以分钟为单位）<b>价值</b>。您还可以使用其他价值衡量标准。例如：购买的满意度、您愿意支付的最高价格或年度投资回报率等。这种方法将确保您永远不会在小额冲动购买上浪费时间或金钱。与<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>，您始终可以确保从最有价值的投资开始有条不紊地进行。最后但并非最不重要的一点是，<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>对于在学校或大学学习的人来说非常宝贵，因为大多数学习材料不是以电子形式呈现（例如纸质教科书）。在这种情况下，在导入 SuperMemo 之前必须优先考虑主题（例如“毕达哥拉斯定理”、“肯尼迪刺杀”等）（与<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">渐进阅读过程</a>，允许在导入后确定优先级）。例如，如果你有20分钟学习，你可以花3分钟导入<a href="Glossary_Task.html" title="Glossary:Task">任务</a>，以及 17 分钟导入学习材料（按照您的优先顺序）<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>。在导入阶段，您可以选择手动输入最重要的材料，或者只是看看是否可以找到其电子版本。</p>
+<div class="center">
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Tasklist.jpg.html" title="SuperMemo: Tasklist manager displaying the SuperMemo 18 implementation list where individual to-do tasks are sorted by their priority as determined by the ratio of the value of a given task divided by the time necessary to complete it"><img alt="SuperMemo: Tasklist manager displaying the SuperMemo 18 implementation list where individual to-do tasks are sorted by their priority as determined by the ratio of the value of a given task divided by the time necessary to complete it" class="mw-file-element" decoding="async" height="436" loading="lazy" src="https://help.supermemo.org/images/thumb/6/6b/Tasklist.jpg/589px-Tasklist.jpg" srcset="/images/thumb/6/6b/Tasklist.jpg/884px-Tasklist.jpg 1.5x, /images/thumb/6/6b/Tasklist.jpg/1178px-Tasklist.jpg 2x" width="589"/></a><figcaption>SuperMemo：任务列表管理器显示 SuperMemo 18 实施列表，其中各个待办任务按其优先级排序，优先级由给定任务的价值除以完成该任务所需的时间的比率确定</figcaption></figure>
+<blockquote>
+<p><i><b>图：</b> <b><a class="mw-selflink selflink">任务列表管理器</a></b>显示<a class="external text" href="https://help18.supermemo.org/wiki/What's_new_in_SuperMemo_18?">超级备忘录 18</a>个人待办事项的实施清单<a href="Glossary_Task.html" title="Glossary:Task">任务</a>按他们的排序<b>优先级=时间/价值</b>由给定任务的价值除以完成该任务所需的时间的比率确定。在图中，您可以看到 SuperMemo 18 中 3554 个任务的一部分<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>。</i>
+</p>
+</blockquote>
+</div>
+<p>基本操作：</p>
+<ul><li>要编辑选定字段，请单击它，输入新值，然后按<i>输入</i>。</li>
+<li>要排序<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>选择<i>Ctrl+S</i>。</li>
+<li>至<a href="Element_parameters.html" title="Element parameters">编辑参数</a>的一个<a href="Glossary_Task.html" title="Glossary:Task">任务</a>, 选择<i>Ctrl+Shift+P</i>就像你在<a href="Element_window.html" title="Element window">元素窗口</a>（或<i>Ctrl+E</i>如<b><a href="Plan.html" title="Plan">计划</a></b>）。请注意，您需要按<b>好的</b>保存参数（<i>ESC</i>将取消更改）。</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Tasklist_manager_toolbar">任务列表管理器工具栏</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=2" title="Edit section: Tasklist manager toolbar"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=2" title="Edit section's source code: Tasklist manager toolbar"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>以下是任务列表管理器工具栏上最重要的控件：</p>
+<ul><li><b>任务列表组合框</b>（<i>选项卡</i>) - 可用列表<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>。如果您选择另一个任务列表，它将显示在任务列表管理器中并可供编辑</li>
+<li><b>套装</b>- 设置当前<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>作为默认值</li>
+<li><b>菜单</b>- 任务列表管理器菜单（参见<a href="#Tasklist_manager_menu">下面</a>）</li>
+<li><b>查看</b>（<i>Ctrl+Enter</i>) - 查看所选的<a href="Glossary_Task.html" title="Glossary:Task">任务</a>在<a href="Element_window.html" title="Element window">元素窗口</a></li>
+<li><b>前往</b>（<i>Shift+Ctrl+Enter</i>) - 关闭任务列表管理器并查看所选的<a href="Glossary_Task.html" title="Glossary:Task">任务</a>在<a href="Element_window.html" title="Element window">元素窗口</a></li>
+<li><b>添加任务</b>（<i>Alt+F1</i>) - 添加一个新的<a href="Glossary_Task.html" title="Glossary:Task">任务</a>到目前的<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>（任务的默认值为0，这将其位置设置为<i>最大</i>用于确定优先级）</li>
+<li><b>删除任务</b>- 删除当前选择的<a href="Glossary_Task.html" title="Glossary:Task">任务</a></li>
+<li><b>查找任务</b>（<i>Ctrl+F</i>) - 找到一个<a href="Glossary_Task.html" title="Glossary:Task">任务</a>包含给定字符串</li>
+<li><b>对任务进行排序</b>（<i>Ctrl+S</i>) - 排序<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>按优先级</li>
+<li><b>出口</b>- 出口<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>到 HTML 文件中</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Tasklist_manager_menu">任务列表管理器菜单</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=3" title="Edit section: Tasklist manager menu"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=3" title="Edit section's source code: Tasklist manager menu"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>任务列表管理器菜单提供以下选项：</p>
+<ul><li><b>查看</b>（<i>Ctrl+Enter</i>) - 查看所选的<a href="Glossary_Task.html" title="Glossary:Task">任务</a>在<a href="Element_window.html" title="Element window">元素窗口</a></li>
+<li><b>前往</b>（<i>Shift+Ctrl+Enter</i>) - 关闭任务列表管理器并查看所选的<a href="Glossary_Task.html" title="Glossary:Task">任务</a>在<a href="Element_window.html" title="Element window">元素窗口</a></li>
+<li><b>取消任务</b>（<i>Ctrl+D</i>)--<a href="Glossary_Dismiss.html" title="Glossary:Dismiss">解雇</a>所选择的<a href="Glossary_Task.html" title="Glossary:Task">任务</a></li>
+<li><b>记住任务</b>（<i>Ctrl+M</i>) - 介绍所选的<a href="Glossary_Task.html" title="Glossary:Task">任务</a>进入学习过程</li>
+<li><b>编辑参数</b>（<i>Shift+Ctrl+P</i>或<i>Ctrl+E</i>) - 编辑任务参数（值、时间、优先级、截止日期等）</li>
+<li><b>添加任务</b>（<i>Alt+F1</i>) - 添加一个新的<a href="Glossary_Task.html" title="Glossary:Task">任务</a>到目前的<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a></li>
+<li><b>转移任务</b>（<i>Ctrl+T</i>) - 转移当前选择的<a href="Glossary_Task.html" title="Glossary:Task">任务</a>到另一个<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a></li>
+<li><b>排序</b>（<i>Ctrl+S</i>) - 排序<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>按优先级</li>
+<li><b>查找任务</b>（<i>Ctrl+F</i>) - 找到一个<a href="Glossary_Task.html" title="Glossary:Task">任务</a>包含给定字符串</li>
+<li><b>查找下一个</b>（<i>F3</i>) - 重复上次启动的搜索<b>查找任务</b></li>
+<li><b>查找全部</b>（<i>Shift+Ctrl+F</i>) - 查找所有<a href="Glossary_Task.html" title="Glossary:Task">任务</a>在其描述中包含给定的文本</li>
+<li><b>设置为默认值</b>- 设置当前<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>作为默认任务列表</li>
+<li><b>跳跃</b>- 选择另一个<a href="Glossary_Task.html" title="Glossary:Task">任务</a>在<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>
+<ul><li><b>随机跳跃</b>（<i>F11</i>) - 跳转到随机选择的<a href="Glossary_Task.html" title="Glossary:Task">任务</a>（例如，用于快速任务列表审查）</li>
+<li><b>随机优先</b>（<i>Shift+F11</i>) - 跳转到随机<a href="Glossary_Task.html" title="Glossary:Task">任务</a>优先处理高优先级任务</li>
+<li><b>选定行</b>（<i>Ctrl+G</i>) - 跳转到任务列表管理器中的选定行</li></ul></li>
+<li><b>工具</b>
+<ul><li><b>在浏览器中打开</b>（<i>Shift+Ctrl+B</i>) - 把所有<a href="Glossary_Task.html" title="Glossary:Task">任务</a>从当前打开的<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>在<a href="Browser.html" title="Browser">浏览器</a></li>
+<li><b>导出为 HTML</b>- 导出<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>作为 HTML 文件</li>
+<li><b>导出为文本</b>- 导出<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>作为文本文件</li>
+<li><b>导入文本</b>- 导入导出的文本文件任务列表<b>导出为文本</b></li>
+<li><b>转移任务</b>（<i>Ctrl+T</i>) - 传输选定的<a href="Glossary_Task.html" title="Glossary:Task">任务</a>到另一个<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>。第一次转移<a href="Glossary_Task.html" title="Glossary:Task">任务</a>，SuperMemo 会要求你选择一个新的<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>从<b>任务清单</b>组合框。下次，SuperMemo 会询问是否<a href="Glossary_Task.html" title="Glossary:Task">任务</a>应转移至<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>这是任务转移的最后一个目标</li>
+<li><b>转移任务清单</b>- 转移整个<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>到另一个任务列表（出于任务列表合并的目的）</li>
+<li><b>验证任务列表</b>- 验证完整性<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a></li></ul></li>
+<li><b>关闭</b>（<i>ESC</i>) - 关闭任务列表管理器</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Example:_Creating_a_shopping_list">示例：创建购物清单</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=4" title="Edit section: Example: Creating a shopping list"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=4" title="Edit section's source code: Example: Creating a shopping list"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果您打算使用多个<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>合而为一<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>，您还应该学习如何使用<a href="Concepts.html" title="Concepts">概念</a>。以下是将您的购物清单保存在 SuperMemo 中的步骤（作为单独的<a href="Glossary_Concept_group.html" title="Glossary:Concept group">概念组</a>）：</p>
+<ol><li>选择<b><a href="File_menu.html" title="File menu">文件</a> :<a href="File_menu.html#New_collection" title="File menu">新系列</a></b>创建一个新的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>。命名它<i>购物</i></li>
+<li>选择<b><a href="Edit_menu.html" title="Edit menu">编辑</a> :<a href="Edit_menu.html#Create_a_tasklist" title="Edit menu">创建任务列表</a></b></li>
+<li>命名你的<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>（例如<i>购物</i>）并按<b>好的</b>。新的<a href="Glossary_Concept.html" title="Glossary:Concept">概念</a>，这将存储你的<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>，将被附加为<a href="Glossary_Child.html" title="Glossary:Child">孩子</a>集合的<a href="Glossary_Root_node.html" title="Glossary:Root node">根</a></li>
+<li>请注意，此时您当前的<a href="Glossary_Concept_group.html" title="Glossary:Concept group">概念组</a>是<i>购物</i>和你当前的<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>是<i>购物</i>。</li>
+<li>新闻<i>F4</i>打开任务列表管理器</li>
+<li>选择<b>添加任务</b>（<i>Alt+F1</i>) 将您的第一个商品添加到购物清单上</li>
+<li>类型<i>新电脑</i>在<b>描述</b>领域</li>
+<li>类型<i>30</i>在<b>价值</b>场地。假设您的新计算机平均每天可以节省 30 分钟</li>
+<li>类型<i>1.5</i>在<b>时间</b>场。我们假设您的计算机将花费您 1500 美元</li>
+<li>新闻<i>输入</i>并注意<b>优先级</b>字段现在设置为 20。<code>priority=value/time</code>，您就会知道，在新计算机上花费的每 1000 美元将为您每天赚取 20 分钟的时间。另请注意，奇怪的是，我们将时间分配给价值，将价值（价格）分配给时间。这是为了表达以下事实：<b>价值</b>场是利润，而解释<b>时间</b>字段作为成本</li>
+<li>添加更多您想购买的商品<b>添加任务</b>并对列表进行排序<b>对任务进行排序</b></li></ol>
+<p>如果这是您第一次体验基于<code>priority=value/time</code>，你的购物清单的顺序可能会给你带来惊喜！</p><p>作为典范<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>及其用途，请参阅：<a class="external text" href="http://super-memory.com/articles/tasklists.htm">摆脱超负荷的工作！</a>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Video">视频</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=5" title="Edit section: Video"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=5" title="Edit section's source code: Video"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://youtube.com/watch?v=tkIwKk8toX4">使用任务列表</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="FAQ">常见问题解答</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=6" title="Edit section: FAQ"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=6" title="Edit section's source code: FAQ"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Deadlines_in_tasklists_are_not_impassable">任务列表中的最后期限并非不可逾越</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=7" title="Edit section: Deadlines in tasklists are not impassable"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=7" title="Edit section's source code: Deadlines in tasklists are not impassable"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">{{#if：MM |<b>来自：</b>MM | }}
+    {{#if：荷兰 |<br/><b>国家：</b>荷兰 | }}
+    {{#if：2004 年 2 月 9 日星期一晚上 11:39 |<br/><b>发送：</b>2004 年 2 月 9 日星期一晚上 11:39 | }}
+    {{#如果：|<br/><b>主题：</b> <span class="mail-subject"></span>| }}</p>
+<p><b><span id="20811-5689">问题</span></b>
+</p><p>我希望看到当任务列表中某个任务的截止日期已到时发出警报消息的可能性</p><p><b>回答</b>
+</p><p>你的提议会与任务列表的概念发生冲突。基本原则是，如果存在具有更高效率选项卡（即价值/时间）的事情，您永远不会做事情。理想情况下，任务列表应该没有截止日期。在当前的实现中，截止日期的作用是降低某个时间点之前任务的价值。例如，如果某项任务在某个日期之前没有什么意义（例如，在所有单独组件到达之前组装软件模块），则截止日期将降低该任务在任务列表上的位置。如果到了最后期限，任务仍然没有排在列表的首位，根据定义，应该执行更高优先级的任务。当然，某些项目可能具有很强的时间依赖性，因此不适合通过任务列表进行管理。任务列表主要适合处理大量无期限且独立的任务。另请参阅：<a href="#502-2102">通过增量阅读来安排任务</a>
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Estimating_task_value_is_up_to_the_user">估计任务价值由用户决定</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=8" title="Edit section: Estimating task value is up to the user"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=8" title="Edit section's source code: Estimating task value is up to the user"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">{{#if：莱因哈德 |<b>来自：</b>莱因哈德 | }}
+    {{#if：德国 |<br/><b>国家：</b>德国 | }}
+    {{#if：2001 年 7 月 26 日星期四下午 12:06 |<br/><b>发送：</b>2001 年 7 月 26 日星期四中午 12:06 | }}
+    {{#如果：|<br/><b>主题：</b> <span class="mail-subject"></span>| }}</p>
+<p><b><span id="5946-6123">问题</span></b>
+</p><p>你提到了任务的价值。我如何知道一项任务的价值是多少？</p><p><b>回答</b>
+</p><p>估计任务的价值完全取决于您。最简单的方法是问自己一个问题：<i>为了完成这项任务，我准备支付多少钱？</i>例如，我准备支付多少钱来阅读和处理这篇文章？价值评估是一项值得独立于 SuperMemo 开发的技能。你的时间是否宝贵到不值得去捡一分钱？或者也许不是？舒适度是否足够高，足以证明公交车票价是合理的，还是您应该步行两个公交车站？或者步行可能具有额外的健康价值？我们必须每天进行类似的估计才能有效运作。这就是为什么用 SuperMemo 进行一点训练可能不会浪费时间</p>
+<div class="mw-heading mw-heading3"><h3 id="Do_not_use_the_numbering_column_in_the_task_manager_to_double-click_tasks">不要使用任务管理器中的编号列来双击任务</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=9" title="Edit section: Do not use the numbering column in the task manager to double-click tasks"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=9" title="Edit section's source code: Do not use the numbering column in the task manager to double-click tasks"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">{{#if：佐兰·马克西莫维奇 |<b>来自：</b>佐兰·马克西莫维奇 | }}
+    {{#if：塞尔维亚和黑山 |<br/><b>国家：</b>塞尔维亚和黑山| }}
+    {{#if：2001 年 8 月 31 日星期五 19:47 |<br/><b>发送：</b>2001 年 8 月 31 日星期五 19:47 | }}
+    {{#如果：|<br/><b>主题：</b> <span class="mail-subject"></span>| }}</p>
+<p><b><span id="6261-1449">问题</span></b>
+</p><p>双击单个任务的编号会打开所选任务，而不是我单击的任务</p><p><b>回答</b>
+</p><p>是的。由于数字列不会更改选择，因此您应该双击任务上的其他任何位置以确保打开单击的任务</p>
+<div class="mw-heading mw-heading3"><h3 id="Determining_tasklist_valuation_becomes_instinctive_in_time"><span id="Instinctive">确定</span>任务清单评估及时变得本能</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=10" title="Edit section: Determining tasklist valuation becomes instinctive in time"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=10" title="Edit section's source code: Determining tasklist valuation becomes instinctive in time"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">{{#if：克里斯·豪瑟教授 |<b>来自：</b>克里斯·豪瑟教授 | }}
+    {{#if：日本|<br/><b>国家：</b>日本 | }}
+    {{#if：2000 年 3 月 16 日 |<br/><b>发送：</b>2000 年 3 月 16 日 | }}
+    {{#如果：|<br/><b>主题：</b> <span class="mail-subject"></span>| }}</p>
+<p><b>问题</b>
+</p><p>参考<a class="external text" href="http://super-memory.com/articles/tasklists.htm">如何摆脱超负荷的工作</a>：在我看来，所提出的方法中最大的困难在于分配值。例如，对于 SuperMemo 功能，您可以将每个功能的值视为请求该功能的电子邮件数量。这是令人欣慰的准确。但这非常不准确！我相信时间管理的作者已经认识到确定确切数字的困难，因此推荐 A B C 优先顺序方案</p><p><b>回答</b>
+</p><p>通过一定的训练，分配值的过程变得快速而直观。如果不准确，它仍然比 A B C 方案更准确。例如，在选择 SuperMemo 中给定功能的价值时，将考虑许多标准，总体目的是最大化用户的利益。很多时候，新功能是在没有客户请求的情况下引入的（例如任务列表！）。其他的，尽管客户压力很大，仍不会被包括在内（例如，许多重复重新安排选项已被提出，但由于它们对学习结果的潜在有害影响而被拒绝）。街上的普通人经常会毫不费力地做出类似的多标准决策。例如，如果您想去夏威夷度假一周，您会很快对福利进行总体评估，并拒绝看起来太贵的报价。通过一些训练，评估任务同样是自动且简单的</p>
+<div class="mw-heading mw-heading3"><h3 id="Tasks_can_be_scheduled_on_a_specific_date">任务可以安排在特定日期</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=11" title="Edit section: Tasks can be scheduled on a specific date"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=11" title="Edit section's source code: Tasks can be scheduled on a specific date"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">{{#if：哈德森 |<b>来自：</b>哈德逊 | }}
+    {{#if：波兰 |<br/><b>国家：</b>波兰 | }}
+    {{#if：2000 年 10 月 16 日星期一晚上 10:14 |<br/><b>发送：</b>2000 年 10 月 16 日星期一晚上 10:14 | }}
+    {{#如果：|<br/><b>主题：</b> <span class="mail-subject"></span>| }}</p>
+<p><b><span id="502-2102">问题</span></b>
+</p><p>有些任务需要在特定日期执行。给予任务更高的优先级或使用截止日期选项可能是替代方案，但这使得无法在周表等中看到任务。我希望 SuperMemo 能够处理这个问题</p><p><b>回答</b>
+</p><p>您可以将任务列表与<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>。可以在学习过程中安排任务。如果将任务保留在单独的集合中，您还可以查看给定日期或月份计划的任务数。您可以通过增量阅读、任务列表或同时使用这两种机制来确定各个任务的优先级。例如，可以使用增量读取来备份任务列表机制。这样，您可以执行优先级列表中的任务，但仍需要时间来查看一些优先级较低的任务。然后，这些选择性审查的任务的优先级可能会升级、删除、构建（例如，如果任务参与创意过程）或简单地执行</p>
+<div class="mw-heading mw-heading3"><h3 id="Reading_list">阅读清单</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=12" title="Edit section: Reading list"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=12" title="Edit section's source code: Reading list"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">{{#if：路易斯·古斯塔沃·内维斯·达席尔瓦 |<b>来自：</b>路易斯·古斯塔沃·内维斯·达席尔瓦 | 路易斯·古斯塔沃·内维斯·达席尔瓦}}
+    {{#if：巴西 |<br/><b>国家：</b>巴西 | }}
+    {{#if：1999 年 9 月 17 日 |<br/><b>发送：</b>九月 17, 1999 | }}
+    {{#如果：|<br/><b>主题：</b> <span class="mail-subject"></span>| }}</p>
+<p><b>问题</b>
+</p><p>阅读列表和任务列表有什么区别？</p><p><b>回答</b>
+</p><p>阅读列表是任务列表的特例。所有任务列表都是经过排序的任务集。每个任务由以下部分组成：标题/描述、优先级和任务正文。在阅读列表中，任务正文采用单篇文章的形式（例如<a class="external text" href="http://super-memory.com/articles/read.htm">从互联网导入</a>）。您可以使用任务列表中的<a class="external text" href="http://super-memory.com/articles/tasklists.htm">待办事项列表管理</a>。阅读列表是您想要阅读的最重要文章的优先待办事项序列。然而，随着<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>，阅读清单的作用正在下降。<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>消除了阅读列表的最大弱点：在实际阅读文章之前难以估计文章的价值。<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>使得随着阅读的进展不断更新文章估值成为可能</p>
+<div class="mw-heading mw-heading3"><h3 id="Virtual_knowledge_market_can_help_you_with_tasklists">虚拟知识市场可以帮助您处理任务列表</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=13" title="Edit section: Virtual knowledge market can help you with tasklists"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=13" title="Edit section's source code: Virtual knowledge market can help you with tasklists"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">{{#if：Reinhard K. Koehler (neusob) |<b>来自：</b>莱因哈德·克勒 (Reinhard K. Koehler) (neusob) | }}
+    {{#if：德国 |<br/><b>国家：</b>德国 | }}
+    {{#if：2001 年 8 月 11 日星期六下午 1:06 |<br/><b>发送：</b>2001 年 8 月 11 日星期六下午 1:06 | }}
+    {{#如果：|<br/><b>主题：</b> <span class="mail-subject"></span>| }}</p>
+<p><b><span id="6534-1004">问题</span></b>
+</p><p>您建议可以使用任务列表评估来确定学习材料的优先顺序。但对于考试中的材料进行分类是没有市场的！那么如何评估价格呢？</p><p><b>回答</b>
+</p><p>您可以在脑海中创建一个虚拟市场。想象一下，您用自己的消费能力购买知识。你去个别商店提供“<i>生物学 $X</i>“或”<i>数学$Y</i>”。你必须回答这个问题：“<i>为了立即记住这篇学习材料，我准备花多少钱？</i>“您愿意花 10 万美元购买一篇 5 页的癌症文章吗？或者只需要 0.1 美元？在大多数情况下，答案将介于两者之间。随着时间的推移，您将磨练您的评估技能并毫不费力地分配价值。显然，一个买家就足以创造一个市场。虚拟知识卖家将根据您的需求调整价格。需求取决于你。由你的消费能力和你对新知识的需求决定</p>
+<div class="mw-heading mw-heading3"><h3 id="Deadlines_in_tasklists_are_measured_in_real_time">任务列表中的截止日期是实时测量的</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=14" title="Edit section: Deadlines in tasklists are measured in real time"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=14" title="Edit section's source code: Deadlines in tasklists are measured in real time"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">{{#if：P.W. |<b>来自：</b>P.W. | }}
+    {{#if：波兰 |<br/><b>国家：</b>波兰 | }}
+    {{#if：2002 年 4 月 24 日 |<br/><b>发送：</b>2002 年 4 月 24 日 | }}
+    {{#如果：|<br/><b>主题：</b> <span class="mail-subject"></span>| }}</p>
+<p><b>问题</b>
+</p><p>如果我将截止日期中场时间设置为今天，为什么任务列表中的优先级不会减半？</p><p><b>回答</b>
+</p><p>与学习过程不同，任务列表中的截止日期是根据系统时间来衡量的。如果您在设置截止日期后几秒钟再次打开同一任务来检查其优先级，则优先级将已经更改。换句话说，随着系统时钟的滴答声，截止日期的任务优先级一直在变化</p>
+<div class="mw-heading mw-heading3"><h3 id="Tasklist_should_hold_all_your_ideas_and_inspirations">任务列表应该包含您所有的想法和灵感</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;veaction=edit&amp;section=15" title="Edit section: Tasklist should hold all your ideas and inspirations"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Tasklist_manager&amp;action=edit&amp;section=15" title="Edit section's source code: Tasklist should hold all your ideas and inspirations"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p class="mail-header">{{#if：ZM |<b>来自：</b>ZM | }}
+    {{#如果：|<br/><b>国家：</b>| }}
+    {{#if：2002 年 1 月 19 日星期六 10:00 |<br/><b>发送：</b>2002 年 1 月 19 日星期六 10:00 | }}
+    {{#如果：|<br/><b>主题：</b> <span class="mail-subject"></span>| }}</p>
+<p><b>问题</b>
+</p><p>将在不久的将来不可行的事情放在任务清单上是否有意义？</p><p><b>回答</b>
+</p><p>是的。你永远不知道你的优先事项如何变化，可行性如何变化，等等。你永远不知道任务是否以及何时变得可行或鼓舞人心。任务列表上的任务的唯一成本是您在随机查看评估时偶尔会看到它。否则，任务列表的想法就是把<b>你所有的想法和发明</b>在那里，尽可能准确地估计价值和时间。任务列表的主要价值在于，除非您选择这样做，否则您不必重新考虑较低优先级的任务。同时，您永远不会丢失您的创造性努力的记录。任务列表的长度并不重要。它可能比你的执行能力长一百倍。越长，越能证明你的创造力</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610111251
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.076 seconds
+Real time usage: 0.085 seconds
+Preprocessor visited node count: 401/1000000
+Post‐expand include size: 3687/2097152 bytes
+Template argument size: 1231/2097152 bytes
+Highest expansion depth: 5/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   20.654      1 -total
+ 74.20%   15.326      9 Template:Mail_Header
+ 22.50%    4.648      1 File:Tasklist.jpg
+ 10.83%    2.236      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:148:|#|:idhash:canonical and timestamp 20260610111251 and revision id 12154. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Toolbar dock — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Toolbar_dock" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><b>Deprecated page</b>
+</p><p>There is no toolbar dock as of SuperMemo 18. The toolbars can now be found at the bottom of the <a href="Element_window.html" title="Element window">element window</a>. They are not dockable and they cannot float. This is how users wanted it.
+</p><p>This picture is now a memory from SuperMemo 8 through SuperMemo 17:
+</p>
+<figure class="mw-default-size mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Toolbar_dock.jpg.html" title="SuperMemo: Main menu and Toolbar dock"><img alt="SuperMemo: Main menu and Toolbar dock" class="mw-file-element" decoding="async" height="246" loading="lazy" src="https://help.supermemo.org/images/f/ff/Toolbar_dock.jpg" width="803"/></a><figcaption>SuperMemo: Main menu and Toolbar dock</figcaption></figure>
+<p>The toolbars moved to the element window:
+</p>
+<ul><li><a href="Tools_toolbar.html" title="Tools toolbar"> <b>Tools</b></a> - toolbar with speed-buttons that provide one-click access to the most frequently used operations in SuperMemo. This toolbar also hosts a combo-box used to change the current <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a>. <i>In the picture, the current tasklist is "Tasks"</i></li>
+<li><a href="Compose_toolbar.html" title="Compose toolbar"> <b>Compose</b></a> - toolbar with buttons that you will need to build your <a href="Glossary_Element.html" title="Glossary:Element">elements</a> by adding <a href="Glossary_Component.html" title="Glossary:Component">components</a> of different type (e.g. text, sound, image, HTML, etc.) and with different properties (e.g. font, color, transparency, sound file, etc.)</li>
+<li><a href="Edit_toolbar.html" title="Edit toolbar"> <b>Format</b></a> - toolbar with operations that you will need to edit <a href="Using_text_components.html" title="Using text components">HTML and rich text components</a> (fonts, alignment, bullets, etc.) as well as some other editing options such as: copy <a href="Glossary_Element.html" title="Glossary:Element">element</a>, paste element, <a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">editing</a> and <a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">dragging</a> modes, etc.</li>
+<li><a href="Read_toolbar.html" title="Read toolbar"> <b>Read</b></a> - toolbar with options used in <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a></li>
+<li><a href="Alarm_toolbar.html" title="Alarm toolbar"><b>Alarm</b></a> - toolbar with an alarm timer and stop-watch</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111300
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.031 seconds
+Real time usage: 0.033 seconds
+Preprocessor visited node count: 1/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 1/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:52:|#|:idhash:canonical and timestamp 20260610111300 and revision id 11479. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><b>已弃用的页面</b>
+</p><p>从 SuperMemo 18 开始，没有工具栏停靠。工具栏现在可以在<a href="Element_window.html" title="Element window">元素窗口</a>。它们不可停靠，也不能漂浮。这就是用户想要的。</p><p>这张图片现在是 SuperMemo 8 到 SuperMemo 17 的记忆：</p>
+<figure class="mw-default-size mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Toolbar_dock.jpg.html" title="SuperMemo: Main menu and Toolbar dock"><img alt="SuperMemo: Main menu and Toolbar dock" class="mw-file-element" decoding="async" height="246" loading="lazy" src="https://help.supermemo.org/images/f/ff/Toolbar_dock.jpg" width="803"/></a><figcaption>SuperMemo：主菜单和工具栏停靠栏</figcaption></figure>
+<p>工具栏移至元素窗口：</p>
+<ul><li><a href="Tools_toolbar.html" title="Tools toolbar"> <b>工具</b></a>- 带有快速按钮的工具栏，可一键访问 SuperMemo 中最常用的操作。该工具栏还包含一个组合框，用于更改当前<a href="Glossary_Tasklist.html" title="Glossary:Tasklist">任务列表</a>。<i>图中当前任务列表为“Tasks”</i></li>
+<li><a href="Compose_toolbar.html" title="Compose toolbar"> <b>撰写</b></a>- 带有按钮的工具栏，您需要构建您的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>通过添加<a href="Glossary_Component.html" title="Glossary:Component">组件</a>不同类型（例如文本、声音、图像、HTML 等）和不同属性（例如字体、颜色、透明度、声音文件等）</li>
+<li><a href="Edit_toolbar.html" title="Edit toolbar"> <b>格式</b></a>- 包含您需要编辑的操作的工具栏<a href="Using_text_components.html" title="Using text components">HTML 和富文本组件</a>（字体、对齐方式、项目符号等）以及其他一些编辑选项，例如：复制<a href="Glossary_Element.html" title="Glossary:Element">元素</a>, 粘贴元素,<a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">编辑</a>和<a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">拖拽</a>模式等</li>
+<li><a href="Read_toolbar.html" title="Read toolbar"> <b>阅读</b></a>- 带有选项的工具栏<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a></li>
+<li><a href="Alarm_toolbar.html" title="Alarm toolbar"><b>报警</b></a>- 带有闹钟计时器和秒表的工具栏</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111300
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.031 seconds
+Real time usage: 0.033 seconds
+Preprocessor visited node count: 1/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 1/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:52:|#|:idhash:canonical and timestamp 20260610111300 and revision id 11479. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

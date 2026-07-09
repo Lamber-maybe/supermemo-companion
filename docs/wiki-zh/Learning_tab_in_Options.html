@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Learning tab in Options — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Learning_tab_in_Options" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p>The <b>Learning</b> tab in <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Options.html" title="Options">Options</a></b> provides options affecting the way you learn: 
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Options_learning.jpg.html" title="SuperMemo: Toolkit : Options : Learning tab"><img alt="SuperMemo: Toolkit : Options : Learning tab" class="mw-file-element" decoding="async" height="500" loading="lazy" src="https://help.supermemo.org/images/thumb/9/93/Options_learning.jpg/800px-Options_learning.jpg" srcset="/images/9/93/Options_learning.jpg 1.5x" width="800"/></a><figcaption>SuperMemo: Toolkit : Options : Learning tab</figcaption></figure>
+<p>Interpretation of individual fields: 
+</p>
+<ul><li><b><span id="Forgetting_index">Forgetting index</span></b> determines the default <a href="Glossary_Requested_forgetting_index.html" title="Glossary:Requested forgetting index">requested forgetting index</a>. Forgetting index determines the speed of learning. When you first run SuperMemo, it is set to 10%. This means that SuperMemo will tune the learning process in such a way that you will stand a 10% chance of forgetting any given <a href="Glossary_Item.html" title="Glossary:Item">item</a> at <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetition</a>. You can reduce the forgetting index to 3% at the cost of a significant slow-down of the learning process. You can also increase it up to 20% to greatly increase the <a href="Glossary_Acquisition_rate.html" title="Glossary:Acquisition rate">speed of learning</a> at the cost of <a href="Glossary_Retention.html" title="Glossary:Retention">knowledge retention</a>. Increasing the forgetting index further makes little sense as both retention and the speed of learning will decrease (you can read about it in <a class="external text" href="http://super-memory.com/articles/theory.htm">Theoretical aspects of SuperMemo</a> or see it for yourself by using <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Toolkit_menu.html#Statistics" title="Toolkit menu">Statistics</a> : Simulation</b>). All individual <a href="Glossary_Item.html" title="Glossary:Item">items</a> can have their individual forgetting index set with <b><a href="Element_menu.html#Edit" title="Element menu">Edit</a> : <a href="Element_parameters.html" title="Element parameters">Edit parameters</a></b> on the <a href="Element_menu.html" title="Element menu">element menu</a> (<code>Ctrl+Shift+P</code>). Read more: <a class="external text" href="https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo">Forgetting index</a></li>
+<li><b>Always randomize final drill</b> - scramble the sequence of <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetitions</a> in the <a href="Glossary_Final_drill.html" title="Glossary:Final drill">final drill</a> before moving to the final drill stage</li>
+<li><b><span id="Skip_final_drill">Skip final drill</span></b> - do not create the <a href="Glossary_Final_drill_queue.html" title="Glossary:Final drill queue">final drill queue</a>. <a href="Glossary_Final_drill.html" title="Glossary:Final drill">Final drill</a> must always be considered of lower priority than reviewing the <a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">outstanding material</a>. For that reason, in a heavily overloaded incremental reading process you may come to a point where your learning sessions always end with <b><a href="Postpone.html" title="Postpone">Postpone</a></b> (or start with <b><a href="Glossary_Auto-postpone.html" title="Glossary:Auto-postpone">Auto-postpone</a></b>). If this is the case, building the <a href="Glossary_Final_drill_queue.html" title="Glossary:Final drill queue">final drill queue</a> makes little sense</li>
+<li><b><span id="Midnight_clock_shift">Midnight shift</span></b> - the number of hours after midnight on which the new repetition day begins. For your convenience you should put the midnight-clock-shift value to the middle of your average night. For example, if your average sleeping hours are 23:00 - 7:00 (i.e. 11 p.m. - 7 a.m.), the middle of your night is 3 a.m. If you then set your midnight shift at 3 a.m. (slider at 3), you are least likely to be in a situation when you need to change the midnight clock shift to correctly execute <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetitions</a> belonging to a given waking day. If on occasion you come back home late at 2:30 a.m. and are still able to make <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetitions</a>, SuperMemo will behave like there was no date change at midnight. On the other hand, if you wake up at 3:30 a.m. and decide to make <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetitions</a> at that time, SuperMemo will already consider those <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetitions</a> as belonging to the new day. Midnight clock shift is extended to 16 hours for people in shift work and those who work in unusual hours (e.g. as a result of <a class="external text" href="http://super-memory.com/articles/sleep.htm">DSPS or ASPS sleep disorders</a>). The change of date will not occur until you restart SuperMemo. For that reason, you should always close SuperMemo for the night.</li>
+<li><b><a href="Algorithm_Arena.html" title="Algorithm Arena">Algorithm Arena</a> Alerts</b> - Triggers warnings when the <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> calculated by Algorithm SM-20 significantly deviates from the value proposed by the legacy Algorithm SM-15.
+<ul><li><b>Difference [%]</b> - Raises an alert when the <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> discrepancy (in percent) equals or exceeds this threshold.</li>
+<li><b>Interval [days]</b> - Sets a minimum <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> length constraint. Discrepancies on intervals shorter than this value are ignored.</li>
+<li><b>Factor</b> - Raises an alert when the <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> quotient compared to Algorithm SM-15 exceeds this limit.</li>
+<li><b>Strict check</b> - Apply strict parameters for <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> comparisons. If different algorithms propose conflicting schedules, SuperMemo will frequently interrupt to let you manually select the <a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">optimum interval</a>.</li>
+<li><b>Relaxed check</b> - Uses loose criteria so SuperMemo can automatically determine the <a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">optimum interval</a> on its own. It does this by weighing the suggestions, heavily favoring the newer SM-19 and SM-20 algorithms.</li>
+<li><b>Default check</b> - Sets a safe, balanced baseline for comparisons. You can relax these settings later once you are comfortable with the <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> weights SuperMemo picks for you.</li></ul></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111102
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.037 seconds
+Real time usage: 0.039 seconds
+Preprocessor visited node count: 4/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 1/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:19:|#|:idhash:canonical and timestamp 20260610111102 and revision id 12323. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p>的<b>学习</b>标签进入<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Options.html" title="Options">选项</a></b>提供影响您学习方式的选项：</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Options_learning.jpg.html" title="SuperMemo: Toolkit : Options : Learning tab"><img alt="SuperMemo: Toolkit : Options : Learning tab" class="mw-file-element" decoding="async" height="500" loading="lazy" src="https://help.supermemo.org/images/thumb/9/93/Options_learning.jpg/800px-Options_learning.jpg" srcset="/images/9/93/Options_learning.jpg 1.5x" width="800"/></a><figcaption>SuperMemo：工具包：选项：学习选项卡</figcaption></figure>
+<p>各个字段的解释：</p>
+<ul><li><b><span id="Forgetting_index">遗忘指数</span></b>确定默认值<a href="Glossary_Requested_forgetting_index.html" title="Glossary:Requested forgetting index">要求遗忘指数</a>。遗忘指数决定了学习的速度。当您第一次运行 SuperMemo 时，它被设置为 10%。这意味着 SuperMemo 会调整学习过程，让你有 10% 的机会忘记任何给定的内容。<a href="Glossary_Item.html" title="Glossary:Item">项目</a>在<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>。您可以将遗忘指数降低到 3%，但代价是学习过程显着减慢。您还可以将其增加至 20%，以大幅提高<a href="Glossary_Acquisition_rate.html" title="Glossary:Acquisition rate">学习速度</a>以<a href="Glossary_Retention.html" title="Glossary:Retention">知识保留</a>。进一步增加遗忘指数没有什么意义，因为记忆力和学习速度都会下降（您可以在<a class="external text" href="http://super-memory.com/articles/theory.htm">SuperMemo 的理论方面</a>或者使用以下命令亲自查看<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Toolkit_menu.html#Statistics" title="Toolkit menu">统计数据</a> ：模拟</b>）。全部个人<a href="Glossary_Item.html" title="Glossary:Item">项目</a>可以设置他们个人的遗忘指数<b><a href="Element_menu.html#Edit" title="Element menu">编辑</a> :<a href="Element_parameters.html" title="Element parameters">编辑参数</a></b>于<a href="Element_menu.html" title="Element menu">元素菜单</a>（<code>Ctrl+Shift+P</code>）。阅读更多：<a class="external text" href="https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo">遗忘指数</a></li>
+<li><b>始终随机安排最终演练</b>- 打乱顺序<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>在<a href="Glossary_Final_drill.html" title="Glossary:Final drill">最后演习</a>在进入最后的演练阶段之前</li>
+<li><b><span id="Skip_final_drill">跳过最后的练习</span></b>- 不要创建<a href="Glossary_Final_drill_queue.html" title="Glossary:Final drill queue">最终演练队列</a>。<a href="Glossary_Final_drill.html" title="Glossary:Final drill">最后演练</a>必须始终被视为比审查<a href="Glossary_Outstanding_material.html" title="Glossary:Outstanding material">优秀的材料</a>。因此，在超负荷的渐进阅读过程中，您可能会遇到这样的情况：您的学习课程总是以以下内容结束：<b><a href="Postpone.html" title="Postpone">推迟</a></b>（或从<b><a href="Glossary_Auto-postpone.html" title="Glossary:Auto-postpone">自动推迟</a></b>）。如果是这种情况，则构建<a href="Glossary_Final_drill_queue.html" title="Glossary:Final drill queue">最终演练队列</a>没有什么意义</li>
+<li><b><span id="Midnight_clock_shift">夜班</span></b>- 新的重复日开始的午夜后的小时数。为了方便起见，您应该将午夜时钟转换值设置为平均夜间的午夜。例如，如果您的平均睡眠时间为 23:00 - 7:00（即晚上 11 点 - 早上 7 点），那么您的半夜就是凌晨 3 点。如果您随后将夜班设置为凌晨 3 点（滑块位于 3），则您最有可能遇到需要更改夜班以正确执行的情况<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>属于特定的醒着的一天。如果有时您凌晨 2:30 很晚才回家，但仍然可以做事<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>，SuperMemo 的行为就像午夜没有更改日期一样。另一方面，如果您在凌晨 3:30 起床并决定<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>那时，SuperMemo 已经考虑了那些<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>作为属于新的一天。对于轮班工作人员和非正常时间工作人员（例如，由于<a class="external text" href="http://super-memory.com/articles/sleep.htm">DSPS 或 ASPS 睡眠障碍</a>）。在您重新启动 SuperMemo 之前，日期不会发生更改。因此，您应该在晚上始终关闭 SuperMemo。</li>
+<li><b><a href="Algorithm_Arena.html" title="Algorithm Arena">算法竞技场</a>警报</b>- 当以下情况时触发警告<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>由算法 SM-20 计算得出的值明显偏离传统算法 SM-15 提出的值。<ul><li><b>差异[%]</b>- 当出现以下情况时发出警报<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>差异（百分比）等于或超过此阈值。</li>
+<li><b>间隔[天]</b>- 设置最小值<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>长度约束。小于该值的间隔差异将被忽略。</li>
+<li><b>因素</b>- 当出现以下情况时发出警报<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>与算法 SM-15 相比的商超出了此限制。</li>
+<li><b>严格把关</b>- 应用严格的参数<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>比较。如果不同的算法提出冲突的时间表，SuperMemo 会频繁中断，让您手动选择<a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">最佳间隔</a>。</li>
+<li><b>轻松检查</b>- 使用宽松的标准，以便 SuperMemo 可以自动确定<a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">最佳间隔</a>靠它自己。它通过权衡建议来实现这一点，并大力支持较新的 SM-19 和 SM-20 算法。</li>
+<li><b>默认检查</b>- 设定安全、平衡的比较基线。当您对这些设置感到满意后，您可以稍后放松这些设置<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>SuperMemo 为您挑选的权重。</li></ul></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111102
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.037 seconds
+Real time usage: 0.039 seconds
+Preprocessor visited node count: 4/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 1/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:19:|#|:idhash:canonical and timestamp 20260610111102 and revision id 12323. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

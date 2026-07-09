@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What's new in SuperMemo 20? — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/What%27s_new_in_SuperMemo_20%3F" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#New_features"><span class="tocnumber">1</span> <span class="toctext">New features</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Performance"><span class="tocnumber">1.1</span> <span class="toctext">Performance</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Algorithm"><span class="tocnumber">1.2</span> <span class="toctext">Algorithm</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Imports"><span class="tocnumber">1.3</span> <span class="toctext">Imports</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#AI"><span class="tocnumber">1.4</span> <span class="toctext">AI</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Math"><span class="tocnumber">1.5</span> <span class="toctext">Math</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Styles"><span class="tocnumber">1.6</span> <span class="toctext">Styles</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Other"><span class="tocnumber">1.7</span> <span class="toctext">Other</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Improved_Algorithm_SM-19"><span class="tocnumber">2</span> <span class="toctext">Improved Algorithm SM-19</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#New_Algorithm_SM-20"><span class="tocnumber">3</span> <span class="toctext">New Algorithm SM-20</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Incremental_reading"><span class="tocnumber">4</span> <span class="toctext">Incremental reading</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Minor_improvements"><span class="tocnumber">5</span> <span class="toctext">Minor improvements</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Bugs_fixed"><span class="tocnumber">6</span> <span class="toctext">Bugs fixed</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Annoyances_fixed"><span class="tocnumber">7</span> <span class="toctext">Annoyances fixed</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Warnings"><span class="tocnumber">8</span> <span class="toctext">Warnings</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Pictures"><span class="tocnumber">9</span> <span class="toctext">Pictures</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#Interval_heatmap"><span class="tocnumber">9.1</span> <span class="toctext">Interval heatmap</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Algorithmic_metrics"><span class="tocnumber">9.2</span> <span class="toctext">Algorithmic metrics</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="New_features">New features</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=1" title="Edit section: New features"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=1" title="Edit section's source code: New features"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Performance">Performance</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=2" title="Edit section: Performance"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=2" title="Edit section's source code: Performance"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>64-bit: native Windows 11 APIs, hardened security, modern libraries, and an architecture ready for the next 20 years</li>
+<li>High‑DPI: crisp rendering, correct scaling on 4K/8K monitors, and a UI that finally matches your hardware</li>
+<li><a href="WebView_component.html" title="WebView component">WebView component</a></li>
+<li>YouTube in WebView with original YouTube references</li>
+<li>Recompiled with Delphi 13</li>
+<li><a class="mw-redirect" href="Registry.html" title="Registry">Registry</a> text file size limit increased to 4 GB (all registries, all *.rtx files)</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Algorithm">Algorithm</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=3" title="Edit section: Algorithm"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=3" title="Edit section's source code: Algorithm"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="Algorithm_Arena.html" title="Algorithm Arena">Algorithm Arena</a> for the optimized balance between five algorithms: Algorithm SM-2, SM-15, SM-19, SM-20 and <a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a> (see <a class="external text" href="https://supermemopedia.com/wiki/If_Algorithm_SM-20_is_so_strong,_why_do_we_need_an_Algorithm_Arena">why?</a>)</li>
+<li>new <a href="Glossary_Spaced_repetition.html" title="Glossary:Spaced repetition">spaced repetition</a> algorithm: <a href="Algorithm_SM-20.html" title="Algorithm SM-20">Algorithm SM-20</a></li>
+<li><a href="Glossary_Spaced_repetition.html" title="Glossary:Spaced repetition">spaced repetition</a> algorithm: <a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a> by Jarrett Ye</li>
+<li><a href="Glossary_R-Metric.html" title="Glossary:R-Metric">R-Metric</a> redefined to measure the power of algorithms in <a href="Algorithm_Arena.html" title="Algorithm Arena">Algorithm Arena</a></li>
+<li>Heatmap of weighed up optimization indications for five algorithms: SM-2, SM-15, SM-19, SM-20 and FSRS</li>
+<li>Accounting for <a class="external text" href="https://supermemo.guru/wiki/Bad_forgetting_curves">"bad" forgetting curves</a> in Algorithm SM-19 and Algorithm SM-20</li>
+<li>Algorithmic calibration curves (see: <a href="Analysis.html" title="Analysis">Analysis</a>)</li>
+<li>Active <a href="Glossary_Final_drill.html" title="Glossary:Final drill">final drill</a> (cramming for exams will not disrupt your learning process)</li>
+<li>All recall prediction optimizations use <a class="new" href="https://help.supermemo.org/index.php?title=Universal_metric&amp;action=edit&amp;redlink=1" title="Universal metric (page does not exist)">universal metric</a> as opposed to standard machine learning metrics (Brier, log-loss, etc.)</li>
+<li><b>Use</b> graphs in <b><a href="Analysis.html" title="Analysis">Analysis</a></b> to track algorithmic metrics (incl. the Arena)</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Imports">Imports</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=4" title="Edit section: Imports"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=4" title="Edit section's source code: Imports"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>PDF import in native format (for <a href="Incremental_reading.html" title="Incremental reading">incremental reading</a>)</li>
+<li>Selection import mode (import only portions of articles from the web)</li>
+<li>Full screen import mode (for intractable pages or pictures)</li>
+<li>EPub imports</li>
+<li>EML (Email) imports</li>
+<li>Improved duplicate detection during import by automatically stripping advertising and tracking parameters from URLs (e.g. UTM, gclid, fbclid, affiliate IDs)</li>
+<li>YouTube references and description retrieved via YouTube API</li>
+<li><a class="mw-redirect" href="WebView.html" title="WebView">WebView</a> makes it easy to browse the web and generate extract from pages on the web (see: <a class="external text" href="https://www.youtube.com/watch?v=Jn7ZPZNq8Rs">video</a>)</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="AI">AI</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=5" title="Edit section: AI"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=5" title="Edit section's source code: AI"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>See: <a href="Using_AI_in_SuperMemo.html" title="Using AI in SuperMemo">Using AI in SuperMemo</a>
+</p>
+<ul><li><b>AI : Explain</b> for short and speedy answer from AI (in SuperMemo)</li>
+<li><b>Explain <a href="Glossary_Extract.html" title="Glossary:Extract">extract</a></b> for extracts with a short AI explanation</li>
+<li><b>Search : AI</b> for speedy answers from Google overview AI (in the <a href="Glossary_Browser.html" title="Glossary:Browser">browser</a>)</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Math">Math</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=6" title="Edit section: Math"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=6" title="Edit section's source code: Math"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="WebView_component.html" title="WebView component">WebView component</a> makes it easy to include mathematical formulas (e.g. from Wikipedia, <a class="external text" href="https://supermemopedia.com/wiki/Using_MathJax_in_SuperMemo_20">MathJax</a>, and more)</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Styles">Styles</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=7" title="Edit section: Styles"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=7" title="Edit section's source code: Styles"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>Predefined styles for <a href="Glossary_Stylesheet.html" title="Glossary:Stylesheet">stylesheet</a> <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a></li>
+<li><b>Apply style</b> in <a class="mw-redirect" href="Commander.html" title="Commander">Commander</a></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Other">Other</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=8" title="Edit section: Other"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=8" title="Edit section's source code: Other"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>Zipped backups</li>
+<li>Three distinct image paste modes:
+<ol><li>into an image component,</li>
+<li>into HTML as a registered image, and</li>
+<li>into HTML as an unregistered image using Base64 encoding</li></ol></li>
+<li><b>Dark Mode</b> sets a dark theme, and a dark <a href="Glossary_Stylesheet.html" title="Glossary:Stylesheet">stylesheet</a> (no effect on <a href="Glossary_Template.html" title="Glossary:Template">template</a> colors)</li>
+<li><b>By Day</b> option in <a href="Plan.html" title="Plan">Plan</a> allows for long lists of slots assigned to consecutive days in the calendar</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Improved_Algorithm_SM-19">Improved Algorithm SM-19</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=9" title="Edit section: Improved Algorithm SM-19"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=9" title="Edit section's source code: Improved Algorithm SM-19"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>Improving the metric by combining the best of Algorithm SM-15 and Algorithm SM-18 for the first <a href="Glossary_Forgetting_curve.html" title="Glossary:Forgetting curve">forgetting curve</a></li>
+<li>Optimum first interval distribution can be inspected in the first forgetting curve graph in <b><a href="Analysis.html" title="Analysis">Analysis</a></b></li>
+<li>Computing a memory model for a <a href="Glossary_Subset.html" title="Glossary:Subset">subset</a></li>
+<li>Post-<a href="Glossary_Lapse.html" title="Glossary:Lapse">lapse</a> <a href="Glossary_Forgetting_curve.html" title="Glossary:Forgetting curve">forgetting curves</a> in <b><a href="Analysis.html" title="Analysis">Analysis</a></b></li>
+<li>Capping MaxA in power regression in proportion to AverageRecall to limit <a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">first optimum interval</a> to 365 days</li>
+<li>Export option for <a href="Glossary_Forgetting_curve.html" title="Glossary:Forgetting curve">forgetting curve</a> analysis</li>
+<li>Multiple metrics for comparing algorithms <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-2">SM-2</a>, <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">SM-15</a>, <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19">SM-19</a>, <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-20">SM-20</a> and <a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="New_Algorithm_SM-20">New Algorithm SM-20</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=10" title="Edit section: New Algorithm SM-20"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=10" title="Edit section's source code: New Algorithm SM-20"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>Optimized with machine learning (see: <a class="external text" href="https://api.supermemo.com">SuperMemo API</a>)</li>
+<li>Simple model with just 34 weights</li>
+<li>Stunning performance on <a class="external text" href="https://supermemo.guru/wiki/Universal_metric_for_cross-comparison_of_spaced_repetition_algorithms">universal metric</a></li></ul>
+<p>For details see: <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-20">Algorithm SM-20</a>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Incremental_reading">Incremental reading</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=11" title="Edit section: Incremental reading"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=11" title="Edit section's source code: Incremental reading"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="PDF.html" title="PDF">Incremental reading of PDF</a> files</li>
+<li>Picture extracts in PDF</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Minor_improvements">Minor improvements</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=12" title="Edit section: Minor improvements"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=12" title="Edit section's source code: Minor improvements"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>Saving last-filter <a href="Glossary_Subset.html" title="Glossary:Subset">subset</a> file</li>
+<li>The entire registry is loaded to memory before search (as opposed to chunked buffers)(64-bit version only)</li>
+<li><b><a href="Plan.html" title="Plan">Plan</a> : Activities : By day</b> can have a long list of activities chosen by modulo day of the year</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Bugs_fixed">Bugs fixed</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=13" title="Edit section: Bugs fixed"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=13" title="Edit section's source code: Bugs fixed"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>Mathematical formulas would not import from Wikipedia (using <a href="WebView_component.html" title="WebView component">WebView component</a> resolves this problem)</li>
+<li>Wrong formatting of <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a> in post-<a href="Glossary_Lapse.html" title="Glossary:Lapse">lapse</a> <a href="Glossary_Interval.html" title="Glossary:Interval">interval</a> estimates</li>
+<li>Images pasted directly into HTML components are now properly tracked in the image <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a>. Previously, these images were left behind as orphaned files in the collection's filespace when the topic was deleted or marked as <b>Done</b> (see: <a class="external text" href="https://supermemopedia.com/wiki/Images_in_HTML_remain_in_the_Elements_folder_after_Done">bug report</a>)</li>
+<li>The first repetition date record in <a href="Glossary_Item.html" title="Glossary:Item">items</a> would get lost when transferring <a href="Glossary_Element.html" title="Glossary:Element">elements</a> between <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a></li>
+<li>Lazy loading images would not show in downloaded pages</li>
+<li><code>&lt;base href&gt;</code> would not be respected in resolving URLs</li>
+<li>Images in <code>&lt;iframe&gt;</code> would not show in imported pages</li>
+<li>The <code>A</code> shortcut now correctly triggers editing of the answer in <a href="Glossary_Contents_window.html" title="Glossary:Contents window">Contents</a></li>
+<li>Resolved errors occuring during the duplication of <a href="Glossary_Concept.html" title="Glossary:Concept">concepts</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Annoyances_fixed">Annoyances fixed</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=14" title="Edit section: Annoyances fixed"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=14" title="Edit section's source code: Annoyances fixed"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>Interval choice dialog could not be cancelled (see also: <a class="external text" href="https://supermemopedia.com/wiki/How_can_I_get_rid_of_the_interval_choice_dialog%3F">How to get rid of the interval choice dialog?</a>)</li>
+<li>One key press could delete the entire activity entry in <a href="Plan.html" title="Plan">Plan</a>. Now <i>Enter</i> must precede editing (<a class="external text" href="https://supermemopedia.com/wiki/Bug:_SM20_Plan_interface_issues">not everyone is happy</a>)</li>
+<li>Yellow bar at the bottom of <a href="Statistics.html" title="Statistics">Statistics</a> for certain themes</li>
+<li>The long list of missing hints and misspelled hints collected by Alexis and Palace (thank you) was processed in one go with the help of AI</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Warnings">Warnings</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=15" title="Edit section: Warnings"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=15" title="Edit section's source code: Warnings"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>High-DPI support may make the 64-bit SuperMemo UI feel too large on lower resolution screens (4K is recommended, but 1440p or 1080p should be usable).</li>
+<li>Some users may still prefer the 32-bit application (e.g. for smaller UI elements at lower resolutions). You can download a separate 32-bit version, though its updates may lag slightly behind the main 64-bit release (download [here] xxx link to be provided when ready)</li>
+<li>SuperMemo 20 opens SuperMemo 19 <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a>, but SuperMemo 19 may struggle with SuperMemo 20 collection (e.g. due to the <a class="mw-redirect" href="WebView.html" title="WebView">WebView</a> component)</li>
+<li>RTF components are now deprecated. You can still use old <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a>, but further use will be more difficult with some options removed</li>
+<li>Some AI and YouTube options may require your own AppKey (available free from Google)</li>
+<li>Optimizing FSRS or SM20 algorithms may require access to SuperMemo.com API</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Pictures">Pictures</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=16" title="Edit section: Pictures"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=16" title="Edit section's source code: Pictures"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Interval_heatmap">Interval heatmap</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=17" title="Edit section: Interval heatmap"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=17" title="Edit section's source code: Interval heatmap"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png.html"><img class="mw-file-element" decoding="async" height="587" loading="lazy" src="https://help.supermemo.org/images/thumb/9/92/Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png/800px-Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png" srcset="/images/thumb/9/92/Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png/1200px-Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png 1.5x, /images/thumb/9/92/Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png/1600px-Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png 2x" width="800"/></a><figcaption></figcaption></figure>
+<blockquote>
+<p><i><b>Figure:</b> Only very long intervals magnify significant differences between various <a href="Spaced_repetition.html" title="Spaced repetition">spaced repetition</a> algorithms, incl. those that score very high on the <a class="new" href="https://help.supermemo.org/index.php?title=Universal_metric&amp;action=edit&amp;redlink=1" title="Universal metric (page does not exist)">universal metric</a> benchmarks (e.g. SM-19 and SM-20). In the presented example, a very easy item from <a class="new" href="https://help.supermemo.org/index.php?title=Advanced_English&amp;action=edit&amp;redlink=1" title="Advanced English (page does not exist)">Advanced English</a> achieved a very long interval of over 26 years in just 5 <a class="new" href="https://help.supermemo.org/index.php?title=Repetition&amp;action=edit&amp;redlink=1" title="Repetition (page does not exist)">repetitions</a>. The colored heatmap shows a weighted optimum with the darkest red color showing the best consensus of 32 years and 3 months. At the extreme ends of disagreement, <a class="new" href="https://help.supermemo.org/index.php?title=Algorithm_SM-2&amp;action=edit&amp;redlink=1" title="Algorithm SM-2 (page does not exist)">Algorithm SM-2</a> points to an optimum of 66 years because it is unable to sufficiently reduce its <a class="new" href="https://help.supermemo.org/index.php?title=E-Factor&amp;action=edit&amp;redlink=1" title="E-Factor (page does not exist)">E-Factor</a> in just 5 repetitions (for successive grades 4 it would still imply 2.5-fold increase in interval). Unoptimized <a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a> attempts to reconstruct the memory status using the <a class="new" href="https://help.supermemo.org/index.php?title=Three_component_model_of_memory&amp;action=edit&amp;redlink=1" title="Three component model of memory (page does not exist)">three component model of memory</a> and the <a class="new" href="https://help.supermemo.org/index.php?title=History_of_repetitions&amp;action=edit&amp;redlink=1" title="History of repetitions (page does not exist)">history of repetitions</a>. Each repetition adds to the potential error; however, its conservative 9-year interval proposition is a pretty safe bet that most users will still find as excessively long. In this particular case, optimized <a href="Algorithm_SM-20.html" title="Algorithm SM-20">Algorithm SM-20</a> provided the closest bet to the weighted optimum of 32 years, but the actual "winner" will differ from repetition to repetition. Both <a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a> and <a class="mw-redirect" href="Algorithm_SM-19.html" title="Algorithm SM-19">Algorithm SM-19</a> propose shortening the next interval; however, <a href="SuperMemo_20.html" title="SuperMemo 20">SuperMemo 20</a> disallows this (due to anti-cramming measures). The heatmap is a form of asymmetric bell-shaped distribution, and algorithmic weighing will receive microscopic nudges along the learning process depending on the <a class="new" href="https://help.supermemo.org/index.php?title=R-metric&amp;action=edit&amp;redlink=1" title="R-metric (page does not exist)">R-metric</a> scores. The black area on the left represents the previously used interval of 26 years. <b>Important!</b> Users can always override the recommendations of SuperMemo and set a shorter interval, e.g., with <code>Ctrl+Shift+R</code></i>
+</p>
+</blockquote>
+<div class="mw-heading mw-heading3"><h3 id="Algorithmic_metrics">Algorithmic metrics</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=18" title="Edit section: Algorithmic metrics"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=18" title="Edit section's source code: Algorithmic metrics"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Predicting_recall_makes_the_basis_of_Universal_Metrics_for_spaced_repetition_algorithms_(incl._SM-20_and_FSRS).png.html"><img class="mw-file-element" decoding="async" height="450" loading="lazy" src="https://help.supermemo.org/images/thumb/9/96/Predicting_recall_makes_the_basis_of_Universal_Metrics_for_spaced_repetition_algorithms_%28incl._SM-20_and_FSRS%29.png/800px-Predicting_recall_makes_the_basis_of_Universal_Metrics_for_spaced_repetition_algorithms_%28incl._SM-20_and_FSRS%29.png" srcset="/images/thumb/9/96/Predicting_recall_makes_the_basis_of_Universal_Metrics_for_spaced_repetition_algorithms_%28incl._SM-20_and_FSRS%29.png/1200px-Predicting_recall_makes_the_basis_of_Universal_Metrics_for_spaced_repetition_algorithms_%28incl._SM-20_and_FSRS%29.png 1.5x, /images/thumb/9/96/Predicting_recall_makes_the_basis_of_Universal_Metrics_for_spaced_repetition_algorithms_%28incl._SM-20_and_FSRS%29.png/1600px-Predicting_recall_makes_the_basis_of_Universal_Metrics_for_spaced_repetition_algorithms_%28incl._SM-20_and_FSRS%29.png 2x" width="800"/></a><figcaption></figcaption></figure>
+<blockquote>
+<p><i><b>Figure:</b> Universal metric is computed by cross-comparison of predicted recall in retrievability categories computed by a competing algorithm. The closer the algorithm adheres to the black diagonal, the better its performance in a particular collection. Unoptimized <a href="Algorithm_SM-20.html" title="Algorithm SM-20">Algorithm SM-20</a> and <a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a> may show substantially worse performances as compared with optimized SM-20 and FSRS</i>
+</p>
+</blockquote>
+<!-- 
+NewPP limit report
+Cached time: 20260610111345
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.051 seconds
+Real time usage: 0.056 seconds
+Preprocessor visited node count: 121/1000000
+Post‐expand include size: 4478/2097152 bytes
+Template argument size: 2149/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    6.045      1 -total
+ 71.25%    4.307      1 File:Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png
+ 28.55%    1.726      2 Template:Fig
+ 27.08%    1.637      1 File:Predicting_recall_makes_the_basis_of_Universal_Metrics_for_spaced_repetition_algorithms_(incl._SM-20_and_FSRS).png
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:725:|#|:idhash:canonical and timestamp 20260610111345 and revision id 12435. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#New_features"><span class="tocnumber">1</span> <span class="toctext">新功能</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Performance"><span class="tocnumber">1.1</span> <span class="toctext">性能</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Algorithm"><span class="tocnumber">1.2</span> <span class="toctext">算法</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Imports"><span class="tocnumber">1.3</span> <span class="toctext">进口</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#AI"><span class="tocnumber">1.4</span> <span class="toctext">人工智能</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Math"><span class="tocnumber">1.5</span> <span class="toctext">数学</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Styles"><span class="tocnumber">1.6</span> <span class="toctext">风格</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#Other"><span class="tocnumber">1.7</span> <span class="toctext">其他</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#Improved_Algorithm_SM-19"><span class="tocnumber">2</span> <span class="toctext">改进算法 SM-19</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#New_Algorithm_SM-20"><span class="tocnumber">3</span> <span class="toctext">新算法 SM-20</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Incremental_reading"><span class="tocnumber">4</span> <span class="toctext">增量阅读</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Minor_improvements"><span class="tocnumber">5</span> <span class="toctext">小改进</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Bugs_fixed"><span class="tocnumber">6</span> <span class="toctext">错误已修复</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Annoyances_fixed"><span class="tocnumber">7</span> <span class="toctext">烦恼已修复</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Warnings"><span class="tocnumber">8</span> <span class="toctext">警告</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#Pictures"><span class="tocnumber">9</span> <span class="toctext">图片</span></a>
+<ul>
+<li class="toclevel-2 tocsection-17"><a href="#Interval_heatmap"><span class="tocnumber">9.1</span> <span class="toctext">区间热图</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Algorithmic_metrics"><span class="tocnumber">9.2</span> <span class="toctext">算法指标</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="New_features">新功能</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=1" title="Edit section: New features"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=1" title="Edit section's source code: New features"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Performance">性能</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=2" title="Edit section: Performance"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=2" title="Edit section's source code: Performance"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>64 位：本机 Windows 11 API、强化的安全性、现代库以及为未来 20 年做好准备的架构</li>
+<li>高 DPI：清晰的渲染、4K/8K 显示器上的正确缩放以及最终与您的硬件匹配的 UI</li>
+<li><a href="WebView_component.html" title="WebView component">WebView组件</a></li>
+<li>WebView 中的 YouTube 以及原始 YouTube 参考</li>
+<li>用 Delphi 13 重新编译</li>
+<li><a class="mw-redirect" href="Registry.html" title="Registry">登记处</a>文本文件大小限制增加到 4 GB（所有注册表、所有 *.rtx 文件）</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Algorithm">算法</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=3" title="Edit section: Algorithm"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=3" title="Edit section's source code: Algorithm"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="Algorithm_Arena.html" title="Algorithm Arena">算法竞技场</a>用于五种算法之间的优化平衡：算法 SM-2、SM-15、SM-19、SM-20 和<a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a>（见<a class="external text" href="https://supermemopedia.com/wiki/If_Algorithm_SM-20_is_so_strong,_why_do_we_need_an_Algorithm_Arena">为什么？</a>）</li>
+<li>新的<a href="Glossary_Spaced_repetition.html" title="Glossary:Spaced repetition">间隔重复</a>算法：<a href="Algorithm_SM-20.html" title="Algorithm SM-20">算法 SM-20</a></li>
+<li><a href="Glossary_Spaced_repetition.html" title="Glossary:Spaced repetition">间隔重复</a>算法：<a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a>作者：Jarrett Ye</li>
+<li><a href="Glossary_R-Metric.html" title="Glossary:R-Metric">R-公制</a>重新定义以衡量算法的力量<a href="Algorithm_Arena.html" title="Algorithm Arena">算法竞技场</a></li>
+<li>五种算法权衡优化指示的热图：SM-2、SM-15、SM-19、SM-20 和 FSRS</li>
+<li>核算<a class="external text" href="https://supermemo.guru/wiki/Bad_forgetting_curves">“坏”遗忘曲线</a>在算法 SM-19 和算法 SM-20 中</li>
+<li>算法校准曲线（参见：<a href="Analysis.html" title="Analysis">分析</a>）</li>
+<li>活跃<a href="Glossary_Final_drill.html" title="Glossary:Final drill">最后演习</a>（临时抱佛脚的考试不会扰乱你的学习过程）</li>
+<li>所有召回预测优化均使用<a class="new" href="https://help.supermemo.org/index.php?title=Universal_metric&amp;action=edit&amp;redlink=1" title="Universal metric (page does not exist)">通用度量</a>与标准机器学习指标（Brier、对数损失等）相反</li>
+<li><b>使用</b>图中的<b><a href="Analysis.html" title="Analysis">分析</a></b>跟踪算法指标（包括竞技场）</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Imports">进口</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=4" title="Edit section: Imports"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=4" title="Edit section's source code: Imports"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>以本机格式导入 PDF（用于<a href="Incremental_reading.html" title="Incremental reading">增量阅读</a>）</li>
+<li>选择导入模式（仅导入网络文章的部分内容）</li>
+<li>全屏导入模式（适用于难以处理的页面或图片）</li>
+<li>电子书导入</li>
+<li>EML（电子邮件）导入</li>
+<li>通过自动从 URL 中剥离广告和跟踪参数（例如 UTM、gclid、fbclid、联属 ID），改进导入期间的重复检测</li>
+<li>通过 YouTube API 检索的 YouTube 参考和说明</li>
+<li><a class="mw-redirect" href="WebView.html" title="WebView">网页视图</a>可以轻松浏览网页并从网页上生成摘录（请参阅：<a class="external text" href="https://www.youtube.com/watch?v=Jn7ZPZNq8Rs">视频</a>）</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="AI">人工智能</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=5" title="Edit section: AI"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=5" title="Edit section's source code: AI"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>参见：<a href="Using_AI_in_SuperMemo.html" title="Using AI in SuperMemo">在 SuperMemo 中使用人工智能</a>
+</p>
+<ul><li><b>人工智能：解释一下</b>来自 AI 的简短而快速的回答（在 SuperMemo 中）</li>
+<li><b>解释一下<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a></b>带有简短 AI 解释的摘录</li>
+<li><b>搜索：人工智能</b>从 Google 概述 AI 中获取快速答案（在<a href="Glossary_Browser.html" title="Glossary:Browser">浏览器</a>）</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Math">数学</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=6" title="Edit section: Math"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=6" title="Edit section's source code: Math"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="WebView_component.html" title="WebView component">WebView组件</a>可以轻松包含数学公式（例如来自维基百科，<a class="external text" href="https://supermemopedia.com/wiki/Using_MathJax_in_SuperMemo_20">数学贾克斯</a>，以及更多）</li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Styles">风格</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=7" title="Edit section: Styles"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=7" title="Edit section's source code: Styles"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>预定义样式<a href="Glossary_Stylesheet.html" title="Glossary:Stylesheet">样式表</a> <a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a></li>
+<li><b>应用风格</b>在<a class="mw-redirect" href="Commander.html" title="Commander">指挥官</a></li></ul>
+<div class="mw-heading mw-heading3"><h3 id="Other">其他</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=8" title="Edit section: Other"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=8" title="Edit section's source code: Other"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>压缩备份</li>
+<li>三种不同的图像粘贴模式：<ol><li>进入图像组件，</li>
+<li>转换为 HTML 作为注册图像，并且</li>
+<li>使用 Base64 编码将其作为未注册图像转换为 HTML</li></ol></li>
+<li><b>深色模式</b>设置一个黑暗的主题，和一个黑暗的<a href="Glossary_Stylesheet.html" title="Glossary:Stylesheet">样式表</a>（不影响<a href="Glossary_Template.html" title="Glossary:Template">模板</a>颜色）</li>
+<li><b>按日</b>选项中<a href="Plan.html" title="Plan">计划</a>允许将长列表分配给日历中的连续日期</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Improved_Algorithm_SM-19">改进算法 SM-19</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=9" title="Edit section: Improved Algorithm SM-19"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=9" title="Edit section's source code: Improved Algorithm SM-19"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>首先结合算法 SM-15 和算法 SM-18 的优点来改进度量<a href="Glossary_Forgetting_curve.html" title="Glossary:Forgetting curve">遗忘曲线</a></li>
+<li>最佳第一区间分布可以在第一遗忘曲线图中检查<b><a href="Analysis.html" title="Analysis">分析</a></b></li>
+<li>计算内存模型<a href="Glossary_Subset.html" title="Glossary:Subset">子集</a></li>
+<li>后-<a href="Glossary_Lapse.html" title="Glossary:Lapse">失效</a> <a href="Glossary_Forgetting_curve.html" title="Glossary:Forgetting curve">忘记曲线</a>在<b><a href="Analysis.html" title="Analysis">分析</a></b></li>
+<li>将功率回归中的 MaxA 与 AverageRecall 成比例限制<a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">第一个最佳间隔</a>至 365 天</li>
+<li>导出选项<a href="Glossary_Forgetting_curve.html" title="Glossary:Forgetting curve">遗忘曲线</a>分析</li>
+<li>用于比较算法的多个指标<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-2">SM-2</a>,<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">SM-15</a>,<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19">SM-19</a>,<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-20">SM-20</a>和<a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="New_Algorithm_SM-20">新算法 SM-20</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=10" title="Edit section: New Algorithm SM-20"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=10" title="Edit section's source code: New Algorithm SM-20"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>通过机器学习进行优化（请参阅：<a class="external text" href="https://api.supermemo.com">超级备忘录 API</a>）</li>
+<li>只有 34 个权重的简单模型</li>
+<li>令人惊叹的性能<a class="external text" href="https://supermemo.guru/wiki/Universal_metric_for_cross-comparison_of_spaced_repetition_algorithms">通用度量</a></li></ul>
+<p>详情请参阅：<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-20">算法 SM-20</a>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Incremental_reading">增量阅读</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=11" title="Edit section: Incremental reading"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=11" title="Edit section's source code: Incremental reading"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="PDF.html" title="PDF">PDF增量阅读</a>文件</li>
+<li>PDF 中的图片摘录</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Minor_improvements">小改进</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=12" title="Edit section: Minor improvements"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=12" title="Edit section's source code: Minor improvements"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>保存最后一个过滤器<a href="Glossary_Subset.html" title="Glossary:Subset">子集</a>文件</li>
+<li>整个注册表在搜索之前加载到内存（与分块缓冲区相反）（仅限 64 位版本）</li>
+<li><b><a href="Plan.html" title="Plan">计划</a> ：活动：白天</b>可以有一长串按一年中的模日选择的活动列表</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Bugs_fixed">错误已修复</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=13" title="Edit section: Bugs fixed"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=13" title="Edit section's source code: Bugs fixed"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>数学公式不会从维基百科导入（使用<a href="WebView_component.html" title="WebView component">WebView组件</a>解决了这个问题）</li>
+<li>格式错误<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>在后<a href="Glossary_Lapse.html" title="Glossary:Lapse">失效</a> <a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>估计</li>
+<li>现在可以在图像中正确跟踪直接粘贴到 HTML 组件中的图像<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>。以前，当主题被删除或标记为时，这些图像会作为孤立文件留在集合的文件空间中<b>完成</b>（参见：<a class="external text" href="https://supermemopedia.com/wiki/Images_in_HTML_remain_in_the_Elements_folder_after_Done">错误报告</a>）</li>
+<li>第一个重复日期记录在<a href="Glossary_Item.html" title="Glossary:Item">项目</a>转移时会迷路<a href="Glossary_Element.html" title="Glossary:Element">元素</a>之间<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a></li>
+<li>延迟加载图像不会显示在下载的页面中</li>
+<li><code>&lt;base href&gt;</code>在解析 URL 时不会受到尊重</li>
+<li>图像位于<code>&lt;iframe&gt;</code>不会显示在导入的页面中</li>
+<li>的<code>A</code>快捷方式现在可以正确触发编辑答案<a href="Glossary_Contents_window.html" title="Glossary:Contents window">内容</a></li>
+<li>解决了复制过程中出现的错误<a href="Glossary_Concept.html" title="Glossary:Concept">概念</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Annoyances_fixed">烦恼已修复</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=14" title="Edit section: Annoyances fixed"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=14" title="Edit section's source code: Annoyances fixed"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>无法取消间隔选择对话框（另请参阅：<a class="external text" href="https://supermemopedia.com/wiki/How_can_I_get_rid_of_the_interval_choice_dialog%3F">如何摆脱间隔选择对话框？</a>）</li>
+<li>一键删除整个活动条目<a href="Plan.html" title="Plan">计划</a>。现在<i>输入</i>必须在编辑之前（<a class="external text" href="https://supermemopedia.com/wiki/Bug:_SM20_Plan_interface_issues">不是每个人都高兴</a>）</li>
+<li>底部的黄色条<a href="Statistics.html" title="Statistics">统计数据</a>对于某些主题</li>
+<li>Alexis 和 Palace（谢谢）收集的一长串缺失提示和拼写错误提示在 AI 的帮助下一次性处理完毕</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Warnings">警告</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=15" title="Edit section: Warnings"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=15" title="Edit section's source code: Warnings"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>高 DPI 支持可能会使 64 位 SuperMemo UI 在较低分辨率的屏幕上感觉太大（建议使用 4K，但 1440p 或 1080p 应该可用）。</li>
+<li>一些用户可能仍然更喜欢 32 位应用程序（例如，对于较低分辨率下的较小 UI 元素）。您可以下载单独的 32 位版本，但其更新可能会稍微落后于主要 64 位版本（下载[此处] xxx 链接，准备好后提供）</li>
+<li>SuperMemo 20 开启 SuperMemo 19<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>，但 SuperMemo 19 可能会与 SuperMemo 20 集合发生冲突（例如，由于<a class="mw-redirect" href="WebView.html" title="WebView">网页视图</a>组件）</li>
+<li>RTF 组件现已弃用。您仍然可以使用旧的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>，但删除一些选项后进一步使用会更加困难</li>
+<li>某些 AI 和 YouTube 选项可能需要您自己的 AppKey（可从 Google 免费获得）</li>
+<li>优化 FSRS 或 SM20 算法可能需要访问 SuperMemo.com API</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Pictures">图片</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=16" title="Edit section: Pictures"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=16" title="Edit section's source code: Pictures"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Interval_heatmap">区间热图</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=17" title="Edit section: Interval heatmap"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=17" title="Edit section's source code: Interval heatmap"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png.html"><img class="mw-file-element" decoding="async" height="587" loading="lazy" src="https://help.supermemo.org/images/thumb/9/92/Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png/800px-Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png" srcset="/images/thumb/9/92/Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png/1200px-Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png 1.5x, /images/thumb/9/92/Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png/1600px-Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png 2x" width="800"/></a><figcaption></figcaption></figure>
+<blockquote>
+<p><i><b>图：</b>只有非常长的间隔才能放大不同类型之间的显着差异<a href="Spaced_repetition.html" title="Spaced repetition">间隔重复</a>算法，包括那些在<a class="new" href="https://help.supermemo.org/index.php?title=Universal_metric&amp;action=edit&amp;redlink=1" title="Universal metric (page does not exist)">通用度量</a>基准（例如 SM-19 和 SM-20）。在所提供的示例中，一个非常简单的项目来自<a class="new" href="https://help.supermemo.org/index.php?title=Advanced_English&amp;action=edit&amp;redlink=1" title="Advanced English (page does not exist)">高级英语</a>仅用了5年时间就实现了超过26年的超长间隔<a class="new" href="https://help.supermemo.org/index.php?title=Repetition&amp;action=edit&amp;redlink=1" title="Repetition (page does not exist)">重复</a>。彩色热图显示了加权最佳值，其中最深的红色显示了 32 年零 3 个月的最佳共识。在分歧的极端情况下，<a class="new" href="https://help.supermemo.org/index.php?title=Algorithm_SM-2&amp;action=edit&amp;redlink=1" title="Algorithm SM-2 (page does not exist)">算法 SM-2</a>指出最佳时间为 66 年，因为它无法充分减少其<a class="new" href="https://help.supermemo.org/index.php?title=E-Factor&amp;action=edit&amp;redlink=1" title="E-Factor (page does not exist)">E因子</a>只需 5 次重复（对于连续的 4 年级，这仍然意味着间隔增加 2.5 倍）。未优化<a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a>尝试使用重建内存状态<a class="new" href="https://help.supermemo.org/index.php?title=Three_component_model_of_memory&amp;action=edit&amp;redlink=1" title="Three component model of memory (page does not exist)">记忆三成分模型</a>和<a class="new" href="https://help.supermemo.org/index.php?title=History_of_repetitions&amp;action=edit&amp;redlink=1" title="History of repetitions (page does not exist)">重复的历史</a>。每次重复都会增加潜在的错误；然而，其保守的 9 年间隔主张是一个相当安全的赌注，大多数用户仍然会发现它过长。在这种特殊情况下，优化<a href="Algorithm_SM-20.html" title="Algorithm SM-20">算法 SM-20</a>提供了最接近 32 年加权最佳值的赌注，但实际的“赢家”会因重复而异。两者都<a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a>和<a class="mw-redirect" href="Algorithm_SM-19.html" title="Algorithm SM-19">算法 SM-19</a>建议缩短下次间隔；然而，<a href="SuperMemo_20.html" title="SuperMemo 20">超级备忘录 20</a>不允许这样做（由于反填充措施）。热图是一种不对称钟形分布的形式，算法权重将在学习过程中受到微观推动，具体取决于<a class="new" href="https://help.supermemo.org/index.php?title=R-metric&amp;action=edit&amp;redlink=1" title="R-metric (page does not exist)">R-度量</a>分数。左边的黑色区域代表之前使用的26年间隔。<b>重要！</b>用户始终可以覆盖 SuperMemo 的建议并设置更短的间隔，例如，<code>Ctrl+Shift+R</code></i>
+</p>
+</blockquote>
+<div class="mw-heading mw-heading3"><h3 id="Algorithmic_metrics">算法指标</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;veaction=edit&amp;section=18" title="Edit section: Algorithmic metrics"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_20%3F&amp;action=edit&amp;section=18" title="Edit section's source code: Algorithmic metrics"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Predicting_recall_makes_the_basis_of_Universal_Metrics_for_spaced_repetition_algorithms_(incl._SM-20_and_FSRS).png.html"><img class="mw-file-element" decoding="async" height="450" loading="lazy" src="https://help.supermemo.org/images/thumb/9/96/Predicting_recall_makes_the_basis_of_Universal_Metrics_for_spaced_repetition_algorithms_%28incl._SM-20_and_FSRS%29.png/800px-Predicting_recall_makes_the_basis_of_Universal_Metrics_for_spaced_repetition_algorithms_%28incl._SM-20_and_FSRS%29.png" srcset="/images/thumb/9/96/Predicting_recall_makes_the_basis_of_Universal_Metrics_for_spaced_repetition_algorithms_%28incl._SM-20_and_FSRS%29.png/1200px-Predicting_recall_makes_the_basis_of_Universal_Metrics_for_spaced_repetition_algorithms_%28incl._SM-20_and_FSRS%29.png 1.5x, /images/thumb/9/96/Predicting_recall_makes_the_basis_of_Universal_Metrics_for_spaced_repetition_algorithms_%28incl._SM-20_and_FSRS%29.png/1600px-Predicting_recall_makes_the_basis_of_Universal_Metrics_for_spaced_repetition_algorithms_%28incl._SM-20_and_FSRS%29.png 2x" width="800"/></a><figcaption></figcaption></figure>
+<blockquote>
+<p><i><b>图：</b>通用度量是通过对竞争算法计算出的可检索性类别中的预测召回率进行交叉比较来计算的。算法越接近黑色对角线，其在特定集合中的性能就越好。未优化<a href="Algorithm_SM-20.html" title="Algorithm SM-20">算法 SM-20</a>和<a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a>与优化的 SM-20 和 FSRS 相比，可能表现出明显更差的性能</i>
+</p>
+</blockquote>
+<!-- 
+NewPP limit report
+Cached time: 20260610111345
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.051 seconds
+Real time usage: 0.056 seconds
+Preprocessor visited node count: 121/1000000
+Post‐expand include size: 4478/2097152 bytes
+Template argument size: 2149/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    6.045      1 -total
+ 71.25%    4.307      1 File:Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png
+ 28.55%    1.726      2 Template:Fig
+ 27.08%    1.637      1 File:Predicting_recall_makes_the_basis_of_Universal_Metrics_for_spaced_repetition_algorithms_(incl._SM-20_and_FSRS).png
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:725:|#|:idhash:canonical and timestamp 20260610111345 and revision id 12435. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

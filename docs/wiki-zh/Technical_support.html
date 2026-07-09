@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Technical support — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Technical_support" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Policy"><span class="tocnumber">1</span> <span class="toctext">Policy</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#SuperMemo_is_complex"><span class="tocnumber">2</span> <span class="toctext">SuperMemo is complex</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#How_to_get_answers?"><span class="tocnumber">3</span> <span class="toctext">How to get answers?</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Feature_request"><span class="tocnumber">4</span> <span class="toctext">Feature request</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Policy">Policy</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Technical_support&amp;veaction=edit&amp;section=1" title="Edit section: Policy"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Technical_support&amp;action=edit&amp;section=1" title="Edit section's source code: Policy"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="bs-callout bs-callout-warning">
+<p><b>Support Policy Statement</b>
+</p><p><i>All users of SuperMemo are entitled to free support via the Internet. However, we are no longer able to process all individual support queries. Please consider the documentation on the web as the primary source of support.</i>
+</p><p><i>The following types of mail messages will still be processed in the first order:</i>
+</p>
+<ul><li><i>Mail with problems that may result in loss of your investment in learning (e.g. through loss of data)</i></li>
+<li><i>Mail with grave complaints about SuperMemo not fulfilling its promise of accelerated learning</i></li></ul>
+<p><i>Independently, the following types of mail will receive high priority:</i>
+</p>
+<ul><li><i>Mail with suggestions for improving the documentation</i></li>
+<li><i>Mail resulting from gaps in the documentation</i></li></ul>
+<p><i>No mail will be ignored or discarded. However, the order of processing will reflect priority, not the order of arrival. This change in policy comes from the belief that the solution to the increasing number of support requests is not in adding people to hurrying short e-mail responses, but to improve the quality of on-line documentation serving many. This way we hope to shift resources from fire-fighting to construction</i>
+</p>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="SuperMemo_is_complex">SuperMemo is complex</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Technical_support&amp;veaction=edit&amp;section=2" title="Edit section: SuperMemo is complex"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Technical_support&amp;action=edit&amp;section=2" title="Edit section's source code: SuperMemo is complex"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>SuperMemo for Windows is well-known for its steep learning curve. If you feel lost, read this paragraph carefully: 
+</p>
+<blockquote>
+<p>Many users gradually move from being highly annoyed with the complexity, terminology, and design quirks of SuperMemo to being fluent and satisfied learners! <b>The key to success is patience, the study of the documentation, and a gradual discovery of the toolset offered by SuperMemo!</b> This process takes time, but the patient ones are rewarded with a new quality in learning! Begin with <a href="Introduction.html" title="Introduction">ABC of SuperMemo</a> and <a href="Step-by-step_to_SuperMemo_mastery.html" title="Step-by-step to SuperMemo mastery">proceed with more complex aspects of the program gradually</a>. It is very important to become fluent with the <a href="Glossary.html" title="Glossary">terminology</a> and the language of SuperMemo. Your first readings will be exhausting, but you will gain mastery over time! Continue with <a href="Step-by-step_to_SuperMemo_mastery.html" title="Step-by-step to SuperMemo mastery">Step by step guide to SuperMemo Mastery</a>. Spread your reading over a longer period so it can dovetail with practical experience! 
+</p>
+</blockquote>
+<ul><li><a class="external text" href="https://youtu.be/NU0pEkbMDJA?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&amp;t=3582">The 6-phase Learning Curve Of SuperMemo (video)</a></li>
+<li><a class="external text" href="https://youtu.be/NU0pEkbMDJA?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&amp;t=4996">How To Flatten SuperMemo's Learning Curve (video)</a></li>
+<li><a class="external text" href="https://youtu.be/NF7OdJ0nbSs?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&amp;t=10704">What To Do After Finishing Supermemo's ABC Collection (video)</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="How_to_get_answers?"><span id="How_to_get_answers.3F"></span>How to get answers?</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Technical_support&amp;veaction=edit&amp;section=3" title="Edit section: How to get answers?"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Technical_support&amp;action=edit&amp;section=3" title="Edit section's source code: How to get answers?"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If you encounter a question about SuperMemo you cannot answer, please follow the steps below: 
+</p>
+<ol><li><b>SuperMemo Documentation</b>: Check the <a class="mw-redirect" href="Main_Page.html" title="Main Page">table of contents</a> in this help file and try to navigate to a page with the answer to your problem. If you do not find it there where you expected it, please note exactly why. This is very important to improve the documentation! Remember that in most browsers, you can use <i>Ctrl+F</i> to search a page for a keyword you are looking for. You can use the <b>Edit</b> tab in the <a class="mw-redirect" href="Main_Page.html" title="Main Page">editable/wiki version</a> of the documentation and leave your notes, corrections, questions, or simple question marks for the gaps to be filled and difficult concepts to be explained. You can simply leave "xxx" in places that need more work</li>
+<li><b>SuperMemo FAQ files</b>: If you cannot find the answer in the <a class="mw-redirect" href="Main_Page.html" title="Main Page">table of contents</a>, try to find it in editable <a class="external text" href="https://supermemopedia.com/wiki/FAQ">Wiki FAQ files</a></li>
+<li><b>Full-text search</b>: If the answer is not in FAQ files, try the header search box at <a class="external text" href="https://super-memory.com">super-memory.com</a> or use modern AI tools such as Bing or Bard</li>
+<li><b>Ask Support</b>: To ask questions about SuperMemo, use <b><a class="external text" href="https://supermemopedia.com/wiki/Form:FAQ">Ask</a></b> at SuperMemoPedia.com. You can also use <a class="external text" href="https://supermemopedia.com/wiki/FAQ">Wiki FAQ</a>. Click <b>Edit</b> and write down your questions at the bottom of the page. If you are not familiar with Wiki, write your questions unformatted. They will be formatted/corrected for you at later time</li>
+<li><b>Support via e-mail</b>: If you still cannot find the answer do the following:
+<ol><li>Read this disclaimer: <i>Questions sent to SuperMemo Support are used to enhance the <a class="external text" href="https://super-memory.com/help/faq/">FAQ section</a> at <a class="external text" href="https://super-memory.com">super-memory.com</a>. <b>FAQ questions are automatically tagged by inquirer's name and the date of the inquiry. If you wish to remain anonymous, please state so at the beginning of your message</b> (or use an anonymous mail account name). Authors of questions <b>do not receive payments</b> for their contributions</i></li>
+<li>Questions will often be answered via <a class="external text" href="https://supermemopedia.com">SuperMemopedia</a>. You should receive a notification via e-mail. If you do not, please monitor <a class="external text" href="https://supermemopedia.com/wiki/Special:RecentChanges">recent changes</a> at SuperMemopedia.com</li>
+<li>When e-mailing questions, please try to explain why you could not find the answer to your problem in on-line documentation: what you searched for, where, and with what keywords. <b><span style="color: red;">This is very important to improve customer service!</span></b></li>
+<li>For support in English, use <b><a href="Help_menu.html" title="Help menu">Help</a> : <a href="Help_menu.html#E-mail" title="Help menu">E-mail</a> : Support</b> in SuperMemo. You can also use addresses listed <a href="E-mail.html" title="E-mail">here</a>. For other versions of SuperMemo, e.g. on-line SuperMemo at supermemo.com, iPhone, Android, etc. use the general support mail address: support(AT)supermemo(.)com (please note that this e-mail address is queued and only most urgent inquires receive timely replies)</li></ol></li>
+<li><b>Support via phone</b>: We do not provide support by phone in English. Check for exceptions at your local reseller for your national language support. Limited support in Polish and English is available for the <b>registered</b> users of Extreme English DVD and <b>paying customers</b> of <a class="external text" href="https://supermemo.com">supermemo.com</a></li></ol>
+<div class="mw-heading mw-heading2"><h2 id="Feature_request">Feature request</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Technical_support&amp;veaction=edit&amp;section=4" title="Edit section: Feature request"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Technical_support&amp;action=edit&amp;section=4" title="Edit section's source code: Feature request"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<hr/>
+<div class="inset" style="background-color: yellow;">
+<p><b>Help Us Improve Our Documentation and Videos!</b>
+</p><p>If you’re struggling to find information on this website, need an overview of SuperMemo features, or would like a new help video, please consider one of these options:
+</p>
+<ul><li><b>Recommended:</b> Add your questions or suggestions directly to relevant pages in <a class="mw-redirect" href="Reference.html" title="Reference">SuperMemo Help</a> (click the Edit tab to start writing; requires login).</li>
+<li>Submit your ideas or feature requests at <a class="external text" href="https://supermemopedia.com/wiki/Website_suggestions">SuperMemopedia</a>.</li>
+<li>Request a new <a class="external text" href="https://www.youtube.com/@SuperMemoVideo">help video</a> or send feedback via e-mail (e.g., using <b><a class="mw-redirect" href="Help.html" title="Help">Help</a> : <a href="Help_menu.html#E-mail" title="Help menu">E-mail</a> : Bug report</b>).</li></ul>
+<p>Your input helps us create clearer documentation and better help videos, reducing support costs and enhancing your experience with SuperMemo.
+</p><p>Thank you for your contributions!
+</p>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Technical_support&amp;veaction=edit&amp;section=5" title="Edit section: See also"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Technical_support&amp;action=edit&amp;section=5" title="Edit section's source code: See also"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="E-mail.html" title="E-mail">Contact</a></li>
+<li><a href="Minimum_requirements.html" title="Minimum requirements">Minimum requirements</a></li>
+<li><a href="Introduction.html" title="Introduction">SuperMemo ABC</a></li>
+<li><a href="Step-by-step_to_SuperMemo_mastery.html" title="Step-by-step to SuperMemo mastery">Step by Step: User's Guide</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260609215540
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.014 seconds
+Real time usage: 0.015 seconds
+Preprocessor visited node count: 31/1000000
+Post‐expand include size: 921/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.613      1 Feature_request
+100.00%    2.613      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:103:|#|:idhash:canonical and timestamp 20260609215540 and revision id 12033. Rendering was triggered because: page-view
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Policy"><span class="tocnumber">1</span> <span class="toctext">政策</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#SuperMemo_is_complex"><span class="tocnumber">2</span> <span class="toctext">SuperMemo 很复杂</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#How_to_get_answers?"><span class="tocnumber">3</span> <span class="toctext">如何获得答案？</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Feature_request"><span class="tocnumber">4</span> <span class="toctext">功能请求</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#See_also"><span class="tocnumber">5</span> <span class="toctext">另请参阅</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Policy">政策</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Technical_support&amp;veaction=edit&amp;section=1" title="Edit section: Policy"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Technical_support&amp;action=edit&amp;section=1" title="Edit section's source code: Policy"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="bs-callout bs-callout-warning">
+<p><b>支持政策声明</b>
+</p><p><i>SuperMemo 的所有用户都有权通过互联网获得免费支持。但是，我们无法再处理所有单独的支持查询。请将网络文档视为主要支持来源。</i>
+</p><p><i>以下类型的邮件消息仍将按第一顺序处理：</i>
+</p>
+<ul><li><i>包含可能导致您的学习投资损失（例如通过数据丢失）的问题的邮件</i></li>
+<li><i>强烈抱怨 SuperMemo 未能履行其加速学习承诺的邮件</i></li></ul>
+<p><i>以下类型的邮件将独立获得高优先级：</i>
+</p>
+<ul><li><i>包含改进文档的建议的邮件</i></li>
+<li><i>因文档中的空白而产生的邮件</i></li></ul>
+<p><i>任何邮件都不会被忽略或丢弃。但是，处理顺序将反映优先级，而不是到达顺序。这一政策变化源于这样一种信念，即解决日益增加的支持请求的方法不是增加人员来匆忙回复简短的电子邮件，而是提高为许多人提供服务的在线文档的质量。通过这种方式，我们希望将资源从消防转移到建筑上</i>
+</p>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="SuperMemo_is_complex">SuperMemo 很复杂</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Technical_support&amp;veaction=edit&amp;section=2" title="Edit section: SuperMemo is complex"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Technical_support&amp;action=edit&amp;section=2" title="Edit section's source code: SuperMemo is complex"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Windows 版 SuperMemo 以其陡峭的学习曲线而闻名。如果你感到迷茫，请仔细阅读这一段：</p>
+<blockquote>
+<p>许多用户逐渐从对 SuperMemo 的复杂性、术语和设计怪癖感到非常恼火，变成了流利且满意的学习者！<b>成功的关键是耐心、研究文档以及逐步发现 SuperMemo 提供的工具集！</b>这个过程需要时间，但是耐心的人会得到新的学习质量的回报！开始于<a href="Introduction.html" title="Introduction">SuperMemo 的基本知识</a>和<a href="Step-by-step_to_SuperMemo_mastery.html" title="Step-by-step to SuperMemo mastery">逐步进行计划的更复杂的方面</a>。流利地使用该语言非常重要<a href="Glossary.html" title="Glossary">术语</a>以及 SuperMemo 的语言。你的第一次阅读会很累，但随着时间的推移你会掌握的！继续<a href="Step-by-step_to_SuperMemo_mastery.html" title="Step-by-step to SuperMemo mastery">掌握 SuperMemo 的分步指南</a>。将您的阅读时间扩展到更长的时间内，以便它可以与实践经验相吻合！</p>
+</blockquote>
+<ul><li><a class="external text" href="https://youtu.be/NU0pEkbMDJA?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&amp;t=3582">SuperMemo 的 6 阶段学习曲线（视频）</a></li>
+<li><a class="external text" href="https://youtu.be/NU0pEkbMDJA?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&amp;t=4996">如何拉平 SuperMemo 的学习曲线（视频）</a></li>
+<li><a class="external text" href="https://youtu.be/NF7OdJ0nbSs?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&amp;t=10704">完成 Supermemo 的 ABC 合集后该怎么办（视频）</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="How_to_get_answers?"><span id="How_to_get_answers.3F"></span>如何获得答案？</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Technical_support&amp;veaction=edit&amp;section=3" title="Edit section: How to get answers?"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Technical_support&amp;action=edit&amp;section=3" title="Edit section's source code: How to get answers?"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果您遇到无法回答的有关 SuperMemo 的问题，请按照以下步骤操作：</p>
+<ol><li><b>SuperMemo 文档</b>：检查<a class="mw-redirect" href="Main_Page.html" title="Main Page">目录</a>在此帮助文件中，并尝试导航到包含问题答案的页面。如果您没有在预期的位置找到它，请具体说明原因。这对于改进文档非常重要！请记住，在大多数浏览器中，您可以使用<i>Ctrl+F</i>在页面中搜索您要查找的关键字。您可以使用<b>编辑</b>选项卡中的<a class="mw-redirect" href="Main_Page.html" title="Main Page">可编辑/维基版本</a>文档并留下您的注释、更正、问题或简单的问号，以填补空白并解释困难的概念。您可以简单地在需要更多工作的地方留下“xxx”</li>
+<li><b>SuperMemo 常见问题解答文件</b>: 如果您在以下内容中找不到答案<a class="mw-redirect" href="Main_Page.html" title="Main Page">目录</a>，尝试在可编辑中找到它<a class="external text" href="https://supermemopedia.com/wiki/FAQ">维基常见问题解答文件</a></li>
+<li><b>全文检索</b>：如果常见问题解答文件中没有答案，请尝试标题搜索框<a class="external text" href="https://super-memory.com">超级记忆网</a>或使用现代人工智能工具，例如 Bing 或 Bard</li>
+<li><b>询问支持</b>：要询问有关 SuperMemo 的问题，请使用<b><a class="external text" href="https://supermemopedia.com/wiki/Form:FAQ">询问</a></b>在 SuperMemoPedia.com。您还可以使用<a class="external text" href="https://supermemopedia.com/wiki/FAQ">维基常见问题解答</a>。点击<b>编辑</b>并在页面底部写下您的问题。如果您不熟悉 Wiki，请不要格式化您的问题。它们将在稍后为您进行格式化/更正</li>
+<li><b>通过电子邮件提供支持</b>：如果您仍然找不到答案，请执行以下操作：<ol><li>阅读此免责声明：<i>发送至 SuperMemo 支持的问题用于增强<a class="external text" href="https://super-memory.com/help/faq/">常见问题解答部分</a>在<a class="external text" href="https://super-memory.com">超级记忆网</a>。<b>常见问题解答会自动根据询问者的姓名和询问日期进行标记。如果您希望保持匿名，请在消息开头注明</b>（或使用匿名邮件帐户名）。问题的作者<b>没有收到付款</b>感谢他们的贡献</i></li>
+<li>问题通常会通过以下方式得到解答<a class="external text" href="https://supermemopedia.com">超级记忆百科</a>。您应该通过电子邮件收到通知。如果没有请关注<a class="external text" href="https://supermemopedia.com/wiki/Special:RecentChanges">最近的变化</a>在 SuperMemopedia.com</li>
+<li>通过电子邮件发送问题时，请尝试解释为什么您无法在在线文档中找到问题的答案：您搜索的内容、位置以及使用的关键字。<b><span style="color: red;">这对于改善客户服务非常重要！</span></b></li>
+<li>如需英语支持，请使用<b><a href="Help_menu.html" title="Help menu">帮助</a> :<a href="Help_menu.html#E-mail" title="Help menu">电子邮件</a> ：支持</b>在 SuperMemo 中。您还可以使用列出的地址<a href="E-mail.html" title="E-mail">这里</a>。对于 SuperMemo 的其他版本，例如supermemo.com、iPhone、Android 等在线 SuperMemo 使用通用支持邮件地址：support(AT)supermemo(.)com（请注意，该电子邮件地址已排队，只有最紧急的查询才能得到及时回复）</li></ol></li>
+<li><b>通过电话支持</b>：我们不提供英语电话支持。请在当地经销商处检查您的国家语言支持是否存在例外情况。提供有限的波兰语和英语支持<b>已注册</b>Extreme English DVD 的用户和<b>付费客户</b>的<a class="external text" href="https://supermemo.com">supermemo.com</a></li></ol>
+<div class="mw-heading mw-heading2"><h2 id="Feature_request">功能请求</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Technical_support&amp;veaction=edit&amp;section=4" title="Edit section: Feature request"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Technical_support&amp;action=edit&amp;section=4" title="Edit section's source code: Feature request"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<hr/>
+<div class="inset" style="background-color: yellow;">
+<p><b>帮助我们改进我们的文档和视频！</b>
+</p><p>如果您很难在此网站上查找信息，需要 SuperMemo 功能的概述，或者想要新的帮助视频，请考虑以下选项之一：</p>
+<ul><li><b>推荐：</b>将您的问题或建议直接添加到相关页面<a class="mw-redirect" href="Reference.html" title="Reference">SuperMemo 帮助</a>（单击“编辑”选项卡开始编写；需要登录）。</li>
+<li>提交您的想法或功能请求：<a class="external text" href="https://supermemopedia.com/wiki/Website_suggestions">超级记忆百科</a>。</li>
+<li>请求一个新的<a class="external text" href="https://www.youtube.com/@SuperMemoVideo">帮助视频</a>或通过电子邮件发送反馈（例如，使用<b><a class="mw-redirect" href="Help.html" title="Help">帮助</a> :<a href="Help_menu.html#E-mail" title="Help menu">电子邮件</a> ：错误报告</b>）。</li></ul>
+<p>您的意见有助于我们创建更清晰的文档和更好的帮助视频，降低支持成本并增强您使用 SuperMemo 的体验。</p><p>感谢您的贡献！</p>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="See_also">另请参阅</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Technical_support&amp;veaction=edit&amp;section=5" title="Edit section: See also"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Technical_support&amp;action=edit&amp;section=5" title="Edit section's source code: See also"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a href="E-mail.html" title="E-mail">联系方式</a></li>
+<li><a href="Minimum_requirements.html" title="Minimum requirements">最低要求</a></li>
+<li><a href="Introduction.html" title="Introduction">超级备忘录ABC</a></li>
+<li><a href="Step-by-step_to_SuperMemo_mastery.html" title="Step-by-step to SuperMemo mastery">分步说明：用户指南</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260609215540
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.014 seconds
+Real time usage: 0.015 seconds
+Preprocessor visited node count: 31/1000000
+Post‐expand include size: 921/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.613      1 Feature_request
+100.00%    2.613      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:103:|#|:idhash:canonical and timestamp 20260609215540 and revision id 12033. Rendering was triggered because: page-view
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

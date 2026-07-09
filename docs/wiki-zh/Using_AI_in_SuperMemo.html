@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Using AI in SuperMemo — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Using_AI_in_SuperMemo" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Using_AI_in_SuperMemo"><span class="tocnumber">1</span> <span class="toctext">Using AI in SuperMemo</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#What_AI_features_do"><span class="tocnumber">2</span> <span class="toctext">What AI features do</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#About_the_default_key"><span class="tocnumber">3</span> <span class="toctext">About the default key</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Configuration"><span class="tocnumber">4</span> <span class="toctext">Configuration</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Other_compatible_services"><span class="tocnumber">5</span> <span class="toctext">Other compatible services</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Limitations"><span class="tocnumber">6</span> <span class="toctext">Limitations</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Example"><span class="tocnumber">7</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#A_good_way_to_use_AI_in_SuperMemo"><span class="tocnumber">8</span> <span class="toctext">A good way to use AI in SuperMemo</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Using_AI_in_SuperMemo">Using AI in SuperMemo</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;veaction=edit&amp;section=1" title="Edit section: Using AI in SuperMemo"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;action=edit&amp;section=1" title="Edit section's source code: Using AI in SuperMemo"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><a href="SuperMemo.html" title="SuperMemo">SuperMemo</a> can use AI to explain difficult text in a short form that is easier to understand. When you meet a hard passage, SuperMemo can give you a quick explanation without leaving your workflow.
+</p><p>SuperMemo uses the free Gemini Flash model by default. This means many users can start immediately, with no setup. If needed, you can also replace the default settings with your own model, API key, and server URL.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="What_AI_features_do">What AI features do</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;veaction=edit&amp;section=2" title="Edit section: What AI features do"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;action=edit&amp;section=2" title="Edit section's source code: What AI features do"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Features such as <b>AI Explain</b> or <b>Explain Extract</b> send selected text to the configured AI model and ask for a concise explanation in plain text. The answer is meant to help you understand the material quickly.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="About_the_default_key">About the default key</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;veaction=edit&amp;section=3" title="Edit section: About the default key"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;action=edit&amp;section=3" title="Edit section's source code: About the default key"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>SuperMemo includes a default Gemini key so that AI features can work immediately out of the box. This key is not available to the user and is obfuscated. Obfuscation is only meant to avoid casual exposure. It is not a strong security method, so advanced users are encouraged to use their own key if they want full control, privacy, or reliability.
+</p><p>You can then decide whether to keep reading, simplify the source, or turn the explanation into a set of <a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">cloze deletions</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Configuration">Configuration</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;veaction=edit&amp;section=4" title="Edit section: Configuration"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;action=edit&amp;section=4" title="Edit section's source code: Configuration"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>AI options are stored in <i><a class="new" href="https://help.supermemo.org/index.php?title=Supermemo.ini&amp;action=edit&amp;redlink=1" title="Supermemo.ini (page does not exist)">supermemo.ini</a></i>, which makes configuration simple and transparent. SuperMemo currently supports two formats:
+</p>
+<ul><li>Gemini</li>
+<li>OpenAI-compatible</li></ul>
+<p>The basic configuration looks like this:
+</p>
+<pre>[AI] 
+  Enabled=1 
+  Provider=gemini 
+  TimeoutMs=30000 
+[AI.Gemini] 
+  Model=gemini-2.5-flash 
+  ApiKey=REPLACE_WITH_YOUR_GEMINI_KEY 
+  BaseURL=<a class="external free" href="https://generativelanguage.googleapis.com">https://generativelanguage.googleapis.com</a> 
+[AI.OpenAI] 
+ Model=gpt-4.1-mini 
+ ApiKey=REPLACE_WITH_YOUR_OPENAI_KEY 
+ BaseURL=<a class="external free" href="https://api.openai.com">https://api.openai.com</a> 
+</pre>
+<p>If Provider=gemini, SuperMemo uses the [AI.Gemini] section.
+If Provider=openai, SuperMemo uses the [AI.OpenAI] section.
+</p><p>This means you can easily:
+</p>
+<ul><li>stay with the default Gemini setup,</li>
+<li>use your own Gemini key,</li>
+<li>use your own OpenAI key,</li>
+<li>connect to another OpenAI-compatible service.</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Other_compatible_services">Other compatible services</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;veaction=edit&amp;section=5" title="Edit section: Other compatible services"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;action=edit&amp;section=5" title="Edit section's source code: Other compatible services"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The OpenAI-compatible format is also useful beyond OpenAI itself. Some local or third-party tools expose an OpenAI-style API. This can include services such as LM Studio, Ollama gateways, OpenRouter, or other compatible servers.
+</p><p>This is mainly relevant to advanced users. In such cases, you would usually set:
+</p>
+<ul><li>Provider=openai</li>
+<li>BaseURL= to the local or remote compatible server</li>
+<li>ApiKey= if the server requires one</li>
+<li>Model= to the model name expected by that server</li></ul>
+<p>For most users, this is optional. The default Gemini configuration is the easiest way to get started.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Limitations">Limitations</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;veaction=edit&amp;section=6" title="Edit section: Limitations"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;action=edit&amp;section=6" title="Edit section's source code: Limitations"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>AI is helpful, but it is not always right. Please keep these limitations in mind:
+</p>
+<ul><li>AI can make mistakes.</li>
+<li>AI may oversimplify difficult ideas.</li>
+<li>AI may miss context that is obvious to a human reader.</li></ul>
+<p>Online AI depends on network access and the availability of the chosen service. Response quality depends on the selected model. For this reason, AI explanations should be treated as help for understanding, not as unquestionable truth.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Example">Example</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;veaction=edit&amp;section=7" title="Edit section: Example"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;action=edit&amp;section=7" title="Edit section's source code: Example"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If you want to use OpenRouter, it should usually work via the OpenAI-compatible path.
+</p><p>They would typically set:
+</p>
+<pre> [AI] 
+   Enabled=1 
+   Provider=openai 
+   TimeoutMs=30000 
+ [AI.OpenAI] 
+   Model=YOUR_OPENROUTER_MODEL 
+   ApiKey=YOUR_OPENROUTER_API_KEY 
+   BaseURL=<a class="external free" href="https://openrouter.ai/api">https://openrouter.ai/api</a> 
+</pre>
+<p>The important part is:
+</p>
+<ul><li>Provider=openai</li>
+<li>BaseURL=<a class="external free" href="https://openrouter.ai/api">https://openrouter.ai/api</a></li>
+<li>Model= must match an OpenRouter model name</li>
+<li>ApiKey= must be the OpenRouter key</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="A_good_way_to_use_AI_in_SuperMemo">A good way to use AI in SuperMemo</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;veaction=edit&amp;section=8" title="Edit section: A good way to use AI in SuperMemo"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;action=edit&amp;section=8" title="Edit section's source code: A good way to use AI in SuperMemo"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>The best use of AI is not to replace learning, but to remove friction. When a sentence is too dense, a concept too abstract, or a passage too technical, AI can help you get unstuck in seconds.
+Once you understand the idea, you can continue learning in the usual SuperMemo way: actively, critically, and with pleasure. AI works best as a friendly assistant, not as a final authority.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610111325
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.021 seconds
+Real time usage: 0.022 seconds
+Preprocessor visited node count: 26/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:752:|#|:idhash:canonical and timestamp 20260610111325 and revision id 12409. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Using_AI_in_SuperMemo"><span class="tocnumber">1</span> <span class="toctext">在 SuperMemo 中使用人工智能</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#What_AI_features_do"><span class="tocnumber">2</span> <span class="toctext">AI 功能有什么作用</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#About_the_default_key"><span class="tocnumber">3</span> <span class="toctext">关于默认键</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Configuration"><span class="tocnumber">4</span> <span class="toctext">配置</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Other_compatible_services"><span class="tocnumber">5</span> <span class="toctext">其他兼容服务</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Limitations"><span class="tocnumber">6</span> <span class="toctext">局限性</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Example"><span class="tocnumber">7</span> <span class="toctext">示例</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#A_good_way_to_use_AI_in_SuperMemo"><span class="tocnumber">8</span> <span class="toctext">在 SuperMemo 中使用 AI 的好方法</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Using_AI_in_SuperMemo">在 SuperMemo 中使用人工智能</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;veaction=edit&amp;section=1" title="Edit section: Using AI in SuperMemo"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;action=edit&amp;section=1" title="Edit section's source code: Using AI in SuperMemo"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><a href="SuperMemo.html" title="SuperMemo">超级备忘录</a>可以使用人工智能以更容易理解的简短形式解释困难的文本。当你遇到困难的段落时，SuperMemo 可以给你快速解释，而无需离开你的工作流程。</p><p>SuperMemo 默认使用免费的 Gemini Flash 模型。这意味着许多用户无需设置即可立即启动。如果需要，您还可以使用您自己的模型、API 密钥和服务器 URL 替换默认设置。</p>
+<div class="mw-heading mw-heading2"><h2 id="What_AI_features_do">AI 功能有什么作用</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;veaction=edit&amp;section=2" title="Edit section: What AI features do"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;action=edit&amp;section=2" title="Edit section's source code: What AI features do"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>特点如<b>人工智能解释</b>或<b>解释摘录</b>将选定的文本发送到配置的 AI 模型，并要求以纯文本形式提供简洁的解释。答案旨在帮助您快速理解材料。</p>
+<div class="mw-heading mw-heading2"><h2 id="About_the_default_key">关于默认键</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;veaction=edit&amp;section=3" title="Edit section: About the default key"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;action=edit&amp;section=3" title="Edit section's source code: About the default key"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>SuperMemo 包含一个默认的 Gemini 键，因此 AI 功能可以开箱即用。该密钥对用户不可用并且被混淆。混淆只是为了避免偶然暴露。这不是一种强大的安全方法，因此如果高级用户想要完全控制、隐私或可靠性，我们鼓励他们使用自己的密钥。</p><p>然后，您可以决定是否继续阅读、简化源代码，或者将解释转化为一组<a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">完形填空删除</a>。</p>
+<div class="mw-heading mw-heading2"><h2 id="Configuration">配置</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;veaction=edit&amp;section=4" title="Edit section: Configuration"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;action=edit&amp;section=4" title="Edit section's source code: Configuration"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>AI选项存储在<i><a class="new" href="https://help.supermemo.org/index.php?title=Supermemo.ini&amp;action=edit&amp;redlink=1" title="Supermemo.ini (page does not exist)">超级备忘录.ini</a></i>，这使得配置简单透明。 SuperMemo 目前支持两种格式：</p>
+<ul><li>双子座</li>
+<li>兼容 OpenAI</li></ul>
+<p>基本配置如下所示：</p>
+<pre>[AI] 
+  Enabled=1 
+  Provider=gemini 
+  TimeoutMs=30000 
+[AI.Gemini] 
+  Model=gemini-2.5-flash 
+  ApiKey=REPLACE_WITH_YOUR_GEMINI_KEY 
+  BaseURL=<a class="external free" href="https://generativelanguage.googleapis.com">https://generativelanguage.googleapis.com</a> 
+[AI.OpenAI] 
+ Model=gpt-4.1-mini 
+ ApiKey=REPLACE_WITH_YOUR_OPENAI_KEY 
+ BaseURL=<a class="external free" href="https://api.openai.com">https://api.openai.com</a> 
+</pre>
+<p>如果 Provider=gemini，SuperMemo 使用 [AI.Gemini] 部分。
+如果 Provider=openai，SuperMemo 使用 [AI.OpenAI] 部分。</p><p>这意味着您可以轻松地：</p>
+<ul><li>保持默认的 Gemini 设置，</li>
+<li>使用你自己的双子座钥匙，</li>
+<li>使用您自己的 OpenAI 密钥，</li>
+<li>连接到另一个 OpenAI 兼容服务。</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Other_compatible_services">其他兼容服务</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;veaction=edit&amp;section=5" title="Edit section: Other compatible services"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;action=edit&amp;section=5" title="Edit section's source code: Other compatible services"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>OpenAI 兼容格式除了 OpenAI 本身之外也很有用。一些本地或第三方工具公开 OpenAI 风格的 API。这可以包括 LM Studio、Ollama 网关、OpenRouter 或其他兼容服务器等服务。</p><p>这主要与高级用户相关。在这种情况下，您通常会设置：</p>
+<ul><li>提供商=openai</li>
+<li>BaseURL=本地或远程兼容服务器</li>
+<li>ApiKey= 如果服务器需要一个</li>
+<li>Model= 该服务器期望的模型名称</li></ul>
+<p>对于大多数用户来说，这是可选的。默认的 Gemini 配置是最简单的入门方法。</p>
+<div class="mw-heading mw-heading2"><h2 id="Limitations">局限性</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;veaction=edit&amp;section=6" title="Edit section: Limitations"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;action=edit&amp;section=6" title="Edit section's source code: Limitations"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>人工智能很有帮助，但并不总是正确的。请记住这些限制：</p>
+<ul><li>人工智能可能会犯错误。</li>
+<li>人工智能可能会将困难的想法过于简单化。</li>
+<li>人工智能可能会错过人类读者显而易见的上下文。</li></ul>
+<p>在线人工智能取决于网络访问和所选服务的可用性。响应质量取决于所选模型。因此，人工智能的解释应该被视为理解的帮助，而不是不容置疑的真理。</p>
+<div class="mw-heading mw-heading2"><h2 id="Example">示例</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;veaction=edit&amp;section=7" title="Edit section: Example"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;action=edit&amp;section=7" title="Edit section's source code: Example"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果您想使用 OpenRouter，它通常应该通过 OpenAI 兼容路径工作。</p><p>他们通常会设置：</p>
+<pre> [AI] 
+   Enabled=1 
+   Provider=openai 
+   TimeoutMs=30000 
+ [AI.OpenAI] 
+   Model=YOUR_OPENROUTER_MODEL 
+   ApiKey=YOUR_OPENROUTER_API_KEY 
+   BaseURL=<a class="external free" href="https://openrouter.ai/api">https://openrouter.ai/api</a> 
+</pre>
+<p>重要的部分是：</p>
+<ul><li>提供商=openai</li>
+<li>基本网址=<a class="external free" href="https://openrouter.ai/api">https://openrouter.ai/api</a></li>
+<li>Model= 必须与 OpenRouter 型号名称匹配</li>
+<li>ApiKey= 必须是 OpenRouter 密钥</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="A_good_way_to_use_AI_in_SuperMemo">在 SuperMemo 中使用 AI 的好方法</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;veaction=edit&amp;section=8" title="Edit section: A good way to use AI in SuperMemo"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Using_AI_in_SuperMemo&amp;action=edit&amp;section=8" title="Edit section's source code: A good way to use AI in SuperMemo"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>人工智能的最佳用途不是取代学习，而是消除摩擦。当句子太密集、概念太抽象或段落太技术性时，人工智能可以帮助你在几秒钟内摆脱困境。
+一旦你理解了这个想法，你就可以以通常的 SuperMemo 方式继续学习：积极地、批判性地、愉快地学习。人工智能最好作为友好的助手，而不是最终的权威。</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610111325
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.021 seconds
+Real time usage: 0.022 seconds
+Preprocessor visited node count: 26/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:752:|#|:idhash:canonical and timestamp 20260610111325 and revision id 12409. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

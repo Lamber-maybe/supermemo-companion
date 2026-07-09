@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Registry toolbar — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Registry_toolbar" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p>The toolbar at the top of the <a href="Registry_window.html" title="Registry window">registry window</a> provides a quick access to the most often used registry functions. 
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Image_registry.jpg.html" title="SuperMemo: Image registry (registry toolbar at the top) which you can use to review images used in your collection"><img alt="SuperMemo: Image registry (registry toolbar at the top) which you can use to review images used in your collection" class="mw-file-element" decoding="async" height="600" loading="lazy" src="https://help.supermemo.org/images/thumb/1/19/Image_registry.jpg/785px-Image_registry.jpg" srcset="/images/thumb/1/19/Image_registry.jpg/1178px-Image_registry.jpg 1.5x, /images/1/19/Image_registry.jpg 2x" width="785"/></a><figcaption>SuperMemo: Image registry (registry toolbar at the top) which you can use to review images used in your collection</figcaption></figure>
+<p>Here is the use of the individual buttons (compare with the picture above): 
+</p>
+<ul><li><b>Menu</b> (<i>Alt+F10</i>) - open the <a href="Registry_menu.html" title="Registry menu">registry menu</a> (also available with a right-click over the <a href="Registry_window.html" title="Registry window">registry window</a>)</li>
+<li><b>List</b> - list users of the currently selected <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry member</a> in the element list (bottom-right)</li>
+<li><b>Go to</b> - go to the first user of the currently selected <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry member</a> and close the <a href="Registry_window.html" title="Registry window">registry window</a></li>
+<li><b>View</b> - display the <a href="Glossary_Element.html" title="Glossary:Element">element</a> selected in the element list or display the first user of the currently selected <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry member</a> (if the element list is not shown). The element is shown in the <a href="Element_window.html" title="Element window">element window</a> without closing the <a href="Registry_window.html" title="Registry window">registry window</a>. Note that elements are displayed each time you click on the entries in the element list (which can be shown with <b>List</b> above)</li>
+<li><b>Go neural</b> (<i>Alt+N</i>) - execute the <a href="Subset_learning.html#Neural_review" title="Subset learning">neural review</a> over the selected <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry member</a></li>
+<li><b>Find</b> (<i>Ctrl+S</i>) - find <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry members</a> containing a given string in their name. Only the current <a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">registry subset</a> is searched. For example, to search for all pictures with the word "<i>virus</i>" in their name, use <b><a href="Search_menu.html" title="Search menu">Search</a> : <a href="Search_menu.html#Images" title="Search menu">Images</a></b> on the <a href="Main_menu.html" title="Main menu">main menu</a>, click the <b>Find</b> button, type <i>virus</i>, and press <i>Enter</i></li>
+<li><b>Find and replace</b> (<i>Ctrl+R</i>) - replace strings in the current <a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">registry subset</a></li>
+<li><b>Superset</b> - move to the immediate superset of <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry members</a> (if any). For example, after searching the registry with <i>Ctrl+S</i>, your results are displayed as a new registry subset. You can move back to the search superset by clicking <b>Superset</b> button or pressing <i>Alt+Left</i></li>
+<li><b>Subset</b> - move to the next subset (if any). For example, after searching the registry with <i>Ctrl+S</i>, your results are displayed as a new <a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">registry subset</a>. You can search again to create yet another subset (AND-search). You can move between subsets by pressing <i>Alt+Left</i> and <i>Alt+Right</i></li>
+<li><b>Create selected subset</b> - create a new <a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">registry subset</a> from the currently selected <a href="Glossary_Registry_member.html" title="Glossary:Registry member">members</a></li>
+<li><b>Create unselected subset</b> - create a new <a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">registry subset</a> from the <a href="Glossary_Registry_member.html" title="Glossary:Registry member">members</a> which are not selected at the moment</li>
+<li><b>Random jump</b> (<i>F11</i>) - select a new randomly chosen <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry member</a> (e.g. to quickly review the registry at random)</li>
+<li><b>Font</b> (only in the font registry) - edit the font associated with the currently selected <a href="Glossary_Registry_member.html" title="Glossary:Registry member">registry member</a></li>
+<li><b>Switch to twin</b> - switch to the twin registry and select the twin member of the currently selected member (e.g. switch from text registry to translation registry, or switch between the twins of the phonetic transcription registry)</li>
+<li><b><span id="Browse_button">Browse</span></b> - use the <a href="Browser.html" title="Browser">browser</a> to display all <a href="Glossary_Element.html" title="Glossary:Element">elements</a> that use the currently selected <a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">registry subset</a>. Note that the button <a href="Registry_window.html#Browse" title="Registry window"><b>Browse</b></a> at the bottom of the window puts only the users of the selected <a href="Glossary_Registry_member.html" title="Glossary:Registry member">member</a> in the <a href="Browser.html" title="Browser">browser</a> while the <b>Browse</b> on the toolbar puts the users of all subset members in the <a href="Browser.html" title="Browser">browser</a></li>
+<li><b>Import</b> - import files directly into the registry</li>
+<li><b>Stretch</b> (only in the image registry) - stretch images proportionally to fill out the display panel at maximum possible size</li>
+<li><b>Export</b> - export/save the object associated with the currently selected <a href="Glossary_Registry_member.html" title="Glossary:Registry member">member</a> (if exportable). For example, save a picture displayed in the image registry</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111155
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.031 seconds
+Real time usage: 0.032 seconds
+Preprocessor visited node count: 2/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 1/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:96:|#|:idhash:canonical and timestamp 20260610111155 and revision id 8239. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p>顶部的工具栏<a href="Registry_window.html" title="Registry window">注册表窗口</a>提供对最常用注册表功能的快速访问。</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Image_registry.jpg.html" title="SuperMemo: Image registry (registry toolbar at the top) which you can use to review images used in your collection"><img alt="SuperMemo: Image registry (registry toolbar at the top) which you can use to review images used in your collection" class="mw-file-element" decoding="async" height="600" loading="lazy" src="https://help.supermemo.org/images/thumb/1/19/Image_registry.jpg/785px-Image_registry.jpg" srcset="/images/thumb/1/19/Image_registry.jpg/1178px-Image_registry.jpg 1.5x, /images/1/19/Image_registry.jpg 2x" width="785"/></a><figcaption>SuperMemo：图像注册表（顶部的注册表工具栏），您可以使用它来查看收藏中使用的图像</figcaption></figure>
+<p>下面是各个按钮的使用（对比上图）：</p>
+<ul><li><b>菜单</b>（<i>Alt+F10</i>) - 打开<a href="Registry_menu.html" title="Registry menu">注册表菜单</a>（也可通过右键单击<a href="Registry_window.html" title="Registry window">注册表窗口</a>）</li>
+<li><b>列表</b>- 列出当前选定的用户<a href="Glossary_Registry_member.html" title="Glossary:Registry member">注册会员</a>在元素列表中（右下）</li>
+<li><b>前往</b>- 转到当前所选的第一个用户<a href="Glossary_Registry_member.html" title="Glossary:Registry member">注册会员</a>并关闭<a href="Registry_window.html" title="Registry window">注册表窗口</a></li>
+<li><b>查看</b>- 显示<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在元素列表中选择或显示当前选择的第一个用户<a href="Glossary_Registry_member.html" title="Glossary:Registry member">注册会员</a>（如果未显示元素列表）。该元素显示在<a href="Element_window.html" title="Element window">元素窗口</a>不关闭<a href="Registry_window.html" title="Registry window">注册表窗口</a>。请注意，每次单击元素列表中的条目时都会显示元素（可以使用<b>列表</b>上面）</li>
+<li><b>神经化</b>（<i>Alt+N</i>) - 执行<a href="Subset_learning.html#Neural_review" title="Subset learning">神经回顾</a>超过所选的<a href="Glossary_Registry_member.html" title="Glossary:Registry member">注册会员</a></li>
+<li><b>查找</b>（<i>Ctrl+S</i>) - 查找<a href="Glossary_Registry_member.html" title="Glossary:Registry member">登记册成员</a>他们的名字中包含给定的字符串。仅当前<a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">注册表子集</a>被搜索。例如，搜索所有带有“”字样的图片<i>病毒</i>“ 在他们的名字中，使用<b><a href="Search_menu.html" title="Search menu">搜索</a> :<a href="Search_menu.html#Images" title="Search menu">图片</a></b>于<a href="Main_menu.html" title="Main menu">主菜单</a>，单击<b>查找</b>按钮、类型<i>病毒</i>，然后按<i>输入</i></li>
+<li><b>查找并替换</b>（<i>Ctrl+R</i>) - 替换当前字符串<a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">注册表子集</a></li>
+<li><b>超级组</b>- 移动到的直接超集<a href="Glossary_Registry_member.html" title="Glossary:Registry member">登记册成员</a>（如果有的话）。例如，在搜索注册表后<i>Ctrl+S</i>，您的结果将显示为新的注册表子集。您可以通过单击返回到搜索超集<b>超级组</b>按钮或按下<i>Alt+左键</i></li>
+<li><b>子集</b>- 移至下一个子集（如果有）。例如，在搜索注册表后<i>Ctrl+S</i>，您的结果将显示为新的<a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">注册表子集</a>。您可以再次搜索以创建另一个子集（AND 搜索）。您可以通过按在子集之间移动<i>Alt+左键</i>和<i>Alt+右</i></li>
+<li><b>创建选定的子集</b>- 创建一个新的<a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">注册表子集</a>从当前选择的<a href="Glossary_Registry_member.html" title="Glossary:Registry member">会员</a></li>
+<li><b>创建未选择的子集</b>- 创建一个新的<a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">注册表子集</a>从<a href="Glossary_Registry_member.html" title="Glossary:Registry member">会员</a>暂时没有选择的</li>
+<li><b>随机跳跃</b>（<i>F11</i>) - 选择一个新的随机选择<a href="Glossary_Registry_member.html" title="Glossary:Registry member">注册会员</a>（例如，快速随机查看注册表）</li>
+<li><b>字体</b>（仅在字体注册表中）- 编辑与当前所选关联的字体<a href="Glossary_Registry_member.html" title="Glossary:Registry member">注册会员</a></li>
+<li><b>切换到双床</b>- 切换到孪生注册表并选择当前所选成员的孪生成员（例如从文本注册表切换到翻译注册表，或在音标注册表的孪生之间切换）</li>
+<li><b><span id="Browse_button">浏览</span></b>- 使用<a href="Browser.html" title="Browser">浏览器</a>显示全部<a href="Glossary_Element.html" title="Glossary:Element">元素</a>使用当前选择的<a href="Glossary_Registry_subset.html" title="Glossary:Registry subset">注册表子集</a>。请注意，按钮<a href="Registry_window.html#Browse" title="Registry window"><b>浏览</b></a>窗口底部仅放置所选的用户<a href="Glossary_Registry_member.html" title="Glossary:Registry member">会员</a>在<a href="Browser.html" title="Browser">浏览器</a>而<b>浏览</b>工具栏上将所有子集成员的用户放在<a href="Browser.html" title="Browser">浏览器</a></li>
+<li><b>进口</b>- 将文件直接导入注册表</li>
+<li><b>拉伸</b>（仅在图像注册表中）- 按比例拉伸图像以以最大可能尺寸填充显示面板</li>
+<li><b>出口</b>- 导出/保存与当前所选关联的对象<a href="Glossary_Registry_member.html" title="Glossary:Registry member">会员</a>（如果可出口）。例如保存图片注册表中显示的图片</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111155
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.031 seconds
+Real time usage: 0.032 seconds
+Preprocessor visited node count: 2/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 1/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:96:|#|:idhash:canonical and timestamp 20260610111155 and revision id 8239. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

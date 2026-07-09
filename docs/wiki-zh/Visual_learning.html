@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Visual learning — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Visual_learning" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Incremental_picture_processing_and_learning"><span class="tocnumber">1</span> <span class="toctext">Incremental picture processing and learning</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Adding_pictures_to_SuperMemo"><span class="tocnumber">2</span> <span class="toctext">Adding pictures to SuperMemo</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Pasting_pictures_from_the_clipboard"><span class="tocnumber">2.1</span> <span class="toctext">Pasting pictures from the clipboard</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Importing_pictures_from_a_local_drive"><span class="tocnumber">2.2</span> <span class="toctext">Importing pictures from a local drive</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#A_single_picture"><span class="tocnumber">2.2.1</span> <span class="toctext">A single picture</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#A_folder_of_pictures"><span class="tocnumber">2.2.2</span> <span class="toctext">A folder of pictures</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#Importing_pictures_from_the_web"><span class="tocnumber">2.3</span> <span class="toctext">Importing pictures from the web</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="#Import_from_the_web"><span class="tocnumber">2.3.1</span> <span class="toctext">Import from the web</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Import_from_articles_included_in_SuperMemo"><span class="tocnumber">2.3.2</span> <span class="toctext">Import from articles included in SuperMemo</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="#Pictures_as_answers"><span class="tocnumber">2.4</span> <span class="toctext">Pictures as answers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Tiling_pictures"><span class="tocnumber">3</span> <span class="toctext">Tiling pictures</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Big_pictures"><span class="tocnumber">4</span> <span class="toctext">Big pictures</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Zooming,_slicing,_trimming,_and_cropping_pictures"><span class="tocnumber">4.1</span> <span class="toctext">Zooming, slicing, trimming, and cropping pictures</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Picture_processing_options"><span class="tocnumber">4.2</span> <span class="toctext">Picture processing options</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Extracting_pictures_from_larger_pictures"><span class="tocnumber">5</span> <span class="toctext">Extracting pictures from larger pictures</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#Example_of_a_picture_extract"><span class="tocnumber">5.1</span> <span class="toctext">Example of a picture extract</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Cloze_for_pictures"><span class="tocnumber">6</span> <span class="toctext">Cloze for pictures</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#Multiple_items"><span class="tocnumber">6.1</span> <span class="toctext">Multiple items</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Incremental_approach"><span class="tocnumber">6.2</span> <span class="toctext">Incremental approach</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Incremental_picture_processing_and_learning">Incremental picture processing and learning</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=1" title="Edit section: Incremental picture processing and learning"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=1" title="Edit section's source code: Incremental picture processing and learning"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>A picture is worth a thousand words. This ageless maxim expresses a well-known fact taken from neuroscience: we have an extremely effective visual memory system that should be used often to complement the memory systems used for more abstract knowledge that is the chief target of <a href="Incremental_learning.html" title="Incremental learning">incremental learning</a>. Pictures have a great mnemonic power and should be used profusely to illustrate the learning material. SuperMemo implements picture operations that should make your work with pictures easier than ever as long as you master the basic skills of visual learning.
+</p><p><b>Visual learning</b> is an equivalent of <a href="Incremental_reading.html" title="Incremental reading">incremental reading</a>, but is used to master material represented as pictures. In visual learning, you get a series of pictures as your input, and produce lasting memories of the most important pictures, picture fragments, or annotations associated with pictures. Pictures may be a part of your standard learning process, or may be taken from a specific picture or photo <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>, e.g. your <a class="external text" href="http://supermemopedia.com/wiki/Why_SuperMemo,_not_Photo_Gallery%3F">family photo album</a>.
+</p><p>The tools and techniques of visual learning can also be used to learn texts that are available only as pictures (e.g. book snapshots, read-only PDF screen prints, paper notes, etc.). A scanner or a digital camera can be used to take pictures of the notes. However, text searches cannot be executed unless high-quality OCR software is used or picture texts are annotated manually.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Adding_pictures_to_SuperMemo">Adding pictures to SuperMemo</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=2" title="Edit section: Adding pictures to SuperMemo"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=2" title="Edit section's source code: Adding pictures to SuperMemo"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Pasting_pictures_from_the_clipboard">Pasting pictures from the clipboard</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=3" title="Edit section: Pasting pictures from the clipboard"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=3" title="Edit section's source code: Pasting pictures from the clipboard"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>To paste a picture to SuperMemo, copy it first to the clipboard. In SuperMemo, go to the <a href="Glossary_Element.html" title="Glossary:Element">element</a> that is to display the picture. Make sure you are in the <a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">presentation mode</a> (e.g. press <i>Esc</i> a few times if you are not sure). Press <i>Shift+Insert</i> or <i>Ctrl+V</i> to paste the picture or click the <b>Paste</b> button (<span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Paste.png.html" title="SuperMemo: Insert the contents of the clipboard"><img alt="SuperMemo: Insert the contents of the clipboard" class="mw-file-element" decoding="async" height="16" loading="lazy" src="https://help.supermemo.org/images/9/9e/Paste.png" width="16"/></a></span>) on the <a href="Learnbar.html" title="Learnbar">learnbar</a>.
+</p><p>If the <a href="Glossary_Element.html" title="Glossary:Element">element</a> does not have image <a href="Glossary_Component.html" title="Glossary:Component">components</a>, SuperMemo will shift the existing <a href="Glossary_Component.html" title="Glossary:Component">components</a> to the left to make space for the picture. Otherwise it will reuse the first empty image <a href="Glossary_Component.html" title="Glossary:Component">component</a>, or tile existing images to add a new one in the space devoted to pictures. Depending on your <a href="Glossary_Concept.html" title="Glossary:Concept">concept</a> <a href="Glossary_Template.html" title="Glossary:Template">template</a> settings, and the existence of picture <a href="Glossary_Template.html" title="Glossary:Template">templates</a> associated with your default <a href="Glossary_Template.html" title="Glossary:Template">template</a>, SuperMemo may also prompt you <i>Do you want to use a picture template?</i>
+</p><p>If your <a href="Glossary_Template.html" title="Glossary:Template">template</a> has a picture hosting equivalent, you will be asked if the picture <a href="Glossary_Template.html" title="Glossary:Template">template</a> should be used. The picture <a href="Glossary_Template.html" title="Glossary:Template">template</a> should have the same name as the currently applied <a href="Glossary_Template.html" title="Glossary:Template">template</a> with the suffix <i>Picture</i> or <i>P</i>. For example, if the applied <a href="Glossary_Template.html" title="Glossary:Template">template</a> is called <i>Physics</i>, and you want picture <a href="Glossary_Template.html" title="Glossary:Template">template</a> to be suggested automatically for <a href="Glossary_Element.html" title="Glossary:Element">elements</a> with the <i>Physics</i> <a href="Glossary_Template.html" title="Glossary:Template">template</a>, name the picture <a href="Glossary_Template.html" title="Glossary:Template">template</a> <i>Physics Picture</i> or <i>PhysicsP</i> in the <a href="Glossary_Template.html" title="Glossary:Template">template</a> <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> (e.g. available via <b><a href="Search_menu.html" title="Search menu">Search</a> : <a href="Search_menu.html#Templates" title="Search menu">Templates</a></b> on the <a href="Main_menu.html" title="Main menu">main menu</a>).
+</p><p>A newly pasted picture is always added to the image <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> and becomes linked to the image <a href="Glossary_Component.html" title="Glossary:Component">component</a> that hosts it.
+</p>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Paste_picture_from_the_clipboard.jpg.html" title="SuperMemo: Pasting four pictures of a naked mole rat into a single element"><img alt="SuperMemo: Pasting four pictures of a naked mole rat into a single element" class="mw-file-element" decoding="async" height="412" loading="lazy" src="https://help.supermemo.org/images/thumb/4/4a/Paste_picture_from_the_clipboard.jpg/800px-Paste_picture_from_the_clipboard.jpg" srcset="/images/thumb/4/4a/Paste_picture_from_the_clipboard.jpg/1200px-Paste_picture_from_the_clipboard.jpg 1.5x, /images/4/4a/Paste_picture_from_the_clipboard.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure</b>: Several pictures of a naked mole rat have been pasted to the presented <a href="Glossary_Element.html" title="Glossary:Element">element</a>. After economizing space for the first picture, SuperMemo will tile the remaining pictures in the available area on the right of the <a href="Glossary_Element_window.html" title="Glossary:Element window">element window</a> (or in the relevant picture area if a custom-made picture <a href="Glossary_Template.html" title="Glossary:Template">template</a> is applied when pasting). Note that you can accomplish the same effect with <b><a href="Web_import.html" title="Web import">Web import</a></b> if you select <b>Page of images</b>.</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Importing_pictures_from_a_local_drive">Importing pictures from a local drive</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=4" title="Edit section: Importing pictures from a local drive"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=4" title="Edit section's source code: Importing pictures from a local drive"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading4"><h4 id="A_single_picture">A single picture</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=5" title="Edit section: A single picture"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=5" title="Edit section's source code: A single picture"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If your picture resides on the hard disk:
+</p>
+<ol><li>right-click over the image <a href="Glossary_Component.html" title="Glossary:Component">component</a> you want to import the picture to,</li>
+<li>choose <b><a href="Component_menu.html#File" title="Component menu">File</a> : <a href="Component_menu.html#Import_file" title="Component menu">Import file</a></b>,</li>
+<li>choose the picture from the disk.</li></ol>
+<div class="mw-heading mw-heading4"><h4 id="A_folder_of_pictures">A folder of pictures</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=6" title="Edit section: A folder of pictures"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=6" title="Edit section's source code: A folder of pictures"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If you want to import an entire album of pictures stored in a specific folder on your hard disk, use <b><a href="File_menu.html" title="File menu">File</a> : <a href="File_menu.html#Import" title="File menu">Import</a> : Files and folders</b>, and choose the folder to import. All files (including non-picture files) will be imported to separate <a href="Glossary_Element.html" title="Glossary:Element">elements</a> that will form a <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">tree structure</a> in the <a href="Contents.html" title="Contents"><b>Contents</b> window</a> analogous to the structure of imported folders (i.e. the selected folder and its subfolders (if any)). Note that you can automatically delete imported pictures from the import folder. Use this option with caution. To accelerate the import, there is no undo for import delete. Moreover, if you choose a wrong folder, the process may take ages and you will end up with a <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> peppered with, for example, EXE applications.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Importing_pictures_from_the_web">Importing pictures from the web</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=7" title="Edit section: Importing pictures from the web"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=7" title="Edit section's source code: Importing pictures from the web"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>You can import pictures from the web. You can either search for pictures (e.g. with <a class="external text" href="http://www.google.pl/imghp">Google Images</a>), or you can import pictures that are included in the articles that you process with <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>.
+</p>
+<div class="mw-heading mw-heading4"><h4 id="Import_from_the_web">Import from the web</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=8" title="Edit section: Import from the web"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=8" title="Edit section's source code: Import from the web"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If you find some pictures on the net, open them in Microsoft Edge, and use <i>Shift+F8</i> to import them to SuperMemo. See <a href="Web_import.html" title="Web import">Web import</a> for details. Download progress for large pictures is displayed on the <a href="Status_bar.html" title="Status bar">status bar</a>.
+</p><p>The import <a href="Glossary_Template.html" title="Glossary:Template">template</a> is determined as follows:
+</p>
+<ol><li>Default <a href="Glossary_Topic.html" title="Glossary:Topic">topic</a> <a href="Glossary_Template.html" title="Glossary:Template">template</a> for the current <a href="Glossary_Concept_group.html" title="Glossary:Concept group">concept group</a> is used if it contains at least one text <a href="Glossary_Component.html" title="Glossary:Component">component</a> (for picture descriptions) and one image <a href="Glossary_Component.html" title="Glossary:Component">component</a> (for the picture)</li>
+<li>Predefined <i>Article Picture</i> <a href="Glossary_Template.html" title="Glossary:Template">template</a> is used if it still exists (you can redefine this <a href="Glossary_Template.html" title="Glossary:Template">template</a> or save your own <a href="Glossary_Template.html" title="Glossary:Template">template</a> under this name as long as it contains the required text and image <a href="Glossary_Component.html" title="Glossary:Component">components</a>)</li>
+<li>In all other cases, <a href="Glossary_Template.html" title="Glossary:Template">template</a>-less <a href="Glossary_Element.html" title="Glossary:Element">element</a> is created with text and image <a href="Glossary_Component.html" title="Glossary:Component">components</a> as required by the import procedure</li></ol>
+<div class="mw-heading mw-heading4"><h4 id="Import_from_articles_included_in_SuperMemo">Import from articles included in SuperMemo</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=9" title="Edit section: Import from articles included in SuperMemo"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=9" title="Edit section's source code: Import from articles included in SuperMemo"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Once you import an article from the net, all its pictures will still reside on the net. If you would like to make sure you do not lose those pictures (e.g. when the article is pulled off), or if you want the pictures to show up in all <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> and <a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">clozes</a> produced in <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>, use <i>Ctrl+F8</i> (<b><a href="Component_menu.html#Download_images" title="Component menu">Download images</a></b> on the HTML <a href="Component_menu.html" title="Component menu">component menu</a>).
+</p>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Download_images.jpg.html" title="SuperMemo: Download images dialog box makes it possible for you to get images embedded in local pages imported from the net and put them to the image registry"><img alt="SuperMemo: Download images dialog box makes it possible for you to get images embedded in local pages imported from the net and put them to the image registry" class="mw-file-element" decoding="async" height="600" loading="lazy" src="https://help.supermemo.org/images/thumb/5/58/Download_images.jpg/771px-Download_images.jpg" srcset="/images/thumb/5/58/Download_images.jpg/1157px-Download_images.jpg 1.5x, /images/5/58/Download_images.jpg 2x" width="771"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> <b><a href="Component_menu.html#Download_images" title="Component menu">Download images</a></b> (Ctrl+F8) makes it possible to download remote images referred to in the HTML code of an <a href="HTML_component.html" title="HTML component">HTML component</a> and import them into the image <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a>. In the picture, pictures to illustrate the <a class="external text" href="https://en.wikipedia.org/wiki/Donald_Trump">Donald Trump</a> article from <a class="external text" href="http://en.wikipedia.org">Wikipedia</a> are being downloaded. At first, images are snapped from the browser renderer as thumbs. Full size images are downloaded in parallel. 5 images of the 34 listed have already been downloaded (as indicated in the caption) while the other 2 are still being downloaded (marked with → followed by the current download progress, i.e. 27.9% and 38.2% completed). You can illustrate the <a href="Glossary_Element.html" title="Glossary:Element">element</a> with the thumbs or you can wait until the full images are downloaded. On an average speed connection, images usually download faster than you can review them. In other words, unlike in SuperMemo 16, you usually do not need to wait for image downloads. <b>Insert</b> will insert the picture to illustrate the article and all its <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> and <a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">clozes</a> (those which are ready for insertion are marked with ✔). The thumbs/pictures that have not been inserted, will be available for download in all portions of the text that include the corresponding images.</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Pictures_as_answers">Pictures as answers</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=10" title="Edit section: Pictures as answers"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=10" title="Edit section's source code: Pictures as answers"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If you want a picture to be part of the answer (i.e. not visible at question time), check <b><a href="Component_menu.html#Answer" title="Component menu">Answer</a></b> on the image <a href="Component_menu.html" title="Component menu">component menu</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Tiling_pictures">Tiling pictures</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=11" title="Edit section: Tiling pictures"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=11" title="Edit section's source code: Tiling pictures"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If you are not happy with the way your pictures are tiled, you can rearrange the <a href="Glossary_Component.html" title="Glossary:Component">components</a> and re-tile your pictures. To rearrange <a href="Glossary_Component.html" title="Glossary:Component">components</a>, set them in the <a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">dragging mode</a> first. You can switch a <a href="Glossary_Component.html" title="Glossary:Component">component</a> to the <a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">dragging mode</a> with <i>Alt+click</i> (click twice until the <a href="Glossary_Component.html" title="Glossary:Component">component</a> becomes gray and draggable). You can switch all the <a href="Glossary_Component.html" title="Glossary:Component">components</a> to the <a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">dragging mode</a> with the <b>Switch mode</b> button (<span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Switch_mode.png.html" title="SuperMemo: Switch element from presentation to editing to drag&amp;size mode"><img alt="SuperMemo: Switch element from presentation to editing to drag&amp;size mode" class="mw-file-element" decoding="async" height="16" loading="lazy" src="https://help.supermemo.org/images/2/2c/Switch_mode.png" width="16"/></a></span>) on the <a href="Learnbar.html" title="Learnbar">learnbar</a>, with double <i>Alt+click</i> over an empty <a href="Glossary_Element.html" title="Glossary:Element">element</a> area, over the <a href="Navigation_bar.html" title="Navigation bar">navigation bar</a>, or over the bottom bar of the <a href="Glossary_Element_window.html" title="Glossary:Element window">element window</a>. Once in the <a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">dragging mode</a>, <a href="Glossary_Component.html" title="Glossary:Component">components</a> can be moved around with the mouse.
+</p><p>To tile <a href="Glossary_Component.html" title="Glossary:Component">components</a>, set the to-be-tiled <a href="Glossary_Component.html" title="Glossary:Component">components</a> in the <a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">dragging mode</a>, and choose <b>Tile components</b> in the <b><a href="SuperMemo_Commander.html" title="SuperMemo Commander">Commander</a></b> (<i>Ctrl+Enter</i>), or <b><a href="Element_menu.html#Components" title="Element menu">Components</a> : Tile components</b> (<i>Shift+Alt+T</i>) on the <a href="Element_menu.html" title="Element menu">element menu</a>. Component tiling assistance will help you arrange the <a href="Glossary_Component.html" title="Glossary:Component">components</a> into the optimum set of rows and columns. <a href="Glossary_Component.html" title="Glossary:Component">Components</a> will be tiled into the rectangle determined by the topmost, bottommost, rightmost and leftmost edges of all the <a href="Glossary_Component.html" title="Glossary:Component">components</a> selected for tiling. Positions of all other <a href="Glossary_Component.html" title="Glossary:Component">components</a> are not taken into consideration. Note that once you change either <b>Rows</b> or <b>Columns</b> you need to press <i>Enter</i> in order to recalculate the other parameter and to update the preview grid.
+</p><p>To choose <a href="Glossary_Component.html" title="Glossary:Component">components</a> to tile, you can also press <i>Ctrl+E</i> to set all <a href="Glossary_Component.html" title="Glossary:Component">components</a> in the <a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">editing mode</a>, and return non-tile <a href="Glossary_Component.html" title="Glossary:Component">components</a> to the <a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">presentation mode</a> with double or triple <i>Alt+click</i>. Finally, you can just check or uncheck the <a href="Glossary_Component.html" title="Glossary:Component">components</a> on the list displayed right before they are to be tiled.
+</p>
+<div class="center">
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Tile_arrangement.jpg.html" title="SuperMemo: Tiling Rafael Nadal pictures with component tiling assistance"><img alt="SuperMemo: Tiling Rafael Nadal pictures with component tiling assistance" class="mw-file-element" decoding="async" height="450" loading="lazy" src="https://help.supermemo.org/images/thumb/6/63/Tile_arrangement.jpg/800px-Tile_arrangement.jpg" srcset="/images/thumb/6/63/Tile_arrangement.jpg/1200px-Tile_arrangement.jpg 1.5x, /images/thumb/6/63/Tile_arrangement.jpg/1600px-Tile_arrangement.jpg 2x" width="800"/></a><figcaption>SuperMemo: Tiling Rafael Nadal pictures with component tiling assistance</figcaption></figure>
+<blockquote>
+<p><i><b>Figure:</b> 14 <a class="external text" href="https://en.wikipedia.org/wiki/Rafael_Nadal">Rafael Nadal</a>'s pictures are being tiled with the assistance of the <b><a href="Element_menu.html#Components" title="Element menu">Tile arrangement</a></b> tool. You can use this tool to easily determine in how many rows and columns you want to arrange the pictures available in the current <a href="Glossary_Element.html" title="Glossary:Element">element</a>. In the picture, the element holds the pictures  of the Spanish tennis player celebrating the match points of all his 14 <a class="external text" href="https://en.wikipedia.org/wiki/French_Open">French Opens</a>.</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Big_pictures">Big pictures</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=12" title="Edit section: Big pictures"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=12" title="Edit section's source code: Big pictures"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Zooming,_slicing,_trimming,_and_cropping_pictures"><span id="Zooming.2C_slicing.2C_trimming.2C_and_cropping_pictures"></span>Zooming, slicing, trimming, and cropping pictures</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=13" title="Edit section: Zooming, slicing, trimming, and cropping pictures"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=13" title="Edit section's source code: Zooming, slicing, trimming, and cropping pictures"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Some pictures are too big to be effectively used in learning. They carry too much information. In some cases you will want to focus on the important part of the picture, in other cases you will just want to discard unnecessary information.
+</p><p>For example, when learning political geography, you might import a huge map of Africa to SuperMemo. However, for individual <a href="Glossary_Item.html" title="Glossary:Item">items</a>, you might want to limit the displayed portion of the picture to a single country with its direct neighbors.
+</p>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Unzoomed_picture.jpg.html" title="SuperMemo: The unzoomed picture of the African political map used to illustrate elements related to Africa"><img alt="SuperMemo: The unzoomed picture of the African political map used to illustrate elements related to Africa" class="mw-file-element" decoding="async" height="436" loading="lazy" src="https://help.supermemo.org/images/thumb/d/d7/Unzoomed_picture.jpg/800px-Unzoomed_picture.jpg" srcset="/images/thumb/d/d7/Unzoomed_picture.jpg/1200px-Unzoomed_picture.jpg 1.5x, /images/d/d7/Unzoomed_picture.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure</b>: The unzoomed picture of the African political map used to illustrate <a href="Glossary_Element.html" title="Glossary:Element">elements</a> related to Africa. You can see an <a href="Glossary_Element.html" title="Glossary:Element">element</a> related to the assassination of the President Habyarimana extracted from the article about the <a class="external text" href="https://en.wikipedia.org/wiki/History_of_Rwanda">history of Rwanda</a> originally imported from <a class="external text" href="http://en.wikipedia.org">Wikipedia</a>. The <a href="Glossary_Element.html" title="Glossary:Element">element</a> is illustrated with the political map of Africa on the right (the map is neither zoomed nor trimmed; just stretched proportionally within the image <a href="Glossary_Component.html" title="Glossary:Component">component</a>).</i>
+</p>
+</blockquote>
+</div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Zoomed_picture.jpg.html" title="SuperMemo: The picture of the African political map zoomed in on Rwanda to illustrate to an item about the assassination of the President Habyarimana in 1994"><img alt="SuperMemo: The picture of the African political map zoomed in on Rwanda to illustrate to an item about the assassination of the President Habyarimana in 1994" class="mw-file-element" decoding="async" height="441" loading="lazy" src="https://help.supermemo.org/images/thumb/8/84/Zoomed_picture.jpg/800px-Zoomed_picture.jpg" srcset="/images/thumb/8/84/Zoomed_picture.jpg/1200px-Zoomed_picture.jpg 1.5x, /images/8/84/Zoomed_picture.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure</b>: The picture of the African political map zoomed in on Rwanda to illustrate an <a href="Glossary_Item.html" title="Glossary:Item">item</a> about the assassination of the President Habyarimana in 1994. In the picture, you can see a <a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">cloze deletion</a> produced from the <a class="external text" href="https://en.wikipedia.org/wiki/History_of_Rwanda">History of Rwanda</a> article. In this <a href="Glossary_Element.html" title="Glossary:Element">element</a>, however, the African political map is zoomed in on Rwanda (and the neighboring nations). The original picture is zoomed in without cropping the original picture file. Zoomed pictures are marked with a border, which is colored <span style="padding: 3px; background: lime;">bright lime</span> in <a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">zoom&amp;trim mode</a> and <span style="padding: 3px; color: #fff; background: red;">red</span> in the <a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">display mode</a>. If you do not crop the picture, it will remain unchanged (whether zoomed or unzoomed) in all <a href="Glossary_Element.html" title="Glossary:Element">elements</a> that use it (including other <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> from the <a class="external text" href="https://en.wikipedia.org/wiki/History_of_Rwanda">History of Rwanda</a> article).</i>
+</p>
+</blockquote>
+</div>
+<p>To display only a small portion of a picture in a given <a href="Glossary_Element.html" title="Glossary:Element">element</a>, enter the <a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">zoom&amp;trim mode</a> by <i>Alt+clicking</i> the picture. You can now use several operations to zoom in onto the interesting portion of the picture:
+</p>
+<ul><li><b>Zoom</b>: click the middle mouse button to zoom in on an interesting portion of the picture</li>
+<li><b>Unzoom</b>: <i>Shift+click</i> the middle button to unzoom</li>
+<li><b>Move</b>: <i>Shift+drag</i> the zoomed picture to adjust the displayed area</li>
+<li><b>Trim</b>: <i>Ctrl+swipe</i> unwanted edges of the picture:
+<ol><li>press <i>Ctrl</i>,</li>
+<li>point to the edge that is to be cut out,</li>
+<li>press down the mouse, and</li>
+<li>move it in the direction of the area that is to be cut.</li></ol></li>
+<li><b>Select</b>: drag and select to mark the area that is to be displayed in the picture:
+<ol><li>point to one corner of the desired area,</li>
+<li>press down the left mouse button,</li>
+<li>drag the selection marquee to select a portion of the picture, and</li>
+<li>release the mouse button to slice the picture.</li></ol></li></ul>
+<p>Once you zoom in onto the interesting area, press <i>Esc</i> to quit the <a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">zoom&amp;trim mode</a>. You will be given the following options:
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Zoom_and_trim_options.jpg.html" title="SuperMemo: The list of options presented upon quitting the zoom&amp;trim mode"><img alt="SuperMemo: The list of options presented upon quitting the zoom&amp;trim mode" class="mw-file-element" decoding="async" height="353" loading="lazy" src="https://help.supermemo.org/images/thumb/d/d4/Zoom_and_trim_options.jpg/800px-Zoom_and_trim_options.jpg" srcset="/images/d/d4/Zoom_and_trim_options.jpg 1.5x" width="800"/></a><figcaption>SuperMemo: The list of options presented upon quitting the zoom&amp;trim mode</figcaption></figure>
+<ul><li><b>Leave the picture zoomed/trimmed without changing the file</b>. This will display the selected portion of the picture in the current <a href="Glossary_Element.html" title="Glossary:Element">element</a> without changing the original picture file that might be used elsewhere in its entirety or with other portions zoomed onto. This is the default option. When you revisit the <a href="Glossary_Element.html" title="Glossary:Element">element</a>, it will still be marked with a zoom border. However, the lime-colored border of the <a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">zoom&amp;trim mode</a> will be replaced with a red border, which indicates a zoomed picture in the <a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">display mode</a>.</li>
+<li><b>Permanently cut/crop the zoomed/trimmed image file</b>. This will replace the original picture file with a smaller picture representing the zoomed-in area).</li>
+<li><b>Unzoom/undo</b>. This will cancel the changes introduced in the <a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">zoom&amp;trim mode</a>.</li>
+<li><b>Cancel</b>. This does nothing (i.e. you will stay in the <a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">zoom&amp;trim mode</a>)</li></ul>
+<p>If you leave the <a href="Glossary_Element.html" title="Glossary:Element">element</a> without terminating the <a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">zoom&amp;trim mode</a>, the picture will remained zoomed, and the original picture file will remain unchanged (i.e. as if you chose the default option when terminating the <a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">zoom&amp;trim mode</a> with <i>Esc</i>)
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Picture_processing_options">Picture processing options</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=14" title="Edit section: Picture processing options"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=14" title="Edit section's source code: Picture processing options"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>You can quickly access picture processing options with <i>Shift+Ctrl+F8</i>. If you have more than one picture in the <a href="Glossary_Element.html" title="Glossary:Element">element</a>, start from clicking the one that you want to process.
+</p>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Picture_processing_options.jpg.html" title="SuperMemo: Picture processing options available by pressing Shift+Ctrl+F8 (Image : Process from the image component menu)"><img alt="SuperMemo: Picture processing options available by pressing Shift+Ctrl+F8 (Image : Process from the image component menu)" class="mw-file-element" decoding="async" height="599" loading="lazy" src="https://help.supermemo.org/images/thumb/0/0f/Picture_processing_options.jpg/571px-Picture_processing_options.jpg" srcset="/images/thumb/0/0f/Picture_processing_options.jpg/857px-Picture_processing_options.jpg 1.5x, /images/0/0f/Picture_processing_options.jpg 2x" width="571"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> Picture processing options available by pressing Shift+Ctrl+F8 (<b><a href="Component_menu.html#Image" title="Component menu">Image</a> : Process</b> from the image <a href="Component_menu.html" title="Component menu">component menu</a>)</i>
+</p>
+</blockquote>
+</div>
+<p>The following picture processing options are available:
+</p>
+<ul><li><b>Zoom</b> - enter the <a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">zoom&amp;trim mode</a> (you can enter this mode even faster with <i>Alt+click</i> over the image)</li>
+<li><b>Unzoom</b> - unzoom the zoomed picture, i.e. show the entire original picture</li>
+<li><b>Extract</b> (<i>Alt+X</i>) - extract portion of a picture into a new <a href="Glossary_Element.html" title="Glossary:Element">element</a>. SuperMemo (1) duplicates the <a href="Glossary_Element.html" title="Glossary:Element">element</a>, (2) clones the image, and (3) enters the trim&amp;zoom mode. This will, in essence, produce an <a href="Glossary_Extract.html" title="Glossary:Extract">extract</a> in the same way as you produce a <a href="Glossary_Extract.html" title="Glossary:Extract">text extract</a> in <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>. Once you finish selecting or trimming the <a href="Glossary_Extract.html" title="Glossary:Extract">extract</a>, press <i>Esc</i>, and choose <b>Permanently cut/crop the zoomed/trimmed image file</b>. If you do not want the original picture to be marked with extract boundaries, respond with <i><b>No</b></i> to <i>Replace picture with a JPG image?</i> After executing <b>Extract</b>, you will have two <a href="Glossary_Element.html" title="Glossary:Element">elements</a>: one with the original picture with extract boundaries marked (or unchanged, if you do not want to modify the picture), and the new <a href="Glossary_Element.html" title="Glossary:Element">element</a> with a new picture, which is a portion of the original picture (see: <a href="#Example_of_a_picture_extract">example</a>)</li>
+<li><b>Crop</b> - delete invisible portions of the picture from the original file (i.e. reduce its size to the visible portion of the zoomed picture). This will affect all <a href="Glossary_Element.html" title="Glossary:Element">elements</a> that use this picture</li>
+<li><b>Clone</b> - create a copy of a picture in the image <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> (this way, cropping a picture or marking it with extracted portions will not affect other <a href="Glossary_Element.html" title="Glossary:Element">elements</a> that use the same picture in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>)</li>
+<li><b>Compress</b> - reduce the size of the picture by choosing a new size; compression will produce a file that is no greater than the size you choose. In most cases, you can compress a 2-5 MB picture to 200-500 kB without noticing the difference in quality</li>
+<li><b>Scale</b> - reduce the size of the picture by reducing its quality, increasing compression, reducing its dimensions, trimming its edges, etc</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Extracting_pictures_from_larger_pictures">Extracting pictures from larger pictures</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=15" title="Edit section: Extracting pictures from larger pictures"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=15" title="Edit section's source code: Extracting pictures from larger pictures"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Extracting picture fragments from larger pictures is analogous to extracting fragments of texts in <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>. They can also be executed with the same shortcut <i>Alt+X</i>. The <i>Alt+X</i> will work for a picture <a href="Glossary_Extract.html" title="Glossary:Extract">extract</a> if (1) no text is selected, and (2) there is a picture available in the <a href="Glossary_Element.html" title="Glossary:Element">element</a>.
+</p><p>When you press <i>Alt+X</i> on a picture, the <a href="Glossary_Element.html" title="Glossary:Element">element</a> will be duplicated (as is the case with text <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a>), the picture will be cloned (i.e. a duplicate of its original will be created), and you will enter the <a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">zoom&amp;trim mode</a>. Once you zoom onto a portion of the picture, press <i>Esc</i> to crop the <a href="Glossary_Extract.html" title="Glossary:Extract">extract</a> and return to the original <a href="Glossary_Element.html" title="Glossary:Element">element</a> (from which the <a href="Glossary_Extract.html" title="Glossary:Extract">extract</a> has been made). SuperMemo will ask you: <i>Replace picture with a JPG image?</i> Note that the above sequence is slightly different from the one you use in extracting texts: you press <i>Alt+X</i> and generate a new <a href="Glossary_Element.html" title="Glossary:Element">element</a> <b>before</b> you select a picture fragment.
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Replace_picture_with_a_JPG_image.jpg.html" title="SuperMemo: The choice given to the user whether to mark the extracted portion with a bright yellow-red rectangle in the original picture"><img alt="SuperMemo: The choice given to the user whether to mark the extracted portion with a bright yellow-red rectangle in the original picture" class="mw-file-element" decoding="async" height="531" loading="lazy" src="https://help.supermemo.org/images/thumb/6/67/Replace_picture_with_a_JPG_image.jpg/800px-Replace_picture_with_a_JPG_image.jpg" srcset="/images/6/67/Replace_picture_with_a_JPG_image.jpg 1.5x" width="800"/></a><figcaption>SuperMemo: The choice given to the user whether to mark the extracted portion with a bright yellow-red rectangle in the original picture</figcaption></figure>
+<p>If you choose <i><b>Yes</b></i>, the original big picture will be marked with a bright yellow-red extract rectangle (marking the area that has been extracted). If extract rectangles overlap, you may wish to answer
+<i><b>No</b></i> to make sure the <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> themselves do not get obscured by previous extract borders; however, in such cases you will need to remember which portions of the picture have already been extracted. This means that in those cases you will rather need to do all your <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> one after another (i.e. while you keep your progress fresh in memory).
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Example_of_a_picture_extract">Example of a picture extract</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=16" title="Edit section: Example of a picture extract"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=16" title="Edit section's source code: Example of a picture extract"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>This large picture of a stunning Freiburg panorama is too large to view details in SuperMemo. You can therefore extract all interesting portions for independent review. After producing an <a href="Glossary_Extract.html" title="Glossary:Extract">extract</a>, yellow-red border can indicate which portions of the picture have already been processed:
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Freiburg_panorama_(original).jpg.html" title="SuperMemo: The original picture of the Freiburg panorama (too large to view its details) from which 4 picture extracts (marked with bright yellow-red rectangles) have been produced"><img alt="SuperMemo: The original picture of the Freiburg panorama (too large to view its details) from which 4 picture extracts (marked with bright yellow-red rectangles) have been produced" class="mw-file-element" decoding="async" height="140" loading="lazy" src="https://help.supermemo.org/images/thumb/9/94/Freiburg_panorama_%28original%29.jpg/800px-Freiburg_panorama_%28original%29.jpg" srcset="/images/thumb/9/94/Freiburg_panorama_%28original%29.jpg/1200px-Freiburg_panorama_%28original%29.jpg 1.5x, /images/thumb/9/94/Freiburg_panorama_%28original%29.jpg/1600px-Freiburg_panorama_%28original%29.jpg 2x" width="800"/></a><figcaption>SuperMemo: The original picture of the Freiburg panorama (too large to view its details) from which 4 picture extracts (marked with bright yellow-red rectangles) have been produced</figcaption></figure>
+<p>Individual <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> are small enough to view details without zooming:
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Freiburg_panorama_(extract).jpg.html" title="SuperMemo: The 2nd extract produced from the original picture of the Freiburg panorama (now small enough to view its details)"><img alt="SuperMemo: The 2nd extract produced from the original picture of the Freiburg panorama (now small enough to view its details)" class="mw-file-element" decoding="async" height="489" loading="lazy" src="https://help.supermemo.org/images/thumb/f/f6/Freiburg_panorama_%28extract%29.jpg/800px-Freiburg_panorama_%28extract%29.jpg" srcset="/images/thumb/f/f6/Freiburg_panorama_%28extract%29.jpg/1200px-Freiburg_panorama_%28extract%29.jpg 1.5x, /images/thumb/f/f6/Freiburg_panorama_%28extract%29.jpg/1600px-Freiburg_panorama_%28extract%29.jpg 2x" width="800"/></a><figcaption>SuperMemo: The 2nd extract produced from the original picture of the Freiburg panorama (now small enough to view its details)</figcaption></figure>
+<p>Instead of extracting portions of the panorama, you might equally well just zoom in. However, if you extract only a tiny portion of pictures from a very large image, <a href="Glossary_Extract.html" title="Glossary:Extract">extracts</a> will consume less disk space because the portions of the picture you are not interested in will be discarded.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Cloze_for_pictures">Cloze for pictures</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=17" title="Edit section: Cloze for pictures"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=17" title="Edit section's source code: Cloze for pictures"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>To create graphic deletion tests (<a href="Glossary_Occlusion_test.html" title="Glossary:Occlusion test">occlusion tests</a>), use the following approaches:
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Multiple_items">Multiple items</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=18" title="Edit section: Multiple items"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=18" title="Edit section's source code: Multiple items"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>To create many <a href="Glossary_Occlusion_test.html" title="Glossary:Occlusion test">occlusion tests</a> at once, do the following:
+</p>
+<ol><li>Create a template element with at least one picture</li>
+<li>Type "Occlusion" in the <a class="mw-redirect" href="Commander.html" title="Commander">Commander</a> (<i>Ctrl+Enter</i>)</li>
+<li>Mark occlusion rectangles with click&amp;drag</li>
+<li>Choose one of occlusion options at the bottom (leftmost by default)</li></ol>
+<p>In the picture below, the four buttons at the bottom have the following functions:
+</p>
+<ol><li>Hide one, reveal others (in each item, one rectangle occludes one area of the picture)</li>
+<li>Show one, hide others (in each item, many rectangles occlude many areas and reveal one, or more)</li>
+<li>Clear all rectangles to start fresh</li>
+<li>Add all rectangles to the current element without creating items (e.g. to adjust rectangles, colors, etc.)</li></ol>
+<p>See: <a class="external text" href="https://www.youtube.com/watch?v=70JFgD4bEk8">Learning anatomy with Occlusion tests</a> (video)
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg.html"><img class="mw-file-element" decoding="async" height="545" loading="lazy" src="https://help.supermemo.org/images/thumb/5/5d/Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg/800px-Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg" srcset="/images/thumb/5/5d/Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg/1200px-Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg 1.5x, /images/thumb/5/5d/Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg/1600px-Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg 2x" width="800"/></a><figcaption></figcaption></figure>
+<blockquote>
+<p><i><b>Figure:</b> SuperMemo 19 simplifies generating multiple occlusion tests from the same picture. In the picture, the structure of the hippocampus is mastered with the help of occlusion rectangles generated in <b>Occlusion Test</b> dialog window. In the background, template item will be reused in all generated tests. See: <a class="external text" href="https://www.youtube.com/watch?v=70JFgD4bEk8">video</a> or read <a href="Incremental_learning.html#Cloze_for_pictures" title="Incremental learning">Cloze for pictures</a></i>
+</p>
+</blockquote>
+<div class="mw-heading mw-heading3"><h3 id="Incremental_approach">Incremental approach</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=19" title="Edit section: Incremental approach"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=19" title="Edit section's source code: Incremental approach"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ol><li>Choose <b>Add new</b> (<i>Alt+A</i>) to add a new <a href="Glossary_Item.html" title="Glossary:Item">item</a></li>
+<li>Apply the <i>Occlusion</i> <a href="Glossary_Template.html" title="Glossary:Template">template</a> (e.g. press <i>Ctrl+Shift+M</i> and choose "<i>Occlusion</i>")</li>
+<li>Paste the image prepared for the graphic test (e.g. <i>Ctrl+V</i>)</li>
+<li>Use <i>Ctrl+T</i> a few times to select the occlusion rectangle</li>
+<li>Size the rectangle so that to occlude the portion that makes the question</li>
+<li>Type in the question (e.g. "<i>What portion of the image is covered by the red rectangle?</i>")</li>
+<li>Type in the answer</li>
+<li>Use <i>Shift+Alt+L</i> to test your new <a href="Glossary_Occlusion_test.html" title="Glossary:Occlusion test">occlusion test</a></li>
+<li>Use <b><a href="Element_menu.html#Edit" title="Element menu">Edit</a> : Duplicate</b> (<i>Alt+D</i>) on the <a href="Element_menu.html" title="Element menu">element menu</a> to generate more tests with the same picture</li>
+<li>Remember that for best scaling results you need to keep your <a href="Glossary_Template.html" title="Glossary:Template">template</a>/<a href="Glossary_Element.html" title="Glossary:Element">element</a> <b><a href="Element_menu.html#Scaled" title="Element menu">Scaled</a></b> and your picture <b><a href="Component_menu.html#Image" title="Component menu">Image</a> : Stretch : Filled</b> (without those two, resizing the <a href="Glossary_Element.html" title="Glossary:Element">element</a> will move the rectangle relative to the image and reveal the answer)</li></ol>
+<!-- 
+NewPP limit report
+Cached time: 20260610111333
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.093 seconds
+Real time usage: 0.102 seconds
+Preprocessor visited node count: 253/1000000
+Post‐expand include size: 5482/2097152 bytes
+Template argument size: 938/2097152 bytes
+Highest expansion depth: 5/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   13.495      1 -total
+ 24.83%    3.351      1 File:Tile_arrangement.jpg
+ 18.27%    2.466      1 File:Download_images.jpg
+ 15.32%    2.067      2 Template:Fig
+ 14.87%    2.006      1 File:Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg
+ 13.26%    1.790      1 File:Zoomed_picture.jpg
+ 11.49%    1.550      1 File:Unzoomed_picture.jpg
+ 11.40%    1.538      1 File:Picture_processing_options.jpg
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:205:|#|:idhash:canonical and timestamp 20260610111333 and revision id 11900. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Incremental_picture_processing_and_learning"><span class="tocnumber">1</span> <span class="toctext">增量图片处理和学习</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Adding_pictures_to_SuperMemo"><span class="tocnumber">2</span> <span class="toctext">将图片添加到 SuperMemo</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Pasting_pictures_from_the_clipboard"><span class="tocnumber">2.1</span> <span class="toctext">从剪贴板粘贴图片</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Importing_pictures_from_a_local_drive"><span class="tocnumber">2.2</span> <span class="toctext">从本地驱动器导入图片</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#A_single_picture"><span class="tocnumber">2.2.1</span> <span class="toctext">单张图片</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="#A_folder_of_pictures"><span class="tocnumber">2.2.2</span> <span class="toctext">一个图片文件夹</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="#Importing_pictures_from_the_web"><span class="tocnumber">2.3</span> <span class="toctext">从网络导入图片</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="#Import_from_the_web"><span class="tocnumber">2.3.1</span> <span class="toctext">从网络导入</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Import_from_articles_included_in_SuperMemo"><span class="tocnumber">2.3.2</span> <span class="toctext">从 SuperMemo 中包含的文章导入</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-10"><a href="#Pictures_as_answers"><span class="tocnumber">2.4</span> <span class="toctext">图片作为答案</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="#Tiling_pictures"><span class="tocnumber">3</span> <span class="toctext">平铺图片</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Big_pictures"><span class="tocnumber">4</span> <span class="toctext">大图</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="#Zooming,_slicing,_trimming,_and_cropping_pictures"><span class="tocnumber">4.1</span> <span class="toctext">缩放、切片、修剪和裁剪图片</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Picture_processing_options"><span class="tocnumber">4.2</span> <span class="toctext">图片处理选项</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="#Extracting_pictures_from_larger_pictures"><span class="tocnumber">5</span> <span class="toctext">从较大的图片中提取图片</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="#Example_of_a_picture_extract"><span class="tocnumber">5.1</span> <span class="toctext">图片摘录示例</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-17"><a href="#Cloze_for_pictures"><span class="tocnumber">6</span> <span class="toctext">图片完形填空</span></a>
+<ul>
+<li class="toclevel-2 tocsection-18"><a href="#Multiple_items"><span class="tocnumber">6.1</span> <span class="toctext">多个项目</span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="#Incremental_approach"><span class="tocnumber">6.2</span> <span class="toctext">渐进法</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Incremental_picture_processing_and_learning">增量图片处理和学习</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=1" title="Edit section: Incremental picture processing and learning"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=1" title="Edit section's source code: Incremental picture processing and learning"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>一张图胜过一千个字。这句永恒的格言表达了一个来自神经科学的众所周知的事实：我们有一个极其有效的视觉记忆系统，应该经常使用它来补充用于更抽象知识的记忆系统，而抽象知识是我们的主要目标。<a href="Incremental_learning.html" title="Incremental learning">渐进学习</a>。图片具有很强的记忆力，应该大量使用来说明学习材料。 SuperMemo 实现了图片操作，只要您掌握了视觉学习的基本技能，您就可以比以往更轻松地处理图片。</p><p><b>视觉学习</b>相当于<a href="Incremental_reading.html" title="Incremental reading">增量阅读</a>，但用于掌握以图片表示的材料。在视觉学习中，您获得一系列图片作为输入，并对最重要的图片、图片片段或与图片相关的注释产生持久的记忆。图片可能是您标准学习过程的一部分，也可能取自特定图片或照片<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>，例如你的<a class="external text" href="http://supermemopedia.com/wiki/Why_SuperMemo,_not_Photo_Gallery%3F">家庭相册</a>。</p><p>视觉学习的工具和技术也可用于学习仅以图片形式提供的文本（例如书籍快照、只读 PDF 屏幕打印、纸质笔记等）。可以使用扫描仪或数码相机为笔记拍照。然而，除非使用高质量的OCR软件或手动注释图片文本，否则无法执行文本搜索。</p>
+<div class="mw-heading mw-heading2"><h2 id="Adding_pictures_to_SuperMemo">将图片添加到 SuperMemo</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=2" title="Edit section: Adding pictures to SuperMemo"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=2" title="Edit section's source code: Adding pictures to SuperMemo"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Pasting_pictures_from_the_clipboard">从剪贴板粘贴图片</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=3" title="Edit section: Pasting pictures from the clipboard"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=3" title="Edit section's source code: Pasting pictures from the clipboard"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>要将图片粘贴到 SuperMemo，请先将其复制到剪贴板。在 SuperMemo 中，转到<a href="Glossary_Element.html" title="Glossary:Element">元素</a>也就是显示图片。确保您位于<a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">演示模式</a>（例如按<i>ESC</i>如果您不确定，请多试几次）。新闻<i>Shift+插入</i>或<i>Ctrl+V</i>粘贴图片或单击<b>粘贴</b>按钮（<span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Paste.png.html" title="SuperMemo: Insert the contents of the clipboard"><img alt="SuperMemo: Insert the contents of the clipboard" class="mw-file-element" decoding="async" height="16" loading="lazy" src="https://help.supermemo.org/images/9/9e/Paste.png" width="16"/></a></span>）在<a href="Learnbar.html" title="Learnbar">学习栏</a>。</p><p>如果<a href="Glossary_Element.html" title="Glossary:Element">元素</a>没有图像<a href="Glossary_Component.html" title="Glossary:Component">组件</a>，SuperMemo 将改变现有的<a href="Glossary_Component.html" title="Glossary:Component">组件</a>向左移动，为图片腾出空间。否则它将重用第一个空图像<a href="Glossary_Component.html" title="Glossary:Component">组件</a>，或平铺现有图像以在专门用于图片的空间中添加新图像。取决于您的<a href="Glossary_Concept.html" title="Glossary:Concept">概念</a> <a href="Glossary_Template.html" title="Glossary:Template">模板</a>设置以及图片的存在<a href="Glossary_Template.html" title="Glossary:Template">模板</a>与您的默认值相关联<a href="Glossary_Template.html" title="Glossary:Template">模板</a>, SuperMemo 也可能会提示你<i>您想使用图片模板吗？</i>
+</p><p>如果你的<a href="Glossary_Template.html" title="Glossary:Template">模板</a>有一个图片托管等效项，系统会询问您该图片是否<a href="Glossary_Template.html" title="Glossary:Template">模板</a>应该使用。图片<a href="Glossary_Template.html" title="Glossary:Template">模板</a>应该与当前应用的名称相同<a href="Glossary_Template.html" title="Glossary:Template">模板</a>带有后缀<i>图片</i>或<i>磷</i>。例如，如果应用了<a href="Glossary_Template.html" title="Glossary:Template">模板</a>被称为<i>物理学</i>，并且你想要图片<a href="Glossary_Template.html" title="Glossary:Template">模板</a>自动建议<a href="Glossary_Element.html" title="Glossary:Element">元素</a>与<i>物理学</i> <a href="Glossary_Template.html" title="Glossary:Template">模板</a>，命名图片<a href="Glossary_Template.html" title="Glossary:Template">模板</a> <i>物理图片</i>或<i>物理P</i>在<a href="Glossary_Template.html" title="Glossary:Template">模板</a> <a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>（例如，可通过<b><a href="Search_menu.html" title="Search menu">搜索</a> :<a href="Search_menu.html#Templates" title="Search menu">模板</a></b>于<a href="Main_menu.html" title="Main menu">主菜单</a>）。</p><p>新粘贴的图片始终会添加到图像中<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>并链接到图像<a href="Glossary_Component.html" title="Glossary:Component">组件</a>托管它的。</p>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Paste_picture_from_the_clipboard.jpg.html" title="SuperMemo: Pasting four pictures of a naked mole rat into a single element"><img alt="SuperMemo: Pasting four pictures of a naked mole rat into a single element" class="mw-file-element" decoding="async" height="412" loading="lazy" src="https://help.supermemo.org/images/thumb/4/4a/Paste_picture_from_the_clipboard.jpg/800px-Paste_picture_from_the_clipboard.jpg" srcset="/images/thumb/4/4a/Paste_picture_from_the_clipboard.jpg/1200px-Paste_picture_from_the_clipboard.jpg 1.5x, /images/4/4a/Paste_picture_from_the_clipboard.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图</b>： 演示文稿中已粘贴几张裸鼹鼠的照片<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。在节省第一张图片的空间后，SuperMemo 会将剩余的图片平铺在第一张图片右侧的可用区域中。<a href="Glossary_Element_window.html" title="Glossary:Element window">元素窗口</a>（如果是定制图片，则在相关图片区域<a href="Glossary_Template.html" title="Glossary:Template">模板</a>粘贴时应用）。请注意，您可以使用以下命令实现相同的效果<b><a href="Web_import.html" title="Web import">网页导入</a></b>如果你选择<b>图片页面</b>。</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Importing_pictures_from_a_local_drive">从本地驱动器导入图片</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=4" title="Edit section: Importing pictures from a local drive"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=4" title="Edit section's source code: Importing pictures from a local drive"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading4"><h4 id="A_single_picture">单张图片</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=5" title="Edit section: A single picture"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=5" title="Edit section's source code: A single picture"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果您的图片驻留在硬盘上：</p>
+<ol><li>右键单击图像<a href="Glossary_Component.html" title="Glossary:Component">组件</a>您想要将图片导入到</li>
+<li>选择<b><a href="Component_menu.html#File" title="Component menu">文件</a> :<a href="Component_menu.html#Import_file" title="Component menu">导入文件</a></b>,</li>
+<li>从磁盘中选择图片。</li></ol>
+<div class="mw-heading mw-heading4"><h4 id="A_folder_of_pictures">一个图片文件夹</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=6" title="Edit section: A folder of pictures"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=6" title="Edit section's source code: A folder of pictures"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果您想导入存储在硬盘上特定文件夹中的整个图片相册，请使用<b><a href="File_menu.html" title="File menu">文件</a> :<a href="File_menu.html#Import" title="File menu">进口</a> ：文件和文件夹</b>，然后选择要导入的文件夹。所有文件（包括非图片文件）将被导入到单独的文件中<a href="Glossary_Element.html" title="Glossary:Element">元素</a>这将形成一个<a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">树结构</a>在<a href="Contents.html" title="Contents"><b>内容</b>窗户</a>类似于导入文件夹的结构（即所选文件夹及其子文件夹（如果有））。请注意，您可以自动从导入文件夹中删除导入的图片。请谨慎使用此选项。为了加速导入，导入删除无法撤消。此外，如果您选择了错误的文件夹，该过程可能会花费很长时间，并且最终会得到一个<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>例如，充满了 EXE 应用程序。</p>
+<div class="mw-heading mw-heading3"><h3 id="Importing_pictures_from_the_web">从网络导入图片</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=7" title="Edit section: Importing pictures from the web"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=7" title="Edit section's source code: Importing pictures from the web"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>您可以从网络导入图片。您可以搜索图片（例如<a class="external text" href="http://www.google.pl/imghp">谷歌图片</a>），或者您可以导入您处理的文章中包含的图片<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>。</p>
+<div class="mw-heading mw-heading4"><h4 id="Import_from_the_web">从网络导入</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=8" title="Edit section: Import from the web"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=8" title="Edit section's source code: Import from the web"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果您在网上找到一些图片，请在 Microsoft Edge 中打开它们，然后使用<i>Shift+F8</i>将它们导入 SuperMemo。参见<a href="Web_import.html" title="Web import">网页导入</a>了解详情。大图片的下载进度显示在<a href="Status_bar.html" title="Status bar">状态栏</a>。</p><p>进口<a href="Glossary_Template.html" title="Glossary:Template">模板</a>确定如下：</p>
+<ol><li>默认<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a> <a href="Glossary_Template.html" title="Glossary:Template">模板</a>对于当前的<a href="Glossary_Concept_group.html" title="Glossary:Concept group">概念组</a>如果它包含至少一个文本，则使用<a href="Glossary_Component.html" title="Glossary:Component">组件</a>（用于图片描述）和一张图片<a href="Glossary_Component.html" title="Glossary:Component">组件</a>（对于图片）</li>
+<li>预定义<i>文章图片</i> <a href="Glossary_Template.html" title="Glossary:Template">模板</a>如果它仍然存在则使用（您可以重新定义它<a href="Glossary_Template.html" title="Glossary:Template">模板</a>或者保存你自己的<a href="Glossary_Template.html" title="Glossary:Template">模板</a>在此名称下，只要它包含所需的文本和图像<a href="Glossary_Component.html" title="Glossary:Component">组件</a>）</li>
+<li>在所有其他情况下，<a href="Glossary_Template.html" title="Glossary:Template">模板</a>-更少<a href="Glossary_Element.html" title="Glossary:Element">元素</a>由文本和图像创建<a href="Glossary_Component.html" title="Glossary:Component">组件</a>根据进口程序的要求</li></ol>
+<div class="mw-heading mw-heading4"><h4 id="Import_from_articles_included_in_SuperMemo">从 SuperMemo 中包含的文章导入</h4><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=9" title="Edit section: Import from articles included in SuperMemo"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=9" title="Edit section's source code: Import from articles included in SuperMemo"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>一旦您从网上导入文章，其所有图片仍将驻留在网上。如果您想确保不会丢失这些图片（例如，当文章被拉下时），或者如果您希望图片显示在所有内容中<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>和<a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">完型填空</a>产于<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>, 使用<i>Ctrl+F8</i>（<b><a href="Component_menu.html#Download_images" title="Component menu">下载图片</a></b>在 HTML 上<a href="Component_menu.html" title="Component menu">组件菜单</a>）。</p>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Download_images.jpg.html" title="SuperMemo: Download images dialog box makes it possible for you to get images embedded in local pages imported from the net and put them to the image registry"><img alt="SuperMemo: Download images dialog box makes it possible for you to get images embedded in local pages imported from the net and put them to the image registry" class="mw-file-element" decoding="async" height="600" loading="lazy" src="https://help.supermemo.org/images/thumb/5/58/Download_images.jpg/771px-Download_images.jpg" srcset="/images/thumb/5/58/Download_images.jpg/1157px-Download_images.jpg 1.5x, /images/5/58/Download_images.jpg 2x" width="771"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b> <b><a href="Component_menu.html#Download_images" title="Component menu">下载图片</a></b>(Ctrl+F8) 可以下载 HTML 代码中引用的远程图像<a href="HTML_component.html" title="HTML component">HTML组件</a>并将它们导入到图像中<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>。图中，图片是为了说明<a class="external text" href="https://en.wikipedia.org/wiki/Donald_Trump">唐纳德·特朗普</a>文章来自<a class="external text" href="http://en.wikipedia.org">维基百科</a>正在下载。首先，图像从浏览器渲染器中捕捉为拇指。全尺寸图像并行下载。所列 34 幅图像中，有 5 幅已下载（如标题所示），而另外 2 幅仍在下载中（用 → 标记，后跟当前下载进度，即已完成 27.9% 和 38.2%）。你可以举例说明<a href="Glossary_Element.html" title="Glossary:Element">元素</a>用拇指或者您可以等待完整图像下载完毕。在平均速度连接下，图像的下载速度通常比您查看它们的速度快。换句话说，与 SuperMemo 16 不同，您通常不需要等待图像下载。<b>插入</b>将插入图片来说明文章及其所有内容<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>和<a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">完型填空</a>（那些准备好插入的标有✔）。尚未插入的缩略图/图片将可以在包含相应图像的文本的所有部分中下载。</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading3"><h3 id="Pictures_as_answers">图片作为答案</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=10" title="Edit section: Pictures as answers"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=10" title="Edit section's source code: Pictures as answers"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果您希望图片成为答案的一部分（即在提问时不可见），请选中<b><a href="Component_menu.html#Answer" title="Component menu">回答</a></b>在图像上<a href="Component_menu.html" title="Component menu">组件菜单</a>。</p>
+<div class="mw-heading mw-heading2"><h2 id="Tiling_pictures">平铺图片</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=11" title="Edit section: Tiling pictures"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=11" title="Edit section's source code: Tiling pictures"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果您对图片的平铺方式不满意，可以重新排列<a href="Glossary_Component.html" title="Glossary:Component">组件</a>并重新平铺您的照片。重新排列<a href="Glossary_Component.html" title="Glossary:Component">组件</a>，将它们设置在<a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">拖动模式</a>首先。您可以切换一个<a href="Glossary_Component.html" title="Glossary:Component">组件</a>到<a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">拖动模式</a>与<i>Alt+单击</i>（单击两次，直到<a href="Glossary_Component.html" title="Glossary:Component">组件</a>变为灰色且可拖动）。您可以切换所有<a href="Glossary_Component.html" title="Glossary:Component">组件</a>到<a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">拖动模式</a>与<b>开关模式</b>按钮（<span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Switch_mode.png.html" title="SuperMemo: Switch element from presentation to editing to drag&amp;size mode"><img alt="SuperMemo: Switch element from presentation to editing to drag&amp;size mode" class="mw-file-element" decoding="async" height="16" loading="lazy" src="https://help.supermemo.org/images/2/2c/Switch_mode.png" width="16"/></a></span>）在<a href="Learnbar.html" title="Learnbar">学习栏</a>，有双<i>Alt+单击</i>在一个空的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>区，超过<a href="Navigation_bar.html" title="Navigation bar">导航栏</a>，或在底部栏上方<a href="Glossary_Element_window.html" title="Glossary:Element window">元素窗口</a>。一旦进入<a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">拖动模式</a>,<a href="Glossary_Component.html" title="Glossary:Component">组件</a>可以用鼠标移动。</p><p>平铺<a href="Glossary_Component.html" title="Glossary:Component">组件</a>,设置要平铺的<a href="Glossary_Component.html" title="Glossary:Component">组件</a>在<a href="Glossary_Dragging_mode.html" title="Glossary:Dragging mode">拖动模式</a>，并选择<b>瓷砖组件</b>在<b><a href="SuperMemo_Commander.html" title="SuperMemo Commander">指挥官</a></b>（<i>Ctrl+Enter</i>），或<b><a href="Element_menu.html#Components" title="Element menu">组件</a> ：瓷砖组件</b>（<i>Shift+Alt+T</i>）在<a href="Element_menu.html" title="Element menu">元素菜单</a>。组件平铺协助将帮助您安排<a href="Glossary_Component.html" title="Glossary:Component">组件</a>成行和列的最佳集合。<a href="Glossary_Component.html" title="Glossary:Component">组件</a>将平铺到由所有的最上、最下、最右和最左边缘确定的矩形中<a href="Glossary_Component.html" title="Glossary:Component">组件</a>选择用于平铺。所有其他人的立场<a href="Glossary_Component.html" title="Glossary:Component">组件</a>不被考虑在内。请注意，一旦您更改<b>行数</b>或<b>专栏</b>你需要按<i>输入</i>以便重新计算其他参数并更新预览网格。</p><p>来选择<a href="Glossary_Component.html" title="Glossary:Component">组件</a>要平铺，您还可以按<i>Ctrl+E</i>设置全部<a href="Glossary_Component.html" title="Glossary:Component">组件</a>在<a href="Glossary_Editing_mode.html" title="Glossary:Editing mode">编辑模式</a>，并返回非平铺<a href="Glossary_Component.html" title="Glossary:Component">组件</a>到<a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">演示模式</a>双人或三人<i>Alt+单击</i>。最后，您可以选中或取消选中<a href="Glossary_Component.html" title="Glossary:Component">组件</a>在要平铺之前显示的列表中。</p>
+<div class="center">
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Tile_arrangement.jpg.html" title="SuperMemo: Tiling Rafael Nadal pictures with component tiling assistance"><img alt="SuperMemo: Tiling Rafael Nadal pictures with component tiling assistance" class="mw-file-element" decoding="async" height="450" loading="lazy" src="https://help.supermemo.org/images/thumb/6/63/Tile_arrangement.jpg/800px-Tile_arrangement.jpg" srcset="/images/thumb/6/63/Tile_arrangement.jpg/1200px-Tile_arrangement.jpg 1.5x, /images/thumb/6/63/Tile_arrangement.jpg/1600px-Tile_arrangement.jpg 2x" width="800"/></a><figcaption>SuperMemo：使用组件平铺辅助平铺 Rafael Nadal 图片</figcaption></figure>
+<blockquote>
+<p><i><b>图：</b>14<a class="external text" href="https://en.wikipedia.org/wiki/Rafael_Nadal">拉斐尔·纳达尔</a>的照片正在平铺的帮助下<b><a href="Element_menu.html#Components" title="Element menu">瓷砖排列</a></b>工具。您可以使用此工具轻松确定要将当前可用图片排列在多少行和列中<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。图中，该元素包含西班牙网球运动员庆祝他的全部 14 个赛点的照片<a class="external text" href="https://en.wikipedia.org/wiki/French_Open">法国公开赛</a>。</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Big_pictures">大图</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=12" title="Edit section: Big pictures"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=12" title="Edit section's source code: Big pictures"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Zooming,_slicing,_trimming,_and_cropping_pictures"><span id="Zooming.2C_slicing.2C_trimming.2C_and_cropping_pictures"></span>缩放、切片、修剪和裁剪图片</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=13" title="Edit section: Zooming, slicing, trimming, and cropping pictures"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=13" title="Edit section's source code: Zooming, slicing, trimming, and cropping pictures"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>有些图片太大，无法有效地用于学习。它们携带了太多的信息。在某些情况下，您会想要专注于图片的重要部分，在其他情况下，您只想丢弃不必要的信息。</p><p>例如，在学习政治地理时，您可能会将一张巨大的非洲地图导入到 SuperMemo 中。然而，对于个人<a href="Glossary_Item.html" title="Glossary:Item">项目</a>，您可能希望将图片的显示部分限制为单个国家及其直接邻国。</p>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Unzoomed_picture.jpg.html" title="SuperMemo: The unzoomed picture of the African political map used to illustrate elements related to Africa"><img alt="SuperMemo: The unzoomed picture of the African political map used to illustrate elements related to Africa" class="mw-file-element" decoding="async" height="436" loading="lazy" src="https://help.supermemo.org/images/thumb/d/d7/Unzoomed_picture.jpg/800px-Unzoomed_picture.jpg" srcset="/images/thumb/d/d7/Unzoomed_picture.jpg/1200px-Unzoomed_picture.jpg 1.5x, /images/d/d7/Unzoomed_picture.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图</b>：用于说明的非洲政治地图的未缩放图片<a href="Glossary_Element.html" title="Glossary:Element">元素</a>与非洲有关。你可以看到一个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>摘自关于哈比亚利马纳总统被刺杀的文章<a class="external text" href="https://en.wikipedia.org/wiki/History_of_Rwanda">卢旺达历史</a>最初进口自<a class="external text" href="http://en.wikipedia.org">维基百科</a>。的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>右侧是非洲政治地图（地图既没有缩放也没有修剪；只是在图像内按比例拉伸）<a href="Glossary_Component.html" title="Glossary:Component">组件</a>）。</i>
+</p>
+</blockquote>
+</div>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Zoomed_picture.jpg.html" title="SuperMemo: The picture of the African political map zoomed in on Rwanda to illustrate to an item about the assassination of the President Habyarimana in 1994"><img alt="SuperMemo: The picture of the African political map zoomed in on Rwanda to illustrate to an item about the assassination of the President Habyarimana in 1994" class="mw-file-element" decoding="async" height="441" loading="lazy" src="https://help.supermemo.org/images/thumb/8/84/Zoomed_picture.jpg/800px-Zoomed_picture.jpg" srcset="/images/thumb/8/84/Zoomed_picture.jpg/1200px-Zoomed_picture.jpg 1.5x, /images/8/84/Zoomed_picture.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图</b>：非洲政治地图图片放大卢旺达以说明<a href="Glossary_Item.html" title="Glossary:Item">项目</a>关于1994年哈比亚利马纳总统被暗杀的事件。在图中，你可以看到<a href="Glossary_Cloze_deletion.html" title="Glossary:Cloze deletion">完形填空删除</a>产生于<a class="external text" href="https://en.wikipedia.org/wiki/History_of_Rwanda">卢旺达历史</a>文章。在这个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>然而，非洲政治版图却被放大到了卢旺达（及其邻国）。原始图片放大而不裁剪原始图片文件。缩放后的图片标有边框，边框是彩色的<span style="padding: 3px; background: lime;">亮石灰</span>在<a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">缩放和修剪模式</a>和<span style="padding: 3px; color: #fff; background: red;">红色</span>在<a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">显示方式</a>。如果不裁剪图片，则所有图片都将保持不变（无论是缩放还是未缩放）<a href="Glossary_Element.html" title="Glossary:Element">元素</a>使用它的人（包括其他<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>从<a class="external text" href="https://en.wikipedia.org/wiki/History_of_Rwanda">卢旺达历史</a>文章）。</i>
+</p>
+</blockquote>
+</div>
+<p>仅显示给定图片的一小部分<a href="Glossary_Element.html" title="Glossary:Element">元素</a>，输入<a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">缩放和修剪模式</a>通过<i>Alt+单击</i>图片。您现在可以使用多种操作来放大图片中有趣的部分：</p>
+<ul><li><b>变焦</b>：单击鼠标中键放大图片中有趣的部分</li>
+<li><b>取消缩放</b>:<i>Shift+单击</i>中间按钮取消缩放</li>
+<li><b>移动</b>:<i>Shift+拖动</i>缩放图片以调整显示区域</li>
+<li><b>修剪</b>:<i>Ctrl+滑动</i>图片中不需要的边缘：<ol><li>按<i>控制键</i>,</li>
+<li>指向要剪切的边缘，</li>
+<li>按下鼠标，然后</li>
+<li>将其朝要切割区域的方向移动。</li></ol></li>
+<li><b>选择</b>：拖动选择，标记图片中要显示的区域：<ol><li>指向所需区域的一个角，</li>
+<li>按下鼠标左键，</li>
+<li>拖动选择框以选择图片的一部分，然后</li>
+<li>释放鼠标按钮即可对图片进行切片。</li></ol></li></ul>
+<p>放大到感兴趣的区域后，按<i>ESC</i>退出<a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">缩放和修剪模式</a>。您将获得以下选项：</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Zoom_and_trim_options.jpg.html" title="SuperMemo: The list of options presented upon quitting the zoom&amp;trim mode"><img alt="SuperMemo: The list of options presented upon quitting the zoom&amp;trim mode" class="mw-file-element" decoding="async" height="353" loading="lazy" src="https://help.supermemo.org/images/thumb/d/d4/Zoom_and_trim_options.jpg/800px-Zoom_and_trim_options.jpg" srcset="/images/d/d4/Zoom_and_trim_options.jpg 1.5x" width="800"/></a><figcaption>SuperMemo：退出缩放和修剪模式时显示的选项列表</figcaption></figure>
+<ul><li><b>保持图片缩放/修剪而不更改文件</b>。这将显示当前图片中选定的部分<a href="Glossary_Element.html" title="Glossary:Element">元素</a>无需更改可能在其他地方完整使用或放大其他部分的原始图片文件。这是默认选项。当你重新访问<a href="Glossary_Element.html" title="Glossary:Element">元素</a>，它仍然会标有缩放边框。然而，石灰色边框<a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">缩放和修剪模式</a>将被替换为红色边框，表示放大后的图片<a href="Glossary_Presentation_mode.html" title="Glossary:Presentation mode">显示方式</a>。</li>
+<li><b>永久剪切/裁剪缩放/修剪的图像文件</b>。这将用代表放大区域的较小图片替换原始图片文件）。</li>
+<li><b>取消缩放/撤消</b>。这将取消中引入的更改<a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">缩放和修剪模式</a>。</li>
+<li><b>取消</b>。这不会执行任何操作（即您将留在<a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">缩放和修剪模式</a>）</li></ul>
+<p>如果您离开<a href="Glossary_Element.html" title="Glossary:Element">元素</a>不终止<a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">缩放和修剪模式</a>，图片将保持缩放状态，原始图片文件将保持不变（即，就好像您在终止时选择了默认选项）<a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">缩放和修剪模式</a>与<i>ESC</i>）</p>
+<div class="mw-heading mw-heading3"><h3 id="Picture_processing_options">图片处理选项</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=14" title="Edit section: Picture processing options"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=14" title="Edit section's source code: Picture processing options"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>您可以使用以下命令快速访问图片处理选项<i>Shift+Ctrl+F8</i>。如果您的照片中有不止一张<a href="Glossary_Element.html" title="Glossary:Element">元素</a>，从单击要处理的那个开始。</p>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Picture_processing_options.jpg.html" title="SuperMemo: Picture processing options available by pressing Shift+Ctrl+F8 (Image : Process from the image component menu)"><img alt="SuperMemo: Picture processing options available by pressing Shift+Ctrl+F8 (Image : Process from the image component menu)" class="mw-file-element" decoding="async" height="599" loading="lazy" src="https://help.supermemo.org/images/thumb/0/0f/Picture_processing_options.jpg/571px-Picture_processing_options.jpg" srcset="/images/thumb/0/0f/Picture_processing_options.jpg/857px-Picture_processing_options.jpg 1.5x, /images/0/0f/Picture_processing_options.jpg 2x" width="571"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b>按 Shift+Ctrl+F8 可以使用图片处理选项（<b><a href="Component_menu.html#Image" title="Component menu">图片</a> : 过程</b>从图像<a href="Component_menu.html" title="Component menu">组件菜单</a>）</i>
+</p>
+</blockquote>
+</div>
+<p>可以使用以下图片处理选项：</p>
+<ul><li><b>变焦</b>- 输入<a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">缩放和修剪模式</a>（您可以更快地进入此模式<i>Alt+单击</i>在图像上）</li>
+<li><b>取消缩放</b>- 取消缩放缩放后的图片，即显示整个原始图片</li>
+<li><b>提取物</b>（<i>Alt+X</i>) - 将图片的一部分提取到新的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。 SuperMemo (1) 复制<a href="Glossary_Element.html" title="Glossary:Element">元素</a>，(2) 克隆图像，(3) 进入修剪和缩放模式。从本质上讲，这将产生一个<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>就像你生产一个<a href="Glossary_Extract.html" title="Glossary:Extract">文本摘录</a>在<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>。完成选择或修剪后<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>, 按<i>ESC</i>，并选择<b>永久剪切/裁剪缩放/修剪的图像文件</b>。如果您不希望原始图片被标记为提取边界，请响应<i><b>否</b></i>到<i>将图片替换为 JPG 图像？</i>执行后<b>提取物</b>，你将有两个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>：一张带有标记了提取边界的原始图片（或未更改，如果您不想修改图片），以及新图片<a href="Glossary_Element.html" title="Glossary:Element">元素</a>带有新图片，它是原始图片的一部分（请参阅：<a href="#Example_of_a_picture_extract">例子</a>）</li>
+<li><b>作物</b>- 从原始文件中删除图片的不可见部分（即将其大小缩小到缩放图片的可见部分）。这将影响所有<a href="Glossary_Element.html" title="Glossary:Element">元素</a>使用这张图片的</li>
+<li><b>克隆</b>- 创建图像中图片的副本<a href="Glossary_Registry.html" title="Glossary:Registry">注册表</a>（这样，裁剪图片或用提取的部分标记它就不会影响其他<a href="Glossary_Element.html" title="Glossary:Element">元素</a>中使用相同的图片<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>）</li>
+<li><b>压缩</b>- 通过选择新的尺寸来减小图片的尺寸；压缩将生成一个不大于您选择的大小的文件。在大多数情况下，您可以将 2-5 MB 的图片压缩到 200-500 kB，而不会注意到质量差异</li>
+<li><b>规模</b>- 通过降低质量、增加压缩、减小尺寸、修剪边缘等来减小图片的大小</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Extracting_pictures_from_larger_pictures">从较大的图片中提取图片</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=15" title="Edit section: Extracting pictures from larger pictures"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=15" title="Edit section's source code: Extracting pictures from larger pictures"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>从较大的图片中提取图片片段类似于从大图片中提取文本片段<a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">增量阅读</a>。它们也可以使用相同的快捷方式执行<i>Alt+X</i>。的<i>Alt+X</i>会为图片工作<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>如果 (1) 未选择任何文本，并且 (2) 中有可用图片<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。</p><p>当您按下<i>Alt+X</i>在一张图片上，<a href="Glossary_Element.html" title="Glossary:Element">元素</a>将被重复（就像文本的情况一样）<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>），图片将被克隆（即创建其原始图片的副本），然后您将输入<a href="Glossary_Zoom&amp;trim_mode.html" title="Glossary:Zoom&amp;trim mode">缩放和修剪模式</a>。放大图片的一部分后，按<i>ESC</i>裁剪<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>并返回到原来的状态<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（从中<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>已做出）。 SuperMemo 会问你：<i>将图片替换为 JPG 图像？</i>请注意，上述序列与您在提取文本时使用的序列略有不同：您按<i>Alt+X</i>并生成一个新的<a href="Glossary_Element.html" title="Glossary:Element">元素</a> <b>之前</b>您选择一个图片片段。</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Replace_picture_with_a_JPG_image.jpg.html" title="SuperMemo: The choice given to the user whether to mark the extracted portion with a bright yellow-red rectangle in the original picture"><img alt="SuperMemo: The choice given to the user whether to mark the extracted portion with a bright yellow-red rectangle in the original picture" class="mw-file-element" decoding="async" height="531" loading="lazy" src="https://help.supermemo.org/images/thumb/6/67/Replace_picture_with_a_JPG_image.jpg/800px-Replace_picture_with_a_JPG_image.jpg" srcset="/images/6/67/Replace_picture_with_a_JPG_image.jpg 1.5x" width="800"/></a><figcaption>SuperMemo：给予用户是否在原始图片中用亮黄红色矩形标记提取部分的选择</figcaption></figure>
+<p>如果你选择<i><b>是的</b></i>，原来的大图会被标记一个亮黄红色的提取矩形（标记已经提取的区域）。如果提取的矩形重叠，您可能希望回答<i><b>否</b></i>以确保<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>它们本身不会被之前的提取边框遮挡；但是，在这种情况下，您需要记住图片的哪些部分已经被提取。这意味着在这些情况下，您将需要做所有的事情<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>一个接一个（即当你对自己的进展记忆犹新时）。</p>
+<div class="mw-heading mw-heading3"><h3 id="Example_of_a_picture_extract">图片摘录示例</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=16" title="Edit section: Example of a picture extract"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=16" title="Edit section's source code: Example of a picture extract"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>这张令人惊叹的弗莱堡全景大图太大，无法在 SuperMemo 中查看详细信息。因此，您可以提取所有有趣的部分进行独立审查。生产完后<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>，黄红边框可以表示图片的哪些部分已经被处理过：</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Freiburg_panorama_(original).jpg.html" title="SuperMemo: The original picture of the Freiburg panorama (too large to view its details) from which 4 picture extracts (marked with bright yellow-red rectangles) have been produced"><img alt="SuperMemo: The original picture of the Freiburg panorama (too large to view its details) from which 4 picture extracts (marked with bright yellow-red rectangles) have been produced" class="mw-file-element" decoding="async" height="140" loading="lazy" src="https://help.supermemo.org/images/thumb/9/94/Freiburg_panorama_%28original%29.jpg/800px-Freiburg_panorama_%28original%29.jpg" srcset="/images/thumb/9/94/Freiburg_panorama_%28original%29.jpg/1200px-Freiburg_panorama_%28original%29.jpg 1.5x, /images/thumb/9/94/Freiburg_panorama_%28original%29.jpg/1600px-Freiburg_panorama_%28original%29.jpg 2x" width="800"/></a><figcaption>SuperMemo：弗莱堡全景的原始图片（太大而无法查看其细节），从中生成了 4 张图片摘录（用明亮的黄红色矩形标记）</figcaption></figure>
+<p>个人<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>足够小，无需缩放即可查看细节：</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Freiburg_panorama_(extract).jpg.html" title="SuperMemo: The 2nd extract produced from the original picture of the Freiburg panorama (now small enough to view its details)"><img alt="SuperMemo: The 2nd extract produced from the original picture of the Freiburg panorama (now small enough to view its details)" class="mw-file-element" decoding="async" height="489" loading="lazy" src="https://help.supermemo.org/images/thumb/f/f6/Freiburg_panorama_%28extract%29.jpg/800px-Freiburg_panorama_%28extract%29.jpg" srcset="/images/thumb/f/f6/Freiburg_panorama_%28extract%29.jpg/1200px-Freiburg_panorama_%28extract%29.jpg 1.5x, /images/thumb/f/f6/Freiburg_panorama_%28extract%29.jpg/1600px-Freiburg_panorama_%28extract%29.jpg 2x" width="800"/></a><figcaption>SuperMemo：从弗莱堡全景原始图片生成的第二个摘录（现在小到足以查看其细节）</figcaption></figure>
+<p>您也可以直接放大，而不是提取全景图的一部分。但是，如果您仅从非常大的图像中提取一小部分图片，<a href="Glossary_Extract.html" title="Glossary:Extract">提取物</a>将消耗更少的磁盘空间，因为您不感兴趣的图片部分将被丢弃。</p>
+<div class="mw-heading mw-heading2"><h2 id="Cloze_for_pictures">图片完形填空</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=17" title="Edit section: Cloze for pictures"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=17" title="Edit section's source code: Cloze for pictures"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>创建图形删除测试（<a href="Glossary_Occlusion_test.html" title="Glossary:Occlusion test">遮挡测试</a>），使用以下方法：</p>
+<div class="mw-heading mw-heading3"><h3 id="Multiple_items">多个项目</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=18" title="Edit section: Multiple items"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=18" title="Edit section's source code: Multiple items"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>去创造很多<a href="Glossary_Occlusion_test.html" title="Glossary:Occlusion test">遮挡测试</a>立即执行以下操作：</p>
+<ol><li>创建一个至少包含一张图片的模板元素</li>
+<li>在框中输入“遮挡”<a class="mw-redirect" href="Commander.html" title="Commander">指挥官</a>（<i>Ctrl+Enter</i>）</li>
+<li>通过单击并拖动来标记遮挡矩形</li>
+<li>选择底部的遮挡选项之一（默认为最左侧）</li></ol>
+<p>下图中，底部的四个按钮的功能如下：</p>
+<ol><li>隐藏一个，显示其他（在每一项中，一个矩形遮挡图片的一个区域）</li>
+<li>显示一个，隐藏其他（在每个项目中，许多矩形遮挡许多区域并显示一个或多个）</li>
+<li>清除所有矩形以重新开始</li>
+<li>将所有矩形添加到当前元素而不创建项目（例如调整矩形、颜色等）</li></ol>
+<p>参见：<a class="external text" href="https://www.youtube.com/watch?v=70JFgD4bEk8">通过咬合测试学习解剖学</a>（视频）</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg.html"><img class="mw-file-element" decoding="async" height="545" loading="lazy" src="https://help.supermemo.org/images/thumb/5/5d/Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg/800px-Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg" srcset="/images/thumb/5/5d/Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg/1200px-Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg 1.5x, /images/thumb/5/5d/Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg/1600px-Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg 2x" width="800"/></a><figcaption></figcaption></figure>
+<blockquote>
+<p><i><b>图：</b>SuperMemo 19 简化了从同一张图片生成多个遮挡测试的过程。图中，海马体的结构是借助生成的遮挡矩形来掌握的。<b>遮挡测试</b>对话窗口。在后台，模板项将在所有生成的测试中重用。参见：<a class="external text" href="https://www.youtube.com/watch?v=70JFgD4bEk8">视频</a>或阅读<a href="Incremental_learning.html#Cloze_for_pictures" title="Incremental learning">图片完形填空</a></i>
+</p>
+</blockquote>
+<div class="mw-heading mw-heading3"><h3 id="Incremental_approach">渐进法</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Visual_learning&amp;veaction=edit&amp;section=19" title="Edit section: Incremental approach"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Visual_learning&amp;action=edit&amp;section=19" title="Edit section's source code: Incremental approach"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ol><li>选择<b>添加新的</b>（<i>阿尔特+A</i>）添加一个新的<a href="Glossary_Item.html" title="Glossary:Item">项目</a></li>
+<li>应用<i>闭塞</i> <a href="Glossary_Template.html" title="Glossary:Template">模板</a>（例如按<i>Ctrl+Shift+M</i>并选择“<i>闭塞</i>”）</li>
+<li>粘贴为图形测试准备的图像（例如<i>Ctrl+V</i>）</li>
+<li>使用<i>Ctrl+T</i>多次选择遮挡矩形</li>
+<li>调整矩形的大小，以便遮挡提出问题的部分</li>
+<li>输入问题（例如“<i>图像的哪一部分被红色矩形覆盖？</i>”）</li>
+<li>输入答案</li>
+<li>使用<i>Shift+Alt+L</i>测试你的新<a href="Glossary_Occlusion_test.html" title="Glossary:Occlusion test">遮挡测试</a></li>
+<li>使用<b><a href="Element_menu.html#Edit" title="Element menu">编辑</a> : 重复</b>（<i>Alt+D</i>）在<a href="Element_menu.html" title="Element menu">元素菜单</a>使用同一张图片生成更多测试</li>
+<li>请记住，为了获得最佳缩放结果，您需要保持<a href="Glossary_Template.html" title="Glossary:Template">模板</a>/<a href="Glossary_Element.html" title="Glossary:Element">元素</a> <b><a href="Element_menu.html#Scaled" title="Element menu">缩放</a></b>和你的照片<b><a href="Component_menu.html#Image" title="Component menu">图片</a> ：拉伸：填充</b>（没有这两个，调整大小<a href="Glossary_Element.html" title="Glossary:Element">元素</a>将相对于图像移动矩形并显示答案）</li></ol>
+<!-- 
+NewPP limit report
+Cached time: 20260610111333
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.093 seconds
+Real time usage: 0.102 seconds
+Preprocessor visited node count: 253/1000000
+Post‐expand include size: 5482/2097152 bytes
+Template argument size: 938/2097152 bytes
+Highest expansion depth: 5/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   13.495      1 -total
+ 24.83%    3.351      1 File:Tile_arrangement.jpg
+ 18.27%    2.466      1 File:Download_images.jpg
+ 15.32%    2.067      2 Template:Fig
+ 14.87%    2.006      1 File:Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg
+ 13.26%    1.790      1 File:Zoomed_picture.jpg
+ 11.49%    1.550      1 File:Unzoomed_picture.jpg
+ 11.40%    1.538      1 File:Picture_processing_options.jpg
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:205:|#|:idhash:canonical and timestamp 20260610111333 and revision id 11900. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

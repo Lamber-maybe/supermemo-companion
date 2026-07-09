@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Menus, buttons, dialogs, etc. — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Menus,_buttons,_dialogs,_etc." style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><ol><li><a href="Installing_SuperMemo_(in_a_minute).html" title="Installing SuperMemo (in a minute)">Installing SuperMemo</a></li>
+<li><a href="Unlock_SuperMemo.html" title="Unlock SuperMemo">Unlocking SuperMemo</a></li>
+<li><a href="Step-by-step_to_SuperMemo_mastery.html" title="Step-by-step to SuperMemo mastery">Step by Step: User's Guide</a></li>
+<li><a href="Overview_articles.html" title="Overview articles"><b>Overviews</b></a>
+<ul><li><a href="Incremental_learning.html" title="Incremental learning">Incremental learning</a></li>
+<li><a href="Incremental_reading.html" title="Incremental reading">Incremental reading</a></li>
+<li><a href="Incremental_video.html" title="Incremental video">Incremental video</a></li>
+<li><a href="Visual_learning.html" title="Visual learning">Visual learning</a></li>
+<li><a href="Priority_queue.html" title="Priority queue">Priority queue</a></li>
+<li><a href="Backup.html" title="Backup">Backup</a></li>
+<li><a href="Building_the_knowledge_tree.html" title="Building the knowledge tree">Knowledge tree</a></li>
+<li><a href="Concepts.html" title="Concepts">Concepts</a></li>
+<li><a href="Neural_creativity.html" title="Neural creativity">Neural creativity</a></li>
+<li><a class="external text" href="https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo">Forgetting index</a></li>
+<li><a href="Using_fonts.html" title="Using fonts">Fonts</a></li></ul></li>
+<li><b><a href="Main_menu.html" title="Main menu">Main menu</a></b></li>
+<li><b>Windows used in SuperMemo, toolbars and menus:</b>
+<ul><li><b><a href="Element_window.html" title="Element window">Element window</a></b>
+<ul><li><a href="Navigation_bar.html" title="Navigation bar">Navigation bar</a></li>
+<li><a href="Element_menu.html" title="Element menu">Element menu</a></li>
+<li><a class="mw-redirect" href="Learning_bar.html" title="Learning bar"><b>Learn</b> toolbar</a></li>
+<li><a href="Edit_toolbar.html" title="Edit toolbar"><b>Edit</b> toolbar</a></li>
+<li><a href="Read_toolbar.html" title="Read toolbar"><b>Read</b> toolbar</a></li>
+<li><a href="Compose_toolbar.html" title="Compose toolbar"><b>Compose</b> toolbar</a></li>
+<li><a href="Tools_toolbar.html" title="Tools toolbar"><b>Tools</b> toolbar</a></li>
+<li><a href="Alarm_toolbar.html" title="Alarm toolbar"><b>Alarm</b> toolbar</a></li></ul></li>
+<li><a href="Contents.html" title="Contents"><b>Contents</b> window</a>
+<ul><li><a href="Contents_menu.html" title="Contents menu">Contents menu</a></li>
+<li><a href="Contents_toolbar.html" title="Contents toolbar">Contents toolbar</a></li></ul></li>
+<li><a href="Browser.html" title="Browser">Browser window</a>
+<ul><li><a href="Browser_menu.html" title="Browser menu">Browser menu</a></li>
+<li><a href="Browser_toolbar.html" title="Browser toolbar">Browser toolbar</a></li></ul></li>
+<li><a href="Statistics.html" title="Statistics"><b>Statistics</b> window</a></li>
+<li><a href="Element_data.html" title="Element data"><b>Element data</b> window</a></li>
+<li><a href="Registry_window.html" title="Registry window">Registry window</a>
+<ul><li><a href="Registry_toolbar.html" title="Registry toolbar">Registry toolbar</a></li></ul></li>
+<li><b>Dialog boxes</b>
+<ul><li><a href="Options.html" title="Options">Options</a></li>
+<li><a href="Element_parameters.html" title="Element parameters">Element parameters</a></li>
+<li><a href="Sleep_Chart.html" title="Sleep Chart">Sleep Chart</a></li>
+<li><a href="Analysis.html" title="Analysis">Analysis</a></li></ul></li>
+<li><b>Tool/Status bars</b>
+<ul><li><a href="Learnbar.html" title="Learnbar">Learning bar</a></li>
+<li><a href="Compose_toolbar.html" title="Compose toolbar">Compose toolbar</a></li>
+<li><a href="Edit_toolbar.html" title="Edit toolbar">Edit toolbar</a></li>
+<li><a href="Read_toolbar.html" title="Read toolbar">Read toolbar</a></li>
+<li><a href="Status_bar.html" title="Status bar">Status bar</a></li></ul></li></ul></li>
+<li><b>Context dependent pop-up menus</b>
+<ul><li><b><a href="Element_menu.html" title="Element menu">Element menu</a></b></li>
+<li><b><a href="Component_menu.html" title="Component menu">Component menu</a></b></li>
+<li><a href="Browser_menu.html" title="Browser menu">Browser menu</a></li>
+<li><a href="Contents_menu.html" title="Contents menu">Contents menu</a></li>
+<li><a href="Registry_menu.html" title="Registry menu">Registry menu</a></li>
+<li><a href="Subset_operations.html" title="Subset operations">Subset processing menu</a> (on <a href="Contents_menu.html" title="Contents menu">contents</a> and <a href="Browser_menu.html" title="Browser menu">browser menus</a>)</li></ul></li>
+<li><a href="Keyboard_shortcuts.html" title="Keyboard shortcuts">Keyboard shortcuts</a></li>
+<li><span id="Advanced_reference">Advanced reference</span>
+<ul><li><a href="Repair_options.html" title="Repair options">Repair options</a></li>
+<li><a href="SuperMemo_files.html" title="SuperMemo files">SuperMemo files</a></li></ul></li></ol>
+<hr/>
+<div class="inset" style="background-color: yellow;">
+<p><b>Help Us Improve Our Documentation and Videos!</b>
+</p><p>If you’re struggling to find information on this website, need an overview of SuperMemo features, or would like a new help video, please consider one of these options:
+</p>
+<ul><li><b>Recommended:</b> Add your questions or suggestions directly to relevant pages in <a class="mw-redirect" href="Reference.html" title="Reference">SuperMemo Help</a> (click the Edit tab to start writing; requires login).</li>
+<li>Submit your ideas or feature requests at <a class="external text" href="https://supermemopedia.com/wiki/Website_suggestions">SuperMemopedia</a>.</li>
+<li>Request a new <a class="external text" href="https://www.youtube.com/@SuperMemoVideo">help video</a> or send feedback via e-mail (e.g., using <b><a class="mw-redirect" href="Help.html" title="Help">Help</a> : <a href="Help_menu.html#E-mail" title="Help menu">E-mail</a> : Bug report</b>).</li></ul>
+<p>Your input helps us create clearer documentation and better help videos, reducing support costs and enhancing your experience with SuperMemo.
+</p><p>Thank you for your contributions!
+</p>
+</div>
+<!-- 
+NewPP limit report
+Cached time: 20260610111121
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.022 seconds
+Real time usage: 0.024 seconds
+Preprocessor visited node count: 5/1000000
+Post‐expand include size: 921/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.338      1 Feature_request
+100.00%    2.338      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:7:|#|:idhash:canonical and timestamp 20260610111121 and revision id 12001. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><ol><li><a href="Installing_SuperMemo_(in_a_minute).html" title="Installing SuperMemo (in a minute)">安装 SuperMemo</a></li>
+<li><a href="Unlock_SuperMemo.html" title="Unlock SuperMemo">解锁 SuperMemo</a></li>
+<li><a href="Step-by-step_to_SuperMemo_mastery.html" title="Step-by-step to SuperMemo mastery">分步说明：用户指南</a></li>
+<li><a href="Overview_articles.html" title="Overview articles"><b>概述</b></a>
+<ul><li><a href="Incremental_learning.html" title="Incremental learning">渐进学习</a></li>
+<li><a href="Incremental_reading.html" title="Incremental reading">增量阅读</a></li>
+<li><a href="Incremental_video.html" title="Incremental video">增量视频</a></li>
+<li><a href="Visual_learning.html" title="Visual learning">视觉学习</a></li>
+<li><a href="Priority_queue.html" title="Priority queue">优先队列</a></li>
+<li><a href="Backup.html" title="Backup">备份</a></li>
+<li><a href="Building_the_knowledge_tree.html" title="Building the knowledge tree">知识树</a></li>
+<li><a href="Concepts.html" title="Concepts">概念</a></li>
+<li><a href="Neural_creativity.html" title="Neural creativity">神经创造力</a></li>
+<li><a class="external text" href="https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo">遗忘指数</a></li>
+<li><a href="Using_fonts.html" title="Using fonts">字体</a></li></ul></li>
+<li><b><a href="Main_menu.html" title="Main menu">主菜单</a></b></li>
+<li><b>SuperMemo 中使用的窗口、工具栏和菜单：</b>
+<ul><li><b><a href="Element_window.html" title="Element window">元素窗口</a></b>
+<ul><li><a href="Navigation_bar.html" title="Navigation bar">导航栏</a></li>
+<li><a href="Element_menu.html" title="Element menu">元素菜单</a></li>
+<li><a class="mw-redirect" href="Learning_bar.html" title="Learning bar"><b>学习</b>工具栏</a></li>
+<li><a href="Edit_toolbar.html" title="Edit toolbar"><b>编辑</b>工具栏</a></li>
+<li><a href="Read_toolbar.html" title="Read toolbar"><b>阅读</b>工具栏</a></li>
+<li><a href="Compose_toolbar.html" title="Compose toolbar"><b>撰写</b>工具栏</a></li>
+<li><a href="Tools_toolbar.html" title="Tools toolbar"><b>工具</b>工具栏</a></li>
+<li><a href="Alarm_toolbar.html" title="Alarm toolbar"><b>报警</b>工具栏</a></li></ul></li>
+<li><a href="Contents.html" title="Contents"><b>内容</b>窗户</a>
+<ul><li><a href="Contents_menu.html" title="Contents menu">内容菜单</a></li>
+<li><a href="Contents_toolbar.html" title="Contents toolbar">内容工具栏</a></li></ul></li>
+<li><a href="Browser.html" title="Browser">浏览器窗口</a>
+<ul><li><a href="Browser_menu.html" title="Browser menu">浏览器菜单</a></li>
+<li><a href="Browser_toolbar.html" title="Browser toolbar">浏览器工具栏</a></li></ul></li>
+<li><a href="Statistics.html" title="Statistics"><b>统计数据</b>窗户</a></li>
+<li><a href="Element_data.html" title="Element data"><b>元素数据</b>窗户</a></li>
+<li><a href="Registry_window.html" title="Registry window">注册表窗口</a>
+<ul><li><a href="Registry_toolbar.html" title="Registry toolbar">注册表工具栏</a></li></ul></li>
+<li><b>对话框</b>
+<ul><li><a href="Options.html" title="Options">选项</a></li>
+<li><a href="Element_parameters.html" title="Element parameters">元件参数</a></li>
+<li><a href="Sleep_Chart.html" title="Sleep Chart">睡眠图</a></li>
+<li><a href="Analysis.html" title="Analysis">分析</a></li></ul></li>
+<li><b>工具栏/状态栏</b>
+<ul><li><a href="Learnbar.html" title="Learnbar">学习吧</a></li>
+<li><a href="Compose_toolbar.html" title="Compose toolbar">撰写工具栏</a></li>
+<li><a href="Edit_toolbar.html" title="Edit toolbar">编辑工具栏</a></li>
+<li><a href="Read_toolbar.html" title="Read toolbar">读取工具栏</a></li>
+<li><a href="Status_bar.html" title="Status bar">状态栏</a></li></ul></li></ul></li>
+<li><b>上下文相关的弹出菜单</b>
+<ul><li><b><a href="Element_menu.html" title="Element menu">元素菜单</a></b></li>
+<li><b><a href="Component_menu.html" title="Component menu">组件菜单</a></b></li>
+<li><a href="Browser_menu.html" title="Browser menu">浏览器菜单</a></li>
+<li><a href="Contents_menu.html" title="Contents menu">内容菜单</a></li>
+<li><a href="Registry_menu.html" title="Registry menu">注册表菜单</a></li>
+<li><a href="Subset_operations.html" title="Subset operations">子集处理菜单</a>（在<a href="Contents_menu.html" title="Contents menu">内容</a>和<a href="Browser_menu.html" title="Browser menu">浏览器菜单</a>）</li></ul></li>
+<li><a href="Keyboard_shortcuts.html" title="Keyboard shortcuts">键盘快捷键</a></li>
+<li><span id="Advanced_reference">高级参考</span>
+<ul><li><a href="Repair_options.html" title="Repair options">维修选项</a></li>
+<li><a href="SuperMemo_files.html" title="SuperMemo files">SuperMemo 文件</a></li></ul></li></ol>
+<hr/>
+<div class="inset" style="background-color: yellow;">
+<p><b>帮助我们改进我们的文档和视频！</b>
+</p><p>如果您很难在此网站上查找信息，需要 SuperMemo 功能的概述，或者想要新的帮助视频，请考虑以下选项之一：</p>
+<ul><li><b>推荐：</b>将您的问题或建议直接添加到相关页面<a class="mw-redirect" href="Reference.html" title="Reference">SuperMemo 帮助</a>（单击“编辑”选项卡开始编写；需要登录）。</li>
+<li>提交您的想法或功能请求：<a class="external text" href="https://supermemopedia.com/wiki/Website_suggestions">超级记忆百科</a>。</li>
+<li>请求一个新的<a class="external text" href="https://www.youtube.com/@SuperMemoVideo">帮助视频</a>或通过电子邮件发送反馈（例如，使用<b><a class="mw-redirect" href="Help.html" title="Help">帮助</a> :<a href="Help_menu.html#E-mail" title="Help menu">电子邮件</a> ：错误报告</b>）。</li></ul>
+<p>您的意见有助于我们创建更清晰的文档和更好的帮助视频，降低支持成本并增强您使用 SuperMemo 的体验。</p><p>感谢您的贡献！</p>
+</div>
+<!-- 
+NewPP limit report
+Cached time: 20260610111121
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.022 seconds
+Real time usage: 0.024 seconds
+Preprocessor visited node count: 5/1000000
+Post‐expand include size: 921/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    2.338      1 Feature_request
+100.00%    2.338      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:7:|#|:idhash:canonical and timestamp 20260610111121 and revision id 12001. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

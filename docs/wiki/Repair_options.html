@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Repair options — SuperMemo Help</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 960px; margin: 0 auto; padding: 1.5em; color: #202122; line-height: 1.6; }
+h1, h2, h3, h4, h5 { font-family: sans-serif; }
+.source-note { color: #888; font-size: 0.82em; margin-bottom: 1.2em; border-bottom: 1px solid #eee; padding-bottom: 0.5em; }
+a { color: #0645ad; }
+a:visited { color: #0b0080; }
+table { border-collapse: collapse; margin: 1em 0; }
+td, th { border: 1px solid #a2a9b1; padding: 6px 10px; }
+th { background: #eaecf0; }
+img { max-width: 100%; height: auto; }
+.wikitable { width: 100%; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1em; overflow-x: auto; }
+code { background: #f8f9fa; padding: 2px 4px; }
+.toc { background: #f8f9fa; border: 1px solid #aaa; padding: 1em; display: inline-block; min-width: 200px; }
+.mw-parser-output { }
+.navbox { border: 1px solid #aaa; margin: 1em 0; padding: 0.5em; }
+</style>
+</head>
+<body>
+<p class="source-note">Source: <a href="https://help.supermemo.org/wiki/Repair_options">https://help.supermemo.org/wiki/Repair_options</a></p>
+<div class="mw-parser-output">
+<div class="mw-content-ltr mw-parser-output" lang="en" dir="ltr"><p>When you choose <b><a href="File_menu.html" title="File menu">File</a>&#160;: <a href="Repairing_collections.html" title="Repairing collections">Repair collection</a></b> (<i>Ctrl+F12</i>), before the system check-up and recovery begins, the <b>Repair Options</b> dialog box appears on the screen. 
+</p>
+<div class="center">
+<p><span class="mw-default-size" typeof="mw:File"><a href="File_Recovery_options.jpg.html" class="mw-file-description" title="SuperMemo: The Repair Options dialog box displayed when you choose to perform the collection check-up and recovery"><img alt="SuperMemo: The Repair Options dialog box displayed when you choose to perform the collection check-up and recovery" src="https://help.supermemo.org/images/7/74/Recovery_options.jpg" decoding="async" loading="lazy" width="498" height="428" class="mw-file-element" /></a></span>
+</p>
+<blockquote><p><i><b>Figure:</b> The <b>Repair Options</b> dialog box displayed when you choose to perform the collection check-up and recovery</i></p></blockquote>
+</div>
+<p>To perform a quick checkup of your learning process, do not check any boxes among <b>Repair Options</b> (leave only <b>Basic checkup</b>). On the other hand, if you want to quickly perform a detailed checkup and recovery of the whole <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>, choose <b>Detailed</b> and then <b>OK </b>(it is also recommended you check <b>Make a backup</b>)
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Repair_options">Repair options</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://help.supermemo.org/index.php?title=Repair_options&amp;veaction=edit&amp;section=1" title="Edit section: Repair options" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Repair_options&amp;action=edit&amp;section=1" title="Edit section&#39;s source code: Repair options"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Basic checkup</b> - if you check this box, SuperMemo will run a quick integrity checkup of the learning process in the current <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>. It will also check the integrity of the <a href="Glossary_Knowledge_tree.html" title="Glossary:Knowledge tree">knowledge tree</a></li>
+<li><b>Rebuild registries</b> - if you check this box all <a href="Glossary_Registry.html" title="Glossary:Registry">registries</a> in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> will be rebuilt and compared with their old versions. All differences will be reported as errors. This process takes pretty long. You will want to go through it only if you experience some registry-related errors or you prepare your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> for release and want to make sure that its integrity is impeccable</li>
+<li><b>Verify tasklists</b> - if you check this box, all <a href="Glossary_Task.html" title="Glossary:Task">task elements</a> will be verified. SuperMemo will check if the associated <a href="Glossary_Task.html" title="Glossary:Task">task</a> exists on the relevant <a href="Glossary_Tasklist.html" title="Glossary:Tasklist">tasklist</a> and that the tasklist has not been deleted</li>
+<li><b>Verify filespace</b> - if you check this box all files in the <a href="Glossary_Secondary_storage.html" title="Glossary:Secondary storage">secondary storage</a> (i.e. <a href="SuperMemo_files.html#elements" title="SuperMemo files"><i>[ELEMENTS]</i> subfolder</a>) will be checked for their names, numbering, duplicates, empty filespace slots, etc. If you have made a mistake in backing up the <i>[ELEMENTS]</i> subfolder or you experimented with manual merging of two versions of <i>[ELEMENTS]</i> subfolder from two different versions of the same <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>, chances are you have introduced some integrity problems in file naming. Integrity of the filespace is also often disrupted by adding new file objects while being disconnected from the <a href="Glossary_Secondary_storage.html" title="Glossary:Secondary storage">secondary storage</a> or with a wrong secondary storage setting (e.g. after changing a CD-ROM drive letter in Windows). In the latter case, SuperMemo will move all occluding files to new slots to restore full integrity of the filespace</li>
+<li><b>Rebuild lexicon</b> - if you have done lots of lexicon editing in the lexicon registry, and would like to revert to the full lexicon, you can compile the lexicon by checking this box. You may also want to use this option if you unchecked <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a>&#160;: <a href="Options.html" title="Options">Options</a>&#160;: <a href="Access_tab_in_Options.html" title="Access tab in Options">Access</a>&#160;: Compile lexicon on-the-fly</b> and your lexicon is not complete. This option make take a few hours if your computer is slow. Especially, if you have added many long articles to your <a href="Incremental_reading.html" title="Incremental reading">incremental reading</a> process</li>
+<li><b>Verify translation</b> - you can use this option to make sure that your translation <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> is properly sorted and that all text <a href="Glossary_Component.html" title="Glossary:Component">components</a> in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> are translated or reported as having their translation missing. Note that if you disconnect the translation <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> from your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>, the text <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> will be compressed and renumbered. This will make the translation <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> useless. For that reason, you should always make sure your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> is set to use a translation <a href="Glossary_Registry.html" title="Glossary:Registry">registry</a> for the translation to remain valid.</li>
+<li><b>Verify rep. history</b> (Verify repetition history) - if you check this option, <a href="Repetition_history.html" title="Repetition history">repetition history</a> of all individual <a href="Glossary_Element.html" title="Glossary:Element">elements</a> will be checked for missing entries. If you upgrade from early SuperMemos, this option will report errors that you can safely ignore. <a href="Repetition_history.html" title="Repetition history">Repetition history</a> is used in the learning process; it is used by tools that help you analyze your past learning (past workload, past <a href="Glossary_Retention.html" title="Glossary:Retention">retention</a>, past <a href="Glossary_Consolidation.html" title="Glossary:Consolidation">consolidation</a>, etc.). You can see the <a href="Repetition_history.html" title="Repetition history">repetition history</a> of any given <a href="Glossary_Element.html" title="Glossary:Element">element</a> with <i>Shift+Ctrl+H</i></li>
+<li><b>Make a backup</b> - if you check this option, SuperMemo will create a backup copy of your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> before running the recovery. You should always check this box if you do not have a recent backup of your <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>.</li></ul>
+<div class="bs-callout bs-callout-warning">
+<p><b>Interrupted recovery (e.g. due to power failure) can destroy your collection!</b>
+</p>
+</div>
+<ul><li><b>Delete garbage files</b> - delete selected files to reduce the size of the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> (the saving might be the greatest in case you recorded lots of own recordings in the course of training pronunciation)</li></ul>
+<p>Additionally, you can find the date and time of the last recovery performed on the currently opened <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a>.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260609183354
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.012 seconds
+Real time usage: 0.014 seconds
+Preprocessor visited node count: 9/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key guru_Help20:pcache:105:|#|:idhash:canonical and timestamp 20260609183354 and revision id 10888. Rendering was triggered because: page-view
+ -->
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Import from Internet Explorer — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Import_from_Internet_Explorer" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Dialog"><span class="tocnumber">1</span> <span class="toctext">Dialog</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Import_modes_and_options"><span class="tocnumber">2</span> <span class="toctext">Import modes and options</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Context_menu"><span class="tocnumber">3</span> <span class="toctext">Context menu</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Web_import_template"><span class="tocnumber">4</span> <span class="toctext">Web import template</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Using_mouse_in_Web_import_dialog"><span class="tocnumber">5</span> <span class="toctext">Using mouse in Web import dialog</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#FAQs"><span class="tocnumber">6</span> <span class="toctext">FAQs</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Videos"><span class="tocnumber">7</span> <span class="toctext">Videos</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Illustrating_articles_with_pictures"><span class="tocnumber">7.1</span> <span class="toctext">Illustrating articles with pictures</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Importing_to_a_concept_group"><span class="tocnumber">7.2</span> <span class="toctext">Importing to a concept group</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Dialog">Dialog</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=1" title="Edit section: Dialog"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=1" title="Edit section's source code: Dialog"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>With <b><a href="Edit_menu.html" title="Edit menu">Edit</a> : <a href="Edit_menu.html#Internet_Explorer" title="Edit menu">Internet Explorer</a> : All</b> (<i>Shift+Ctrl+A</i>) you can quickly import a number of web pages, pictures, or YouTube videos from Internet Explorer. 
+</p><p>Articles or pictures that have already been imported will be marked as <i>DUPLICATE</i> (double click the article to see its copy stored in SuperMemo). Articles that have been opened more than twice in Internet Explorer will be marked as <i>DOUBLED</i>. To close all doubled articles and the duplicates, choose <b>Close duplicates</b> from the web import dialog context menu (right click).
+</p><p><b>Important:</b>
+</p>
+<ul><li>Before import, select the text that you want to import from a web page. Otherwise, all headers, navigation bars, advertising, footers, etc. will <a class="external text" href="http://supermemopedia.com/wiki/Web_page_import_does_not_work">get imported along with the text that you need</a>.</li>
+<li>If you open web pages in Internet Explorer <b>Run as administrator</b>, for security reasons, they may not become visible/importable to SuperMemo!</li></ul>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Wikipedia_import.jpg.html" title="SuperMemo: Importing articles about clathrate gun hypothesis from Wikipedia for incremental learning"><img alt="SuperMemo: Importing articles about clathrate gun hypothesis from Wikipedia for incremental learning" class="mw-file-element" decoding="async" height="486" loading="lazy" src="https://help.supermemo.org/images/thumb/9/96/Wikipedia_import.jpg/800px-Wikipedia_import.jpg" srcset="/images/thumb/9/96/Wikipedia_import.jpg/1200px-Wikipedia_import.jpg 1.5x, /images/9/96/Wikipedia_import.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> Importing articles about the microbiology of gastroenteritis from <a class="external text" href="https://en.wikipedia.org">Wikipedia</a> for <a href="Incremental_learning.html" title="Incremental learning">incremental learning</a>. In the picture, 7 have been found as already imported in the <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> and marked as DUPLICATE!!!. One article about the <a class="external text" href="https://en.wikipedia.org/wiki/Trigeminal_nerve">trigeminal nerve</a> has been opened twice in Internet Explorer; it has been denoted as DOUBLED!!! for easy filtering. The articles will be imported into the Cranial nerve <a href="Glossary_Concept_group.html" title="Glossary:Concept group">concept group</a> and their <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> will fall between 0.0068% and 0.0138%, and their corresponding Internet Explorer tabs closed upon the successful import.</i>
+</p>
+</blockquote>
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Pictures_import.jpg.html" title="SuperMemo: Importing 47 pictures of Gabrielle Union from the web to Photos concept group."><img alt="SuperMemo: Importing 47 pictures of Gabrielle Union from the web to Photos concept group." class="mw-file-element" decoding="async" height="484" loading="lazy" src="https://help.supermemo.org/images/thumb/5/59/Pictures_import.jpg/800px-Pictures_import.jpg" srcset="/images/thumb/5/59/Pictures_import.jpg/1200px-Pictures_import.jpg 1.5x, /images/thumb/5/59/Pictures_import.jpg/1600px-Pictures_import.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> Importing 47 pictures of <a class="external text" href="https://en.wikipedia.org/wiki/Gabrielle_Union">Gabrielle Union</a> from the web to Photos <a href="Glossary_Concept_group.html" title="Glossary:Concept group">concept group</a>. 5 of the pictures have already been imported to this <a href="Glossary_Collection.html" title="Glossary:Collection">collection</a> (DUPLICATE!!!). The pictures get imported as <b>Page of images</b> (i.e. into a single <a href="Glossary_Element.html" title="Glossary:Element">element</a>). Note that when pictures are imported from the web in this mode they get automatically tiled.</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Import_modes_and_options">Import modes and options</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=2" title="Edit section: Import modes and options"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=2" title="Edit section's source code: Import modes and options"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Here is a detailed breakdown of the <b>Web import</b> dialog box: 
+</p>
+<ul><li><b>Title</b> - this will be used in the <span class="reference">#Source</span> field of the reference area that is automatically created for imported articles. Additionally, if you choose <b>Location : Node</b> (below), the import title and the import date/time will form the title of the node that will parent the imported articles</li>
+<li>Toolbar
+<ul><li><b>Import</b> - imports selected item(s) from the list into SuperMemo (if nothing is selected, SuperMemo will ask you if you want to import all pages or pictures)</li>
+<li><b>Check all</b> - selects all check boxes in the article list</li>
+<li><b>Sift</b> - closes all web pages that have already been imported in the current collection or which have been opened more than once in Internet Explorer. This means that all pages marked DUPLICATE or DOUBLED will disappear from the list and the relevant tabs in Internet Explorer will be closed</li>
+<li><b>Duplicates</b> - opens a <a href="Browser.html" title="Browser">browser</a> with all elements that are duplicates of articles on the list</li>
+<li><b>View</b> - view the duplicate copy of the article (if any) or the article itself</li>
+<li><b>Help</b> - opens this page in the documentation</li>
+<li><b>Close browser</b> check box - if you select this checkbox, all pages/tabs in Internet Explorer will get closed once they are imported to SuperMemo</li>
+<li><b>Create concept</b> check box - if you select this checkbox, SuperMemo will import the selected items as <a href="Glossary_Child.html" title="Glossary:Child">children</a> of a newly added <a href="Glossary_Concept.html" title="Glossary:Concept">concept</a></li></ul></li>
+<li><b>Articles list</b> - the list of pages or pictures that are currently opened in Internet Explorer. If you do not exactly recall what a given page or picture presents, you can quickly switch to the Internet Explorer tab/window in which it is displayed by double-clicking its title in the list</li>
+<li><b>Picture parameters</b> determine the restrictions on the number and size of imported pictures (this option only becomes available for <b>Local pages with images</b>, <b>Local images only</b>, and <b>Page of images</b> web page import modes). If no picture included in the imported page satisfies the import criteria, the largest picture will still get imported.
+<ul><li><b>Min. picture size</b> - the minimum file size (in bytes) of the imported picture. If the picture is smaller, it will be ignored</li>
+<li><b>Maximum pictures</b> - the maximum number of imported pictures per page that can be imported into a single <a href="Glossary_Element.html" title="Glossary:Element">element</a>. Only sufficiently large pictures will be imported until <b>Maximum pictures</b> limit is reached</li></ul></li>
+<li><b>Web page import mode</b> determines the way in which pages or pictures are imported:
+<ul><li><b>Links only</b> - imports only web addresses of individual pages with <i>each</i> link going into a separate SuperMemo <a href="Glossary_Element.html" title="Glossary:Element">element</a> (compare: <b>Page of links (one element)</b>)</li>
+<li><b>Page of links (one element)</b> - imports only web addresses of individual pages with <i>all</i> links going as a list into a single SuperMemo <a href="Glossary_Element.html" title="Glossary:Element">element</a> (compare: <b>Links only</b>)</li>
+<li><b>Local pages (whole web pages)</b> - imports entire pages into separate SuperMemo <a href="Glossary_Element.html" title="Glossary:Element">elements</a>. Note that while pages will be located on your hard disk, the pictures they include will not. If you want to localize all or selected embedded pictures, choose <b><a href="Component_menu.html#Download_images" title="Component menu">Download images</a></b> (<i>Ctrl+F8</i>) from the <a href="Component_menu.html" title="Component menu">component menu</a> available by right-clicking over the article in SuperMemo.</li>
+<li><b>Local pages with images</b> - imports whole pages into separate SuperMemo <a href="Glossary_Element.html" title="Glossary:Element">elements</a> along with all the pictures they contain. The pictures are then displayed on the left of their respective imported pages. Note that you can instruct SuperMemo on the minimum size of the picture and the maximum number of pictures included on a given page that will actually get imported into SuperMemo (see below).</li>
+<li><b>Local images only</b> - imports only pictures from individual pages with pictures from a given page going into a separate SuperMemo <a href="Glossary_Element.html" title="Glossary:Element">element</a> (compare: <b>Page of images</b>)</li>
+<li><b>Page of images</b> - imports only pictures from individual pages with <i>all</i> pictures going into a single SuperMemo <a href="Glossary_Element.html" title="Glossary:Element">element</a> (compare: <b>Local images only</b>)</li>
+<li><b>Live pages</b> - imports only web addresses of individual pages with <i>each</i> link going into a separate SuperMemo <a href="Glossary_Element.html" title="Glossary:Element">element</a>. The basic difference between this mode and <b>Links only</b> (above) is that when you enter the <a href="Glossary_Element.html" title="Glossary:Element">element</a> with a live page, SuperMemo automatically opens the link to the page it contains (as opposed to you explicit clicking the imported link in case of the latter option)</li></ul></li>
+<li><b>Filter</b> shows only a selected subset of pages or pictures that are currently opened in Internet Explorer
+<ul><li><b>All</b> - shows all pages or pictures</li>
+<li><b>Pictures</b> - shows all pictures</li>
+<li><b>Wikipedia</b> - shows only <a class="external text" href="http://en.wikipedia.org">Wikipedia</a> articles that you can <a href="Incremental_reading.html" title="Incremental reading">read incrementally</a> in SuperMemo (this is equivalent to choosing <b><a href="Edit_menu.html" title="Edit menu">Edit</a> : <a href="Edit_menu.html#Internet_Explorer" title="Edit menu">Internet Explorer</a> : Wikipedia</b> from the <a href="Main_menu.html" title="Main menu">main menu</a> (<i>Shift+Ctrl+W</i>))</li>
+<li><b>YouTube</b> - shows only <a class="external text" href="http://youtube.com">YouTube</a> videos that you can <a href="Incremental_video.html" title="Incremental video">watch incrementally</a> in SuperMemo (this is equivalent to choosing <b><a href="Edit_menu.html" title="Edit menu">Edit</a> : <a href="Edit_menu.html#Internet_Explorer" title="Edit menu">Internet Explorer</a> : YouTube</b> from the <a href="Main_menu.html" title="Main menu">main menu</a> (<i>Shift+Ctrl+Y</i>))</li></ul></li>
+<li><b>Location</b> determines the location in the <a href="Contents.html" title="Contents"><b>Contents</b> window</a> where selected pages or pictures will be imported
+<ul><li><b>Current element</b> - the selected items will be imported into the <a href="Glossary_Element.html" title="Glossary:Element">element</a> that is currently displayed in the <a href="Element_window.html" title="Element window">element window</a> (this option becomes available only if you select the <b>Page of images</b> import mode (above))</li>
+<li><b>New node</b> - the selected items will be imported as <a href="Glossary_Child.html" title="Glossary:Child">children</a> of a newly added <a href="Glossary_Element.html" title="Glossary:Element">element</a> (called <b>import node</b>). Note that you can specify the title for this element using the <b>Title</b> field at the top of the dialog box (above)</li>
+<li><b>Group hook</b> - the selected items will be imported as <a href="Glossary_Child.html" title="Glossary:Child">children</a> of the hook of the currently selected <a href="Glossary_Concept_group.html" title="Glossary:Concept group">concept group</a>. Note that you can change the concept group to which the selected items will be imported with the <b>Concept group</b> text field</li>
+<li><b>Child</b> - the selected items will be imported as <a href="Glossary_Child.html" title="Glossary:Child">children</a> of the currently displayed <a href="Glossary_Element.html" title="Glossary:Element">element</a></li></ul></li>
+<li><b>Concept group</b> - concept group into which the articles will be imported</li>
+<li>Priority range determines the <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> of automatically imported pages or pictures. <a href="Glossary_Element.html" title="Glossary:Element">Elements</a> will have their <a href="Glossary_Priority.html" title="Glossary:Priority">priorities</a> dispersed randomly in the following range:
+<ul><li><b>Minimum priority</b> - specifies the <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> at the low end of the range (as percentage). Note that you can set the minimum priority as the position in the <a href="Glossary_Priority_queue.html" title="Glossary:Priority queue">priority queue</a> by adding <i>p</i>. You can also specify the <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> via the <a href="Priority_queue.html#Priority_queue_in_SuperMemo" title="Priority queue"><b>Element priority</b> dialog box</a> by clicking the red exclamation mark button to the right.</li>
+<li><b>Maximum priority</b> - specifies the <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> at the high end of the range (as percentage). Note that you can set the maximum priority as the position in the <a href="Glossary_Priority_queue.html" title="Glossary:Priority queue">priority queue</a> by adding <i>p</i>. You can also specify the <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a> via the <a href="Priority_queue.html#Priority_queue_in_SuperMemo" title="Priority queue"><b>Element priority</b> dialog box</a> by clicking the red exclamation mark button to the right.</li></ul></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Context_menu">Context menu</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=3" title="Edit section: Context menu"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=3" title="Edit section's source code: Context menu"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Uncheck duplicates</b> - uncheck articles that have already been imported</li>
+<li><b>Uncheck selected</b> - uncheck articles with text selections (e.g. to import other articles as links only)</li>
+<li><b>Swap checked</b> - inverts checkboxes (i.e. checked articles become unchecked and the other way round)</li>
+<li><b>Check all</b> (<i>Ctrl+A</i>) - check all articles</li>
+<li><b>Check duplicates</b> - check articles that have already been imported (e.g. to close them)</li>
+<li><b>Check selected</b> - check articles with text selections</li>
+<li><b>Close duplicates</b> - close browser tabs/windows with articles that have already been imported</li>
+<li><b>Close checked</b> - close the checked articles</li>
+<li><b>Close unchecked</b> - close the unchecked articles</li>
+<li><b>Close current</b> - close the browser tab/window with the currently selected article</li>
+<li><b>Close all</b> - close all articles</li>
+<li><b>Browse duplicates</b> (<i>Shift+Ctrl+B</i>) - open a <a href="Browser.html" title="Browser">browser</a> with all <a href="Glossary_Element.html" title="Glossary:Element">elements</a> that are duplicates of the pages on the import list</li>
+<li><b>Change tab</b> (<i>Ctrl+Tab</i>) - switch between <b>Articles list</b> and <b>Picture parameters</b> tabs</li>
+<li><b>Close</b> (<i>Esc</i>) - close the dialog window</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Web_import_template">Web import template</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=4" title="Edit section: Web import template"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=4" title="Edit section's source code: Web import template"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>If you import texts, SuperMemo will require that your default import <a href="Glossary_Template.html" title="Glossary:Template">template</a> contains a text <a href="Glossary_Component.html" title="Glossary:Component">component</a> (otherwise it will create a <a href="Glossary_Template.html" title="Glossary:Template">template</a> for you and ignore the concept template). If you import pictures, SuperMemo will require an appropriate picture <a href="Glossary_Template.html" title="Glossary:Template">template</a> to be used. The template must contain a text <a href="Glossary_Component.html" title="Glossary:Component">component</a> and an image component. This is how SuperMemo determines the import <a href="Glossary_Template.html" title="Glossary:Template">template</a> for pictures:
+</p>
+<ol><li>Default <a href="Glossary_Topic.html" title="Glossary:Topic">topic</a> <a href="Glossary_Template.html" title="Glossary:Template">template</a> for the current <a href="Glossary_Concept_group.html" title="Glossary:Concept group">concept group</a> is used if it contains at least one text <a href="Glossary_Component.html" title="Glossary:Component">component</a> (for picture descriptions) and one image component (for the picture)</li>
+<li>Predefined <i>Article Picture</i> <a href="Glossary_Template.html" title="Glossary:Template">template</a> is used if it still exists (you can redefine this template or save your own template under this name as long as it contains the required text and image <a href="Glossary_Component.html" title="Glossary:Component">components</a>)</li>
+<li>Templateless <a href="Glossary_Element.html" title="Glossary:Element">element</a> is created with text and image <a href="Glossary_Component.html" title="Glossary:Component">components</a> as required by the import procedure</li></ol>
+<div class="mw-heading mw-heading2"><h2 id="Using_mouse_in_Web_import_dialog">Using mouse in Web import dialog</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=5" title="Edit section: Using mouse in Web import dialog"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=5" title="Edit section's source code: Using mouse in Web import dialog"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>Use <i>Ctrl+click</i> to swap the check on a given article</li>
+<li>Use <i>Shift+click</i> to check all articles from the current selection to the clicked position</li>
+<li>Use <i>double click</i> to switch to the clicked article</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="FAQs">FAQs</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=6" title="Edit section: FAQs"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=6" title="Edit section's source code: FAQs"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://supermemopedia.com/wiki/Import_from_Wikipedia">How can I import from Wikipedia?</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/How_can_I_import_anatomy_pictures_in_my_collection_easily%3F">How can I import many pictures at once?</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Minimum_picture_size_refers_to_pictures_after_compression">Minimum picture size refers to pictures after compression</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Web_pages_may_not_import_as_local">Web pages may not import as local</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/What_is_the_difference_between_pasting_from_clipboard_and_using_import_options%3F">Import vs. Paste</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Videos">Videos</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=7" title="Edit section: Videos"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=7" title="Edit section's source code: Videos"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Illustrating_articles_with_pictures">Illustrating articles with pictures</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=8" title="Edit section: Illustrating articles with pictures"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=8" title="Edit section's source code: Illustrating articles with pictures"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>{{#ev:youtube|g3WRkDcphps}}
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Importing_to_a_concept_group">Importing to a concept group</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=9" title="Edit section: Importing to a concept group"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=9" title="Edit section's source code: Importing to a concept group"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>{{#ev:youtube|0bdDk3Y2I8Q}}
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260609232143
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.050 seconds
+Real time usage: 0.055 seconds
+Preprocessor visited node count: 110/1000000
+Post‐expand include size: 2478/2097152 bytes
+Template argument size: 1149/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    6.919      1 -total
+ 69.50%    4.809      1 File:Wikipedia_import.jpg
+ 29.12%    2.015      1 File:Pictures_import.jpg
+ 29.09%    2.013      2 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:170:|#|:idhash:canonical and timestamp 20260609232143 and revision id 11606. Rendering was triggered because: diff-page
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Dialog"><span class="tocnumber">1</span> <span class="toctext">对话</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Import_modes_and_options"><span class="tocnumber">2</span> <span class="toctext">导入模式和选项</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Context_menu"><span class="tocnumber">3</span> <span class="toctext">上下文菜单</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Web_import_template"><span class="tocnumber">4</span> <span class="toctext">网页导入模板</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Using_mouse_in_Web_import_dialog"><span class="tocnumber">5</span> <span class="toctext">在 Web 导入对话框中使用鼠标</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#FAQs"><span class="tocnumber">6</span> <span class="toctext">常见问题解答</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Videos"><span class="tocnumber">7</span> <span class="toctext">视频</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Illustrating_articles_with_pictures"><span class="tocnumber">7.1</span> <span class="toctext">用图片说明文章</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#Importing_to_a_concept_group"><span class="tocnumber">7.2</span> <span class="toctext">导入到概念组</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Dialog">对话</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=1" title="Edit section: Dialog"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=1" title="Edit section's source code: Dialog"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>与<b><a href="Edit_menu.html" title="Edit menu">编辑</a> :<a href="Edit_menu.html#Internet_Explorer" title="Edit menu">互联网浏览器</a> ：全部</b>（<i>Shift+Ctrl+A</i>）您可以从 Internet Explorer 快速导入大量网页、图片或 YouTube 视频。</p><p>已导入的文章或图片将被标记为<i>重复</i>（双击文章即可查看其存储在 SuperMemo 中的副本）。在 Internet Explorer 中打开两次以上的文章将被标记为<i>双倍</i>。要关闭所有重复的文章和重复项，请选择<b>关闭重复项</b>从 Web 导入对话框上下文菜单（右键单击）。</p><p><b>重要：</b>
+</p>
+<ul><li>导入之前，选择要从网页导入的文本。否则，所有页眉、导航栏、广告、页脚等都将<a class="external text" href="http://supermemopedia.com/wiki/Web_page_import_does_not_work">与您需要的文本一起导入</a>。</li>
+<li>如果您在 Internet Explorer 中打开网页<b>以管理员身份运行</b>，出于安全原因，它们可能不会对 SuperMemo 可见/无法导入！</li></ul>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Wikipedia_import.jpg.html" title="SuperMemo: Importing articles about clathrate gun hypothesis from Wikipedia for incremental learning"><img alt="SuperMemo: Importing articles about clathrate gun hypothesis from Wikipedia for incremental learning" class="mw-file-element" decoding="async" height="486" loading="lazy" src="https://help.supermemo.org/images/thumb/9/96/Wikipedia_import.jpg/800px-Wikipedia_import.jpg" srcset="/images/thumb/9/96/Wikipedia_import.jpg/1200px-Wikipedia_import.jpg 1.5x, /images/9/96/Wikipedia_import.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b>导入有关胃肠炎微生物学的文章<a class="external text" href="https://en.wikipedia.org">维基百科</a>为了<a href="Incremental_learning.html" title="Incremental learning">渐进学习</a>。图中发现7个已经导入<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>并标记为重复！一篇关于<a class="external text" href="https://en.wikipedia.org/wiki/Trigeminal_nerve">三叉神经</a>已在 Internet Explorer 中打开两次；它已被标记为双倍！！！以便于过滤。物品将被输入脑神经<a href="Glossary_Concept_group.html" title="Glossary:Concept group">概念组</a>和他们的<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>将落在 0.0068% 到 0.0138% 之间，并且成功导入后其相应的 Internet Explorer 选项卡将关闭。</i>
+</p>
+</blockquote>
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Pictures_import.jpg.html" title="SuperMemo: Importing 47 pictures of Gabrielle Union from the web to Photos concept group."><img alt="SuperMemo: Importing 47 pictures of Gabrielle Union from the web to Photos concept group." class="mw-file-element" decoding="async" height="484" loading="lazy" src="https://help.supermemo.org/images/thumb/5/59/Pictures_import.jpg/800px-Pictures_import.jpg" srcset="/images/thumb/5/59/Pictures_import.jpg/1200px-Pictures_import.jpg 1.5x, /images/thumb/5/59/Pictures_import.jpg/1600px-Pictures_import.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b>导入47张图片<a class="external text" href="https://en.wikipedia.org/wiki/Gabrielle_Union">加布里埃尔·尤尼恩</a>从网络到照片<a href="Glossary_Concept_group.html" title="Glossary:Concept group">概念组</a>。其中 5 张图片已导入至此<a href="Glossary_Collection.html" title="Glossary:Collection">收藏</a>（重复！！！）。图片导入为<b>图片页面</b>（即进入单个<a href="Glossary_Element.html" title="Glossary:Element">元素</a>）。请注意，在此模式下从网络导入图片时，它们会自动平铺。</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Import_modes_and_options">导入模式和选项</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=2" title="Edit section: Import modes and options"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=2" title="Edit section's source code: Import modes and options"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>这里有详细的分解<b>网页导入</b>对话框：</p>
+<ul><li><b>标题</b>- 这将用于<span class="reference">#来源</span>为导入的文章自动创建的参考区域字段。另外，如果您选择<b>位置：节点</b>（如下），导入标题和导入日期/时间将构成导入文章的父节点的标题</li>
+<li>工具栏<ul><li><b>进口</b>- 将列表中选定的项目导入 SuperMemo（如果未选择任何内容，SuperMemo 会询问您是否要导入所有页面或图片）</li>
+<li><b>检查全部</b>- 选中文章列表中的所有复选框</li>
+<li><b>筛分</b>- 关闭当前集合中已导入的所有网页或已在 Internet Explorer 中打开多次的网页。这意味着所有标记为 DUPLICATE 或 DOUBLED 的页面将从列表中消失，并且 Internet Explorer 中的相关选项卡将被关闭</li>
+<li><b>重复项</b>- 打开一个<a href="Browser.html" title="Browser">浏览器</a>与列表中的文章重复的所有元素</li>
+<li><b>查看</b>- 查看文章的副本（如果有）或文章本身</li>
+<li><b>帮助</b>- 在文档中打开此页面</li>
+<li><b>关闭浏览器</b>复选框 - 如果选择此复选框，Internet Explorer 中的所有页面/选项卡在导入到 SuperMemo 后将关闭</li>
+<li><b>创造概念</b>复选框 - 如果选择此复选框，SuperMemo 会将所选项目导入为<a href="Glossary_Child.html" title="Glossary:Child">儿童</a>的一个新添加的<a href="Glossary_Concept.html" title="Glossary:Concept">概念</a></li></ul></li>
+<li><b>文章列表</b>- 当前在 Internet Explorer 中打开的页面或图片的列表。如果您不太记得给定页面或图片的内容，可以通过双击列表中的标题快速切换到显示该页面或图片的 Internet Explorer 选项卡/窗口</li>
+<li><b>图片参数</b>确定对导入图片的数量和大小的限制（此选项仅适用于<b>带图像的本地页面</b>,<b>仅本地图像</b>, 和<b>图片页面</b>网页导入模式）。如果导入页面中没有符合导入条件的图片，则仍会导入最大的图片。<ul><li><b>分钟。图片尺寸</b>- 导入图片的最小文件大小（以字节为单位）。如果图片较小，则会被忽略</li>
+<li><b>最大图片数</b>- 每页最多可导入的图片数量<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。仅导入足够大的图片，直到<b>最大图片数</b>已达到限制</li></ul></li>
+<li><b>网页导入方式</b>确定页面或图片的导入方式：<ul><li><b>仅链接</b>- 仅导入单个页面的网址<i>每个</i>链接进入单独的 SuperMemo<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（比较：<b>链接页面（一个元素）</b>）</li>
+<li><b>链接页面（一个元素）</b>- 仅导入单个页面的网址<i>全部</i>链接作为列表进入单个 SuperMemo<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（比较：<b>仅链接</b>）</li>
+<li><b>本地页面（整个网页）</b>- 将整个页面导入单独的 SuperMemo<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。请注意，虽然页面将位于您的硬盘上，但其中包含的图片不会。如果要本地化所有或选定的嵌入图片，请选择<b><a href="Component_menu.html#Download_images" title="Component menu">下载图片</a></b>（<i>Ctrl+F8</i>）从<a href="Component_menu.html" title="Component menu">组件菜单</a>右键单击 SuperMemo 中的文章即可使用。</li>
+<li><b>带图像的本地页面</b>- 将整个页面导入到单独的 SuperMemo 中<a href="Glossary_Element.html" title="Glossary:Element">元素</a>以及它们包含的所有图片。然后图片将显示在各自导入页面的左侧。请注意，您可以向 SuperMemo 指示实际导入 SuperMemo 的给定页面上包含的图片的最小尺寸和最大图片数量（见下文）。</li>
+<li><b>仅本地图像</b>- 仅导入各个页面中的图片，并将给定页面中的图片导入单独的 SuperMemo<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（比较：<b>图片页面</b>）</li>
+<li><b>图片页面</b>- 仅从单个页面导入图片<i>全部</i>图片进入单个 SuperMemo<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（比较：<b>仅本地图像</b>）</li>
+<li><b>实时页面</b>- 仅导入单个页面的网址<i>每个</i>链接进入单独的 SuperMemo<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。该模式与<b>仅链接</b>（上图）是当你输入<a href="Glossary_Element.html" title="Glossary:Element">元素</a>对于实时页面，SuperMemo 会自动打开指向其包含的页面的链接（而不是在后一个选项中明确单击导入的链接）</li></ul></li>
+<li><b>过滤器</b>仅显示当前在 Internet Explorer 中打开的页面或图片的选定子集<ul><li><b>全部</b>- 显示所有页面或图片</li>
+<li><b>图片</b>- 显示所有图片</li>
+<li><b>维基百科</b>- 仅显示<a class="external text" href="http://en.wikipedia.org">维基百科</a>您可以的文章<a href="Incremental_reading.html" title="Incremental reading">增量阅读</a>在 SuperMemo 中（这相当于选择<b><a href="Edit_menu.html" title="Edit menu">编辑</a> :<a href="Edit_menu.html#Internet_Explorer" title="Edit menu">互联网浏览器</a> ：维基百科</b>从<a href="Main_menu.html" title="Main menu">主菜单</a>（<i>Shift+Ctrl+W</i>））</li>
+<li><b>YouTube</b>- 仅显示<a class="external text" href="http://youtube.com">YouTube</a>您可以的视频<a href="Incremental_video.html" title="Incremental video">逐步观察</a>在 SuperMemo 中（这相当于选择<b><a href="Edit_menu.html" title="Edit menu">编辑</a> :<a href="Edit_menu.html#Internet_Explorer" title="Edit menu">互联网浏览器</a> ：YouTube</b>从<a href="Main_menu.html" title="Main menu">主菜单</a>（<i>Shift+Ctrl+Y</i>））</li></ul></li>
+<li><b>地点</b>确定在中的位置<a href="Contents.html" title="Contents"><b>内容</b>窗户</a>将导入选定页面或图片的位置<ul><li><b>当前元素</b>- 所选项目将被导入到<a href="Glossary_Element.html" title="Glossary:Element">元素</a>当前显示在<a href="Element_window.html" title="Element window">元素窗口</a>（此选项仅在您选择<b>图片页面</b>导入模式（上））</li>
+<li><b>新节点</b>- 所选项目将导入为<a href="Glossary_Child.html" title="Glossary:Child">儿童</a>的一个新添加的<a href="Glossary_Element.html" title="Glossary:Element">元素</a>（称为<b>导入节点</b>）。请注意，您可以使用以下命令指定该元素的标题<b>标题</b>对话框顶部的字段（上图）</li>
+<li><b>组钩</b>- 所选项目将导入为<a href="Glossary_Child.html" title="Glossary:Child">儿童</a>当前选定的钩子的<a href="Glossary_Concept_group.html" title="Glossary:Concept group">概念组</a>。请注意，您可以使用以下命令更改所选项目将导入到的概念组：<b>概念组</b>文本字段</li>
+<li><b>儿童</b>- 所选项目将导入为<a href="Glossary_Child.html" title="Glossary:Child">儿童</a>当前显示的<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li></ul></li>
+<li><b>概念组</b>- 文章将导入到的概念组</li>
+<li>优先级范围决定<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>自动导入的页面或图片。<a href="Glossary_Element.html" title="Glossary:Element">元素</a>将会有他们的<a href="Glossary_Priority.html" title="Glossary:Priority">优先事项</a>随机分布在以下范围内：<ul><li><b>最低优先级</b>- 指定<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>处于范围的低端（以百分比表示）。请注意，您可以将最低优先级设置为<a href="Glossary_Priority_queue.html" title="Glossary:Priority queue">优先队列</a>通过添加<i>p</i>。您还可以指定<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>通过<a href="Priority_queue.html#Priority_queue_in_SuperMemo" title="Priority queue"><b>元素优先级</b>对话框</a>单击右侧的红色感叹号按钮。</li>
+<li><b>最高优先级</b>- 指定<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>在范围的高端（以百分比表示）。请注意，您可以将最大优先级设置为<a href="Glossary_Priority_queue.html" title="Glossary:Priority queue">优先队列</a>通过添加<i>p</i>。您还可以指定<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>通过<a href="Priority_queue.html#Priority_queue_in_SuperMemo" title="Priority queue"><b>元素优先级</b>对话框</a>单击右侧的红色感叹号按钮。</li></ul></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Context_menu">上下文菜单</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=3" title="Edit section: Context menu"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=3" title="Edit section's source code: Context menu"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>取消选中重复项</b>- 取消选中已导入的文章</li>
+<li><b>取消选中所选的</b>- 取消选中带有文本选择的文章（例如仅将其他文章作为链接导入）</li>
+<li><b>已检查交换</b>- 反转复选框（即选中的文章变为未选中，反之亦然）</li>
+<li><b>检查全部</b>（<i>Ctrl+A</i>) - 检查所有文章</li>
+<li><b>检查重复项</b>- 检查已导入的文章（例如关闭它们）</li>
+<li><b>检查选定的</b>- 检查带有文本选择的文章</li>
+<li><b>关闭重复项</b>- 关闭包含已导入文章的浏览器选项卡/窗口</li>
+<li><b>关闭检查</b>- 关闭选中的文章</li>
+<li><b>关闭未选中的</b>- 关闭未勾选的文章</li>
+<li><b>关闭电流</b>- 关闭包含当前所选文章的浏览器选项卡/窗口</li>
+<li><b>全部关闭</b>- 关闭所有文章</li>
+<li><b>浏览重复项</b>（<i>Shift+Ctrl+B</i>) - 打开一个<a href="Browser.html" title="Browser">浏览器</a>与所有<a href="Glossary_Element.html" title="Glossary:Element">元素</a>与导入列表中的页面重复</li>
+<li><b>更改选项卡</b>（<i>Ctrl+Tab</i>) - 之间切换<b>文章列表</b>和<b>图片参数</b>选项卡</li>
+<li><b>关闭</b>（<i>ESC</i>) - 关闭对话框窗口</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Web_import_template">网页导入模板</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=4" title="Edit section: Web import template"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=4" title="Edit section's source code: Web import template"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>如果您导入文本，SuperMemo 将要求您默认导入<a href="Glossary_Template.html" title="Glossary:Template">模板</a>包含一段文字<a href="Glossary_Component.html" title="Glossary:Component">组件</a>（否则它将创建一个<a href="Glossary_Template.html" title="Glossary:Template">模板</a>为您提供并忽略概念模板）。如果导入图片，SuperMemo 会需要合适的图片<a href="Glossary_Template.html" title="Glossary:Template">模板</a>被使用。模板必须包含文本<a href="Glossary_Component.html" title="Glossary:Component">组件</a>和图像组件。这就是 SuperMemo 确定导入的方式<a href="Glossary_Template.html" title="Glossary:Template">模板</a>对于图片：</p>
+<ol><li>默认<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a> <a href="Glossary_Template.html" title="Glossary:Template">模板</a>对于当前的<a href="Glossary_Concept_group.html" title="Glossary:Concept group">概念组</a>如果它包含至少一个文本，则使用<a href="Glossary_Component.html" title="Glossary:Component">组件</a>（用于图片描述）和一个图像组件（用于图片）</li>
+<li>预定义<i>文章图片</i> <a href="Glossary_Template.html" title="Glossary:Template">模板</a>如果仍然存在则使用（您可以重新定义此模板或将您自己的模板保存在此名称下，只要它包含所需的文本和图像<a href="Glossary_Component.html" title="Glossary:Component">组件</a>）</li>
+<li>无模板<a href="Glossary_Element.html" title="Glossary:Element">元素</a>由文本和图像创建<a href="Glossary_Component.html" title="Glossary:Component">组件</a>根据进口程序的要求</li></ol>
+<div class="mw-heading mw-heading2"><h2 id="Using_mouse_in_Web_import_dialog">在 Web 导入对话框中使用鼠标</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=5" title="Edit section: Using mouse in Web import dialog"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=5" title="Edit section's source code: Using mouse in Web import dialog"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>使用<i>Ctrl+单击</i>交换给定文章的支票</li>
+<li>使用<i>Shift+单击</i>查看从当前选择到单击位置的所有文章</li>
+<li>使用<i>双击</i>切换到点击的文章</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="FAQs">常见问题解答</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=6" title="Edit section: FAQs"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=6" title="Edit section's source code: FAQs"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://supermemopedia.com/wiki/Import_from_Wikipedia">如何从维基百科导入？</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/How_can_I_import_anatomy_pictures_in_my_collection_easily%3F">如何一次导入多张图片？</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Minimum_picture_size_refers_to_pictures_after_compression">最小图片尺寸是指压缩后的图片</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Web_pages_may_not_import_as_local">网页可能无法作为本地导入</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/What_is_the_difference_between_pasting_from_clipboard_and_using_import_options%3F">导入与粘贴</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Videos">视频</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=7" title="Edit section: Videos"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=7" title="Edit section's source code: Videos"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<div class="mw-heading mw-heading3"><h3 id="Illustrating_articles_with_pictures">用图片说明文章</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=8" title="Edit section: Illustrating articles with pictures"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=8" title="Edit section's source code: Illustrating articles with pictures"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>{{#ev:youtube|g3WRkDcphps}}</p>
+<div class="mw-heading mw-heading3"><h3 id="Importing_to_a_concept_group">导入到概念组</h3><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;veaction=edit&amp;section=9" title="Edit section: Importing to a concept group"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Import_from_Internet_Explorer&amp;action=edit&amp;section=9" title="Edit section's source code: Importing to a concept group"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>{{#ev:youtube|0bdDk3Y2I8Q}}</p>
+<!-- 
+NewPP limit report
+Cached time: 20260609232143
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.050 seconds
+Real time usage: 0.055 seconds
+Preprocessor visited node count: 110/1000000
+Post‐expand include size: 2478/2097152 bytes
+Template argument size: 1149/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    6.919      1 -total
+ 69.50%    4.809      1 File:Wikipedia_import.jpg
+ 29.12%    2.015      1 File:Pictures_import.jpg
+ 29.09%    2.013      2 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:170:|#|:idhash:canonical and timestamp 20260609232143 and revision id 11606. Rendering was triggered because: diff-page
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

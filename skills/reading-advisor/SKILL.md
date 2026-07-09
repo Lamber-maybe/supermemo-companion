@@ -35,7 +35,8 @@ learning happens.
 ## Formulation principles (behind every suggestion)
 
 Adapted from Piotr Wozniak's *Twenty Rules of Formulating Knowledge*
-(super-memory.com/articles/20rules.htm). When giving advice, name the
+(full text bundled at `docs/articles/20rules.htm`; canonical:
+super-memory.com/articles/20rules.htm). When giving advice, name the
 principle you're applying — teaching it is half the job.
 
 1. **Understood first.** Never card what the learner can't already explain.

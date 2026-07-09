@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Using text components — SuperMemo Help</title>
+<style>
+body { font-family: Georgia, 'Times New Roman', serif; max-width: 960px; margin: 0 auto; padding: 1.5em; color: #202122; line-height: 1.6; }
+h1, h2, h3, h4, h5 { font-family: sans-serif; }
+.source-note { color: #888; font-size: 0.82em; margin-bottom: 1.2em; border-bottom: 1px solid #eee; padding-bottom: 0.5em; }
+a { color: #0645ad; }
+a:visited { color: #0b0080; }
+table { border-collapse: collapse; margin: 1em 0; }
+td, th { border: 1px solid #a2a9b1; padding: 6px 10px; }
+th { background: #eaecf0; }
+img { max-width: 100%; height: auto; }
+.wikitable { width: 100%; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1em; overflow-x: auto; }
+code { background: #f8f9fa; padding: 2px 4px; }
+.toc { background: #f8f9fa; border: 1px solid #aaa; padding: 1em; display: inline-block; min-width: 200px; }
+.mw-parser-output { }
+.navbox { border: 1px solid #aaa; margin: 1em 0; padding: 0.5em; }
+</style>
+</head>
+<body>
+<p class="source-note">Source: <a href="https://help.supermemo.org/wiki/Using_text_components">https://help.supermemo.org/wiki/Using_text_components</a></p>
+<div class="mw-parser-output">
+<div class="mw-content-ltr mw-parser-output" lang="en" dir="ltr"><p>Text is the primary way in which you represent knowledge in SuperMemo. You will spend a lot of time processing texts, esp. if you learn to employ <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>. This is why your decisions about choosing appropriate text <a href="Glossary_Component.html" title="Glossary:Component">components</a> are important. 
+</p><p>Plain text <a href="Glossary_Component.html" title="Glossary:Component">components</a> have traditionally been the most often used text components in earlier versions of SuperMemo. They consume little space and can be searched at high speeds with SuperMemo low-level search procedures. With the advent of <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>, however, <a href="HTML_component.html" title="HTML component">HTML components</a> have become the default text <a href="Glossary_Component.html" title="Glossary:Component">components</a> in SuperMemo. <a href="HTML_component.html" title="HTML component">HTML components</a> provide many formatting options, however, they consume more disk space. If disk space is very important for you, use <i>Classic</i> <a href="Glossary_Template.html" title="Glossary:Template">template</a> (and its derivatives) for <a href="Glossary_Item.html" title="Glossary:Item">items</a> instead of HTML-based templates (see: <a href="Templates.html" title="Templates">Using templates</a>). Optimally, you should use <a href="HTML_component.html" title="HTML component">HTML components</a> with <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a> and use <i>Classic</i> plain text <a href="Glossary_Template.html" title="Glossary:Template">templates</a> on <a href="Glossary_Item.html" title="Glossary:Item">items</a> that have been completed (i.e. formulated in their final shape). SuperMemo automatically removes formatting from texts used in plain text <a href="Glossary_Component.html" title="Glossary:Component">components</a> when you run <b><a href="File_menu.html" title="File menu">File</a>&#160;: <a href="Repairing_collections.html" title="Repairing collections">Repair collection</a></b> with <b>Rebuild registries</b> checked. This practice helps you keep your <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> compact and fast. 
+</p><p>The table below summarizes pros and cons of using various text <a href="Glossary_Component.html" title="Glossary:Component">components</a> in SuperMemo: 
+</p>
+<table style="background-color: rgb(192, 192, 192);" border="1" cellspacing="5" cellpadding="5">
+
+<tbody><tr>
+<td align="center"><b>Type</b>
+</td>
+<td align="center"><b>Advantages</b>
+</td>
+<td align="center"><b>Disadvantages</b>
+</td>
+<td align="center"><b>Typical use</b>
+</td></tr>
+<tr>
+<td><a href="HTML_component.html" title="HTML component"><b>HTML</b> component</a>
+<p>This <a href="Glossary_Component.html" title="Glossary:Component">component</a> is used by <a href="Glossary_Template.html" title="Glossary:Template">templates</a> such as <i>Item</i>, <i>Article</i>, <i>Item Picture</i>, etc. 
+</p>
+</td>
+<td>
+<ol><li>richest formatting</li>
+<li>full incremental reading support</li>
+<li>full HTML and JavaScript support</li>
+<li>images can be inserted in the text</li>
+<li>Unicode support</li>
+<li>search possible</li>
+<li>search&amp;replace possible</li>
+<li>phonetic transcription possible</li>
+<li>can use stylesheets</li></ol>
+</td>
+<td>
+<ol><li>Internet Explorer 6.0 or later required</li>
+<li>fonts can be modified by <a href="Glossary_Template.html" title="Glossary:Template">templates</a> only before the text is typed in (unless you use a stylesheet with the template)</li>
+<li>all texts kept in separate files (this slows down copying of large <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a>)</li></ol>
+</td>
+<td>
+<ol><li>default text format</li>
+<li><a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a></li>
+<li>richly formatted files with scripts and multimedia</li>
+<li>whole websites</li>
+<li>files that can be displayed in Internet Explorer (e.g. XLS, PDF, DOC, RTF, GIF, etc.)</li></ol>
+</td></tr>
+<tr>
+<td><a href="WebView_component.html" title="WebView component"><b>WebView</b> component</a>
+<p>This <a href="Glossary_Component.html" title="Glossary:Component">component</a> uses a modern browser engine (e.g. Chromium-based WebView) to display HTML content.
+</p>
+</td>
+<td>
+<ol><li>modern HTML, CSS, and JavaScript support</li>
+<li>renders pages more accurately than Internet Explorer</li>
+<li>better security and stability</li>
+<li>full Unicode support</li>
+<li>fast rendering of large documents</li>
+<li>supports modern web standards (HTML5, CSS3)</li>
+<li>search possible</li>
+<li>search&amp;replace possible</li></ol>
+</td>
+<td>
+<ol><li>may not support all legacy Internet Explorer features</li>
+<li>slightly higher memory use than the classic HTML component</li>
+<li>some older scripts or templates may require adaptation</li>
+<li><a href="Incremental_reading.html" title="Incremental reading">incremental reading</a> support is rudimentary</li></ol>
+</td>
+<td>
+<ol><li>modern HTML content</li>
+<li>web pages requiring up‑to‑date browser standards</li>
+<li>items using interactive JavaScript widgets</li>
+<li>incremental reading when modern rendering is preferred</li></ol>
+</td></tr>
+<tr>
+<td><b>Plain text</b> component
+<p>This <a href="Glossary_Component.html" title="Glossary:Component">component</a> is used by the <i>Classic</i> template 
+</p>
+</td>
+<td>
+<ol><li>fonts can be modified globally via <a href="Glossary_Template.html" title="Glossary:Template">templates</a></li>
+<li>small size of data</li>
+<li>speed</li>
+<li>can be made transparent (e.g. to write over images)</li>
+<li>search possible</li>
+<li>search&amp;replace possible (including <a href="Filter_files.html" title="Filter files"><b>Apply filter</b></a>)</li>
+<li>automatic translation and phonetic transcription</li></ol>
+</td>
+<td>
+<ol><li>no rich formatting</li>
+<li>unsuitable for <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a></li></ol>
+</td>
+<td>
+<ol><li>simple question-answer <a href="Glossary_Item.html" title="Glossary:Item">items</a> (e.g. created with <b>Remember cloze</b>)</li>
+<li>transparent labels</li></ol>
+</td></tr>
+<tr>
+<td><b>Rich text (RTF)</b> component
+<p>This <a href="Glossary_Component.html" title="Glossary:Component">component</a> is used in templates such as <i>RTF Article</i>, <i>RTF Item</i>, etc. 
+</p>
+</td>
+<td>
+<ol><li>rich text formatting</li>
+<li>subset of <a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a></li>
+<li>search possible</li>
+<li>search&amp;replace possible</li>
+<li>phonetic transcription possible</li></ol>
+</td>
+<td>
+<ol><li>may not be supported in the future</li>
+<li>large size of files</li>
+<li>very slow processing of longer texts or large <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a></li>
+<li>cannot modify font with <a href="Glossary_Template.html" title="Glossary:Template">templates</a> nor stylesheets</li>
+<li>cannot interlace pictures and other multimedia</li></ol>
+</td>
+<td>
+<ol><li><a href="Glossary_Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a> in the absence of Internet Explorer</li>
+<li>rich formatting in the absence of Internet Explorer</li></ol>
+</td></tr>
+<tr>
+<td><b>Spelling</b> <a href="Glossary_Component.html" title="Glossary:Component">component</a>
+<p>Used in the <a href="Glossary_Template.html" title="Glossary:Template">template</a> <i>Spelling</i> 
+</p>
+</td>
+<td>
+<ol><li>used for spelling tests</li>
+<li>small size</li>
+<li>speed</li>
+<li>font modifiable via <a href="Glossary_Template.html" title="Glossary:Template">templates</a></li>
+<li>search possible</li>
+<li>search&amp;replace possible</li></ol>
+</td>
+<td>
+<ol><li>useless beyond spelling tests</li></ol>
+</td>
+<td>
+<ol><li>spelling exercises</li></ol>
+</td></tr>
+<tr>
+<td>Binary <a href="Glossary_Component.html" title="Glossary:Component">component</a>
+</td>
+<td>
+<ol><li>using all possible proprietary formats that are not supported by other <a href="Glossary_Component.html" title="Glossary:Component">components</a></li></ol>
+</td>
+<td>
+<ol><li>clicking the <b>Run</b> button is necessary to view the text</li>
+<li>files can only be edited if the proprietary editor is installed</li>
+<li>words do not enter the lexicon</li>
+<li>search not possible</li>
+<li>search&amp;replace not possible</li>
+<li>translation and phonetic transcription not available</li>
+<li>cannot modify font via <a href="Glossary_Template.html" title="Glossary:Template">templates</a></li></ol>
+</td>
+<td>
+<ol><li>importing all text formats that are not supported by the <a href="HTML_component.html" title="HTML component">HTML component</a> (e.g. mind maps, etc.)</li></ol>
+</td></tr>
+<tr>
+<td><a href="OLE_component.html" title="OLE component"><b>OLE</b> component</a>
+</td>
+<td>
+<ol><li>using proprietary formats that support OLE (e.g. mind maps)</li></ol>
+</td>
+<td>
+<ol><li>requires a relevant OLE server</li>
+<li>very large size of files</li>
+<li>files can only be edited if the proprietary editor is installed</li>
+<li>words do not enter the lexicon</li>
+<li>search not possible</li>
+<li>search&amp;replace not possible</li>
+<li>translation and phonetic transcription not available</li>
+<li>may be annoyingly unstable if there are problems with the OLE server</li>
+<li>cannot modify font via <a href="Glossary_Template.html" title="Glossary:Template">templates</a></li></ol>
+</td>
+<td>
+<ol><li>using data formats that cannot be used with <a href="HTML_component.html" title="HTML component">HTML component</a> but support OLE in the presence of an OLE server</li></ol>
+</td></tr>
+<tr>
+<td><b>Sound</b> <a href="Glossary_Component.html" title="Glossary:Component">component</a>
+</td>
+<td>
+<ol><li>sound can be associated with the text</li>
+<li>search possible</li>
+<li>search&amp;replace possible (including <a href="Filter_files.html" title="Filter files"><b>Apply filter</b></a>)</li>
+<li>font modifiable via <a href="Glossary_Template.html" title="Glossary:Template">templates</a></li>
+<li>phonetic transcription and translation supported</li></ol>
+</td>
+<td>
+<ol><li>slow</li>
+<li>cannot be made transparent</li>
+<li>provides no advantages over plain text if no sound is associated</li></ol>
+</td>
+<td>
+<ol><li>pronunciation exercises</li>
+<li>learning material narration</li></ol>
+</td></tr>
+<tr>
+<td><b>Image</b> <a href="Glossary_Component.html" title="Glossary:Component">component</a>
+</td>
+<td>
+<ol><li>can represent most complex formatting needed for mathematical or chemical formulas (as a picture, e.g. JPG)</li></ol>
+</td>
+<td>
+<ol><li>large size of files</li>
+<li>words do not enter the lexicon</li>
+<li>search not possible</li>
+<li>search&amp;replace not possible</li>
+<li>translation and phonetic transcription not available</li>
+<li>cannot modify font via <a href="Glossary_Template.html" title="Glossary:Template">templates</a></li></ol>
+</td>
+<td>
+<ol><li>complex formulas that are hard to represent in HTML or OLE</li></ol>
+</td></tr></tbody></table>
+<p><br />
+</p>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://help.supermemo.org/index.php?title=Using_text_components&amp;veaction=edit&amp;section=1" title="Edit section: See also" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Using_text_components&amp;action=edit&amp;section=1" title="Edit section&#39;s source code: See also"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://super-memory.com/help/faq/texts.htm"><b>FAQ</b>: Text components</a></li>
+<li><a href="Using_fonts.html" title="Using fonts">Using fonts</a></li>
+<li><a href="Fonts_tab_in_Options.html" title="Fonts tab in Options">Font options</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Finding_out_the_default_font_size_used_in_HTML_components#Followup">FAQ: Why so many complex components?</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/How_can_I_see_if_a_component_is_plain_or_HTML%3F">How to differentiate between plain text and HTML?</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111329
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.029 seconds
+Real time usage: 0.029 seconds
+Preprocessor visited node count: 56/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key guru_Help20:pcache:122:|#|:idhash:canonical and timestamp 20260610111329 and revision id 11997. Rendering was triggered because: api-parse
+ -->
+</div>
+</div>
+</body>
+</html>

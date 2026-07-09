@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What's new in SuperMemo 18? — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/What%27s_new_in_SuperMemo_18%3F" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div class="mw-heading mw-heading2"><h2 id="Learning">Learning</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;veaction=edit&amp;section=1" title="Edit section: Learning"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;action=edit&amp;section=1" title="Edit section's source code: Learning"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a class="external text" href="https://supermemo.guru/wiki/SuperMemo_Algorithm">Algorithm SM-18</a></b> with a <a class="external text" href="https://supermemo.guru/wiki/Item_difficulty_in_Algorithm_SM-18">new approach to determining item difficulty</a></li>
+<li>new <a class="external text" href="https://supermemo.guru/wiki/Universal_metric_for_cross-comparison_of_spaced_repetition_algorithms">universal algorithm metric</a></li>
+<li>collecting and displaying <a class="external text" href="https://supermemo.guru/wiki/Stabilization_curve">stabilization curves</a> that determine the efficency of review</li>
+<li>collecting and displaying <a href="Analysis.html" title="Analysis">retrievability-based forgetting curves</a> to determine the efficiency of the algorithm</li>
+<li>simplified editing of repetition histories (e.g. <i>Aug 15, 1995</i> or <i>Int=6</i> are allowed instead of full repetition data)</li>
+<li>recalibrating <a class="external text" href="https://supermemo.guru/wiki/SuperMemo_Algorithm">SuperMemo Algorithm</a> to rely on <i>E(SInc[])</i> rather than <i>SInc[]</i></li>
+<li>maximum interval increased to 120 years (previously 10,000 days, i.e. 27 years)</li>
+<li>repetition history can be used to override learning parameters</li>
+<li><b>Undo Repetition</b> (items are made pending when the last record is deleted)</li>
+<li>grade undo is possible by editing the last repetition history record (or using <b>Undo Repetition</b>)</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Interface">Interface</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;veaction=edit&amp;section=2" title="Edit section: Interface"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;action=edit&amp;section=2" title="Edit section's source code: Interface"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul>
+<li>40 predefined themes (<i>skins</i>)(see <a class="external text" href="https://youtu.be/FRWPzd43l0I">video</a>)</li>
+<li>each collection can use its own theme (<i>skin</i>)</li>
+<li>all toolbars available as tabs at the bottom of the <a href="Element_window.html" title="Element window">element window</a></li>
+<li>emojis used for grades instead of grade names (names known from previous SuperMemos can be restored via <b>Options</b>)
+<div class="center">
+<p><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Emoji-based_grade_panel.jpg.html" title="Emoji-based grade panel in SuperMemo 18"><img alt="Emoji-based grade panel in SuperMemo 18" class="mw-file-element" decoding="async" height="47" loading="lazy" src="https://help.supermemo.org/images/c/c9/Emoji-based_grade_panel.jpg" width="501"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> As of <a class="external text" href="https://help18.supermemo.org/wiki/What's_new_in_SuperMemo_18?">SuperMemo 18</a>, grades are illustrated with vivid emojis by default. If you prefer the old text-based grades (i.e. <b>Great</b>, <b>Pass</b>, <b>Bad</b>, etc.), uncheck <b>Grade icons</b> in <b><a href="Toolkit_menu.html" title="Toolkit menu">Toolkit</a> : <a href="Options.html" title="Options">Options</a> : <a href="SuperMemo_tab_in_Options.html" title="SuperMemo tab in Options">SuperMemo</a></b>.</i>
+</p>
+</blockquote>
+</div>
+</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Performance">Performance</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;veaction=edit&amp;section=3" title="Edit section: Performance"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;action=edit&amp;section=3" title="Edit section's source code: Performance"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>SuperMemo 18 has been recompiled with Delphi 10.2 Tokyo</li>
+<li>minimizing add on units to capitalize on native Delphi support</li>
+<li>resetting statistics at Memorized=0 does not reset the collection, only deletes files</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Bugs_fixed">Bugs fixed</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;veaction=edit&amp;section=4" title="Edit section: Bugs fixed"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;action=edit&amp;section=4" title="Edit section's source code: Bugs fixed"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><i>https://</i> image import could fail if <i>https</i> files allowed of no <i>http</i> access</li>
+<li>occasionally, RTF files would fail to upgrade to HTML (old format would be retained)</li>
+<li><b>Alarm : Start</b> could instantly raise the alarm for time&gt;0</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Warnings">Warnings</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;veaction=edit&amp;section=5" title="Edit section: Warnings"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;action=edit&amp;section=5" title="Edit section's source code: Warnings"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>No more floating toolbars</li>
+<li>No more toolbar dock</li>
+<li>No more translation import and export via text</li>
+<li><b>Window:Select:Next window</b> removed</li>
+<li>No more <i>stray repetition</i> export from repetition history</li>
+<li>Additional repetition history warnings <i>Wrong repetition, grade and lapses match</i> can only be fixed manually (e.g. <b>Fix and Edit</b>)</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Other">Other</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;veaction=edit&amp;section=6" title="Edit section: Other"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;action=edit&amp;section=6" title="Edit section's source code: Other"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>extended Q&amp;A text import (incl. <a class="external text" href="https://youtu.be/-zfVeUgYyw8">Anki cloze</a>)</li>
+<li>simplified code with a great deal of refactoring</li>
+<li>440 improvements and bug fixes</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Video">Video</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;veaction=edit&amp;section=7" title="Edit section: Video"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;action=edit&amp;section=7" title="Edit section's source code: Video"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Exemplary skin types (themes) used in SuperMemo 18 (<b>Window : Themes</b>):
+</p><p>{{#ev:youtube|FRWPzd43l0I}}
+</p><p><br/>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610111343
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [no‐toc]
+CPU time usage: 0.039 seconds
+Real time usage: 0.042 seconds
+Preprocessor visited node count: 33/1000000
+Post‐expand include size: 772/2097152 bytes
+Template argument size: 341/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.468      1 File:Emoji-based_grade_panel.jpg
+100.00%    4.468      1 -total
+ 40.13%    1.793      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:705:|#|:idhash:canonical and timestamp 20260610111343 and revision id 11687. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div class="mw-heading mw-heading2"><h2 id="Learning">学习</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;veaction=edit&amp;section=1" title="Edit section: Learning"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;action=edit&amp;section=1" title="Edit section's source code: Learning"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a class="external text" href="https://supermemo.guru/wiki/SuperMemo_Algorithm">算法 SM-18</a></b>与一个<a class="external text" href="https://supermemo.guru/wiki/Item_difficulty_in_Algorithm_SM-18">确定项目难度的新方法</a></li>
+<li>新的<a class="external text" href="https://supermemo.guru/wiki/Universal_metric_for_cross-comparison_of_spaced_repetition_algorithms">通用算法度量</a></li>
+<li>收集并展示<a class="external text" href="https://supermemo.guru/wiki/Stabilization_curve">稳定曲线</a>决定审核效率</li>
+<li>收集和展示<a href="Analysis.html" title="Analysis">基于可提取性的遗忘曲线</a>确定算法的效率</li>
+<li>简化重复历史记录的编辑（例如<i>1995 年 8 月 15 日</i>或<i>整数=6</i>允许代替完整的重复数据）</li>
+<li>重新校准<a class="external text" href="https://supermemo.guru/wiki/SuperMemo_Algorithm">SuperMemo 算法</a>依靠<i>E(SInc[])</i>而不是<i>SInc[]</i></li>
+<li>最大间隔增加至120年（之前为10,000天，即27年）</li>
+<li>重复历史可用于覆盖学习参数</li>
+<li><b>撤消重复</b>（删除最后一条记录后，项目将处于待处理状态）</li>
+<li>通过编辑最后的重复历史记录（或使用<b>撤消重复</b>）</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Interface">接口</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;veaction=edit&amp;section=2" title="Edit section: Interface"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;action=edit&amp;section=2" title="Edit section's source code: Interface"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul>
+<li>40 个预定义主题 (<i>皮肤</i>）（参见<a class="external text" href="https://youtu.be/FRWPzd43l0I">视频</a>）</li>
+<li>每个集合可以使用自己的主题（<i>皮肤</i>）</li>
+<li>所有工具栏均可作为底部的选项卡使用<a href="Element_window.html" title="Element window">元素窗口</a></li>
+<li>用于成绩的表情符号而不是成绩名称（以前 SuperMemos 中已知的名称可以通过以下方式恢复）<b>选项</b>）<div class="center">
+<p><span class="mw-default-size" typeof="mw:File"><a class="mw-file-description" href="File_Emoji-based_grade_panel.jpg.html" title="Emoji-based grade panel in SuperMemo 18"><img alt="Emoji-based grade panel in SuperMemo 18" class="mw-file-element" decoding="async" height="47" loading="lazy" src="https://help.supermemo.org/images/c/c9/Emoji-based_grade_panel.jpg" width="501"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b>截至<a class="external text" href="https://help18.supermemo.org/wiki/What's_new_in_SuperMemo_18?">超级备忘录 18</a>，成绩默认用生动的表情符号表示。如果您更喜欢旧的基于文本的成绩（即<b>太棒了</b>,<b>通行证</b>,<b>不好</b>等），取消选中<b>等级图标</b>在<b><a href="Toolkit_menu.html" title="Toolkit menu">工具包</a> :<a href="Options.html" title="Options">选项</a> :<a href="SuperMemo_tab_in_Options.html" title="SuperMemo tab in Options">超级备忘录</a></b>。</i>
+</p>
+</blockquote>
+</div>
+</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Performance">性能</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;veaction=edit&amp;section=3" title="Edit section: Performance"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;action=edit&amp;section=3" title="Edit section's source code: Performance"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>SuperMemo 18 已使用 Delphi 10.2 Tokyo 重新编译</li>
+<li>最大限度地减少附加单元以利用本地 Delphi 支持</li>
+<li>在 Memorized=0 处重置统计信息不会重置集合，只会删除文件</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Bugs_fixed">错误已修复</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;veaction=edit&amp;section=4" title="Edit section: Bugs fixed"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;action=edit&amp;section=4" title="Edit section's source code: Bugs fixed"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><i>https://</i>如果出现以下情况，图像导入可能会失败<i>https</i>允许的文件 没有<i>http</i>访问</li>
+<li>有时，RTF 文件无法升级为 HTML（旧格式将保留）</li>
+<li><b>闹钟：开始</b>时间&gt;0时可立即发出警报</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Warnings">警告</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;veaction=edit&amp;section=5" title="Edit section: Warnings"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;action=edit&amp;section=5" title="Edit section's source code: Warnings"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>不再有浮动工具栏</li>
+<li>不再有工具栏停靠栏</li>
+<li>不再需要通过文本导入和导出翻译</li>
+<li><b>窗口：选择：下一个窗口</b>已删除</li>
+<li>没有了<i>杂散重复</i>从重复历史记录中导出</li>
+<li>额外的重复历史警告<i>重复错误、成绩和失误匹配</i>只能手动修复（例如<b>修复和编辑</b>）</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Other">其他</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;veaction=edit&amp;section=6" title="Edit section: Other"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;action=edit&amp;section=6" title="Edit section's source code: Other"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>扩展问答文本导入（包括<a class="external text" href="https://youtu.be/-zfVeUgYyw8">Anki 完型填空</a>）</li>
+<li>通过大量重构简化了代码</li>
+<li>440 项改进和错误修复</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Video">视频</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;veaction=edit&amp;section=7" title="Edit section: Video"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=What%27s_new_in_SuperMemo_18%3F&amp;action=edit&amp;section=7" title="Edit section's source code: Video"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>SuperMemo 18 中使用的示例皮肤类型（主题）（<b>窗口：主题</b>）：</p><p>{{#ev:youtube|FRWPzd43l0I}}</p><p><br/>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610111343
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [no‐toc]
+CPU time usage: 0.039 seconds
+Real time usage: 0.042 seconds
+Preprocessor visited node count: 33/1000000
+Post‐expand include size: 772/2097152 bytes
+Template argument size: 341/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.468      1 File:Emoji-based_grade_panel.jpg
+100.00%    4.468      1 -total
+ 40.13%    1.793      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:705:|#|:idhash:canonical and timestamp 20260610111343 and revision id 11687. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

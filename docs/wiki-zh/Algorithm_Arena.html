@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Algorithm Arena — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Algorithm_Arena" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><b>Algorithm Arena</b> is a mechanism in <a href="SuperMemo_20.html" title="SuperMemo 20">SuperMemo 20</a> in which five <a href="Spaced_repetition.html" title="Spaced repetition">spaced repetition</a> algorithms compete in performance over the user's own memory data. The algorithm that best predicts <a class="new" href="https://help.supermemo.org/index.php?title=Recall&amp;action=edit&amp;redlink=1" title="Recall (page does not exist)">recall</a> earns greater weight in scheduling future <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetitions</a>. No single formula is trusted blindly. Performance on real data decides.
+</p><p>5 algorithms compete:
+</p>
+<ul><li><a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-2">Algorithm SM-2</a></li>
+<li><a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">Algorithm SM-15</a></li>
+<li><a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19">Algorithm SM-19</a></li>
+<li><a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-20">Algorithm SM-20</a></li>
+<li><a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a></li></ul>
+<p>Well-performing algorithms gain in weight. Defaults were determined by trial during the beta stage. The user's own balance usually develops in just 100–200 repetitions.
+</p><p>Superiority of the weighted pack over <a class="mw-redirect" href="Algorithm_SM-19.html" title="Algorithm SM-19">Algorithm SM-19</a> can be tracked via <a href="Glossary_R-Metric.html" title="Glossary:R-Metric">R-Metric</a> in <a href="Statistics.html" title="Statistics">Statistics</a>.
+</p><p>Individual indications can be spotted at discrepancy alerts during <a class="new" href="https://help.supermemo.org/index.php?title=Repetition&amp;action=edit&amp;redlink=1" title="Repetition (page does not exist)">repetitions</a>. Proposed values may show dramatic differences. The weighted interval proposition can be overwritten by the user.
+</p><p>Discrepancy alert frequency depends on the settings in <b><a href="Options.html" title="Options">Options</a></b>. The greater the tolerance for discrepancies, the less frequent the alerts, and the more frequent the use of the arena proposition (weighted interval).
+</p><p>Recommendation: keep alerts frequent for educational purposes and use the <b>Less often</b> button in the algorithm alerts heatmap window to gradually reduce their frequency over time.
+</p><p><b>Important note: </b> If you get conflicting information about the superiority of SM-19 or SM-20, here is a simple clarification:
+</p>
+<ul><li>SuperMemo SM-20 is a record holder on <a class="new" href="https://help.supermemo.org/index.php?title=Universal_metric&amp;action=edit&amp;redlink=1" title="Universal metric (page does not exist)">universal metric</a> with metric approaching 0.0</li>
+<li>SuperMemo SM-19 is often in the lead in the <b>Algorithm Arena</b> as SuperMemo SM-20 requires optimization via API that is at beta stage on release date (Apr 1, 2026). xxx</li></ul>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png.html"><img class="mw-file-element" decoding="async" height="367" loading="lazy" src="https://help.supermemo.org/images/thumb/9/92/Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png/500px-Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png" srcset="/images/thumb/9/92/Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png/750px-Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png 1.5x, /images/thumb/9/92/Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png/1000px-Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png 2x" width="500"/></a><figcaption></figcaption></figure>
+<blockquote>
+<p><i><b>Figure:</b> Only very long intervals magnify significant differences between various <a href="Spaced_repetition.html" title="Spaced repetition">spaced repetition</a> algorithms, incl. those that score very high on the <a class="new" href="https://help.supermemo.org/index.php?title=Universal_metric&amp;action=edit&amp;redlink=1" title="Universal metric (page does not exist)">universal metric</a> benchmarks (e.g. SM-19 and SM-20). In the presented example, a very easy item from <a class="new" href="https://help.supermemo.org/index.php?title=Advanced_English&amp;action=edit&amp;redlink=1" title="Advanced English (page does not exist)">Advanced English</a> achieved a very long interval of over 26 years in just 5 <a class="new" href="https://help.supermemo.org/index.php?title=Repetition&amp;action=edit&amp;redlink=1" title="Repetition (page does not exist)">repetitions</a>. The colored heatmap shows a weighted optimum with the darkest red color showing the best consensus of 32 years and 3 months. At the extreme ends of disagreement, <a class="new" href="https://help.supermemo.org/index.php?title=Algorithm_SM-2&amp;action=edit&amp;redlink=1" title="Algorithm SM-2 (page does not exist)">Algorithm SM-2</a> points to an optimum of 66 years because it is unable to sufficiently reduce its <a class="new" href="https://help.supermemo.org/index.php?title=E-Factor&amp;action=edit&amp;redlink=1" title="E-Factor (page does not exist)">E-Factor</a> in just 5 repetitions (for successive grades 4 it would still imply 2.5-fold increase in interval). Unoptimized <a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a> attempts to reconstruct the memory status using the <a class="new" href="https://help.supermemo.org/index.php?title=Three_component_model_of_memory&amp;action=edit&amp;redlink=1" title="Three component model of memory (page does not exist)">three component model of memory</a> and the <a class="new" href="https://help.supermemo.org/index.php?title=History_of_repetitions&amp;action=edit&amp;redlink=1" title="History of repetitions (page does not exist)">history of repetitions</a>. Each repetition adds to the potential error; however, its conservative 9-year interval proposition is a pretty safe bet that most users will still find as excessively long. In this particular case, optimized <a href="Algorithm_SM-20.html" title="Algorithm SM-20">Algorithm SM-20</a> provided the closest bet to the weighted optimum of 32 years, but the actual "winner" will differ from repetition to repetition. Both <a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a> and <a class="mw-redirect" href="Algorithm_SM-19.html" title="Algorithm SM-19">Algorithm SM-19</a> propose shortening the next interval; however, <a href="SuperMemo_20.html" title="SuperMemo 20">SuperMemo 20</a> disallows this (due to anti-cramming measures). The heatmap is a form of asymmetric bell-shaped distribution, and algorithmic weighing will receive microscopic nudges along the learning process depending on the <a class="new" href="https://help.supermemo.org/index.php?title=R-metric&amp;action=edit&amp;redlink=1" title="R-metric (page does not exist)">R-metric</a> scores. The black area on the left represents the previously used interval of 26 years. <b>Important!</b> Users can always override the recommendations of SuperMemo and set a shorter interval, e.g., with <code>Ctrl+Shift+R</code></i>
+</p>
+</blockquote>
+<p><br/>
+</p>
+<center>
+<div class="ext-YouTube-video ext-YouTube-video--lazy" data-ytid="GVEBkpBf1h8" style="width: 560px; height:315px;"><img height="315" src="https://help.supermemo.org//img.youtube.com/vi/GVEBkpBf1h8/maxresdefault.jpg" width="560"/><!-- <iframe data-extension="youtube" width="560" height="315" src="https://help.supermemo.org//www.youtube-nocookie.com/embed/GVEBkpBf1h8?autoplay=1" frameborder="0" allowfullscreen></iframe> --></div>
+</center>
+<!-- 
+NewPP limit report
+Cached time: 20260610073728
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.028 seconds
+Real time usage: 0.032 seconds
+Preprocessor visited node count: 10/1000000
+Post‐expand include size: 3644/2097152 bytes
+Template argument size: 1777/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 379/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    5.863      1 File:Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png
+100.00%    5.863      1 -total
+ 37.32%    2.188      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:747:|#|:idhash:canonical and timestamp 20260610073728 and revision id 12442. Rendering was triggered because: page-view
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><p><b>算法竞技场</b>是一种机制<a href="SuperMemo_20.html" title="SuperMemo 20">超级备忘录 20</a>其中五个<a href="Spaced_repetition.html" title="Spaced repetition">间隔重复</a>算法在性能上与用户自己的内存数据竞争。最好的预测算法<a class="new" href="https://help.supermemo.org/index.php?title=Recall&amp;action=edit&amp;redlink=1" title="Recall (page does not exist)">回忆</a>在安排未来方面获得更大的权重<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>。没有一个公式是可以被盲目信任的。实际数据的性能决定。</p><p>5种算法竞争：</p>
+<ul><li><a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-2">算法 SM-2</a></li>
+<li><a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">算法 SM-15</a></li>
+<li><a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19">算法 SM-19</a></li>
+<li><a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-20">算法 SM-20</a></li>
+<li><a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a></li></ul>
+<p>性能良好的算法会增加权重。默认值是通过测试阶段的试验确定的。使用者通常只需重复 100-200 次即可提高自己的平衡能力。</p><p>加重包的优越性<a class="mw-redirect" href="Algorithm_SM-19.html" title="Algorithm SM-19">算法 SM-19</a>可以通过跟踪<a href="Glossary_R-Metric.html" title="Glossary:R-Metric">R-公制</a>在<a href="Statistics.html" title="Statistics">统计数据</a>。</p><p>个别指示可以在差异警报中被发现<a class="new" href="https://help.supermemo.org/index.php?title=Repetition&amp;action=edit&amp;redlink=1" title="Repetition (page does not exist)">重复</a>。建议的值可能会显示出巨大的差异。加权区间命题可以由用户覆盖。</p><p>差异警报频率取决于中的设置<b><a href="Options.html" title="Options">选项</a></b>。对差异的容忍度越大，警报的频率就越低，并且竞技场命题（加权间隔）的使用就越频繁。</p><p>建议：出于教育目的经常发出警报并使用<b>不太频繁</b>算法中的按钮会提醒热图窗口随着时间的推移逐渐降低其频率。</p><p><b>重要提示：</b>如果您对 SM-19 或 SM-20 的优越性有相互矛盾的信息，这里有一个简单的说明：</p>
+<ul><li>SuperMemo SM-20 是一项记录保持者<a class="new" href="https://help.supermemo.org/index.php?title=Universal_metric&amp;action=edit&amp;redlink=1" title="Universal metric (page does not exist)">通用度量</a>指标接近 0.0</li>
+<li>SuperMemo SM-19 在以下方面经常处于领先地位<b>算法竞技场</b>因为 SuperMemo SM-20 需要通过 API 进行优化，该 API 在发布日期（2026 年 4 月 1 日）处于测试阶段。 xxx</li></ul>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png.html"><img class="mw-file-element" decoding="async" height="367" loading="lazy" src="https://help.supermemo.org/images/thumb/9/92/Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png/500px-Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png" srcset="/images/thumb/9/92/Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png/750px-Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png 1.5x, /images/thumb/9/92/Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png/1000px-Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png 2x" width="500"/></a><figcaption></figcaption></figure>
+<blockquote>
+<p><i><b>图：</b>只有非常长的间隔才能放大不同类型之间的显着差异<a href="Spaced_repetition.html" title="Spaced repetition">间隔重复</a>算法，包括那些在<a class="new" href="https://help.supermemo.org/index.php?title=Universal_metric&amp;action=edit&amp;redlink=1" title="Universal metric (page does not exist)">通用度量</a>基准（例如 SM-19 和 SM-20）。在所提供的示例中，一个非常简单的项目来自<a class="new" href="https://help.supermemo.org/index.php?title=Advanced_English&amp;action=edit&amp;redlink=1" title="Advanced English (page does not exist)">高级英语</a>仅用了5年时间就实现了超过26年的超长间隔<a class="new" href="https://help.supermemo.org/index.php?title=Repetition&amp;action=edit&amp;redlink=1" title="Repetition (page does not exist)">重复</a>。彩色热图显示了加权最佳值，其中最深的红色显示了 32 年零 3 个月的最佳共识。在分歧的极端情况下，<a class="new" href="https://help.supermemo.org/index.php?title=Algorithm_SM-2&amp;action=edit&amp;redlink=1" title="Algorithm SM-2 (page does not exist)">算法 SM-2</a>指出最佳时间为 66 年，因为它无法充分减少其<a class="new" href="https://help.supermemo.org/index.php?title=E-Factor&amp;action=edit&amp;redlink=1" title="E-Factor (page does not exist)">E因子</a>只需 5 次重复（对于连续的 4 年级，这仍然意味着间隔增加 2.5 倍）。未优化<a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a>尝试使用重建内存状态<a class="new" href="https://help.supermemo.org/index.php?title=Three_component_model_of_memory&amp;action=edit&amp;redlink=1" title="Three component model of memory (page does not exist)">记忆三成分模型</a>和<a class="new" href="https://help.supermemo.org/index.php?title=History_of_repetitions&amp;action=edit&amp;redlink=1" title="History of repetitions (page does not exist)">重复的历史</a>。每次重复都会增加潜在的错误；然而，其保守的 9 年间隔主张是一个相当安全的赌注，大多数用户仍然会发现它过长。在这种特殊情况下，优化<a href="Algorithm_SM-20.html" title="Algorithm SM-20">算法 SM-20</a>提供了最接近 32 年加权最佳值的赌注，但实际的“赢家”会因重复而异。两者都<a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a>和<a class="mw-redirect" href="Algorithm_SM-19.html" title="Algorithm SM-19">算法 SM-19</a>建议缩短下次间隔；然而，<a href="SuperMemo_20.html" title="SuperMemo 20">超级备忘录 20</a>不允许这样做（由于反填充措施）。热图是一种不对称钟形分布的形式，算法权重将在学习过程中受到微观推动，具体取决于<a class="new" href="https://help.supermemo.org/index.php?title=R-metric&amp;action=edit&amp;redlink=1" title="R-metric (page does not exist)">R-度量</a>分数。左边的黑色区域代表之前使用的26年间隔。<b>重要！</b>用户始终可以覆盖 SuperMemo 的建议并设置更短的间隔，例如，<code>Ctrl+Shift+R</code></i>
+</p>
+</blockquote>
+<p><br/>
+</p>
+<center>
+<div class="ext-YouTube-video ext-YouTube-video--lazy" data-ytid="GVEBkpBf1h8" style="width: 560px; height:315px;"><img height="315" src="https://help.supermemo.org//img.youtube.com/vi/GVEBkpBf1h8/maxresdefault.jpg" width="560"/><!-- <iframe data-extension="youtube" width="560" height="315" src="https://help.supermemo.org//www.youtube-nocookie.com/embed/GVEBkpBf1h8?autoplay=1" frameborder="0" allowfullscreen></iframe> --></div>
+</center>
+<!-- 
+NewPP limit report
+Cached time: 20260610073728
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.028 seconds
+Real time usage: 0.032 seconds
+Preprocessor visited node count: 10/1000000
+Post‐expand include size: 3644/2097152 bytes
+Template argument size: 1777/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 379/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    5.863      1 File:Interval_Heatmap_in_algorithmic_contests_in_SuperMemo_20.png
+100.00%    5.863      1 -total
+ 37.32%    2.188      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:747:|#|:idhash:canonical and timestamp 20260610073728 and revision id 12442. Rendering was triggered because: page-view
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

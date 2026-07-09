@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Minimum requirements — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Minimum_requirements" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#SuperMemo_20_requirements"><span class="tocnumber">1</span> <span class="toctext">SuperMemo 20 requirements</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Additional_requirements_for_special_functions"><span class="tocnumber">2</span> <span class="toctext">Additional requirements for special functions</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Compatibility"><span class="tocnumber">3</span> <span class="toctext">Compatibility</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Requirements_for_upgrade_from_older_versions_of_SuperMemo"><span class="tocnumber">4</span> <span class="toctext">Requirements for upgrade from older versions of SuperMemo</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#FAQ"><span class="tocnumber">5</span> <span class="toctext">FAQ</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#See_Also"><span class="tocnumber">6</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="SuperMemo_20_requirements">SuperMemo 20 requirements</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;veaction=edit&amp;section=1" title="Edit section: SuperMemo 20 requirements"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;action=edit&amp;section=1" title="Edit section's source code: SuperMemo 20 requirements"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Windows 11 (recommended)</b>. Windows 10 is also ok. Older versions may show minor interface glitches, but SuperMemo should still be usable even in Windows XP. Incremental reading works in Vista. In Windows 7 use Windows Aero scheme. Ask for a trial version if you want to be sure.</li>
+<li>4 GB memory (2 GB might also suffice, but SuperMemo might be slower)</li>
+<li>100 MB free disk space (more recommended for larger <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> of learning material; for example, <a class="external text" href="http://super-memory.com/english/ae.htm">Advanced English</a> without sounds requires 140 MB, while sounds and picture add up to over 2 GB)</li>
+<li>display 3840 × 2160 (4K UHD) or higher recommended; 2560 × 1440 (QHD / 2K) is ok too; minimum 1920 × 1080 (Full HD); if you are not sure download a demo (32-bit version with smaller icons is also available)</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Additional_requirements_for_special_functions">Additional requirements for special functions</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;veaction=edit&amp;section=2" title="Edit section: Additional requirements for special functions"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;action=edit&amp;section=2" title="Edit section's source code: Additional requirements for special functions"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>(recommended) <a class="external text" href="https://www.microsoft.com/en-us/edge">MS Edge</a> for <a href="Web_import.html" title="Web import">imports from the web</a></li>
+<li>(optional) <a class="external text" href="https://google.com/chrome">Google Chrome</a> for <a href="Web_import.html" title="Web import">imports from the web</a> if this is your preferred browser</li>
+<li>some AI options may require your own AppKey (available free from Google)</li>
+<li>YouTube references may require your own AppKey (otherwise, YouTube is fully functional in SuperMemo)</li>
+<li>optimizing <a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a> or SM-20 algorithms may require access to <a class="external text" href="https://api.supermemo.com/">SuperMemo.com API</a> (unoptimized algorithm still compete well in the <a href="Algorithm_Arena.html" title="Algorithm Arena">Algorithm Arena</a>)</li>
+<li>to use e-mail in SuperMemo: MAPI-compliant e-mail software for Windows recommended (e.g. <a class="external text" href="https://www.thunderbird.net/">Thunderbird</a>, Windows Live Mail, Windows Mail, MS Outlook, Outlook Express, etc.)</li>
+<li>to use automatic e-mail import in <a href="Incremental_mail_processing.html" title="Incremental mail processing">incremental learning</a>: Windows Live Mail, Windows Mail, or MS Outlook 2000 or later (Windows Live Mail recommended)</li>
+<li>32-bit version of SuperMemo 20 is available</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Compatibility">Compatibility</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;veaction=edit&amp;section=3" title="Edit section: Compatibility"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;action=edit&amp;section=3" title="Edit section's source code: Compatibility"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>SuperMemo 20 opens SuperMemo 19 <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a>, but SuperMemo 19 may struggle with SuperMemo 20 collection (e.g. due to the <a href="WebView_component.html" title="WebView component">WebView component</a>)</li>
+<li>RTF components are now deprecated. You can still use old <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a>, but further use will be more difficult with some options removed</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Requirements_for_upgrade_from_older_versions_of_SuperMemo">Requirements for upgrade from older versions of SuperMemo</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;veaction=edit&amp;section=4" title="Edit section: Requirements for upgrade from older versions of SuperMemo"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;action=edit&amp;section=4" title="Edit section's source code: Requirements for upgrade from older versions of SuperMemo"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a class="external text" href="https://supermemopedia.com/wiki/Download_SuperMemo">SuperMemo 16 for Windows</a></b> (freeware) to upgrade <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> used with SuperMemo 98 Freeware, SuperMemo 2004 Freeware, SuperMemo 10 thru 15, or Multimedia SuperMemo. SuperMemo 16 is free for users of SuperMemo 18 (ask for download instructions if needed)</li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Download_SuperMemo">SuperMemo 2004</a> (freeware, trial, or equivalent) to upgrade <a href="Glossary_Collection.html" title="Glossary:Collection">collections</a> used with SuperMemo 6 for DOS or SuperMemo 7 for Windows</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="FAQ">FAQ</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;veaction=edit&amp;section=5" title="Edit section: FAQ"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;action=edit&amp;section=5" title="Edit section's source code: FAQ"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://supermemopedia.com/wiki/Hardware_recommendations_to_run_SM_faster">How to improve the performance of SuperMemo?</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="See_Also">See Also</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;veaction=edit&amp;section=6" title="Edit section: See Also"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;action=edit&amp;section=6" title="Edit section's source code: See Also"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><a class="external text" href="https://youtu.be/vCNP03_m-qM">Video: Hardware Recommendations for SuperMemo 18</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610111123
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.022 seconds
+Real time usage: 0.022 seconds
+Preprocessor visited node count: 28/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:66:|#|:idhash:canonical and timestamp 20260610111123 and revision id 12267. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#SuperMemo_20_requirements"><span class="tocnumber">1</span> <span class="toctext">SuperMemo 20 要求</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Additional_requirements_for_special_functions"><span class="tocnumber">2</span> <span class="toctext">特殊功能的附加要求</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Compatibility"><span class="tocnumber">3</span> <span class="toctext">兼容性</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Requirements_for_upgrade_from_older_versions_of_SuperMemo"><span class="tocnumber">4</span> <span class="toctext">从旧版本 SuperMemo 升级的要求</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#FAQ"><span class="tocnumber">5</span> <span class="toctext">常见问题解答</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#See_Also"><span class="tocnumber">6</span> <span class="toctext">另请参阅</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="SuperMemo_20_requirements">SuperMemo 20 要求</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;veaction=edit&amp;section=1" title="Edit section: SuperMemo 20 requirements"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;action=edit&amp;section=1" title="Edit section's source code: SuperMemo 20 requirements"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>Windows 11（推荐）</b>。 Windows 10 也可以。旧版本可能会出现轻微的界面故障，但 SuperMemo 即使在 Windows XP 中也应该仍然可用。 Vista 中可以进行增量阅读。在Windows 7中使用Windows Aero方案。如果您想确定的话，请索要试用版。</li>
+<li>4 GB 内存（2 GB 也可能足够，但 SuperMemo 可能会慢一些）</li>
+<li>100 MB 可用磁盘空间（更推荐用于较大的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>学习材料；例如，<a class="external text" href="http://super-memory.com/english/ae.htm">高级英语</a>不含声音需要 140 MB，而声音和图片加起来超过 2 GB）</li>
+<li>推荐显示器 3840 × 2160（4K UHD）或更高； 2560 × 1440（QHD/2K）也可以；最低 1920 × 1080（全高清）；如果您不确定，请下载演示版（也可以使用带有较小图标的 32 位版本）</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Additional_requirements_for_special_functions">特殊功能的附加要求</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;veaction=edit&amp;section=2" title="Edit section: Additional requirements for special functions"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;action=edit&amp;section=2" title="Edit section's source code: Additional requirements for special functions"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>（推荐）<a class="external text" href="https://www.microsoft.com/en-us/edge">微软边缘</a>为了<a href="Web_import.html" title="Web import">从网络导入</a></li>
+<li>（可选）<a class="external text" href="https://google.com/chrome">谷歌浏览器</a>为了<a href="Web_import.html" title="Web import">从网络导入</a>如果这是您首选的浏览器</li>
+<li>某些 AI 选项可能需要您自己的 AppKey（可从 Google 免费获得）</li>
+<li>YouTube 参考可能需要您自己的 AppKey（否则，YouTube 在 SuperMemo 中具有完整功能）</li>
+<li>优化<a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a>或 SM-20 算法可能需要访问<a class="external text" href="https://api.supermemo.com/">SuperMemo.com API</a>（未优化的算法仍然在<a href="Algorithm_Arena.html" title="Algorithm Arena">算法竞技场</a>）</li>
+<li>在 SuperMemo 中使用电子邮件：建议使用适用于 Windows 的 MAPI 兼容电子邮件软件（例如<a class="external text" href="https://www.thunderbird.net/">雷鸟</a>、Windows Live Mail、Windows Mail、MS Outlook、Outlook Express 等）</li>
+<li>使用自动电子邮件导入<a href="Incremental_mail_processing.html" title="Incremental mail processing">渐进学习</a>：Windows Live Mail、Windows Mail 或 MS Outlook 2000 或更高版本（推荐使用 Windows Live Mail）</li>
+<li>SuperMemo 20 32 位版本现已推出</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Compatibility">兼容性</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;veaction=edit&amp;section=3" title="Edit section: Compatibility"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;action=edit&amp;section=3" title="Edit section's source code: Compatibility"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li>SuperMemo 20 开启 SuperMemo 19<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>，但 SuperMemo 19 可能会与 SuperMemo 20 集合发生冲突（例如，由于<a href="WebView_component.html" title="WebView component">WebView组件</a>）</li>
+<li>RTF 组件现已弃用。您仍然可以使用旧的<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>，但删除一些选项后进一步使用会更加困难</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Requirements_for_upgrade_from_older_versions_of_SuperMemo">从旧版本 SuperMemo 升级的要求</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;veaction=edit&amp;section=4" title="Edit section: Requirements for upgrade from older versions of SuperMemo"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;action=edit&amp;section=4" title="Edit section's source code: Requirements for upgrade from older versions of SuperMemo"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b><a class="external text" href="https://supermemopedia.com/wiki/Download_SuperMemo">SuperMemo 16 Windows 版</a></b>（免费软件）升级<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>与 SuperMemo 98 免费软件、SuperMemo 2004 免费软件、SuperMemo 10 至 15 或多媒体 SuperMemo 一起使用。 SuperMemo 16 对 SuperMemo 18 的用户免费（如果需要，请索取下载说明）</li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Download_SuperMemo">超级备忘录 2004</a>（免费软件、试用版或同等软件）进行升级<a href="Glossary_Collection.html" title="Glossary:Collection">收藏品</a>与适用于 DOS 的 SuperMemo 6 或适用于 Windows 的 SuperMemo 7 一起使用</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="FAQ">常见问题解答</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;veaction=edit&amp;section=5" title="Edit section: FAQ"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;action=edit&amp;section=5" title="Edit section's source code: FAQ"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://supermemopedia.com/wiki/Hardware_recommendations_to_run_SM_faster">如何提高SuperMemo的性能？</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="See_Also">另请参阅</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;veaction=edit&amp;section=6" title="Edit section: See Also"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Minimum_requirements&amp;action=edit&amp;section=6" title="Edit section's source code: See Also"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p><a class="external text" href="https://youtu.be/vCNP03_m-qM">视频：SuperMemo 18 的硬件建议</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260610111123
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.022 seconds
+Real time usage: 0.022 seconds
+Preprocessor visited node count: 28/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:66:|#|:idhash:canonical and timestamp 20260610111123 and revision id 12267. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>

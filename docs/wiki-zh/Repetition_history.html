@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repetition history — SuperMemo 帮助</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:Georgia,'Times New Roman',serif;max-width:1100px;margin:0 auto;padding:0 1.2em 2em;color:#202122;line-height:1.7}
+h1,h2,h3,h4,h5{font-family:sans-serif}
+a{color:#0645ad}a:visited{color:#0b0080}
+table{border-collapse:collapse;margin:1em 0;width:100%}
+td,th{border:1px solid #a2a9b1;padding:6px 10px;vertical-align:top}
+th{background:#eaecf0;font-family:sans-serif}
+img{max-width:100%;height:auto}
+pre{background:#f8f9fa;border:1px solid #eaecf0;padding:1em;overflow-x:auto;white-space:pre-wrap}
+code{background:#f8f9fa;padding:2px 4px;font-size:.9em}
+.toc{background:#f8f9fa;border:1px solid #aaa;padding:1em;display:inline-block;min-width:200px;margin-bottom:1em}
+.navbox{border:1px solid #aaa;margin:1em 0;padding:.5em;font-size:.9em}
+.source-note{color:#888;font-size:.82em;border-bottom:1px solid #eee;padding-bottom:.5em;margin-bottom:1.2em}
+
+/* ── language toolbar ── */
+#lang-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;border-bottom:2px solid #3b71ca;
+  padding:.45em 1em;display:flex;align-items:center;gap:.6em;
+  font-family:sans-serif;font-size:.88em;flex-wrap:wrap;
+}
+#lang-bar strong{margin-right:.4em;color:#333}
+#lang-bar button{
+  padding:.3em .9em;border:1px solid #3b71ca;border-radius:4px;
+  background:#fff;color:#3b71ca;cursor:pointer;font-size:.9em;transition:all .15s;
+}
+#lang-bar button.active{background:#3b71ca;color:#fff}
+#lang-bar button:hover:not(.active){background:#e8f0fb}
+.mode-label{color:#666;font-size:.85em}
+
+/* ── segment layout ── */
+.seg{margin:0}
+
+/* EN-only mode */
+body.mode-en  .seg-zh{display:none}
+body.mode-en  .seg-en{display:block}
+
+/* ZH-only mode */
+body.mode-zh  .seg-en{display:none}
+body.mode-zh  .seg-zh{display:block}
+
+/* Bilingual mode */
+body.mode-bi  .seg{display:grid;grid-template-columns:1fr 1fr;gap:0;border-bottom:1px solid #f0f0f0}
+body.mode-bi  .seg-en{padding:.15em 1em .15em 0;border-right:2px solid #e0e7ff}
+body.mode-bi  .seg-zh{padding:.15em 0 .15em 1em;background:#fafffe}
+body.mode-bi  .seg > :is(.seg-en,.seg-zh){display:block}
+/* collapse extra margin in bi mode */
+body.mode-bi  .seg > * > :is(h1,h2,h3,h4,p,ul,ol,table){margin-top:.3em;margin-bottom:.3em}
+/* language label */
+body.mode-bi  .seg-en::before{content:"EN";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+body.mode-bi  .seg-zh::before{content:"中文";font-size:.7em;color:#888;font-family:sans-serif;display:block}
+</style>
+</head>
+<body class="mode-zh">
+<div id="lang-bar">
+  <strong>🌐</strong>
+  <button data-mode="en" onclick="setMode('en')">English</button>
+  <button data-mode="zh" onclick="setMode('zh')">中文</button>
+  <button data-mode="bi" onclick="setMode('bi')">对照 Bilingual</button>
+  <span style="flex:1"></span>
+  <a href="https://help.supermemo.org/wiki/Repetition_history" style="color:#888;font-size:.85em;text-decoration:none">↗ 原文</a>
+</div>
+<div class="wiki-body">
+<div class="seg"><div class="seg-en"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Repetition_history_window"><span class="tocnumber">1</span> <span class="toctext">Repetition history window</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Data_columns"><span class="tocnumber">2</span> <span class="toctext">Data columns</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Context_menu"><span class="tocnumber">3</span> <span class="toctext">Context menu</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Editing_repetition_history"><span class="tocnumber">4</span> <span class="toctext">Editing repetition history</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#FAQs"><span class="tocnumber">5</span> <span class="toctext">FAQs</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Repetition_history_window">Repetition history window</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Repetition_history&amp;veaction=edit&amp;section=1" title="Edit section: Repetition history window"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Repetition_history&amp;action=edit&amp;section=1" title="Edit section's source code: Repetition history window"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>With <b><a href="Element_menu.html#Learning" title="Element menu">Learning</a> : Statistics : Repetition history</b> (<kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>H</kbd>) available from the <a href="Element_menu.html" title="Element menu">element menu</a>, you can quickly display the history of repetitions for the currently displayed <a href="Glossary_Element.html" title="Glossary:Element">element</a>.
+</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Repetition_history.jpg.html" title="SuperMemo: Repetition history dialog box displaying the history of repetitions for the current element"><img alt="SuperMemo: Repetition history dialog box displaying the history of repetitions for the current element" class="mw-file-element" decoding="async" height="430" loading="lazy" src="https://help.supermemo.org/images/thumb/9/91/Repetition_history.jpg/800px-Repetition_history.jpg" srcset="/images/thumb/9/91/Repetition_history.jpg/1200px-Repetition_history.jpg 1.5x, /images/thumb/9/91/Repetition_history.jpg/1600px-Repetition_history.jpg 2x" width="800"/></a><figcaption>SuperMemo: Repetition history dialog box displaying the history of repetitions for the current element</figcaption></figure>
+<blockquote>
+<p><i><b>Figure:</b> <b>Repetition history</b> dialog box displaying the history of <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetitions</a> for the current <a href="Glossary_Item.html" title="Glossary:Item">element</a> related to the <a class="external text" href="https://en.wikipedia.org/wiki/Renal_corpuscle">Malpighian body and the renal tubules</a>. In this example, the <a href="Glossary_Item.html" title="Glossary:Item">item</a> has been repeated 11 times thus far. It was forgotten only once at the 3rd repetition on Apr 20, 1999 (after 97 days since the previous repetition). Since then it has been recalled successfully every time. It was last repeated on Aug 31, 2023 at 15:48:45. The hour data is present only for the last two repetitions due to the fact that SuperMemo registers the repetition hour only as of SuperMemo 13 onwards (hours are used in correlating <a href="Glossary_Retention.html" title="Glossary:Retention">retention</a> with sleep data available from <b><a class="mw-redirect" href="SleepChart.html" title="SleepChart">SleepChart</a></b>). The item is scheduled for repetition in roughly 4 years (on Sep 02, 2027)</i>
+</p>
+</blockquote>
+<div class="mw-heading mw-heading2"><h2 id="Data_columns">Data columns</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Repetition_history&amp;veaction=edit&amp;section=2" title="Edit section: Data columns"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Repetition_history&amp;action=edit&amp;section=2" title="Edit section's source code: Data columns"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>No</b> - the number of times the <a href="Glossary_Element.html" title="Glossary:Element">element</a> was repeated/reviewed. <i>(f)</i> to the left of any given repetition number indicates the repetition when the <a href="Glossary_Item.html" title="Glossary:Item">item</a> was <b>f</b>orgotten (i.e. you were not able to provide the correct answer). <i>In the example above, the item was not recalled at the 2nd repetition</i>.</li>
+<li><b>Reps</b> - the first figure represents the number of consecutive successful repetitions (when you graded yourself <b>Pass (3)</b> or higher). The other one shows the cumulative number of times you did not remember the <a href="Glossary_Item.html" title="Glossary:Item">Item</a> (i.e. your grade was <b>Fail (2)</b> or less) since you first memorized it. Note that each time you forget the answer, the first figure gets reset to 1.</li>
+<li><b>Date</b> - the date when you repeated/reviewed the <a href="Glossary_Element.html" title="Glossary:Element">element</a>, or, when it is scheduled for the next repetition (<b>Next</b> at the top)</li>
+<li><b>Hour</b> - the time (hh:mm:ss) when you repeated a given <a href="Glossary_Element.html" title="Glossary:Element">element</a></li>
+<li><b>Grd</b> - the grade that you gave yourself at a given repetition. Since you do not grade yourself on <a href="Glossary_Topic.html" title="Glossary:Topic">topics</a>, the column reads <i>Topic</i> for this type of <a href="Glossary_Element.html" title="Glossary:Element">element</a></li>
+<li><b>Interval</b> - the number of days between successive repetitions: the one from the preceding row and the one from the current row</li>
+<li><b>Priority</b> - the relative position of the <a href="Glossary_Element.html" title="Glossary:Element">element</a> in the <a href="Glossary_Priority_queue.html" title="Glossary:Priority queue">priority queue</a> at the time of the repetition (the lower the number, the higher the <a href="Glossary_Priority.html" title="Glossary:Priority">priority</a>)</li>
+<li>Stability - <a href="Glossary_Element.html" title="Glossary:Element">element</a>'s <a href="Glossary_Stability.html" title="Glossary:Stability">stability</a> after a given repetition computed by selected spacing repetition algorithms. Fields that are darker blue show higher stability
+<ul><li><b>S19</b> -  <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19">Algorithm SM-19</a></li>
+<li><b>SF</b> - <a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a></li>
+<li><b>S20</b> - <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-20">Algorithm SM-20</a></li></ul></li>
+<li>Retrievability - <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a> computed with selected spacing repetition algorithms. Fields that are more red show higher retrievability
+<ul><li><b>R19</b> - <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19">Algorithm SM-19</a></li>
+<li><b>RF</b> - <a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a></li>
+<li><b>R20</b> - <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-20">Algorithm SM-20</a></li></ul></li>
+<li>Difficulty - <a href="Glossary_Element.html" title="Glossary:Element">element</a>'s <a href="Glossary_Difficulty.html" title="Glossary:Difficulty">difficulty</a> after a given repetition computed by selected spacing repetition algorithms
+<ul><li><b>Diff19</b> - <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19">Algorithm SM-19</a></li>
+<li><b>DiffF</b> - <a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a></li>
+<li><b>Diff20</b> - <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-20">Algorithm SM-20</a></li></ul></li>
+<li><b>Postpones</b> - the number of times the <a href="Glossary_Element.html" title="Glossary:Element">element</a> was postponed until a given repetition</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Context_menu">Context menu</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Repetition_history&amp;veaction=edit&amp;section=3" title="Edit section: Context menu"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Repetition_history&amp;action=edit&amp;section=3" title="Edit section's source code: Context menu"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Right-click over the <b>Repetition history</b> window opens a context menu with the following <a href="Glossary_Item.html" title="Glossary:Item">items</a>: 
+</p>
+<ul><li><b>Edit</b> (<kbd>Ctrl</kbd>+<kbd>E</kbd>) - edit the repetition history (this may affect the algorithm and sleep optimization)</li>
+<li><b>Copy</b> (<kbd>Ctrl</kbd>+<kbd>C</kbd>) - copy the <a href="Glossary_Element.html" title="Glossary:Element">element</a>'s repetition history to the clipboard</li>
+<li><b>Delete</b> (<kbd>Del</kbd>) - delete the element's repetition history (after confirmation)</li>
+<li><b>Save</b> (<kbd>Ctrl</kbd>+<kbd>S</kbd>) - save the repetition history if it has been corrected for errors</li>
+<li><b>Close</b> (<kbd>Esc</kbd>) - close the repetition history window</li>
+<li><b>Memory status</b> (<kbd>F2</kbd>) - visualize changes in memory <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a> and <a href="Glossary_Stability.html" title="Glossary:Stability">stability</a> over time</li>
+<li><b>Fix and Edit</b> - correct errors in repetition history before editing. The <a class="external text" href="https://supermemo.guru/wiki/SuperMemo_Algorithms">latest algorithm</a>s put a premium on the correctness of repetition histories. Some data errors inherited from older SuperMemos would be uncovered in SuperMemo 17 or later (e.g. in multiple dismiss/reset operations, postpones, fake date settings, etc.). Raw repetition history data can be edited, however, it may be more convenient to do basic error correction by SuperMemo before the editing. <b>Fix and Edit</b> does error recovery and only then presents data for editing</li></ul>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Memory_status.jpg.html" title="SuperMemo: Changes in two components of long-term memory"><img alt="SuperMemo: Changes in two components of long-term memory" class="mw-file-element" decoding="async" height="484" loading="lazy" src="https://help.supermemo.org/images/thumb/5/57/Memory_status.jpg/800px-Memory_status.jpg" srcset="/images/thumb/5/57/Memory_status.jpg/1200px-Memory_status.jpg 1.5x, /images/5/57/Memory_status.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> Changes in memory status over time for an exemplary <a href="Glossary_Item.html" title="Glossary:Item">item</a>. The horizontal axis represents time spanning the entire <a class="mw-selflink selflink">repetition history</a>. The top panel shows <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a> (tenth power, R^10, for easier analysis). Retrievability grid in <span style="padding: 3px; color: #fff; background-color: gray;">gray</span> is labelled by R=99%, R=98%, etc. The middle panel displays <a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">optimum intervals</a> in <span style="padding: 3px; color: #fff; background-color: navy;">navy</span>. Repetition dates are marked by <span style="padding: 3px; color: #fff; background-color: blue;">blue vertical lines</span> and labelled in <span style="padding: 3px; background-color: aqua;">aqua</span>. The end of the <a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">optimum interval</a> where <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">R</a> crosses 90% line is marked by <span style="padding: 3px; color: #fff; background-color: red;">red vertical lines</span> (only if <a href="Glossary_Interval.html" title="Glossary:Interval">intervals</a> are longer than <a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">optimum intervals</a>). The bottom panel visualizes <a href="Glossary_Stability.html" title="Glossary:Stability">stability</a> (presented as <code>ln(S)/ln(days)</code> for easier analysis). The graph shows that <a href="Glossary_Retrievability.html" title="Glossary:Retrievability">retrievability</a> drops fast (exponentially) after early <a href="Glossary_Repetition.html" title="Glossary:Repetition">repetitions</a> when <a href="Glossary_Stability.html" title="Glossary:Stability">stability</a> is low, however, it only drops from 100% to 94% in long 10 years after the 7th review. All values are derived from an actual <a class="mw-selflink selflink">repetition history</a> and the <a href="Glossary_DSR_model.html" title="Glossary:DSR model">DSR model</a>.</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Editing_repetition_history">Editing repetition history</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Repetition_history&amp;veaction=edit&amp;section=4" title="Edit section: Editing repetition history"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Repetition_history&amp;action=edit&amp;section=4" title="Edit section's source code: Editing repetition history"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>Due to the fact that <a href="SuperMemo_Algorithm.html" title="SuperMemo Algorithm">SuperMemo Algorithm</a> relies heavily on repetition history, you should only edit repetition history in emergencies (e.g. issuing a wrong grade, reviewing on a wrong date, data errors, completing missing records, etc.).
+</p><p>You can edit repetition history by pressing <kbd>Ctrl</kbd>+<kbd>E</kbd> in the repetition history window. If you introduce discrepancies between the repetition history and the current <a href="Element_data.html" title="Element data">element data</a>, choose <b>Repetition history data</b> when answering <b>Which repetition history data is more accurate?</b>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="FAQs">FAQs</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Repetition_history&amp;veaction=edit&amp;section=5" title="Edit section: FAQs"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="https://help.supermemo.org/index.php?title=Repetition_history&amp;action=edit&amp;section=5" title="Edit section's source code: FAQs"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://supermemopedia.com/wiki/Edit_repetition_history">How to undo a <b>Dismiss</b></a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Interpretation_of_grades_Auto_and_N/A_in_Repetition_History_Dialog_Box">Grades Auto and N/A</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111200
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.050 seconds
+Real time usage: 0.055 seconds
+Preprocessor visited node count: 63/1000000
+Post‐expand include size: 3475/2097152 bytes
+Template argument size: 885/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    6.463      1 -total
+ 70.34%    4.546      1 File:Repetition_history.jpg
+ 28.14%    1.819      1 File:Memory_status.jpg
+ 28.01%    1.810      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:382:|#|:idhash:canonical and timestamp 20260610111200 and revision id 12395. Rendering was triggered because: api-parse
+ -->
+</div></div><div class="seg-zh"><div class="mw-content-ltr mw-parser-output" dir="ltr" lang="en"><div aria-labelledby="mw-toc-heading" class="toc" id="toc" role="navigation"><input class="toctogglecheckbox" id="toctogglecheckbox" role="button" style="display:none" type="checkbox"/><div class="toctitle" dir="ltr" lang="en"><h2 id="mw-toc-heading">内容</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Repetition_history_window"><span class="tocnumber">1</span> <span class="toctext">重复历史窗口</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Data_columns"><span class="tocnumber">2</span> <span class="toctext">数据列</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Context_menu"><span class="tocnumber">3</span> <span class="toctext">上下文菜单</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Editing_repetition_history"><span class="tocnumber">4</span> <span class="toctext">编辑重复历史记录</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#FAQs"><span class="tocnumber">5</span> <span class="toctext">常见问题解答</span></a></li>
+</ul>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Repetition_history_window">重复历史窗口</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Repetition_history&amp;veaction=edit&amp;section=1" title="Edit section: Repetition history window"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Repetition_history&amp;action=edit&amp;section=1" title="Edit section's source code: Repetition history window"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>与<b><a href="Element_menu.html#Learning" title="Element menu">学习</a> ：统计数据：重复历史记录</b>（<kbd>转变</kbd>+<kbd>控制键</kbd>+<kbd>H</kbd>）可从<a href="Element_menu.html" title="Element menu">元素菜单</a>，可以快速显示当前显示的重复历史记录<a href="Glossary_Element.html" title="Glossary:Element">元素</a>。</p>
+<figure class="mw-halign-center" typeof="mw:File"><a class="mw-file-description" href="File_Repetition_history.jpg.html" title="SuperMemo: Repetition history dialog box displaying the history of repetitions for the current element"><img alt="SuperMemo: Repetition history dialog box displaying the history of repetitions for the current element" class="mw-file-element" decoding="async" height="430" loading="lazy" src="https://help.supermemo.org/images/thumb/9/91/Repetition_history.jpg/800px-Repetition_history.jpg" srcset="/images/thumb/9/91/Repetition_history.jpg/1200px-Repetition_history.jpg 1.5x, /images/thumb/9/91/Repetition_history.jpg/1600px-Repetition_history.jpg 2x" width="800"/></a><figcaption>SuperMemo：重复历史对话框显示当前元素的重复历史记录</figcaption></figure>
+<blockquote>
+<p><i><b>图：</b> <b>重复历史</b>显示历史记录的对话框<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>对于当前的<a href="Glossary_Item.html" title="Glossary:Item">元素</a>相关于<a class="external text" href="https://en.wikipedia.org/wiki/Renal_corpuscle">马尔皮基体和肾小管</a>。在此示例中，<a href="Glossary_Item.html" title="Glossary:Item">项目</a>迄今为止已经重复了11次。仅在 1999 年 4 月 20 日（距上次重复 97 天后）第三次重复时被遗忘一次。此后每次都召回成功。最后一次重复是在 2023 年 8 月 31 日 15:48:45。小时数据仅在最后两次重复中出现，因为 SuperMemo 仅从 SuperMemo 13 开始记录重复小时（小时用于关联<a href="Glossary_Retention.html" title="Glossary:Retention">保留</a>睡眠数据可从<b><a class="mw-redirect" href="SleepChart.html" title="SleepChart">睡眠图</a></b>）。该项目计划在大约 4 年内重复（2027 年 9 月 2 日）</i>
+</p>
+</blockquote>
+<div class="mw-heading mw-heading2"><h2 id="Data_columns">数据列</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Repetition_history&amp;veaction=edit&amp;section=2" title="Edit section: Data columns"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Repetition_history&amp;action=edit&amp;section=2" title="Edit section's source code: Data columns"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><b>否</b>- 的次数<a href="Glossary_Element.html" title="Glossary:Element">元素</a>被重复/审查。<i>（六）</i>任何给定重复编号的左侧表示当<a href="Glossary_Item.html" title="Glossary:Item">项目</a>是<b>f</b>orgotten（即您无法提供正确答案）。<i>在上面的例子中，第二次重复时没有回忆起该项目</i>。</li>
+<li><b>代表</b>- 第一个数字代表连续成功重复的次数（当你给自己评分时<b>通过 (3)</b>或更高）。另一个显示您不记得的累计次数<a href="Glossary_Item.html" title="Glossary:Item">项目</a>（即你的成绩是<b>失败 (2)</b>或更少）从你第一次记住它开始。请注意，每次您忘记答案时，第一个数字都会重置为 1。</li>
+<li><b>日期</b>- 您重复/审查的日期<a href="Glossary_Element.html" title="Glossary:Element">元素</a>，或者，当安排下一次重复时（<b>下一步</b>在顶部）</li>
+<li><b>小时</b>- 重复给定的时间 (hh:mm:ss)<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><b>格德</b>- 您在给定的重复中给自己的分数。因为你没有给自己打分<a href="Glossary_Topic.html" title="Glossary:Topic">主题</a>，该列显示<i>主题</i>对于这种类型的<a href="Glossary_Element.html" title="Glossary:Element">元素</a></li>
+<li><b>间隔</b>- 连续重复之间的天数：前一行的天数和当前行的天数</li>
+<li><b>优先级</b>- 的相对位置<a href="Glossary_Element.html" title="Glossary:Element">元素</a>在<a href="Glossary_Priority_queue.html" title="Glossary:Priority queue">优先队列</a>重复次数（数字越小，重复次数越高）<a href="Glossary_Priority.html" title="Glossary:Priority">优先级</a>）</li>
+<li>稳定性-<a href="Glossary_Element.html" title="Glossary:Element">元素</a>的<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>在通过选定的间隔重复算法计算出的给定重复之后。深蓝色的区域显示出更高的稳定性<ul><li><b>S19</b>-<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19">算法 SM-19</a></li>
+<li><b>顺丰</b>-<a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a></li>
+<li><b>S20</b>-<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-20">算法 SM-20</a></li></ul></li>
+<li>可回收性 -<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>使用选定的间隔重复算法计算。更红的字段显示更高的可检索性<ul><li><b>R19</b>-<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19">算法 SM-19</a></li>
+<li><b>射频</b>-<a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a></li>
+<li><b>R20</b>-<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-20">算法 SM-20</a></li></ul></li>
+<li>难度-<a href="Glossary_Element.html" title="Glossary:Element">元素</a>的<a href="Glossary_Difficulty.html" title="Glossary:Difficulty">难度</a>在通过选定的间隔重复算法计算出的给定重复之后<ul><li><b>差异19</b>-<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19">算法 SM-19</a></li>
+<li><b>差异F</b>-<a class="mw-redirect" href="FSRS.html" title="FSRS">FSRS</a></li>
+<li><b>差异20</b>-<a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-20">算法 SM-20</a></li></ul></li>
+<li><b>推迟</b>- 的次数<a href="Glossary_Element.html" title="Glossary:Element">元素</a>被推迟到给定的重复</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Context_menu">上下文菜单</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Repetition_history&amp;veaction=edit&amp;section=3" title="Edit section: Context menu"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Repetition_history&amp;action=edit&amp;section=3" title="Edit section's source code: Context menu"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>右键单击<b>重复历史</b>窗口打开一个上下文菜单，其中包含以下内容<a href="Glossary_Item.html" title="Glossary:Item">项目</a>:</p>
+<ul><li><b>编辑</b>（<kbd>控制键</kbd>+<kbd>乙</kbd>) - 编辑重复历史记录（这可能会影响算法和睡眠优化）</li>
+<li><b>复制</b>（<kbd>控制键</kbd>+<kbd>C</kbd>) - 复制<a href="Glossary_Element.html" title="Glossary:Element">元素</a>的重复历史记录到剪贴板</li>
+<li><b>删除</b>（<kbd>德尔</kbd>) - 删除元素的重复历史（确认后）</li>
+<li><b>保存</b>（<kbd>控制键</kbd>+<kbd>S</kbd>) - 如果已更正错误，则保存重复历史记录</li>
+<li><b>关闭</b>（<kbd>ESC</kbd>) - 关闭重复历史记录窗口</li>
+<li><b>内存状态</b>（<kbd>F2</kbd>) - 可视化内存变化<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>和<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>随着时间的推移</li>
+<li><b>修复和编辑</b>- 在编辑之前纠正重复历史记录中的错误。的<a class="external text" href="https://supermemo.guru/wiki/SuperMemo_Algorithms">最新算法</a>我们非常重视重复历史的正确性。从旧版 SuperMemos 继承的一些数据错误将在 SuperMemo 17 或更高版本中被发现（例如，在多个解除/重置操作、推迟、虚假日期设置等中）。原始重复历史数据可以编辑，但是，在编辑之前通过 SuperMemo 进行基本错误纠正可能会更方便。<b>修复和编辑</b>进行错误恢复，然后才呈现数据进行编辑</li></ul>
+<div class="center">
+<p><span typeof="mw:File"><a class="mw-file-description" href="File_Memory_status.jpg.html" title="SuperMemo: Changes in two components of long-term memory"><img alt="SuperMemo: Changes in two components of long-term memory" class="mw-file-element" decoding="async" height="484" loading="lazy" src="https://help.supermemo.org/images/thumb/5/57/Memory_status.jpg/800px-Memory_status.jpg" srcset="/images/thumb/5/57/Memory_status.jpg/1200px-Memory_status.jpg 1.5x, /images/5/57/Memory_status.jpg 2x" width="800"/></a></span>
+</p>
+<blockquote>
+<p><i><b>图：</b>内存状态随时间变化的示例<a href="Glossary_Item.html" title="Glossary:Item">项目</a>。横轴表示整个时间<a class="mw-selflink selflink">重复历史</a>。顶部面板显示<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>（十次方，R^10，以便于分析）。可检索网格<span style="padding: 3px; color: #fff; background-color: gray;">灰色</span>标记为 R=99%、R=98% 等。中间面板显示<a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">最佳间隔</a>在<span style="padding: 3px; color: #fff; background-color: navy;">海军</span>。重复日期标记为<span style="padding: 3px; color: #fff; background-color: blue;">蓝色垂直线</span>并标记为<span style="padding: 3px; background-color: aqua;">阿夸</span>。的结束<a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">最佳间隔</a>哪里<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">右</a>穿过 90% 线标记为<span style="padding: 3px; color: #fff; background-color: red;">红色垂直线</span>（仅当<a href="Glossary_Interval.html" title="Glossary:Interval">间隔</a>长于<a href="Glossary_Optimum_interval.html" title="Glossary:Optimum interval">最佳间隔</a>）。底部面板可视化<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>（呈现为<code>ln(S)/ln(days)</code>以便于分析）。该图表明<a href="Glossary_Retrievability.html" title="Glossary:Retrievability">可检索性</a>早期后快速下降（指数）<a href="Glossary_Repetition.html" title="Glossary:Repetition">重复</a>当<a href="Glossary_Stability.html" title="Glossary:Stability">稳定性</a>较低，但在第7次审查后的漫长10年时间里才从100%下降到94%。所有数值均源自实际<a class="mw-selflink selflink">重复历史</a>和<a href="Glossary_DSR_model.html" title="Glossary:DSR model">DSR型号</a>。</i>
+</p>
+</blockquote>
+</div>
+<div class="mw-heading mw-heading2"><h2 id="Editing_repetition_history">编辑重复历史记录</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Repetition_history&amp;veaction=edit&amp;section=4" title="Edit section: Editing repetition history"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Repetition_history&amp;action=edit&amp;section=4" title="Edit section's source code: Editing repetition history"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<p>由于以下事实：<a href="SuperMemo_Algorithm.html" title="SuperMemo Algorithm">SuperMemo 算法</a>严重依赖重复历史记录，您应该只在紧急情况下编辑重复历史记录（例如，发布错误的成绩、在错误的日期进行审阅、数据错误、完成缺失的记录等）。</p><p>您可以通过按编辑重复历史记录<kbd>控制键</kbd>+<kbd>乙</kbd>在重复历史记录窗口中。如果您在重复历史记录和当前历史记录之间引入差异<a href="Element_data.html" title="Element data">元素数据</a>, 选择<b>重复历史数据</b>回答时<b>哪个重复历史数据更准确？</b>。</p>
+<div class="mw-heading mw-heading2"><h2 id="FAQs">常见问题解答</h2><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a class="mw-editsection-visualeditor" href="https://help.supermemo.org/index.php?title=Repetition_history&amp;veaction=edit&amp;section=5" title="Edit section: FAQs"><span>编辑</span></a><span class="mw-editsection-divider">|</span><a href="https://help.supermemo.org/index.php?title=Repetition_history&amp;action=edit&amp;section=5" title="Edit section's source code: FAQs"><span>编辑源代码</span></a><span class="mw-editsection-bracket">]</span></span></div>
+<ul><li><a class="external text" href="https://supermemopedia.com/wiki/Edit_repetition_history">如何撤消<b>解雇</b></a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Interpretation_of_grades_Auto_and_N/A_in_Repetition_History_Dialog_Box">汽车级和不适用</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260610111200
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.050 seconds
+Real time usage: 0.055 seconds
+Preprocessor visited node count: 63/1000000
+Post‐expand include size: 3475/2097152 bytes
+Template argument size: 885/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    6.463      1 -total
+ 70.34%    4.546      1 File:Repetition_history.jpg
+ 28.14%    1.819      1 File:Memory_status.jpg
+ 28.01%    1.810      1 Template:Fig
+-->
+<!-- Saved in parser cache with key guru_Help20:pcache:382:|#|:idhash:canonical and timestamp 20260610111200 and revision id 12395. Rendering was triggered because: api-parse
+ -->
+</div></div></div>
+</div>
+<script>
+function setMode(m){
+  document.body.className='mode-'+m;
+  document.querySelectorAll('#lang-bar button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.mode===m);
+  });
+  localStorage.setItem('smLang', m);
+}
+(function(){
+  var saved=localStorage.getItem('smLang')||'zh';
+  setMode(saved);
+})();
+</script>
+</body>
+</html>
