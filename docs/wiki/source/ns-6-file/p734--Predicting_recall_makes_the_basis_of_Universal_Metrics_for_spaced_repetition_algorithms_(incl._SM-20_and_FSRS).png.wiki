@@ -1,0 +1,1 @@
+{{Fig|Universal metric is computed by cross-comparison of predicted recall in retrievability categories computed by a competing algorithm. The closer the algorithm adheres to the black diagonal, the better its performance in a particular collection. Unoptimized [[Algorithm SM-20]] and [[FSRS]] may show substantially worse performances as compared with optimized SM-20 and FSRS}}

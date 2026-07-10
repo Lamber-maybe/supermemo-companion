@@ -1,0 +1,5 @@
+'''Spaced repetition''' is a method of efficient learning. It computes optimum [[Glossary:interval|interval]]s in learning to achieve a specific [[Glossary:retention|retention]] level.
+
+See:
+* [https://supermemo.guru/wiki/Spaced_repetition Spaced repetition]
+* [https://supermemo.guru/wiki/History_of_spaced_repetition True history of spaced repetition]

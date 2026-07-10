@@ -1,0 +1,1 @@
+Application key allows you to open a pop-up menu relevant for the current context

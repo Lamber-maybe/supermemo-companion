@@ -1,0 +1,1 @@
+A dialog with the list of top level folders to import mail from (displayed when importing mail for the first time)

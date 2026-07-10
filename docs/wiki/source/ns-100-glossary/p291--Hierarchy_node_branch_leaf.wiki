@@ -1,0 +1,2 @@
+;<span id="Hierarchy_node/branch/leaf">hierarchy node/branch/leaf</span>
+:see [[Glossary:Node|node]], [[Glossary:Branch|branch]], or [[Glossary:Leaf|leaf]] ('''hierarchy''' is an outdated term that might be found in some older documentation files)

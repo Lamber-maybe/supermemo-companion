@@ -1,0 +1,689 @@
+== Improvements: Top 10 ==
+
+SuperMemo 16 is faster and more reliable than SuperMemo 15. It works better in Windows 8.1 and with Internet Explorer 11. It conglomerates all [[incremental learning]] techniques. It requires fewer clicks to access individual options. It adds dozens of options for improving [[incremental reading]], [[incremental video]], [[Incremental learning#Incremental audio|incremental audio]], and [[visual learning]]. In the long list of changes, some minor unsexy improvements tend to make a world of difference. Here is our vote for improvements that are most likely to make a big difference in your learning:
+
+# [[Incremental video#Incremental video with video files|Incremental video on local files]]: you are no longer bound to YouTube for your video learning and processing. You can import video MP4s straight from your camera
+# Supplementing the interface by the mouse-oriented [[Learnbar|learning bar]]: if you prefer a mouse or you need to use SuperMemo with just one hand, it should be much easier now with the '''[[Learnbar]]'''
+# Fast search & replace: old search and replace was slow enough to be rarely used in large collections. Once you discover the new speed of this option, you will use it over and over again (e.g. to rename outdated Wikipedia articles, fix propagating typos or data errors, etc)
+# '''Add all to outstanding''' along with a dedicated icon in the [[browser]]: once you import some new exciting material, you do not need to wait for its turn in the learning process. You can now use '''Add all to outstanding''' and distribute the new articles in your today's learning queue at your selected "density"
+# Global paste in [[visual learning]]: if you hate an old picture used in dozens of element, you can now just paste a different one and choose the global change option
+# Deleting processed texts with a single keystroke in the [[Commander]]: no more messy leftovers in articles that you read. You will use this option each time you read a portion of text, e.g. to clean up, simplify, or leave behind complex formatting, pictures, icons, tables, advertising, or your reference sandbox! This makes for smooth and clean reading!
+# Speed: some text processing and import procedures have been profiled line-by-line to remove all speed bottlenecks resulting in speeds that might be a few hundred times greater than in SuperMemo 15 (e.g. importing a large Wikipedia article might now take a blink while it used to take long seconds in older SuperMemos)
+# More reliable use of Internet Explorer for handing HTML pages: the marriage with Internet Explorer used to be very painful one in the past. With new event sink and a dozen of minor improvements, error messages that used to interrupt your learning are largely gone (this refers mostly to Windows 8 and Internet Explorer 11)
+# Sorting elements by text size in the [[browser]]: if you have a huge article split into dozens of pieces, you may neglect large portions that fell victim to speed-reading. Sorting by text size helps you find such leftovers. This can be a blessing when processing large dictionary files that you occasionally process in spare time at low priority. They tend to be lumpy
+# Fast YouTube imports: if slow access to YouTube API was exasperating in the past, you will be surprised that all imports now take a blink. All reference information is downloaded separately in an independent thread while you work with the collection
+
+== New functions ==
+
+=== Incremental audio/video ===
+
+[[Incremental video]] and [[Incremental learning#Incremental audio|incremental audio]] largely complete the set of media available in [[incremental learning]], incremental processing and [[Creativity and problem solving in SuperMemo#Incremental writing|incremental writing]]. This leaves the user of SuperMemo with no excuses for using paper, DVDs, cassette tapes, mail files, or other media for the purpose of data/media archive. All knowledge, information, and valuable data can now be stored in SuperMemo and processed incrementally (from knowledge, through picture albums, to family archives, to home video, to university lectures, and more).
+
+* [[Incremental video#Incremental video with video files|incremental video with local files]]: if you do not want to rely on YouTube, or have lectures that cannot be uploaded, or want to process your own videos, you can use MP4 now for incremental video (some other formats are also supported, e.g. MOV, WMA, MPG, AVI, etc.). Not all file formats are supported, however, most formats can easily be converted to MP4 (e.g. with [http://www.freewarefiles.com/XMedia-Recode_program_47942.html Recode]). Before you commit to SuperMemo and a specific  format, be sure to give it a test with a trial version
+* new '''Extractor''' toolbar is available amongst media panel options in sound and video components. Note that this toolbar makes the old option '''Extract selection''' obsolete. As a result, that option has been removed from SuperMemo. The '''Extractor''' toolbar was modelled after the incremental video panel for processing YouTube videos
+* you can define ''Video Extract'' [[Glossary:Template|template]] to have your [[Glossary:Template|template]] used for video extracts. If this [[Glossary:Template|template]] is absent, default video [[Glossary:Template|template]] will be used with the background color changed to yellow. The same holds for YouTube extract except for the [[Glossary:Template|template]] name that is ''YouTube Extract''. In the simplest case, redefine your ''Video'' or ''YouTube'' [[Glossary:Template|template]] '''after''' saving it under the new name
+* pre-defined ''Video'' and ''YouTube'' templates
+* full screen option for video files. This option adjusts the video size to the size of the video [[Glossary:Component|component]] (i.e. not the size of the screen). The actual full screen is also possible (e.g. with '''View file''')
+* YouTube videos get embedded in documents exported as HTML
+* the '''Extractor''' toolbar includes buttons for rewinding one frame back or one frame forward. Unfortunately, MCI commands do not always execute that command reliably and you may skip a few frames in the process
+* last extract resets the Start/End boundaries before dismissing the video to the archive
+* setting titles on audio/video extracts allows of retaining the extract boundary markers before the title
+
+=== Speed ===
+
+* much faster HTML handling in [[incremental reading]] (importing large articles, extracting from large articles, filtering, Wikipedia formatting, etc.)
+* speeding up procedures for converting relative and absolute links in HTML (e.g. loading image rich texts may be up to 35x faster) 
+* HTML loading should now be 20x faster. This may not be noticeable as all HTML is now processed pretty fast
+* speeding up tag processing with low-level optimized procedures that are now up to 2000x faster. As a result, long Wikipedia articles import, load and split up to 10x faster
+* global search and replace is now 130x faster due to the use of assembly language in processing large blocks of text
+* faster search and replace procedures on long texts. As a result, loading long plain texts that need to be converted to HTML load twice faster
+* '''Find Next''' in '''Search and Replace''' is faster by pre-opening text registry and the contents tree files
+* faster search by pre-loading the entire registry text to memory
+* no style or paragraph filtering for Wikipedia articles speeds up processing without compromising editability (with new event sinking)
+* removing spacing and styles from filter defaults. Long and richly formatted articles import up to 24x faster
+* old text formatting styles are no longer converted to new styles resulting in a speed gain
+* faster title processing (very long text would slow down all operations where shortened title was needed)
+* matching words is up to 10x faster on long texts
+* reference registering is 50x faster. This speeds up SuperMemo in many contexts (e.g. '''Repair collection''')
+* registry filtering is 60x faster due to optimized text replace procedures
+* faster procedures for counting and sizing files and directories
+* faster page imports by keeping registries open 
+* collection size estimations are 3x faster due to keeping template and text registries open
+* some registry operations are faster by using VAR parameters that do not require a copy of a variable to operate on (e.g. registry text cleanup)
+* '''Rename Collection''' is instantaneous! Previously it would rename files one by one! The old version was slower than '''Copy collection''' and less safe (e.g. vulnerable to power failure)
+* '''Move Collection''' is instantaneous if executed on the same drive. Otherwise it works by combining '''Copy collection''' and '''Delete collection'''
+* faster browser operations
+* faster XML import
+* faster '''Repair collection'''
+* faster '''Reset collection''' with less blinking
+* '''lower''' speed when setting category of descendants when moving nodes in contents (this is a result of a user request to keep category settings up to date in contents operations). The slowdown is slightly mitigated by keeping all involved files open during the operation. Moving nodes is also slightly faster due to moving the operation to low-level without restore, un-restore and visibility changes
+
+=== Search and replace ===
+
+* '''Search & Replace''' for the entire [[Glossary:Collection|collection]] now runs in assembly language. Global search and replace is now over 100x faster on large [[Glossary:Collection|collections]] with sparse replaces. Have you have ever wondered why '''Search''' could take a second to rush through your entire gigabyte [[Glossary:Collection|collection]], while '''Search & Replace''' was so slow? Why did you need to resort to running search and replace through search results in the text registry? The new assembly language procedure is as fast as the search procedure. Results of the replacement can be inspected and/or reversed using the first text registry subset
+* '''Search & Replace''' can now be used in a [[Glossary:Browser|browser]] [[Glossary:Subset|subset]] (e.g. if you misspell a sentence and generate a couple of [[Glossary:Cloze_deletion|cloze deletions]] that propagate the error)
+* '''Search & Replace''' can now be used in all [[Using registries|registries]] (e.g. to change names of images, etc.). Results can be reversed with the use of the first registry subset
+* '''Search & Replace''' now uses a standard shortcut ''Ctrl+R'', which for years was hogged by outdated '''Forget''' function
+* '''Search & Replace''' now also works on recursive replacements (i.e. you will not see ''Cannot run Replace All on infinitely recursive replacements''). This is done by doing two-step replacement with an intermediary and storing the processed entries in the ''done'' queue
+* '''Search & Replace''' now  generates a report of the replaces done
+* '''Find Next''' in '''Search & Replace''' searches along the tree structure (not by physical location of the element in the collection) 
+* '''Replace''' in the replace dialog replaces texts in the current element only
+
+=== Incremental reading ===
+
+* '''Add all to outstanding''' makes it possible to spread the newly added material in the outstanding queue. The appropriate icon is now available in the browser so that you only need to (1) open the relevant material in the browser, (2) click the icon, and (3) specify the redistribution density (e.g. ''every third repetition''). This option is also available on the contents menu in case you wanted to process entire branches of the tree. Once you learn to use this option, you will employ it daily!
+* '''Delete before cursor''' command makes it easy to work with badly formatted texts. This sounds like an unexciting function. However, if you use [[incremental reading]], you will soon wonder how you ever lived without it! This function works on raw HTML and is independent of the vagaries of DOM and Internet Explorer. This means that you won't be foiled by bugs in the Explorer or quirks in HTML. Once you locate the information you need, you can get rid of the preceding garbage with a single keystroke
+* '''Delete after cursor''' deletes all texts from the cursor to the bottom of the article (without affecting [[references]])
+* '''Great''' grades automatically decrease the priority of items (note that priority affects the forgetting index in learning overload)
+* custom strings can be used in article splits
+* adding blue headlines to split articles
+* [[Glossary:Topic|topics]] and [[Glossary:Item|items]] can be sorted using their own degree of randomization
+* removing leading HTML tags from texts in places where they could not be reached with a selection and '''Remove formatting''' (e.g. '''Remove Formatting : Front''' in the Commander, or '''[[Component menu#Text|Text]] : Convert : Clean lead HTML''' on the HTML [[component menu]]
+* &lt;SPAN class=cloze&gt; is used to mark [[Glossary:Cloze_deletion|cloze deletions]] for cleaner and customizable [[Glossary:Item|items]]
+* if <code>ReplaceSelection(&lt;span class=extract&gt;...</code> fails in extracts, <code>SetBackgroundColor</code> is used as in older SuperMemo
+* ''Ctrl+N'' can now be used to paste various formats (not only text). For example, if a YouTube URL or ID is detected, a YouTube video will be pasted, and the default YouTube template used
+* paste has no effect only if clipboard format count is zero
+* web imports add ''Date: imported on'' to differentiate from the actual article date 
+* response to ''Enter'' at read-points can now be determined with a hack ''Allow Read-Point Enter=1'' in supermemo.ini to prevent ''Enter'' calling '''Learn''' at read-points
+* elements added to the contents window are automatically entered into the learning process
+* no HTML scrolling upon ''Esc'' and display mode. Only at the next ''Esc'' try do articles scroll to the top
+* https:// articles are detected as a duplicates if already imported with http protocol
+* texts deleted with '''Delete before cursor''' and '''Delete after cursor''', are backed up in the temporary folder
+* uppercase P is also accepted for marking priorities relative to the position in the [[priority queue]]
+* more reliable event handling solves many of the prior problems with table processing in [[incremental reading]]
+* RTF texts in HTML components are marked with red borders for the user to make the ultimate decision if upgrade to HTML is desirable
+* there is no change to the flow of text when entering the editing mode (there might be minor exception to that rule due to bugs in Internet Explorer)
+* the confusing duplicate terms SIMILAR and FAMILIAR have been replaced with DUPLICATE (for articles that have already been imported), and DOUBLED (for articles that occur twice in the '''Web Import''' dialog, i.e. those that are opened in duplicate in Internet Explorer)
+* '''Check duplicates''' and '''Close duplicates''' also affects doubled pages opened in Internet Explorer 
+* options for decrementing and incrementing the priority do not affect the forgetting index of items
+* more accurate URL normalization for detecting duplicate imports ([http://tools.ietf.org/html/rfc3986 RFC 3986])
+* ''PRE'' tag filtering has been removed as no longer needed (with better event handling). This improves readability of texts that use this HTML tag
+
+==== Wikipedia ====
+
+* Wikipedia thumb pictures can now be downloaded in full resolution in image downloads
+* Wikipedia redirects are stored with #Link: field pointing to the ultimate resolved URL to prevent duplicate imports (the original redirect URL is still stored as a comment for further reference)
+* equivalent, but differently encoded URLs are reported as duplicates. For example, http://en.wikipedia.org/wiki/Projection_%28linear_algebra%29 will be detected as a duplicate of http://en.wikipedia.org/wiki/Projection_(linear_algebra)
+* Wikipedia MBoxes are formatted out with an ignore style for easy removal from the [[Glossary:Collection|collection]]
+* empty subsections do not create new [[Glossary:Element|elements]] at split
+* ''show'' and ''hide'' navigation toggles are filtered out
+* updated filter removes Edit links that would remain undetected due to ''span class="mw-editsection-divider"''
+* updated filter removes v*t*e templates 
+* jump to: navigation, search in Wikipedia imports would not filter out due to adding an extra argument to the DIV tag by Wikipedia
+* filter procedure unified for imports from SuperMemo Help and SuperMemopedia.com 
+* importing also via https:// protocol
+* normalized URLs for duplicate detection (e.g. https:// URLs are always stored as http://)
+* normalized URLs skip bookmarks when converting from browser data to references
+* Wikipedia URLs are deemed different even if their fronts are identical (http://en.wikipedia.org/wiki/Euphrates vs. http://en.wikipedia.org/wiki/Euphrates_softshell_turtle). This means these URLs are not flagged in duplicate candidate detection
+
+==== References ====
+
+* you can now delete all [[references]] in a [[Glossary:Subset|subset]] of [[Glossary:Element|elements]]
+* [[references]] can be added to document exports
+* reference registering is now 50 times faster. This speeds up SuperMemo in many contexts, esp. '''File : Repair collection'''
+* ''Esc'' updates references if modified in the current edit. To save time, first ''Esc'' only exits the editing mode. Second ''Esc'' updates the references
+* '''[[Component menu#Reference|Reference]] : Download''' on the [[component menu]] (e.g. to update YouTube references)
+* reference downloads result in updating the #Date: reference (e.g. ''(updated: Jan 11, 2014)'')
+
+=== Visual learning ===
+
+* pasting pictures can now be local or global. In a global paste, the contents of the clipboard replaces the image in the registry (not just the image in the component). This means that all [[Glossary:Element|elements]] that use the image will now use the newly pasted version.
+* pasting pictures reuses the first existing image component first or squeezes in an extra image component. Successive pastes tile the existing images in their originally covered area of the [[element window]]
+* '''Paste over''' in the image registry allows of replacing pictures with a new version taken from the clipboard
+* pictures can be pasted to image registry as new objects (instead of being pasted to [[Glossary:Element|elements]] or [[Glossary:Component|components]])
+* ''Ctrl+V'' and ''Shift+Ins'' in the image registry allow of inserting new members or overwriting old members using pictures stored in the clipboard
+* '''Picture''' import mode in addition to [http://youtube.com YouTube] and [http://en.wikipedia.org Wikipedia] modes in web imports.
+* '''Compress images''' in the '''[[SuperMemo Commander|Commander]]''' can be used to save space and to convert poorly showing GIFs or PNGs to straight JPGs. It can also remedy some CRC problems in PNG files sent via MIME in EML imports (all files are converted to JPG at compression). '''Components : Compress images''' is also available on the element menu. Compression generates a report on space saved
+* each collection has it background file kept in the ''\images'' folder. Individual background allow of faster visual access to multiple collections kept in memory in Windows 8
+* '''Page of images''' imports reuse the first existing image area for imports instead of relocating other [[Glossary:Component|components]]
+* '''[[Component menu#Download images|Download images]]''' displays the total count of available images in a given HTML page
+* image imports support Google Images without the need to click '''View image''' in Google
+* '''Fit to picture''' gives preference to picture fitting directions when shrinking an image component. This make it easier to expand or shift other components in same fitting move. '''Fit to picture''' allows of economizing more [[Glossary:Element|element]] area space when fitting multiple pictures. To adjust sizes of two tiled pictures, adjust the first/default one first, and then click the second, and repeat the procedure 
+* importing images from Google Image search results without the need to actually click '''View Image''' in Google
+* support for TIFF format
+* support for ICO format (without the '''Stretch''' option)
+* GPS data in JPG images can be used to point to the picture taking location in [http://maps.google.com Google Maps]
+* images can also be imported via https:// protocol
+* with an image selected, ''Del'' deletes the image first, only then asks if the element should be deleted
+* no more errors when compressing image less than 1kB in size
+* some tricks used by website owners to prevent wholesale image downloads can now be circumvented
+
+=== Interface ===
+
+The new SuperMemo is not more beautiful and may even appear cluttered. However, the new cluttered looks are compensated well enough by a dramatic increase in usability, esp. for those who prefer to use a mouse, or are new to the program. In addition, even seasoned pros will appreciate shorter click-paths as most options are now available with just 2 clicks. Mouse-oriented [[Learnbar|learning bar]] makes it easier to use SuperMemo with a single hand.
+
+* [[navigation bar]] for finding things in the [[Glossary:Collection|collection]], and [[Learnbar|learning bar]] to read, learn and edit the [[Glossary:Collection|collection]]
+* [[Toolbar dock|all toolbars]] are now also available from buttons on the above two 
+* [[navigation bar]] redesigned and simplified, with the often used collection chooser button
+* most important options are listed in popup menus available from individual buttons on the toolbars 
+* option accessibility reflects recommended strategies. Some options are now less prominent to discourage frequent use, e.g. '''Forget''', other swapped places, e.g. '''Done''' is preferred over '''Delete'''
+* [[Learnbar|learning bar]] makes it easier to access most important functions of the program from simple menus
+* icon set and toolbars redesigned for better usability
+* most important menu options have been marked with mnemonic icons
+* unlike MS ribbons, you always have the most often used buttons in plain view, unless, on a less frequent occasion, you click buttons that lead to other toolbars 
+* [[toolbar dock]] and floating toolbars are no longer needed, however, they have been retained for old timers who do not like to change their habits. All traditional menu structure is retained for the most advanced functions ([[main menu]], [[element menu]], [[component menu]], etc.)
+* '''Keep docked''' keeps toolbars docked. At the beginner level, the default setting for toolbars is '''Keep docked'''. In this setting the toolbars do not float and cannot be dragged away from the dock. This is probably how SuperMemo will work in the future
+* adding new components from the '''Compose''' toolbar has been simplified. One click is enough instead of the previous 3-click scheme. The added component is set in the resize mode for convenient placing in the element area. When successive elements of the same time are added, they are tiled in the set area
+* each collection can use its own background picture that helps distinguish between collection in thumbnails used by Windows 8 (e.g. when switching between applications)
+* alarms has been integrated with the '''Alarm''' toolbar instead of the disruptive dialog box 
+* increased range of allowed interface font sizes
+* when using registries or the browser, the toolbars are not swept to the side, and are docked instead
+* closing the toolbars saves their status in the current layout (without the need to save the layout)
+* Contents and Browser layouts do not save or restore their own toolbar layout
+* when a toolbar is first display, it is in the docked state (rather than a floating state). If the dock is not available, user can chose if it should be shown
+* stylesheet editing is possible directly from the [[learnbar]]
+
+=== Commander ===
+
+New commands:
+* Add pronunciation
+* Ancestors: Show
+* Compress images
+* Delete after cursor
+* Delete before cursor (one of the most useful new functions in SuperMemo 16!)
+* Done!
+* Duplicate
+* Highlight
+* Remove formatting: leading HTML
+* Remove formatting: plain text
+* Remove formatting: selected text
+* Send E-mail
+* Sort repetitions
+* Tile components
+* Unzoom image
+* Zoom image mode
+
+=== Browser ===
+
+* [[Browser]] supports sorting [[Glossary:Element|elements]] by text size: e.g. if you get lost in processing very long articles or lists and you need to begin with the least processed fragments
+* [[Glossary:Element|elements]] can be sorted by the date of the first repetition (or the date on which the [[Glossary:Element|element]] had been introduced into the [[Glossary:Collection|collection]])
+* '''[[Browser menu#Child|Child]] : Extracts''' can be used to work with [[Glossary:Extract|extracts]] as opposed to full articles 
+* '''[[Browser menu#Child|Child]] : Articles''' can be used to work with full articles as opposed to article [[Glossary:Extract|extracts]]
+* repeating the sort by [[contents]] or size results in a reverse sort (as used to be the case with other sorting criteria)
+* all collections use the same browser layout
+* when the contents of the browser is moved to a branch in the contents window, contents layout is applied for convenient target branch selection
+
+=== Templates ===
+
+* new predefined ''Sound'' and ''Video'' [[Glossary:Template|templates]] (for [[Incremental learning#Incremental audio|incremental audio]] and [[incremental video]])
+* '''[[File menu|File]] : [[File menu#Import|Import]] : Files and folders''' respects the default [[Glossary:Template|template]] of the import [[Glossary:Category|category]] unless the [[Glossary:Template|template]] does not match the type of the imported file. In such cases predefined [[Glossary:Template|templates]] will be used or new [[Glossary:Component|component]] inserted into [[Glossary:Element|elements]] over the default [[Glossary:Template|template]]
+* '''[[File menu|File]] : [[File menu#Import|Import]] : Files and folders''' can now make use of the default sound or video [[Glossary:Template|template]] for massive imports to [[Incremental learning#Incremental audio|incremental audio]]/[[Incremental video|video]]
+* default picture [[Glossary:Template|template]] is used for [[Glossary:Topic|topics]] or [[Glossary:Item|items]] if no associated 'Picture' or 'P' template is found for the current or default [[Glossary:Template|template]]
+* if there is an empty picture [[Glossary:Component|component]] in the [[Glossary:Element|element]], SuperMemo does not suggest to apply a picture [[Glossary:Template|template]]
+* images are pasted with a '''Stretch''' attribute determined by the template (i.e. not always proportional)
+* conversion from RTF to HTML is reversible when done with an HTML template
+* inserting new pictures from the registry over a picture-compatible [[Glossary:Template|template]] retains the old [[Glossary:Template|template]]
+* RTL attribute may be included in templates with an HTML object: ''direction=rtl, unicode-bidi: embed;''
+* it is possible to abort on a impose/detach choice when deleting templates (e.g. when unsure)
+* wider sound components in the automatic XML import template
+
+=== Registries ===
+
+* inserts of objects from the registry tile new [[Glossary:Component|components]] (instead of rearranging the existing [[Glossary:Component|components]])
+* fast Search&Replace in all registries
+* registry member names modified by Search&Replace are stored in a new registry subset. To preview changes before replace, search the registry first. To preview changes after replace, go to the text registry and check the first subset (immediately after the operation)
+* [[status bar]] displays text sizes for texts stored directly in the registry (not only those in HTML files, etc.)
+* index range can be selected in all registries
+* registry member position range can be selected in all registries
+* unselected subset button on the registry toolbar
+* ''Shift+click'' selections are now possible
+* registry scrolls at '''Rename''' only if the member order has changed
+* images can be added directly to the image registry by copy and paste
+* global image paste is possible also directly in the image registry (overwritten image will show up throughout the collection)
+* text registry members formatted as HTML have their member names cleared of leading characters such as #13, #10, #9, and space for more meaningful sorting (plain text registry members cannot be processed this way as the same characters might be used in text formatting)
+* formatting tab and end of line characters for linear display in the members scroll box (for better readability)
+* text shortening algorithm for long registry member names is the same as the element title shortening algorithm (for easier comparisons and searches)
+* the path button can also be used in the text registry
+* '''Add''' in the template registry adds a template based on the current contents of the [[element window]]
+* '''Insert''' in the template registry applies the currently selected template to the element displayed in the [[element window]]
+* references can be edited directly in the reference registry
+* '''Add''' in stylesheet registry makes it possible to add a stylesheet code directly in the registry
+
+=== Categories ===
+
+* each category keeps its own default priority. All new elements in that category receive that priority by default (unless specified elsewhere, e.g. in an import dialog box)
+* default category Auto-apply setting is ''Never'' (previously it was ''Ask'') 
+* all contents and category operations set the category of moved elements (this makes those operations slower on large branches)
+* '''Category : Set descendants''' makes it possible to change the category on an entire branch
+* Q&A imports sets the category of imported elements to the category of the import branch
+* category with no template definitions set receive an appropriate pre-defined template setting
+
+=== YouTube ===
+
+* [http://youtube.com YouTube] [[references]] download in a separate thread while watching videos. In the past, when there was a poor bandwidth or the [http://youtube.com YouTube] server was slow, the import of just a few dozen videos might take several minutes, while now it will take just a few seconds. If [[references]] cannot be downloaded, the [[Glossary:Element|element]] will not be stamped with the unfriendly "reference download error". Instead, SuperMemo will attempt to connect with the server next time you view the video. Moreover, you can re-download or update all references with '''[[Component menu#Reference|Reference]] : Download''' on the HTML [[component menu]]. This can be used, for example, to update the video view count, or the video description (if changed)
+* YouTube extracts can use a dedicated template instead of just changing the template color (the color is used only if the extract template is not defined)
+* player version parameter available on the [[learnbar]] makes it possible to choose the optimum player for a given video (e.g. older versions for skipping advertising, newer versions for full screen, etc.)
+* in addition to imports from Internet Explorer, simple copy and paste is possible on YouTube URLs, and SuperMemo YouTube identifiers
+* pasting YouTube videos initiates a reference download and update
+* document exports include YouTube components with the appropriate video start point
+* reference downloads change the title of YouTube elements to match the title of the video
+* YouTube parameters are stripped and URLs normalized to ensure correct import duplicate detection
+* hardwired yt.htm script, Build: Sep 27, 2013 
+* YouTube recommendations convert start and end times of video extracts to seconds
+
+=== Statistics ===
+
+* '''Protection''' in statistics shows the degree of processing the top priority material on a given day. It shows the priority of the highest priority [[Glossary:Item|item]] and the highest priority [[Glossary:Topic|topic]] still in the [[Glossary:Outstanding_queue|outstanding queue]]
+* Topic and item statistics have been separated for all entries where averaging the two provides misleading values (e.g. average repetitions count, interval, last repetition date, and more)
+* the '''Outstanding''' parameter displays additionally the total size of the outstanding queue if it includes elements that were included with '''Add to outstanding'''. The same change shows on the status bar
+* tasklist count in '''Analysis'''. All tasklist data is collected, however, only the current tasklist shows on the graph. To change the graph, change the current tasklist
+* new browser statistics: total value of tasks, total cost of tasks, average value, average cost, average yield (value/cost), etc.
+* A-Factor and Repetitions in statistics are displayed with I= and T= prefixes for items and topics to avoid confusing the two groups of elements
+* Statistics window font and row height adapts to screen resolution and the size of the statistics window
+* text size statistics are added by default in browser statistics 
+* '''Analysis : Use''' statistics use meaningful names (instead of just file names)
+* sleep statistics are updated instantly when deleting or adding sleep blocks
+* collection browser registers as an activity in the timeline
+* generic graphs extended by data inspection on mouse move (e.g. Date-vs-Workload on a given day in '''Workload''')
+* for Retention, Repetitions, etc., Monthly Workload ends with the current month (previously it would start from the current month)
+* '''Repetitions graph''' is easier to interpret by using different line styles
+* Burden change displayed in parentheses to avoid sign confusion
+
+=== Mail ===
+
+* Mail import from Windows Mail and Windows Live Mail as well as other mailers that support EML
+* MIME imports: supported HTML, plain text, line-folding, utf-8, u-16, ISO-8859 (1 to 15), especials, base64, printed-quotable, multi-part messages, jpeg, gif, png, bmp, tiff, ico, multiple audio formats (incl. mp3, wma, wav, etc.), multiple video formats (incl. mp4, wmv, etc.), binary attachments, etc.
+* intelligent choice of the best main text component in multipart messages (other messages in different formats are imported as separate components)
+* default mail import source can be changed between supported applications
+* detecting default folders for Windows Mail and Windows Live Mail (only in Windows Vista and later)
+* simple dialog for changing the default mail import folder specific for a given collection
+* EML text format (files are stored in the original format and displayed as HTML)
+* EML to HTML conversion (automatic at mail editing)
+* plain text conversion in HTML components is two step for EML texts: (1) EML->HTML and (2) HTML->plain
+* imported mail may reside in the original folder as duplicate imports are prevented (auto-archiving is not needed for EML imports)
+* mail body is displayed in HTML (if HTML message format is available) or in plain text (if no better format is supplied)
+* formatted EML header is added to mail displayed as HTML
+* mail import report (errors, mail skipped, mail imported, etc.)
+* mail recipient name added to comments in mail references
+* mail forwards use element caption rather than the reference title (that often is far more general)
+* non-ASCII texts are added as HTML attachments (in addition to mail text body)
+* for forwards that do not have the mail address reference, the body of text is searched for possible mail address candidates
+* Microsoft's Photo-mail can be circumvented in picture forwards (if you do not wish to register with Microsoft services or use SkyDrive as an intermediary)
+* no read-points on mail replies where the reply selection is empty
+* if a file lock occurs on HTML (e.g. in mail forwarding), SuperMemo will ask if it should read the file again after the lock is removed 
+* files in the EML format can be selected into a subset in the text registry
+* horizontal line (''hr'' tag) can be used to separate questions from answers in FAQ (along the usual SuperMemo splitmark)
+* FAQs replace bullet tags (''li'') with asterisks for publishing in FAQ wikis
+
+=== SleepChart ===
+
+* dense view in the sleep log chart makes it possible to see annual trends
+* Circadian graph can be used to inspect circadian rhythms of learning (in the same way as in the analysis of sleep cycles)
+* Sleep length vs. nap length graph makes it possible to compute nap compensation ratio in sleep deprivation
+* '''Periodogram''': 32768 samples at 3 min. intervals give optimum display for 500 points in the graph (113 days). Exact period of peaks can be shown in the graph
+* it is possible to inspect sleep data of other users of SleepChart (in addition to one's own data). Naturally, all learning estimates are only possible if the relevant collection is inspected as well
+* green 24h balance line in the circadian graph makes it easier to optimize the length of the waking day in sleep phase disorders 
+* Fourier transform export from SleepChart to Excel
+* sleep vs prior sleep graph is available on the '''SleepChart : Learning''' tab with a click (undocumented) 
+* middle-of-the-night provides for better wake and sleep estimations over moving averages
+* homeostatic recall data for Excel now include the full name of elements taking part in repetitions that contribute data 
+* better heuristic for differentiating between circadian zones of orphaned blocks in fragmented sleep (lesser impact of block length and wake time)
+* Recall vs. Consolidation graph
+* REM sleep heuristic
+* the mousewheel can be used to scroll the log
+* SleepChart allows of a dedicated folder for Excel imports and exports
+* converting SleepChart to use TDateTime data type internally (as opposed to low precision floating point). The data format on the disk has not changed. SleepChart converts 18-byte records back to the old 12-byte format (i.e. different versions can exchange sleep logs)
+
+=== Plan ===
+
+* Changing the starting hour of the schedule allows of four modes of the fixed-point update: (1) unfix, (2) shift equally, (3) keep in place, or (4) shift in proportion (to make sure time anchors keep the schedule in the desired frame). On different days, you may need a different mode. All these mode have their place in optimizing your day
+* '''Adjust''' uses the ''ActLen'' column instead of the ''OptLen'' column in making the length adjustments. This makes it possible to account for fixed-time activities and make sure that all slots have their efficiency (''%'' column) set at 100% at the beginning of the execution of the schedule
+* % column in Plan compares actual length with the planned length, not with the optimum length (the two should be the same in the adjusted schedule)
+* drop in execution efficiency can be registered after executing each slot that lasted longer than planned
+* '''Split''' uses the actual activity length rather than the planned length if the actual length is already larger. This provides for more realistic time allocations for compressed slots even though the split itself will disadvantage the split slot in reference to the remaining slots 
+* '''Split''' allows of splitting zero-length activities (e.g. after adding a new slot and before determining its optimum length)
+* '''Display daily totals''' is on by default for '''Totals'''
+* double click or ''Ctrl+E'' opens '''Activity Options''' if multiple activity slot is defined (instead of just a text editor)
+* ''Ctrl+F'' is now used for '''Fix''' as ''Ctrl+Enter'' was hard to remember and would conflict with the Commander, which may be needed in '''Plan''' to turn off the alarm
+* '''Split''' retains the tail of the activity text after the split counter (e.g. in the past, ''Sports (#2) - jogging'' would split to ''Sports (#2)'' and ''Sports (#3)'' without retaining ''jogging'')
+* stronger validation of data in entry fields such as start time, duration, etc. (e.g. 2355 instead of 23:55 would be interpreted literally as 100 days)
+* schedule is updated each time a cell is changed in the editor mode
+* better alarm synchronization across instances of SuperMemo
+* lesser chance of race condition when raising the alarm (to make sure only one collection raises it, first the alarm collection, and if it is closed, further collections on the list)
+* '''Stop alarm''' stops it in all collections
+
+=== Reliability ===
+
+* new way of sinking events in HTML documents should make SuperMemo infinitely more reliable in processing HTML (problems with mouse click errors, mouse wheel, mouse responsiveness in tables, etc.) 
+* recompiled with Delphi XE3 (SuperMemo 15 was written in Delphi 2010)
+* optimized for Windows 8 Desktop (SuperMemo 15 would run best in Windows Vista). As of November 2013, it should work best in Windows 8.1 with Internet Explorer 11. See: [[Minimum requirements]]
+* new version of VCL components
+* new version of virtual tree component for handling the knowledge tree
+* most frequently encountered errors allow of an instant Google search for solutions listed at [http://super-memory.com/help/faq/ FAQs] or at [http://supermemopedia.com SuperMemoPedia]
+* better filespace error diagnostics
+* mail imports generate a file with the list of encountered problems (e.g. duplicate imports, file locks, corrupted attachments, etc.)
+* better resistance of visual browser to script errors and other problems that slow the loading of elements
+* better resistance to errors in media files (e.g. sound, video, etc.)
+* dedicated procedure for handling floating point checks and errors (e.g. as generated by video drivers)
+* floating point checks are disabled when navigating to external websites (to prevent disruption in case of web page errors)
+* PNGs that import with data errors (e.g. from EML mail) are converted to BMP
+* no error report when temporary files cannot be deleted (they are cleaned up at next '''Repair collection''')
+* at opening the database, SuperMemo displays a warning if the setting of the secondary storage is invalid
+* prominent warnings when creating collections in the root folder and deleting collections from the root folder 
+* protecting collections from problems when drives disappear (e.g. flash drive removed, network drive disconnected, etc.)
+* [[Glossary:Filespace|filespace]] recovery is blocked if the secondary storage is set to an invalid folder. Options dialog opens on the Access page to assist in choosing the correct setting
+* when returning from a traversal of external sites back to the original file store in SuperMemo, messages and caches are flushed to work around a caching bug of Internet Explorer
+* clear warnings about the consequences of deleting used objects directly in the registry
+* '''File : Repair collection''' displays the date of the last recovery in '''Repair Options'''
+* '''Plan''' schedule protected from bogus increments (e.g. when typing 2155 instead of 21:55)
+* component buffer object does not ever write beyond the size of the compon.dat file (to prevent building large empty files in case of data errors)
+* ''possibly circular'' error is gone and full recursive circularity checks are made on all suspiciously large tree structures
+* confirmation needed to transfer portion of a collection back into itself (e.g. to duplicate a branch)
+* '''Rename member''' was disabled on the HTML component menu. This could easily confuse the user by disconnect search results from HTML contents
+* error at collecting Internet Explorer instances in web import displays the number of browsers found up to the point of error, last URL, and the last page title. The import is not aborted and all the correctly collected instances are show on the import list
+* SuperMemo does not attempt to rename extensions by content on locked files
+* progress box report updates are timed independent of the speed of the PC (for better readability)
+* progress box range errors report the context in which the error occurred
+* background color is used to mark extracted text that refuses to apply the appropriate span class
+
+=== Other ===
+
+* using the actual interval, instead of the scheduled one, to the day the forced topic repetition was executed for repetition history, priority and A-Factor changes.
+* sound and image transfer and synchronization via XML
+* XML allows of exporting the secondary storage
+* '''Answer''' attribute for sounds and images in XML
+* text append mode for XML updates 
+* sound names would not transfer via XML
+* sound components import with centered texts via XML
+* '''File : Properties''' displays the owner of SuperMemo, and the author of the opened collection
+* '''File : Properties''' displays the name of the IP server
+* '''File : Properties''' displays the space available on the disk on which the collection resides
+* '''File : Backup''' displays the size of the last backup
+* SpellPad components are always visible and cannot have '''Answer''' or '''Display At''' parameters changed. Converting Q&As into Spelling elements has always required an extra click to uncheck '''Answer'''
+* Q&A imports use a dedicated default folder for keeping imported files
+* Search highlights can be cleared with ''Esc''
+* '''File : Tools : Garbage''' cleans up ''\plan\reports'' and ''\temp'' folders (both could grow sizably over time, e.g. with schedule analysis reports, or copies of processed images or texts for undo purposes)
+* changing ''Ctrl+Home'' and ''Ctrl+End'' shortcuts to ''Alt+Home'' and ''Alt+End'' to get to the first and the last element in the collection (''Ctrl+End'' would interfere with setting text selections in editing)
+* in addition to a random jump in tasklists, a randomized jump in proportion to the task priority can also be made (favoring important tasks in a random review). The size of the half-time hit can be defined. The shortcut ''Shift+F11'' helps the review
+* default title uses the current date and time for sorting unnamed elements
+* to see the impact of sorting, choose '''[[Learn menu|Learn]] : Sorting Criteria''', change randomization, choose '''Current item sorting''', and click '''Sort Now''' to see how sorting order changes
+* '''Contents''': export document with a contents tree or without the tree or the tree alone
+* on element transfer between collections, size of reused file is reported
+* '''[[File menu|File]] : [[File menu#Installation|Installation]] : Owner''' allows to specify the SuperMemo owner
+* '''[[File menu|File]] : [[File menu#Installation|Installation]] : Author''' allows to specify the collection's author
+* '''Switch mode''' (''Ctrl+E'') switches between '''Editing''', '''Dragging''' and '''Presentation''' modes
+* '''Decode UTF-8''' on a selection of text
+* only components in the edit and drag&size states are now candidates for tiling
+* ''Ctrl+C'' can copy Q&A or other element data texts if components have no focus
+* ''Ctrl+A'' will select the all the text in the input dialog (e.g. '''Rename member''')
+* '''[[File menu|File]] : [[File menu#Import|Import]] : Files and Folders''' now renames files with extensions that do not match the file content
+* cascading components takes into account the total number of components of the same type in the element
+* '''Done''' resets repetition history only on all non-items elements
+* '''Make Folder''' button for path selecting functions
+* ''Ctrl+G'' shortcut in the '''[[Workload]]''' to view a selected day
+* ''Ctrl+B'', ''Ctrl+L'', ''Ctrl+]'', ''Ctrl+['' shortcuts no longer work on text that are not in the editing mode
+* using item's last repetition for sorting pending and dismissed items when sorting by first repetition date (for ElementHistory=nil)
+* clear reporting of secondary storage file conflicts
+* width of the area used for inserted pictures in image downloads is proportional to the number of pictures!
+* better reuse of unallocated space in sparse collections (e.g. with a great deal of deleted elements)
+* neater element reports in XML synchronization update reports
+* preserving the last used subset folder
+* document exports export pictures as well!
+* ''Space'' now allows of default selection '''OK''' in the '''Choices...''' radio options
+* in XML import, adding images and sounds only to elements whose texts have been reconciled
+* improving the wording of impose/detach question at template delete
+* making sure the next repetition date is displayed as ''mmm dd, yyyy'' (e.g. Mar 05, 2014)
+* filing Mercy errors into a file
+* ''Wrong last repetition date'' error report at recovery is suppressed for elements with no repetitions
+* '''Export : Text subset''' in the [[browser]] (much faster and more reliable than '''Match to Subset''' in the registry; e.g. for applying a filter in a branch)
+* warning if HTM file obscures secondary storage in non-text registries
+* extending '''Repair collection''' by a procedure for storing obscuring files in the [RECOVERY] subfolder
+* all pass grades decrease priority of items (previously only '''Great''' would have this effect)
+
+==== Unit conversions ====
+
+* in unit conversion, empty selection warning is given instantly, not after picking the unit
+* Fahrenheit difference conversion is possible (e.g. to convert temperature fluctuations to centigrade)
+* simplified time-to-speed conversions
+* 1 acre redefined to be 0.4047 ha along [http://en.wikipedia.org/wiki/International_yard_and_pound the yard and pound agreement]
+
+== Annoyances ==
+
+* In SuperMemo 15, HTML components would not allow of empty texts and would generate random strings to newly added empty items. This was very confusing for beginners and very annoying for the pros
+* "Processing tags" is displayed on the status bar instead of an annoyingly blinking dialog box
+* in the default ''Last used'' layout, closing SuperMemo while using the contents layout would save the element window as if for use with contents (i.e. on the right side of the screen). Pet peeve of many users for many years!
+* cancelled extracts would not be marked with ignore style
+* information message ''Reusing an existing registry member'' was confusingly displayed with a yellow background like an error
+* A-Factors could be displayed with localized formatting (e.g. as AF=3,1 instead of AF=3.1)
+* reference tags could not start nor end with quotations marks
+* the annoying Internet Explorer error ''mshtml.dll refuses to paste'' is not displayed (it is ignored instead with no negative side effects)
+* if you hate the behavior of ''Enter'' over read-points and would prefer to delete the selection rather than to move on in the repetition cycle, you can hack it out by changing a setting in ''supermemo.ini'' files (set ''Allow Read-Point Enter'' to zero)
+* Warrior layout no longer plays with toolbars and keeps them docked
+* many shortcuts would not work in the browser when the menu was docked in the element window 
+* many shortcuts would not work in the contents window when the menu was docked in the element window 
+* ''Del'' key would not work when editing Web Import title
+* double confirmation ''Clear all fields?'', and ''Save Changes?'' is not really needed in '''Plan : New'''
+* if a collection cannot be opened due to a wrong version of SuperMemo, it is deleted from the pick list so that another one could be tried 
+* File browser does not ask ''Delete KNO?'' after getting ''No'' to ''Delete collection?'' (it is unlikely you will want to delete the KNO file without deleting the collection)
+* Template registry now does not ask about template impose or detach if the template is not used by any elements
+* '''Edit : Add components : Other''' opens the compose toolbar on the [[learnbar]] (not a floating toolbar)
+* when running/setting auto-postpone, the current repetition cycle would be cancelled (instead of being committed)
+* drag&drop on nodes with a node count above the children limit would be very hard due to repeated warnings 
+* cloze deletion no longer collapses the parent node
+* cloze answers would not be cleaned up of extract and cloze styles
+* '''Repair collection''' now docks all toolbars to prevent floating toolbars with the ''last used'' layout
+* '''File : Properties''' no longer asks about computing the size of the collection (a separate option can be used for that '''File : Tools : Collection size''')
+* '''Fit to bitmap''' would not reload the image if it was bigger than the component. As a result, split articles could produce wrongly stretched pictures. Now the '''Stretch''' is set to '''Normal''' only if the component is big enough to display the entire image without stretching
+* trim&zoom mode for images no longer asks '''Do you want to stretch ...'''. It is now always done without asking
+* mistaken use of ''Ctrl+B, Ctrl+I, Ctrl+],'' and ''Ctrl+['' in the display mode, would affect the font of the entire component. It was easy to type a wrong key to change the looks of the element. Under user pressure, that option has been removed
+* in shortening titles #10 are processed the same way as #13 and converted to ' .' (previously they were just deleted). This prevents split Wikipedia articles to concatenate lines without a space
+* N/A A-Factor statistic for topics or items is skipped if there are none in the collection
+* restructuring overflown folders would not give unnamed elements their category name
+* rename collection in the file browser was not possible. New shortcut is ''Alt+R'' (the old that worked only with single files, ''F6'' can also be used)
+* delete collection was absent from the file browser menu
+* drag&drop would collapse the source and target nodes (e.g. after category re-arrangement). Now it creates a queue of nodes to re-expand
+* plain text menu had many disabled options that would only work in HTML (taking space and attention)
+* disabled ''Ctrl+C, Ctrl+V, Shift+Ins, Ctrl+Ins'' shortcuts in Contents
+* if registry members return empty for display in the registry window listbox, the line is not empty but has the form of ''!Literal: /shortened original name/''
+* Workload Graphs for Outstanding begins no earlier than 14 days before today
+* replacing erratic tabs at the bottom of the forgetting curves window with a newer less-buggy component (no shrinking to size, no auto-scrolling, etc.)
+* web imports would still focus from other applications
+* browsing RTFs in HTML components kept switching focus from the browser to the element window
+* reliance on SPAN instead of FONT solved the problem of changes to the font size that pestered users of SuperMemo 15 at cloze deletion cleanup
+* ProgressBox timer not longer limited to 24 hours
+* '''Web Import''' dialog sets the element window in the display state to make sure the keyboard is reassigned the right handler (e.g. ''Alt+C'' for Close would not work)
+* unsupported SVG and OGV files do not ask for a preview during image downloads
+* the &#9654; character would not be removed from the start of YouTube titles (before downloading references)
+
+== Bugs ==
+
+The list of bug fixes is the longest in SuperMemo's history (over 1,000 positions). All that despite the fact that SuperMemo 15 was probably the best debugged version before SuperMemo 16. SuperMemo is never bug free, but SuperMemo 16 has the shortest list of unresolved cases in history. As such it is the most reliable SuperMemo ever. 
+
+Here is only the list of most painful or annoying bugs:
+
+* mouse wheel would be erratic when working with HTML texts
+* click on a scrolled HTML page would often misplace the cursor
+* some URLs would be wrongly marked as import duplicates
+* some Unicode text would not be found with '''Match Word''' in '''[[Find elements]]''' (e.g. "attaché")
+* search would not find ''Borbély’s'' if the apostrophe was represented as #8217 (HTML: ''&amp;#8217;'')(&#8217;)
+* auto-sort would not update statistics
+* in web import, search for selections would use wrong indexing. This would result in wrong selections after deleting browser entries
+* mail import folder would be created even if no mail was chosen for import
+* HTML tags would affect similarity ratings in XML text updates
+* circadian graph would show a Range Check error if the last day was greater than the size of data
+* inserting sound from the registry would not stop the registry player and cause file access conflicts
+* ''F11'' for a random jump would not be blocked when using '''Plan'''
+* in some circumstances, neighboring graph calibrations would show the same value with too few decimal points in formatting
+* Workload Graph would not extend into the past for past Repetitions or Retention modes
+* Workload export to Excel would not use double quotes to enclose the dates
+* toolbar dock query would return false if the main dock was invisible. This would save toolbars docked on the invisible main window in the state registered as floating
+* trailing wake averages where computed with a substantial margin of error in SleepChart
+* manual changes to the length of the Plan schedule could result in a range check error
+* background change status set to "choose" might have no effect (i.e. background not saved)
+* changing '''Start''' in the Plan schedule would ask for a shift in fixed times even if not fixed times were defined
+* incomplete SleepChart data would produce errors in circadian alertness estimations
+* ''Alt+Left'' might result in ''Access denied'' error when traversing sites on the web
+* ''Alt+Left'' on the external site might result in the use of the wrongly cached web page
+* it was possible to save an external web page over the original source
+* mail address would not be retrieved if the author's name was followed by a new line
+* ''missing SuperMemo background picture'' error would never self-correct. Now it displays just once and clears the background
+* cancelling font edit would still change the font to the default font
+* sound component would cancel play of other sound components making it difficult to plan the repetition cycle for multi-sound elements
+* YouTube videos would not autoplay with ''#aid=''. This made it harder to watch promotional videos even if imported intentionally to SuperMemo
+* incremental video extracts where limited to the first hour of play on YouTube
+* ''Ctrl+Space'' would display an error when executed on a single leaf (as opposed to a branch)
+* the zoom property of images would not transfer between collections
+* sound '''Continuous''' would not save over the template (now both the source and the template are modified by the new setting)
+* pasting a template with objects over a newly created task would cause registration errors
+* '''Plan''' refresh timer was able to change the current activity row of the plan during editing. This might result in saving the edited activity in the wrong slot
+* '''Tools : Analysis : Use : Repetitions''' statistic would be empty if there were no items included in the collection
+* Auto-Drag might activate in wrong contexts in Contents (it was easy to accidently drag a branch to a new location)
+* single picture without HTML code could not be extracted (member name might be empty and that would prevent acquiring a valid registry member position)
+* images with Alt="" names that included ">" would not show correctly (e.g. on imports from Wikipedia). The angle bracket would be interpreted as the end of the image tag and src="" might have been missed if it followed the Alt attribute) 
+* when splitting articles, Unicode titles would not display correctly in subtitles
+* spaces might be missing in messages displayed while executing '''Split Article'''
+* content nodes with more than the children limit of children would not restore the nodes above the children limit
+* branches with 500 elements would not allow of expanding nodes beyond 500 elements after the message ''Child list over 500 elements!''
+* registry combo box would load a full member name instead of the shortened version (making navigation harder)
+* clicking '''Contents''' with unprocessed YouTube extracts ready for processing would generate a wrong tree structure
+* Cancel at chaining references could result in the loss of the picked reference text
+* Cancel at setting references could result in the loss of HTML component focus
+* Cancel at setting references would not cancel reference marker settings
+* element filter would permit negative values for UFs and AFs without an appropriate warning
+* '''Ancestors''' window would not get refreshed after '''Split Article'''
+* repetition history scoring heuristic might have resulted in the wrong sequence of repetitions if they were executed with 12 minutes of each other (or without a precise time stamp, as in older SuperMemos)
+* ''Ctrl+Home'' and ''Ctrl+End'' shortcuts would not work in spell-pad components
+* aborted tile would display ''You need more than one component to tile''
+* current component shadow would not always clear with ''Esc''
+* wrong FLT filter definition could loop and hang up SuperMemo
+* due to a wrong graph refresh, global forgetting curve would paint its last point "inherited" from the previously painted curve
+* file locks could occur while sending newly modified texts as attachments
+* some YouTube URL arguments would confuse import duplicate detection (Annotation ID, List, or Source video (SRC_VID))
+* due to wrong picture format detection, errors would occur when loading JPG pictures from files with the extension PNG
+* non-HTML texts would not get exported in document exports
+* TIF files with extension TIFF would not import
+* sums and averages for repetitions executed in Workload had new items added on the side of topics
+* commander cancel or close (e.g. with ''Esc'') would set HTML without focus and with the default keyboard handler (rather that the dedicated handler for editing HTML)
+* ''\Documents and Settings'' folder detection would not work in XP due to the old Shell DLL
+* clicking any component while zooming/trimming an image would affect the zoom
+* sorting repetitions in a browser with a deleted element would display a priority queue error
+* memory used by pre-defined template might not always be freed before reuse
+* closing DOUBLED URLs could cause an error because the same page could be a double of more than one page and the second '''Close''' command should check if the browser has already been closed
+* pictures at URLs that included parentheses in the address might not download
+* ''?rel=0'' parameter would kill the starting point of the recommended YouTube videos
+* YouTube video delimiter ''SuperMemoYouTube'' could show up in element titles
+* ''feature'' parameter could obscure YouTube import duplicates
+* some dialogs (e.g. Question Yes/No) would not provide a Copy button for error reference 
+* pasting items in contents would not increase the total item statistic
+* HTML codes in element titles could mess up HTML document exports
+* new line in '''Plan''' might cause Activity© field get added to annual statistics
+* calibration could fail in Analysis graphs on the Memorized tab for very large numbers of elements
+* calibration could fail in '''Simulation''' for a very large number of memorized items
+* simulation statistics included topics
+* selecting members with ''Space'' in the registry in the first screen of members would be pick wrong members
+* HTML component could steal focus from mail applications, which in some circumstances could seem as if SuperMemo hung up
+* #Article, #Parent, and #Category fields in references would not format for displaying as Unicode
+* deleting a component would not reset the image zoom and a wrong picture might be zoomed in as a result
+* answering "No" when asked for image template when inserting pictures from the registry would do nothing
+* MCT tests would fail to paint some markings over image components
+* default tasklist would not get freed on closing the database resulting in a memory leak
+* possible memory leaks at freeing components
+* repetition and sleep data structures were never freed from memory upon leaving SuperMemo. Sleep data is now loaded at startup, and free at closing SuperMemo. Previously it would all be done for each collection separately
+* some event handlers of HTML component would not be freed upon use
+* screen width and height use in optimizing the sizes of windows did not correct from taskbars that would not auto-hide
+* it was possible to activate auto-dragging mode in contents while using incremental audio collections
+* double slashes in URLs, accepted by Internet Explorer, could result in duplicate imports (the URLs would single slashes would be considered different addresses)
+* typing an empty BR tag into HTML component would make it disappear if the text was kept as plain text in the registry
+* lack of closing LI tags would result in the last item on the '''Plan:Totals''' list to be assigned number #1 
+* picture URL would be pasted instead of the picture itself (in new Internet Explorer 10)
+* recovery report would often not come to the front at the end of the recovery process
+* '''Reset collection''' would leave ''\history'' folders behind
+* Ancestor windows not updated after moving a branch
+* binary file import dialog would use a filter that would show the same file twice
+* pronunciation would lose Unicode when exported as Q&A with the ''Allow HTML'' attribute
+* empty '''Workload''' would not show in the '''Workload : Graph'''
+* cancelling source code export options would not stop the export
+* cancelling custom split string would not cancel the split
+* URL duplicate would be marked as questionable due to the use of "&rcid=25557"
+* ''Ctrl+P'' would open '''Options''' instead of '''Plan''' in '''Contents'''
+* '''Insert''' in '''Contents''' would not memorize elements
+* '''Hints''' checkbox not visible in Classic Windows scheme (Vista)
+* loss of color in '''Alarm''' toolbar in Classic Windows scheme (Vista/XP)
+* closing title editing would not restore the original title
+* cancelling a task while adding tasks to the task manager would not delete the newly created element
+* task manager might hide behind the element window while editing tasks
+* average last and next item repetition would be displayed in itemless collections
+* Workload export to a CSV file had a column misalignment due to a wrong formatting of dates
+* ''Ctrl+Shift+X''' could still leave the '''Ancestor''' window behind other window
+* wrong sorting of repetition history on more than one repetition per day
+* '''Repeat Autoplay''' or ''Ctrl+F10'' would fail to play if the component was scheduled to play via the '''Play At''' settings
+* right-click in [[Analysis]] could be interpreted as a mouse swipe to reduce the range of the displayed graph
+* some files would display garbage strings in '''File Browser'''
+* Wikipedia filter would wrongly cut <code>&lt;DIV id=toc</code> sections
+* ''Grid index out of range'' error would be thrown when clicking the thumbs browser too low
+* PNG files would not be recognized by the header if the extension was wrong
+* ''PgDn'' and ''PgUp'' keyboard shortcuts would not work
+* component order reshuffling would not reorder objects that would cause problems at the time components were saved
+* reading from a text file could produce a scrambled result if the file was locked
+* <code>[sub</code> and <code>[img</code> differentiators could result in bad title matching (title not updated on text edits)
+* text transferred between collections as UTF-8 would not get decoded and titles might be UTF-8 encoded! As a result, parent title mismatch error might show up
+* converting EML to HTML might make confirmation dialog invisible (Alt+Tab needed)
+* image download abort would cause errors (incl. hanging up SuperMemo)
+* topics in target collection might be dismissed in XML synchronization due to having empty Q&A fields (if they came in place of deleted item)
+* empty q&a in XML would dismiss the item even if it made sense!
+* XML import would not persist the last used path
+* closing the main windows with '''[[Analysis]]''' opened would throw errors
+* ''- YouTube'' would not be removed from YouTube titles (before downloading references)
+* paste element source code would fail for elements with no components
+* text would be doubly UTF-8 encoded in transfer
+* A-Factor distribution would not be protected from more than 65,535 elements per category
+* procedure for updating repetition history would not be protected from negative interval (e.g. in databases with manipulated dates)
+* '''Mercy''' would fail when rescheduling more than 65,535 elements
+* random reshuffling of MCT items would skip one of the answers at Q&A import
+* references in Wikipedia articles might disappear if the article used the <code>display: none</code> style declaration
+* video extracts did not use the A-Factor=3 setting and had very short first intervals (unlike YouTube extracts)
+* ''Page can't be displayed'' might be saved instead of the original text if a random URL is provided by mistake
+* alarm would block database INI writes at the time when the database was closed
+* texts above 10 million character would not be found in search
+* XML updates has been reworked to maximize the reuse of old slots, even if secondary storage differ. Secondary storage can now be modified at XML Synchronization!
+* XML export generates a subset file with empty components (unlinked sounds and images)
+* Timeline block conflict would report a wrong date (by a century and a day)
+* importing images from google.pl would throw various errors
+* change priority would increase for decrease and the other way round
+* '''[[SleepChart]]''' would not paint the repetition timeline without sleep blocks
+* After import from Excel, '''[[SleepChart]]''' would not set the first day in an empty sleep schedule
+* '''Swap Q&A''' caused problems
+
+== New Limitations ==
+
+'''Please read these carefully if you plan to upgrade from older versions of SuperMemos!!!''' Not all old functions are supported in SuperMemo 16:
+
+* US English locale is enforced throughout the program to avoid multiple past bugs (e.g. A-Factors formatted as 1,34 would not transfer between platforms, or file using month names would not be recognized when changing the locale, e.g. when switching computers, etc.)
+* To speed up SuperMemo, old text formatting styles are no longer converted to new styles. If you upgrade a very old collection and you want your styles converted, you might use the collection first with SuperMemo 15 to get your styles fixed automatically during edits. This is mostly an esthetic issue. If you upgrade directly to SuperMemo 16, your old and new texts might be formatted differently (e.g. different styles for clozes, extracts, etc.).
+* Incremental video requires computers with significant processing power. It may be annoyingly slow on older or weaker PCs. This comes from the size of video files, not from limitations of SuperMemo itself.
+* HTML components have been redesigned radically to improve their reliability. However, this entailed adding a limitation: HTML components cannot be resized in editing mode. To resize, you need to switch to drag and resize mode (e.g. with ''Ctrl+E'' or ''Alt+click''). In the long run, you may like this change as this prevents accidental resizing your template when hitting the border accidentally in incremental reading
+* cursor in HTML remains in the old position when switching to the display mode and back to editing - this can initially cause typing errors if you have got accustomed to the old mode (cursor set at the beginning on each entry to editing; or at the reading point if there is one)
+* no automatic upgrade of RTF texts to HTML. RTFs are displayed in HTML marked with a red border, but retain their original formatting and can be converted to HTML upon first edit
+* SuperMemo asks for 1.5 MB of free space before opening a collection for its safety. This means this is the first SuperMemo you cannot used with data on a floppy disk 
+* local help file in the CHM format has not been provided due to its enormous size (over 200MB at the moment). The increase in size was caused by adding numerous screenshots to the documentation. On-line wiki or HTML help are now the primary ways to access the documentation
+* localized help is no longer supporter due to the ever increasing size of the documentation. There has not been a thorough translation of the documentation in a decade. English is now the only language with thorough support for SuperMemo 16 
+* collection specific fonts are no longer supported. With the full Unicode implementations, all collections now should use universal Unicode fonts
+* support for CD-ROM file folder structure used by SuperMemo 7 has been dropped (if you never imported from SuperMemo 7, it does not affect you)
+* the option for linking the same font with many components has been removed (rarely used)
+* components are no longer added by drag&drop, which was deemed unintuitive. When you click on a component icon on the '''Compose''' toolbar, the component is added in a default size ready to be dragged and sizes to an appropriate location. This way, redoing drag&size is done in the exactly same way as when sizing the component in the first place (rather than with drag&drop clicks)
+* localized help files are no longer supported (complexity of the program and the growth of the documentation effectively discouraged new translations)
+* some options may not work in older Windows. For example, in Windows XP: no visual browser, no default mail folder detection. In Windows Vista: no checked menu items, no transparent toolbars
+* search and replace in references registry, works on members, not reference texts
+* search and replace does not affect EML files (they are always identical to the original mail until they are converted to HTML, e.g. with the first edit, or ''Ctrl+Shift+F12'')
+* Option Extract section on the sound and video menus has been removed. You can now use Extractor toolbar without the need to quit the playback of the current sound or video component. The toolbar is permanently attached to the component with '''Sound : Panel : Extractor''' or '''Video : Panel : Extractor''' on the component menu. The toolbar is analogous to the removed option and you will also be familiar with its functions if you used incremental video with YouTube. You will transition in minutes and find the new solution far more convenient
+* '''Find''' in '''Search and Replace''' is retained but is of the same old speed. It searches the collection along physical numbers, not along the knowledge tree.
+* '''Skip''' in '''Tools : Plan''' has been "skipped". Using ''Del'' is now the recommended strategy. Activity delete is a better option due to easier optimization of activity proportions in the template schedule
+* '''Semi-Copy''' option has been removed. With an increasing reliance on HTML, the \elements folder is in wider use than in the old times when it was mostly used for multimedia files stored on CD-ROM
+* due to the extent of MIME specifications, some mail might import incorrectly (esp. with less popular charsets or file formats). You can always open the original mail with F9. Please remember to forward for debugging if possible!
+* extracting texts to comment registry in collection filtering is no longer supported. This option was rarely used and would slow down filtering
+* the Null grade has been removed. It tended to be abused while in a healthy learning process it should be rarely needed. You can still issue Null from the keyboard (''0'')
+* Drag&Drop on large branches in Contents may be slower now (this comes from user request to have all category settings propagated and reconciled at each drag&drop in Contents)
+* '''Activate On Mouse Move''' has been removed as little used and hard to master
+* Transcription character map has been removed. Phonetic transcription is now Unicode-only. We recommend [http://www.antimoon.com/blog/2009/06/typeit-2-0/ Type-It from Antimoon.com] instead
+
+== Warnings ==
+
+Some changes will require a bit of adjustment. Some new options may not meet all expectations.
+
+* global replace of images in the registry is pretty powerful and thus dangerous. If you have become accustomed to local changes, you may mistakenly choose a wrong option (global instead of local, just one radio button below). Despite double confirmation, you can fail to pay attention and replace an image used in many places in your collection. You can undo that option only by pasting back the original image (e.g. from a backup)
+* browser shortcut changed for '''View''' from ''Ctrl+Enter'' to ''Enter'' (to enable the commander)
+* imports of EML mail (e.g. from Windows Live Mail) do not do automatic archiving, however, they also prevent duplicate imports. It may take some adjustment, but the current solution seems superior (MS Outlook imports have not been changed)
+* default focus in Element Parameters dialog is Comment (previously Priority). Use Alt+shortcuts instead of a Tab count
+* VOB file format is not supported. You will need to use third party tools to convert to MP4
+
+__NOTOC__

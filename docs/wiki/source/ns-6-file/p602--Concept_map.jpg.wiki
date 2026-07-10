@@ -1,0 +1,3 @@
+<blockquote>
+'''''Figure:''' An exemplary [[Glossary:Concept_map|concept map]] displaying outgoing [[Glossary:Link|links]] from the current [[Glossary:Element|element]].''
+</blockquote>

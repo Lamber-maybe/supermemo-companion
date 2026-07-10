@@ -1,0 +1,5 @@
+;<span id="SuperMemo">SuperMemo</span>
+:
+:# method of fast learning based on computing [[Glossary:Optimum_interval|optimum intervals]] between [[Glossary:Repetition|repetitions]]
+:# computer program implementing the SuperMemo method
+:See: [[SuperMemo|Introduction to SuperMemo]]

@@ -1,0 +1,2 @@
+;<span id="Neural_queue">neural queue</span>
+:queue of [[Glossary:Element|elements]] scheduled for [[Glossary:Neural_review|neural review]]. The sequence of [[Glossary:Element|elements]] in the queue is determined by [[Glossary:Spreading_activation|spreading activation]] from a single [[Glossary:Element|element]], [[Glossary:Subset|subset of elements]], or a [[Glossary:Registry_member|registry member]] (e.g. a picture). See the video: [https://www.youtube.com/watch?v=Ap-AT-f9Xv4 Neural review]

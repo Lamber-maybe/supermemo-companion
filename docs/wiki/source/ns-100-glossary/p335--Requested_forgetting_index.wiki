@@ -1,0 +1,2 @@
+;<span id="Requested_forgetting_index">requested forgetting index</span>
+:proportion of [[Glossary:Item|items]] that you accept not to be remembered at [[Glossary:Repetition|repetition]]. This is your planned/desired value of the [[Glossary:Forgetting index|forgetting index]]. Your actual [[Glossary:Measured_forgetting_index|measured forgetting index]] depends on systematic work and the [https://supermemo.guru/wiki/20_rules_of_knowledge_formulation formulation of knowledge in learning]. See: [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo Forgetting index]

@@ -1,0 +1,2 @@
+;<span id="Outstanding_element">outstanding element</span>
+:[[Glossary:Element|element]] that is awaiting repetition (e.g. to satisfy the criteria of [[Glossary:Optimum_interval|optimum interval]]). Each '''element''' in the learning process has its next repetition date determined by [[Glossary:SuperMemo|SuperMemo]] or by the user. On that scheduled review date and later on, the [[Glossary:Element|element]] is considered outstanding

@@ -125,8 +125,8 @@ wholesale and keeps the queue sane; with `Learn : Postpone : Auto-postpone`
 on, it happens by itself each morning. Better move for "can't face it":
 lower the element's priority (**Alt+P**, pick a bigger number) and let
 auto-sort/auto-postpone do the sorting. Source: reference.md § Priorities &
-overload; deeper rationale in `docs/wiki/Priority_queue.html` if you want
-it.
+overload; deeper rationale in
+`docs/wiki/rendered/ns-0-main/p5--Priority_queue.html` if you want it.
 
 *What to notice: direct answer, the harmful pattern named gently, exact
 paths, a doc anchor — and no essay.*

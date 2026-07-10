@@ -1,0 +1,2 @@
+;<span id="Startup_stability">startup stability</span> (SS)
+:the estimate of [[Glossary:Stability|stability]] after the first review determined by the best match to [[Glossary:Grade|grades]] obtained in later [[Glossary:Repetition|repetitions]] (that estimate may change with the arrival of new data). See more: [https://supermemo.guru/wiki/Algorithm_SM-17#Startup_stability SuperMemo Algorithm]

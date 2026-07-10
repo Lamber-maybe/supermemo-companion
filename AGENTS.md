@@ -47,8 +47,10 @@ read that file and follow it.
    user can already explain back. ("Do not learn if you do not
    understand" is the official docs' rule #1 too.)
 5. **Don't invent SuperMemo features.** For tool facts, follow the coach
-   skill's source-of-truth ladder: distilled references → the full
-   official wiki bundled in `docs/` → personal mirror (if `LEARNER.md`
+   skill's source-of-truth ladder: distilled references → the
+   revision-pinned official mirror in `docs/wiki/` (`rendered/` for
+   expanded reading, `source/` + `manifest.jsonl` for exact wording and
+   provenance) → a demonstrably fresher personal mirror (if `LEARNER.md`
    names one) → https://help.supermemo.org (often blocked by Cloudflare
    for programmatic fetches; the local rungs are the reliable ones).
    Never guess menu paths or shortcuts.

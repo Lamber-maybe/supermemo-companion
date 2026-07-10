@@ -1,0 +1,5 @@
+;<span id="Minimum_information_principle">minimum information principle</span>
+:principle of effective learning which says that simple [[Glossary:Element|elements]] formulated for [[Glossary:Active_recall|active recall]] bring much better learning results than complex [[Glossary:Element|elements]] even though one complex element may be equivalent to a large number of simpler [[Glossary:Element|elements]].
+:Read more:
+:*[https://super-memory.com/articles/20rules.htm 20 rules of formulating knowledge]
+:*[[Incremental_learning#Minimum_information_principle|Incremental learning and the minimum information principle]]

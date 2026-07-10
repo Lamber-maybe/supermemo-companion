@@ -1,0 +1,361 @@
+== Program files ==
+
+These are the files used by a typical SuperMemo installation: 
+
+=== [SuperMemo] ===
+
+Usually ''c:\sm8'', ''c:\sm98'', ''c:\sm{{SMCURRENTVERSION}}'', ''c:\SuperMemo'', etc.
+
+*''sm{{SMCURRENTVERSION}}.exe'' - the program: '''SuperMemo {{SMCURRENTVERSION}}''' 
+
+==== [BIN] ====
+
+Some working files used by SuperMemo
+
+*''supermemo.ini'' - text file with some settings used by SuperMemo. You can modify this file manually. Please do it with caution and make a back-up before introducing any changes. If you experience problems, restore the backup or delete this file altogether 
+*''commands.ini'' - text file with the list of custom commands for '''[[Toolkit menu|Toolkit]] : [[Commander]]'''
+*''search.ini'' - definition of keyboard shortcuts for your most frequently executed web searches (e.g. Google, Wikipedia, etc.) 
+*''layout.ini'' - [[Glossary:Layout|layouts]] used by SuperMemo (i.e. positions and sizes of windows). This file also can be modified manually if backed up safely 
+*''tips.txt'' - text file with tips used in '''[[Question of the Day]]'''. You can modify this file manually 
+*''questionnaire.ini'' - your answers to '''[[Help menu|Help]] : E-mail : Questionnaire'''. If you do not send your questionnaire, your answer will be kept between the sessions to make it possible to send your feedback at later time 
+*''supermemo.css'' - default stylesheet used by SuperMemo in HTML [[Glossary:Component|components]]. You can edit this file
+*''alarm.ini'' - file used to synchronize alarms between multiple [[Glossary:Collection|collections]] run with a given version of SuperMemo
+*''FAQ_template.htm'' - a template file reused for FAQs, saved in the HTML markup (with the '''HTML FAQ''' checkbox selected), that are processed with '''[[Component menu#Reading|Reading]] : E-mail FAQ''' from the [[component menu]]
+*''FAQ_wiki.txt'' - a template file reused for FAQs, saved in the Wiki markup (with the '''Wiki FAQ''' option checked), that are processed with '''[[Component menu#Reading|Reading]] : E-mail FAQ''' in the [[component menu]]
+
+==== [SLEEP] ====
+
+Collection of text files used by '''[[Toolkit menu|Toolkit]] : [[Sleep Chart]]'''. 
+
+*''sleep.tim'' - your manually logged sleep data 
+*''sleep.ini'' - text file with some parameters used by '''[[Toolkit menu|Toolkit]] : [[Sleep Chart]]'''. You can modify this file manually. Please do it with caution and create a backup before introducing any changes
+
+==== [PLANS] ====
+
+Collection of text files used by '''[[Toolkit menu|Toolkit]] : [[Plan]]'''.
+
+===== [ARCHIVE] =====
+
+Contains the archive of your past work schedules (e.g. ''c:\sm2008\plans\archive\2008\Nov\Nov 26, 2008, Wed.txt''). 
+
+===== [STATS] =====
+
+Contains schedule statistics (e.g. ''c:\sm2008\plans\stats\2008\2008 Nov.csv'' contains activity totals and averages for November 2008) 
+
+==== [TRANSLAT] ====
+
+SuperMemo [[Localization table|localization table files]] used in displaying various language interfaces of SuperMemo (see: '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Language tab in Options|Language]] : [[Localization table]]''') 
+
+==== [PHONETIC] ====
+
+Phonetic transcription registries (see: '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Language tab in Options|Language]] : Phonetic transcription''') and phonetic transcription fonts. Phonetic IPA transcription of English for 72,000 words (2016) is available free for download
+
+==== [FILTERS] ====
+
+[[Filter files]] for processing texts in [[Glossary:Collection|collections]] (extension ''flt'')
+
+==== [BACKUP] ====
+
+The default backup folder.
+
+==== [WIKI] ====
+
+Wiki FAQ text files whose contents can be pasted into a wiki software application (e.g. [https://supermemopedia.com SuperMemopedia], [http://mediawiki.org MediaWiki], etc.)
+
+==== [SYSTEMS] ====
+
+The default folder for keeping [[Glossary:Collection|collections]] used by SuperMemo
+
+== Collection files ==
+
+=== [SuperMemo] ===
+
+==== [SYSTEMS] ====
+
+* <span id="kno">&lt;name of the collection&gt;.kno</span>'' - file with the most important parameters of the [[Glossary:Collection|collection]] such as the total number of [[Glossary:Element|elements]], number of [[Glossary:Memorized_element|memorized elements]], date of creating the [[Glossary:Collection|collection]], etc. For more details see [[#KNO|below]] 
+
+===== [''&lt;name of the collection&gt;''] =====
+
+Folder with the remaining files of the [[Glossary:Collection|collection]]. You must copy this folder along the above ''kno'' file if you want to preserve the integrity of the [[Glossary:Collection|collection]]. It is recommended that you always use '''[[File menu|File]] : Copy collection''' instead. Most important files in the [[Glossary:Collection|collection]] folder: 
+*''collection.ini'' - text file with some parameters used by the [[Glossary:Collection|collection]]. You can modify this file manually. Please do it with caution and create a backup before introducing any changes 
+*''postpone.ini'' - postpone setup definitions (e.g. used with '''[[Learn menu | Learn]] : [[Postpone]]''') 
+*''search.ini'' - search definitions (as used with '''[[Search menu | Search]] : [[Find elements]]''') 
+*''filter.ini'' - definition of element filters (e.g. as used with '''[[View menu|View]] : [[Element filter|Filter]]''') 
+
+====== [INFO] ======
+
+Most important information files used by the [[Glossary:Collection|collection]] 
+
+*''compon.dat'' - binary file with the layout and attributes of all [[Glossary:Component|components]] used in the [[Glossary:Collection|collection]] 
+*''<span id="elinfo.dat">ElementInfo.dat</span>'' - information about all individual [[Glossary:Element|elements]]: [[Glossary#A-factor|A-factor]], last repetition date, number of [[Glossary:Repetition|repetitions]], [[Glossary:Forgetting_index|forgetting index]], task number, etc. 
+*''contents.dat'' - information about the structure of the [[Glossary:Knowledge_tree|knowledge tree]]. Each [[Glossary:Element|element]] has its parent, [[Glossary:Sibling|siblings]] and the first [[Glossary#child|child]] recorded in this file along with the number of [[Glossary:Child|children]] and the number of [[Glossary#descendant|descendants]] 
+*''repetitions.dat'' - file with the dates of the nearest [[Glossary:Repetition|repetition]] for each [[Glossary:Element|element]] in the [[Glossary:Collection|collection]] 
+*''<span id="RepetitionHist.dat">RepetitionHist.dat</span>'' - file with the repetition history of all [[Glossary:Element|elements]] (e.g. date, hour, grade, interval, etc.) 
+*''workload.dat'' - file with the number of [[Glossary:Item|items]] and [[Glossary:Topic|topics]] scheduled for [[Glossary:Repetition|repetition]] on each day 
+*''priority.sub'' - [[Glossary:Element_subset|element subset]] file holding the [[priority queue]]. [[Glossary:Element|Elements]] are stored in this [[Glossary:Element_subset|subset]] in the order of [[Glossary:Priority|priority]]. You can view this [[Glossary:Element_subset|subset]] with '''[[View menu|View]] : Priority queue''' 
+*''intact.dat'' - [[Glossary:Element_subset|element subset]] file with all [[Glossary:Pending_element|pending elements]] in the order as they appear in the [[Glossary:Pending_queue|pending queue]] 
+*''<span id="sm8opt.dat">sm8opt.dat</span>'' - file with data describing your memory (i.e. the optimization data record used by [https://supermemo.guru/wiki/SuperMemo_Algorithm SuperMemo Algorithm]). Some details of this record can be found in: [http://super-memory.com/english/sm8opt.htm Implementing SuperMemo with sm8opt.dll] 
+*''drill.dat'' - [[Glossary:Element_subset|element subset]] file with all [[Glossary:Element|elements]] scheduled for the [[Glossary:Final_drill|final drill]] (i.e. the final drill queue). You can delete this file manually (the final drill queue will be emptied) 
+*''emptyslots.dat'' - list of unused filespace slots in the ''ELEMENTS'' subfolder (in the primary and/or secondary storage). This file is used to accelerate allocation of new slots. If this file is corrupt, it can be deleted. SuperMemo should be able to recreate its contents when starting up
+*''history.sub'' - [[Glossary:Element_subset|element subset]] file with the last 1,000 most recently visited [[Glossary:Element|elements]]. You can always delete this file manually 
+*''Ret.dat'' and ''BackRet.dat'' - [[Glossary:Retention|retention]] and [[Glossary:Consolidation|consolidation]] data. Although these files can be recreated if deleted, retention data will not include [[Glossary:Element|elements]] that have been deleted nor [[Glossary:Element|elements]] whose [[repetition history]] has been deleted 
+*''Outstanding.sub'', ''OutstandingItems.sub'', ''OutstandingTopics.sub'' - [[Glossary:Element_subset|element subset]] file holding the [[Glossary:Outstanding_queue|outstanding queues]]. Only ''Outstanding.sub'' file is sorted by the repetition order. These files are created from ''repetitions.dat'' at the beginning of each learning day
+
+====== [REGISTRY] ======
+
+[[Using registries|Registries]] used by the [[Glossary:Collection|collection]] (except translation and transcription [[Glossary:Registry|registries]] described later in this text) 
+
+*''text.*'' - text registry files 
+**''text.mem'' - information about all [[Glossary:Registry_member|registry members]] stored in the text registry (e.g. number of using [[Glossary:Element|elements]], pointer to the ''text.rtx'' file storing the name of the text registry member, pointer to the ''text.lst'' file storing the list of [[Glossary:Element|elements]] using a given member, etc.) 
+**''text.lst'' - list of all [[Glossary:Element|elements]] using individual members of the text registry. This list is used, for example, in search procedures. First a member (e.g. a text) is found. Then all [[Glossary:Element|elements]] using this member are placed in a [[browser]] by scanning the user list stored in ''text.lst''.
+**''text.ptr'' - [[Glossary:Registry_subset|registry subset]] storing the sorted subset of all members in the text registry 
+**''text.rtx'' - all names of the members of the text registry. You should not manually modify this file as it can corrupt your [[Glossary:Collection|collection]] and destroy the integrity of the text registry. You can search for ''text.rtx'' with a given content if you need to locate a specific [[Glossary:Collection|collection]] on your hard disk. Remember that such a search will not find names you used for sounds, images or other registry members (search for *.''rtx'' instead). Note also that some HTML texts may be imported via frames and will not be included in the text registry. 
+**''text.rtf'' - richly formatted non-HTML texts used by the text registry are kept in a single file (this file is compacted if you run '''[[File menu|File]] : [[Repairing collections|Repair collection]]''' and choose '''Rebuild registries'''). The contents of ''text.rtf'' may not match ''text.rtx'' if you have edited names in the text registry (the same text member can have the name that is entirely different from its rich text contents) 
+**''text.su1'', ''text.su2'', etc. - subset files generated with search operations. First search generates the file ''su1''. Second search (e.g. in AND-searching) generates ''su2'', etc. SuperMemo limits the number of subsets to five. You can always delete these files manually 
+**''text.srt'' - file with the sorted subset of registry members generated when sorting the registry. You can always delete this file manually 
+**''text.ord'' - file with the sorted subset of registry members generated while searching the registry. You can always delete this file manually
+*''font.*'' - font registry files 
+*''sound.*'', etc. 
+*''etc.''
+
+====== [<span id="elements">ELEMENTS</span>] ======
+
+Multimedia files associated with individual [[Glossary:Registry|registries]] such as [[HTML component|html]], images, sound, video, [[OLE component|OLE]], [[Scripts]], etc. You can edit all those files but you must not rename or move them as this would destroy the integrity of the [[Glossary:Collection|collection]]. The ''ELEMENTS'' folder can be transferred to [[Glossary:Secondary_storage|secondary storage]] and be stored on a CD-ROM or CDR. This way substantial hard disk savings can be made. The folder tree in ''ELEMENTS'' is growing gradually as you are adding new files to the system. However, it sticks to the 40-files-per-folder limit to maximize the performance on CD-ROM media. Note that the 40-files-per-folder limit may be violated if you import HTML files with a large number of inclusions (e.g. graphics, scripts, HTML includes, etc.)
+
+====== [TASKS] ======
+
+[[Glossary:Tasklist|tasklists]] associated with a given [[Glossary:Collection|collection]]
+
+*''tasklist name.dat'' - task data such as value, time, deadline function, etc. 
+*''tasklist name.ptr'' - sorted tasklist pointers used when displaying tasks in [[Tasklist manager]]
+*''tasklist name.txt'' - text file exported with '''Export''' in [[Tasklist manager]]. This file can always be deleted manually
+
+====== [TRANSLAT] ======
+
+Translation [[Glossary:Registry|registries]] available for the [[Glossary:Collection|collection]] (see: '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Language tab in Options|Language]] : Collection translation'''). You can delete this folder; however, the translations will become unavailable 
+
+====== [SUBSETS] ======
+
+[[Glossary:Element_subset|element subsets]] created by the user. You can delete this folder if you do not need the subsets. Read more: [[Using subsets]]. Two typical subsets are: ''last_subset.sub'' (contents of the last used [[browser]] that can be reused with '''[[View menu|View]] : Last browser''') and ''searched.sub'' (results of the last search that can be reused with '''[[View menu|View]] : Search results''')
+
+====== [STATS] ======
+
+Statistics of the learning process. If you delete this folder, SuperMemo will not malfunction, but you will lose the record of your past repetitions. SuperMemo will then restore these files anyway. This folder also includes your repetition timeline stored in the ''time.tim'' file. ''*.dat'' file statistics from the ''STATS'' subfolder can be viewed in '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Statistics|Statistics]] : [[Analysis]] : [[Analysis#Use|Use]]'''
+
+====== [HISTORY] ======
+
+Repetition history subsets that make it easy and fast to browse repetitions executed on given days in the past 
+
+====== [REPORTS] ======
+
+Text files with reports generated by SuperMemo (e.g. [[Repairing collections|recovery]] report, translation import report, transfer report, e-mail import report, etc.). You can delete this folder if you do not need these reports. '''[[File menu|File]] : [[File menu#Tools|Tools]] : Garbage''' deletes this folder
+
+====== [FILES] ======
+
+Other files used by SuperMemo (e.g. template files). You can delete this folder 
+
+====== [FONT] ======
+
+True-type font files that will be installed in Windows first time the [[Glossary:Collection|collection]] is run. Upon installing, the font file is renamed with an underline in front of the name. For example ''hiragana.ttf'' will be renamed to ''_hiragana.ttf'' 
+
+====== [HTML] ======
+
+[[Glossary:Collection|Collection]] in the HTML format or its portions created by the user. This folder can be deleted as it can easily be recreated
+
+====== [TEMP] ======
+
+Temporary files used by SuperMemo. You can always delete this folder. Note, however, that you will lose user recordings generated in pronunciation exercises (option '''[[Component menu#Sound|Sound]] : Panel : Recorder''' on the sound [[component menu]]). '''Note''': if you open ''temp.rtf'' in MS Word, SuperMemo will not be able to use RTF components due to the fact that MS Word locks files it uses. ''about.jpg'' is the file used by the SuperMemo splash screen when you start the program
+
+====== [RECOVER] ======
+
+Folder used by SuperMemo to store stray files located by SuperMemo while running '''[[File menu|File]] : [[Repairing collections|Repair collection]]'''. This folder can be deleted. However, it is recommended that you inspect its content as it may be indicative of problems with your [[Glossary:Collection|collection]]
+
+== KNO file ==
+
+'''<span id="KNO">Most important fields of the KNO file</span>''' 
+
+*Total, Memorized:integer - the number of undeleted [[Glossary:Element|elements]] in the [[Glossary:Collection|collection]] and the number of [[Glossary:Memorized_element|memorized elements]] 
+*AllocatedFileSpaceSlots:integer - number of slots allocated for files in the ''ELEMENTS'' subfolder 
+*Version:byte - [[Glossary:Collection|collection]] structure version number (for checking compatibility with the used software release) 
+*Burden:real48 - the average number of [[Glossary:Item|items]] to be repeated per day 
+*FirstDay, LastDay:word - first day of the learning process relative to Jan 1, 1980, and the last day on which repetitions have been cleared (relative to FirstDay) 
+*DefaultFI:byte - [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo#default_forgetting_index default forgetting index] in the [[Glossary:Collection|collection]] 
+*MeasuredFI:real48 - [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo#measured_forgetting_index measured forgetting index]
+*MeasuredFICases:word - the number of repetitions contributing to MeasuredFI 
+*FutureReps:real48 - not used in the current version SuperMemo 
+*ALR, AFI, AR, AL, AI, AF, ATim, AG:real48 - various averages: Average Last Repetition, Average FI, AverageRepetition, AverageLapses, AverageInterval, AverageFactor, AverageTime, and AverageGrade 
+*AFactorDistribution:array[1..20] of word 
+*IntervalDistribution:array[1..13] of word 
+*LapsesDistribution:array[1..15] of word 
+*RepetitionsDistribution:array[1..20] of word 
+*author specific data, repetition time measurements, repetition counters, reserved fields, topic statistics, collection version, etc.
+
+<small>The size of variables used above in bytes is: ''integer'' and ''longint'' 4, ''byte'' 1, ''real48'' 6, and ''word'' 2.</small>
+
+== FAQ  ==
+
+[[#Empty_collection|Your collection can suddenly appear empty!]]
+<br>[[#6428-9418|Disappearing material]]
+<br>[[#empty_backup|With luck, you can recover from "empty backup"!]]
+<br>[[#AdvEng|Backing up Advanced English]]
+<br>[[#Emergy_Medicine|Recovering from file mix-up]] 
+
+----
+
+=== Disappearing learning material  ===
+
+{{Mail Header
+|from=hojinil
+|country=South Korea
+|sent=Wednesday, April 11, 2001 4:29 AM
+|subject=
+}} 
+
+'''<span id="6428-9418">Question</span>'''
+
+I used '''Add New''' and I added lots of stuff but next time when I opened collections I couldn't find any of them. It was gone!
+
+'''Answer'''
+
+Please make sure the following two conditions are met: 
+
+# You are not copying or moving files behind the back of SuperMemo (e.g. with Windows Explorer) 
+# You are not using two independent copies of SuperMemo (each may use a different default collection)
+
+With '''[[File menu|File]] : Open collection''', you go to the exactly same location where you last left your collection. If some files are moved or deleted behind the back of SuperMemo, it will often attempt to recreate missing files and open the collection regardless. Unless you delete your collection or delete its folders, your learning material should remain safe
+
+----
+
+=== Collections may look like empty  ===
+
+{{Mail Header
+|from=Michael Duggan
+|country=Canada
+|sent=Nov 2, 1998
+|subject=
+}} 
+
+'''<span id="Empty_collection">Question</span>'''
+
+I was cleaning up my hard drive and attempted to move SuperMemo from one folder to another folder. In the process, I lost the data for a number of collections. Can I retrieve these data files and place them back in my collection? How do I do that?
+
+'''Answer'''
+
+It is recommended to always move collections with '''[[File menu|File]] : Copy collection''' in SuperMemo. Otherwise, a frequent mistake is to copy the ''kno'' file without the folder that contains the actual collection files.<br><br>Some customers also fall victim of the following scenario: 
+
+# move the whole SuperMemo folder to a new location using Windows tools 
+# start SuperMemo from the new location 
+# SuperMemo inspects ''supermemo.ini'' for the location of most recently used files and looks for them in the old location 
+# SuperMemo displays ''Cannot find &lt;collection name&gt; at &lt;old location&gt;. Create new files?'' 
+# if the users responds with ''Yes'', SuperMemo creates empty files with the old name 
+# it all looks like collections became empty while they are safely stored at the new location
+
+The simplest remedy is to answer ''No'' in Step 5 and open collections at the new location with '''[[File menu|File]] : Open collection'''. You can also delete ''supermemo.ini'' (or its portion that begins with ''[SYSTEMS]'' which keeps the location of collections). This way, SuperMemo will 'forget' about the old location of files
+
+----
+
+=== Backup disaster: collection lost!  ===
+
+{{Mail Header
+|from=Przemek S.
+|country=Poland
+|sent=June 8, 2000
+|subject=
+}} 
+
+'''<span id="empty_backup">Question</span>'''
+
+I used to regularly back up my Advanced English on a second hard disk. Today I tried to restore my backup and ... it looks as it is empty! Only one element inside! Help!!!
+
+'''Answer'''
+
+There is a frequent mistake users make. To backup a collection, you need to copy '''both''' the kno file and the associated folder (e.g. file ''ae.kno'' and the folder ''[AE]''). Some inexperienced users copy only the ''kno'' file which is less than 20KB of data (e.g. 950 bytes in SuperMemo 18)! If you try to open an orphaned ''kno'' file, SuperMemo will reconstruct an empty folder structure. 
+
+To avoid this problem: '''Always back up collections''' with '''[[File menu|File]] : Copy collection''' or '''[[File menu|File]] : Backup'''. Do not use external tools unless you understand Windows, files, folders and SuperMemo very well! 
+
+To resolve the problem: it is possible the original folder associated with the ''kno'' file still exists on the hard disk! You can search for some files characteristic for SuperMemo (e.g. ''compon.dat'' or ''sm8opt.dat''). Make an inventory of all ''kno'' files (search for ''*.kno'') and all SuperMemo collection folders (search for ''compon.dat'') on your hard disk. Once the inventory is made, try to carefully match up ''knos'' and folders and copy ''kno'' files to match the folders. Chances are that '''[[File menu | File]] : Open collection''' on one of these files will restore the lost backup. Note that you can easily find empty collections by checking the size of ''workload.dat'' (''burden.dat'' in older SuperMemos). This file contains repetitions and is zero-sized on collections with no learning process 
+
+----
+
+=== Mixed up collection files  ===
+
+{{Mail Header
+|from=Richard D
+|country=USA
+|sent=Feb 15 , 2001
+|subject=
+}} 
+
+'''<span id="Emergy_Medicine">Question</span>'''
+
+While backing up my collections, I have mixed up some files. As a result, my precious collection on ''Emergency Medicine'' became empty. I have lots of backups but I find it difficult to locate the appropriate files. Can you suggest how to resolve it?
+
+'''Answer'''
+
+To backup a collection, you need to copy '''both''' the ''kno'' file and the associated folder (e.g. file ''Emergy Medicine.kno'' and the folder ''[EMERGENCY MEDICINE]''). Some inexperienced users copy only the ''kno'' file! If you try to open the orphaned ''Emergency Medicine.kno'' file, SuperMemo will reconstruct an empty folder structure and the collection will be empty. What is worse, if you run '''[[File menu|File]] : [[Repairing collections|Repair collection]]''', the kno file will be "corrected" to match data of the empty collection (e.g. Memorized will be set to zero, etc.). 
+
+To restore your collection in such cases you need to: 
+
+# Locate the ''EMERGENCY MEDICINE'' folder which contains all the most important data: 
+## Search for the folder ''EMERGENCY MEDICINE'' 
+## If you do not find it, search for folders like ''EMERG*'' 
+## If you fail, search for files ''text.rtx'' on '''all''' your hard disks (including backup drives, networks and CDRs) 
+## Sort ''text.rtx'' files by size (the more work you put in the collection, the larger the file) 
+## You can view the content of ''text.rtx'' and see if it corresponds with the material you put into your collection 
+## If you do not find the folder with the matching ''text.rtx'', you have probably lost your files for good
+# Locate the ''Emergency Medicine.kno'' file: 
+## Search for the file ''Emergency Medicine.kno'' 
+## If you do not find it, search for files like ''Emerg*.kno'' 
+## If you fail, search for all *.''kno'' files 
+## If you fail, take any ''kno'' file as a substitute ('''[[File menu |File]] : Repair collection''' may occasionally be able to completely restore lost information)
+# Put both the ''EMERGENCY MEDICINE'' folder (or the folder found in Step 1) and ''Emergency Medicine.kno ''file (or equivalent from Step 2) in the same folder (e.g. ''c:\recovered''). Make sure the name of ''kno'' file matches the name of the folder. For example, if the folder is ''Emergency Medicine (copy Jan 8, 2001)'' and the file is ''Emergency Medicine.kno'', rename the file to ''Emergency Medicine (copy Jan 8, 2001).kno ''(or rename the folder to ''Emergency Medicine''). If the names do not match, SuperMemo will again recreate empty folders 
+# Open your restored collection and run '''[[File menu|File]] : [[Repairing collections|Repair collection]]''' to make sure the collection does not include data discrepancies
+
+----
+
+=== Backing up Advanced English  ===
+
+{{Mail Header
+|from=Marcin Piekarniak
+|country=Poland
+|sent=Dec 2, 1997
+|subject=
+}} 
+
+'''<span id="AdvEng">Question</span>'''
+
+How to easily back up [http://super-memory.com/english/ae.htm Advanced English 97]? In Advanced English 94 the entire system could be compressed to a 1.4 MB file!
+
+'''Answer'''
+
+If you wish, you can back up only the learning process. This way, only the data related to memorized items will be stored (not the items themselves). Use '''[[File menu|File]] : [[File menu#Export|Export]] : Learning process''' to export the data. Later, upon reinstalling Advanced English 97, you can restore the learning process with '''[[File menu|File]] : [[File menu#Import|Import]] : Learning process'''. See: [[Backup]]
+
+----
+
+=== Collection files missing ===
+
+'''Question'''
+
+''Carol M. asked:''
+
+What is the meaning of this message:
+
+<pre>
+
+Collection files missing! 
+Folder=C:\SUPERMEMO\SYSTEMS\BIO132_LEC_DIGESTIVE SYSTEM\ 
+Try to restore files that you have moved or deleted
+
+</pre>
+
+'''Answer'''
+
+Your collection is incomplete. It is missing some essential files that can make recovery impossible. 
+
+The most frequent reason for this error is a mistake on the part of the user. SuperMemo collections are made of a *.KNO file and a folder with other essential files. Many users believe that the small KNO file contains all information and copy/backup only that single file. If you get the error as above, see if you have not separated the KNO file from its folder. Putting those two together will bring your collection back to life.
+
+In your case, see if the file C:\SUPERMEMO\SYSTEMS\BIO132_LEC_DIGESTIVE SYSTEM.kno exists, if it is not empty, and if the folder C:\SUPERMEMO\SYSTEMS\BIO132_LEC_DIGESTIVE SYSTEM\ is not empty, and includes \REGISTRY\TEXT.PTR and \INFO\COMPON.DAT files.
+
+'''Technical'''
+
+SuperMemo always tries to restore missing files and attempts recovery in all conceivable scenarios. This is why SuperMemo collections often survive serious disk damage. However, in the past, users would often get confused when SuperMemo restored the entire empty collection from a lone KNO file. This is why, newer versions check for the presence of essential files that are needed for a collection to be meaningfully recoverable. Those files include the text registry (most collections contain texts used in learning), and ''compon.dat'' (collection without components is of little use).

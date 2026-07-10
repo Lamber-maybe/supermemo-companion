@@ -1,0 +1,47 @@
+__NOTOC__
+This text contains basic information for users who:
+* use a demo/trial version of SuperMemo
+* have their SuperMemo locked
+* plan to register by sending a registration e-mail
+* have sent their registration e-mail already
+* are running out of use credit
+* want to reinstall SuperMemo on a new computer
+
+= I want to become a user =
+
+If you would like to become a user of SuperMemo, you have many freeware and commercial version options:
+* [https://supermemopedia.com/wiki/Download_SuperMemo Download]
+* [https://supermemo.store/products/supermemo-19-for-windows SuperMemo 19 for Windows] (newest SuperMemo)
+
+= New purchase of SuperMemo = 
+
+If you have just purchased your SuperMemo, send your registration data. You will receive an unlock password within a business day: 
+* [[Hello]]
+* [[Unlock SuperMemo]]
+
+= Owners of SuperMemo =
+
+If you have already purchased SuperMemo before, and it is locked on a new computer or after a re-installation, you do not need to pay again.
+
+You can do '''any''' of the following:
+* (either) open any of your collections used on the same computer. This should unlock SuperMemo
+* (or) use '''File : Installation : Input password''' (''Ctrl+Shift+I'') to insert the unlock password, which you received upon registration
+* (or) write to shop{{CURRENTYEAR}}(@)supermemo(.)org to have your unlock password resent
+* (or) resubmit your registration to install SuperMemo on a new computer
+
+= Questions =
+
+If you have questions about SuperMemo, it is best to place them at '''[https://supermemopedia.com/wiki/FAQ SuperMemopedia.com]'''. 
+
+Questions about the registration process can  be found [https://supermemopedia.com/wiki/Registering_SuperMemo_(FAQ) here].
+
+To post your questions:
+
+# Go to https://supermemopedia.com
+# Click "Log in" (top right corner)
+# Type Username: "SuperMemoUser"
+# Type Password: "SuperMemo2022"
+# Click the "Log in" button
+# Click Ask Your Question (on the left)
+
+You can also send questions via [[e-mail]].

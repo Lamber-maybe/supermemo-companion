@@ -1,0 +1,2 @@
+;<span id="Visual_browser">visual browser</span>
+:SuperMemo [[Glossary:Browser|browser]] in a mode that shows pictorial snapshots of individual [[Glossary:Element|elements]]. For pictures, see: [[Browser#Visual browser|Visual browser]]

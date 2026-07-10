@@ -1,0 +1,401 @@
+== Top 10  ==
+
+#easier work with non-English texts ('''full Unicode support''' for non-Latin alphabets) 
+#[[SuperMemo Commander|'''SuperMemo Commander''']] for fast and easy-to-remember execution of commands (as an alternative to keyboard shortcuts that are too numerous and hard to remember) 
+#'''flagging URL duplicates''' in web imports (to prevent repeat downloads and element duplicates in the collection) 
+#multiple options for '''splitting imported articles''' (e.g. easy separation of Wikipedia article paragraphs into separate topics) 
+#multiple procedures for '''handling references in incremental reading''' for better context retrieval 
+#'''Reference link''' ([[Image:Reference button.gif]]) button allows of viewing references, and '''accessing the original of the article on the web ''' 
+#'''full SleepChart integration''' (e.g. for analysis of circadian changes in learning performance, speed of decline in learning capacity, total sleep length, phase shift, etc.) 
+#'''improved performance/speed''' (in many areas) of the program 
+#'''switching between opened collections''' with '''Collection Chooser''' (including collections hidden in the tray) 
+#'''fast determination of priorites''' via queue position as opposed to the percentage (e.g. by appending ''p'' to priorities in the web import dialog; this way ''22'' stands for Priority=22%, while ''22p'' stands for Position=22 in the [[Priority queue]])
+
+== Unicode ==
+
+* '''Full Unicode support''': captions, search, RTL in [[contents window|contents]], category names, spellpad uppercase, registry, '''[[Plan]]''', messages, [[Localization table|interface translation]], etc.).
+
+Exemplary pictures of a collection for learning Japanese:
+[[Image:Exemplary Japanese collection.jpg|thumb|center|upright=2|SuperMemo: '''[[Search menu|Search]] : [[Find elements]]''']]
+
+[[Image:Exemplary Japanese collection LexiconEdit.jpg|thumb|center|upright=2|SuperMemo: '''[[Edit menu|Edit]] : Lexicon''']]
+
+[[Image:Exemplary Japanese collection Browser.jpg|thumb|center|upright=2|SuperMemo: '''[[Browser|Element browser]]''']]
+
+* The now Unicode-enabled '''[[Search menu|Search]] : [[Find elements]]''' obviates the need for '''[[Search menu|Search]] : Find Unicode'''
+* As SuperMemo 15 uses Unicode internally, the program is a bit "fatter". However, in most cases, new SuperMemo is faster than the old one (thanks to excellent code optimizations in Delphi 2010 by Embarcadero). For example, registry rebuilding is 40% faster primarily due to faster string processing. Moreover, SuperMemo 15 retains UTF-8 encodings for all registries to make sure you do not double the size of your text collections (this applies only to Latin-character set, e.g. English; it does not apply to Asian languages, Arabic, Hebrew, Cyrillic, etc.). UTF-16 is used internally throughout the program. In rare cases, where Unicode processing is slower and not needed (e.g. in some lexical delimiter processing), ANSI representations are used. Some functions still use ANSI for technical reasons. For example, mail sent from SuperMemo is still sent as plain text (except for element content sent as attachments) 
+* Dramatic simplification of code resulting in speeding up of many operations, incl. registry searches, indexing, etc. Many operations had to have their single-byte and double-byte versions. Despite a major rewrite, simplification of code also means fewer bugs in string processing routines
+* In the registry, for debugging purposes, '''View : Encoding''' shows the name (in Unicode), Unicode codes (word), UTF-8 name, and UTF-8 codes
+
+== SuperMemo Commander ==
+
+'''SuperMemo Commander''' allows of fast execution of commands via mnemonic keyboard shortcuts. Commander is called by pressing ''Ctrl+Enter'' (menu: '''[[Tools menu|Tools]] : [[Commander]]''').
+
+
+<div class="center">
+[[Image:SuperMemo Commander.jpg|800px|SuperMemo: SuperMemo Commander (available with Tools : Commander; alternatively, and more quickly, with Ctrl+Enter) allows of fast execution of commands via mnemonic keyboard shortcuts]]
+</div>
+
+{{:Commander}}
+
+== Incremental reading ==
+
+=== Web import dialog ===
+
+* flagging URL duplicates and doubles (i.e. imports that already exist in the collection, as well as duplicate or similar addresses on the import list)
+* context menu options for unchecking, checking, or closing URL duplicates
+* context menu options for unchecking, checking, or closing articles that have already text import selections chosen
+* The '''View''' button to inspect duplicates in the collection
+* deleting an article from the list closes the associated tab in Internet Explorer 
+* ''Shift+click'' selections
+* ''Ctrl+click'' checkbox swap
+* '''Minimum priority''' or '''Maximum priority''' field allows of adding "p" to specify priority positions in absolute values (as opposed to the default percent value)
+
+=== Splitting articles ===
+
+* multiple splitmark options (e.g. for easily splitting Wikipedia article sections into separate elements)
+* for easy context retrieval, split article extracts use parent title as a headline followed by the extract headline
+* speeding up article splits manifold
+* if the current component is not HTML, article split searches for the nearest HTML component eligible
+* split article display progress by removing garbage from texts to make them more meaningful
+* split article adds the last child to the history list for easier access
+
+=== References ===
+
+* '''Reference''' submenu on the [[element menu]] for easier references management:
+** '''Link''' - link a reference record from the reference registry
+** '''Edit''' - edit current references as text (same as editing them at the bottom of HTML components). Leaving the '''Editing references''' dialog empty is equivalent to '''Reference : Delete'''
+** '''Add''' - if a text is selected in an HTML component, '''Add''' will have the same effect as '''Reference : Select''' (''Alt+Q'') on the [[component menu]]. Otherwise, SuperMemo will allow of creating a new reference record by editing its texts fields. If the element is already associated with references, SuperMemo will ask if the old record should be abandoned or re-edited. New reference without reference tags will be considered as a new element title and a new reference title field.
+** '''Delete''' - delete the reference record for the current element
+* '''Reference''' submenu on the [[Processing multiple elements (Process collection/branch/browser)|subset processing menu]]
+** '''Set reference''' - assign the same reference to all elements in the [[browser]]
+** '''Merge reference''' - add reference fields to all elements in the current subset
+* allowing the use of the '''Insert''' button in reference registry (to attach the selected reference to the current element)
+* if edited reference contains no # mark then it is considered as a reference title field
+* The '''Reference link''' ([[Image:Reference button.gif]]) button (available on the [[Navigation bar]]) improvements:
+** its hint shows the element's source article (in case of the root article, the originating URL is displayed) and its current references
+** it makes it possible to go to the originating URL (by opening it in your browser) if the root article is already displayed
+* intelligent reference merging for the sake of reference reuse
+* XML file export/import:
+** references are included inside HTML on export
+** references are separated from HTML on import
+
+=== Miscellany ===
+
+* font class ''<span class="clozed">clozed</span>'' and ''<span class="extract">extract</span>'' is removed from question part of newly generated cloze deletions (to clean them up visually)
+* in the '''Element priority''' dialog, in '''Position''' or '''Percent (%)''' field, priority can be determined as position or percent by adding ''p'' or ''%''
+* pasting an element number from the clipboard will form a link if the element number is preceded by # (default when copying from the '''Element number''' dialog)
+* when pasting an element number to form a hyperlink, the reference title is used if the selected text is empty
+
+== Registries ==
+
+* faster text retrieval due to bypassing <code>UTF8Decode</code> with low-level Unicode procedures
+* faster search due to relying on Unicode (rather than a mix of ANSI, UTF-8, and UTF-16)
+* for easy comparison, member duplicates are marked ''member#duplicate'', and then ''member#duplicate#dupl'', etc. rather than ''!!!member''
+* '''List''' does not shorten member names
+* lexical member highlighted in the text display in the lexicon registry
+* faster lexicon compiling
+* members with slots set to zero are reported at [[Repairing collections|recovery]] and when accessing the member
+* slot-less members can also use '''Edit : Overwrite file'''
+* '''View : Encoding''' displays the member's position in the registry
+* operation '''Swap selection''' (to swap checked and unchecked registry entries in the registry window)
+
+== Multimedia ==
+
+* '''Image : Fit size''' (on the image [[component menu]]) makes it possible to upsize components to fit a stretched or original picture
+* '''Components : Fit sizes''' (on the [[element menu]]) makes it possible to reorganize components to fit the size of a selected component
+* ASF video support
+* newer (more reliable) PNG and GIF processing units
+* sound and video playback are not stopped when hiding SuperMemo in a tray (or when working with windows other than the [[element window]])
+* filespace access gives priority to the primary storage (due to the declining use of CD and DVD drives)(reversal of the switch introduced in 1999)
+* SuperMemo does not reset missing filespace slots! This option, implemented back in 2006, was dangerous as it would irreversibly reset slots that could be missing only due to a wrong secondary storage pointer.
+
+== YouTube ==
+
+* in YouTube videos, blocking the move to the next element in the learning queue upon pressing ''Enter'' when the '''Save Extract As''' dialog is opened
+* updated default YouTube script (Oct 2009)
+* YouTube import also accepts addresses like this: http://www.youtube.com/v/
+
+== Search ==
+
+* faster case insensitive search due to the use of low-level uppercase routines
+* text registry search added to the navigation toolbar menu
+
+== Browser ==
+
+* '''Child : Tasks and Topics''' makes it possible to open a child browser displaying tasks and topics available in the parent browser
+
+== Files ==
+
+* '''File : Reopen collection''' allows of switching to collections that are already opened (incl. those hidden in the tray). For a large number of collections, this method is much faster than switching with ''Alt+Tab'' or Windows Taskbar (esp. if the taskbar is horizonal)
+* hidden SuperMemo show a tray hint with the collection name
+* collection authors can prepare their collections for publishing with '''File : Installation : Publish''' (this option deletes all work directories and files, deletes search.ini, collection.ini, unregisters the collection, and, optionally, allows of removing the learning process from the collection)
+
+== Shortcuts ==
+
+New shortcuts in SuperMemo 15:
+
+* ''Ctrl+Enter'' for [[SuperMemo Commander]] (use ''Ctrl+Shift'' to display the children of an element in the [[browser]])
+* ''Ctrl+Shift+L'' to insert a bullet
+* ''Shift+Alt+H'' to insert a horizontal line
+
+== Sleep Chart ==
+
+* all functions of SleepChart 2.0 integrated with SuperMemo (SleepChart will no longer be released as a standalone as it now requires memory functions for a full range of options)
+* possibility of adjusting some sleep parameters to sleeper's age (incl. ''baby mode'')
+* possibility of displaying '''Learning time''' (default), '''Sleep time''', '''Night sleep''', '''Nap time''', '''Sleep average''', '''Phase shift''' in the data column (on the right)
+* import of sleep data from CSV files (hours and minutes can be separated by a colon)
+
+== Plan ==
+
+* increasing the maximum number of activities from 50 to 200
+* blocking some SuperMemo shortcuts that would disrupt work if pressed accidentally (e.g. ''F3'', ''Ctrl+D'', ''Ctrl+R'', ''Ctrl+F'', and more) 
+* estimator statistics for multipling the activity statistics by an assessor factor (e.g. for estimating execution efficiency); to add an estimator, precede a label with two asteriscs instead of plus signs for standard statistics; for example ''Learning **Quality 6''
+* only one instance of SuperMemo is allowed to open the schedule (to prevent editing conflicts)
+* accepting more statistics per line
+
+== Mail and FAQs ==
+
+=== Mail ===
+
+* mail imports go to a dedicated mail import category
+* stripping very long e-mails of some HTML codes to speed-up import
+* mail import files errors to a report file instead of interrupting the process
+* mail dialog layout customization
+* updated Outlook co-op units
+
+=== FAQs ===
+
+* FAQs now can be formulated in an element's HTML component, it is enough to separate the question from the answer with a splitmark, select the text and open the FAQ dialog
+* questions and answers in the FAQ dialog can now be edited as HTML or WYSIWYG
+
+<div class="center">
+{|
+| [[Image:Email response.jpg|thumb|none|upright=2|The '''E-mail response''' dialog box now supports richly formatted FAQs that can be formatted either as HTML...]]
+| [[Image:Email response2.jpg|thumb|none|upright=2|or WYSIWYG]]
+|}
+<blockquote>
+''You can edit your FAQs in the HTML component. Use '''Reading : Split : Insert splitmark''' on the [[component menu]] to separate question from answer with a splitmark. Once the FAQ is largely complete, select both the question and the answer, and choose ''' Reading : E-mail FAQ''' from the [[component menu]] to polish its HTML, preview it in the WYSIWYG mode, and send it. The FAQ will be sent as a reply, and stored in FAQ files (as HTML and/or Wiki).''
+</blockquote>
+</div>
+
+* FAQ folder is now selectable in the FAQ dialog
+* FAQ file from the FAQ folder file list in now selectable in the FAQ dialog
+* saving an FAQ creates a new table of contents in the file if it is missing
+* ''strong'' and ''em'' tags in FAQs are converted to multiple apostrophies in the Wiki version of the FAQ
+
+== Statistics ==
+
+* The '''[[Analysis]]''' dialog caption displays the collection name, path and the date for graph printouts
+* '''Dismiss''' now also has its record in repetition history
+* Estimator statistics and Total Estimator time in '''[[Plan]]'''
+
+== Templates ==
+
+* template merging was modified to make sure that (1) '''Play At''' can be set with the template, and yet (2) setting '''Play At''' in templated items changes both the template and the source
+
+== Component menu ==
+
+* '''Text : Font : Font color'''
+
+== Tasklists ==
+
+* [[repetition history]] can hold records with Reps=0 to record the date of adding tasks to the collection
+
+== Algorithm ==
+
+* [[SuperMemo_Algorithm|Algorithm SM-15]]
+** U-Factors now allow of correctly interpreting repetition delays of up to 15 years (previously 60 days)
+** a forgetting curve correction for repetition delays beyond the maximum registered U-Factor value (preventing failed grades in delayed repetitions decreasing the estimates of the optimum interval for standardly-scheduled items in the same category)
+* normalization of forgetting curves make it possible to review data-rich forgetting graphs across different A-Factor and repetition categories, as well as the cumulative normalized heterogeneous forgetting curve (as shown on the picture)
+
+[[Image:Cumulative forgetting curve.jpg|center|800px|SuperMemo: In SuperMemo 15, forgetting curves can be normalized over A-Factors at different repetition categories. As a result, you can display (1) your cumulative forgetting curve (blue dots) and (2) its negative exponential approximation used by SuperMemo (red line).]]
+
+* improved repetition history error recovery
+* forgetting curve graphs display their relevant decay factor
+
+== Error handling ==
+
+* some frequently encountered errors allow of searching for answers with Google
+* faster '''[[Repairing collections|Repair collection]]''' due to reliance on Unicode in registry rebuilding
+* improved repetition history errors recovery
+
+== XML data exchange ==
+
+* XML imports accelerated up to 100 times by keeping some files opened and keeping some other files in memory
+* clear separation between XML imports and synchronization (the latter allows of preserving the physical element ID)
+* topics have been included in the XML data exchange specification
+* XML file export/import:
+** references are included inside HTML on export
+** references are separated from HTML on import
+* options for limiting XML exports and/or imports by not including HTML, references and/or the learning process
+* option for exporting sound file references in XML files
+* XML import makes it possible to leave file in the secondary storage (as opposed to integrating them with a collection)
+
+== Code ==
+
+* SuperMemo 15 was rewritten and recompiled with Delphi 2010 (SuperMemo 2008 was compiled with Delphi 2006 that did not fully support Unicode)
+* new <code>grids.pas</code> unit removes old cursor misalignment problems in [[Workload]], [[Browser]], and other contexts
+* new <code>MSHTML_TLB</code> unit for seamless cooperation with Internet Explorer 8/9
+
+== Annoyances fixed ==
+
+* removing all ''Ctrl+Alt+key'' shortcuts that could interfere with ''AltGr'' on international keyboards (rather than using '''Disable Alt+Del''' option that would discriminate against international users)
+* fonts would not be reused during collection transfer and set to default instead
+* using extrinsic count to prevent ''Navigation cancelled'' at '''< (Back)''' (when extrinsic drops to 1, instead of backtracking, the component is reloaded)
+* missing <span style="text-decoration: underline;">M</span>in and Ma<span style="text-decoration: underline;">x</span> priority accelerators in web import dialog
+* using <code><EMBED></code> with the <code>src</code> attribute inside as a marker of problematic HTML loaded with the <code>Navigate()</code> method 
+* <code>TheDoc.queryCommandEnabled('BackColor')</code> used to avoid ''Error retrieving background color. This command is not supported'' 
+* web imports can now be aborted with ''Esc''
+* references not transferred when elements transferred between collections
+* new references would not attempt to intelligently reuse previously created similar references
+* references would not use other reference fields if the title field was empty
+* detailed diagnostics for ''Error extracting element texts''
+* detailed diagnostics for ''Error loading timeline''
+* filespace checkup makes sure that no empty slots are allowed if secondary storage files exist 
+* ''Use current time to terminate?'' has '''No''' as default in '''[[Plan]]'''
+* old collection source code could not be imported if repetition history or references were missing
+* auto-delay in branch expansion in [[Contents]] increased from 1000 to 3000 milliseconds
+* sizing the [[element window]] resizes aligned [[element data window]] in the same way as the [[browser]] resizes the [[element window]]
+* '''Align''' in [[Contents]] shows the [[element data window]] if not visible
+* [[Contents]] '''Align''' button does not obscure the [[status bar]]
+* updated default search tools: adding SuperMemo Forum, SuperMemo Help Wiki, Google News, and SuperMemoPedia.com (removing Vivisimo, Clusty, Encarta, and Grokker)
+* no progress dialog when plotting the repetitions graph with lots of data
+* (sound/video) players would close when deactivating the [[element window]]
+* replaced picture files would not display their registry member name leading to possible confusion
+* fonts would not be reused on transfer (resulting in space-wasting duplicates)
+* closing the [[element window]] minimizes it without closing SuperMemo
+* &#8217; (char 8217) would not be included in lexical delimiters
+* ''Esc'' on an exited task would not confirm the cancel (like all other text editors in SuperMemo)
+* no more annoyingly blinking hourglass in '''Split Article'''
+* searching for <FONT color=#000000>&#1497;&#1460;&#1510;&#1456;&#1495;&#1464;&#1511; &#1512;&#1463;&#1489;&#1460;&#1468;&#1497;&#1503;</FONT> would display the progress box with hard to decode UTF-8
+* once YouTube video is found with '''Search''', it is not reloaded if already playing
+* after adding an article and moving it to another category, it would unnecessarily be set in the editing mode 
+* fast imperial to metric unit conversion with [[SuperMemo Commander]] (instead of navigating deep-nested menus)
+* separate instances of SuperMemo running in memory, synchronize their alarm clock setting
+* only one alarm is raised at a time, by the collection that originally set the alarm, or the instance of SuperMemo that set the alarm (if the collection changed), or the first newly opened instance of SuperMemo (if the origin of the alarm closed) 
+* player scrollbar too short in sound extracts
+* '''Sound : Extract section''' dialog would not be resizeable
+* '''[[Tools menu|Tools]] : [[Plan]] : Totals''' would excessively shorten activity lines 
+* switching between collection now brings the [[element window]] to the front
+* '''[[Tools menu|Tools]] : [[Plan]] : Export''' no longer requires a confirmation
+* slow reference download from YouTube would not display which title was getting the references
+* interval not reported in UF vs. Interval mismatch
+* increasing the allowed interval in memorizing the browser with a fixed interval of up to 4 years
+* '''Interval''' dialog would not display the permissible limits and just ignore wrong values without notification
+* element's ''Tab'' shortcut would work also when not in the [[element window]]
+* '''Test''' button in sound/video extracts plays in a loop, not just once (important for very short and precise extracts)
+* '''Go To''' was missing from the element menu's '''Go To''' submenu
+* statistical updates not displayed while importing Q&A files
+* if the input and archive folders are the same in mail import, no error is displayed, the archiving process is ignored
+* manually set intervals are no longer limited to 365 days
+* '''Reading : Split : Split article''' would not show the progress even on very long articles
+* deleting articles or changing import filter does not lose the selection in web import
+* '''Text : Case : Sentence case.''' would not ignore preceding spaces
+* '''Text : Case : Sentence case.''' would fail on numbers-only texts
+* '''Reference : Comment''' was missing from the [[component menu]]
+* the default script accelerator would conflict with ''Alt+P'' for the '''Element priority''' dialog
+* collection name not prominent enough when switching tasks in Windows
+* SuperMemo 98 collections could not be previewed in the file browser
+* ''Warning! Dismissing childless element'' is only displayed in levels above '''Middle'''
+* Question and Answer are now not exported in XML if empty 
+* Titles are exported in XML in cases where the Question is empty
+* text filters could not use files encoded in UTF-8
+* tasks as all other elements are memorized by default
+* confusing and untranslated ''You last used this collection X days ago'' would show up at the '''Beginner''' level
+* XML imports would blink annoyingly
+* plain texts loaded to HTML replace new line characters at loading with <BR> for correct display (without modifying the actual text stored in the registry)
+* for collections that have not been used for long, ''Auto-postpone has been turned off to protect your data'' shows only in Memorized>0
+
+== Bugs fixed ==
+
+* '''Category''' combo box in the [[Tools toolbar|'''Tools''' toolbar]] would not support Unicode
+* Some Japanese element titles got corrupted in [[Contents]]
+* Titles failed to update with some Unicode texts
+* choosing '''Cancel''' when chaining references would delete the new selection chosen for the old reference
+* transferred text names would not get shortened resulting in transfer file bloat
+* resizing the registry would always select the first member even if not selected
+* recovery errors could result from a collection transfer due to changing intervals without modifying U-factors
+* error messages would interrupt work for repetitions>255 and lapses>255
+* some editing operation would leave the <code>SuperMemoReference</code> tag in the code
+* media player would not auto-enable its buttons correctly
+* titles would import as raw HTML in XML imports in elements that include the tree structure
+* image references <code><IMG scr="file:/// ...></code> would be subject to relative/absolute path conversions suitable only for the <code>[elements]</code> folder paths
+* uppercase search would fail in 1:10,000,000 cases due to a wrong buffer length pointer
+* browser layout could save incorrectly as resizing [[contents|contents window]] (at restoring windows) would modify the [[element data window]] size 
+* <code>Done>TotalItems</code> in <code>TProgressBox.ShowDone: 1>0</code> when replacing the last entry in the registry 
+* mail forwards could include UTF-8 codes instead of the original characters
+* last contents icon in '''Split Article''' would remain pending (even though memorized)
+* after '''Delete''' in '''Collection Chooser''', the KNO data display would not be updated (after deleting the last collection from the '''Collection Chooser''', the KNO data display is set to empty white)
+* wrong titles set by Q&A import
+* clicking '''Cancel''' on ''Do you want to delete previous report?'' in recovery would continue the recovery
+* characters added by registry's MakeUnique procedure to UTF-8 encoding, would mess up Unicode strings by generating 65533 code 
+* [[Browser|Browser's]] '''Tools : Repetitions Graph''' could abort if the processed set included topics 
+* [[Element data window]] would be empty on unhiding SuperMemo
+* collection recovery could trip on empty texts
+* click on the empty list of member users in the lexicon registry would cause ''Index out of bounds''
+* YouTube videos containing some Unicode characters could not be searched via Google
+* on faster computers, not all article web links would open upon request
+* [[Browser|Browser's]] '''Child : Branch''' would not use the contents layout 
+* '''Test''' did not work in sound extracts
+* occasionally, hourglass would persist when moving between elements in learning
+* '''Delete images''' in processing local images within HTML would not respect the selection made in the image dialog
+* priorities would be recomputed wrongly in collection transfers
+* moving an element between collections would not retain its priority
+* linking to a new external sound file would not immediately update the sound component
+* mail marker would be set even if mail marking dialog was cancelled
+* when deleting a reference registry member, the registry name was displayed as a confusing ''Eference'' and the query allowed of no '''Cancel'''
+* when opening the reference registry, the first member would be selected even if the element did not have any references
+* when switching modes in the answer stage, the component could remain invisible until the next refresh
+* deleting a video immediate after an import could result in ''Element count operation on a deleted registry member''
+* schedule length total was stored with insufficient precision resulting in activity totals rounding errors
+* spell pad checker would not convert non-ASCII characters to uppercase (due to use of <code>UpperCase</code> instead of <code>AnsiUpperCase</code>)
+* some GIF animations would not play or flicker
+* sound and video files could conflict at linking a component to a new member (e.g. with alarm sounds)
+* data imported from YouTube XML would remain UTF-8 encoded
+* after ''Ctrl+Shift+J'' element parameters would not be updated
+* player panel in sound and video extract dialog would diplay buttons that are never used (and don't work)
+* MON (middle-of-the-night) estimation in [[SleepChart|Sleep Chart]] could cause range check errors on very irregular schedules
+* hint checkbox only partly visible in some layouts
+* view source in HTML would lose Unicode if the text was a plain text (due to saving the file as ANSI for viewing in the default editor)
+* graphs based on repetition distribution would display errors for more than 65535 repetitions in a single repetition category
+* circadian graph would not display if sleep data was incomplete in the learning period
+* article splitting would not show the progress in generating new extracts
+* wrong Delay and Retrievability (U-Factor field) displayed for items after the first repetition (Repetitions=1)
+* repetition records with Interval=0 would often be wrongly swapped at recovery
+* reactivated SuperMemo could lose the current edit focus
+* images embedded in CHM would not display in the HTML component and would not be downloadable
+* sleep graph errors in absence of sleep data
+* Wikipedia filters would not work with Internet Explorer 9
+* spaces in URLs encoded as <code>%20</code> would prevent picture import
+* circadian graph could fail on days with highly fragmented sleep
+* some filters stopped working upon the upgrade to Internet Explorer 9 (incl. Wikipedia, SuperMemoPedia, SuperMemo Wiki Help, and more)
+* some options would display ''Cannot determine sleep length'' if '''SleepChart''' contained no sleep data
+* some search&replace operations would not work in the registry with the case insensitive option set
+* memory leaks when using some of predefined templates
+* some element dismiss operations would be executed twice slowing down SuperMemo
+* MSXML would replace end-of-line characters $A$D with $A causing some formatting changes in XML transfer
+* ''Non-empty filespace slot'' error would report a wrong slot path
+* user file recording would not work in the pronunciation testing panel of the sound component
+
+== Upgrade Warnings  ==
+
+*'''Code page specific upgrade:&nbsp;'''SuperMemo 15&nbsp;will attempt to convert all your non-English texts in plain texts components to Unicode. See: [[Upgrading to Unicode|Upgrading to SuperMemo 15]]. Depending on the choices you make, your upgrade will or will not rely on the setting of the system locale in Windows. Please backup your learning material if you use non-English collection and if you are not sure which conversion choices to make. You can change your locale with '''Change system locale '''in your Windows's Control Panel. You can see your active code page in SuperMemo&nbsp;with '''File&nbsp;:&nbsp;Properties'''. SuperMemo 15 will try to leave behind all old texts marked as OEM&nbsp;in older SuperMemos. SuperMemo will convert to Unicode all texts marked as ANSI plain texts. As a result, you will end up with a collection that is no longer dependent on the code page settings, and less dependent on font settings in SuperMemo. If you happen to use an old collection with a mix of different languages with different non-Unicode fonts relying on different charsets or code page settings, please get in touch to receive help. 
+*'''Breaking source code change''': Titles are now UTF-8 encoded in element source code. This means that some of the titles in old source code that form valid UTF-8 sequences will be decoded into invalid titles. In particular, transfer of source code via the clipboard will result in decoding all UTF-8 sequences (incl. titles whose conversion will result in generating a UTF-8 replacement codes). For valid transfer of old collections to the new version, do not use the import or transfer options. Simply open the old collection in SuperMemo 15. Once upgraded, collections are transferrable in a standard way. 
+*'''Important!''' If you plan to transfer portions of a collection to another collection, do it only after an upgrade to SuperMemo 15 (not before). Old collections may have their texts encoded in ways that are not compatible with the current Unicode implementation. Until their text registry members get re-encoded in the correct way, non-English texts may (1) be invisible to search, (2) show questions marks instead of characters in element titles, and (3) fail to automatically update titles on edits. Currently, the only way to re-encode those old texts is to force a new save in the registry (e.g. by any modification to the text). 
+* As SuperMemo unifies all text representations with Unicode, some registry members will be duplicated and marked with ''#duplicate'' at upgrade time. Those will not show in HTML and will self-correct on first edit.
+*To avoid interference with ''AltGr'' on various international keyboards, '''most of ''Ctrl+Alt'' shortcuts have been removed from SuperMemo 15'''. Some of the most often used combinations have been replaced with new shortcuts. Experience shows that with heavy use you can transition to new shortcuts within weeks. The replacement shortcuts have been chosen to be mnemonic and resemble old shortcuts wherever possible. See: [[Shortcuts]] for details. If you are unhappy with any of the changes, please place your suggestions on the Talk page or at SuperMemoPedia. New commands can always be made available from the [[Commander]] 
+*the following display and play modes have been removed due to little interest: '''Display at&nbsp;: On first question''', '''Display at&nbsp;: On first answer''', '''Play at&nbsp;: On first question''', and '''Play at&nbsp;: On first answer'''
+
+== Archive: What's new ==
+
+*[https://super-memory.com/archive/1998/sm8dev.htm What's new in SuperMemo 8?] (1995-1997)
+*[https://super-memory.com/articles/soft/sm98.htm What's new in SuperMemo 9?] (1998) 
+*[https://super-memory.com/articles/soft/sm99.htm What's new in SuperMemo 9.5?] (1999) 
+*[https://super-memory.com/articles/soft/sm10.htm What's new in SuperMemo 10?] (2000) 
+*[https://super-memory.com/archive/help2002/new2002.htm What's new in SuperMemo 11?] (2002) 
+*[https://super-memory.com/archive/help2004/new2004.htm What's new in SuperMemo 12?] (2004) 
+*[https://super-memory.com/archive/help2006/new2006.htm What's new in SuperMemo 13?] (2006) 
+*[https://super-memory.com/archive/help2008/new2008.htm What's new in SuperMemo 14?] (2008)
+
+__NOTOC__

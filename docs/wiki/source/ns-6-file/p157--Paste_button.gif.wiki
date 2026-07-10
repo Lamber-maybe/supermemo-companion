@@ -1,0 +1,1 @@
+Paste article (from the clipboard) button on the Read toolbar

@@ -1,0 +1,125 @@
+== Safety of your knowledge stored in SuperMemo  ==
+
+Knowledge you store in SuperMemo might belong to your most precious data on your hard disk! After all, it has cost you months or years of editing and repetitions. You must continue your repetitions indefinitely to make sure you do not forget what you have learned. This is why your skills in making a backup copy are so vital! 
+
+<div class="bs-callout bs-callout-warning">
+'''Everyday you should pause for a moment and imagine the consequences of losing your work since you made your last backup'''. 
+</div>
+
+In SuperMemo you can backup your [[Glossary:Collection|collection]] with '''[[File menu|File]] : [[File menu#Copy collection|Copy collection]]''' (e.g. when you want to choose a specific location on your disk where the copy should be located) or with '''[[File menu|File]] : [[File menu#Backup|Backup]]''' (e.g. if you want to back your collection up often at a specific location with a time stamp). See below for details.
+
+== Terminology  ==
+
+To prevent losing your [[Glossary:Collection|collection]] (e.g. to a disk failure), you should make regular copies of that collection (e.g. on a flash drive). Such a copy is called a ''backup'' and making it is called ''making a backup''. 
+
+If you lose your [[Glossary:Collection|collection]] (e.g. to a disk failure), you can always get it back from your ''backup''. This process is called ''restoring the backup''. 
+
+It is much easier to handle [[Glossary:Collection|collections]] for backup if you put them into a single file. This process may be called ''packing'', ''zipping'', ''archiving'' or ''compressing'' in the documentation of the program used in combining collection files into one (e.g. WinZip, Total Commander, etc.). Compression used in archiving is ''lossless'' by default (this means you do not lose data, only reduce its size).
+
+== Check your backup!  ==
+
+<div class="bs-callout bs-callout-warning">
+'''Remember to retrieve and review your backup from time to time to make sure your backup files are stored correctly! Some users backed up only their ''KNO'' files for months thinking their backups are safe and complete!'''
+</div>
+
+For example, if you create a [[Glossary:Collection|collection]] called ''Biology'', SuperMemo will create a file ''Biology.kno'' and a folder called ''[BIOLOGY]''. Your backup must include both the ''Biology.kno'' file and the ''[BIOLOGY]'' folder.
+
+== SuperMemo owns its folders!  ==
+
+<div class="bs-callout bs-callout-warning">
+'''Remember that SuperMemo owns the folders it creates for its [[Glossary:Collection|collections]]. Never store there your own files. Those folders can be deleted at any minute. At best, you will be asked for a confirmation. At worst, you will lose your files!'''
+</div>
+
+For example, if you create a [[Glossary:Collection|collection]] called ''Chemistry'', SuperMemo will create a file ''Chemistry.kno'' and a folder called ''[CHEMISTRY]''. You should leave the management of the insides of the ''[CHEMISTRY]'' folder to SuperMemo (unless you truly understand [[SuperMemo files|SuperMemo files and folders]] and how SuperMemo uses them).
+
+== File : Copy collection  ==
+
+Use '''[[File menu|File]] : [[File menu#Copy collection|Copy collection]]''' (''Shift+Ctrl+C'') to copy your learning material to some new location. You should copy to a different computer, to a flash drive, or to a DVD-R from time to time to prevent losing your work in case of a hard disk crash. If your [[Glossary:Collection|collection]] is named ''Physics'' and you choose '''[[File menu|File]] : [[File menu#Copy collection|Copy collection]]''', SuperMemo will suggest a new name ''Physics (copy)''. If you accept that name (e.g. by choosing '''OK''' or pressing ''Enter''), a copy of the [[Glossary:Collection|collection]] will be created at the same place as the original collection with the name expanded by ''(copy)'' (e.g. ''Physics (copy)''). However, this backup is useful only for cases such as a software crash that might damage the original [[Glossary:Collection|collection]]. This copy is not safe from a hard disk failure (it is located on the same disk), and is not safe from a virus attack (that might wipe out or scramble the entire folder with your [[Glossary:Collection|collections]]). This is why you could at least change '''Drive:''' field in the file browser to select another drive to make your copy.''' 
+
+=== Example  ===
+
+To backup your [[Glossary:Collection|collection]] to a network drive named ''F:'', you can press ''Shift+Ctrl+C'', type "''f:\my_July5_backup''" and press ''Enter''. Naturally, it would be nicer to backup to a dedicated folder, e.g. "''f:\SM17\backup\July5''".
+
+== File : Backup  ==
+
+To prevent losing your [[Glossary:Collection|collection]] (e.g. to a disk failure), you should make regular copies of that collection (e.g. on a flash drive). Such a copy is called a ''backup'' and making it is called ''making a backup''. 
+
+The fastest and simplest way to make a backup is to use '''[[File menu|File]] : [[File menu#Backup|Backup]]''' in SuperMemo as described below. 
+
+=== Making a quick backup  ===
+
+The fastest way to quickly backup your [[Glossary:Collection|collection]] is to use ''Shift+F12'' (or '''[[File menu|File]] : [[File menu#Backup|Backup]]''' from the [[main menu]]). '''Backup''' will skip non-essential files (e.g. temporary files). It will also name your backup with the date on which it was created. For example, if your [[Glossary:Collection|collection]]'s name is ''Incremental Learning.kno'' your backup might get named ''(((Backup of Incremental Learning created on 2013-08-12 03-55-40)))''. This name tells you that the backed up [[Glossary:Collection|collection]]'s name is ''Incremental Learning'', and that the collection was backed up on Aug 12, 2013 after 3:55.
+
+<div class="center">
+[[Image:Quick backup.jpg|SuperMemo: The Incremental Learning collection to be archived at at g:\colls\Incremental Learning folder]] 
+<blockquote>
+'''''Figure''': In the examplary picture above, the [[Glossary:Collection|collection]] INCREMENTAL LEARNING will be archived in the folder g:\colls\Incremental Learning\''
+</blockquote>
+</div>
+
+=== SuperMemo warns you if you open a quick backup  ===
+
+In the past, users often made a mistake of learning with their backup, instead of their original [[Glossary:Collection|collection]]. To avoid this confusion, SuperMemo will warn you each time you try to open a backup collection. 
+
+You can easily eliminate that warning by renaming the backup [[Glossary:Collection|collection]]. Always rename the collection to its original name when you restore a backup. For example, if your [[Glossary:Collection|collection]'s name is ''YouTube.kno'', and your backup is named ''(((Backup of YOUTUBE created on 2009-04-28 15-15-55))),'' name the collection back to ''YouTube.kno'' or similar at the time when you restore the backup.
+
+=== Restoring a quick backup  ===
+
+If you lose your [[Glossary:Collection|collection]] (e.g. to a disk failure), you can always get it back from your backup. This process is called ''restoring the backup''. 
+
+You can restore the backup by opening the backup [[Glossary:Collection|collection]] with '''[[File menu|File]] : [[File menu#Open collection|Open collection]]''' (ignore the warning), and using '''[[File menu|File]] : [[File menu#Copy collection|Copy collection]]''' (''Shift+Ctrl+C''). You should then copy the backup to your [[Glossary:Collection|collection]] folder within the SuperMemo folder (e.g. ''c:\sm17\systems\''), and give it the name of the original collection (e.g. ''c:\sm17\systems\YouTube.kno'').
+
+=== Where shall I put my backup?  ===
+
+Remember that the safety of your backup depends on its location. Here is a short list of examples from the safest to the least safe: 
+
+*backup on different media on different continents (e.g. flash drive in America, DVD in Europe, Internet server in Asia, etc.) 
+*backup in a different city (e.g. on a friend's computer) 
+*backup on different media in the same location (e.g. DVD in the same office might be vulnerable to office fire) 
+*backup on a flash drive (might be vulnerable to theft if the flash drive is placed in the same computer as the [[Glossary:Collection|collection]]) 
+*backup on another hard disk (might be vulnerable to power surge, fire or flooding that will damage both disks) 
+*backup on the same disk (may be lost at any minute due to hard disk failure) 
+*backup in the same folder (might be deleted accidentally when deleting the folder)
+
+Conclusion: always keep your backup as far away from your [[Glossary:Collection|collection]] as it is feasible and reasonable. 
+
+If you need to back up on the same PC, keep the backup on separate drives, e.g. 
+
+Collection:'''''D:'''\sm17\systems\youtube.kno'' 
+
+Backup:'''''C:'''\backups\supermemo\collections\(((Backup of YOUTUBE created on 2009-04-28 15-15-55))).kno''
+
+== Using WinZip, PKZip, etc.  ==
+
+If you would like to use archiving tools to reduce the size of your backup and keep it in a single file, remember to do the following: 
+
+*copy the file ''&lt;your collection&gt;.kno'' and the [[SuperMemo files#Collection files|folder ''&lt;your collection&gt;'']] into one archive. '''Many users make a cardinal mistake of archiving only the ''kno'' file which is useless without the files in the accompanying folder'''. For example, remember to copy the folder ''[BIOLOGY-CLASS]'' when backing up ''biology-class.kno'' 
+*remember to '''preserve the paths in archiving'''. If you fail to do this, you will most likely be unable to reassemble hundreds of files into appropriate folders
+
+== Learning process backup  ==
+
+'''For advanced users:''' If you are using a commercial [[Glossary:Collection|collection]] available on a CD or DVD, you can save lots of space if you backup only the learning process. You can do it with '''[[File menu|File]] : [[File menu#Export|Export]] : Learning process'''. Note that this will not preserve changes you have made to texts in your [[Glossary:Collection|collection]]. In case of a mishap, you can reinstall your commercial [[Glossary:Collection|collection]] and restore the learning process with '''[[File menu|File]] : [[File menu#Import|Import]] : Learning process'''. For example, a copy of [http://www.super-memo.com/ae2002.html Advanced English] without its [[Glossary:Secondary_storage|secondary storage]] multimedia files takes nearly 50 MB while the learning process backup takes from 0.1 to 3 MB depending on how much work you have put in repetitions.
+
+== Example: Archiving with Total Commander  ==
+
+To archive your ''Physics'' [[Glossary:Collection|collection]] with [https://ghisler.com/picture.htm ''Total Commander''] by [https://ghisler.com/index.htm Christian Ghisler] do the following: 
+
+*find ''physics.kno'' (e.g. with ''Alt+F7'' search) 
+*in the panel displaying ''physics.kno'', select ''physics.kno'' and ''[PHYSICS]'' folder (e.g. with ''Ins'' or with ''Ctrl+click'') 
+*choose ''Alt+F5'' for '''Files : Pack...''' 
+*make sure '''Also pack path names (only recursed)''' and '''Recursively pack subdirectories''' are checked (to preserve paths and folders) 
+*choose '''OK'''.
+
+Your newly created archive should appear as a ''ZIP'' file with the default name ''&lt;collections folder&gt;.zip'' (this is ''systems.zip'' by default)
+
+== Further reading  ==
+
+*[https://super-memory.com/help/faq/files.htm FAQ: Backup copy] 
+*[https://supermemopedia.com/wiki/Manual_backup Manual backup]
+*[https://supermemo.wiki/sma/#/qs-backup-setup supermemo.wiki's backup guide]
+*[[SuperMemo files]] 
+*[[File menu]]
+
+== FAQs ==
+
+*[http://supermemopedia.com/wiki/How_to_recover_from_repetitions_in_a_backup%3F Swapping collections]

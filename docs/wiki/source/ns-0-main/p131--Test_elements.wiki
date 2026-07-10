@@ -1,0 +1,137 @@
+== Creating multiple choice tests, drag&match tests, etc. ==
+
+Apart from standard question-answer [[Glossary:Item|items]], you can also create a variety of other tests such as:
+
+* [[#Multiple choice test | multiple choice tests]]
+* [[#Spelling test | spelling tests]]
+* [[#Pronunciation test | pronunciation tests]]
+* [[#Multiple Drag&Match test | drag&match tests]]
+* [[#Point&Click test | point&click tests]], and more
+
+== Tests which are easy to prepare ==
+
+=== Multiple choice test ===
+
+To create a multiple choice test do the following:
+
+# Create a couple of text [[Glossary:Component|components]] (question, correct answer and a couple of wrong answers)
+# On the [[component menu]] of the correct answer choose '''[[Component menu#MCT|MCT]]''' and check the submenu item '''Correct'''
+# On the [[component menu]] of the wrong answer choose '''[[Component menu#MCT|MCT]] : Wrong'''
+# Test the [[Glossary:Item|item]] by trying to click particular [[Glossary:Component|components]]. The correct response should be highlighted yellow, and you should get the correct or wrong response feedback (e.g. with custom sounds, etc.)
+
+You can also quickly create multiple choice tests by using the ''Multiple Choice'' [[Glossary:Template|template]] (press ''Ctrl+Shift+M''] and choose ''Multiple Choice'' to apply the template). Use ''Ctrl+T'' to switch between [[Glossary:Component|components]] while editing.
+
+Pictures can also be used in multiple choice tests.
+
+=== Spelling test ===
+
+To create a spelling test, use a predefined [[Glossary:Template|template]] ''Spelling'' or simply place a Spell-Pad [[Glossary:Component|component]] in the [[element window]] and fill it out with the correct spelling (or with spelling variants separated by a slash, i.e. /). Press ''Esc'' to move to the [[Glossary:Presentation mode|presentation mode]], and test the spelling by typing in the text in the spelling field and pressing ''Enter''.
+
+You can use more than one correct answer in a spelling test. For this purpose, simply separate all correct variants with a slash (i.e. /). Please remember that SuperMemo will accept the first match from the left and that it is important to consider that in determining the optimum sequence of variants.
+
+=== Pronunciation test ===
+
+To create a pronunciation test, use a predefined [[Glossary:Template|template]] called ''Pronunciation'', or place a Sound [[Glossary:Component|component]] in the [[element window]] and check the '''[[Component menu#Sound|Sound]] : Panel : Recorder''' option on the [[component menu]]. Link the correct pronunciation ''MP3'' or ''WAV'' file by using '''[[Component menu#File|File]] : Import file''' or '''[[Component menu#Links|Links]] : [[Component menu#Registry member|Registry member]]''' on the same menu. Your pronunciation test is ready. The user can now record himself by pressing the microphone button and play his own or the correct pronunciation by using blue and green play buttons respectively. Finally, he can erase his recording by pressing the '''Recycle bin''' button. All user recordings are kept in ''[TEMP]'' subfolder of the collection folder and can only be deleted with the recorder '''Trashcan''' button. To clean all recordings, go to the ''[TEMP]'' subfolder and delete all sound files.
+
+Pronunciation tests can be enhanced with phonetic transcription. For example, using an IPA font (available with a number of [[Glossary:Collection|collections]] for learning English).
+
+== Tests which are more difficult to prepare ==
+
+Creating Drag&Match and Point&Click exercises is more difficult and requires using [[scripts]] and the hit-area editor.
+
+=== Point&Click test ===
+
+An [[Glossary:Element|element]] used for the Point&Click test must contain an image [[Glossary:Component|component]]. The user is supposed to click the right place in the picture. This test may be used, for example, to click the described organ on an anatomical cross-section image. Another example is pointing to the recognized picture in a word recognition test. Here, the question can be a recording of the recognized word, and the test will require clicking the pictorial representation of the word.
+
+To create Point&Click test, place a Script [[Glossary:Component|component]] in the [[element window]] (make sure it is the first playable component, e.g. by placing the script before placing all other components). To make sure that the script is run as you enter the element, check '''[[Element menu#AutoPlay|AutoPlay]]''' on the [[element menu]]. The script must contain the <code>HITTEST</code> command that will evoke Point&Click test, and all other [[Glossary:Component|components]] of the test if necessary (e.g. playing the question).
+
+In the example below, the script plays the [[Glossary:Component|component]] with the question (component no 3) and calls the <code>HITTEST</code> command to execute the test. <code>HITTEST</code> says that the image [[Glossary:Component|component]] used in the test has the number 4, and that the coordinates of the correct selection area are [(387,10)(444,237)(546,229)(536,4)]
+
+Note that these coordinates can be determined by means of '''[[Component menu#Image|Image]] : [[#hittest editor | Edit hit-area]]''' on the image [[component menu]] (see below).
+
+It is worth remembering that the numbers of [[Glossary:Component|components]] in an [[Glossary:Element|element]] can be displayed with the '''123''' button on the [[Compose toolbar|'''Compose''' toolbar]]. Alternatively, '''[[Element menu#Components|Compontents]] : Component order''' (''Ctrl+Shift+O'') on the [[element menu]] can be chosen for the same purpose.
+
+Here is the script:
+
+<pre>
+
+START 3
+HITTEST 4 [(387,10)(444,237)(546,229)(536,4)]
+WAITGRADE
+GOTO 2
+
+</pre>
+
+Commands <code>WAITGRADE</code> and <code>GOTO 2</code> make sure that after the test (i.e. after the [[Glossary:Grade|grade]] is given to the user), the script goes back to line 2 and makes it possible to resume the Point&Click test.
+
+=== Drag&Match tests ===
+
+==== Single Drag&Match test ====
+
+This is a test for matching text [[Glossary:Component|components]] with hot spots in a single image component. The user is supposed to drag text [[Glossary:Component|components]] and drop them at appropriate places in the image component. Single Drag&Match is implemented with a <code>DRAGMATCH</code> script command.
+
+For example, let us imagine an exercise in which the user is to drag text [[Glossary:Component|components]] numbered 5, 6, 7 and 8 to appropriate hot spots on the image component number 2. Let us now assume that the hot spot for dragging the text number 5 is delimited by a rectangle having the following coordinates: (123,315,264,357). By analogy, components 6, 7 and 8 also have their own hot spot rectangle coordinates. The following script might do what is needed in this exercise:
+
+<pre>
+
+DRAGTEXTMODE TRANSPARENT
+SHOW 5
+SHOW 6
+SHOW 7
+SHOW 8
+DRAGMATCH 2 [5,6,7,8] [(123,315,264,357)(34,37,64,77)(43,37,58,177)(21,25,53,37)]
+WAITGRADE
+GOTO 2
+
+</pre>
+
+In the above script:
+* <code>DRAGTEXTMODE</code> makes sure that texts are transparently displayed on the image upon dropping
+* The <code>SHOW</code> commands will redisplay all text [[Glossary:Component|components]] after executing <code>GOTO 2</code> (dragging will make the components invisible)
+* <code>DRAGMATCH</code> will define the appropriate relationships between text [[Glossary:Component|components]] and hot spot rectangles in the image component number 2
+* <code>WAITGRADE</code> will suspend the execution of the script until all texts are dragged into appropriate places or until the first mistake is made by the user.
+* Finally, <code>GOTO 2</code> will allow repeated execution of the exercise until satisfactory performance.
+
+To simplify determining the correct rectangle coordinates, you can use '''[[Component menu#Image|Image]] : [[#hittest editor|Edit hit-area]]''' on the image [[component menu]]. This command is described below.
+
+==== Multiple Drag&Match test ====
+
+This is a test for matching text [[Glossary:Component|components]] with a number of image components. The user is supposed to drag the text [[Glossary:Component|components]] to appropriate image components. Multiple Drag&Match is also implemented with a <code>DRAGMATCH</code> script command. This time its syntax differs slightly. There is no image argument. Instead, a list of images is used to match a list of text [[Glossary:Component|components]].
+
+For example, let us imagine an exercise in which the user is supposed to drag text [[Glossary:Component|components]] numbered 2, 3, 4 and 5 to image components numbered 6, 8, 7, and 9. Those two lists of [[Glossary:Component|components]] will form the two arguments of the multiple <code>DRAGMATCH</code> script command. Again <code>DRAGTEXTMODE</code> determines if the texts erase the background or are displayed transparently:
+
+<pre>
+
+DRAGTEXTMODE OPAQUE
+SHOW 2
+SHOW 3
+SHOW 4
+SHOW 5
+DRAGMATCH [2,3,4,5] [6,8,7,9]
+WAITGRADE
+GOTO 2
+
+</pre>
+
+The behavior of the above script is analogous to the behavior of the script described in the previous section devoted to single <code>DRAGMATCH</code> command.
+
+=== <span id="hittest editor">Hit-Area Editor</span> ===
+
+'''Hit-Area Editor''' is used to easily determine the coordinates of image hot spots for <code>HITTEST</code> script command and for single <code>DRAGMATCH</code> script command. Currently, '''the editor supports only the BMP file format''' (i.e. you cannot use the editor with JPG, GIF or PNG images). If you are concerned with the space used up by BMP files, create the <code>HITTEST</code> script first and compress the image later. Images pasted from the clipboard are always compressed.
+
+To use '''Hit-Area Editor''' follow the steps listed below:
+
+# Close the '''Script Editor''' if you are in the middle of writing a script
+# Right click the image whose hot spots you want to edit
+# Choose '''[[Component menu#Image|Image]] : Edit hit-area''' on the [[component menu]] 
+# At the bottom of the Hit Area Editor choose the command for which editing is to be used: '''HitTest''' or '''DragMatch'''
+# For DragMatch exercise, click in turn top-left and bottom-right corners of rectangles describing the hot spots (you can create up to ten rectangles)
+# For HitTest exercise, click in turn all corners of the hot spot area (the area cannot be more than pentagonal, i.e. you should click no more than five points)
+# If you make a mistake, you can clean the editing area by choosing '''Clear'''
+# After you are done with editing, click '''Copy''' to move the edited coordinates to clipboard
+# Now you can close '''Hit-Area Editor''' and return to '''Script Editor'''
+# Place the cursor in the appropriate place of the [[Scripts#DRAGMATCH|<code>DRAGMATCH</code>]] or [[Scripts#HITTEST|<code>HITTEST</code>]] command and paste the coordinates from the clipboard (e.g. with ''Shift+Ins'' or ''Ctrl+V'')
+
+== Further reading ==
+
+[http://super-memory.com/help/faq/authoring.htm FAQ: Collection authoring]

@@ -1,0 +1,116 @@
+* '''[[Web import]]''': importing from Edge (Chrome also supported)
+** text can be imported as plain text where formatting makes incremental reading harder
+** text can be imported as plain text from the browser where the site refuses a direct download from the URL
+** most PDFs can be imported as plain text (i.e. not as HTML or original PDF)
+** imported texts can optionally be run through a parser (e.g. to filter out advertising, headers, sidebars, footers, etc.)(i.e. "non content clutter")
+** selections can be imported as HTML, plain text or parsed HTML
+** tab preview in web imports
+** tab delete in web imports
+** duplicate element preview in web imports
+** duplicate tab delete in web imports
+** duplicate [[element]] delete in web imports (''Ctrl+Del'')
+** hiding the browser from imports when the browser is minimized
+** YouTube texts import along the video
+** imported article can be re-opened parsed if import quality was unsatisfactory (''Shift+click'' on the '''Reference link''' button)
+** automatic import [[Glossary:Node|node]] title based on the titles of the imported documents
+* '''[[Collection chooser]]''':
+** unlimited number of [[Glossary:Collection|collection]]s (limited to 26 letters of the alphabet in SuperMemo 18)
+** incremental search for favorite collections
+* extracts on external sites
+* '''Go to the Last Child''' in [[Contents]], [[Concepts|concept box]], and in the [[element window]] (''Ctrl+Down'') is helpful in the navigation of the [[knowledge tree]]
+* total knowledge can be computed for a subset (along total [[Glossary:Consolidation|consolidation]], average [[Glossary:Retrievability|retrievability]], and average [[Glossary:Stability|stability]])
+* '''Priority protection''' expressed as position, which helps track progress through the [[priority queue]]
+* dual monitor support (multi-monitor layouts)
+* YouTube forwards as embeds (clips)
+* flatter YouTube control panel for a larger display area
+* '''[[Concepts]]'''
+** [[Concepts|concept box]] can be entered by pressing ''C''
+** ''Enter'' in [[Concepts|concept box]] provides options: 
+*** view the [[Glossary:Root node|root]]
+*** transfer [[Glossary:Element|element]] to [[Glossary:Concept|concept]]
+*** view the last [[Glossary:Child|child]] of the [[Glossary:Root node|root]]
+*** [[Glossary:Review|review]] the [[Glossary:Concept|concept]]
+** '''Learn''' on the concept box toolbar
+* '''Download the original''' makes it possible to update the imported page
+* '''[[Repetition history]]''': 
+** color-coded [[Glossary:Retrievability|retrievability]]
+** color-coded [[Glossary:Stability|stability]]
+* thumbs used in import if PNG files cannot be retrieved
+* '''[[SleepChart]]''': 
+** import from Excel allows of merging sleep chart files
+** separate [[Glossary:Collection|collection]]s may use different sleep chart files (e.g. for two users of the same installation). Used file is displayed in the caption
+** night sleep trailing average to show trends in time
+** siesta sleep trailing average to show trends in time
+** learn time trailing average to show trends in time
+* '''[[Plan]]''': 
+** '''Begin and Shift''' allows of shifting and compressing the schedule optimally in case of delays (if you can afford using guidelines instead of deadlines)
+** importing a folder of schedules
+** processing statistics en masse
+* simple e-mail for computers without MAPI mail support
+* [[Glossary:Collection|collection]]s do not get locked when moving around (e.g. with a flashdrive on another PC)
+* [[Glossary:Collection|collection]]s get unlocked when returning to the original computer
+
+== Bugs fixed ==
+* [[element|articles]] are listed ahead of pictures while inspecting duplicates in [[web  import]] 
+* '''Ancestor''' window would allow of only 63 levels
+* HTML translations would not work with ''Ctrl+click''
+* translations on mouse move would not work in [[HTML component]]s
+* transcriptions on mouse move would not work in [[HTML component]]s
+* YouTube forwards used insecure protocol
+* Facebook IDs would obscure duplicate detection
+* Google Ad IDs would obscure duplicate detection
+* wrong leap year date conversion in statistics
+* script errors in YouTube [[incremental video]]
+* script errors when navigating to external sites
+* image download dialog box might hide behind the [[element window]]
+* search and replace might trip on some diacritical characters
+* search and replace might trip on angle brackets
+* safer Wikipedia filtering with <code>action=render</code>
+* annoying data comparison at collection merge "Which repetition history data is more accurate?"
+* loss of the main tasklist file would change tasks to topics and dismiss them, which made tasklist loss invisible (until first use)
+* creating concepts at web imports would lock concept files (possible loss of the concept)
+* transferring elements between concepts would fail to close concept files, which would cause errors while copying collections (bug fix as of version 19.06 of Nov 10, 2024)
+
+== Pictures ==
+
+[[Image:SuperMemo 19 with dual monitor support.jpg|center|800px|SuperMemo 19 for Windows at the Professional level running on two monitors]]
+{{:File:SuperMemo 19 with dual monitor support.jpg}}
+
+[[File:Web import from MS Edge to SuperMemo 19.jpg|center|800px|Web import in SuperMemo 19]]
+{{:File:Web import from MS Edge to SuperMemo 19.jpg}}
+
+[[Image:YouTube import.jpg|center|800px|SuperMemo: Importing videos from YouTube for incremental learning]]
+{{:Image:YouTube import.jpg}}
+
+== What's New in older versions ==
+* [[What's new in SuperMemo 18?]]  (2020)
+* [[What's new in SuperMemo 17?]]  (2017)
+* [[What's new in SuperMemo 16?]]  (2013)
+* [[What's new in SuperMemo 15?]]  (2011)
+* [https://super-memory.com/archive/help2008/new2008.htm What's new in SuperMemo 14 (2008)?]
+* [https://super-memory.com/archive/help2006/new2006.htm What's new in SuperMemo 13 (2006)?]
+* [https://super-memory.com/archive/help2004/new2004.htm What's new in SuperMemo 12 (2004)?]
+* [https://super-memory.com/archive/help2002/new2002.htm What's new in SuperMemo 11 (2002)?]
+* [https://super-memory.com/archive/help2000/sm2000.htm What's new in SuperMemo 10 (2000)?]
+* [https://super-memory.com/archive/help99/sm99.htm What's new in SuperMemo 9.5 (1999)?]
+* [https://super-memory.com/archive/help98/sm98.htm What's new in SuperMemo 9 (1998)?]
+* [https://super-memory.org/archive/articles/soft/sm8.htm What's new in SuperMemo 8 (1995-1997)?]
+* [https://super-memory.org/archive/articles/soft/sm7.htm What's new in SuperMemo 7 (1993-1995)?]
+* [https://super-memory.org/archive/articles/soft/sm6.htm What's new in SuperMemo 6 for DOS (1991-1993)?]
+* [https://super-memory.org/archive/articles/soft/sm2.htm What's new in SuperMemo 1.0-5.5 for DOS (1987-1989)?]
+
+== Help for older versions ==
+*[https://help18.supermemo.org/wiki/SuperMemo_18_Help SuperMemo 18 (2019)]
+*[https://super-memory.com/archive/help17/index.htm SuperMemo 17 (2017)]
+*[https://super-memory.com/archive/help16/index.htm SuperMemo 16 (2013)]
+*[https://super-memory.com/archive/help15/index.htm SuperMemo 15 (2011)]
+*[https://super-memory.com/archive/help2008/index.htm SuperMemo 14 (2008)]
+*[https://super-memory.com/archive/help2006/index.htm SuperMemo 13 (2006)] 
+*[https://super-memory.com/archive/help2004/index.htm SuperMemo 12 (2004)] 
+*[https://super-memory.com/archive/help2002/index.htm SuperMemo 11 (2002)] 
+*[https://super-memory.com/archive/help2000/index.htm SuperMemo 10 (2000)] 
+*[https://super-memory.com/archive/help98/index.htm SuperMemo 9 (1998)] 
+*[https://super-memory.com/archive/sm8help/index.htm SuperMemo 8 (1997)] 
+*[https://super-memory.com/archive/sm7help/index.htm SuperMemo 7 (1995)]
+* [https://super-memory.org/archive/articles/soft/sm6.htm SuperMemo 6 (1991-1994)]
+* [https://super-memory.org/archive/articles/soft/sm2.htm SuperMemo 1-5 (1987-1990)]

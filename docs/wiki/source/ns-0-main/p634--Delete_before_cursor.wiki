@@ -1,0 +1,8 @@
+'''Delete before cursor''' is an important and popular procedure used in [[incremental reading]]. The procedure is used while reading texts. It deletes all previously processed texts before the cursor. It is useful to get rid of portions of texts that are no longer needed. It is also helpful in getting rid of adverts, images, styles or problematic HTML. The procedure leaves the unprocessed text after the cursor without the leading HTML (i.e. often with clean formatting).
+
+The procedure can be executed with:
+* ''Alt+\'' shortcut
+* [[Commander]] - command '''Delete before cursor'''
+* using a '''Read''' toolbar button
+
+If you ever happen to misapply this procedure, the original text is always stored in the ''\temp'' folder wherefrom it can be retrieved. The  text is deleted only during '''Repair collection'''.

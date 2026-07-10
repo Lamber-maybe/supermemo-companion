@@ -1,0 +1,58 @@
+__TOC__ 
+
+== Repetition history window  ==
+
+With '''[[Element menu#Learning|Learning]] : Statistics : Repetition history''' (<kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>H</kbd>) available from the [[element menu]], you can quickly display the history of repetitions for the currently displayed [[Glossary:Element|element]].
+
+[[Image:Repetition history.jpg|center|800px|SuperMemo: Repetition history dialog box displaying the history of repetitions for the current element]]
+{{:Image:Repetition history.jpg}}
+
+== Data columns  ==
+
+*'''No''' - the number of times the [[Glossary:Element|element]] was repeated/reviewed. ''(f)'' to the left of any given repetition number indicates the repetition when the [[Glossary:Item|item]] was '''f'''orgotten (i.e. you were not able to provide the correct answer). ''In the example above, the item was not recalled at the 2nd repetition''. 
+*'''Reps''' - the first figure represents the number of consecutive successful repetitions (when you graded yourself '''Pass (3)''' or higher). The other one shows the cumulative number of times you did not remember the [[Glossary:Item|Item]] (i.e. your grade was '''Fail (2)''' or less) since you first memorized it. Note that each time you forget the answer, the first figure gets reset to 1. 
+*'''Date''' - the date when you repeated/reviewed the [[Glossary:Element|element]], or, when it is scheduled for the next repetition ('''Next''' at the top)
+*'''Hour''' - the time (hh:mm:ss) when you repeated a given [[Glossary:Element|element]]
+*'''Grd''' - the grade that you gave yourself at a given repetition. Since you do not grade yourself on [[Glossary:Topic|topics]], the column reads ''Topic'' for this type of [[Glossary:Element|element]]
+*'''Interval''' - the number of days between successive repetitions: the one from the preceding row and the one from the current row
+*'''Priority''' - the relative position of the [[Glossary:Element|element]] in the [[Glossary:Priority_queue|priority queue]] at the time of the repetition (the lower the number, the higher the [[Glossary:Priority|priority]])
+*Stability - [[Glossary:Element|element]]'s [[Glossary:Stability|stability]] after a given repetition computed by selected spacing repetition algorithms. Fields that are darker blue show higher stability
+**'''S19''' -  [https://supermemo.guru/wiki/Algorithm_SM-19 Algorithm SM-19]
+**'''SF''' - [[FSRS]]
+**'''S20''' - [https://supermemo.guru/wiki/Algorithm_SM-20 Algorithm SM-20]
+*Retrievability - [[Glossary:Retrievability|retrievability]] computed with selected spacing repetition algorithms. Fields that are more red show higher retrievability
+**'''R19''' - [https://supermemo.guru/wiki/Algorithm_SM-19 Algorithm SM-19]
+**'''RF''' - [[FSRS]]
+**'''R20''' - [https://supermemo.guru/wiki/Algorithm_SM-20 Algorithm SM-20]
+*Difficulty - [[Glossary:Element|element]]'s [[Glossary:Difficulty|difficulty]] after a given repetition computed by selected spacing repetition algorithms
+**'''Diff19''' - [https://supermemo.guru/wiki/Algorithm_SM-19 Algorithm SM-19]
+**'''DiffF''' - [[FSRS]]
+**'''Diff20''' - [https://supermemo.guru/wiki/Algorithm_SM-20 Algorithm SM-20]
+*'''Postpones''' - the number of times the [[Glossary:Element|element]] was postponed until a given repetition
+
+== Context menu  ==
+
+Right-click over the '''Repetition history''' window opens a context menu with the following [[Glossary:Item|item]]s: 
+
+*'''Edit''' (<kbd>Ctrl</kbd>+<kbd>E</kbd>) - edit the repetition history (this may affect the algorithm and sleep optimization)
+*'''Copy''' (<kbd>Ctrl</kbd>+<kbd>C</kbd>) - copy the [[Glossary:Element|element]]'s repetition history to the clipboard 
+*'''Delete''' (<kbd>Del</kbd>) - delete the element's repetition history (after confirmation)
+*'''Save''' (<kbd>Ctrl</kbd>+<kbd>S</kbd>) - save the repetition history if it has been corrected for errors
+*'''Close''' (<kbd>Esc</kbd>) - close the repetition history window
+*'''Memory status''' (<kbd>F2</kbd>) - visualize changes in memory [[Glossary:Retrievability|retrievability]] and [[Glossary:Stability|stability]] over time
+*'''Fix and Edit''' - correct errors in repetition history before editing. The [https://supermemo.guru/wiki/SuperMemo_Algorithms latest algorithm]s put a premium on the correctness of repetition histories. Some data errors inherited from older SuperMemos would be uncovered in SuperMemo 17 or later (e.g. in multiple dismiss/reset operations, postpones, fake date settings, etc.). Raw repetition history data can be edited, however, it may be more convenient to do basic error correction by SuperMemo before the editing. '''Fix and Edit''' does error recovery and only then presents data for editing
+
+<div class="center">
+[[File:Memory status.jpg|800px|SuperMemo: Changes in two components of long-term memory]]
+{{:File:Memory status.jpg}}
+</div>
+
+== Editing repetition history ==
+
+Due to the fact that [[SuperMemo Algorithm]] relies heavily on repetition history, you should only edit repetition history in emergencies (e.g. issuing a wrong grade, reviewing on a wrong date, data errors, completing missing records, etc.).
+
+You can edit repetition history by pressing <kbd>Ctrl</kbd>+<kbd>E</kbd> in the repetition history window. If you introduce discrepancies between the repetition history and the current [[element data]], choose '''Repetition history data''' when answering '''Which repetition history data is more accurate?'''.
+
+== FAQs ==
+* [https://supermemopedia.com/wiki/Edit_repetition_history How to undo a '''Dismiss''']
+* [https://supermemopedia.com/wiki/Interpretation_of_grades_Auto_and_N/A_in_Repetition_History_Dialog_Box Grades Auto and N/A]

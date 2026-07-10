@@ -1,0 +1,2 @@
+;<span id="Dismissed_element">dismissed element</span>
+:[[Glossary:Element|element]] that is not memorized, is ignored in the learning process, and is not kept in the [[Glossary:Pending_queue|pending queue]]. A '''dismissed element''' can be re-memorized with '''[[Element menu#Learning|Learning]] : Remember''' (''Ctrl+M'') on the [[element menu]]. [[Glossary:Priority|Priority]] of '''dismissed elements''' is ignored (at [[Glossary:Dismiss|'''Dismiss''']] it is set to 100%).

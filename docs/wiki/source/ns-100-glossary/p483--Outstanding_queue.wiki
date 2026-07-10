@@ -1,0 +1,2 @@
+;<span id="Outstanding_queue">outstanding queue</span>
+:queue of [[Glossary:Element|elements]] scheduled for today's review. If you use '''[[Subset operations#add_to_outstanding|Add to outstanding]]''' (available on the [[Subset operations|subset processing menu]]), not all [[Glossary:Element|elements]] in the '''outstanding queue''' are actually [[Glossary:Outstanding_element|outstanding]]

@@ -1,0 +1,2 @@
+;<span id="Priority_queue">priority queue</span>
+:queue of [[Glossary:Element|elements]] ordered by their [[Glossary:Priority|priority]]. Use '''priority queue''' to always start from learning the material that is most important for you. Do not despair if you do not finish learning for a day. With '''priority queue''', you know you did your best and only lower priority material was left behind. Remember to use [[Glossary:Auto-sort|'''Auto-sort''']] and [[Glossary:Auto-postpone|'''Auto-postpone''']] to make the most of the '''priority queue'''. See: [[Priority queue]]

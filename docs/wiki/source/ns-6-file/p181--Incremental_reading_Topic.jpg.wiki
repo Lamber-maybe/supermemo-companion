@@ -1,0 +1,1 @@
+<blockquote>'''''Figure:''' After importing an article about the [https://en.wikipedia.org/wiki/Greenhouse_effect greenhouse effect] from [https://www.wikipedia.org/ Wikipedia] (e.g. with '''[[Edit menu|Edit]] : [[Web import]]''' (Shift+F8)), its entire text is stored in a single [[Glossary:Topic|topic]].''</blockquote>

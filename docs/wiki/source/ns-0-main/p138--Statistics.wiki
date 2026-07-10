@@ -1,0 +1,273 @@
+__TOC__
+
+== Introduction ==
+
+The '''Statistics''' window allows you to inspect the main learning statistics in the currently opened [[Glossary:Collection|collection]]. '''Statistics''' can be viewed by pressing ''F5'' ('''[[Window menu|Window]] : [[Layouts|Layout]] : Warrior layout''').
+
+[[Image:Statistics.jpg|204px|center|SuperMemo: Figure: The Statistics window where the main learning statistics of the currently opened collection can readily be inspected]]
+{{:Image:Statistics.jpg}}
+
+== Caption ==
+
+The caption displays the name of the [[Glossary:Collection|collection]] in square brackets. ''The presented [[Glossary:Collection|collection]] is named '''[ALL]'''.''
+
+== Toolbar ==
+;Menu
+:toolbar menu (available with a right-click): '''Workload Calendar''', '''Report''', '''Restore layout''', and '''Element window'''
+;[[Calendar]]
+:the daily and the monthly calendar of repetitions
+;[[Analysis]]
+:various statistics related to the learning process and [https://supermemo.guru/wiki/SuperMemo_Algorithm SuperMemo Algorithm]
+;[[Memory graphs (4D)|Memory graphs]]
+:visual presentation of memory functions, their approximations as used by [https://supermemo.guru/wiki/Algorithm_SM-18 Algorithm SM-18], and options for resetting and re-computing memory data on the basis of [[Repetition history|repetition histories]]
+;Warrior layout
+:arrange windows in the way optimized for the use of [[Glossary:Incremental_reading|incremental reading]] with the '''Statistics''' window conveniently aligned to the left of the [[element window]].
+;Help
+:view this help article
+
+== Statistics context menu ==
+
+To open the context menu:
+* Right-click anywhere in the window
+* Click the first button in the [[#Toolbar|toolbar]]
+
+Context menu items:
+* '''[[Calendar|Workload]]''' - the daily and the monthly calendar of repetitions
+* '''Report''' - save the contents of the '''Statistics''' window to a text file
+* '''Restore layout''' (''Ctrl+F5'') - restore the default windows [[layout]] in SuperMemo
+* '''Element window''' (''Esc'') - shift focus to the [[element window]]
+
+== Learning parameters ==
+
+<div class="bs-callout bs-callout-info">
+To easily compare the exemplary fields with their corresponding descriptions:
+# Shift+click the picture above to open it in full resolution in a new browser window
+# Drag the title bar of the picture window to the left or right side of the screen until an outline of the expanded window appears
+# Release the mouse to expand the window
+# Repeat steps 2 and 3 with this window to arrange the windows side by side
+</div>
+
+=== Date ===
+
+The current date and day of the week. If this value is preceded with ''Night'', it means that the new calendar day has already started but the old repetition day will not start until the time defined in '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Learning tab in Options | Learning]] : [[Learning tab in Options#Midnight clock shift|Midnight shift]]'''. When the midnight shift is passed, this field will display a red warning ''Time to close: Alt+F4''. If you see that message, close/restart your [[Glossary:Collection|collection]] to prevent collecting learning data with undefined repetition timing. ''In the example above, the picture snapshot was taken after midnight on Oct 22, 2023 (Sun)''
+
+=== First day ===
+
+The date on which the learning process started (i.e. the day on which the first [[Glossary:Element|element]] was memorized). ''The exemplary [[Glossary:Collection|collection]] presented in the picture has been in use since December 15, 1987 (i.e. two days after the [https://supermemo.guru/wiki/SuperMemo_1.0_for_DOS_(1987) birth date of SuperMemo for DOS])''
+
+=== Period ===
+
+The number of days in the learning process (i.e. number of days between '''[[#Date|Date]]''' and '''[[#First day|First day]]''').
+<blockquote><code>Period=[[#Date|Date]]-[[#First day|First day]]</code></blockquote>
+''The presented [[Glossary:Collection|collection]] has been in use for 35 years, 10 months and 7 days''
+
+=== Memorized ===
+
+The total number of [[Glossary:Element|element]]s introduced into the learning process with options such as '''[[Learn]]''' or '''[[Glossary:Remember|Remember]]'''. If an [[Glossary:Item|item]] takes part in [[Glossary:Repetition|repetitions]] it is a [[Glossary:Memorized_element|memorized]] [[Glossary:Item|item]]. It does not mean it is a remembered [[Glossary:Item|item]]. A proportion of [[Glossary:Memorized_element|memorized]] [[Glossary:Item|items]] is always forgotten. ''The presented [[Glossary:Collection|collection]] has 714,918 [[Glossary:Element|element]]s in the learning process and these elements make up 100.0% of all elements destined to enter the learning process, i.e. <code>Memorized/(Memorized+Pending)=100.0</code>. This indicates that Pending is 0 or not much more (Pending=3 here)(see [[#Pending|below]])''.
+
+See [https://youtu.be/sMH44u67R0E?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=5895 video guide].
+
+=== Memorized items ===
+
+The number of [[Glossary:Memorized_element|memorized]] [[Glossary:Item|item]]s in the [[Glossary:Collection|collection]], and the proportion of memorized [[Glossary:Item|item]]s among memorized [[Glossary:Element|element]]s. ''In the example above, 214,918 [[Glossary:Item|item]]s take part in repetitions. These [[Glossary:Item|item]]s make 30.1% of all [[Glossary:Element|element]]s taking part in the learning process (the remaining 69.9% of [[Glossary:Element|element]]s are [[Glossary:Memorized_element|memorized]] [[Glossary:Topic|topic]]s, memorized [[Glossary:Concept|concept]]s or memorized [[Glossary:Task|task]]s). The '''[[#Retention|Retention]]''' field indicates that 91.861% of these [[Glossary:Item|item]]s should be remembered at any given time''.
+
+See [https://youtu.be/sMH44u67R0E?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=6149 video guide].
+
+=== Memorized topics ===
+
+The number of [[Glossary:Memorized_element|memorized]] [[Glossary:Topic|topic]]s, [[Glossary:Concept|concept]]s and [[Glossary:Task|task]]s, and their cumulative proportion among all memorized [[Glossary:Element|element]]s. In a well-balanced [[Glossary:Incremental_reading|incremental reading]] process, [[Glossary:Topic|topic]]s should make a minority of [[Glossary:Element|element]]s served for [[Glossary:Review|review]]. If the proportion of [[Glossary:Topic|topic]]s increases, the [[Glossary:Retention|retention]] drops, and the learning process may gradually start to resemble traditional learning where ineffective [[Glossary:Passive_review|passive review]] predominates. You can store as many [[Glossary:Topic|topic]]s in your [[Glossary:Collection|collection]] as you wish as long as you make sure that you limit their [[Glossary:Review|review]] by setting appropriate [[Priority queue#Sorting repetitions|repetition sorting criteria]] ('''[[Learn menu|Learn]] : [[Learn menu#Sorting|Sorting]] : Sorting criteria'''). ''In the picture, 500,000 [[Glossary:Topic|topic]]s make 69.9% of the material taking part in the learning process''.
+
+See [https://youtu.be/sMH44u67R0E?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=6149 video guide].
+
+=== Memorized/Day ===
+
+The number of [[Glossary:Item|item]]s memorized per day: <code>(Memorized items)/Day</code>. ''In the example, the average of 16.411 [[Glossary:Item|item]]s have been memorized daily in the presented [[Glossary:Collection|collection]] over the previous 36 years. This is typical of an average student assuming daily use of SuperMemo''.
+
+See [https://youtu.be/sMH44u67R0E?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=6318 video guide]. 
+
+=== Total ===
+
+The number of [[Glossary:Item|item]]s, [[Glossary:Topic|topic]]s, [[Glossary:Concept|concept]]s and [[Glossary:Task|task]]s in the [[Glossary:Collection|collection]]. Two relationships hold true:
+<blockquote><code>Total=[[#Memorized|Memorized]]+[[#Pending|Pending]]+[[#Dismissed|Dismissed]]</code></blockquote>
+<blockquote><code>Total=[[#Topics|Topic]]s+[[#Items|Item]]s</code> ([[Glossary:Concept|concept]]s and [[Glossary:Task|task]]s are included in the '''Topics''' statistic)</blockquote>
+Deleted [[Glossary:Element|element]]s do not contribute to the total count of elements in the [[Glossary:Collection|collection]]. ''In the picture, the presented collection is made of 817,817 [[Glossary:Element|element]]s (largest [[Glossary:Collection|collection]]s reported by users reached well above a million elements)''
+
+See [https://youtu.be/sMH44u67R0E?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=6631 video guide]
+
+=== Items ===
+
+The number of [[Glossary:Item|item]]s in the [[Glossary:Collection|collection]]. ''In the example, the collection includes 219,022 items. These include dismissed items that might be used as reference, or as record of past learning, or just as a souvenir''
+
+=== Topics ===
+
+The number of [[Glossary:Topic|topic]]s, [[Glossary:Concept|concept]]s and [[Glossary:Task|task]]s in the [[Glossary:Collection|collection]]. ''The presented collection includes 598,795 topics, concepts and tasks''
+
+=== Outstanding ===
+
+The number of [[Glossary:Outstanding_material|outstanding]] [[Glossary:Item|item]]s, outstanding [[Glossary:Topic|topic]]s and [[Glossary:Final_drill|final drill]] items scheduled for [[Glossary:Repetition|repetition]] on this given day. The first number (before the plus sign) indicates the number of [[Glossary:Item|item]]s scheduled for this given day and not yet processed. The second number (after +) indicates the number of [[Glossary:Topic|topic]]s scheduled for [[Glossary:Review|review]] for this day. The third number (after the second +), if present, indicates the number of [[Glossary:Item|item]]s that have already been repeated today but scored less than '''Good (4)'''. Those are the [[Glossary:Item|item]]s that make up the [[Glossary:Final_drill_queue|final drill queue]]. The final drill queue is built only if '''Skip final drill''' is unchecked in '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Learning tab in Options|Learning]]'''. ''In the presented [[Glossary:Collection|collection]], there are still 30 [[Glossary:Item|item]]s scheduled for [[Glossary:Repetition|repetition]] on Oct 22, 2023. There are also 19 [[Glossary:Topic|topic]]s scheduled for [[Glossary:Review|review]] on that day as part of the [[Glossary:Incremental_reading|incremental reading]] process. There are no [[Glossary:Element|element]]s in the [[Glossary:Final_drill_queue|final drill queue]] (the third component of the '''Outstanding''' parameter is missing)''
+
+=== Review ===
+
+The number of [[Glossary:Element|element]]s scheduled for [[Subset learning|subset review]] (e.g. elements in the [[Subset learning#Neural review|neural review]] in '''[[Learn menu|Learn]] : [[Learn menu#Go neural|Go neural]]''', [[Glossary:Element|element]]s in [[Subset review#Branch review|branch repetitions]] in '''[[Contents]] :''' '''[[Subset learning|Learn]]''', [[Glossary:Element|element]]s in [[Subset review#Search and review|browser subset repetitions]] in the [[browser]]'s '''[[Subset learning|Learn]]''', [[Glossary:Element|element]]s in the [[Toolkit#Random test|random test]] queue in '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Random test|Random test]]''', etc.). The display may have a form of ''Neuro=<[[Glossary:Element|element]]s to do>'' in [[Neural creativity|neural review]], or ''<[[Glossary:Item|item]]s to do>+<[[Glossary:Topic|topic]]s to do>+<[[Glossary:Pending_element|pending]] to do>+(<subset description>)'' in [[Subset learning|subset review]], or ''<[[Glossary:Element|elements]] unprocessed>/<all [[Glossary:Element|elements]] in the test>'' in random tests. ''Here 244 [[Glossary:Item|item]]s remain in the neural queue used in [[neural creativity]]''
+
+=== Protection ===
+
+The current day's degree of processing of the top priority material. '''Important''': As the statistic is taken from the top of the queue of [[Glossary:Outstanding_material|outstanding]] [[Glossary:Item|item]]s or [[Glossary:Topic|topic]]s (not the top of [[Glossary:Outstanding_queue|outstanding queue]], which is a randomized mix of the two), if you change the [[Glossary:Priority|priority]] of the top [[Glossary:Item|item]], you will see a false value in '''Statistics''' until you review that [[Glossary:Item|item]] of changed [[Glossary:Priority|priority]] (this behavior is by design to prevent the need to scan the entire queue at each update to statistics). ''In the example, only the first 58 top priority [[Glossary:Item|item]]s, and the first 48 top priority [[Glossary:Topic|topic]]s have been processed. 58 item protection does not mean going through 58 items at the start of the outstanding queue (usually many more). It means that the highest [[Glossary:Priority|priority]] of unprocessed [[Glossary:Item|item]]s in the queue corresponds with the position 58 in the queue''.
+
+See [https://youtu.be/Ij5f8Iq5txg?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=3349 Priority Protection: The Ultimate Litmus Test]
+See [https://youtu.be/Ij5f8Iq5txg?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=3674 Priority Protection Stat for SM18 & SM19]
+See [https://youtu.be/Ij5f8Iq5txg?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=4042 Why You Have A Low Priority Protection]
+See [https://youtu.be/Ij5f8Iq5txg?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=4215 Sudden, Large Drop in Priority Protection]
+See [https://youtu.be/Ij5f8Iq5txg?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=4470 Chronically Low Priority Protection]
+
+=== Retention ===
+
+The estimated average knowledge [[Glossary:Retention|retention]] in the [[Glossary:Collection|collection]]. [[Glossary:Retention|Retention]] for high-[[Glossary:Priority|priority]] [[Glossary:Item|item]]s should be higher than the one listed. [[Glossary:Retention|Retention]] for low-[[Glossary:Priority|priority]] [[Glossary:Item|item]]s may be much lower, driving the average down. To inspect the [[Glossary:Retention|retention]] of top-priority material, see '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Statistics|Statistics]] : [[Analysis]] : [[Analysis#Graphs|Graphs]] : [[Analysis#Forgetting Index vs. Priority|Forgetting index vs. Priority]]'''. ''In the example, 91.861% of the material should be recalled in a random test on all [[Glossary:Element|element]]s in the [[Glossary:Collection|collection]] at any time. You can test your [[Glossary:Retention|retention]] using [[Toolkit#Random test|random test]]s and see if SuperMemo's estimates are accurate. This statistic may be overly optimistic if you have recently abused rescheduling tools such as '''[[Postpone]]''' or '''[[Mercy]]'''''.
+
+See [https://youtu.be/Zi8w1zjpBm4?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=4181 Understanding the Retention Rate in Spaced Repetition]
+
+=== Measured FI ===
+
+The value of the [[Glossary:Measured_forgetting_index|measured forgetting index]] as recorded during [[Glossary:Repetition|repetition]]s. The number in the parentheses indicates '''Measured FI''' for the day. In [[Glossary:Collection|collection]]s with heavy [[Glossary:Item|item]] [[Glossary:Overload|overload]], [[Glossary:Measured_forgetting_index|measured forgetting index]] may be much lower than the overall measured [[Glossary:Forgetting_index|forgetting index]] for the entire [[Glossary:Collection|collection]] due to the fact that repetitions include primarily high-[[Glossary:Priority|priority]] material that is not subject to postpones. It can also be lower than the [[Glossary:Requested_forgetting_index|requested forgetting index]] when transitioning from more randomized to more prioritized sorting (as determined by the [[Priority queue#Sorting repetitions|sorting criteria]]) or when [http://www.super-memory.com/articles/20rules.htm knowledge formulation and mnemonic skills] improve before this fact can be reflected in the [[Glossary:Forgetting_curve|forgetting curve]]. It is also not uncommon to have '''Measured FI''' higher than '''[[#Average FI|Average FI]]'''. This is due to three factors:
+# every user will experience delays in repetitions (e.g. as a result of using '''[[Postpone]]'''),
+# low-[[Glossary:Priority|priority]] material in the overloaded [[incremental reading]] process is scheduled in [[Glossary:Interval|interval]]s longer than [[Glossary:Optimum_interval|optimum interval]]s, 
+# SuperMemo imposes some constraints on the length of [[Glossary:Interval|interval]]s that result in repetitions later than determined by the [[Glossary:Forgetting_index|forgetting index]]. The constraints in computing [[Glossary:Interval|interval]]s, for example, prevent the new interval from being shorter than the old one (assuming the [[Glossary:Item|item]] has not been forgotten). For low values of the [[Glossary:Forgetting_index|forgetting index]] and for difficult [[Glossary:Item|item]]s, the new [[Glossary:Optimum_interval|optimum interval]] might often be shorter than the old one! '''Measured FI''' can be reset with '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Statistics|Statistics]] : Reset parameters : Forgetting index record'''. Resetting will resume measurements from scratch
+''In the presented example, an average of 15.82% of [[Glossary:Item|item]] [[Glossary:Repetition|repetition]]s end with a [[Glossary:Grade|grade]] less than '''Pass (3)''' (since the [[Glossary:Measured_forgetting_index|measured forgetting index]] record has last been reset). On Oct 22, 2023, no repetition ended in failure yet (i.e. with a grade less than '''Pass (3)''')''
+
+=== R-Metric ===
+The absolute measure of performance of two [[Glossary:Spaced_repetition|spaced repetition]] algorithms based on their ability to predict recall before a [[Glossary:Grade|grade]] is scored. In [[SuperMemo 20]], '''R-Metric''' is used to compare [https://supermemo.guru/wiki/Algorithm_SM-19 Algorithm SM-19] against the weighted pack of algorithms competing in [[Algorithm Arena]] (comprising [https://supermemo.guru/wiki/Algorithm_SM-2 Algorithm SM-2], [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm SM-15], [https://supermemo.guru/wiki/Algorithm_SM-19 Algorithm SM-19], [https://supermemo.guru/wiki/Algorithm_SM-20 Algorithm SM-20], and [https://supermemo.guru/wiki/FSRS FSRS]). It is shown as percentage in '''Statistics''' and '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Statistics|Statistics]] : [[Analysis]] : [[Analysis#Use|Use]] : Efficiency : [[Analysis#Use_:_Efficiency_:_R-Metric|R-Metric]]'''. '''R-Metric''' is a difference between the performance of the two sides: <code>R-Metric=LSRM(Alg-19)-LSRM(Arena)</code>, where <code>LSRM</code> is the least squares predicted recall measure for a given algorithm. '''R-Metric''' greater than zero shows superiority of [[Algorithm Arena]] over [https://supermemo.guru/wiki/Algorithm_SM-19 Algorithm SM-19]. '''R-Metric''' less than zero indicates underperformance of the Arena pack relative to Algorithm SM-19. <code>LSRM</code> is a square root of the average of squared absolute differences in recall predictions: <code>abs(Recall-PredictedRecall)</code>, where <code>Recall</code> is 0 for failing [[Glossary:Grade|grade]]s and <code>Recall</code> is 1 for passing grades. <code>PredictedRecall</code> is a prediction issued by the algorithm before the [[Glossary:Repetition|repetition]]. In [https://supermemo.guru/wiki/Algorithm_SM-19 Algorithm SM-19], the prediction is a weighted average of the value taken from the [[Glossary:Recall_matrix|Recall[] matrix]], and [[Glossary:Retrievability|R (retrievability)]] computed from [[Glossary:Stability|S (stability)]] and the used [[Glossary:Interval|interval]]. The weight used is based on prior repetition cases which inform of the significance of the Recall[] matrix prediction (the prediction becomes more meaningful with more prior repetition data).
+* <code>R-Metric=LSRM(Alg-19)-LSRM(Arena)</code>
+* <code>LSRM(Alg)=sqrt(sum(sqr(ARD)))</code>
+* <code>ARD=abs(Recall-PredictedRecall)</code>
+* <code>Recall</code> is 1 for Grade>=3, and 0 for Grade<3
+* <code>PredictedRecall</code> in Algorithm SM-19 is:
+** <code>weight*Recall[]+(1-weight)*R</code>
+*** <code>weight (0..1)</code> depends on the number of prior repetition cases
+*** <code>R=exp(-kt/s)</code>
+''In this case, R-Metric of 36.8691% shows a huge advantage of the [[Algorithm Arena]] weighted pack over Algorithm SM-19. Both negative and positive values are good news for you. [[Glossary:Spaced repetition|Spaced repetition]] will still do marvels to your memory'' (<small>picture is out of date; R-metric rarely goes above 5%; the contest is very close</small>)
+
+=== Alarm ===
+
+The time left till the next alarm, and the hour at which the alarm will ring (to learn more about alarms see: [[Plan]]). This field is editable. To change the alarm setting, click the field and type in the new time in minutes (e.g. 21.5 will set the alarm to sound in 21 minutes and 30 seconds). To end editing, press ''Enter''. ''In the example, the alarm will sound off in 31 minutes and 11 seconds at 06:49:15''
+
+=== Burden ===
+
+The estimate of the average number of [[Glossary:Item|item]]s and [[Glossary:Topic|topic]]s that have to be repeated per day. This value is equal to the [[Glossary:Burden|sum of all interval reciprocals]] (i.e. 1/[[Glossary:Interval|interval]]). The interpretation of this number is that every [[Glossary:Item|item]] with [[Glossary:Interval|interval]] of 100 days is on average repeated 1/100 times per day. Thus the sum of interval reciprocals is a good indicator of the total [[Calendar|repetitions workload]] in the [[Glossary:Collection|collection]]. ''The presented collection requires 155 [[Glossary:Item|item]] [[Glossary:Repetition|repetition]]s per day and 372 [[Glossary:Topic|topic]] [[Glossary:Review|review]]s per day. In [[incremental reading]], it is not unusual to have many more [[Glossary:Element|element]]s in the process than one can handle. '''[[Glossary:Auto-postpone|Auto-postpone]]''' can be used to unload the excess of [[Glossary:Topic|topic]]s as well as to reduce the load of low-[[Glossary:Priority|priority]] [[Glossary:Item|item]]s. '''[[Postpone]]''' skews the '''Burden''' statistic. [[Glossary:Topic|Topic]]s often crowd at lower [[Glossary:Interval|interval]]s and are regularly reshuffled with '''[[Postpone]]''' or '''[[Glossary:Auto-postpone|Auto-postpone]]'''''
+
+=== Burden +/- ===
+
+The change of the '''[[#Burden|Burden]]''' parameter above on a given day. ''Here, on Oct 22, 2023, the average number of expected daily [[Glossary:Repetition|repetition]]s was increased by 4.322 [[Glossary:Item|item]]s due to forgetting or due to adding new items. The [[Glossary:Topic|topic]] load was decreased by 7.707 [[Glossary:Topic|topic]]s). Exemplary interpretation of a burden change: Let's say '''Burden''' dropped by 39 (burden change of -39). To reduce the burden by 39, one would need to review 78 [[Glossary:Element|element]]s with an [[Glossary:Interval|interval]] increase from 1 to 2 days (78*0.5=39). However, one could equally well execute '''[[Postpone]]''' on 2344 [[Glossary:Element|element]]s with [[Glossary:Interval|interval]] increase from 10 to 12 days (2344*(1/10-1/12)=39)''
+
+=== Avg Workload ===
+
+The average time spent on responding to questions per day (from the first day of learning). ''For the presented [[Glossary:Collection|collection]], the student spent an average of 14 minutes and 58 seconds per day on answering [[Glossary:Item|item]]s over the period spanning 35 years 10 months and 7 days between Dec 15, 1987 and Oct 22, 2023''
+
+=== Exp Workload ===
+
+The estimation of the average daily time used for responding to questions in a given [[Glossary:Collection|collection]].
+<blockquote><code>Exp Workload=([[#Burden|Item Burden]])*[[#Avg time|Avg time]]</code></blockquote>
+''In the presented [[Glossary:Collection|collection]], 155 [[Glossary:Item|item]] [[Glossary:Repetition|repetitions]] per day ([[#Burden +/-|'''Burden''']]) taking 10.536 seconds each ([[#Avg time|'''Avg time''']]) result in a daily repetition time estimated at 27 minutes and 13 seconds. A real learning time may be twice longer due to grading, editing, reviewing the [[Glossary:Collection|collection]] and various interruptions. In [[incremental reading]], the learning time will increase further due to [[Glossary:Topic|topic]] [[Glossary:Review|review]] that is not taken into account in the '''Exp Workload''' parameter. The real learning time may also be cut if '''[[Postpone]]''' is often used. The user is not obliged to make all repetitions''
+
+=== Time ===
+
+The total question response time on a given day and the total session time for the collection (in parentheses). ''Here the total time needed to respond to questions on Oct 22, 2023 was 2 minutes and 10 seconds. On the same day, the presented collection has been running for 55 minutes and 22 seconds (this value will increase even if you simply keep SuperMemo running while not learning with that particular collection)''. See: [https://supermemopedia.com/wiki/How_%22Recall_time%22_(time_spent_on_answering_questions)_is_measured_and_why_it_is_so_low_compared_to_clock_time_using_SuperMemo%3F details]
+
+=== Avg time ===
+
+The average response time in seconds. This is the time that elapses between displaying the question (or equivalent) and choosing '''Show answer''' (or equivalent). The timer does not stop if you start editing the question before pressing '''Show answer'''. The averaged answer time is limited to 30 second just in case you left the keyboard for coffee. ''In the presented [[Glossary:Collection|collection]], the average time to answer a single question is around 10.536 seconds. If this number grows beyond 15-20 seconds, you may need to analyze your learning material if it is not overly difficult or [https://supermemo.guru/wiki/20_rules_of_knowledge_formulation badly structured]''. See: [https://supermemopedia.com/wiki/How_%22Recall_time%22_(time_spent_on_answering_questions)_is_measured_and_why_it_is_so_low_compared_to_clock_time_using_SuperMemo%3F details]
+
+=== Total time ===
+
+The total time taken by responding to questions in the [[Glossary:Collection|collection]]. This time cannot be accurately measured for collections created with SuperMemo 98 or earlier (the measurements were made possible only in SuperMemo 99). If you upgrade older [[Glossary:Collection|collection]]s, this number will roughly be guessed for you. SuperMemo will derive this time from the total number of [[Glossary:Item|item]]s, average number of [[Glossary:Repetition|repetition]]s, average number of [[Glossary:Lapse|lapse]]s, and the average repetition time. ''In the presented example, answering questions during repetitions took the total of over 136 days and 3 hours in nearly 36 years of learning''
+
+=== Lapses ===
+
+The average number of times individual [[Glossary:Item|item]]s have been forgotten in the [[Glossary:Collection|collection]] (only [[Glossary:Memorized_element|memorized]] [[Glossary:Item|item]]s are averaged). The number in parentheses shows the number of [[Glossary:Lapse|lapse]]s on a given day. ''Here an average [[Glossary:Item|item]] has been forgotten 0.48249 times. On Oct 22, 2023, no [[Glossary:Item|item]] has thus far been graded less than '''Pass (3)'''''
+
+=== Speed ===
+
+The [[Glossary:Acquisition_rate|average knowledge acquisition rate]], which is defined as the number of [[Glossary:Item|item]]s memorized per year per minute of daily work. Only the time used for answering item questions is counted. Initially, this value may be as high as 100,000 items/year/minute (esp. if you enthusiastically start working with the program before truly measuring its limitations, and the limitations of human memory). This parameter should later stabilize between 40 and 400 items/year/minute. It may be overly optimistic in collection with a heavy overload.
+<blockquote><code>[http://supermemopedia.com/wiki/Speed_of_learning_vs._acquisition_rate Speed=(Memorized items/Day)/(Repetitions time)*365]</code></blockquote>
+''In the presented [[Glossary:Collection|collection]], every minute of work per day resulted in 367.8 new [[Glossary:item|items]] memorized each year (i.e. roughly one item per day per minute)''.
+
+See [https://youtu.be/2IFFXB5-Avs Understanding the Speed stat in SuperMemo]
+
+
+=== Avg Cost ===
+
+The cost in time of memorizing a single [[Glossary:Item|item]], i.e. total learning time divided by the number of [[Glossary:Memorized_element|memorized]] [[Glossary:Item|item]]s.
+<blockquote><code>Avg Cost=[[#Total time|Total time]]/[[#Memorized items|Memorized items]]</code></blockquote>
+''In the presented example, the total repetition time per single [[Glossary:Item|item]] is 59 seconds, which is the amount of time it has contributed to the total of over 136 days of continual repetitions. The cost of editing, collection restructuring, [[Glossary:Incremental_reading|incremental reading]], etc. is not included in the '''Avg Cost''' parameter''
+
+=== Exp Cost ===
+
+The daily repetition time per each newly [[Glossary:Memorized_element|memorized]] [[Glossary:Item|item]] assuming no postpones.
+<blockquote><code>Exp Cost=[[#Exp Workload|Exp Workload]]/([[#Memorized/Day|Memorized items/Day]])</code></blockquote>
+''In the presented [[Glossary:Collection|collection]], each of the 16 newly [[Glossary:Memorized_element|memorized]] [[Glossary:Item|item]]s per day contributes 1 minute and 39 seconds of repetitions to the total workload of over 27 minutes per day. As this value is derived from '''[[#Burden|Burden]]''', it may be highly overestimated if you use '''[[Postpone]]''' a lot (e.g. in [[Glossary:Incremental_reading|incremental reading]])''
+
+=== Interval (I) ===
+
+The average [[Glossary:Interval|interval]] among [[Glossary:Memorized_element|memorized]] [[Glossary:Item|item]]s in the [[Glossary:Collection|collection]]. ''Here an average memorized item has reached the inter-[[Glossary:Repetition|repetition]] [[Glossary:Interval|interval]] of 13 years, 4 months and 30 days''
+
+=== Interval (T) ===
+
+The average [[Glossary:Interval|interval]] among [[Glossary:Memorized_element|memorized]] [[Glossary:Topic|topic]]s in the [[Glossary:Collection|collection]]. ''Here an average memorized topic has reached the inter-[[Glossary:Repetition|repetition]] [[Glossary:Interval|interval]] of 9 years, 8 months and 26 days''
+
+=== Repetitions ===
+
+The average number of [[Glossary:Repetition|repetition]]s/[[Glossary:Review|review]]s per [[Glossary:Memorized_element|memorized]] [[Glossary:Item|item]] (I) and [[Glossary:Topic|topic]] (T) in the [[Glossary:Collection|collection]], with the exclusion of repetitions made before the last [[Glossary:Lapse|lapse]]. ''Here an average [[Glossary:Item|item]] has been repeated 3.104 times while an average [[Glossary:Topic|topic]] has been reviewed 2.336 times''
+
+=== Rep count ===
+
+The total count of [[Glossary:Item|item]] [[Glossary:Repetition|repetition]]s made in the [[Glossary:Collection|collection]]. '''Rep count''' includes "ineffective" [[Glossary:Repetition|repetition]]s of [[Glossary:Item|item]]s that have been reset, forgotten, [[Glossary:Dismissed element|dismissed]], deleted, etc. ''In the presented collection, 966+ thousands of item repetitions have been made. This is 4.496 repetitions per [[Glossary:Memorized_element|memorized]] [[Glossary:Item|item]] (i.e. more than '''Repetitions'''=3.104 that excludes "ineffective" repetitions).'' 
+
+=== Last Rep (I) ===
+
+The average date of the last [[Glossary:repetition|repetition]] among [[Glossary:Memorized_element|memorized]] [[Glossary:Item|item]]s in the [[Glossary:Collection|collection]]. ''Here the average date of the last repetition is Jul 7, 2010''
+
+=== Last Rep (T) ===
+
+The average date of the last [[Glossary:Review|review]] among [[Glossary:Memorized_element|memorized]] [[Glossary:Topic|topic]]s in the [[Glossary:Collection|collection]]. ''Here the average date of the last review is April 17, 2014''
+
+=== Next Rep (I) ===
+
+The average date of the next [[Glossary:Repetition|repetition]] among [[Glossary:Memorized_element|memorized]] [[Glossary:Item|item]]s in the [[Glossary:Collection|collection]].
+<blockquote><code>Next Rep (I)=[[#Last Rep (I)|Last Rep (I)]]+[[#Interval (I)|Interval (I)]]</code></blockquote>
+''Here the average date of the next repetition is Dec 6, 2023  or 4,900 days after Jul 7, 2010 (4,900 days is 13 years 4 months and 30 days as in '''Interval (I)''' field)''
+
+=== Next Rep (T) ===
+
+The average date of the next [[Glossary:Review|review]] among [[Glossary:Memorized element|memorized]] [[Glossary:Topic|topic]]s in the [[Glossary:Collection|collection]]. 
+<blockquote><code>Next Rep (T)=[[#Last Rep (T)|Last Rep (T)]]+[[#Interval (T)|Interval (T)]]</code></blockquote>
+''Here the average date of the next review is Jan 13, 2024 or 3,558 days after Apr 17, 2014. 3,558 days is 9 years 8 months and 26 days as in '''Interval (T)''' ''
+
+=== Pending ===
+
+The number of [[Glossary:Element|element]]s ([[Glossary:Topic|topic]]s or [[Glossary:Item|item]]s) that have not yet been introduced into the learning process and await memorization (with operations such as '''[[Learn]]''', '''[[Glossary:Remember|Remember]]''', '''Schedule''', etc). All [[Glossary:Pending_element|pending element]]s are kept in the [[Glossary:Pending_queue|pending queue]] that determines the sequence of learning new [[Glossary:Element|element]]s. [[Glossary:Dismissed_element|Dismissed element]]s are not kept in the [[Glossary:Pending_queue|pending queue]]. ''In the example, the [[Glossary:Collection|collection]] contains 3 [[Glossary:Pending_element|pending element]]s. With [[Glossary:Incremental_reading|incremental reading]], the role of the [[Glossary:Pending_queue|pending queue]] in SuperMemo is diminishing''.
+
+See [https://youtu.be/sMH44u67R0E?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=5582 video guide]-
+
+=== Dismissed ===
+
+The number of [[Glossary:Element|element]]s ([[Glossary:Item|item]]s, [[Glossary:Topic|topic]]s, [[Glossary:Concept|concept]]s or [[Glossary:Task|task]]s) that have been excluded from the learning process and are kept only as reference material, folders in the [[Glossary:Knowledge_tree|knowledge tree]], or [[Glossary:Tasklist|tasklist]] [[Glossary:Element|element]]s. [[Glossary:Dismissed_element|Dismissed]] [[Glossary:Item|item]]s are neither [[Glossary:Pending_element|pending]] nor [[Glossary:Memorized_element|memorized]]. ''In the example, 102,896 [[Glossary:Element|element]]s have been [[Glossary:Dismiss|dismissed]]''.
+
+See [https://youtu.be/sMH44u67R0E?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=5046 video guide].
+
+=== Average FI ===
+
+The average [[Glossary:Requested_forgetting_index|requested forgetting index]] in the entire [[Glossary:Collection|collection]] (the number in parentheses is the [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo#default_forgetting_index default forgetting index]). If the [[Glossary:Forgetting_index|forgetting index]] of individual [[Glossary:Element|element]]s is not changed manually, '''Average FI''' is equal to the [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo#default_forgetting_index default forgetting index] as set in '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Learning tab in Options | Learning]] : Forgetting index (default)'''. The [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo#default_forgetting_index default forgetting index] is the [[Glossary:Requested_forgetting_index|requested forgetting index]] given to all new [[Glossary:Item|item]]s added to the [[Glossary:Collection|collection]]. [[Glossary:Forgetting_index|Forgetting index]], in general, is the proportion of [[Glossary:Item|item]]s that are not remembered during repetitions. The lower the value of the [[Glossary:Forgetting_index|forgetting index]] the better the recall of the [[Glossary:Element|element]], but the more [[Glossary:Repetition|repetition]]s will be needed to keep it in memory. Optimum value of the [[Glossary:Forgetting_index|forgetting index]] falls into the range from 7% to 13%. Too low a [[Glossary:Forgetting_index|forgetting index]] makes learning too tiresome due to a prohibitively large number of [[Glossary:Repetition|repetition]]s. All [[Glossary:Element|element]]s can have their [[Glossary:Requested_forgetting_index|desired forgetting index]] set individually. The easiest way to change the [[Glossary:Forgetting_index|forgetting index]] of a large number of [[Glossary:Element|element]]s is to use '''[[Subset operations#Forgetting index|Forgetting index]]''' option among [[subset operations]]. ''In the presented example, the average [[Glossary:Forgetting_index|forgetting index]] is 10.00% while the [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo#default_forgetting_index default forgetting index] is 10%''. See: [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo Using forgetting index]
+
+=== Completion ===
+
+The expected date on which all [[Glossary:Element|element]]s from the [[Glossary:Pending_queue|pending queue]] will be [[Glossary:Memorized_element|memorized]] assuming the present rate of learning new [[Glossary:Item|item]]s. This parameter is particularly useful if you are memorizing large ready-made [[Glossary:Collection|collection]]s such as [https://supermemo.guru/wiki/Advanced_English Advanced English]. For '''[[#Pending|Pending]]'''=3, the value of this field is ''today''.
+<blockquote><code>Completion=[[#Date|Date]]+([[#Pending|Pending]]/[[#Memorized/Day|(Memorized items/Day)]])</code></blockquote>
+
+=== A-Factor ===
+
+The average value of [[Glossary:A-Factor|A-Factor]] among [[Glossary:Memorized_element|memorized]] [[Glossary:Item|item]]s (I) and [[Glossary:Topic|topic]]s (T) in the [[Glossary:Collection|collection]]. For items, A-Factor is a measure of [[Glossary:Difficulty|difficulty]] in [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm SM-15]. The higher the [[Glossary:A-Factor|A-Factor]], the easier the [[Glossary:Item|item]]. For topics, A-Factor is the number by which the '''current [[Glossary:Interval|interval]]''' should be multiplied to get the value of the '''next interval'''. ''In the presented [[Glossary:Collection|collection]], the average [[Glossary:A-Factor|A-Factor]] for [[Glossary:Item|item]]s is 4.09. This indicates that the [[Glossary:Collection|collection]] is rather well-structured and the material is thus relatively easy to remember. The average [[Glossary:A-Factor|A-Factor]] for [[Glossary:Topic|topic]]s is 1.219''
+
+=== Additional notes ===
+
+* [[Glossary:Item|Items]] are added to the [[Glossary:Final_drill|final drill]] not only during standard repetitions when you grade an [[Glossary:Element|element]] below '''Good (4)'''. Operations such as '''Remember''' (''Ctrl+M''), '''Cloze''' (''Alt+Z''), and '''Add to drill''' (''Shift+Ctrl+D'') will also add to the [[Glossary:Final_drill_queue|final drill queue]]. The [[Glossary:Final_drill_queue|final drill queue]] is created automatically only if you uncheck '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Learning tab in Options | Learning]] : Skip final drill'''
+* Some fields of the '''Statistics''' window can be edited. For example: '''Alarm''', '''Total time''', '''Rep count''', etc. To edit an entry, click it, type the new value and press ''Enter''. If the entry cannot be modified SuperMemo will warn you (e.g. "''Retention entry cannot be modified''").
+* See [http://super-memory.com/articles/survey1994.htm Survey 1994] and [http://super-memory.com/articles/survey.htm Survey 1999] for some interesting notes about the speed of learning reached with SuperMemo

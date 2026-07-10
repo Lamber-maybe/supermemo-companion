@@ -1,0 +1,2 @@
+;<span id="Zoom&trim_mode">zoom&trim mode</span>
+:state in which pictures in [[Glossary:SuperMemo|SuperMemo]] can be processed with mouse operations that include zooming, trimming, moving the zoom, etc. To enter this mode, ''Alt+click'' the picture. The picture will be surrounded with a <span style="padding: 3px; background-color: lime;">thin lime border</span>. To test the mode, 'middle-click'' the picture to zoom in

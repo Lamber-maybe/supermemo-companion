@@ -4,3 +4,7 @@ LEARNER.md
 # Repair files from the leech clinic (and any card drafts) land here
 cards/*
 !cards/.gitkeep
+
+# Local Python bytecode from documentation tooling
+__pycache__/
+*.py[cod]

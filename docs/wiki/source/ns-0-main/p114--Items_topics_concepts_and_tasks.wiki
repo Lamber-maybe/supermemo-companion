@@ -1,0 +1,135 @@
+A [[Glossary:Collection|collection]] in SuperMemo is made of a set of [[Glossary:Element|elements]]. Each element is a page of information visible on the screen at one time. [[Glossary:Element|Elements]] in SuperMemo can be of four types:
+* [[Glossary:Item|items]],
+* [[Glossary:Topic|topics]],
+* [[Glossary:Concept|concepts]], or
+* [[Glossary:Task|tasks]].
+
+This is the function of these four types:
+
+* '''items''' are simple [[Glossary:Element|elements]] that are used to test your knowledge. They often have a form of a question and an answer. They can also assume other forms. For example, multiple choice test, spelling exercise, picture recognition, etc. One thing is common to all items: in the learning process they are supposed to provide a stimulus (e.g. a question) and you are supposed to respond to this stimulus (e.g. with the recall of a correct answer)
+* '''topics''' are pages of new information to learn. They are reviewed passively, i.e. they do not provide a stimulus, do not require a response, and do not expect any feedback from you. Topics may assume one of these exemplary forms:
+*# '''articles''' (e.g. imported from the Internet) or their fragments (chapters, sections, paragraphs or single sentences). Topics in the form of articles play a central role in [[Glossary:Incremental_reading|incremental reading]], i.e. massive parallel reading of articles imported from the Internet
+*# '''reference material''' such as URLs of articles to read, rough notes, pictures to process, etc.
+*# '''presentation pages''' created by authors of commercially distributed [[Glossary:Collection|collections]]. Presentation pages provide an introduction to a given body of knowledge. For example, a general overview of the history of the Ottoman Empire before individual questions are asked in reference to the same subject
+* '''concepts''' represent an important idea or subject. A concept may serve as a [[Glossary:Root_node|root]] of a [[Glossary:Branch|branch]] in the [[Glossary:Knowledge_tree|knowledge tree]] forming a ''concept group''. A concept can also act as a hub which other [[Glossary:Element|elements]] can be linked with. Thus created network of interlinked elements is a ''concept map,'' and is used for ''spreading activation'' in the [[Subset learning#Neural review|neural review]]. Where '''topics''' serve plain learning, '''concepts''' are more suitable for exploration and creative problem solving
+* '''tasks''' describe jobs that should be done. A task may be an article to read, [[Incremental mail processing|e-mail to respond to]], website address to explore, etc. It can also describe jobs that are irrelevant to learning, e.g. a product on your shopping list or a description of a household chore on your to-do list. Tasks are useful in cases where there are more tasks than you can handle. Tasks are therefore used to prioritize your work. They help you start working with the most important tasks and proceed with less important tasks later
+
+The division into '''[[Glossary:Item|items]]''' and '''[[Glossary:Topic|topics]]''' is central to [[Glossary:Incremental_reading|incremental reading]]. Topics are used to introduce the student to a given subject, while items are used to rehearse the same subject to ensure good recall of individual pieces of knowledge. Typically, you can import an article from the Internet (this will be a topic), extract its most important fragments (which will also become new topics) and then convert them to question-and-answer material. Those questions and answers will be items. Items will ensure you do not forget what you have learnt.
+
+<div class="inset" style="background-color: #C0C0C0;">
+
+'''Example'''
+
+'''Topics''': A topic may contain the following text:
+
+<blockquote>
+
+''Jimmy Carter, born 1924, US statesman and 39th President (1977-1981), born in Plains, Georgia. He was educated at the US Naval academy, and served in the US Navy until 1953, when he took over the family peanut business and other enterprises. As Governor of Georgia (1970-1974) he expressed enlightened policy towards the rights of colored men and women. In 1976 he won the Democratic presidential nomination, and went on to win a narrow victory over Gerald Ford. He arranged the peace treaty between Egypt and Israel (1979), and was much concerned with human rights. His administration ended in difficulties over the taking of US hostages in Iran, and the Soviet invasion of Afghanistan, and was defeated by Ronald Reagan in the 1980 election''
+
+</blockquote>
+
+'''Items''': To rehearse the knowledge of the facts presented in the above text, the following question-answer items might have been used:
+
+<blockquote>
+
+''Q: Which year was Jimmy Carter born?''<br />''A: 1924''
+<br />
+<br />
+''Q: Who was 39th President?''<br />''A: Jimmy Carter''
+<br />
+<br />
+''Q: When did Jimmy Carter become President?''<br />''A: 1977''
+<br />
+<br />
+''Q: What academy did Jimmy Carter attend?''<br />''A: US Naval academy''
+<br />
+<br />
+''Q: What kind of family business did Jimmy Carter take over in 1953?''<br />''A: peanut business''
+<br />
+<br />
+etc. etc.
+
+</blockquote>
+
+</div>
+
+[[Glossary:Topic|Topics]] and [[Glossary:Item|items]] are presented for review in the learning process in a different way:
+
+* topics are presented in always increasing [[Glossary:Interval|intervals]]. Each new interval equals the old interval multiplied by a constant called [[Glossary:A-Factor |''A-Factor'']]
+* items are presented in intervals that depend on grades you score in the process of learning. Those intervals are determined by the [https://supermemo.guru/wiki/SuperMemo_Algorithm SuperMemo algorithm]. If you grade your answer '''Pass (3)''' or more, the interval will increase. Otherwise it will drop back to a few days (i.e. the item will be considered forgotten)
+
+If you generate [[Glossary:Item|items]] from [[Glossary:Topic|topics]] in the process of [[Glossary:Incremental_reading|incremental reading]], items will usually be [[Glossary:Child|children]] of topics in the [[Glossary:Knowledge_tree|knowledge tree]]. Even if you move items away from their parent topics, you can always jump back to the source topic by using the '''Reference hyperlink''' button on the [[navigation bar]].
+
+Tasks differ from topics only by the fact that they are kept on one of your [[Glossary:Tasklist|tasklists]]. Tasklists are prioritized lists of [[Glossary:Task|tasks]]. Tasklists which are composed of articles to read are called [http://super-memory.com/articles/read.htm reading lists]. Tasks can also enter the learning process and still remain on the tasklist. For more about tasks see: [http://super-memory.com/articles/tasklists.htm Break free from work overload].
+
+The following table summarizes the differences between items, topics, concepts, and tasks:
+
+{| border="2" cellspacing="4" cellpadding="4" style="background-color: #C0C0C0;"
+| align="center" | ''Properties''
+| align="center" | '''Items'''
+| align="center" | '''Topics'''
+| align="center" | '''Concepts'''
+| align="center" | '''Tasks'''
+|-
+| align="center" | Length
+| align="center" | Must be as short and simple as possible
+| align="center" | May contain lengthy texts and rich graphics, but can also be made of short [[Glossary:Extract|extracts]] or single sentences
+| align="center" | May be either short (e.g. an idea) or long (e.g. a [http://en.wikipedia.org Wikipedia article])
+| align="center" | May be either short (e.g. task description, URL, etc.) or long (e.g. [http://super-memory.com/articles/read.htm reading list] articles)
+|-
+| align="center" | Repetitions
+| align="center" | Repeated as many times as it takes to keep them in memory (usually just 7-12 times per lifetime)
+| align="center" | Presented in always increasing intervals (unless you explicitly choose your own interval). Once fully processed, they are usually deleted
+| align="center" | Does not need to be in the review process. In review, concepts behave in the same way as topics
+| align="center" | May never enter the review process. If they are subject to review, they behave in the same way as topics
+|-
+| align="center" | Purpose
+| align="center" | Make sure you do not forget what you have learnt. This is done by regular rehearsal (repetition)
+| align="center" | Introduction to new knowledge. They provide the source of reading material for generating new items
+| align="center" | Mark important ideas, e.g. for the purpose of [[Subset learning#Neural review|neural review]]. Organize knowledge into groups
+| align="center" | Used to define to-do tasks, e.g. articles to read, jobs to do, [[Incremental mail processing|e-mail to respond to]], etc.
+|-
+| align="center" | Created
+| align="center" | Usually by '''Add new''' (''Alt+A'') or by '''Reading : Remember cloze''' (''Alt+Z'') on the [[component menu]] in [[incremental reading]]
+| align="center" | Usually by pasting articles from the clipboard with ''Ctrl+N'' or by '''Reading : Remember extract''' (''Alt+X'') on the [[component menu]] in [[Glossary:Incremental_reading|incremental reading]]. There are many other methods (e.g. ''Shift+Ctrl+W'' to import articles from [http://en.wikipedia.org Wikipedia], etc.)
+| align="center" | Usually by '''[[Edit menu|Edit]] : [[Edit menu#Create a concept|Create a concept]]''' (from the [[main menu]]) or by converting an already existing [[Glossary:Topic|topic]] ('''Element type : Concept''' in the [[Element parameters|'''Element parameters''' dialog box]] (''Shift+Ctrl+P''))
+| align="center" | Usually by '''Add a new task''' (''Alt+F1'')
+|-
+| align="center" | Setting the type
+| align="center" | Check '''Type : Item''' on the [[element menu]] or '''Element type : Item''' in the [[Element parameters|'''Element parameters''' dialog box]] (''Shift+Ctrl+P'')
+| align="center" | Check '''Type : Topic''' on the [[element menu]] or '''Element type : Topic''' in the [[Element parameters|'''Element parameters''' dialog box]] (''Shift+Ctrl+P'')
+| align="center" | Check '''Type : Concept''' on the [[element menu]] or '''Element type : Concept''' in the [[Element parameters|'''Element parameters''' dialog box]] (''Shift+Ctrl+P'')
+| align="center" | Check '''Type : Task''' on the [[element menu]] or '''Element type : Task''' in the [[Element parameters|'''Element parameters''' dialog box]] (''Shift+Ctrl+P'')
+|-
+| align="center" | Repetition cycle
+| align="center" | First question components are presented. Answer components are presented only after choosing '''Show answer'''
+| align="center" | Topics are just presented as they are (even if some components are checked as [[Component menu#Answer|Answer]])
+| align="center" | If taking part in the learning process, concepts do not differ from topics
+| align="center" | Rarely do tasks take part in repetitions. If they do, they are just presented "as is" (like topics)
+|-
+| align="center" | Processing
+| align="center" | They are intended for active recall of information from memory
+| align="center" | They are intended for passive review, reading or generating smaller topics taking part in [[Glossary:Incremental_reading|incremental reading]]
+| align="center" | They are intended for passive review, reading, incremental elaboration and enhancement, etc. [[Glossary:Incremental_reading|incremental reading]]
+| align="center" | They await processing in a [[Glossary:Tasklist|tasklist]]
+|-
+| align="center" | Form
+| align="center" | Stimulus-response (most often: question and answer)
+| align="center" | Article (or its fragment)
+| align="center" | A concept name, or an text relevant to the concept, or an image associated with the concept, etc.
+| align="center" | Depends on the purpose (e.g. URL, e-mail, article, name, job description, etc.)
+|-
+| align="center" | Location in the [[Glossary:Knowledge tree|knowledge tree]]
+| align="center" | Usually as [[Glossary:Child|children]] of the parent topic (if any), or added as children of the current append [[Glossary:hook node|hook]] of the current [[Glossary:Concept_group|concept group]]
+| align="center" | Usually as parents of items generated with [[Glossary:Cloze_deletion|cloze deletion]]. By default added to the currently selected [[Glossary:Concept_group|concept group]]
+| align="center" | Usually as a parent of a group of element, or as a separate concept or concept article
+| align="center" | Within the [[Glossary:Concept|concept]] on which the tasklist is built
+|-
+| align="center" | How they enter the learning process
+| align="center" | Usually enter the learning process at the moment of being added to the collection (e.g. with '''Add new''' or '''Remember cloze''')
+| align="center" | Usually enter the learning process at the moment of being imported (e.g. with ''Ctrl+N'') or extracted ('''Remember extract''')
+| align="center" | Usually enter the learning process at the moment of adding, unless they are dismissed as placeholders for concepts or concept groups
+| align="center" | May not take part in the review process at all. Introduced into review by tasklist priority sequence with ''Ctrl+M'' (and usually converted to a topic at the same time)
+|}
+
+The structure of the knowledge tree will usually be determined by the operations you perform in the process of [[Glossary:Incremental_reading|incremental reading]]. However, if you create a [[Glossary:Collection|collection]] for use by others and would like to build a clear structure of presentation pages ([[Glossary:Topic|topics]]) and the testing material ([[Glossary:Item|items]]) grouped thematically ([[Glossary:Concept|concepts]]), see: [[Building the knowledge tree]]

@@ -1,0 +1,3 @@
+<blockquote>
+'''''Figure:''' {{{1}}}''
+</blockquote>

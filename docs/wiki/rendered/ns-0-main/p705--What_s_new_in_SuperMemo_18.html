@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What&#x27;s new in SuperMemo 18? — SuperMemo Help mirror</title>
+<style>body { font-family: Georgia, 'Times New Roman', serif; max-width: 1040px; margin: 0 auto; padding: 1.5rem; color: #202122; line-height: 1.58; }
+h1, h2, h3, h4, h5, h6 { font-family: system-ui, sans-serif; line-height: 1.25; }
+a { color: #0645ad; } a:visited { color: #0b0080; }
+.mirror-meta { color: #54595d; font: 0.85rem/1.45 system-ui, sans-serif; border-bottom: 1px solid #eaecf0; padding-bottom: .8rem; margin-bottom: 1.2rem; }
+.mirror-meta code { color: #202122; }
+table { border-collapse: collapse; margin: 1rem 0; max-width: 100%; }
+td, th { border: 1px solid #a2a9b1; padding: .4rem .6rem; vertical-align: top; }
+th { background: #eaecf0; }
+img, video { max-width: 100%; height: auto; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1rem; overflow-x: auto; }
+code { background: #f8f9fa; padding: .1rem .25rem; }
+.toc, .navbox { background: #f8f9fa; border: 1px solid #a2a9b1; padding: .8rem; }
+.redirect { background: #f8f9fa; border-left: .3rem solid #36c; padding: .8rem 1rem; }</style>
+</head>
+<body>
+<div class="mirror-meta">
+<a href="../../_index.html">Mirror index</a> ·
+<a href="../../source/ns-0-main/p705--What_s_new_in_SuperMemo_18.wiki">View raw source</a> ·
+<a href="https://help.supermemo.org/wiki/What&#x27;s_new_in_SuperMemo_18%3F">Official page</a> ·
+revision <a href="https://help.supermemo.org/index.php?title=What%27s%20new%20in%20SuperMemo%2018%3F&amp;oldid=11687"><code>11687</code></a>
+</div>
+<h1>What&#x27;s new in SuperMemo 18?</h1>
+<main id="mw-content-text"><div class="mw-parser-output"><div class="mw-heading mw-heading2"><h2 id="Learning">Learning</h2></div>
+<ul><li><b><a class="external text" href="https://supermemo.guru/wiki/SuperMemo_Algorithm">Algorithm SM-18</a></b> with a <a class="external text" href="https://supermemo.guru/wiki/Item_difficulty_in_Algorithm_SM-18">new approach to determining item difficulty</a></li>
+<li>new <a class="external text" href="https://supermemo.guru/wiki/Universal_metric_for_cross-comparison_of_spaced_repetition_algorithms">universal algorithm metric</a></li>
+<li>collecting and displaying <a class="external text" href="https://supermemo.guru/wiki/Stabilization_curve">stabilization curves</a> that determine the efficency of review</li>
+<li>collecting and displaying <a href="p141--Analysis.html" title="Analysis">retrievability-based forgetting curves</a> to determine the efficiency of the algorithm</li>
+<li>simplified editing of repetition histories (e.g. <i>Aug 15, 1995</i> or <i>Int=6</i> are allowed instead of full repetition data)</li>
+<li>recalibrating <a class="external text" href="https://supermemo.guru/wiki/SuperMemo_Algorithm">SuperMemo Algorithm</a> to rely on <i>E(SInc[])</i> rather than <i>SInc[]</i></li>
+<li>maximum interval increased to 120 years (previously 10,000 days, i.e. 27 years)</li>
+<li>repetition history can be used to override learning parameters</li>
+<li><b>Undo Repetition</b> (items are made pending when the last record is deleted)</li>
+<li>grade undo is possible by editing the last repetition history record (or using <b>Undo Repetition</b>)</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Interface">Interface</h2></div>
+<ul>
+<li>40 predefined themes (<i>skins</i>)(see <a class="external text" href="https://youtu.be/FRWPzd43l0I">video</a>)</li>
+<li>each collection can use its own theme (<i>skin</i>)</li>
+<li>all toolbars available as tabs at the bottom of the <a href="p44--Element_window.html" title="Element window">element window</a></li>
+<li>emojis used for grades instead of grade names (names known from previous SuperMemos can be restored via <b>Options</b>)
+<div class="center">
+<p><span class="mw-default-size" typeof="mw:File"><a href="../../source/ns-6-file/p664--Emoji-based_grade_panel.jpg.wiki" class="mw-file-description" title="Emoji-based grade panel in SuperMemo 18"><img alt="Emoji-based grade panel in SuperMemo 18" src="https://help.supermemo.org/images/c/c9/Emoji-based_grade_panel.jpg" decoding="async" loading="lazy" width="501" height="47" class="mw-file-element"></a></span>
+</p>
+<blockquote>
+<p><i><b>Figure:</b> As of <a class="external text" href="https://help18.supermemo.org/wiki/What&#x27;s_new_in_SuperMemo_18?">SuperMemo 18</a>, grades are illustrated with vivid emojis by default. If you prefer the old text-based grades (i.e. <b>Great</b>, <b>Pass</b>, <b>Bad</b>, etc.), uncheck <b>Grade icons</b> in <b><a href="p15--Toolkit_menu.html" title="Toolkit menu">Toolkit</a>&nbsp;: <a href="p18--Options.html" title="Options">Options</a>&nbsp;: <a href="p21--SuperMemo_tab_in_Options.html" title="SuperMemo tab in Options">SuperMemo</a></b>.</i>
+</p>
+</blockquote>
+</div>
+</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Performance">Performance</h2></div>
+<ul><li>SuperMemo 18 has been recompiled with Delphi 10.2 Tokyo</li>
+<li>minimizing add on units to capitalize on native Delphi support</li>
+<li>resetting statistics at Memorized=0 does not reset the collection, only deletes files</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Bugs_fixed">Bugs fixed</h2></div>
+<ul><li><i>https://</i> image import could fail if <i>https</i> files allowed of no <i>http</i> access</li>
+<li>occasionally, RTF files would fail to upgrade to HTML (old format would be retained)</li>
+<li><b>Alarm&nbsp;: Start</b> could instantly raise the alarm for time&gt;0</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Warnings">Warnings</h2></div>
+<ul><li>No more floating toolbars</li>
+<li>No more toolbar dock</li>
+<li>No more translation import and export via text</li>
+<li><b>Window:Select:Next window</b> removed</li>
+<li>No more <i>stray repetition</i> export from repetition history</li>
+<li>Additional repetition history warnings <i>Wrong repetition, grade and lapses match</i> can only be fixed manually (e.g. <b>Fix and Edit</b>)</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Other">Other</h2></div>
+<ul><li>extended Q&amp;A text import (incl. <a class="external text" href="https://youtu.be/-zfVeUgYyw8">Anki cloze</a>)</li>
+<li>simplified code with a great deal of refactoring</li>
+<li>440 improvements and bug fixes</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Video">Video</h2></div>
+<p>Exemplary skin types (themes) used in SuperMemo 18 (<b>Window&nbsp;: Themes</b>):
+</p><p>{{#ev:youtube|FRWPzd43l0I}}
+</p><p><br>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260710173400
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [no‐toc]
+CPU time usage: 0.033 seconds
+Real time usage: 0.036 seconds
+Preprocessor visited node count: 33/1000000
+Post‐expand include size: 772/2097152 bytes
+Template argument size: 341/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.134      1 File:Emoji-based_grade_panel.jpg
+100.00%    4.134      1 -total
+ 41.07%    1.698      1 Template:Fig
+-->
+
+<!-- Saved in parser cache with key guru_Help20:pcache:705:|#|:idhash:canonical and timestamp 20260710173400 and revision id 11687. Rendering was triggered because: page-view
+ -->
+</div></main>
+</body>
+</html>

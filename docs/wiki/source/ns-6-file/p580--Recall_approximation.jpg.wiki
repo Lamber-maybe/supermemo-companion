@@ -1,0 +1,3 @@
+<blockquote>
+'''''Figure:''' Approximating the [[Glossary:Recall_matrix|Recall[] matrix]] with the best-fit function to compute default recall in conditions of data scarcity. The approximation procedure uses a [https://en.wikipedia.org/wiki/Hill_climbing hill-climbing algorithm] with parameters '''A''', '''B''', '''C''', '''D''' displayed in the picture. Least squares deviation is obtained to asses the progress. The circles represent the [[Glossary:Recall_matrix|Recall[] matrix]] at a chosen [[Glossary:Difficulty|difficulty level]]. Their size corresponds with repetition cases investigated. The <span style="padding: 3px; color: #fff; background-color: red;">red surface</span> is the best fit of the studied function to the Recall[] data.''
+</blockquote>

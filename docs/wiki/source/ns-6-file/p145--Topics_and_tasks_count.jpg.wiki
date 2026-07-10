@@ -1,0 +1,1 @@
+{{Fig|Exemplary graph showing the total number of [[Glossary:Topic|topics]] stored in the [[Glossary:Collection|collection]]. The data displayed at the bottom depends on the position of the mouse. In this example, it indicates that on Mar 6, 2009, there were 251,228 [[Glossary:Topic|topics]] in the incremental reading process.}}

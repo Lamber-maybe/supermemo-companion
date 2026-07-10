@@ -1,0 +1,2 @@
+;<span id="Element_window">element window</span>
+:window that displays a single [[Glossary:Element|element]] in a [[Glossary:Collection|collection]]. In the default state this window displays buttons '''[[Contents]]''', [[Find elements|'''Search''']], '''History''', etc. in its [[navigation bar]] along the top, as well as '''[[Learn]]''', '''[[Add new]]''', and the control bar at the bottom. Read more: [[Element window]]

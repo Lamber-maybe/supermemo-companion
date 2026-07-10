@@ -1,0 +1,1 @@
+Examplary spectrogram shows a sleep with a prevailing frequency corresponding with a period of 24.454 hours (i.e. 27 minutes more than a 24 h day-night cycle). There is also a cluster of periods around 12.1-12.8 hours (those are reflected by a midday circadian low time suitable for siesta naps)

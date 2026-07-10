@@ -1,0 +1,35 @@
+'''Language''' tab in '''[[Toolkit menu|Toolkit]] : [[Options]]''' provides options that make it possible to help international users use a given [[Glossary:Collection|collection]]:
+
+[[Image:options_language.jpg|center|SuperMemo: Toolkit : Options : Language tab]]
+
+Here is the interpretation of individual fields in the '''Language''' section:
+
+* '''Program''' - this field is provided for information only. It shows the language version of SuperMemo. You cannot change this field
+* '''Collection translation''' - makes it possible to select the language to which the [[Glossary:Collection|collection]] will be translated. If registry files with the relevant translation exist, you will be able to see the translation of individual texts (e.g. with a mouse move or middle mouse button depending on the [[Mouse tab in Options|mouse settings]]). If such files do not exist, they will be created and you will be able to begin translating your [[Glossary:Collection|collection]] with ''Ctrl+click'' as long as you use [[Using text components|plain text components]]. You can use the button '''Delete''' to delete the currently used translation registry. See more: [[Translating collection|Translating collections to other languages]]
+* '''Translation font''' - choose a font that will be used to display text translations
+* '''Translate sounds on mouse move''' - if this box is checked and the instant translation is used ('''[[Toolkit menu|Toolkit]] : [[Options]] : [[Mouse tab in Options|Mouse]] : [[Translating collection|Translation]] : On mouse move'''), sound [[Glossary:Component|components]] will be translated on mouse move in the same way as text components. If you uncheck this box, only text [[Glossary:Component|components]] will be translated
+* '''Localization language''' - choose the language of the interface used by SuperMemo at the '''Beginner''' and '''Basic''' [[Glossary:Level|levels]]. You can create a new interface in 5 minutes by using '''[[Localization table]]'''
+* '''[[Localization table]]''' - the full list of strings used by SuperMemo at the '''Beginner''' and '''Basic''' [[Glossary:Level|levels]]. You can translate this list in 3 minutes to your native language and thus localize SuperMemo. If necessary, you can also choose a translation font in the lower left corner of the localization table dialog box. You can find some national language interfaces
+* '''Phonetic transcription''' - choose the phonetic transcription for the language you are using in your [[Glossary:Collection|collection]]. We are constantly working on the phonetic transcription registry of English (currently 72,000 entries and still growing). This registry is available from [http://super-memo.com/enpron.html SuperMemo Store]
+
+== FAQ ==
+
+{{Mail Header
+|from=Dusko Ivanisevic
+|country=New Zealand
+|sent=Oct 1, 1998
+|subject=
+}} 
+
+'''Question'''
+
+How can I add phonetic transcription to some words?
+
+'''Answer'''
+
+Select '''[[Edit menu|Edit]] : [[Edit menu#Edit text|Edit text]] : Add pronunciation''' and type in the word and its transcription. If the transcription dialog does not appear, you have not chosen phonetic transcription in '''[[Options]]'''. In such a case do the following: 
+
+# Choose '''[[Toolkit menu|Toolkit]] : [[Options]] : Language : Phonetic transcription'''
+# Select ready-made transcription file or type in a name for new phonetic transcription registry (in the latter case, you will be building phonetic transcription registry from scratch)
+# If necessary, choose '''Font''' on the left to select phonetic transcription font (e.g. IPA font available from [http://super-memory.com/english/ae.htm Advanced English])
+# Once a given word appears on the screen, press ''Alt+Y'' to transliterate all texts (or use on-mouse-move transliteration)

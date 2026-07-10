@@ -1,0 +1,245 @@
+== Collect information ==
+
+SuperMemo makes it possible to learn knowledge represented as text, pictures, sounds, video, [[HTML component | HTML]] and more:
+
+[[Image:Element_window.jpg|800px|center|SuperMemo: The element window displaying an extract produced from a larger article titled Chloroplast imported from Wikipedia]]
+
+== Forget about forgetting! ==
+
+SuperMemo increases the speed of learning by using ''spaced repetition'' (see: [[SuperMemo|What is SuperMemo?]]). It also increases the speed of collecting and formulating knowledge with the help of ''incremental reading''. [[Incremental reading]] makes it possible to read literally thousands of articles without getting lost! You import articles from the web (e.g. Wikipedia) and convert them into manageable portions of knowledge:
+
+[[Image:Incremental_reading_Extract.jpg|800px|center|SuperMemo: An extract produced from an article about the greenhouse effect (references (in pink) at the bottom are added automatically)]]
+
+== Read and remember ==
+
+You can then easily convert imported articles to simple questions-and-answers that ensure that you do not forget what you have learned:
+
+[[Image:Incremental_reading_Cloze_deletion.jpg|800px|center|SuperMemo: A question-answer item (in the form of a cloze deletion) forming the final product of incremental reading used in strengthening the memory of a given fact (here: hypothetical temperature on Earth devoid of atmosphere)]]
+
+== Learn in context ==
+
+For easy context recovery, source tracking and building a list of citations (author, date, journal, etc.), you can use ''reference labeling'' (pink text in the picture).
+
+[[Image:References.jpg|800px|center|SuperMemo: References help you quickly recover the context of a given element as well as track its source and build a list of citations (in the picture: blue marks an incremental reading extract, yellow marks a search string (i.e. GABAergic REM-on neurons), while pink marks the reference field, which will propagate to all children elements (extracts and clozes))]]
+
+== View thousands of videos in parallel ==
+
+SuperMemo also makes it possible to [[Incremental video | watch thousands of videos at the same time without getting lost]]! It enables you to process individual videos (imported from [https://www.youtube.com/@SuperMemoVideo YouTube]) in small portions with a view to long-term retention:
+
+[[Image:Incremental_video.jpg|800px|center|SuperMemo: Incremental video in action - Incremental learning about how synapses work based on a video imported from YouTube]]
+
+== Visual learning ==
+
+=== Using images from imported texts ===
+
+'''Download images''' dialog box available from the HTML [[component menu]] makes it possible for you to quickly get images embedded in local pages imported from the net and put them to the image registry (in the picture: A Wikipedia article on Donald Trump):
+
+[[Image:Download_images.jpg|771px|center|SuperMemo: Download images dialog box makes it possible for you to get images embedded in local pages imported from the net and put them to the image registry]]
+
+=== Learning with diagrams ===
+
+[[Glossary:Occlusion test|Occlusion test]] generator makes it easy to learn with images:
+[[File:Learning anatomy with occlusion tests in SuperMemo 19.jpg|center|600px]]
+{{:File:Learning anatomy with occlusion tests in SuperMemo 19.jpg}}
+
+=== Extracting images from large pictures ===
+
+In the same way as you split long articles into manageable extracts, which, in turn, are further converted to cloze deletions, you can also extract interesting details of very large pictures. The original picture can be retained (zooming) or discarded (extracting). In the picture, several portions of the panorama of Freiburg have been extracted into separate elements (extracts are marked on the original picture in yellow-red):
+
+[[Image:Freiburg_panorama_(original).jpg|800px|center|SuperMemo: The original picture of the Freiburg panorama (too large to view its details) from which 4 picture extracts (marked with bright yellow-red rectangles) have been produced]]
+
+== Organize knowledge ==
+
+SuperMemo helps you organize all your knowledge into a [[Glossary:Knowledge_tree|knowledge tree]] for easy access and review:
+
+[[Image:Contents_window.jpg|558px|center|SuperMemo: The contents window displaying the knowledge tree (i.e. the hierarchical structure of elements) of a collection]]
+
+== Enhance creativity ==
+
+SuperMemo automatically creates semantic connections in a network of information as well as enable you to establish your own for the purpose of enhancing your [[Neural creativity|creativity and problem solving skills]]. You will love [[Glossary:Neural review|'''Neural review''']] (''Ctrl+F2''):
+
+[[Image:Concept map.jpg|800px|center|SuperMemo: An exemplary concept map displaying outgoing links from the current element]]
+
+== Search your knowledge base ==
+
+You can easily locate individual pieces of knowledge by means of AND-search, OR-search, and NOT-search. In the picture: '''[[Search menu|Search]] : [[Find elements]]''' (''Ctrl+F'') is used to find all elements that contain the word Alzheimer but which may also feature (but do not have to) one of the following texts: ''ApoE, PS1, Presenilin'' (the search definition is saved as ''Alzheimer's Disease''):
+
+[[Image:Find_elements.jpg|800px|center|SuperMemo: You can use AND, OR and NOT search to locate elements in your collection (in the picture: Search : Find elements (Ctrl+F) is used to find all elements that contain the word Alzheimer but which may also feature (but do not have to) one of the following texts: ApoE, PS1, Presenilin)]]
+
+SuperMemo fully supports Unicode, incl. fast low-level search routines:
+
+[[Image:Exemplary Japanese collection.jpg|800px|center|SuperMemo: You can use AND, OR and NOT search to locate elements in your collection (in the picture: Search : A new Unicode-enabled Find elements (Ctrl+F)]]
+
+== Web as the source of knowledge == 
+
+To quickly import a large number of texts from the Internet from a supported [[web browser]]. You can import texts, pictures, links, YouTube videos, and more. For details see: [[Web import]].
+
+[[Image:Web import from MS Edge to SuperMemo 19.jpg|800px|center|SuperMemo: Web import from Microsoft Edge]]
+
+== Browse your knowledge base ==
+
+SuperMemo [[browser]] makes it possible to quickly review [[Glossary:Element|elements]] and their parameters:
+
+[[Image:Element_browser.jpg|570px|center|SuperMemo: Browser with elements on History of War]]
+
+[[Element filter]] helps you find material selected by difficulty, priority, number of reviews, etc:
+
+[[Image:Element_filter.jpg|594px|center|SuperMemo: Element filter dialog box which you can use to browse all elements that meet your search criteria (e.g. in leech hunting)]]
+
+== Catalog pictures, sounds, articles, videos, references, etc. ==
+
+[[Using registries | Registries]] make it easy to reuse and search for multimedia objects, texts, fonts, HTML files, video, etc. The picture below shows an example of an image registry:
+
+[[Image:Image_registry.jpg|785px|center|SuperMemo: Image registry which you can use to review images used in your collection]]
+
+Concept [[Glossary:Registry|registry]] makes it easy to build your knowledge around a large number of [[Glossary:Concept|concepts]]. These can be used to keep different subjects separate and to give all [[Glossary:Element|elements]] in a given [[Glossary:Concept_group|concept group]] a given [[Templates|look]] and [[Glossary:Priority|priority]]. Best of all, concepts form the basis of a neural approach to creativity and problem solving (see: [[neural creativity]]):
+
+[[Image:Concept_registry.jpg|744px|center|SuperMemo: Concept registry which you can use to execute neural review on selected members and change their properties]]
+
+[[References]] are kept in a dedicated [[Glossary:Registry|registry]] while their individual text fields (e.g. <span class="reference">#Title</span>, <span class="reference">#Author</span>, <span class="reference">#Date</span>, <span class="reference">#Source</span>, etc.) are stored in the text registry, and thus are available for global text searches:
+
+[[Image:Reference_registry.jpg|800px|center|SuperMemo: References are kept in a dedicated registry while their individual text fields (e.g. title, author, date, source, etc.) are stored in the text registry, and thus are available for global text searches]]
+
+== Learning statistics ==
+
+[[Statistics|Learning statistics]] will help you supervise and understand the learning process: 
+
+[[Image:Statistics.jpg|center|186px|SuperMemo: The Statistics window where the main learning process statistics of the currently opened collection can be readily inspected]] 
+
+Each [[Element window|element]] has its own set of learning statistics that influence its place in the learning process: 
+
+[[Image:Element data.jpg|800px|center|Element data window after executing a repetition on an item about immunity]] 
+
+User's forgetting rate and other memory characteristics can be inspected using statistical [[Analysis]] tools: 
+
+[[Image:First forgetting curve.jpg|center|800px|SuperMemo: The first forgetting curve (first repetition for items with no lapses)]]
+
+A cumulative forgetting curve can also be displayed using all repetitions data from a single collection:
+
+[[Image:Cumulative forgetting curve.jpg|center|800px|SuperMemo: In SuperMemo 18, forgetting curves can be normalized over A-Factors at different repetition categories. As a result, you can display (1) your cumulative forgetting curve (blue dots) and (2) its negative exponential approximation used by SuperMemo (red line)]] 
+
+[[Memory graphs (4D)|4D graphs]] can be used to inspect memory properties derived from the [[Glossary:DSR_model|DSR memory model]]
+
+[[File:Stability increase function.png|800px|center|SuperMemo: 3D graph of SInc[] matrix based on 61,768 repetition cases for items with difficulty=0.8]]
+
+Your learning progress can be visualized by means of '''[[Analysis]]&nbsp;: Use''' statistics. For example, the picture below shows the reading workload in [[Incremental reading]] (one degree of smoothing): 
+
+[[Image:Topic repetitions.jpg|center|800px|SuperMemo: Topic workload in incremental reading]] 
+
+SuperMemo clearly demonstrates your processing capacity for high priority material on individual days. For example, the picture below shows worst misses amongst most important topics to review: 
+
+[[Image:Topic priority protection.jpg|center|800px|SuperMemo: Tools : Statistics : Analysis : Use : Priority protection : Topics shows your actual processing capacity for high-priority topics on individual days]] 
+
+[[Element parameters]] make it possible to quickly change the [[Glossary:Priority|priority]] of [[Glossary:Element|elements]], the [[Glossary:Concept_group|concept group]] they belong to, their [[Glossary:Template|template]], etc. 
+
+[[Image:Element_parameters.jpg|center|522px|SuperMemo: The Element tab in the element parameters dialog box]] 
+
+In SuperMemo, you decide how much of you material you want to remember (95% by default). Even though this means that you will forget some 10% of your items at repetition time, a vast majority will still never be forgotten within your lifespan (see an example statistic of forgotten elements below). With SuperMemo, your investment in learning is safe: 
+
+[[Image:Lapses distribution.jpg|center|800px|SuperMemo: Tools : Statistics : Analysis : Distributions : Lapses shows you how memory lapses are distributed in your collection]]
+
+== Learning Calendar ==
+
+[[Calendar | The calendar of repetitions]] makes it possible to see how much work is scheduled for individual days of the learning process. It also provides the record of past repetitions, newly memorized items, retention, and [[Glossary#consolidation | ''consolidation'']]. If you double-click a day, you will see the list of elements scheduled for repetition on that day (in the future), or the list of elements reviewed on that day (in the past):
+
+[[Image:Daily_workload.jpg|800px|center|SuperMemo: Tools : Workload shows you the daily and monthly calendar of scheduled repetitions as well as the record of past repetitions and past retention (in the picture: the record of repetitions executed over a three-month period)]]
+
+The calendar of repetitions makes it also possible to see the number of repetitions scheduled for particular months and years, as well as past repetitions, new items, retention data, etc.
+
+[[Image:Monthly_workload.jpg|800px|center|SuperMemo: Tools : Workload shows you the daily and monthly calendar of scheduled repetitions as well as the record of past repetitions and past retention (in the picture: the record of repetitions executed over a three-year period)]]
+
+== Sleep Chart ==
+
+SuperMemo's build-in ''[[Sleep Chart]]'' can help discover a lot about your sleep and how it affects your learning:
+
+[[Image:Sleep_and_learning_timeline_with_optimization_data.jpg|800px|center|SuperMemo: Sleep and repetitions timeline displaying repetitions blocks of the current collection (in red) and sleep blocks (in blue) with recomputed circadian approximations on the current data]]
+
+== Learning overload ==
+
+A break in learning can be handled with [[Mercy | '''Mercy''' rescheduling]]:
+
+[[Image:Mercy.jpg|center|SuperMemo: You can use Mercy to make repetitions before a vacation period, randomize or reschedule outstanding repetitions, etc. ]]
+
+Rescheduling your learning process after a vacation break can be done using various criteria. You can start from top priority material or can opt for easiest material to be reviewed first:
+
+[[Image:Mercy_criteria.jpg|center|SuperMemo: Repetition sorting criteria (for Mercy)]]
+
+== Learning history ==
+
+You can inspect the [[Repetition history|history of repetitions]] for individual [[Glossary:Element|elements]]:
+
+[[Image:Repetition_history.jpg|800px|center|SuperMemo: Repetition history dialog box displaying the history of repetitions for the current element]]
+
+You can visualize changes in memory [[Glossary:Retrievability|retrievability]] and memory [[Glossary:Stability|stability]] for individual [[Glossary:Item|items]]:
+
+[[File:Memory status.jpg|800px|center|SuperMemo: Changes in two components of long-term memory]]
+
+== Managing sleep and learning ==
+
+If you log your sleep data with SuperMemo, you will be able to visually inspect how sleep affects learning. For example, the picture below shows how grades decrease during the waking day:
+
+[[Image:Alertness homeostatic.jpg|800px|center|SuperMemo: Tools : Sleep Chart : Alertness (H) graph makes it possible for you to visually inspect how grades decrease during the waking day]]
+
+== Time management ==
+
+[http://super-memory.com/articles/tasklists.htm Tasklists] help you organize to-do lists. Not only related to learning. SuperMemo development itself is guided by an ever-growing [[Glossary:Tasklist|tasklist]]:
+
+[[Image:Task_parameters.jpg|522px|center|SuperMemo: The Task tab of the Element parameters dialog box]]
+
+== Options ==
+
+[[Learning tab in Options | Learning options]] make it possible to define the speed of learning, time when your 'memory day' ends (i.e. time you go to sleep), etc.
+
+[[Image:Options_learning.jpg|center|800px|SuperMemo: Tools : Options : Learning tab]]
+
+You can change the way you use the mouse with [[Mouse tab in Options | mouse options]]: 
+
+[[Image:Options_mouse.jpg|center|SuperMemo: Tools : Options : Mouse tab]]
+
+[[Language tab in Options | Language options]] will help you adapt SuperMemo collections to local language needs:
+
+[[Image:Options_language.jpg|center|SuperMemo: Tools : Options : Language tab]]
+
+== Help ==
+
+[[Question of the Day]] will help you become familiar with the [[Introduction | basics of SuperMemo]]:
+
+[[Image:Question_of_the_Day.jpg|center|SuperMemo: Question of the Day (equivalent of "Tip of the Day" in other programs)]]
+
+== Other functions ==
+
+You can arrange SuperMemo's multiple windows across two monitors for comfort and convenience.
+
+[[Image:SuperMemo 19 with dual monitor support.jpg|800px|center|SuperMemo: SuperMemo 19 for Windows running on two monitors with the Element window maximized for comfort and convenience on one monitor and auxiliary windows (e.g. Contents, Statistics, Element data, Ancestors, etc.) displayed on the other]]
+
+SuperMemo will assist you in quickly tiling components in your elements:
+
+[[Image:Tile_arrangement.jpg|800px|center|SuperMemo: Tiling Rafael Nadal pictures with component tiling assistance]]
+
+Stylesheet editor makes it easy to reuse different text styles:
+
+[[Image:SuperMemo stylesheet editor.jpg|800px|center|Stylesheet editor in SuperMemo]]
+
+If your computer runs Windows 10, you can use SuperMemo background ('''[[Window menu|Window]] : Background''') as a nice visual collection chooser between active [[Glossary:Collection|collections]] opened in separate instances of SuperMemo running simultaneously.
+
+[[File:Collection background.jpg|800px|center|SuperMemo: In Windows 10, SuperMemo background can be used as a nice visual collection chooser between active collections opened in separate instances of SuperMemo running simultaneously]]
+
+SuperMemo supports OLE. This means that you can include your MS Word files or your MS Excel files in your collection. The picture below presents an exemplary mind map imported via OLE from [http://www.mindman.com Mind Manager]. This mind map can be edited in SuperMemo if you have Mind Manager installed (courtesy of John England, TeamLink Australia Pty Ltd):
+
+[[Image:6_steps_mind_map.jpg|center|SuperMemo: "6 steps to excellent memory" editable mind map created in Mind Manager and imported in an OLE component]]
+
+If you have a server application installed, OLE component will allow you to edit the file in the native application without leaving SuperMemo via OLE in-place activation. The picture below presents how an Excel spreadsheet is being edited from inside SuperMemo (notice the standard Excel toolbars below the [[navigation bar]]):
+
+[[Image:Excel_OLE_inplace_activation.jpg|800px|center|SuperMemo: An Excel spreadsheet being edited inside SuperMemo via OLE in-place activation]]
+
+SuperMemo supports [[HTML component | HTML]]. You can even put an entire website into a single element in your collection.
+
+[[Image:Incremental reading Mnemonic cues2.jpg|center|800px|SuperMemo: A topic about henipavirus in the HTML component on the left and 4 images taken from it with Download images (Ctrl+F8) in their individual image components on the right]]
+
+Leech Alert Wizard and Leech Catcher make it easy to quickly find bottlenecks in the learning process (see: [[Leeches | Leeches in SuperMemo]]):
+
+[[Image:Leech_alert.jpg|745px|center|A Leech Alert raised for an item that has already been forgotten 30 times which qualifies it as an intractable one requiring user's attention and action]]
+
+When using [[incremental reading]] to process e-mail, you can use the selected text as a question in an FAQ. The FAQ will be sent as a reply, and stored in FAQ files (as HTML and/or Wiki):
+
+[[Image:Email_response.jpg|800px|center|SuperMemo: Reading : E-mail FAQ on the component menu makes it possible to use the selected text as a question in an FAQ. The FAQ will be sent as a reply, and stored in FAQ files (as HTML and/or Wiki).]]

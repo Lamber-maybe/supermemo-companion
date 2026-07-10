@@ -1,0 +1,106 @@
+== Dialog ==
+
+With '''[[Edit menu|Edit]] : [[Edit menu#Internet_Explorer|Internet Explorer]] : All''' (''Shift+Ctrl+A'') you can quickly import a number of web pages, pictures, or YouTube videos from Internet Explorer. 
+
+Articles or pictures that have already been imported will be marked as ''DUPLICATE'' (double click the article to see its copy stored in SuperMemo). Articles that have been opened more than twice in Internet Explorer will be marked as ''DOUBLED''. To close all doubled articles and the duplicates, choose '''Close duplicates''' from the web import dialog context menu (right click).
+
+'''Important:'''
+* Before import, select the text that you want to import from a web page. Otherwise, all headers, navigation bars, advertising, footers, etc. will [http://supermemopedia.com/wiki/Web_page_import_does_not_work get imported along with the text that you need].
+* If you open web pages in Internet Explorer '''Run as administrator''', for security reasons, they may not become visible/importable to SuperMemo! 
+
+<div class="center">
+[[Image:Wikipedia import.jpg|800px|SuperMemo: Importing articles about clathrate gun hypothesis from Wikipedia for incremental learning]] 
+{{:Image:Wikipedia import.jpg}}
+
+[[Image:Pictures_import.jpg|800px|SuperMemo: Importing 47 pictures of Gabrielle Union from the web to Photos concept group.]]
+{{:Image:Pictures_import.jpg}}
+</div>
+
+== Import modes and options ==
+
+Here is a detailed breakdown of the '''Web import''' dialog box: 
+
+*'''Title''' - this will be used in the <span class="reference">#Source</span> field of the reference area that is automatically created for imported articles. Additionally, if you choose '''Location : Node''' (below), the import title and the import date/time will form the title of the node that will parent the imported articles
+*Toolbar
+**'''Import''' - imports selected item(s) from the list into SuperMemo (if nothing is selected, SuperMemo will ask you if you want to import all pages or pictures) 
+**'''Check all''' - selects all check boxes in the article list 
+**'''Sift''' - closes all web pages that have already been imported in the current collection or which have been opened more than once in Internet Explorer. This means that all pages marked DUPLICATE or DOUBLED will disappear from the list and the relevant tabs in Internet Explorer will be closed
+**'''Duplicates''' - opens a [[browser]] with all elements that are duplicates of articles on the list
+**'''View''' - view the duplicate copy of the article (if any) or the article itself
+**'''Help''' - opens this page in the documentation 
+**'''Close browser''' check box - if you select this checkbox, all pages/tabs in Internet Explorer will get closed once they are imported to SuperMemo
+**'''Create concept''' check box - if you select this checkbox, SuperMemo will import the selected items as [[Glossary:Child|children]] of a newly added [[Glossary:Concept|concept]]
+*'''Articles list''' - the list of pages or pictures that are currently opened in Internet Explorer. If you do not exactly recall what a given page or picture presents, you can quickly switch to the Internet Explorer tab/window in which it is displayed by double-clicking its title in the list 
+*'''Picture parameters''' determine the restrictions on the number and size of imported pictures (this option only becomes available for '''Local pages with images''', '''Local images only''', and '''Page of images''' web page import modes). If no picture included in the imported page satisfies the import criteria, the largest picture will still get imported. 
+**'''Min. picture size''' - the minimum file size (in bytes) of the imported picture. If the picture is smaller, it will be ignored 
+**'''Maximum pictures''' - the maximum number of imported pictures per page that can be imported into a single [[Glossary:Element|element]]. Only sufficiently large pictures will be imported until '''Maximum pictures''' limit is reached
+*'''Web page import mode''' determines the way in which pages or pictures are imported: 
+**'''Links only''' - imports only web addresses of individual pages with ''each'' link going into a separate SuperMemo [[Glossary:Element|element]] (compare: '''Page of links (one element)''') 
+**'''Page of links (one element)''' - imports only web addresses of individual pages with ''all'' links going as a list into a single SuperMemo [[Glossary:Element|element]] (compare: '''Links only''') 
+**'''Local pages (whole web pages)''' - imports entire pages into separate SuperMemo [[Glossary:Element|elements]]. Note that while pages will be located on your hard disk, the pictures they include will not. If you want to localize all or selected embedded pictures, choose '''[[Component menu#Download images|Download images]]''' (''Ctrl+F8'') from the [[component menu]] available by right-clicking over the article in SuperMemo. 
+**'''Local pages with images''' - imports whole pages into separate SuperMemo [[Glossary:Element|elements]] along with all the pictures they contain. The pictures are then displayed on the left of their respective imported pages. Note that you can instruct SuperMemo on the minimum size of the picture and the maximum number of pictures included on a given page that will actually get imported into SuperMemo (see below). 
+**'''Local images only''' - imports only pictures from individual pages with pictures from a given page going into a separate SuperMemo [[Glossary:Element|element]] (compare: '''Page of images''') 
+**'''Page of images''' - imports only pictures from individual pages with ''all'' pictures going into a single SuperMemo [[Glossary:Element|element]] (compare: '''Local images only''') 
+**'''Live pages''' - imports only web addresses of individual pages with ''each'' link going into a separate SuperMemo [[Glossary:Element|element]]. The basic difference between this mode and '''Links only''' (above) is that when you enter the [[Glossary:Element|element]] with a live page, SuperMemo automatically opens the link to the page it contains (as opposed to you explicit clicking the imported link in case of the latter option)
+*'''Filter''' shows only a selected subset of pages or pictures that are currently opened in Internet Explorer 
+**'''All''' - shows all pages or pictures 
+**'''Pictures''' - shows all pictures
+**'''Wikipedia''' - shows only [http://en.wikipedia.org Wikipedia] articles that you can [[Incremental reading|read incrementally]] in SuperMemo (this is equivalent to choosing '''[[Edit menu|Edit]] : [[Edit menu#Internet Explorer|Internet Explorer]] : Wikipedia''' from the [[main menu]] (''Shift+Ctrl+W'')) 
+**'''YouTube''' - shows only [http://youtube.com YouTube] videos that you can [[Incremental video|watch incrementally]] in SuperMemo (this is equivalent to choosing '''[[Edit menu|Edit]] : [[Edit menu#Internet Explorer|Internet Explorer]] : YouTube''' from the [[main menu]] (''Shift+Ctrl+Y''))
+*'''Location''' determines the location in the [[Contents|'''Contents''' window]] where selected pages or pictures will be imported 
+**'''Current element''' - the selected items will be imported into the [[Glossary:Element|element]] that is currently displayed in the [[element window]] (this option becomes available only if you select the '''Page of images''' import mode (above)) 
+**'''New node''' - the selected items will be imported as [[Glossary:Child|children]] of a newly added [[Glossary:Element|element]] (called '''import node'''). Note that you can specify the title for this element using the '''Title''' field at the top of the dialog box (above) 
+**'''Group hook''' - the selected items will be imported as [[Glossary:Child|children]] of the hook of the currently selected [[Glossary:Concept_group|concept group]]. Note that you can change the concept group to which the selected items will be imported with the '''Concept group''' text field
+**'''Child''' - the selected items will be imported as [[Glossary:Child|children]] of the currently displayed [[Glossary:Element|element]]
+*'''Concept group''' - concept group into which the articles will be imported
+*Priority range determines the [[Glossary:Priority|priority]] of automatically imported pages or pictures. [[Glossary:Element|Elements]] will have their [[Glossary:Priority|priorities]] dispersed randomly in the following range:
+**'''Minimum priority''' - specifies the [[Glossary:Priority|priority]] at the low end of the range (as percentage). Note that you can set the minimum priority as the position in the [[Glossary:Priority_queue|priority queue]] by adding ''p''. You can also specify the [[Glossary:Priority|priority]] via the [[Priority queue#Priority queue in SuperMemo|'''Element priority''' dialog box]] by clicking the red exclamation mark button to the right.
+**'''Maximum priority''' - specifies the [[Glossary:Priority|priority]] at the high end of the range (as percentage). Note that you can set the maximum priority as the position in the [[Glossary:Priority_queue|priority queue]] by adding ''p''. You can also specify the [[Glossary:Priority|priority]] via the [[Priority queue#Priority queue in SuperMemo|'''Element priority''' dialog box]] by clicking the red exclamation mark button to the right.
+
+== Context menu ==
+
+* '''Uncheck duplicates''' - uncheck articles that have already been imported
+* '''Uncheck selected''' - uncheck articles with text selections (e.g. to import other articles as links only)
+* '''Swap checked''' - inverts checkboxes (i.e. checked articles become unchecked and the other way round) 
+* '''Check all''' (''Ctrl+A'') - check all articles
+* '''Check duplicates''' - check articles that have already been imported (e.g. to close them)
+* '''Check selected''' - check articles with text selections
+* '''Close duplicates''' - close browser tabs/windows with articles that have already been imported 
+* '''Close checked''' - close the checked articles
+* '''Close unchecked''' - close the unchecked articles
+* '''Close current''' - close the browser tab/window with the currently selected article
+* '''Close all''' - close all articles
+* '''Browse duplicates''' (''Shift+Ctrl+B'') - open a [[browser]] with all [[Glossary:Element|elements]] that are duplicates of the pages on the import list
+* '''Change tab''' (''Ctrl+Tab'') - switch between '''Articles list''' and '''Picture parameters''' tabs
+* '''Close''' (''Esc'') - close the dialog window
+
+== Web import template ==
+
+If you import texts, SuperMemo will require that your default import [[Glossary:Template|template]] contains a text [[Glossary:Component|component]] (otherwise it will create a [[Glossary:Template|template]] for you and ignore the concept template). If you import pictures, SuperMemo will require an appropriate picture [[Glossary:Template|template]] to be used. The template must contain a text [[Glossary:Component|component]] and an image component. This is how SuperMemo determines the import [[Glossary:Template|template]] for pictures:
+#Default [[Glossary:Topic|topic]] [[Glossary:Template|template]] for the current [[Glossary:Concept group|concept group]] is used if it contains at least one text [[Glossary:Component|component]] (for picture descriptions) and one image component (for the picture) 
+#Predefined ''Article Picture'' [[Glossary:Template|template]] is used if it still exists (you can redefine this template or save your own template under this name as long as it contains the required text and image [[Glossary:Component|components]]) 
+#Templateless [[Glossary:Element|element]] is created with text and image [[Glossary:Component|components]] as required by the import procedure
+
+== Using mouse in Web import dialog ==
+
+* Use ''Ctrl+click'' to swap the check on a given article
+* Use ''Shift+click'' to check all articles from the current selection to the clicked position
+* Use ''double click'' to switch to the clicked article
+
+== FAQs ==
+
+* [https://supermemopedia.com/wiki/Import_from_Wikipedia How can I import from Wikipedia?]
+* [https://supermemopedia.com/wiki/How_can_I_import_anatomy_pictures_in_my_collection_easily%3F How can I import many pictures at once?]
+* [https://supermemopedia.com/wiki/Minimum_picture_size_refers_to_pictures_after_compression Minimum picture size refers to pictures after compression]
+* [https://supermemopedia.com/wiki/Web_pages_may_not_import_as_local Web pages may not import as local]
+* [https://supermemopedia.com/wiki/What_is_the_difference_between_pasting_from_clipboard_and_using_import_options%3F Import vs. Paste]
+
+== Videos ==
+
+=== Illustrating articles with pictures ===
+
+{{#ev:youtube|g3WRkDcphps}}
+
+=== Importing to a concept group ===
+
+{{#ev:youtube|0bdDk3Y2I8Q}}

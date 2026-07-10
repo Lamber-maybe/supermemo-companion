@@ -1,0 +1,2 @@
+;<span id="Concept_map">concept map</span>
+:set of [[Glossary:Concept|concepts]] and [[Glossary:Link|links]] between concepts. On the [[element menu]], '''[[Element menu#Concepts|Concepts]] : Map''' displays the outgoing [[Glossary:Link|links]] for the current [[Glossary:Concept|concept]]. Read more: [[Neural creativity]]

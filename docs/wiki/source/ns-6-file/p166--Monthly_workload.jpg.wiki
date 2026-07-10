@@ -1,0 +1,1 @@
+{{Fig|In the presented picture, the record of [[Glossary:Repetition|repetition]]s executed over a three-year period (i.e. the years: 2005, 2006, and 2007). Additionally, '''Monthly workload''' tab displays the Annual total, as well as Monthly and Daily ([[Glossary:Item|item]]s + [[Glossary:Topic|topic]]s) averages.}}

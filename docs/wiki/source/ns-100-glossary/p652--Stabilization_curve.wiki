@@ -1,0 +1,11 @@
+;<span id="Stabilization_curve">stabilization curve</span>
+:shows the dependence of stabilization on [[Glossary:Retrievability|retrievability]].
+:The formula for the '''stabilization curve''':
+:<blockquote>
+:<code>'''SInc'''=''SInc<sub>Max</sub>''*e-<sup>[https://supermemo.guru/wiki/Spacing_effect_gain Gain]*[[Glossary:Retrievability|R]]</sup></code>
+:where:
+:*<code>SInc</code> - [https://supermemo.guru/wiki/Stabilization stabilization] (aka ''stability increase'') is the ratio of [[Glossary:Stability|memory stability]] after and before the [[Glossary:Repetition|repetition]]
+:*<code>SInc<sub>Max</sub></code> - maximum possible increase in [[Glossary:Stability|memory stability]]. <code>SInc<sub>Max</sub></code> depends on current [[Glossary:Stability|stability]] and [https://supermemo.guru/wiki/Memory_complexity memory complexity] (i.e. [[Glossary:Item|item]] [[Glossary:Difficulty|difficulty]]). Maximum [https://supermemo.guru/wiki/Stabilization stabilization] can be achieved at the verge of [https://supermemo.guru/wiki/Forgetting forgetting]
+:*<code>Gain</code> - a constant that expresses the gain in [https://supermemo.guru/wiki/Stabilization stabilization] with passing time (''gain'' is a measure of the [[Glossary:Spacing effect|spacing effect]])
+:*<code>R</code> - [[Glossary:Retrievability|retrievability]], i.e. the expected probability of [https://supermemo.guru/wiki/Recall recall] at a given point in time. It is determined by the [[Glossary:Forgetting curve|forgetting curve]]
+:</blockquote>

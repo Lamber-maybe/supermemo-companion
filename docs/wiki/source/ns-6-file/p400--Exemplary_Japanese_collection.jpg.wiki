@@ -1,0 +1,1 @@
+SuperMemo 15 provides full Unicode support making it easy for you to work with non-Latin alphabets

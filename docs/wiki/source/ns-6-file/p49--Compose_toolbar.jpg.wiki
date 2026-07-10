@@ -1,0 +1,1 @@
+{{Fig|The [[Compose toolbar|'''Compose''' toolbar]] at the bottom of the [[element window]]. You can use it to build your [[Glossary:Element|elements]] by adding [[Glossary:Component|components]] of different type (e.g. text, sound, image, HTML, etc.)}}

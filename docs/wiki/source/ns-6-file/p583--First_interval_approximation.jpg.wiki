@@ -1,0 +1,3 @@
+<blockquote>
+'''''Figure:''' Approximating the impact of [[Glossary:Retrievability|retrievability]] and [[Glossary:Lapse|memory lapses]] on the [[Glossary:Post-lapse_stability|post-lapse stability]].''
+</blockquote>

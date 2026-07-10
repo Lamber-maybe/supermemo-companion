@@ -1,0 +1,7 @@
+;<span id="Search&review">search&review</span>
+:in [[Glossary:SuperMemo|SuperMemo]], a review of a [[Glossary:Element_subset|subset of elements]] that contain a given search phrase. For example, before an exam in microbiology, a student may wish to review all his knowledge of viruses using the following method:
+:# search for all [[Glossary:Element|elements]] containing the phrase ''virus'' (e.g. with ''Ctrl+F'')
+:# review of all those [[Glossary:Element|elements]] (e.g. with ''Ctrl+Shift+L'')
+:The review may include all searched for [[Glossary:Element|elements]] (e.g. '''[[Subset operations#Learning|Learning]] : [[Subset learning|Review all]]''' in the [[Glossary:Browser|browser]] with ''Ctrl+Shift+L''), or only the [[Glossary:Outstanding_element|outstanding elements]] (e.g. '''[[Subset operations#Learning|Learning]] : [[Subset learning|Learn]]''' in the [[Glossary:Browser|browser]] with ''Ctrl+L'').
+:Before you execute the '''review''', you can randomize the review material (''Ctrl+Shift+F11''), sort it by [[Glossary:Priority|priority]], by recency, by [[Glossary:Interval|interval]], etc.
+:Compare: [[Glossary:Neural_review|Neural review]]

@@ -1,0 +1,103 @@
+__TOC__
+
+Learning with SuperMemo is based on repetition (see [http://super-memory.com/english/smintro.htm why]).
+
+The button '''Learn''' (bottom-left in the picture) makes it possible to learn the material stored in SuperMemo.
+
+[[Image:Element_window.jpg|800px|center|SuperMemo: The element window displaying an extract produced from a larger article titled Chloroplast imported from Wikipedia]]
+
+== Repetition cycle ==
+
+When you press '''Learn''', SuperMemo will ask you to ''make repetitions'' (i.e. review due material). In each repetition you will do the following:
+
+# Look at the question and try to answer it (mentally or verbally)
+# Choose '''Show answer''' (at the bottom of the screen) to see the correct answer
+# Compare your response (from Step 1) with the answer displayed on the screen (in Step 2)
+# Choose a [[Glossary:Grade|grade]] that will reflect the accuracy of your response (e.g. '''Good''', '''Fail''', etc.) (see: [[#Grades|grade descriptions]])
+# Choose '''Next repetition''' to continue (and go back to Step 1)
+
+The repetition cycle may be shorter. If the repetition is passive (e.g. reading an article), you may immediately jump to the '''Next repetition''' stage.
+
+Remember:
+* Your first repetitions will usually come up only in 3-5 days after you first add new material. Before they are due, you will only see "''Nothing more to learn''". This is normal. If '''Learn''' does not ask any questions, use '''[[Add new]]''' to add more material
+* Do not look at the timer, the response time is ignored when measuring your performance.
+* If you keep cycling through [[Glossary:Item|items]] and you never see "''Nothing more to learn''", you are in the [[Glossary:Final_drill|final drill]] stage and you must start giving passing grades ('''Good''' or '''Great''')
+
+== Grades ==
+
+The grades are defined as follows (keyboard shortcuts in parentheses):
+
+{|style="width: 80%;" align="center" cellpadding="5"
+!style="width: 50%; background-color: #DAF7A6;"|REMEMBERING
+!style="width: 50%; background-color: #FF5733;"|FORGETTING
+|-
+|style="background-color: #DAF7A6;"|
+;[[File:Grade 5 great.png|Great grade's smiling emoji]] '''Great''' (press ''5'')
+:excellent response
+;[[File:Grade 4 good.png|Good grade's slightly smiling emoji]] '''Good''' (press ''4'')
+:correct response provided with some hesitation
+;[[File:Grade 3 pass.png|Pass grade's thumbs-up emoji]] '''Pass''' (press ''3'')
+:answer recalled with difficulty; perhaps, slightly incorrect
+|style="background-color: #FF5733;"|
+;[[File:Grade 2 fail.png|Fail grade's thumbs-down emoji]] ''' Fail''' (press ''2'')
+:wrong response that makes you say ''I knew it!''
+;[[File:Grade 1 bad.png|Bad grade's angry emoji]] '''Bad''' (press ''1'')
+:wrong response; the correct answer seems to be familiar
+;[[File:Grade 0 null.gif]] '''Null''' (press ''0'')
+:complete blackout; you do not even recall ever knowing the answer.
+:If you stick to the rules of SuperMemo, you should rarely or never need this grade. This is why it is not displayed on the standard grade panel. To issue that grade, use the keyboard.
+|-
+|}
+
+<div class="center">
+[[File:Emoji-based_grade_panel.jpg|Emoji-based grade panel in SuperMemo 18]]
+{{:File:Emoji-based_grade_panel.jpg}}
+</div>
+
+=== Grading tips ===
+
+* '''Important!''' You only have to understand the difference between '''Pass''' and '''Fail'''! 
+** '''Pass''' and more means '''<span style="color: red;">remembering!</span>'''
+** '''Fail''' and less means '''<span style="color: red;">forgetting!</span>'''
+* your grading will work as long as you always grade yourself consistently and clearly differentiate between '''Pass''' and '''Fail'''. Over time, you will develop strong habits that will help you select grades automatically without much thinking
+* instead of clicking a grade button you can just press a keyboard shortcut (e.g. ''5'' to choose '''Great''' or ''2'' to choose '''Fail''')
+
+== Regular repetitions are the key to success with SuperMemo ==
+
+In SuperMemo you first memorize the material and then review it when the program asks you to do so.
+
+You memorize new material at your own pace but once it is memorized, you must ''make repetitions'' exactly as demanded by SuperMemo. This is not a limitation of the program. This is a limitation of human memory!
+
+The power of SuperMemo is in providing the best timing for [[Glossary:Repetition|repetitions]]. Optimally, you should work with SuperMemo every day! This way you will not accumulate [[Glossary:Outstanding_material|outstanding material]] and you will not deviate from the optimum schedule of repetitions!
+
+Your repetitions should proceed daily until the following equivalent conditions are met:
+
+* you see the message: ''Nothing more to learn''
+* [[Statistics#Outstanding|'''Outstanding''']] equals to '''''0+0''''' in the [[Statistics|'''Statistics''' window]] (or simply '''''0''''')
+* the second field of the [[status bar]] displays '''''(0+0)/x''''', for example: '''''(0+0)/23''''' (or simply '''''0''''')
+* the progress bar on the [[status bar]] becomes blue (or is inactive)
+
+=== Learning stages ===
+
+Each day, your learning will proceed in three stages:
+
+# '''Repetitions''' - reviewing material that has been memorized earlier (to make sure you do not forget it)
+# '''Memorizing''' - if you have time, you can memorize new material by answering ''Yes'' to ''Do you want to learn new material?'' (this message is suppressed until you memorize your first 100 [[Glossary:Element|elements]])
+# '''Final drill''' - reviewing material that caused most problems in the first two stages of learning ('''Skip final drill''' must be unchecked in '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Learning tab in Options|Learning]]''')
+
+== Incremental learning ==
+
+Once you master the above basic learning process, you should consider learning about [[incremental learning]].
+
+The main differences between classical SuperMemo, as described above, and incremental learning:
+* less typing, higher learning speed
+* reading new articles or watching new videos may be interleaved with standard repetitions (as described above)
+* the role of '''Memorizing''' and '''Final drill''' stages is diminished. All material is memorized by default and your work is more mnemonic. This requires far less drilling
+* with the help of the [[Glossary:Priority_queue|priority queue]], you can add far more material to your [[Glossary:Collection|collection]] than you can possibly review. This is why, in [[Glossary:Incremental_reading|incremental reading]], you will often still have lots of lower priority [[Glossary:Outstanding_material|outstanding material]] in the queue at the end of the day
+
+As incremental learning is rather complex, you should first sense the power of SuperMemo by mastering the basic learning process as described on this page.
+
+== Further reading ==
+
+* [http://super-memory.com/help/faq/index.htm FAQs]
+* [[Incremental learning]]

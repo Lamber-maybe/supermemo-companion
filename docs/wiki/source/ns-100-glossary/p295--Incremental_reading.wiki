@@ -1,0 +1,2 @@
+;<span id="Incremental_reading">incremental reading</span>
+:reading technique pioneered by [[Glossary:SuperMemo|SuperMemo]], in which you can read hundreds or thousands articles at the same time with substantial benefit to the speed of learning, and the quality of acquired knowledge. See: [[Incremental reading]]

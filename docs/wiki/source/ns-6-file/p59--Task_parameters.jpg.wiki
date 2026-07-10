@@ -1,0 +1,3 @@
+<blockquote>
+'''''Figure:''' The '''[[Element parameters#Tasks|Task]]''' tab of the '''[[Element parameters]]''' dialog box.''
+</blockquote>

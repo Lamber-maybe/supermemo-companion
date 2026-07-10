@@ -1,0 +1,40 @@
+Here are the main applications of '''[[Postpone]]''', '''[[Subset operations#Advance|Advance]]''', and '''[[Mercy]]''': 
+
+{| style="text-align: left; width: 100%" border="1" cellspacing="2" cellpadding="2"
+|-
+| When repetitions are made? 
+| Option 
+| Suboption and conditions 
+| How is the option executed? 
+| What is the typical application?
+|-
+| rowspan="3" | '''Earlier''' 
+| '''[[Mercy]]/[[Subset operations#Reschedule|Spread]]''' 
+| '''[[Mercy]]''' with '''Consider future repetitions''' checked, and '''Collecting period''' longer than '''Rescheduling period''' 
+| Redistribute [[Glossary:Element|elements]] equally in a short period of time using various [[Mercy criteria|sorting criteria]] that determine the sequence of repetitions 
+| Learn material ahead of time. For example, review the entire [[Glossary:Subset|subset]] in a period remaining before a test or exam
+|-
+| rowspan="2" | '''[[Subset operations#Advance|Advance]]''' 
+| '''Advance topics''' 
+| Shorten [[Glossary:Interval|intervals]] to never exceed a selected value. New [[Glossary:Interval|intervals]] are selected randomly in the range from 1 to the selected limit. Last repetition date is set to today. 
+| Quickly increase the priority and frequency of review of an important portion of material
+|-
+| '''Advance items''' 
+| Shorten [[Glossary:Interval|intervals]] to never exceed a selected date (today + the interval limit). New [[Glossary:Interval|intervals]] are selected randomly for the next repetition to fall in the range from today to the selected date. Last repetition date is not changed. 
+| Ensure that poorly remembered [[Glossary:Item|items]] in a given set are reviewed in a selected period of time. This option should be used with caution. Massed review of related [[Glossary:Item|items]] may produce false positives (i.e. good grades in items than are not remembered well). This option should be avoided on [[Glossary:Branch|branches]] or [[Glossary:Subset|subsets]] that are remembered well.
+|-
+| rowspan="3" | '''Later''' 
+| '''[[Mercy]]/[[Subset operations#Reschedule|Spread]]'''
+| '''[[Mercy]]''' with '''Collecting period''' shorter than '''Rescheduling period''' 
+| Redistribute [[Glossary:Element|elements]] equally in a long period of time using various [[Mercy criteria|sorting criteria]] that determine the sequence of repetitions 
+| Unload the backlog of material in a low priority [[Glossary:Branch|branch]], or in a low priority [[Glossary:Collection|collection]], or reduce loads in a collection that requires too much time for review.
+|-
+| rowspan="2" | '''[[Postpone]]''' 
+| '''Postpone''' [[Glossary:Outstanding_element|outstanding elements]]
+| Increase [[Glossary:Interval|intervals]] of [[Glossary:Element|elements]] that meet the [[Postpone#Parameters_tab|postpone criteria]]. Only [[Glossary:Outstanding_element|outstanding elements]] are affected. 
+| Quickly unload excess of low-priority [[Glossary:Outstanding_material|outstanding material]]. This can best be done automatically at the beginning of the learning day with '''[[Glossary:Auto-postpone|Auto-postpone]]'''.
+|-
+| '''[[Subset operations#dilute|Dilute]]''' a [[Glossary:Subset|subset of elements]]
+| Increase [[Glossary:Interval|intervals]] of [[Glossary:Element|elements]] that meet the [[Postpone#Parameters_tab|postpone criteria]]. All elements are affected 
+| Quickly reduce learning loads in a subset of low priority [[Glossary:Element|elements]].
+|}

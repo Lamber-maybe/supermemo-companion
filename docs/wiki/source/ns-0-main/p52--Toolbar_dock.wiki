@@ -1,0 +1,15 @@
+'''Deprecated page'''
+
+There is no toolbar dock as of SuperMemo 18. The toolbars can now be found at the bottom of the [[element window]]. They are not dockable and they cannot float. This is how users wanted it.
+
+This picture is now a memory from SuperMemo 8 through SuperMemo 17:
+
+[[Image:Toolbar_dock.jpg|center|SuperMemo: Main menu and Toolbar dock]]
+
+The toolbars moved to the element window:
+
+* [[Tools toolbar | '''Tools''']] - toolbar with speed-buttons that provide one-click access to the most frequently used operations in SuperMemo. This toolbar also hosts a combo-box used to change the current [[Glossary:Tasklist|tasklist]]. ''In the picture, the current tasklist is "Tasks"''
+* [[Compose toolbar | '''Compose''']] - toolbar with buttons that you will need to build your [[Glossary:Element|elements]] by adding [[Glossary:Component|components]] of different type (e.g. text, sound, image, HTML, etc.) and with different properties (e.g. font, color, transparency, sound file, etc.)
+* [[Edit toolbar | '''Format''']] - toolbar with operations that you will need to edit [[Using text components|HTML and rich text components]] (fonts, alignment, bullets, etc.) as well as some other editing options such as: copy [[Glossary:Element|element]], paste element, [[Glossary:Editing_mode|editing]] and [[Glossary:Dragging_mode|dragging]] modes, etc.
+* [[Read toolbar| '''Read''']] - toolbar with options used in [[Glossary:Incremental_reading|incremental reading]]
+* [[Alarm toolbar|'''Alarm''']] - toolbar with an alarm timer and stop-watch

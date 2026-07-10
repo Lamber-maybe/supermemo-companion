@@ -1,0 +1,174 @@
+__TOC__
+
+This guide will help you learn [[What's new in SuperMemo {{SMVER}}?|SuperMemo {{SMVER}}]] step by step without missing any important function. Each step may take from a day to a week. Advanced techniques such as ''incremental reading'' may require months of practice. '''Do not rush!''' SuperMemo can quickly lead to confusion and disillusionment. Pick the next step to learn only after mastering all previous steps.
+
+== [[Introduction | ABC in 3 minutes]] ==
+
+You can start using SuperMemo in 3 minutes. You only need to know two operations:
+* '''[[Add new]]''' for adding new material in the form of questions and answers (keyboard shortcut: ''Alt+A'')
+* '''[[Learn]]''' for learning (keyboard shortcut: ''Ctrl+L''). You should use '''Learn''' daily until you see the message ''Nothing more to learn''
+
+[[Image:Add_new.jpg|center|800px|SuperMemo: Adding new questions and answers at the Beginner level]]
+
+Many users never go beyond the above ABC and still benefit greatly from SuperMemo! It is recommended that you spend a week or so in this basic mode. '''Simple question-and-answer repetition is where 90% of the users get 90% of the benefit from SuperMemo!''' If you only remember to use '''Learn''' regularly and frequently back up your precious knowledge (e.g. with ''Shift+Ctrl+C''), the rest of this guide can be considered optional. '''Warning!''' For the first 3-6 days, your learning schedule will be empty and you will have nothing to review! Use '''Add new''' in the meantime ('''Learn''' will keep showing ''Nothing more to learn'')
+
+== Do you want simple SuperMemo or powerful SuperMemo? ==
+
+You can explore SuperMemo in stages by using '''[[File menu | File]] : [[Levels | Level]]''' menu. By default SuperMemo starts at the '''Beginner''' [[Glossary:Level|level]]. After a day or two, you can move to the '''Basic''' [[Glossary:Level|level]]. The '''Middle''' [[Glossary:Level|level]] will later be needed to use many of the functions described in this guide. Once you fully understand the '''Middle''' [[Glossary:Level|level]], you can switch to the '''Professional''' [[Glossary:Level|level]] that should be the ultimate destination of users who want to explore the most advanced functions of SuperMemo.
+
+If you find a description of the function in SuperMemo that is not available on a given [[Glossary:Level|level]], you can increase the [[Glossary:Level|level]] to make the function appear among the options. Many shortcuts will work even if the function is not available on a given [[Glossary:Level|level]]. For example, you can view the calendar of repetitions by pressing ''Ctrl+W'' at the '''Beginner''' [[Glossary:Level|level]] even though '''[[Toolkit menu|Toolkit]] : [[Calendar]]''' appears only on the '''[[Toolkit menu|Toolkit]]''' main menu options at the '''Middle''' [[Glossary:Level|level]] or higher.
+
+== Safety of your knowledge. Backup! ==
+
+Knowledge you store in SuperMemo might belong to your most precious data on your hard disk! After all it has cost you months or years of editing, learning, and review. You must continue using '''Learn''' indefinitely to make sure you never forget what you have learned. This is why backup skills are so important! Use ''Shift+Ctrl+C'' to copy your learning material to a new location. You should make a copy on a different hard disk every few days and on other media every month or so. Read more: [[Backup|Safety of your knowledge]]
+
+== Help: How to find the documentation ==
+
+You can read help pages relevant to a given context in SuperMemo by pressing ''F1''.
+
+== Reading with SuperMemo. Amazing! ==
+
+If you learn from electronic sources (e.g. the Internet), you can benefit tremendously by mastering the technique called ''incremental reading''. In incremental reading, you import articles from the Internet, and convert them to questions-and-answers with a couple of keystrokes. You can continue reading thousands of articles in parallel without getting lost. You can add thousands of [[Glossary:Item|items]] per year and still be able to recall 90-95%. It may take a few months of frustration before you reach proficiency in incremental reading; however, you will ultimately experience a seismic shift in your learning power. Invest a few hours in reading this article: [[incremental reading]]. In the long run, the return on investment will be astronomic. A more comprehensive approach is called [[incremental learning]]. Incremental learning extends learning beyond reading to new areas such as [[visual learning]] or [[incremental video]].
+
+== Regularly check if your data is not corrupted ==
+
+To be sure that your files have not been damaged by a virus, other software, or hardware problems, use '''[[File menu|File]] : [[Repairing collections|Repair collection]]''' (''Ctrl+F12'') from time to time (e.g. once per month). Always backup your collection before using '''Repair collection'''
+
+== Position and size of windows ==
+
+In the beginning you often dislike the size and positions of windows and dialogs in SuperMemo. You can change that. Your favorite [[Glossary#layout | layout]] will depend on your monitor's resolution, [[Fonts tab in Options | interface font]] used in SuperMemo, the size of the [[element window]] and your learning habits. To save the current layout, press ''Shift+Ctrl+F5'' ('''[[Window menu |Window]] : Layout : Save as default'''). You can save more layouts and then choose between them by choosing an appropriate number on the [[Window menu | '''Window''']] menu. If you would like to include learning statistics in your layout, you might first open the statistics windows (e.g. by pressing ''F5''). If you would like to preview the [[Glossary:Ancestor|ancestor]] path of the current [[Glossary:Element|element]], you could also open the ancestor path window with ''Ctrl+Shift+X''. If you open, move and/or size many windows, you can always get back to your favorite [[Glossary:Layout|layout]] by pressing ''Ctrl+F5'' ('''[[Window menu |Window]] : Layout : Apply default layout'''). You can also add or delete [[Glossary:Layout|layouts]] with '''[[Window menu | Window]] : Layout : Layout manager'''
+
+== Searching for things in SuperMemo ==
+
+To quickly locate [[Glossary:Element|elements]] in your [[Glossary:Collection|collection]] press ''Ctrl+F'' or choose the button '''Search''' on the [[navigation bar]]. Use this option also for AND-search, OR-search, etc.
+
+== Make your knowledge easy to remember ==
+
+Read [http://super-memory.com/articles/20rules.htm 20 rules of formulating knowledge in learning] to review most important principles that will make sure you will remember with minimum effort
+
+== Principles of success in learning ==
+
+With years passing by, you will develop healthy learning habits that will make sure your work with SuperMemo is both effective and enjoyable. You can save months of experimenting if you read [http://supermemo.com/articles/decalog.htm Ten Commandments of a Highly Efficient User of SuperMemo]
+
+== Processing knowledge  ==
+
+You should remember that all your learning material requires endless attention. You should review your [[Glossary:Element|elements]] for usefulness, correct formulation, logic, grammar, etc. When an [[Glossary:Element|element]] comes up for a [[Glossary:Repetition|repetition]], you should make a quick and nearly instinctive assessment of the following: 
+
+#''Do I really need this [[Glossary:Element|element]]?'' 
+#''Do I really need to know it now? Or can I learn it later?'' 
+#''Is this element difficult to remember? If so, why?'' 
+#''Is it factually correct?'' 
+#''Is it as simple and clear as possible?''
+
+Here are some typical actions you will take depending on the answer to the above questions (some keyboard shortcuts may not work at lower [[Levels|difficulty levels]]): 
+
+#'''correcting''' an [[Glossary:Element|element]]. In case of questions and answers, you can use keys such as ''Q'', ''A'', or ''E'' to enter a text field and change it. In more complex [[Glossary:Element|elements]] you can use ''Ctrl+T'' to cycle between [[Glossary:Component|components]], or use ''Alt+click'' to switch a [[Glossary:Component|component]] between [[Glossary:Editing_mode|editing]] and [[Glossary:Dragging_mode|dragging]] modes 
+#'''rescheduling''' an [[Glossary:Element|element]]. You can manually change the date of the next review. If you know the [[Glossary:Element|element]] well, you can increase the [[Glossary:Interval|interval]] remaining till the next review. If the [[Glossary:Element|element]] is very important, you can reduce the [[Glossary:Interval|interval]]. Press [[Keyboard shortcuts|''Ctrl+J'']] to select the date of the next review. If you have just reviewed the [[Glossary:Element|element]], you should instead use [[Keyboard shortcuts|''Shift+Ctrl+R'']] to inform SuperMemo about the review 
+#'''dismissing''' an [[Glossary:Element|element]]. If you are sure you are not likely to need the [[Glossary:Element|element]] in the future, but you would like to keep it in your [[Glossary:Collection|collection]] for reference or archival purposes, press ''Ctrl+D''. [[Glossary:Dismissed_element|Dismissed elements]] are removed from the learning process (and from the [[Glossary:Pending_queue|pending queue]]) 
+#'''deleting''' an item or an article. The key ''Del'' is very useful in cleaning your [[Glossary:Collection|collection]] from garbage. Note that deleting an [[Glossary:Element|element]] also deletes its [[Glossary:Child|children]]. This operation is irreversible. You can use '''Done''' with ''Shift+Ctrl+Enter'' to delete the content of an [[Glossary:Element|element]] without deleting its [[Glossary:Child|children]] 
+#'''forgetting''' an [[Glossary:Element|element]]. If you think an [[Glossary:Element|element]] is too difficult or not important enough at the moment, you can decide to learn it later. For this purpose, press ''Ctrl+R'' to remove it from the learning process. This will put it at the end of the [[Glossary:Pending_queue|pending queue]]
+
+== One body of knowledge ==
+
+It is recommended that you keep all your knowledge in one [[Glossary:Collection|collection]] (you can create new [[Glossary:Collection|collections]] with '''[[File menu | File]] : New collection'''). Here are the benefits of one body of knowledge:
+# you do not have to open a number of [[Glossary:Collection|collections]] each day to make repetitions (you can still [[Subset learning|learn only selected branches]] if you wish so)
+# you can keep one global learning process and one set of statistics ([[Subset operations#Statistics|branch statistics]] are also available to inform you of the progress in individual [[Glossary:Branch|branches]])
+# repetitions of mixed-up material are more entertaining and verifiably [http://super-memory.com/articles/genius.htm boost your creativity]! You will be amazed how this affects your ability to come up with new ideas and unexpectedly associate facts relating to completely different subjects. '''The fun of diversified learning material will make it easier for you to stick with your own learning resolutions!'''
+# you will eliminate a '''very frequent''' problem: neglecting some [[Glossary:Collection|collections]] at the cost of others. The only rational way of controlling the flow of knowledge and the right proportions between [[Glossary:Branch|branches]] is to use the tools provided by SuperMemo. Neglect and procrastination do not belong to these tools. '''Multiple [[Glossary:Collection|collections]] make it easier for you to fail your own learning plans!''' If you have already created a couple of [[Glossary:Collection|collections]], you can merge them by using '''[[File menu | File]] : Merge collection'''. Open the [[Glossary:Collection|collection]] that is to be merged with your main body of knowledge, choose '''[[File menu|File]] : Merge collection''', and point to the [[Glossary:Collection|collection]] that keeps the main body of knowledge
+
+== Statistics of the learning process ==
+
+You will understand your memory better if you learn to interpret the statistics of the learning process: 
+* you can see the calendar of repetitions by pressing ''Ctrl+W'' or choosing '''[[Toolkit menu|Toolkit]] : [[Calendar]]'''
+* you can conveniently view learning statistics by pressing ''F5''. For interpretation of individual parameters see: [[Statistics|Learning statistics]] and [[Element data|Element statistics]]. You can preserve the [[Glossary:Layout|layout]] with the statistics windows by pressing ''Shift+Ctrl+F5''
+* you can monitor your progress with '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Statistics|Statistics]] : [[Analysis]]''' (''Shift+Alt+A''). For example, the '''Use''' tab will show you the graphs of your daily progress (e.g. number of [[Glossary:Memorized_element|memorized elements]], recall rate, etc.)
+
+== <span id="adding components">Adding pictures</span>, sound and video ==
+
+You can easily add new texts, images, sounds and other [[Glossary:Component|components]] to your [[Glossary:Element|elements]]. New [[Glossary:Component|components]] are most conveniently added with the [[Compose toolbar | '''Compose''' toolbar]] available at the bottom of the [[element window]] or with '''[[Edit menu | Edit]] : Add components''' on the [[main menu]]. To add a [[Glossary:Component|component]] from the [[Compose toolbar|toolbar]], click the relevant button (e.g. text button, image button, etc.). Read about [[Glossary:Template|templates]] to find out how to automate this process. The easiest way to add pictures to your [[Glossary:Element|elements]] is to paste them from clipboard (''Ctrl+V'' or ''Shift+Ins''). The easiest way to add texts is to paste them with ''Ctrl+N''. If you master [[incremental learning]], you will discover how to automatically import texts, pictures and videos from the web.
+
+== Improving the look of your items ==
+
+You can easily change the attributes of [[Glossary:Element|elements]] and their [[Glossary:Component|components]] by using menus available with a right click. There are two menus you will need to become familiar with: 
+# [[Element menu]] (''Alt+F10'') which can be opened by a right click over an empty [[Glossary:Element|element]] area or over the [[navigation bar]]. Some exemplary functions of the [[element menu]] that help you change the look of the [[Glossary:Element|element]]: 
+#* '''[[Element_menu#Color|Color]]''' changes the color of the [[Glossary:Element|element]]
+#* '''[[Element_menu#Edit|Edit]] : Title''' (''Alt+T'') makes it possible to edit the title of the [[Glossary:Element|element]] or select a text to be used as the title
+#* '''[[Element_menu#Delete_components|Delete components]]''' deletes selected [[Glossary:Component|components]] from the current [[Glossary:Element|element]]
+#* '''[[Element_menu#Edit|Edit]] : Duplicate''' (''Alt+D'') creates an exact copy of the current [[Glossary:Element|element]] in your [[Glossary:Collection|collection]]
+#* '''[[Element_menu#Edit|Edit]] : Swap Q&A''' (''Shift+Ctrl+S'') swaps the question with the answer (e.g. when learning words of a foreign language)
+#* '''[[Element_menu#Template|Template]] : Apply template''' (''Shift+Ctrl+M'') allows you to choose from a list of looks defined earlier and change the style of your [[Glossary:Element|element]]
+# [[Component menu]] (''Alt+F12'') which can be opened by a right click over a selected [[Glossary:Component|component]]. Some exemplary functions of the [[component menu]] that help you change the look of [[Glossary:Component|components]] (these functions may or may not appear on the menu depending on the context):
+#* '''[[Component_menu#Color|Color]]''' changes the color of the [[Glossary:Component|component]]
+#* '''[[Component_menu#File|File]] : Import file''' makes it possible to show a given file inside the [[Glossary:Component|component]] (e.g. picture, HTML file, etc.)
+#* '''[[Component_menu#Text|Text]] : Font : Edit font''' changes the [[Using fonts | font]] of the selected [[Using text components | text]]
+#* '''[[Component_menu#Delete_component|Delete component]]''' removes the [[Glossary:Component|component]]
+#* '''[[Component_menu#Display_at|Display at]]''' defines when the [[Glossary:Component|component]] should be visible (e.g. at answer time) and when it should be hidden (e.g. at question time). You can use ''Alt+click'' over a [[Glossary:Component|component]] to switch it to the [[Glossary:Editing_mode|editing mode]]. This will make it possible to resize the [[Glossary:Component|component]] (unless it is the HTML component; if you want to resize the HTML component, you need to enter the size&drag mode, e.g. by ''Alt+clicking'' it for the second time), edit texts, etc. If you ''Alt+click'' the [[Glossary:Component|component]] again, it will switch to the [[Glossary:Dragging_mode|dragging mode]] in which you will also be able to move it to another location in the [[Glossary:Element|element]] area. Press ''Esc'' to switch the [[Glossary:Component|components]] back to the [[Glossary:Presentation_mode|presentation mode]]
+
+== Automating changes to the look of elements ==
+
+You do not need to change the look of [[Glossary:Element|elements]] over and over again. You do not need to add [[Glossary:Component|components]] again and again. It is enough you define a so-called '''[[Glossary:Template | template]]''' to be able to reuse a given [[Glossary:Component|component]] arrangement. The most important things to know about [[Glossary:Template|templates]]:
+* you can save a given "look" with '''[[Element menu#Template|Template]] : [[Element menu#Save as template|Save as template]]'''
+* if you want SuperMemo to automatically use a saved [[Glossary:Template|template]] when you choose '''Add new''' (''Alt+A''), use '''[[Element menu#Template|Template]] : [[Element menu#Save as default|Save as default]]'''
+* if you want to reuse a previously saved [[Glossary:Template|template]], use '''[[Element menu#Template|Template]] : [[Element menu#Apply template|Apply template]]''' (''Shift+Ctrl+M''). Remember that [[Items, topics, concepts, and tasks|topics and items]] should have their separate [[Glossary:Template|templates]] as these affect their behavior and look during learning. For more information about [[Glossary:Template|templates]], see: [[Templates | Using templates]]
+
+== Building the knowledge tree ==
+
+You can organize the structure of your knowledge in the [[Contents|'''Contents''' window]]. Choose '''Contents''' at the top of the [[element window]] to switch to the [[Contents|'''Contents''' window]]. To find out how to create the knowledge structure, see: [[Building the knowledge tree]]. Remember that the '''structure of your [[Glossary:Knowledge_tree|tree]] is not essential for learning!''' However, a good structure can make it easier to locate portions of materials for [[Glossary:Review|review]]
+
+== Organizing knowledge around concepts ==
+
+You can give [[Glossary:Item|items]] belonging to different [[Glossary:Branch|branches]] of the [[Glossary:Knowledge_tree|knowledge tree]] a different [[The look of elements|look]] and a different [[Glossary:Priority|priority]]. This way you will easily differentiate between [[Glossary:Item|items]] belonging to fields such as geography, biology, sociology, etc. You can assign an [[Glossary:Item|item]] to a new concept group by opening the [[Element parameters|'''Element parameters''' dialog box]] (e.g. with ''Shift+Ctrl+P'') and choosing the target concept group from the list (the '''Group''' list box). When you assign an [[Glossary:Item|item]] to a concept group, you can choose if it should use that concept's [[Glossary:Template|template]] to determine its look. Read: [[Concepts | Using concepts]]
+
+== Which text components are for you? ==
+
+You are most likely to use HTML text [[Glossary:Component|components]] in [[incremental reading]] (if you do not have the latest Internet Explorer, use rich text [[Glossary:Component|components]] instead). HTML [[Glossary:Component|components]] make text processing easy due to rich formatting. However, once your [[Glossary:Item|items]] assume their final shape, you might prefer to convert them to plain text [[Glossary:Component|components]] which are faster and consume less space. You can do it by selecting the ''Classic'' [[Glossary:Template|template]] as the default [[Glossary:Template|template]] in your target concept group (see: [[Concepts | Using concepts]]). You can use several different SuperMemo [[Glossary:Component|components]] to represent text. To understand pros and cons of using various text components, see: [[Using text components | Text components used in SuperMemo]]. See also: [[Using fonts | Fonts in SuperMemo]]
+
+== Items you hate ==
+
+Even with a great deal of experience and perfect understanding of knowledge structure, you will meet [[Glossary:Item|items]] that by no means want to stick to your memory. Usually 60% of [[Glossary:Item|items]] will not even be forgotten once! However, there are always a few [[Glossary:Item|items]] that you might forget 10 times, or even 20 times. 5% of your [[Glossary:Item|items]] may cost you 80% of your learning time (and 99% of frustration). In most cases, the fault is with you, the [[Glossary:Item|items]] must simply be reformulated (see: [http://super-memory.com/articles/20rules.htm 20 rules of formulating knowledge]). However, some [[Glossary:Item|items]] just seem ''un-memorizable''! Those do not indicate your memory is bad! They are a usual companion of every learning process, and you must roll out the heavy guns to deal with them. You will use whatever mnemonic technique comes to mind: add examples, illustrations, poke fun, make it indecent or shocking, create a mind-map, re-memorize with a longer [[Glossary:Interval|interval]] (this will often break the unhealthy memory connection) or, in most desperate cases, delete the [[Glossary:Item|item]] altogether. '''Any [[Glossary:Item|items]] with above 20 [[Glossary:Lapse|memory lapses]] makes a good candidate for deleting'''. Such an [[Glossary:Item|item]] may simply not be worth the cost in your time. To find out which options can help you hunt for trouble-making [[Glossary:Item|items]] see: [[Leeches]]
+
+== The power of browsers and subsets ==
+
+For managing and reviewing large [[Glossary:Collection|collections]], you will find [[Browser|browsers]] indispensable. [[Browser|Browsers]] are available with the '''[[View menu | View]]''' menu. Most of all, [[Browser|browsers]] will let you work with [[Using subsets | subsets]] of [[Glossary:Element|elements]] in your [[Glossary:Collection|collection]]. Here are some ways in which [[Browser|browsers]] can boost your learning: 
+* [[Subset learning|review]] the [[Glossary:Element_subset|subset of elements]]
+* move a [[Glossary:Element_subset|subset of elements]] to another SuperMemo (e.g. for [http://super-memory.com/articles/soft/pocket.htm repetitions on your handheld computer])
+* [[postpone]] repetitions in a [[Glossary:Element_subset|subset of elements]]
+* memorize a [[Glossary:Element_subset|subset of elements]], [[Glossary:Dismiss|dismiss]] a [[Glossary:Element_subset|subset of elements]], shift [[Glossary:Element|elements]] to the end of the [[Glossary:Pending_queue | pending queue]], etc.
+* compute selected learning statistics for a [[Glossary:Element_subset|subset of elements]]
+* change the [[Glossary:Template|template]] in a [[Glossary:Element_subset|subset of elements]]
+* transfer a [[Glossary:Element_subset|subset of elements]] to another [[Glossary:Collection|collection]]
+* run random test or random learning on a [[Glossary:Element_subset|subset of elements]]
+* move a [[Glossary:Element_subset|subset of elements]] to a selected [[Glossary:Branch|branch]] or [[Concepts | concept group]]
+* sort a [[Glossary:Element_subset|subset of elements]] by title, [[Glossary:Priority|priority]], [[Glossary:Difficulty|difficulty]], last repetition date, next repetition date, [[Glossary:Interval|interval]], etc.
+* sort repetitions (e.g. from long to short [[Glossary:Interval|intervals]], or from difficult to easy [[Glossary:Item|items]], etc.)
+* export a [[Glossary:Element_subset|subset of elements]] as text (e.g. as questions and answers)
+* change the priority, the [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo forgetting index] or the ordinal number in a subset of elements (increase, spread equally, modify, shift, etc.)
+* manipulate [[Glossary:Element|element]] sets (e.g. select all [[Glossary:Element|elements]] belonging to one set and not belonging to another, select only [[Glossary:Memorized_element|memorized]] [[Glossary:Item|items]] in a set, combine two sets, save a set to a file for future use, etc.)
+* perform advanced [[Glossary:Collection|collection]] searches such as AND-search, OR-search, XOR-search, etc.
+
+To read more about browsers and subsets see:
+* [[browser]] (what parts make a browser window)
+* [[browser menu]] (what important operations can be made on browsers)
+* [[browser toolbar]] (what shortcut buttons are available on the browser toolbar)
+* [[subset learning]] (how to review only portions of your collection)
+* [[using subsets]] (how to use element subsets in SuperMemo)
+* [[View menu | '''View''' menu]] (what kind of browsers are available)
+
+== How much do you remember? ==
+
+To choose how much you want to remember and how much work you want to put in different [[Glossary:Branch|branches]] of knowledge, SuperMemo introduces the concept of the [[Glossary:Forgetting_index|forgetting index]]. See: [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo Using the forgetting index]
+
+== Distributing your own learning material among others ==
+
+If you would like others to use your learning material, you can follow these steps: 
+# remove from your [[Glossary:Collection|collection]] comments and [[Glossary:Element|elements]] that are specific to your own needs (you can use the comments [[Glossary:Registry|registry]] or comment filters to keep your own comments in a continually developed [[Glossary:Collection|collection]])
+# remove your learning process from the [[Glossary:Collection|collection]] by running: '''[[File menu | File]] : [[File menu#Tools|Tools]] : Reset collection'''
+# if necessary, sort your [[Glossary:Collection|collection]] by [[Glossary:Ordinal_number|ordinals]] (numbers that can be used to determine the sequence of learning), by [[Glossary:Difficulty|difficulty]], by [[Glossary:Priority|priority]], or by the sequence of [[Glossary:Element|elements]] in the [[Glossary:Knowledge_tree|knowledge tree]]
+# you can redistribute your [[Glossary:Collection|collection]] free or commercially '''without anybody's permission'''
+
+== Further reading ==
+
+* [https://supermemopedia.com/wiki/FAQ FAQs]
+* [https://www.youtube.com/@SuperMemoVideo/videos SuperMemo Video]
+* [https://pleasurable-learning.com/view/Fowl's_Guide_to_SuperMemo:_Pleasurable_Expansion Guide to SuperMemo: Pleasurable Expansion]
+* [https://supermemopedia.com/wiki/The_Pleasurable_Guide_To_SuperMemo The Pleasurable Guide To SuperMemo]

@@ -1,0 +1,2 @@
+;<span id="Registry_window">registry window</span>
+:any of the several windows that display the contents of individual [[Glossary:Registry|registries]]. These windows are available on the '''[[Search menu|Search]]''' menu (e.g. '''[[Search menu|Search]] : [[Search menu#Texts|Texts]]''', '''[[Search menu|Search]] : [[Search menu#Images|Images]]''', '''[[Search menu|Search]] : [[Search menu#Other registries|Other registries]] : Font''', etc.). Read more: [[Registry window]]

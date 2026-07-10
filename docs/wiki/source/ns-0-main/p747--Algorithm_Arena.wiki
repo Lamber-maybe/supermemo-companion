@@ -1,0 +1,30 @@
+'''Algorithm Arena''' is a mechanism in [[SuperMemo 20]] in which five [[spaced repetition]] algorithms compete in performance over the user's own memory data. The algorithm that best predicts [[recall]] earns greater weight in scheduling future [[Glossary:repetition|repetition]]s. No single formula is trusted blindly. Performance on real data decides.
+
+5 algorithms compete:
+* [https://supermemo.guru/wiki/Algorithm_SM-2 Algorithm SM-2]
+* [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm SM-15]
+* [https://supermemo.guru/wiki/Algorithm_SM-19 Algorithm SM-19]
+* [https://supermemo.guru/wiki/Algorithm_SM-20 Algorithm SM-20]
+* [[FSRS]]
+
+Well-performing algorithms gain in weight. Defaults were determined by trial during the beta stage. The user's own balance usually develops in just 100–200 repetitions.
+
+Superiority of the weighted pack over [[Algorithm SM-19]] can be tracked via [[Glossary:R-Metric|R-Metric]] in [[Statistics]].
+
+Individual indications can be spotted at discrepancy alerts during [[repetition]]s. Proposed values may show dramatic differences. The weighted interval proposition can be overwritten by the user.
+
+Discrepancy alert frequency depends on the settings in '''[[Options]]'''. The greater the tolerance for discrepancies, the less frequent the alerts, and the more frequent the use of the arena proposition (weighted interval).
+
+Recommendation: keep alerts frequent for educational purposes and use the '''Less often''' button in the algorithm alerts heatmap window to gradually reduce their frequency over time.
+
+'''Important note: ''' If you get conflicting information about the superiority of SM-19 or SM-20, here is a simple clarification:
+* SuperMemo SM-20 is a record holder on [[universal metric]] with metric approaching 0.0
+* SuperMemo SM-19 is often in the lead in the '''Algorithm Arena''' as SuperMemo SM-20 requires optimization via API that is at beta stage on release date (Apr 1, 2026). xxx
+
+[[File:Interval Heatmap in algorithmic contests in SuperMemo 20.png|center|500px]]
+{{:File:Interval Heatmap in algorithmic contests in SuperMemo 20.png}}
+
+
+<center>
+  <youtube>GVEBkpBf1h8</youtube>
+</center>

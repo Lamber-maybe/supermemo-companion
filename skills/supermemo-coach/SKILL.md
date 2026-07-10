@@ -22,24 +22,31 @@ Work downward; stop at the first rung that fully answers.
      from the official master document. Start there for "why is
      SuperMemo designed this way?" questions.
 2. **Bundled official docs in `docs/` (ship with this repo).**
-   `docs/wiki/` holds the whole help.supermemo.org wiki crawled as flat
-   HTML (~210 pages), one page per file, named by page title
-   (`Extract.html`, `Priority_queue.html`, `Keyboard_shortcuts.html`,
-   `Incremental_learning.html` — the ~91,000-word master document, …).
+   `docs/wiki/` is a revision-pinned dual-layer mirror of SuperMemo Help:
+   363 Main/Glossary documentation pages plus File metadata and Template
+   dependencies (570 raw pages total). `rendered/` contains expanded HTML
+   plus local redirect stubs for reading; `source/` contains exact View
+   Source wikitext;
+   `manifest.jsonl` maps titles to both safe page-ID paths and records the
+   canonical URL, revision ID/timestamp, redirect, and hashes.
    `docs/articles/20rules.htm` is Wozniak's formulation-rules article.
-   All of it works offline and on fresh clones. The docs are English;
-   answer in the user's language from the English source (ground
-   rule 1).
-   - Find pages by filename first (`ls docs/wiki | grep -i <keyword>`),
-     then by content (`grep -li <keyword> docs/wiki/*.html`).
-   - The first body line of each wiki page carries its canonical
-     help.supermemo.org URL — cite it when you rely on the page.
-   - The crawl can lag or miss pages: a missing page means "check the
-     personal mirror or look online", not "the feature doesn't exist".
-3. **Personal mirror** (optional). If `LEARNER.md` lists a `Docs mirror`
-   path, that is the user's own crawl — possibly fresher or larger than
-   `docs/`. Same layout and lookup tricks; when both have a page and
-   they disagree, prefer the fresher crawl.
+   The docs are English; answer in the user's language from the English
+   source (ground rule 1).
+   - Find a page by title in the manifest first
+     (`rg -i '<title words>' docs/wiki/manifest.jsonl`), then open its
+     `rendered_path`. Search across pages with
+     `rg -l -i '<phrase>' docs/wiki/rendered docs/wiki/source`.
+   - Use `source_path` when exact wording, comments, template calls, or
+     link targets matter. Use `canonical_url` (or `oldid_url` when the
+     revision matters) for citations.
+   - `snapshot.json` defines the crawl's date and scope. Media binaries,
+     history, and discussion/admin namespaces are intentionally absent;
+     a missing fact means "check a fresher mirror or online", not "the
+     feature doesn't exist".
+3. **Personal mirror** (optional). If `LEARNER.md` lists a `Docs mirror`,
+   compare its manifest/snapshot or page revision timestamp with the
+   bundled copy. Prefer it only when it is demonstrably fresher or covers
+   the missing page; do not assume it has the same directory layout.
 4. **Online — unreliable for programmatic access.** help.supermemo.org
    sits behind a Cloudflare challenge: plain HTTP fetches usually
    return a "Just a moment…" page instead of content. Prefer the local
@@ -83,9 +90,10 @@ Priorities & overload.
 **"Why is SuperMemo designed this way?"** (design-philosophy questions)
 Answer from the docs, not from vibes. Start with
 `incremental-learning.md` in this folder; for the full argument, search
-the bundled master document `docs/wiki/Incremental_learning.html`, plus
-`docs/wiki/Incremental_reading.html` and
-`docs/wiki/Priority_queue.html`; supermemo.guru for the essays.
+the bundled master document
+`docs/wiki/rendered/ns-0-main/p470--Incremental_learning.html`, plus
+`p4--Incremental_reading.html` and `p5--Priority_queue.html` in that same
+directory; supermemo.guru for the essays.
 Recurring answers:
 interruption is a feature (spacing strengthens memory; the queue always
 brings material back), one collection so the priority queue can see

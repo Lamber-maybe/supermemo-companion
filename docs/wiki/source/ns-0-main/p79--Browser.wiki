@@ -1,0 +1,55 @@
+A browser is a window with a [[Glossary:Subset|subset]] of [[Glossary:Element|elements]] belonging to the currently opened [[Glossary:Collection|collection]]. Browsers for various element subsets are primarily available from the '''[[View menu|View]]''' menu (only at '''Middle''' or higher [[Glossary:Level|levels]]). There are also multiple other ways of opening browsers in various contexts with various [[Glossary:Element_subset|element subsets]]. For example, if you are in the [[Contents|'''Contents''' window]], right click, choose '''[[Contents menu#View|View]]''' and then a sub-option such as '''Branch''' or '''Descendants''' (''Ctrl+Space'') to open a contents [[Glossary:Branch|branch]] or the [[Glossary:Descendant|descendants]] of the selected [[Glossary:Element|elements]].
+
+An example browser window looks like this:
+
+[[Image:Element browser.jpg|center|570px|SuperMemo: Browser with elements on History of War]] 
+
+With the green-yellow alignment button on the [[browser toolbar]], you can align the browser to the left along with the [[element window]] to the right. This way you can preview individual [[Glossary:Element|elements]] as the selection in the browser changes (only if the '''Synchronization''' button is down as in the picture). A right-click over the browser area opens the [[browser menu]] with advanced operations on the browser. 
+
+== Browser window components ==
+
+A browser window is made of the following components: 
+
+*Caption - name of the browser and the number of [[Glossary:Element|elements]] displayed in the browser (in the above example, 4247 elements from a collection ''History of War'' are displayed) 
+*[[Browser toolbar|Toolbar]] - buttons providing access to the most often used browser operations (the first button also opens the [[browser menu]]) 
+*Element list - list of [[Glossary:Element|elements]] included in the browser with the following columns (you can change the size and the order of the columns by dragging their gray headers): 
+**''Sel'' - click on this field to select the current entry (e.g. to include it in a newly generated [[Glossary:Element_subset|element subset]]). The selected entry is marked with a checkmark in the ''Sel'' column. You can toggle the selection with ''Space''. You can also toggle and move to the next row with ''Ins''. You can select consecutive browser elements by clicking the first element, pressing and holding down ''Shift'', and then clicking the last element from the range you want to select. To select nonconsecutive elements, press and hold down ''Ctrl'', and then click each browser element you want to select. Selections are useful in processing [[Glossary:Element_subset|element subsets]] 
+**''No'' - position of the [[Glossary:Element|element]] in the browser (i.e. number of the row) 
+**''Title'' - title of the [[Glossary:Element|element]]. If the title is cut off, you can reveal it by changing the width of the column by dragging the boundary on the right side of the column heading until the column is wide enough to accommodate it. Alternatively, if '''Hints''' are on (e.g. by double-clicking on the hint area in the [[status bar]]), you can see the entire title of a given [[Glossary:Element|element]] in a tooltip by hovering the mouse over its cut off title.
+**''Prior'' - [[Glossary:Priority|priority]] of the [[Glossary:Element|element]] in percent (0% stands for highest priority) 
+**''Intrv'' - current [[Glossary:Interval|interval]] of the [[Glossary:Element|element]]. This is the difference between ''LastRep'' and ''NextRep'' in days 
+**''LastRep'' - date of the last repetition of the [[Glossary:Element|element]]
+**''NextRep'' - date of the next repetition of the [[Glossary:Element|element]]
+**''Reps'' - number of times the displayed [[Glossary:Element|element]] has been repeated in learning (since the last time it was forgotten or since the time it was first learned) 
+**''Laps'' - number of times the [[Glossary:Element|element]] was forgotten 
+**''Type'' - type of a given [[Glossary:Element|element]]: [[Glossary:Topic|topic]], [[Glossary:Item|item]], [[Glossary:Concept|concept]] or [[Glossary:Task|task]] (see also: [[Items, topics, concepts, and tasks|Topics vs items]]). See: [[Building the knowledge tree|knowledge tree]] to understand icons and colors 
+**''FirstRep'' - date of the first repetition of the [[Glossary:Element|element]]
+**''Dif'' - [[Glossary:Difficulty|difficulty]] of the [[Glossary:Element|element]] in percent (the darker the field, the more difficult the [[Glossary:Element|element]]) 
+**''FI'' - [[Glossary:Requested_forgetting_index|requested forgetting index]] of the [[Glossary:Element|element]]
+**''AF'' - [[Glossary:A-Factor|A-Factor]] associated with the [[Glossary:Element|element]] (see: [https://supermemo.guru/wiki/SuperMemo_Algorithm SuperMemo Algorithm]) 
+**''Post'' - the number of times the [[Glossary:Element|element]] has been delayed with '''[[Postpone]]''' 
+**''Ord'' - [[Glossary:Ordinal_number|ordinal number]] of the displayed [[Glossary:Element|element]] (e.g. used in sorting the [[Glossary:Pending_queue|pending queue]]) 
+**''UF'' - [[Glossary:U-Factor|U-Factor]] associated with the [[Glossary:Element|element]] (see: [https://supermemo.guru/wiki/SuperMemo_Algorithm SuperMemo Algorithm]) 
+**''ElNo'' - physical number of the [[Glossary:Element|element]] in the [[Glossary:Collection|collection]]. This number may be greater than the total number of [[Glossary:Element|elements]] listed in '''[[Statistics]]''', esp. if you have deleted many [[Glossary:Element|elements]]. Those numbers never change, therefore, once you delete a group of [[Glossary:Element|elements]], it will take some time before the freed element numbers are reused
+
+Some of the browser fields listed above allow of sorting the browser. Click on the field's caption to sort the browser. For example, to sort the browser by the last repetition date, click ''LastRep''. To change the ascending order to the descending order, click again. The [[Glossary:Element|elements]] in the picture are sorted for the ''Prior'' field
+
+== Visual Browser ==
+
+In newer Windows, you can browse your [[Glossary:Element|elements]] visually:
+
+<div class="center">
+[[Image:Visual browser.jpg|800px|SuperMemo: Element browser in the thumbs mode]] 
+<blockquote>'''''Figure''': <span id="Visual_browser">Element browser</span> in the thumbs mode''</blockquote></div>
+
+Visual browser is useful when searching for [[Glossary:Element|elements]] that include pictures. In the picture: '''[[Search menu|Search]] : [[Find elements]]''' (''Ctrl+F'') is used to find all [[Glossary:Element|elements]] that contain the word ''Alzheimer'' but which may also feature (but do not have to) one of the following texts: ''ApoE'', ''PS1'', ''Presenilin'' (the search definition is saved as ''Alzheimer's Disease''):
+
+[[Image:Find_elements.jpg|800px|center|SuperMemo: You can use AND, OR and NOT search to locate elements in your collection (in the picture: Search : Find elements (Ctrl+F) is used to find all elements that contain the word Alzheimer but which may also feature (but do not have to) one of the following texts: ApoE, PS1, Presenilin)]]
+
+== Further reading ==
+
+*[[Using subsets]] 
+*[[Subset operations]] 
+*[[Browser menu]] 
+*[[Browser toolbar]]
+*[[Incremental learning]]

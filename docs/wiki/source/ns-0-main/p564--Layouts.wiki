@@ -1,0 +1,98 @@
+== Introduction ==
+
+SuperMemo features a number of various windows ([[element window]], '''[[Contents]]''', '''[[Statistics]]''', etc.) and toolbars ([[Read toolbar|'''Read''']], [[Edit toolbar|'''Edit''']], [[Tools toolbar|'''Tools''']], etc.) as well as number of interface elements (e.g. [[status bar]], background, etc.) which you can show/hide, position and/or resize to organize your SuperMemo learning space to suit your preferences depending the available monitor and screen resolution as well as how well you know the program and what kind of information you are interested in.
+
+<div class="center">
+[[File:Professional_level.jpg|800px|The main SuperMemo windows and toolbars at the Professional level]]
+{{:File:Professional level.jpg}}
+</div>
+
+You can rely on one of the [[#Predefined layouts|predefined SuperMemo layouts]] as well as create any number of your own.
+
+Layouts are stored in the [[SuperMemo files#Program files|''BIN\layouts.ini'']] file. This file also can be modified manually if have backed it up safely beforehand.
+
+== SuperMemo interface parts that are saved in a layout ==
+
+* [[Element window]] - size and position
+* [[Contents|'''Contents''' window]] - visibility, size and position
+* [[Statistics|'''Statistics''' window]] - visibility, size and position
+* [[Element data|'''Element data''' window]] - visibility, size and position. Additionally, you can expand/collapse select parameter groups to economize space
+* '''Ancestors window''' - visibility, size and position
+* [[Status bar]] - visibility
+* Background - show or hide the background behind windows used by SuperMemo in order to minimize distraction caused by background applications. The background can either be a solid color ('''[[Window menu|Window]] : [[Window menu#Layout|Layout]] : Background color''') or a custom picture ('''[[Window menu|Window]] : [[Window menu#Layout|Layout]] : Background picture'''). In Windows 10, the background can also be used to differentiate between collections (e.g. when using ''Alt+Tab'')
+
+<div class="center">
+[[File:Collection background.jpg|800px|SuperMemo: In Windows 10, SuperMemo background can be used as a nice visual collection chooser between active collections opened in separate instances of SuperMemo running simultaneously]]
+{{:File:Collection background.jpg}}
+</div>
+
+== Saving a custom layout ==
+
+After you have arranged your SuperMemo desktop:
+# choose '''[[Window menu|Window]] : [[Window menu#Layout|Layout]] : Save custom layout'''
+# Enter the name of the layout in the '''New Layout''' dialog box,
+# Click '''OK'''
+
+Additionally, you can save your layout as default. The default layout is a layout which is automatically applied when you run SuperMemo, or restored to when you close the [[Contents|'''Contents''' window]] or [[Browser|element browser]] (see: [[#Automatic layouts|automatic layouts]]. To save a layout as default, select '''[[Window menu|Window]] : [[Window menu#Layout|Layout]] : Save as default''' (''Shift+Ctrl+F5'').
+
+== Applying a custom layout ==
+
+=== Setting the default layout ===
+
+# press ''Ctrl+F5'', or
+# choose '''[[Window menu|Window]] : [[Window menu#Layout|Layout]] : Apply default layout''' from the [[main menu]], or
+# Right-click the '''Layout manager''' button in the [[navigation bar]], and select '''Apply default layout''', or
+# Click the '''Apply default button''' button on the [[Tools toolbar|'''Tools''' toolbar]] (if visible)
+
+=== Choosing from the custom layout list ===
+
+Select '''[[Window menu|Window]] : 1..9''' to choose one from up to nine custom layouts recently defined and saved. Note that the selected layout automatically becomes the default one.
+
+=== Applying from the Layout manager ===
+
+# click the '''Layout manager''' button in the [[navigation bar]] at the top of the [[element window]]
+# select a given layout
+# press '''Apply'''
+# press '''Close'''
+
+== Layout manager ==
+
+'''Layout manager''' is a simple tool you can use to apply a selected layout (esp. if you have saved more than 9 in total), save the current position of windows and toolbars as a new layout, set a selected layout as the default one (i.e. the layout which is automatically applied when you run SuperMemo), delete layouts you no longer need, etc.
+
+You can open '''Layout manager''' with '''[[Window menu|Window]] : [[Window menu#Layout|Layout]] : Layout manager''' from the [[main menu]], or by clicking the '''Layout manager''' button on the navigation bar in the element window (note that you need to be at the '''Middle''' or higher level for these options to become available).
+
+The Layout manager is comprised of the following elements:
+* Layout list
+* Action buttons
+** '''Apply''' - apply the selected layout
+** '''Save''' - save the current layout of windows and toolbars for future use
+** '''Default''' - make the selected layout the default one
+** '''Delete''' - delete the selected layout
+** '''Close''' - close the manager
+* Status pane, at the bottom of the window, where you can inspect which layout is the current default one and which is presently applied.
+
+== Available layouts ==
+
+=== Predefined layouts ===
+
+SuperMemo comes with two [[#Predefined layouts|predefined layouts]]: ''Classic'' and ''Warrior''.
+
+You can use them as a good starting point for your own custom layout. After you have arranged everything on the screen, select '''[[Window menu|Window]] : [[Window menu#Layout|Layout]] : Save custom layout''' or  '''Save as default'''.
+
+You can also make either of them permanent each time you open SuperMemo with '''[[Window menu|Window]] : [[Window menu#Layout|Layout]] : Save as default''' (''Shift+Ctrl+F5'').
+
+==== Classic layout ====
+
+The ''Classic'' layout is known from early versions of SuperMemo. It conveniently aligns the [[Statistics|'''Statistics''' window]] to the left of the [[element window]] and [[Element data|'''Element data''' window]]. This arrangement is useful when you make repetitions and like to constantly follow the progress of learning.
+
+==== Warrior layout ====
+
+The ''Warrior'' layout has been optimized for [[Glossary:Incremental_reading|incremental reading]]. Not only does it arrange windows and toolbars on your screen, it also switches SuperMemo to the '''Professional''' [[Glossary:Level|level]]. You can apply it with one of the following ways:
+* press ''F5''
+* choose '''[[File menu|File]] : [[File menu#Levels|Level]] : Warrior layout''' from the [[main menu]]
+* choose '''[[Window menu|Window]] : [[Window menu#Layout|Layout]] : Warrior layout''' from the [[main menu]]
+* select '''Warrior''' in the Layout manager, and click '''Apply''', and close the manager
+
+=== Automatic layouts ===
+
+In addition to the two aforementioned [[#predefined layouts|predefined layouts]], SuperMemo automatically re-arranges the current layout whenever you switch to the [[Contents|'''Contents''' window]] (e.g. by clicking '''Contents''' in the [[element window]]) or open the [[Browser|element browser]] (e.g. via the '''[[View menu|View]]''' menu). In this new automatic layout, the left half of the screen is occupied by either the [[Contents|'''Contents''' window]] or [[Browser|element browser]], while the other half is split in two grids: the top is filled with the [[element window]] while the [[Element data|'''Element data''' window]] is attached to the bottom. This layout makes it very easy to inspect individual elements (along with their learning parameters) from the [[Contents|'''Contents''' window]] or [[Browser|element browser]]. Closing the [[Contents|'''Contents''' window]]/[[Browser|element browser]] restores the default layout. Alternatively, you can press ''Esc'' to the do the same.

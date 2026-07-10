@@ -1,0 +1,1 @@
+Progress bar displayed while importing mail to SuperMemo

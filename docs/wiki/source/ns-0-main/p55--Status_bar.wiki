@@ -1,0 +1,39 @@
+__TOC__
+
+A status bar, aligned at the bottom of the screen, shows basic learning statistics. Additionally, it features a panel displaying hints that explain menu options, buttons or icons used in SuperMemo. Note that you can also find many more statistics in the [[Statistics|'''Statistics''' window]].
+
+[[Image:Status bar.jpg|center|800px|SuperMemo: Figure: Status bar displaying how many elements have already been memorized, how many outstanding elements scheduled for the current day have yet to be reviewed or have to be rehearsed with the final drill yet, and hints for menu items, buttons, statistical parameters, etc.]] 
+
+You can show/hide the status bar with '''[[Window menu|Window]] : [[Window menu#Status_bar|Status bar]]''' available from the [[main menu]].
+
+== Memorized ==
+
+The first field shows the total number of [[Glossary:Memorized_element|memorized]] [[Glossary:Item|items]] and [[Glossary:Topic|topics]]
+
+== Outstanding ==
+
+=== Panel ===
+
+The second field shows ('''Outstanding items + Outstanding topics + Final drill items''')/(today's original [[Statistics#Outstanding|'''Outstanding''']]). It illustrates how many [[Glossary:Outstanding_element|outstanding elements]] scheduled for the current day have yet to be reviewed (the first two numbers connected with a plus sign) or have to be rehearsed yet with the [[Glossary:Final_drill|final drill]] (the third number, if present). For example, (24+2+3)/45 means that out of 45 [[Glossary:Outstanding_element|outstanding elements]], 24 [[Glossary:Item|items]] and 2 [[Glossary:Topic|topics]] yet have to be reviewed, while 3 items require additional review in [[Glossary:Final_drill|final drill]].
+
+Note that whether the third final drill statistic is displayed depends on the '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Learning tab in Options|Learning]] : Skip final drill''' setting. When it is on/checked (i.e. the final drill is disabled), the number is no longer shown.
+
+[[Image:Status_bar2.jpg|800px|center|SuperMemo: Status bar displaying what proportion of elements have already been memorized, how many outstanding elements scheduled for the current day have yet to be reviewed or have to be rehearsed yet with the final drill, and hints for menu items, buttons, statistical parameters, etc.]]
+{{:File:Status bar2.jpg}}
+
+=== Progress bar ===
+
+The progress bar displays the graphic representation of the same information as the second field. The <span style="color: blue;">blue</span> color shows the proportion of [[Glossary:Element|elements]] passed successfully today (i.e. passed with the grade '''Great''' (5) or '''Good''' (4)). The <span style="color: red;">red</span> color shows the proportion of [[Glossary:Element|elements]] passed with the [[Glossary:Grade|grade]] less than '''Good''' (4). And the white color shows the proportion of [[Glossary:Element|elements]] that have not yet been passed. The <span style="padding: 3px; background: aqua;">aqua percentage number</span> superimposed over the progress bar shows what proportion of [[Glossary:Outstanding_element|outstanding elements]] have already been reviewed, postponed or auto-postponed.
+
+== Hints/Basic element statistics ==
+
+The right part of the status bar is used to display either:
+* hints for elements in the SuperMemo interface (such as menu items, buttons, etc.), or
+* the current element's basic statistical parameters.
+
+The hints are displayed when '''[[Window menu|Window]] : [[Window menu#Hints|Hints]]''' is on/checked (you can easily notice that as they are showed against the yellow background). Otherwise, the panel shows the basic statistics for the current element: [[Glossary:Interval|interval]], [[Glossary:Priority|priority]], number of repetitions, and the dates of the last and next repetitions.
+
+You can also double-click the panel to turn the hints on and off. Note that this is a collection setting. In other words, the hints may be on in one collection while off in the other depending on the value of this setting.
+
+== Video ==
+* [https://youtube.com/watch?v=sp0eoRqyBCU Status bar] at [https://supermemopedia.com/wiki/The_Pleasurable_Guide_To_SuperMemo The Pleasurable Guide To SuperMemo]

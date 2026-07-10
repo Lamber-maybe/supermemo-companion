@@ -1,0 +1,44 @@
+You can display the '''Read''' toolbar by clicking the '''Read''' tab at the bottom of the [[element window]] (at '''Middle''' or higher [[Glossary:Level|level]]).
+
+<div class="center">
+[[File:Read toolbar.jpg|800px|SuperMemo: The Read toolbar at the bottom of the element window. It features options used in incremental reading]]
+{{:File:Read toolbar.jpg}}
+</div>
+
+=== Toolbar buttons ===
+
+<ul>
+<li>'''Paste article''' (''Ctrl+N'') - paste a new article from the clipboard to the current [[Glossary:Collection|collection]]</li>
+<li>'''Remember extract''' (''Alt+X'') - use the selected part of the text to create a new [[Glossary:Element|element]] and introduce this new element into the learning process. This is one of the most important options used in [[Glossary:Incremental_reading|incremental reading]]. Use ''Alt+X'' on a selected text to tell SuperMemo that the selection is important and that you want to better remember it in the future</li>
+<li>'''Schedule extract''' (''Alt+Shift+X'') - use the selected text to create a new [[Glossary:Topic|topic]] and schedule its [[Glossary:Review|review]] on a selected day with a selected [[Glossary:Priority|priority]]. '''Schedule extract''' is the same as '''Remember extract''' but you can manually select the first [[Glossary:Interval|interval]], [[Glossary:Priority|priority]], and more</li>
+<li>'''Remember cloze''' (''Alt+Z'') - create a new [[Glossary:Cloze_deletion|cloze deletion element]] based on the current keyword selection and introduce that new [[Glossary:Element|element]] into the learning process
+
+<blockquote>
+'''Example''': You can convert the following sentence:
+
+<blockquote>''In 1947 the UN voted to divide Palestine into Arab and Jewish states''</blockquote>
+
+to question:
+
+<blockquote>''In 1947 the UN voted to divide Palestine into Arab and <span class="cloze">[...]</span> states''</blockquote>
+
+by:
+# selecting the word ''Jewish'' and
+# choosing '''Cloze''' (or pressing ''Alt+Z'').
+</blockquote>
+In addition to '''Extract''' ([[#extract|above]]), this is the most important option of [[Glossary:Incremental_reading|incremental reading]].
+</li>
+<li>'''Schedule cloze''' - create a new [[Glossary:Cloze_deletion|cloze deletion]] and schedule it for [[Glossary:Repetition|repetition]] on a selected day</li>
+<li>'''Task extract''' - use the selected part of the text to create a new [[Glossary:Task|task element]] and put this element on the current [[Glossary:Tasklist|tasklist]]</li>
+<li>'''Split article''' - split the article into multiple [[Glossary:Topic|topics]] using various chapter markers such as headlines, horizontal lines, Wikipedia sections, [[Glossary:Splitmark|SuperMemo splitmarks]], etc. This can substantially accelerate decomposition of very long articles and prioritization of article chapters</li>
+<li>'''[[Incremental mail processing|E-mail]]''' (''Shift+Ctrl+E'') - send the [[Glossary:Element|element]] or the selected text via e-mail (you can annotate the [[Glossary:Element|element]] or comment on the selected text)</li>
+<li>'''[[Incremental mail processing#Responding with FAQs|E-mail FAQ]]''' - use the selected text as the basis of an FAQ question and send the answer to the question's author. Your response will automatically be added to an FAQ file of your choice. It can also produce a Wiki version. All FAQs at SuperMemo Website have been created by means of '''E-mail FAQ'''. Many FAQs at [https://supermemopedia.com SuperMemoPedia] have been created using this option as well</li>
+<li>'''Highlight''' - highlight the currently selected text</li>
+<li>'''Change highlight style''' - change the highlight style (i.e. font, font style, font size, font color, and text highlight color)</li>
+<li>'''Ignore''' (''Shift+Ctrl+I'') - ignore the selected text in reading by marking it with the <span class="ignore">ignore</span> style</li>
+<li>'''Delete before cursor''' (''Alt+\'') - delete texts before the cursor (e.g. after processing it). When the cursor is placed at the very beginning of the text, it can also delete HTML formatting tags to clean up the text</li>
+<li>'''Delete after cursor''' (''Alt+.'') - delete texts after the cursor (e.g. footnotes, external links, literature references, etc.). SuperMemo references located at the bottom of the text will not be affected</li>
+<li>'''Set read-point''' (''Ctrl+F7'') - mark the selected text as the point from which you will resume reading the next time you return to the presented article. In [[Glossary:Incremental_reading|incremental reading]], you rarely need to use '''Set read-point''' as all extract, cloze, highlight, and other operations will automatically set the read-point for you</li>
+<li>'''Go to read-point''' (''Alt+F7'') - go to the text that has been selected as the read-point</li>
+<li>'''Clear read-point''' (''Shift+Ctrl+F7'') - remove the read-point from the currently processed text</li>
+</ul>

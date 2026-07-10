@@ -1,0 +1,6 @@
+;<span id="Parent">parent</span>
+:[[Glossary:Element|element]] right above a level in reference to a given element in the [[Glossary:Knowledge_tree|knowledge tree]] in the [[Glossary:Contents_window|'''Contents''' window]]. Use ''Ctrl+Up'' to see the '''parent''' of the currently displayed [[Glossary:Element|element]]. [[Glossary:Root_node|Root]] of the [[Glossary:Knowledge_tree|tree]] is the only [[Glossary:Element|element]] that has no '''parent'''. All [[Glossary:Child|children]] of [[Glossary:Element|element]] X have element X for '''parent'''.
+:See also:
+:*[[Building the knowledge tree]]
+:*[[Contents|'''Contents''' window]]
+:*[https://en.wikipedia.org/wiki/Tree_(data_structure) Tree structure] at Wikipedia

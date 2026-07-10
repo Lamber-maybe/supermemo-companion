@@ -1,0 +1,1 @@
+For the description of '''Algorithm SM-15''' see [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm SM-15 at SuperMemo Guru].

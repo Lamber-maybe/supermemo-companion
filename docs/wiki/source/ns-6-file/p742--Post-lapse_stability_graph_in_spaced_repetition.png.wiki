@@ -1,0 +1,1 @@
+{{Fig|'''First interval''' tab in '''4D Graphs''' makes it possible to visualize how retrievability and the number of memory lapses affect the first interval after forgetting}}

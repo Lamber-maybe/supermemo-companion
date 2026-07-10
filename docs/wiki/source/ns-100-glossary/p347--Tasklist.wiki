@@ -1,0 +1,2 @@
+;<span id="Tasklist">tasklist</span>
+:form of to-do list used in [[Glossary:SuperMemo|SuperMemo]]. '''Tasklists''' are made of a set of [[Glossary:Task|tasks]] (each corresponds with a single [[Glossary:Element|element]] in [[Glossary:SuperMemo|SuperMemo]]). [[Glossary:Task|Tasks]] in a '''tasklist''' are sorted by their priority. Task priorities in [[Glossary:SuperMemo|SuperMemo]] are determined by the ''Value/Time'' ratio. See: [[Tasklist manager]]

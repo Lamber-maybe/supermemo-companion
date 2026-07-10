@@ -1,0 +1,6 @@
+;<span id="Repetition">repetition</span>
+:act in which a given [[Glossary:Item|item]] is rehearsed by going through the following stages: 
+:# show the question (or the stimulus) 
+:# respond to the question (or react to the stimulus) 
+:# compare the response with the correct answer and grade yourself (or be graded by the program for your reaction to the stimulus)
+:Note that all '''repetitions''' take place on a date selected by [[Glossary:SuperMemo|SuperMemo]] by using the spaced repetition algorithm (see: [https://supermemo.guru/wiki/SuperMemo_Algorithm SuperMemo Algorithm])

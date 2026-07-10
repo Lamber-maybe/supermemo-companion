@@ -1,0 +1,72 @@
+At the top of the [[element window]] you will find the element toolbar called the '''navigation bar''' (to differentiate from the control bar at the bottom): 
+
+[[Image:Element window.jpg|center|800px|SuperMemo: SuperMemo: The element window displaying a cloze deletion produced from a larger article titled DREAMING and the BRAIN]] 
+
+== Available buttons ==
+
+*'''Favorites''' (''Ctrl+O'') - pick a [[Glossary:Collection|collection]] from the list of favorites
+*'''Contents''' - open the [[Contents|'''Contents''' window]] with the [[Glossary:Knowledge_tree|tree structure of knowledge]] stored in your current [[Glossary:Collection|collection]] 
+*'''<span id="search">Search</span>''' - search for texts in your [[Glossary:Collection|collection]].<br>This button features a context menu. Right-click it to open the menu with the following options:
+**'''[[Find elements]]''' (''Ctrl+F'') - find all [[Glossary:Element|elements]] containing a given text. Note that some texts in SuperMemo can be displayed by means of images or [[OLE component|OLE objects]]. Those will not show up in the search. The results of the search will be displayed in the [[Browser|element browser]]. If you quit the [[browser]], you can always return to the results of your last search with '''[[View menu|View]] : [[View menu#Search results|Search results]]'''. The texts found in the search can also be viewed in the text [[Glossary:Registry|registry]] as the first [[Glossary:Registry_subset|registry subset]].
+**'''Find words''' - open the lexicon [[Glossary:Registry|registry]] that makes it possible to locate individual words used in the [[Glossary:Collection|collection]] (except for words used in pictures, [[OLE component|OLE objects]], etc.). Note that if on-the-fly lexicon compilation is turned off (to speed up SuperMemo), some words might be missing from the list (see: '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Access tab in Options|Access]] : Compile lexicon on-the-fly''')! In such cases run: '''[[File menu|File]] : [[Repairing collections|Repair collection]]''' with '''Rebuild lexicon''' checked 
+**'''Search text registry''' (''Ctrl+S'') - open the text [[Glossary:Registry|registry]] with all texts used in the [[Glossary:Collection|collection]]. The texts for the registry are contributed by the following [[Glossary:Component|components]]: plain text, Spell-Pad, RTF rich text, [[HTML component|HTML text]], and sound component 
+**'''Open text registry''' - review texts in the text [[Glossary:Registry|registry]] (same as '''[[Search menu|Search]] : [[Search menu#Texts|Texts]]''' from the [[main menu]])
+**'''Find in article''' (''F3'') - find a string in the currently selected text [[Glossary:Component|component]]. Use this option to search the contents of particularly long articles.
+**'''Search and replace''' (''Ctrl+R'') - search all entries of the text [[Glossary:Registry|registries]] and replace the occurrence of one string with another
+**'''Ancestors''' (''Shift+Ctrl+X'') - open the '''Ancestors''' window that makes it possible to go to a given [[Glossary:Ancestor|ancestor]] of the currently displayed [[Glossary:Element|element]] with a single click
+*'''Back (&lt;)''' (''Alt+Left'') - move back to the most recently visited [[Glossary:Element|element]] 
+*'''Forward (&gt;)''' (''Alt+Right'') - revisit [[Glossary:Element|elements]] that have been viewed before with the button '''Back (&lt;)''' 
+*'''History''' - view the list of the recently visited [[Glossary:Element|elements]]
+*'''Home''' (''Alt+Home'' or ''Ctrl+Home'') - go to the [[Glossary:Root_node|root]] of the whole [[Glossary:Collection|collection]], i.e. the [[Glossary:Element|element]] that is the parent of the whole [[Glossary:Knowledge_tree|knowledge tree]] 
+*'''Previous element''' (''Alt+Page Up'') - go to the previous [[Glossary:Element|element]] in the [[Contents|'''Contents''' window]]
+*'''Parent''' (''Ctrl+Up'') - go to the parent of the currently displayed [[Glossary:Element|element]]
+*'''Next element''' (''Alt+Page Down'') - go to the next [[Glossary:Element|element]] in the [[Contents|'''Contents''' window]]
+*'''End''' (''Alt+End'' or ''Ctrl+End'') - go to the last [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|knowledge tree]] in the [[Contents|'''Contents''' window]]
+*'''Find in article''' (''F3'') - search the current text in the displayed [[Glossary:Element|element]] for a specific string and highlight all its occurrences. To highlight search strings in an [[HTML component]], you may need to define <code>SearchHighlight</code> in the stylesheet used by the [[Glossary:Component|component]] (e.g. in '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Fonts_tab_in_Options|Fonts]] : Stylesheet'''). This button features the same [[#search|context menu]] the '''Search''' button does.
+*'''Search and replace''' (''Ctrl+R'') - search all entries of the text [[Glossary:Registry|registries]] and replace the occurrence of one string with another. This button features the same [[#search|context menu]] the '''Search''' button has.
+*'''Reference link''' - go to the source [[Glossary:Element|element]] from which a given element has been extracted in the process of [[Glossary:Incremental_reading|incremental reading]]. By clicking the '''Reference link''' button, you can go to the article from which a given [[Glossary:Extract|extract]] was taken. In original root elements, this button also opens the page from which the article had been imported from the web (if any). This button is not active in independent [[Glossary:Element|elements]]. If you pause the mouse over this button, you shall see the current [[References|reference]] for the [[Glossary:Element|element]]. To parse the article, ''Shift+click'' on this button. To reset the reference hyperlink, ''Ctrl+Shift+click'' on this button.<br>This button features a context menu. Right-click it to open the menu with the following options:
+**'''Open hyperlink''' - opens the webpage that acted as the primary reference for the currently displayed [[Glossary:Element|element]]
+**'''Open parsed''' - opens the parsed webpage that originally provided the source information for the currently displayed [[Glossary:Element|element]] (same as ''Shift+click'' on the '''Reference link''' button)
+**'''Go to origin''' - go to the SuperMemo [[Glossary:Element|element]] that provided the source material for the currently displayed element
+**'''Change origin''' - changes the SuperMemo [[Glossary:Element|element]] acting as the primary material for the currently displayed element. In the dialog that appears, type in the number associated with the new element. You can find the element number by choosing '''Search : Go to element''' (''Ctrl+G'') when the element is displayed in the [[element window]]. The number prefed in the dialog box is the number associated with the current element. Alternatively, if you have [[Element data|'''Element data''' window]] on display, you can find that number in the caption of that window.
+**'''Reset origin''' - deletes the association between the currently displayed [[Glossary:Element|element]] and the SuperMemo element serving as its primary reference
+*'''Web search''' (Ctrl+F3) - searches the web for the currently selected text
+*'''E-mail''' (''Ctrl+Shift+E'') - forward the [[Glossary:Element|element]] via e-mail.<br>This button features a context menu. Right-click it to open the menu with the following options:
+**'''Send element''' (''Ctrl+Shift+E'') - same as above
+**'''Send picture''' - send a scaled picture via e-mail
+**'''Send texts (unformatted)''' - e-mail all texts of the [[Glossary:Element|element]] in mail body
+**'''Send texts (HTML)''' -  convert the [[Glossary:Element|element]] to HTML and send it via e-mail. Only references to object files (such as pictures) will be sent. To send the object files, use '''Send element''' (above)
+**'''Reply to selection''' -  reply to the selected text via e-mail
+**'''FAQ''' - use the selected text as the basis of an FAQ question, and send the answer to the author of the question. Your response will automatically be added to an FAQ file of your choice. All [http://super-memory.com/help/faq FAQs] at [http://super-memory.com SuperMemo Website] have been created by means of '''(E-mail) FAQ'''
+*'''[[SuperMemo Commander]]''' (''Ctrl+Enter'') - choose a SuperMemo command to execute.<br>This button features a context menu. Right-click it to open the menu with the following options:
+**'''[[SuperMemo Commander|Commander]]''' (''Ctrl+Enter'') - same as above
+**'''[[Options]]''' - open a tabbed dialog box with options such as default interface font, [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo#default_forgetting_index default forgetting index], path to files on the CD-ROM, translation language, etc.
+**'''Element menu''' (''Alt+F10'') - open the [[element menu]]
+**'''Component menu''' (''Alt+F12'') - open the [[component menu]] for the current [[Glossary:Component|component]]
+*'''Download original page''' - download the original of the page displayed in the current [[Glossary:Element|element]]. It makes it possible to update the imported page.
+*'''Layout manager''' - open a layout manager that makes it possible to select, apply, save or delete [[Glossary:Layout|layouts]].<br>This button features a context menu. Right-click it to open the menu with the following options:
+**'''Layout manager''' - same as above
+**'''Apply default layout''' (''Ctrl+F5'') - restore the windows layout last saved with '''Save default default''' (below)
+**'''Save layout''' - save the current windows' layout under a selected name 
+**'''Save default layout''' (''Shift+Ctrl+F5'') - save the current layout of windows as your default [[Glossary:Layout|layout]]. Each time you enter the currently used [[Glossary:Collection|collection]], this layout will be applied 
+*'''Help''' - view the help file. At the '''Beginner''' and '''Basic''' [[Glossary:Level|levels]], introduction to SuperMemo is shown. At higher levels, SuperMemo help index is shown.
+*'''<span id="concepts">Link concept</span>''' - link the currently displayed [[Glossary:Element|element]] with any [[Glossary:Concept|concept]] from the concept [[Glossary:Registry|registry]].<br>This button features a context menu. Right-click it to open the menu with the following options:
+**'''Link concept''' - same as above
+**'''List links''' - list links associated with the current [[Glossary:Element|element]] and display them in the [[browser]]
+**'''Unlink concept''' - sever a link from the displayed [[Glossary:Element|element]] to a [[Glossary:Concept|concept]]
+**'''Unlink element''' - sever a link from the current [[Glossary:Element|element]] to another element
+**'''Create concept''' - convert the current [[Glossary:Element|Element]] into a new [[Glossary:Concept|concept]]
+**'''Map''' - display the concept map or the content map for the current [[Glossary:Element|element]]
+*'''Choose default concept group''' - choose the default [[Glossary:Concept_group|concept group]] for adding new [[Glossary:Element|elements]]. This button features the same [[#concepts|context menu]] the '''Link concept''' button has.
+*''Default concept group'' in the '''[[Concepts|Concept box]]''' - displays the current default [[Glossary:Concept_group|concept group]] to which new [[Glossary:Element|elements]] are added (e.g. when you click '''Add new'''). This box features the same [[#concepts|context menu]] the '''Link concept''' button has. Moreover, when you enter the box, you will open a search selection list which allows you to incrementally search through the collection's concepts without opening the concept registry. Once the concept is selected in the list, SuperMemo will display additional menu with the following concept management options:
+** '''View the root''' - go to the [[Glossary:Root node|root]] [[Glossary:Element|element]] of the selected [[Glossary:Concept|concept]]
+** '''Learn elements in concept''' - review the [[Glossary:Element|element]]s in the selected [[Glossary:Concept group|concept group]]
+** '''Transfer element under concept''' - move the current [[Glossary:Element|element]] to selected [[Glossary:Concept group|concept group]]
+** '''Link element to selected concept''' - link the current [[Glossary:Element|element]] to the selected [[Glossary:Concept|concept]]
+** '''View the last element''' - go to the last [[Glossary:Element|element]] under [[Glossary:Concept|concept]]'s [[Glossary:Hook node|hook]]
+** '''Close the concept selection list (''Esc'')'''
+*'''Information panel''' - displays the name of the currently opened collection, the current version of SuperMemo, as well as the path to the collection. Right click over this panel opens the [[Element menu]]
+
+== Notes ==
+
+Use a ''right-click'' over the '''information panel''' on the navigation bar to open the [[element menu]]. Note that several toolbar buttons (i.e. '''Search''', '''Find in article''', '''Search and replace''', '''Reference link''', '''E-mail''', '''SuperMemo Commander''', and '''Layout manager''') have their own context menus. This means that if you happen to right-click on one of those buttons, its own context menu will open

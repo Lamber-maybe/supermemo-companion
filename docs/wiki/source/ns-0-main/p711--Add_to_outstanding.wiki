@@ -1,0 +1,12 @@
+'''Add to outstanding''' spreads [[Glossary:Element|elements]] equally in the [[Glossary:Outstanding_queue|outstanding queue]]. The elements are not physically rescheduled in the [[Glossary:Collection|collection]] (i.e. the repetition date does not change, and if the review does not take place, the scheduling will remain unchanged on the next day). This is the only case in SuperMemo where an [[Glossary:Element|element]] is outstanding while possibly being scheduled for review on a date later than ''today''. [[Glossary:Priority|Element priority]] increases slightly upon the success of the operation. Once the repetition is made, it is executed in the same way as other [[Glossary:Mid-interval_repetition|mid-interval repetitions]]. For an [[Glossary:Element|element]] to be added to the [[Glossary:Outstanding_queue|outstanding queue]], the following conditions must be met: 
+*[[Glossary:Element|element]] must be memorized 
+*[[Glossary:Element|element]] cannot have been reviewed earlier on the same day (unless rescheduling is requested by the user)
+*the new position in the [[Glossary:Outstanding_queue|outstanding queue]] must be less than the old position (if any)
+
+'''Add to outstanding''' asks ''Every which element? [range 1..100]''. Choose a number from 1 to 100 to define how elements are added to the [[Glossary:Outstanding_queue|outstanding queue]]. Choosing ''1'' places all elements at the front. Choosing ''2'' spaces elements every second position. If the outstanding queue is too short to fit all, remaining elements will be appended at the end.
+
+Note that '''Later today''' on the [[element menu]] is a form of '''Add to outstanding''' on a single element. See: [https://youtube.com/watch?v=uOgV3p_wPOw video explanation].
+
+* See [https://youtu.be/BAQTQhOi4to?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=1417 'Add To Outstanding' Use Cases (video)]
+* See [https://youtu.be/BAQTQhOi4to?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=2147 Understand Element Requirements For Add To Outstanding (video)]
+* See [https://youtu.be/BAQTQhOi4to?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=2452 a Practical Example of Element Requirements for Add to Outstanding (video)]

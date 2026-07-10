@@ -1,0 +1,1 @@
+Two numbers from the extracted sentence are used as keywords for generating questions and answers (temperatures of 14&nbsp;°C and -18&nbsp;°C)

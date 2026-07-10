@@ -1,0 +1,1 @@
+{{Fig|Exemplary graph showing the number of [[Glossary:Element|elements]] memorized on individual days. By sweeping away the left and right part of the graph, it is possible to zoom in on a small section of the learning process. The period shown on the graph spans from Jul 1, 2008 to Mar 19, 2009.}}

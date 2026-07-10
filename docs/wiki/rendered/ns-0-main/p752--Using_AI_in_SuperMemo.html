@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Using AI in SuperMemo — SuperMemo Help mirror</title>
+<style>body { font-family: Georgia, 'Times New Roman', serif; max-width: 1040px; margin: 0 auto; padding: 1.5rem; color: #202122; line-height: 1.58; }
+h1, h2, h3, h4, h5, h6 { font-family: system-ui, sans-serif; line-height: 1.25; }
+a { color: #0645ad; } a:visited { color: #0b0080; }
+.mirror-meta { color: #54595d; font: 0.85rem/1.45 system-ui, sans-serif; border-bottom: 1px solid #eaecf0; padding-bottom: .8rem; margin-bottom: 1.2rem; }
+.mirror-meta code { color: #202122; }
+table { border-collapse: collapse; margin: 1rem 0; max-width: 100%; }
+td, th { border: 1px solid #a2a9b1; padding: .4rem .6rem; vertical-align: top; }
+th { background: #eaecf0; }
+img, video { max-width: 100%; height: auto; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1rem; overflow-x: auto; }
+code { background: #f8f9fa; padding: .1rem .25rem; }
+.toc, .navbox { background: #f8f9fa; border: 1px solid #a2a9b1; padding: .8rem; }
+.redirect { background: #f8f9fa; border-left: .3rem solid #36c; padding: .8rem 1rem; }</style>
+</head>
+<body>
+<div class="mirror-meta">
+<a href="../../_index.html">Mirror index</a> ·
+<a href="../../source/ns-0-main/p752--Using_AI_in_SuperMemo.wiki">View raw source</a> ·
+<a href="https://help.supermemo.org/wiki/Using_AI_in_SuperMemo">Official page</a> ·
+revision <a href="https://help.supermemo.org/index.php?title=Using%20AI%20in%20SuperMemo&amp;oldid=12409"><code>12409</code></a>
+</div>
+<h1>Using AI in SuperMemo</h1>
+<main id="mw-content-text"><div class="mw-parser-output"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" aria-label="Hide the table of contents"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Using_AI_in_SuperMemo"><span class="tocnumber">1</span> <span class="toctext">Using AI in SuperMemo</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#What_AI_features_do"><span class="tocnumber">2</span> <span class="toctext">What AI features do</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#About_the_default_key"><span class="tocnumber">3</span> <span class="toctext">About the default key</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Configuration"><span class="tocnumber">4</span> <span class="toctext">Configuration</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Other_compatible_services"><span class="tocnumber">5</span> <span class="toctext">Other compatible services</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Limitations"><span class="tocnumber">6</span> <span class="toctext">Limitations</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Example"><span class="tocnumber">7</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#A_good_way_to_use_AI_in_SuperMemo"><span class="tocnumber">8</span> <span class="toctext">A good way to use AI in SuperMemo</span></a></li>
+</ul>
+</div>
+
+<div class="mw-heading mw-heading2"><h2 id="Using_AI_in_SuperMemo">Using AI in SuperMemo</h2></div>
+<p><a href="p247--SuperMemo.html" title="SuperMemo">SuperMemo</a> can use AI to explain difficult text in a short form that is easier to understand. When you meet a hard passage, SuperMemo can give you a quick explanation without leaving your workflow.
+</p><p>SuperMemo uses the free Gemini Flash model by default. This means many users can start immediately, with no setup. If needed, you can also replace the default settings with your own model, API key, and server URL.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="What_AI_features_do">What AI features do</h2></div>
+<p>Features such as <b>AI Explain</b> or <b>Explain Extract</b> send selected text to the configured AI model and ask for a concise explanation in plain text. The answer is meant to help you understand the material quickly.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="About_the_default_key">About the default key</h2></div>
+<p>SuperMemo includes a default Gemini key so that AI features can work immediately out of the box. This key is not available to the user and is obfuscated. Obfuscation is only meant to avoid casual exposure. It is not a strong security method, so advanced users are encouraged to use their own key if they want full control, privacy, or reliability.
+</p><p>You can then decide whether to keep reading, simplify the source, or turn the explanation into a set of <a href="../ns-100-glossary/p264--Cloze_deletion.html" title="Glossary:Cloze deletion">cloze deletions</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Configuration">Configuration</h2></div>
+<p>AI options are stored in <i><a href="https://help.supermemo.org/index.php?title=Supermemo.ini&amp;action=edit&amp;redlink=1" class="new" title="Supermemo.ini (page does not exist)">supermemo.ini</a></i>, which makes configuration simple and transparent. SuperMemo currently supports two formats:
+</p>
+<ul><li>Gemini</li>
+<li>OpenAI-compatible</li></ul>
+<p>The basic configuration looks like this:
+</p>
+<pre>[AI] 
+  Enabled=1 
+  Provider=gemini 
+  TimeoutMs=30000 
+[AI.Gemini] 
+  Model=gemini-2.5-flash 
+  ApiKey=REPLACE_WITH_YOUR_GEMINI_KEY 
+  BaseURL=<a class="external free" href="https://generativelanguage.googleapis.com">https://generativelanguage.googleapis.com</a> 
+[AI.OpenAI] 
+ Model=gpt-4.1-mini 
+ ApiKey=REPLACE_WITH_YOUR_OPENAI_KEY 
+ BaseURL=<a class="external free" href="https://api.openai.com">https://api.openai.com</a> 
+</pre>
+<p>If Provider=gemini, SuperMemo uses the [AI.Gemini] section.
+If Provider=openai, SuperMemo uses the [AI.OpenAI] section.
+</p><p>This means you can easily:
+</p>
+<ul><li>stay with the default Gemini setup,</li>
+<li>use your own Gemini key,</li>
+<li>use your own OpenAI key,</li>
+<li>connect to another OpenAI-compatible service.</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Other_compatible_services">Other compatible services</h2></div>
+<p>The OpenAI-compatible format is also useful beyond OpenAI itself. Some local or third-party tools expose an OpenAI-style API. This can include services such as LM Studio, Ollama gateways, OpenRouter, or other compatible servers.
+</p><p>This is mainly relevant to advanced users. In such cases, you would usually set:
+</p>
+<ul><li>Provider=openai</li>
+<li>BaseURL= to the local or remote compatible server</li>
+<li>ApiKey= if the server requires one</li>
+<li>Model= to the model name expected by that server</li></ul>
+<p>For most users, this is optional. The default Gemini configuration is the easiest way to get started.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Limitations">Limitations</h2></div>
+<p>AI is helpful, but it is not always right. Please keep these limitations in mind:
+</p>
+<ul><li>AI can make mistakes.</li>
+<li>AI may oversimplify difficult ideas.</li>
+<li>AI may miss context that is obvious to a human reader.</li></ul>
+<p>Online AI depends on network access and the availability of the chosen service. Response quality depends on the selected model. For this reason, AI explanations should be treated as help for understanding, not as unquestionable truth.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Example">Example</h2></div>
+<p>If you want to use OpenRouter, it should usually work via the OpenAI-compatible path.
+</p><p>They would typically set:
+</p>
+<pre> [AI] 
+   Enabled=1 
+   Provider=openai 
+   TimeoutMs=30000 
+ [AI.OpenAI] 
+   Model=YOUR_OPENROUTER_MODEL 
+   ApiKey=YOUR_OPENROUTER_API_KEY 
+   BaseURL=<a class="external free" href="https://openrouter.ai/api">https://openrouter.ai/api</a> 
+</pre>
+<p>The important part is:
+</p>
+<ul><li>Provider=openai</li>
+<li>BaseURL=<a class="external free" href="https://openrouter.ai/api">https://openrouter.ai/api</a></li>
+<li>Model= must match an OpenRouter model name</li>
+<li>ApiKey= must be the OpenRouter key</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="A_good_way_to_use_AI_in_SuperMemo">A good way to use AI in SuperMemo</h2></div>
+<p>The best use of AI is not to replace learning, but to remove friction. When a sentence is too dense, a concept too abstract, or a passage too technical, AI can help you get unstuck in seconds.
+Once you understand the idea, you can continue learning in the usual SuperMemo way: actively, critically, and with pleasure. AI works best as a friendly assistant, not as a final authority.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260710173557
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.014 seconds
+Real time usage: 0.015 seconds
+Preprocessor visited node count: 26/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key guru_Help20:pcache:752:|#|:idhash:canonical and timestamp 20260710173557 and revision id 12409. Rendering was triggered because: page-view
+ -->
+</div></main>
+</body>
+</html>

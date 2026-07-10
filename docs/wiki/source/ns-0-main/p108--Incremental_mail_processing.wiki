@@ -1,0 +1,201 @@
+__TOC__
+
+== E-mail in SuperMemo: Introduction ==
+
+SuperMemo makes it easy to resolve mail overload without neglecting the most important channels of communication.
+
+In addition to prioritizing and managing the communication, SuperMemo helps you:
+
+# incorporate e-mail communication into your learning process (e.g. forwarding and discussing important pieces of knowledge)
+# incorporate learning into your e-mail communication (e.g. memorizing important facts related to your mail communication)
+
+To fully use e-mail functionality in SuperMemo you will need Windows (Live) Mail (or any other e-mail client that support EML) or MS Outlook 2000 or later. At the very minimum, MAPI compatible mail would be needed for sending SuperMemo [[Glossary:Element|elements]] or objects via mail.
+
+Here are the most important ways you can use SuperMemo in mail processing, and use e-mail in communicating your SuperMemo work:
+
+# '''Prioritizing mail''': To make sure you always begin with the most important pieces, you should use the [[Glossary:Priority_queue|priority queue]] to prioritize mail. Possibly, you will not manage to answer all mail, however, you will always do your best in processing top-priority messages.
+# '''Using incremental learning tools to process mail''': [[Glossary:Incremental_reading|Incremental reading]] is a powerful tool that helps you prioritize, schedule, and process mail. As a result, you may decide that instead of using your mail software, it is more convenient and rational to use SuperMemo to read and respond to your e-mail. Users of Windows (Live) Mail or MS Outlook can now import all their mail to SuperMemo with a keystroke. If you receive more mail than you are able to effectively process, you can use overload tools. You will immediately process only the most important pieces and proceed with others according to their [[Glossary:Priority|priority]] in proportion of available time. As in the learning process, rescheduling and sorting happens in the background, so that you never lose sleep over delaying a reply or being slow with processing excess mail. You can respond to longer pieces incrementally.
+# '''Sending learning data to others''': If you encounter valuable information in incremental learning (or when processing mail), you can send it to your colleagues, friends, partners or family with a single click for inspiration or further discussion. For example, while reading an article about decoding human genome, you might find out that [http://en.wikipedia.org/wiki/Craig_Venter Craig Venter of Celera] comes from a Mormon family and that his father was eventually excommunicated. You can send such a note (or the whole article) from SuperMemo to your Mormon friend with a click of a button.
+# '''Using mail material in incremental learning''': You may also incorporate snippets of mail in your learning process. You can treat most valuable pieces of e-mail as articles to read. If you receive highly inspirational messages, you may want to introduce it into incremental learning and memorize its portions to ensure long-term benefit. In other words, your mail may not only prompt action, but may also be used in learning to keep your memory up-to-date with things you care about. This way you can also learn from materials sent from others, esp. if those materials come in small portions extracted from an incremental learning process conducted by other people. You can also comment or respond to individual portions of the processed mail. You can do it while reading or when new ideas come to your mind upon review. You can use this process for the purpose of creativity (e.g. reviewing an inspiring idea or information in different contexts) or for the purpose of recall (e.g. trying to remember the university major of your cousin).
+
+== Sending learning data to others ==
+
+Note: Sending e-mail does not work by default in Windows 10, even with a MAPI compliant client. Please [https://www.youtube.com/watch?v=VLe9MjhbmdU watch this video] for instructions on how to get sending email working with SuperMemo (using registry string: Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows Messaging Subsystem)). 
+
+To send an [[Glossary:Element|element]] via e-mail, click the '''E-mail''' button ([[File:Send e-mail.png|SuperMemo: Send a copy of the element (or its part) in an e-mail message]]) on the [[navigation bar]] or press ''Shift+Ctrl+E''. Element texts will be sent in the e-mail body (if you wish so), while formatted texts, pictures, and other files will be sent as attachments. You could also send texts without attachments by using '''[[Element menu#E-mail|E-mail]] : Texts''' or '''[[Element menu#E-mail|E-mail]] : Q&amp;A''' on the [[element menu]].
+
+To send a selected fragment of an article via e-mail, right-click over the selection (to open the [[component menu]]) and choose '''[[Component menu#Reading|Reading]] : E-mail''' (''Shift+Ctrl+E''). Alternatively, you can also click the '''E-mail''' button ([[File:Send e-mail.png|SuperMemo: Send a copy of the element (or its part) in an e-mail message]]) on the [[Read toolbar|'''Read''' toolbar]]. '''Note:''' SuperMemo sends only plain text mail, and formatted texts can only be sent as attachments.
+
+To send a fragment of [http://youtube.com YouTube] video, mark the fragment with '''Start''' and '''Stop''' buttons and click the '''E-mail''' button ([[File:Send e-mail.png|SuperMemo: Send a copy of the element (or its part) in an e-mail message]]) on the [[navigation bar]].
+
+== Importing mail to SuperMemo ==
+
+=== Importing mail from Windows (Live) Mail ===
+
+To import mail from Windows (Live) Mail, follow these steps:
+
+<ol>
+<li>(optionally) Preview mail in your Windows (Live) Mail Inbox:
+<ul>
+<li>delete spam,</li>
+<li>process one-liners (mail that requires only short answers and is not worth archiving),</li>
+<li>categorize mail by moving it to separate folders (e.g. ''Business'', ''Family'', ''Pictures'', ''Learning'', etc.), forward mail that may be processed by others, etc.</li>
+</ul>
+</li>
+<li>(optionally) Move mail that is to be processed incrementally in a given [[Glossary:Collection|collection]] to a dedicated import folder. Use a top level import folder as SuperMemo only lists top folders on the pick-list (e.g. ''Inbox'', ''Sent items'', ''Business'' as opposed to ''Inbox/Business''). Nested folders need to be picked manually (with '''Change the import folder''').</li>
+<li>You can import mail from any folder by following these steps:
+<ol>
+<li>Choose '''[[Edit menu|Edit]] : [[Edit menu#Import mail|Import mail]]''' (''Shift+F4'') on the [[main menu]], or '''Import mail''' from the import context menu on the [[learnbar]]</li>
+<li>(when importing for the first time) select '''Windows (Live) Mail''' as your mail application</li>
+<li>(when importing for the first time) pick the account you want to import mail from</li>
+<li>(when importing for the first time) SuperMemo will ask you to specify the folder with e-mails to import
+<div class="center">
+[[File:Folder selection at mail import.jpg|SuperMemo: A dialog with the list of top level folders to import mail from (displayed when importing mail for the first time)]]
+<blockquote>'''''Figure''': A dialog with the list of top level folders to import mail from (displayed when importing mail for the first time)''</blockquote>
+</div>
+</li>
+<li>Pressing '''OK''' will import all mail to SuperMemo. E-mail attachments will be imported as separate [[Glossary:Component|components]] of the appropriate type. Binary [[Glossary:Component|components]] will be used to import attachments in formats that are not supported by SuperMemo (e.g. ''PDF'', ''URL'', ''ZIP'', ''MSG'', ''MMP'', ''XLS'', ''DOC'', ''MPA'', ''WMA'', etc.). Mail that has been imported previously will be skipped (as long as it is located in the same import folder as used in the prior import)
+<div class="center">
+[[File:Progress bar at mail import.jpg|SuperMemo: Progress bar displayed while importing mail]]
+<blockquote>'''''Figure''': Progress bar displayed while importing mail to SuperMemo''</blockquote>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+
+Note that you will only repeat steps 2-4 when changing the e-mail client or the import folder.
+
+=== Importing mail from MS Outlook ===
+
+To import mail from MS Outlook, do what follows:
+
+# (optionally) Preview mail in the Outlook Inbox
+# (optionally) Move mail that is to be processed incrementally in a given [[Glossary:Collection|collection]] to a dedicated import folder. A disadvantage of importing directly from Outlook Inbox is that new mail may arrive during the import process
+# You can import the content of your Inbox (or any other Outlook mail folder) by choosing '''[[Edit menu|Edit]] : [[Edit menu#Import mail|Import mail]]''' (''Shift+F4'') on the [[main menu]]. Choose '''Import All''' to import all mail to SuperMemo and move it to an archive folder in MS Outlook (see the picture below). E-mail attachments will be imported as separate [[Glossary:Component|components]] of the appropriate type. Binary [[Glossary:Component|components]] will be used to import attachments in formats that are not supported by SuperMemo (e.g. ''PDF'', ''URL'', ''ZIP'', ''MSG'', ''MMP'', ''XLS'', ''DOC'', ''MPA'', etc.)
+
+[[Image:Import_mail.jpg|800px|center|SuperMemo: Import Mail dialog box which you can import your mail from MS Outlook to SuperMemo through]]
+
+=== Importing mail from other applications ===
+
+==== Importing mail from a folder ====
+
+If your mail application keeps mail on a local disk in the EML format, you can import it by pointing to the folder from which the mail should be imported:
+
+# choose '''[[Edit menu|Edit]] : [[Edit menu#Import mail|Import mail]]''' (''Shift+F4'') from the [[main menu]]
+# choose '''Change the mailing program''' (if you used other method previously, answer with '''''No''''' to whatever confirmation SuperMemo demands)
+# choose '''Other applications'''
+# when SuperMemo asks &quot;''Please point to the folder where you keep the mail that you want to import''&quot;, point to the folder where EML files reside
+
+==== Importing mail by copy&paste ====
+
+If you do not use Windows (Live) Mail, nor MS Outlook, nor any other suitable application from where you can import mail, you can manually import individual pieces of mail.
+
+To paste a piece of e-mail for [[Glossary:Incremental_reading|incremental reading]], select the text in the e-mail body, copy this text to the clipboard and choose '''E-Mail: Paste''' in the '''[[SuperMemo Commander|Commander]]'''.
+
+If you want to respond to the original sender while incrementally reading his or her e-mail, paste the e-mail along with its header information (date, return address, subject, etc.).
+
+For example, in Thunderbird:
+
+# click '''Forward''',
+# select the entire body of the message (e.g. with ''Ctrl+A''),
+# copy the selected text to the clipboard (e.g. with ''Ctrl+C'' or ''Ctrl+Ins'')
+# switch to SuperMemo, and choose '''E-Mail: Paste''' in the '''[[SuperMemo Commander|Commander]]'''. This will automatically convert your e-mail to plain text (to save space, remove read-only attributes, etc.). It will also format the header for you. If you want to retain some formatting, select the text and re-paste the formatted fragment
+
+==== Importing from other applications ====
+
+See: [https://supermemopedia.com/wiki/Import_e-mail_into_SuperMemo_from_any_application Importing mail from other applications]
+
+== Reading mail incrementally ==
+
+You can process e-mail incrementally in SuperMemo in a process analogous to [[Glossary:Incremental_reading|incremental reading]].
+
+Here are the pros and the cons:
+
+=== Advantages ===
+
+# '''recall of important facts''': if you learn new things from e-mail sent by others, you can easily introduce the most valuable pieces into the learning process (via standard '''Extract''' or ''Alt+X''). Those pieces will be reviewed as other pieces of knowledge in SuperMemo. If you decide to respond to a given inspirational fragment, the sender address will automatically be used when you click the '''E-mail''' button ([[File:Send e-mail.png|SuperMemo: Send a copy of the element (or its part) in an e-mail message]]) on the [[navigation bar]]. Incremental processing will help you remember names, contexts, events, and facts far better than when using other methods. You will not experience mental chaos caused by an overcrowded Inbox
+# '''prioritization''': if you get more e-mail material than you are able to process, you can use incremental learning tools for prioritizing mail and its fragments. One of the greatest strengths of incremental learning is its unique system for efficiently determining the priority of the reading material with the help of the [[Glossary:Priority_queue|priority queue]]. Remember to politely inform everyone about your e-mail processing system. Otherwise you may easily be accused of acting as an ''e-mail black hole''
+# '''handling overflow''': you can use '''[[Postpone]]''' and other rescheduling tools to resolve the excessive inflow of information without damage to your selected priority criteria. If you work in a team, it is a great idea to delegate some of your work; however, not all work can be delegated. Additionally, if you delegate, you do not learn from e-mail that you delegate. To answer the latter problem, you can choose a solution in the middle: delegate e-mail jobs and process inflowing pieces with the tools of incremental learning
+
+=== Disadvantages ===
+
+# '''splintering e-mail''': some people dislike [http://www.dictionary.com/search?q=splinter splintered] responses. They prefer to have their e-mail analyzed as a whole and responded to as a whole (preferably within an hour :). As an act of kindness, try to remember people's preferences and do not use incremental e-mail processing (too much) on those who do not like it
+# '''incremental approach is not transitive''': incremental e-mail processing shows the greatest power for longer pieces of mail, article forwards, etc. For very short e-mail messages, incremental e-mail processing delivers less value per unit time. Because incremental mail processing leads to short communication bursts, it undermines its own power when used at both ends of the communication channel. However, even if you communicate in short sentences (i.e. without SuperMemo), keep the record of mail in your [[Glossary:Collection|collection]] for [[Subset review#Search and review|Search and review]]
+
+== Incremental strategy for mail processing ==
+
+Incremental learning can be employed in mail processing.
+
+The strategy will be different when processing mail from family or friends. It will be different when processing business mail. It will also be different, and perhaps most effective, when [[Incremental learning#Incremental brainstorming|brainstorming over e-mail]].
+
+This is an exemplary strategy that might be used in nearly all imaginable applications:
+
+'''Review stage'''
+
+# (optionally) Preview mail in your Inbox: delete spam, process one-liners (mail that requires only short answers and is not worth archiving), categorize mail by moving it to separate folders (e.g. ''Business'', ''Family'', ''Pictures'', ''Learning'', ''Music'', etc.), forward mail that may be processed by others, etc.
+# import mail from a selected import folder (e.g. with ''Shift+F4''). You may import different categories of mail to different [[Glossary:Collection|collections]] (e.g. business mail to Mail.kno, while family pictures to Photos.kno)
+# prioritize mail. Use '''[[Subset operations#spread_priorities|Spread priorities]]''' to assign a range of [[Glossary:Priority|priority]] to the imported subset of mail. Use ''Alt+P'' on most important pieces of mail to assign individual [[Glossary:Priority|priorities]]. For example, import the bulk in the 3%..6% range, and pick 5-10 most important pieces for higher priorities
+
+'''Processing stage'''
+
+# click '''[[Learn]]''', and process mail using standard incremental reading tools (extract, re-prioritize, delay, etc.) combined with e-mail options (extract, send/reply, FAQ, article or picture forwards, etc.). As long as you use [[Glossary:Auto-sort|auto-sort]] and [[Glossary:Auto-postpone|auto-postpone]], your workload should be reasonable and you should always begin from top priority mail. If you have '''[[Learn menu|Learn]] : [[Learn menu#Sorting|Sorting]] : Auto-sort repetitions''' checked, your mail will be sorted by [[Glossary:Priority|priority]] at the beginning of the day. If have '''[[Learn menu|Learn]] : [[Learn menu#Postpone|Postpone]] : Auto-postpone''' checked, all the mail that you fail to process today will be redistributed into the future
+# (optionally) once you run out of time, process some mail without responding to re-prioritize and reschedule the most important pieces manually (rather than leaving them to automatic rescheduling)
+
+Naturally, as with [[Glossary:Incremental_reading|incremental reading]], the time you choose to progress through individual stages is important for efficiency. '''Processing stage''' should fall into time slots with best alertness and mental performance. '''Review stage''' can be done at other times, incl. while multi-tasking. This approach eliminates the instant nature of mail, but makes the entire process more reasonable, esp. if volumes are far beyond manageable. Although many pieces of mail will get substantially delayed (or perhaps even neglected), top-priority mail will be processed in the first order, and damage done by urgency will be less. The above strategy may introduce an inevitable delay of up to 4 days in replying (Day #1 arrival, #2 review, #3 prioritizing, #4 processing); however, in [[Glossary:Incremental_reading|incremental reading]], it is always the priority and quality that should come first ahead of speed and urgency. Those pieces that truly cannot wait can be handled at '''Review stage''' (if absolutely necessary).
+
+== Mail processing tips ==
+
+# Create a separate [[Glossary:Collection|collection]] for e-mail processing (unless you plan to combine e-mail work with standard repetitions)
+# Import mail to your e-mail [[Glossary:Collection|collection]] with ''Shift+F4''
+# Use the [[Glossary:Priority_queue|priority queue]] (''Alt+P'') to prioritize mail
+# Use '''[[Glossary:Auto-sort|Auto-sort]]''' and '''[[Glossary:Auto-postpone|Auto-postone]]''' to resolve [[Glossary:Overload|overload]] and prioritize mail automatically
+# You can delay individual pieces of mail with ''Ctrl+Shift+R'' or ''Ctrl+J'', and change their [[Glossary:Priority|priority]] with ''Alt+P''. Use ''Ctrl+Shift+R'' on first reading to determine when you want to reply to an e-mail
+# SuperMemo picks the earliest ''[mailto:'' tag from your e-mail text as the default response addressee. If you would like to send pieces of an article to a selected person, put this tag with the address anywhere in the text. For example: ''<nowiki>[mailto:johndoe@hotmail.com]</nowiki>'' (note the square brackets around the tag and the missing space between ''mailto:'' and the address). You can specify multiple recipients by separating their names with a semicolon. For example: ''<nowiki>[mailto:miko;alex]</nowiki>'' where ''miko'' and ''alex'' must be defined in your mail program's address book (e.g. Windows Live Mail address book). Adding the ''[mailto:'' tag is useful when you want to ask many questions or forward many pieces of a single mail to a single person whose address is complex and is not defined in your address book
+# Optionally, add a degree of randomization in your [[Priority queue#Sorting repetitions|Sorting criteria]] to prevent &quot;tunnel vision&quot; in processing. For example, we all suffer from a ''recency bias'' where recently arrived mail is ranked higher in priority than mail that arrived earlier. Randomization helps to counteract this and similar biases
+# In the e-mail review process (initiated with '''[[Learn]]'''), do the following:
+#* respond to the most important fragments with '''E-mail''' button ([[File:Send e-mail.png|SuperMemo: Send a copy of the element (or its part) in an e-mail message]])(on the [[navigation bar]])
+#* schedule less important fragments with '''Schedule extract''' (on the [[Read toolbar|'''Read''' toolbar]])
+#* pass or delete unimportant fragments, or mark them with '''Ignore''' (on the [[Read toolbar|'''Read''' toolbar]])
+#* if you jump to the next e-mail [[Glossary:Element|element]] before completing the reading, select the current [[Glossary:Read-point|read-point]] with ''Ctrl+F7'' ('''Set read-point''')
+#* if you jump to the next e-mail before completing the reading, optionally, set the new [[Glossary:Interval|interval]] with ''Shift+Ctrl+R''
+#* if mail can be answered later, use ''Alt+P'' to reduce its [[Glossary:Priority|priority]]
+#* use '''Next repetition''' or '''[[Learn]]''' to move on to the next piece of mail 
+#* if you complete reading/processing a piece of e-mail, [[Glossary:Dismiss|dismiss]] it with ''Ctrl+D''. You can also use '''Done''' on the [[element menu]] (''Shift+Ctrl+Enter'') if you do not plan to archive a given piece of mail
+# To change the addressee, paste the new address in place of the old one in the ''[mailto: ]'' field. You can use short names (e.g. ''<nowiki>[mailto:john]</nowiki>'') if you have the name in your '''Address Book'''. Unfortunately, you will have to paste the address to all splinter fragments generated in [[Glossary:Incremental_reading|incremental reading]]. You could use '''Search and Replace''' (''Ctrl+R'') for that purpose.
+# You can sort mail by [[Glossary:Interval|interval]], date, and more. See: [[#You can sort mail by interval, priority or other criteria|You can sort mail by interval, priority or other criteria]]
+# You can safely remove texts that SuperMemo adds at the end of mail sent
+
+=== You can sort mail by interval, priority or other criteria ===
+
+You can sort mail by the length of the [[Glossary:Interval|interval]] using the following method:
+
+# choose '''[[View menu|View]] : [[View menu#Outstanding|Outstanding]]'''
+# click ''Intrv'' twice at the top of the [[Browser|browser window]] (to sort from the lowest to the highest [[Glossary:Interval|intervals]])
+# choose '''[[Browser menu#Tools|Tools]] : Save repetitions''' (on the [[browser menu]])
+
+You can use this method in e-mail processing in the same way as in the learning process. You can also use this method to sort mail by [[Glossary:Priority|priority]], last review date, etc. It is most convenient to use '''[[Glossary:Auto-sort|auto-sort]]''' and '''[[Glossary:Auto-postpone|auto-postpone]]''' when processing mail. This way you can be sure that mail of highest [[Glossary:Priority|priority]] is scheduled at the beginning of the [[Glossary:Outstanding_queue|outstanding queue]].
+
+== Responding with FAQs ==
+
+When processing e-mail, you can choose to reply to a question with an FAQ (i.e. a question-answer pair), which can then be stored in your FAQ database. Responding via FAQ is the best way to retain the context of the question, even if you reply with substantial delay.
+
+Use '''[[Component menu#Reading|Reading]] : E-mail FAQ''' on the [[component menu]] or click the FAQ icon on the [[Read toolbar|'''Read''' toolbar]]. After providing the answer, click '''OK'''. Optionally, you can reword the question, change the addressee, or the title of the question. You can also have your FAQ saved in HTML or Wiki format for publishing on the web. Note that SuperMemo FAQs are generated with SuperMemo itself. This way, many users can benefit from a reply to a question asked by a single individual.
+
+If you would like to publish your FAQs and change their formatting, modify the following files:
+
+* '''HTML''': ''[SuperMemo folder]\bin\FAQ_template.htm''
+* '''Wiki''': ''[SuperMemo folder]\bin\FAQ_wiki.txt''
+
+If you would like to use rich formatting in your FAQs that will be saved to a selected HTML file, toggle the '''Rich formatting''' button above the top right corner of the '''Question''' text area. You can recognize if the formatting is enabled by blue borders of the '''Question''' and '''Answer''' fields. You will then be able to use standard keyboard shortcuts for basic formatting (e.g. ''Ctrl+B'' to make the currently selected text '''bold''', ''Ctrl+I'' to ''italicize'' the selected text, etc.)
+
+<div class="center">
+{|
+| [[Image:Email response.jpg|thumb|none|upright=2|The '''E-mail response''' dialog box now supports richly formatted FAQs that can be formatted either as HTML...]]
+| [[Image:Email response2.jpg|thumb|none|upright=2|or WYSIWYG]]
+|-
+| colspan="2" | '''''Figire''': '''[[Component menu#Reading|Reading]] : E-mail FAQ''' on the [[component menu]] makes it possible to use the selected text as a question in an FAQ. The FAQ will be sent as a reply, and stored in FAQ files (as HTML and/or Wiki).''
+|}
+</div>
+
+You can edit your FAQs in the [[HTML component]]. Use '''Horizontal line''' in the '''[[SuperMemo Commander|Commander]]''' to separate question from answer with a [[Glossary:Splitmark|splitline]] (you can use '''[[Component menu#Reading|Reading]] : Split : Insert splitline''' on the [[component menu]], or ''Shift+Alt+H''). Once the FAQ is largely complete, select both the question and the answer, and choose '''[[Component menu#Reading|Reading]] : E-mail FAQ''' from the [[component menu]] to polish its HTML, preview it in the WYSIWYG mode, and send it. The FAQ will be sent as a reply, and stored in FAQ files (as HTML and/or Wiki).

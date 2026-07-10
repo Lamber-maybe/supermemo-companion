@@ -1,0 +1,1 @@
+For the description of '''Algorithm SM-17''' see [https://supermemo.guru/wiki/Algorithm_SM-17 SuperMemo Guru].

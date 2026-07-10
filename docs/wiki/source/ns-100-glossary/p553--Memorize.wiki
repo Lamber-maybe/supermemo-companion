@@ -1,0 +1,2 @@
+;<span id="Memorize">Memorize</span>
+:see '''[[Glossary:Remember|Remember]]'''

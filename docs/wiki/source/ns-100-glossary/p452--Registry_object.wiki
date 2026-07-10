@@ -1,0 +1,2 @@
+;<span id="Registry_object">registry object</span>
+:file or a record associated with a [[Glossary:Registry_member|registry member]]. For example, ''12363.jpg'' may hold the picture of the president for the [[Glossary:Registry_member|member]] of the image [[Glossary:Registry|registry]] named ''Barack Obama''. ''Arial 16p'' may be a [[Glossary:Registry_member|member]] in the font [[Glossary:Registry|registry]] that holds the record of properties of a font used in the [[Glossary:Collection|collection]]

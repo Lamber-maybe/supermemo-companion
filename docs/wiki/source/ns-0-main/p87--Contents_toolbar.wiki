@@ -1,0 +1,26 @@
+Contents toolbar appears at the top of the [[Contents|'''Contents''' window]].
+
+[[Image:Contents_window.jpg|558px|center|SuperMemo: The contents window displaying the knowledge tree (i.e. the hierarchical structure of elements) of a collection]]
+
+=== Contents toolbar buttons ===
+
+* '''Menu''' (<kbd>Shift</kbd>+<kbd>F10</kbd>) - open the [[contents menu]] otherwise available with a right-click over the [[Contents|'''Contents''' window]]
+* '''Branch processing menu''' - open a [[Subset operations|subset processing menu]] with operations on the currently selected [[Glossary:Branch|branch]] (same as '''Process branch>''' on the [[contents menu]] available with a right-click)
+* '''Element align''' - align the [[Contents|'''Contents''' window]] with the [[element window]] for convenient review of [[Glossary:Element|elements]] in the [[Contents|'''Contents''' window]] (note that '''Synchronize''' button must be down for the [[element window]] to be updated as the selection moves in the [[Contents|'''Contents''' window]])
+* '''Contents align''' - open a second [[Contents|'''Contents''' window]] and align both windows for convenient drag-and-drop operations
+* '''Find string''' (<kbd>Ctrl</kbd>+<kbd>F</kbd>) - search for a string in the currently selected [[Glossary:Branch|branch]]
+* '''View''' (<kbd>Shift</kbd>+<kbd>Enter</kbd>) - display the currently selected [[Glossary:Element|element]] in the [[element window]] (needed only if '''Synchronize''' is off)
+* '''Collapse branch''' (<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Enter</kbd>) - collapse the parent of the currently selected [[Glossary:Element|element]] (to easily fold the whole [[Glossary:Knowledge tree|knowledge tree]] displayed in the [[Contents|'''Contents''' window]])
+* '''[[Postpone]]''' - delay [[Glossary:Outstanding_material|outstanding repetitions]] in the selected [[Glossary:Branch|branch]]
+* '''Save''' - save [[Glossary#Node|knowledge tree nodes]] to a text file (optionally, the entire [[Glossary:Knowledge_tree|tree]] can be expanded and [[Glossary:Branch|branch]] statistics can be included as well)
+* '''Set root''' - make the currently selected [[Glossary:Node|node]] as the [[Glossary:Root_node|root]] of the currently selected [[Glossary:Concept_group|concept group]]
+* '''Set hook''' - make the currently selected [[Glossary:Node|node]] the [[Glossary#Hook_node|hook]] of the currently selected [[Glossary#Concept_group|concept group]]. This way all [[Glossary:Element|elements]] added with '''Add new''' (<kbd>Alt</kbd>+<kbd>A</kbd>), available at the bottom of the [[element window]], will be [[Glossary:Child|children]] of the selected [[Glossary:Node|node]]
+* '''Info''' - display [[Glossary:Node|node]] statistics of the currently selected [[Glossary:Element|element]]
+* '''<span id="Synchronize">Synchronize</span>''' - display [[Glossary:Element|elements]] in the [[element window]] upon changing the selection in the [[Contents|'''Contents''' window]] (see: [https://supermemopedia.com/wiki/How_can_I_delete_an_element_that_hangs_up unselecting this option in case of trouble])
+* '''Select current''' - select the [[Glossary:Element|element]] that is currently displayed in the [[element window]] (needed only if '''Synchronize''' is off)
+
+== See also ==
+
+* [[Building the knowledge tree]]
+* [[Contents|Contents window]]
+* [[Contents menu]]

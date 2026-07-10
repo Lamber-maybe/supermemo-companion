@@ -1,0 +1,40 @@
+== Basic search ==
+
+* '''Find text''' - the text you want to search the [[Glossary:Collection|collection]] for
+** '''Match whole word only''' - check this box if you want the search to show matches that are complete words, and not part of another word or phrase
+** '''Match case''' - check this box if you want the search to show matches that use the same combination of capital and lowercase letters that you typed into the '''Find text''' text box
+* '''Find''' - search the [[Glossary:Collection|collection]] and open the [[Glossary:Element|elements]] that match specific search criteria in a [[browser]]
+* '''Cancel''' - close the dialog box
+* '''Details >>''' - expand the dialog box with advanced search options
+
+== Advanced search ==
+
+<div class="center">
+[[Image:Exemplary Japanese collection.jpg|655px|SuperMemo: SuperMemo 15 provides full Unicode support making it easy for you to work with non-Latin alphabets]]
+</div>
+
+=== AND-OR-NOT search ===
+
+* '''Phrases that must be included: AND-Search (Must-Find)''' - the words and/or phrases, all of which must be included in all matching [[Glossary:Element|elements]]. Separate words and phrases by typing each in a new line (press ''Enter'' to move to the next line in the box)
+* '''Search for all these phrases: OR-Search (May-Find):''' - the words and/or phrases, at least one of which will be included in matching [[Glossary:Element|elements]]. Separate words and phrases by typing each in a new line (press ''Enter'' to move to the next line in the box)
+* '''Phrases that must be excluded: NOT-Search (MustNot-Find):''' - the words and/or phrases that will exclude the [[Glossary:Element|elements]] which contain them from the search result. Separate words and phrases by typing each in a new line (press ''Enter'' to move to the next line in the box)
+* '''Google''' - use Google to search for more pages that match the search criteria (e.g. to import more reading material into SuperMemo)
+
+=== Search definitions ===
+
+* '''Recent searches list box''' (''Ctrl+S'') - a list of previously saved search definitions. When you select a named search definition, its criteria will be fed into their corresponding fields of the '''Find elements''' dialog box saving you time on recreating the original definition
+* '''Restore last search definition''' (''Ctrl+R'') - restore the most recently used search 
+* '''Delete''' - delete the currently selected search definition
+* '''Save''' - save the current search criteria as a search definition for later use
+
+=== Find elements context menu ===
+
+* '''Restore last''' (''Ctrl+R'') - restore the most recently used search
+* '''Choose definition''' (''Ctrl+S'') - open a list of previously saved search definitions. When you select a named search definition, its criteria will be fed into their corresponding fields of the '''Find elements''' dialog box saving you time on recreating the original definition
+
+* '''Edit find text''' (''Alt+X'') - quickly move focus to the '''Find text''' text box
+* '''Edit AND text''' (''Alt+A'') - quickly move focus to the '''AND-Search''' text field
+* '''Edit OR text''' (''Alt+O'') - quickly move focus to the '''OR-Search''' text field
+* '''Edit NOT text''' (''Alt+N'') - quickly move focus to the '''NOT-Search''' text field
+
+* '''Close''' (''Esc'') - close the dialog box

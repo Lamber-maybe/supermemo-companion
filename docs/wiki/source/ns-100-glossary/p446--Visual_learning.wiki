@@ -1,0 +1,2 @@
+;<span id="Visual_learning">visual learning</span>
+:equivalent of [[Glossary:Incremental_reading|incremental reading]] applied to pictures as well as texts stored as pictures. For details see: [[Visual learning]]

@@ -2,16 +2,20 @@
 
 The method's philosophy, condensed in this project's own words from the
 official master document — the ~91,000-word wiki page that explains why
-SuperMemo works the way it does. Distilled July 2026 from a June 2026
-crawl.
+SuperMemo works the way it does. Distilled July 2026 and checked against
+the revision-pinned July 2026 mirror.
 
-- **Full original, bundled in this repo (works offline):**
-  `docs/wiki/Incremental_learning.html`.
+- **Full expanded original, bundled in this repo:**
+  `docs/wiki/rendered/ns-0-main/p470--Incremental_learning.html`.
+- **Exact View Source wikitext:**
+  `docs/wiki/source/ns-0-main/p470--Incremental_learning.wiki` (the raw
+  file contains transclusions; use the rendered file for continuous
+  reading).
 - **Canonical URL:** https://help.supermemo.org/wiki/Incremental_learning
   (the wiki title `Incremental_learning_(Full)` redirects to the same
   page — this *is* the full text).
 - Each section below names the original headings it distills. To verify
-  a claim or go deeper, search that heading text inside the bundled HTML
+  a claim or go deeper, search that heading text inside the rendered HTML
   and read from there. Quote the original when the exact wording
   matters; label anything beyond it as your own extrapolation.
 
@@ -202,7 +206,7 @@ the following two decades.
 
 ## Where each question lands in the original
 
-| Question is about … | Search these headings in `docs/wiki/Incremental_learning.html` |
+| Question is about … | Search these headings in `docs/wiki/rendered/ns-0-main/p470--Incremental_learning.html` |
 |---|---|
 | The method in one chapter | *What is incremental learning?* |
 | Import / read / extract / cloze / review mechanics | *Five basic skills of incremental reading* (Skills 1–5) |

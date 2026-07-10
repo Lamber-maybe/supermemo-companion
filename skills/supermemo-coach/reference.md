@@ -5,8 +5,9 @@ desktop **SuperMemo for Windows, versions 17–20**. Menu paths are written
 `Menu : Submenu : Option`. Where versions differ it is noted. Anything not
 covered here should be answered via the coach skill's source-of-truth
 ladder — the philosophy digest (`incremental-learning.md`), the full
-official wiki bundled in `docs/wiki/`, a personal mirror if one is
-configured, then https://help.supermemo.org — never from memory.
+revision-pinned official mirror bundled in `docs/wiki/` (expanded HTML
+plus exact source and a manifest), a demonstrably fresher personal mirror
+if one is configured, then https://help.supermemo.org — never from memory.
 
 ## Getting started (the official "ABC")
 
@@ -378,11 +379,13 @@ check which window has focus.)
 
 ## When to defer to official docs
 
-Answer from the bundled wiki (`docs/wiki/` — find the page and quote it)
-for: registry internals, sleep chart, Plan, mail/EML workflows, spelling
-components, scripting/Commander details, algorithm mathematics, layout
-management edge cases, localization — and any behavior that looks
-version-specific or contradicts this file. Send the user to
-https://help.supermemo.org (and say you're doing so) only when the
-bundled page is missing or looks stale. This file wins over an agent's
-memory; the official wiki — bundled or online — wins over this file.
+Answer from the bundled wiki for: registry internals, sleep chart, Plan,
+mail/EML workflows, spelling components, scripting/Commander details,
+algorithm mathematics, layout management edge cases, localization — and
+any behavior that looks version-specific or contradicts this file. Find
+the title in `docs/wiki/manifest.jsonl`, read its `rendered_path`, and
+check `source_path` plus the recorded revision when exact wording matters.
+Send the user to https://help.supermemo.org (and say you're doing so) only
+when the bundled page is missing or looks stale. This file wins over an
+agent's memory; the official wiki — bundled or online — wins over this
+file.

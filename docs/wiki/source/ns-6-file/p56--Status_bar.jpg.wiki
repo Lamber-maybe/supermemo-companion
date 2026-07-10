@@ -1,0 +1,3 @@
+<blockquote>
+'''''Figure:''' [[Status bar]] displaying how many [[Glossary:Element|elements]] have already been memorized, how many [[Glossary:Outstanding element|outstanding elements]] scheduled for the current day have yet to be reviewed or have to be rehearsed with the [[Glossary:Final_drill|final drill]] yet, and hints for menu items, buttons, statistical parameters, etc.''
+</blockquote>

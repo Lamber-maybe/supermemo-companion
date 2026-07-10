@@ -1,0 +1,35 @@
+Use e-mail to get in touch. E-mail addresses change annually.
+
+To report a bug use: 
+
+  bug{{CURRENTYEAR}} AT supermemo DOT org
+
+To ask for technical help use:
+
+  help{{CURRENTYEAR}} AT supermemo DOT org
+
+To ask questions about your order use:
+
+  shop{{CURRENTYEAR}} AT supermemo DOT org (or use this contact form: https://supermemo.store/pages/contact)
+
+To have your instructions or unlock password resent use:
+
+  moni{{CURRENTYEAR}} AT supermemo DOT org (or use this contact form: https://supermemo.store/pages/contact)
+
+To send your registration file (register.txt):
+
+  register{{CURRENTYEAR}} AT supermemo DOT org (or use this contact form: https://supermemo.store/pages/contact)
+
+If your experience mail delivery problems, you can try to use the contact form (use it as a last resort due to the mix-up of a variety of messages received):
+
+  '''[https://supermemo.store/pages/contact Contact Form]'''
+
+To ask questions about [https://supermemo.com supermemo.com] use:
+
+  support AT supermemo DOT com
+
+If you need to mail your collection, see [https://supermemopedia.com/wiki/How_can_I_send_a_collection_via_e-mail%3F How can I send a collection via e-mail?]
+
+For more see: 
+* [[Technical support]]
+* [https://supermemopedia.com/wiki/Can_you_tutor_me%3F Online tutoring]

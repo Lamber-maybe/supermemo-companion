@@ -1,0 +1,2 @@
+;<span id="Delay">delay</span>
+:degree of delay of an [[Glossary:Element|element]] in the learning process. For [[Glossary:Item|items]], it equals the current [[Glossary:Interval|interval]] divided by the [[Glossary:Optimum_interval|optimum interval]] for the current [[Glossary:Requested_forgetting_index|requested forgetting index]]. For [[Glossary:Topic|topics]], '''delay''' is heuristically scaled to provide for comparable degree of delay in terms of the damage inflicted on the learning process

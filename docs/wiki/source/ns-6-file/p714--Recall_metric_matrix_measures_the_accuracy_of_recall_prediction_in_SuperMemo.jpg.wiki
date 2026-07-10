@@ -1,0 +1,1 @@
+{{Fig|Recall metric in SuperMemo estimates the size of the prediction error for different levels of difficulty and memory stability. 0 means no error. 1 means maximum error. In the picture one entry shows maximum error due to a wrong prediction for a single item}}

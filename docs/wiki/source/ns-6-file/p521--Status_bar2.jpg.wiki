@@ -1,0 +1,11 @@
+<blockquote>
+'''''Figure:''' Status bar displaying information in four panels:
+# total number of [[Glossary:Memorized_element|memorized]] [[Glossary:Item|items]] (''193,411 it'') and [[Glossary:Topic|topics]] (''341,893 top'') in the [[Glossary:Collection|collection]]
+# number of outstanding [[Glossary:Item|items]] (6,159) and [[Glossary:Topic|topics]] (2,088) in the total of [[Glossary:Outstanding_element|outstanding elements]] for the day (19,218). When '''[[Subset operations#Learning|Learning]] : [[Subset operations#add_to_outstanding|Add to outstanding]]''' in the [[browser]] is used, the number of outstanding elements will increase and their new total will be displayed in parenthesis (8,430). The 183 element difference between the sum of 6,159 [[Glossary#Item|items]] and 2,088 [[Glossary#Topic|topics]] is the number of [[Glossary#Element|elements]] the '''[[Subset operations#add_to_outstanding|Add to outstanding]]''' operation added to the [[Glossary#Outstanding_queue|outstanding queue]] ahead of their scheduled reviews.
+# the progress bar shows 56.1% of [[Glossary:Element|elements]] have already been reviewed, postponed or auto-postponed
+# The hints panel, when unused, displays current element's statistics:
+## [[Glossary:Interval|interval]] (15,287 days, i.e. nearly 42 years),
+## [[Glossary:Priority|priority]] (0.571%) (and position in the [[Glossary:Priority_queue|priority queue]] (3,494)),
+## last and next repetition dates (Jan 16, 2016 and Nov 23, 2057 respectively), and
+## the number of repetitions (6) and [[Glossary:Lapse|memory lapses]] (0).''
+</blockquote>

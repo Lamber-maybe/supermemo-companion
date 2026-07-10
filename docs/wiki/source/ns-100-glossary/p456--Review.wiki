@@ -1,0 +1,2 @@
+;<span id="Review">review</span>
+:process in which the learning material is reviewed. In SuperMemo, the review may be active ([[Glossary:Item|items]]) or passive ([[Glossary:Topic|topics]]). Usually, [[Glossary:Passive_review|passive review]] means reading, while [[Glossary:Active_recall|active review]] means recalling of information from memory with grading ([[Glossary:Repetition|repetitions]]). See also: [[Subset learning|Subset review]]

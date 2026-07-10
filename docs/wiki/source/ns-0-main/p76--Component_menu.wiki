@@ -1,0 +1,322 @@
+== Introduction ==
+
+[[Glossary:Component|Components]] in SuperMemo display texts, images, sounds, buttons and other objects that can be used in composing a single page of information. 
+
+Each [[Glossary:Component|component]] can have its appearance and behavior changed by means of options available from its own component menu. To open the component menu right-click over the [[Glossary:Component|component]] whose attributes you want to change. 
+
+The list presented on this page describes all possible options you can find on the component menu of different [[Glossary:Component|components]] of different types. As these options are often the same for various component types, they are all described here. A given component menu might not include an option that is irrelevant (e.g. '''[[#Reading|Reading]] : Remember extract''' appears only in [[Using text components|text components]], while '''Delete component''' is common to all [[Glossary:Component|components]]). 
+
+'''Important!''' 
+
+*Some of the options below '''will not appear''' on a menu when you open it (whenever they are not relevant) 
+*Component keyboard shortcuts will work only on the current [[Glossary:Component|component]]. The current component is marked with a dark shadow if it is currently shown in the [[Glossary:Editing_mode|editing]] or in the [[Glossary:Dragging_mode|dragging mode]]. When you enter an [[Glossary:Element|element]], the first [[Glossary:Component|component]] in the component order becomes the current component. For example, ''Ctrl+Shift+K'' shortcut will link a [[Glossary:Registry_member|registry member]] with the current [[Glossary:Component|component]]. If the current component is a sound component, a sound [[Glossary:Registry|registry]] will open to let you choose a member to link.
+
+You can sequentially switch [[Glossary:Component|components]] into the [[Glossary:Editing_mode|editing mode]] by pressing ''Ctrl+T''. This keyboard shortcut makes sure that the next [[Glossary:Component|component]] becomes the current component. After pressing ''Ctrl+T'', all [[Glossary:Component|component]]'s shortcuts will refer to the newly selected component.
+
+== Component menu items ==
+
+The following options are available on the component menu: 
+
+=== Reading ===
+
+*'''<span id="Reading">Reading</span>''' - options used in [[Glossary:Incremental_reading|incremental reading]] available in [[Using text components|text components]]: 
+**'''Remember extract''' (''Alt+X'') - use the selected part of the text to create a new [[Glossary:Element|element]] and introduce this new element into the learning process. This is one of the most important options used in [[Glossary:Incremental_reading|incremental reading]]. Use ''Alt+X'' on a selected text to tell SuperMemo that the selected text is important and you want to better remember it in the future 
+**'''Explain extract''' (''Shift+Alt+X'') - prompts an AI model about the selected text, appends the generated explanation to it, and uses the combined result to create a new [[Glossary:Element|element]] and introduce it into the learning process
+**'''Schedule extract''' - use the selected text to create a new [[Glossary:Element|element]] and schedule its [[Glossary:Review|review]] on a selected day with a selected [[Glossary:Priority|priority]]. '''Schedule extract''' is the same as '''Remember extract''' but you can manually select the first [[Glossary:Interval|interval]], [[Glossary:Priority|priority]], and more 
+**'''Queue extract''' - use the selected part of the text to create a new [[Glossary:Element|element]] and add this new element to the end of the [[Glossary:Pending_queue|pending queue]] 
+**'''Task extract''' - use the selected part of the text to create a new [[Glossary:Task|task element]] and put this element on the current [[Glossary:Tasklist|tasklist]] 
+**'''Remember cloze''' (''Alt+Z'') - create a new [[Glossary:Cloze_deletion|cloze deletion element]] based on the current text selection and memorize this element. For example, you can convert the sentence "''In 1947 the UN voted to divide Palestine into Arab and Jewish states''" to question "''In 1947 the UN voted to divide Palestine into Arab and [...] states''" by selecting the word ''Jewish'' and choosing '''Remember cloze''' or pressing ''Alt+Z''. In addition to '''Remember extract''', this is the most important option of [[Glossary:Incremental_reading|incremental reading]] 
+**'''Schedule cloze''' - create a new [[Glossary:Cloze_deletion|cloze deletion]] and schedule it for [[Glossary:Repetition|repetition]] on a given day. It is the same as '''Remember cloze''', but you can manually select the [[Glossary:Interval|interval]] after which the cloze will be repeated and its [[Glossary:Priority|priority]] 
+**'''Queue cloze''' - create a new [[Glossary:Cloze_deletion|cloze deletion]] and place it at the end of the [[Glossary:Pending_queue|pending queue]] 
+**'''AI explain''' - explain the current selection with AI (see: [[Using AI in SuperMemo]])
+**'''<span id="delete_before_cursor">[[Delete before cursor]]</span>''' (''Alt+\'') - delete texts before the cursor (e.g. after processing it)
+**'''Delete after cursor''' (''Alt+.'') - delete texts after the cursor without [[references]] (e.g. notes)
+**'''Delete processed text''' - delete all texts that have already been <span class="extract">extracted</span> or <span class="ignore">ignored</span>
+**'''Split''' - automatically split long articles without the need to repeat select and extract operation 
+*** '''Insert splitline''' (''Shift+Alt+H'') - insert a horizontal line that can be used to split the article
+***'''<span id="split_article">Split article</span>''' - split the article into multiple [[Glossary:Topic|topics]] by using [[Glossary:Splitmark|split marks]]. This can substantially accelerate decomposition of very long articles that load slowly and are processed slowly by SuperMemo
+**'''<span id="Decompose">Decompose</span>''' - decompose a collective [[Glossary:Item|item]] into singular items. For example, if you have a [[Glossary:Topic|topic]] saying: "''The Balearic Islands: Majorca, Minorca, Ibiza, Formentera, and Cabrera are located in the Balearic Sea''", you can convert it to a collective [[Glossary:Cloze_deletion|cloze deletion]]: "''{Majorca/Minorca/Ibiza/Formentera/Cabrera} is located in the [...] Sea''" with the answer "''Balearic/Mediterranean''". Then use '''Decompose''' to create 5 separate [[Glossary:Item|items]] such as "''Majorca is located in the [...] Sea''", "''Ibiza is located in the [...] Sea''", etc. All you need to do is to make sure that the collective part of the [[Glossary:Cloze_deletion|cloze]] is surrounded with brace brackets "''{''" and "''}''" and separated by slash signs "''/''". Without '''Decompose''', you will need a lot of editing to convert collective [[Glossary:Cloze_deletion|cloze deletion]] into properly formulated [[Glossary:Item|items]]
+**'''Read-points''' - mark or unmark a portion of text to indicate the point where you last stopped reading (e.g. to resume it later) 
+***'''Set read-point''' (''Ctrl+F7'') - mark the selected text as the point from which you will resume reading the next time you return to the presented article. In [[Glossary:Incremental_reading|incremental reading]], you rarely need to use '''Set read-point''' as all extract and cloze operations will automatically set the read-point for you 
+***'''Go to read-point''' (''Alt+F7'') - go to the text that has been selected as the read-point 
+***'''Clear read-point''' (''Shift+Ctrl+F7'') - remove the read-point from the currently processed text
+**[[Incremental mail processing|'''E-mail''']] (''Shift+Ctrl+E'') - send the selected text via e-mail 
+**'''E-mail FAQ''' - use the selected text as the basis of an FAQ entry, and send the answer to the author of the question. Your response will automatically be added to an FAQ file of your choice. All FAQs at SuperMemo Website have been created by means of '''E-mail FAQ''' 
+**'''Highlight''' - highlight the selected part of the text 
+**'''Ignore''' (''Shift+Ctrl+I'') - ignore the selected text in reading and mark it with the <span class="ignore">ignore</span> font
+
+<div class="center">
+{{#ev:youtube|5ktH-TceHx8}}
+</div>
+
+=== Text ===
+
+*'''Text''' - change properties of various text [[Glossary:Component|components]] (HTML, text, spell-pad, sound, etc.) 
+**'''Style''' - apply or change stylesheets used with HTML texts 
+***'''Save style''' - save the style selected in an HTML [[Glossary:Component|component]] in the Style [[Glossary:Registry|registry]]
+***'''Apply style''' - apply a selected style from the Style [[Glossary:Registry|registry]] to the current text selection
+***'''New style''' - create a new stylesheet and link it to the current [[Glossary:Component|component]] (and the [[Glossary:Template|template]], if applicable) 
+***'''Link style''' - link the current [[HTML component]] to a previously created stylesheet from the stylesheet [[Glossary:Registry|registry]]. The new style will be used in the [[Glossary:Component|component]] (and in the [[Glossary:Template|template]], if applicable) 
+***'''Edit style''' - edit the stylesheet that is currently linked to the current [[HTML component]] (all [[Glossary:Component|components]] and [[Glossary:Template|templates]] using the stylesheet will be affected by the change) 
+***'''Default style''' - apply the default stylesheet to the current [[HTML component]] (and the [[Glossary:Template|template]]). The default stylesheet can be found in the folder where SuperMemo is installed as ''/bin/supermemo.css''. If you understand CSS, you can modify this file manually. It is used by default throughout SuperMemo in all [[HTML component|HTML components]] until you start adding new stylesheets. If you do not care much about styles, it can be the only stylesheet that you will ever use in SuperMemo 
+***'''Edit file '''- edit the stylesheet file associated with the [[Glossary:Component|component]]. Default text editor will be used to edit the file. Bypassing SuperMemo stylesheet editor provides better control over stylesheet details.
+**'''Font''' - apply or change fonts used with text [[Glossary:Component|components]]
+***'''<span id="New_font">New font</span>''' - add a new font to the font [[Glossary:Registry|registry]] and apply it to the current text (see: [[Fonts tab in Options|'''Fonts''' global options]]) 
+***'''Link font''' (''Shift+Ctrl+F'') - choose a font from the font [[Glossary:Registry|registry]]. Choose '''Accept''' after you select the font. This will link and apply the selected font (see: [[Fonts tab in Options|'''Fonts''' global options]]) 
+***'''<span id="Edit_font">Edit font</span>''' - change the currently used font. The new font is applied to the selected text in [[HTML component|HTML components]] or to the whole text in plain text [[Glossary:Component|components]] (see: [[Fonts tab in Options|'''Fonts''' global options]]). The font dialog begins with the currently linked font in plain text [[Glossary:Component|components]], or with the first font found in the current selection in HTML (either a stylesheet font or an underlying HTML font) 
+***'''Default font''' - detach registry font from plain text [[Glossary:Component|components]] and use the default font in the [[Glossary:Template|template]] (see: [[Fonts tab in Options|'''Fonts''' global options]]). The default font may be the question font, or the answer font, depending on whether the [[Glossary:Component|component]] is marked as the answer. This option works in [[HTML component|HTML components]] as well, but has little effect, as the default font is overriden by stylesheets and FONT tags in HTML
+***'''Font color''' - change the color of the font
+**'''Alignment''' - determine the text alignment 
+***'''Left''' - align all texts to the left 
+***'''Center''' - position all texts in the center 
+***'''Right''' - align all texts to the right 
+***'''RTL text''' - set the RTL (right to left) direction of the text flow (e.g. as in Arabic, Hebrew, etc.) 
+***'''RTL alignments''' - allow of using the right-alignment button on the [[Edit toolbar|'''Edit''' toolbar]] to change the text direction from LTR to RTL (e.g. for Arabic, Hebrew, etc.). If '''RTL alignments''' is unchecked (default), the alignment button aligns the text to the right. If '''RTL alignments''' is checked, the alignment button sets the direction of the flow of the selected HTML text to RTL (i.e. right to left)
+**'''Transparent''' - make text transparent in plain text [[Glossary:Component|components]]. Transparent texts show the components or the [[SuperMemo tab in Options#background|background image]] lying underneath the text [[Glossary:Component|component]]. Otherwise, they are displayed on the uniform background determined by the option '''[[#Color|Color]]''' 
+**'''Case sensitive''' - make Spell-Pad case-sensitive 
+**'''Full HTML''' (default) - include the outer HTML code in HTML files. '''Full HTML''' texts are larger and may cause more errors in Internet Explorer. However, they may be needed for a full expressive power of HTML 
+**'''Read only''' - mark an HTML text as read-only. This will prevent changing the text with editing operations. As this option disables the component menu, use '''[[Edit menu|Edit]] : [[Edit menu#Menus|Menus]] : Component : Text : Read only''' to revert this operation
+**'''Convert''' - convert texts: 
+***'''Filter''' (''F6'') - filter [[Using text components|HTML or RTF texts]] for easier handling by SuperMemo. This is very helpful in reducing the number of errors displayed by Internet Explorer when processing tables and rich multimedia files in [[Glossary:Incremental_reading|incremental reading]]. Note that newer versions of Internet Explorer are far less buggy than Internet Explorer 6.0. If you use [[Glossary:Incremental_reading|incremental reading]], you may prefer Internet Explorer 7.0 (or later) 
+***'''Plain text''' (''Shift+Ctrl+F12'') - convert formatted text in [[Using text components|HTML and RTF text components into plain text]]. Plain text takes much less space than formatted text. The formatted version of the text file is kept in the ''\temp'' folder for a while (just in case) 
+***'''<span id="deHTML-ize">Parse HTML</span>''' (''Shift+Ctrl+1'') - remove HTML tags from the selected text. Note that this does not make the text format-less. Tags preceding the selection may still take effect
+***'''Clean lead HTML''' - remove leading HTML formatting tags
+***'''Markdown''' - transform [https://en.wikipedia.org/wiki/Markdown markdown] to [https://en.wikipedia.org/wiki/HTML HTML] (e.g. ''"*Plaque Formation*: In Alzheimer's disease"'' will become ''"'''Plaque Formation''': In Alzheimer's disease"')
+***'''PDF to HTML''' - convert the active PDF document into standard HTML. Use this option if you prefer to process the document using the classic [[Glossary:Incremental reading|incremental reading]] workflow instead of the dedicated PDF editor.
+***'''Unit conversion''' - convert imperial units to metric units. For example, to convert stones and pounds to kilograms or Fahrenheit to Centigrade, select the relevant measure in the processed text and choose the relevant metric conversion option from the dialog box. You can also convert related unit pairs. For example, "''5 foot 7 inch''" written as "''5:7''" can be convert to ''1.702 (meters)'' or "''10 stone 3 pound''" written as "''10:3''" can be converted to ''64.864 (kilograms)''. Additionally, SuperMemo allows you to convert time to speed for a given distance. SuperMemo does not provide options for the conversion in the opposite direction, i.e. from metric to imperial units
+*** '''Decode UTF-8''' - decode texts encoded as UTF-8
+*** '''Encode UTF-8''' - encode texts with UTF-8
+*** '''Decode URL''' - decode texts in percent encoding
+*** '''ANSI to Unicode''' - convert an ANSI text to Unicode using a selected code page (active code page by default)
+**'''Case''' - change the case of the selected text 
+***'''lowercase''' - convert the selection to lowercase (e.g. '''PYGMY CHIMPANZEE''' to '''pygmy chimpanzee''') 
+***'''UPPERCASE''' - convert the selection to uppercase 
+***'''Sentence case.''' - convert the selection to lower case with the first letter capital (e.g. '''PLATYHELMINTHES''' to '''Platyhelminthes'''). This option is often used to convert uppercase titles and proper names.
+**'''Spell-check''' - use MS Office spell-checker to spell check the current text [[Glossary:Component|component]]
+
+=== Image ===
+
+*'''Image''' - options related to image [[Glossary:Component|components]]
+**'''Extract''' (''Alt+X'') - duplicate the [[Glossary:Element|element]], clone the image, and enter the [[Glossary:Zoom&trim_mode|trim&amp;zoom mode]] for pictures. This will, in essence, produce an [[Glossary:Extract|extract]] from a picture (like in [[Glossary:Incremental_reading|incremental reading]]; see: [[#picture_extract|picture]]). Once you finish selecting or trimming the [[Glossary:Extract|extract]], press ''Esc'', choose '''Permanently cut/crop the zoomed/trimmed image file'''. If you do not want the original picture to be marked with extract boundaries, respond with '''''No''''' to the ''Replace picture with a JPG image?'' question. After '''Extract''', you will have two [[Glossary:Element|elements]]: the original picture with extract boundaries marked (or unchanged, if you do not want to modify the picture), and the new element with a new picture extract 
+**'''Occlusion''' - generate [[Glossary:Occlusion_test|occlusion test]]s based on the image
+**'''Zoom and trim''' - zoom, trim or select portions of the picture. To enter the '''Zoom and trim''' mode, press ''Alt'' and, without releasing it, click the image [[Glossary:Component|component]] which displays the picture you want to trim or zoom in. Next use one or more of the following combinations to display a selected part of the larger picture inside the image component 
+***Point your mouse at the top-left corner of the part of the picture you want to focus on and drag it so that the selection encompasses the everything you are interested in 
+***Press ''Ctrl'' and, without releasing it, swipe the unwanted part of the picture by pressing the left mouse button and moving the unwanted part out of the picture area 
+***You can also press ''Shift'' and, without releasing it, move the unwanted part of the picture by dragging it out of the picture area 
+***To zoom a part of the picture, middle-click it. Conversely, to unzoom it, press ''Shift+middle mouse button'' 
+***If you want your changes to be permanent (i.e. affect the file), press ''Esc'', select '''Permanently cut/crop the zoomed/trimmed image file''' and press '''OK'''
+**'''Unzoom''' - cancel the effects of '''Trim''' or '''Zoom''', i.e. display the entire picture 
+**'''Crop''' - make the effects of '''Trim and zoom''' permanent by cutting off the unused portions of the picture. Note that this operation will affect all occurrences of the same picture independent of their trim/zoom status 
+**'''Clone''' - create a new copy of the same image in the [[Glossary:Registry|registry]] (e.g. for further editing) 
+**'''Compress''' - compress a picture by reducing its quality and resolution. For example, if you receive a collection of family pictures that are 2 MB large in size each, you can safely compress these to 300-600 KB without losing much detail on an average computer display 
+**'''Scale''' - use an integrated dialog box to reduce the size of the picture by reducing its quality, its compression, its margins, etc. 
+**'''Process''' (''Shift+Ctrl+F8'') - execute all trim, zoom and scale operations with just two key-strokes. For example, to quickly zoom a picture press ''Ctrl+Shfit+F8'', and follow it with ''Z''. If you later press ''Esc'' you can permanently '''Crop''' the picture 
+**'''Stretch''' - determine how the image is made to fit the image [[Glossary:Component|component]]: 
+***'''Normal''' - display the image in its original size 
+***'''Proportional''' - stretch the image proportionally to the maximum size within the image [[Glossary:Component|component]]
+***'''Filled''' - display the current image stretched to the full width and the full height of the current [[Glossary:Component|component]]. If the image is smaller or larger than the image component, it will be shrunk or stretched to the appropriate size. To retain the proportions, use '''Proportional''' instead 
+***'''Switch''' (''Shift+Ctrl+Q'') - switch between '''Normal''', '''Proportional''', and '''Filled''' options to look for the best effect
+**'''Fit size''' - resize the [[Glossary:Component|component]] to match the size of the picture
+**'''Transparent''' - make the current image transparent. The image background will become transparent and will instead show the [[Glossary:Component|components]] or the [[SuperMemo tab in Options#background|background image]] lying underneath the current image component. For this attribute to work, the image must be in the bitmap format. If the image you want to make transparent is not a bitmap, use '''Convert : Convert to BMP''' to change the format. Note that bitmapped images take more space than gif or jpg images 
+**'''Use as''' 
+***'''About Box picture''' - use the picture for the splash screen in SuperMemo 
+***'''SuperMemo background''' - use the picture as the background for SuperMemo (only with '''[[Window menu|Window]] : [[Window menu#Background|Background]]''' checked) 
+***'''Windows Desktop''' - use the picture as the desktop picture in MS Windows
+**'''Send''' - send the picture via e-mail 
+**'''Convert''' 
+***'''Convert to JPEG''' - convert the image to the JPEG format 
+***'''Convert to GIF''' - convert the image to the GIF format 
+***'''Convert to PNG''' - convert the image to the PNG format (note that this may substantially increase the size of the file) 
+***'''Convert to BMP''' - convert the image to the BMP format (note that this may substantially increase the size of the file)
+**[[Test elements#hittest_editor|'''Edit hit-area''']] - edit hot-spots used by script commands [[Scripts#DRAGMATCH|DRAGMATCH]] and [[Scripts#HITTEST|HITTEST]]
+
+=== Sound and video ===
+
+*'''Sound and video''' - options related to sound and video [[Glossary:Component|components]]
+**'''Panel''' - select the control panel for sound or video [[Glossary:Component|components]]
+***'''None''' - display sounds as text-only and videos as display-only 
+***'''Slider''' - display a control panel with a slider to easily rewind the sound or video 
+***'''Recorder''' - display the alternative control panel for sound [[Glossary:Component|components]] with buttons dedicated to comparing user recorded sound with the original sound. This panel is useful in pronunciation exercises where the user is supposed to record himself and compare his recording with the original recording of a native speaker. The panel provides up to four buttons: (green) '''Play''' (play the original sound), (blue) '''Play''' (play back user recording), '''Record''' (toggle recording on/off), and '''Cancel''' (delete the recorded file). Recordings are saved as WAV files (44,100 Hz, 16-bit, mono PCM) in the collection's ''temp'' subfolder, named after the current element number (e.g. ''12345.wav''). Recording is automatically stopped after 60 seconds to prevent runaway captures. The temporary file persists across sessions until explicitly deleted with '''Cancel''', or overwritten by a new recording on the same element
+***'''Extractor''' - display a control panel with extract functions for incremental sound and video processing
+**'''Reset extract''' - reset the current selection of sound or video determined by '''Extract''' available in the '''Extractor''' panel
+**'''Continuous''' - play continually (e.g. set to drill a pronunciation of a word in a loop) 
+**'''Full screen''' - set video to play full screen
+**'''Frames''' - select the speed of video fast forward (i.e. the number of frames to skip in incremental rewinding or moving forward)
+
+=== Script ===
+
+*'''Script''' (''F9'') - edit the script in script [[Glossary:Component|components]]. For details see: [[Scripts|Using scripts in SuperMemo]]
+
+=== Shape ===
+
+*'''Shape''' - options related to shape [[Glossary:Component|components]] (ellipsis, rectangle, rounded rectangle)
+**'''Brush style''' - select the style of the shape texture (e.g. solid, crossed, etc.)
+
+=== Copy/Cut/Paste ===
+
+*'''Copy/Cut/Paste''' - standard copy, cut and paste operations affecting the current [[Glossary:Component|component]] (if you want to copy or paste to the [[Glossary:Element|element]] with keyboard shortcuts, press ''Esc'' a few times to make sure the shortcuts do not copy or paste to the current component): 
+**'''Undo''' (''Ctrl+Z'') - undo last text editing 
+**'''Cut''' (''Ctrl+X'') - cut the object to the clipboard (i.e. copy it to the clipboard and delete it) 
+**'''Copy''' (''Ctrl+C'') - copy text or image to the clipboard (to copy objects in [[HTML component|HTML components]] in the same way as Internet Explorer, use '''Browser menu''' first) 
+**'''Paste''' (''Ctrl+V'') - paste text or image from the clipboard 
+**'''Paste plain''' - paste formatted text as plain text (e.g. from an AI chatbot)
+**'''Paste HTML''' - paste HTML code and format it for richly formatted display
+**'''Delete''' (''Del'') - delete text or image 
+**'''Select all''' (''Ctrl+A'') - select the entire text in the edited text [[Glossary:Component|component]]
+**'''Copy transcription''' - copy the phonetic transcription of the current text [[Glossary:Component|component]] to the clipboard. This option will have no effect if the phonetic transcription [[Glossary:Registry|registry]] is empty
+
+=== Links ===
+
+*'''Links''' 
+**'''<span id="Registry_member">Registry member</span>''' (''Shift+Ctrl+K'') - use a selected [[Glossary:Registry_member|registry member]] within the [[Glossary:Component|component]]. For example, if you have an image component and would like to display in it an image named ''Elephant'': (1) choose '''[[#Links|Links]] : Registry member''' in the image [[Glossary:Component|component]], (2) select the ''Elephant'' image in the image [[Glossary:Registry|registry]], and (3) click '''Accept''' (or press ''Enter''). You can search for the image in the [[Glossary:Registry|registry]] with ''Ctrl+S'' to narrow the number of candidate images to link. You can repeat ''Ctrl+S'' to narrow the search. The image ''Elephant'' must be present in your image [[Glossary:Registry|registry]]. If you would like to display a new image stored on your hard disk, use '''[[#File|File]] : Import file''' instead. You can also copy a new image from the clipboard by pressing ''Ctrl+V'' (press ''Esc'' if the image does not want to paste when text [[Glossary:Component|components]] are active). This option can also be used to see a [[Glossary:Registry_member|registry member]] associated with a given [[Glossary:Component|component]]. The [[Glossary:Registry_member|member]] is displayed in the [[registry window]]. The path to the object associated with the member is shown in the status bar of the [[registry window]]. Some [[Glossary:Registry_member|members]] do not have file objects associated (e.g. font definitions, stylesheet definitions, unformatted/plain texts, lexicon entries, etc.). Those members show no file path or show a relevant path to info files (e.g. [[Glossary:Template|templates]] point to ''compon.dat'') 
+**'''Rename''' (''Alt+R'') - change the name of the [[Glossary:Registry_member|registry member]] associated with the [[Glossary:Component|component]]. For example, if you do not like the name of the image displayed in image hints, click the image, press ''Alt+R'', type the new name, and click '''OK''' (or press ''Esc'' and ''Enter'')
+**'''Hyperlink''' (''Ctrl+K'') - select the [[Glossary:Element|element]] to which the [[Glossary:Component|component]] should be linked to. After choosing '''Hyperlink''' and selecting the target element in the [[Contents|'''Contents''' window]], click '''Accept''' (in the [[Contents|'''Contents''' window]]) or press ''Enter''. Now, clicking the [[Glossary:Component|component]] will open the hyperlinked [[Glossary:Element|element]] in the [[element window]] 
+**'''Hyperlink number''' - link the current [[Glossary:Component|component]] with another [[Glossary:Element|element]] by specifying its number (e.g. as displayed with ''Ctrl+G''). The element number of the target element is taken from the following sources in turn: 
+***current selection in the [[HTML component]] (it may, but it does not have to be preceded by ''#'') 
+***current content of the clipboard (it may, but it does not have to be preceded by ''#'') 
+***first [[Glossary:Element|element]] on the history list 
+***user input (source article of the current [[Glossary:Element|element]] is taken as the default)
+**'''Style''' - select a stylesheet from the stylesheet [[Glossary:Registry|registry]] to use with an HTML text 
+**'''Font''' (''Shift+Ctrl+F'') - choose a font for the current [[Glossary:Component|component]] from the font [[Glossary:Registry|registry]]. Choose '''Accept''' after you select the font 
+**'''Play on click''' - link the current [[Glossary:Component|component]] with another playable component (e.g. sound, video, script, etc.). When the user clicks your [[Glossary:Component|component]], the linked component will be played 
+**'''<span id="External_file">External file</span>''' - link the current [[Glossary:Component|component]] with an external file (i.e. file that is not integrated with your [[Glossary:Collection|collection]]). Note that linking to external files reduces the size of the [[Glossary:Collection|collection]] but the link can be easily severed if the file is moved to a new location or when you move your collection to another computer. Unlike '''External file''', the option '''[[#File|File]] : Import file''' will integrate the external file with the [[Glossary:Collection|collection]] and increase its size. You can also use '''[[#Links|Links]] : External file''' first and later use '''Internalize files''' on the [[registry menu]] (e.g. to integrate all images or all sounds) 
+**'''Open hyperlinks''' - open the pages linked to from the current HTML text in your default web browser 
+**'''<span id="Delete_registry_link">Delete registry link</span>''' - delete the current registry link in the current [[Glossary:Component|component]]. This operation removes links created with '''[[#Links|Links]] : [[#Registry_member|Registry member]]''' or '''[[#Links|Links]] : [[#External_file|External file]]'''. Note that if the deleted link was the last link to the [[Glossary:Registry_member|registry member]] in question, this member may be deleted with or without warning (depending on the registry type). Compare: '''[[#File|File]] : [[#Delete_file|Delete file]]''' 
+**'''Delete hyperlink''' - delete a hyperlink from the current [[Glossary:Component|component]] (i.e. break the link with the [[Glossary:Element|element]] pointed to by the hyperlink)
+
+=== Download file ===
+
+*'''Download file''' - download a file from the Internet 
+
+=== Web search ===
+
+*'''Web search''' (''Ctrl+F3'') - search for the currently selected string using search engines (e.g. Google), Wikipedia, encyclopedias, dictionaries, or other web sources. You can also define your own search tools, for example, to search for movies, actors, scientific papers, sportsmen, etc. 
+
+=== Open in new window ===
+
+*'''Open in new window''' - open the link under the mouse pointer in a new browser window (only in [[HTML component|HTML components]])
+
+=== Answer ===
+
+*'''Answer''' - set the [[Glossary:Component|component]] to act as the answer (e.g. to a question stored in another component). This will make the [[Glossary:Component|component]] invisible at the moment of asking questions during repetitions. Note that '''Answer''' is a quick way to choose an appropriate subset at [[#Display_at|Display at]] (click '''Answer''' and see changes in the dialog box displayed with '''[[#Display at|Display at]]''')
+
+=== MCT ===
+
+*'''MCT''' - determine which [[Glossary:Component|components]] will take part in a multiple-choice test 
+**'''None''' - [[Glossary:Component|component]] is not used in a multiple-choice test or is only used as a question, comment, etc. 
+**'''Wrong''' - [[Glossary:Component|component]] makes a wrong response in a multiple-choice test. If the user clicks this component, he will be graded '''Fail''' 
+**'''Correct''' - [[Glossary:Component|component]] makes a good response in a multiple-choice test. If the user clicks this component, he will be graded '''Good'''
+
+=== Color ===
+
+*'''Color''' - choose a color for the current [[Glossary:Component|component]] (this option will override the '''[[#Transparent|Transparent]]''' attribute in text components)
+
+=== Default color ===
+
+*'''Default color''' - choose the default color for the [[Glossary:Component|component]] (the default color is the same as the background color in the current [[Glossary:Element|element]])
+
+=== Display at ===
+
+*'''Display at''' - determine when a [[Glossary:Component|component]] should be visible. If you clear all checkboxes, the component will become invisible (e.g. acting like a placeholder for a sound or a [[Scripts|script]])
+
+=== Play at ===
+
+*'''Play at''' - determine when a sound [[Glossary:Component|component]] should play. If you clear all checkboxes, the component will become muted. If you check all checkboxes, the sound will play on each step of the repetition cycle
+
+=== Reference ===
+
+*'''Reference''' - mark portions of text as reference information. This information propagates from [[Glossary:Element|element]] to element in [[Glossary:Incremental_reading|incremental reading]]. It helps you recover information context. It is also useful in creating a database of citations. Use ''Alt+T'' to quickly mark the reference title, and ''Alt+Q'' to set the remaining reference tags. 
+**'''Select''' (''Alt+Q'') - open a reference dialog box that helps you quickly mark portions of text with reference tags 
+**'''Title''' (''Alt+T'') - mark the selected text as the title reference and use it to set the title of the [[Glossary:Element|element]]
+**'''Author, Date, Source, E-mail, Link, Comment''' - mark the selected text with a selected reference tag. Using ''Alt+Q'' is the fastest two-keystroke way of setting individual reference tags
+**'''Edit''' - edit references
+**'''Download''' - download reference (e.g. for YouTube videos)
+
+=== Find in article ===
+
+*'''Find in article''' (''F3'') - search the [[Glossary:Component|component]]'s text
+
+=== Insert HTML link ===
+
+*[[HTML link menu|Insert HTML link]] - insert a link into the HTML source code in [[HTML component|HTML components]] in [[Glossary:Editing_mode|editing mode]]. To find out more details see: [[HTML link menu|Insert HTML link]] 
+**'''Web address''' (''Ctrl+K'') - insert a hyperlink to a web page available from the world wide web 
+**'''Element''' - insert a hyperlink to another [[Glossary:Element|element]] in the current [[Glossary:Collection|collection]] (for details see [[HTML link menu|Insert HTML link]]) 
+**'''Element number''' - link to the [[Glossary:Element|element]] of a given number. Number selected in HTML text is taken as the first default. If this does not return a valid [[Glossary:Element|element]], number kept in the clipboard is taken as the second default. If that does not resolve either, the first [[Glossary:Element|element]] on the history list is taken by default. One of the fastest linking methods is as follows: in the target [[Glossary:Element|element]] choose ''Ctrl+G'' and copy the element number to the clipboard, and in the linking [[HTML component]], select a hyperlinking text and paste the element link (if no text is selected, the title of the target [[Glossary:Element|element]] will be used to form the hyperlink)
+**'''Text registry''' - insert a hyperlink to another text in the text [[Glossary:Registry|registry]] (including unformatted text and HTML text) 
+**'''HTML file''' - insert a hyperlink to a stand-alone HTML file anywhere on your hard disk or a network drive 
+**'''Registry image''' - insert an image from the image [[Glossary:Registry|registry]] 
+**'''Registry script''' - insert a link to a SuperMemo [[Scripts|script]]
+
+=== Download images ===
+
+*'''Download images''' (''Ctrl+F8'') - download remote images referred to in the HTML code of an [[HTML component|HTML component]] (see: [[#Download_images|picture]]). Use this option if you want to make sure that the remote images are integrated with your [[Glossary:Collection|collection]]. This will prevent losing access to the images when the remote images are removed from the server or your Internet connection is severed. To integrate images, press ''Ctrl+F8'', select the images, and click '''Insert'''
+
+=== Insert OLE object ===
+
+*'''Insert OLE object''' - insert a file into an [[OLE component]]. This file might be an MS Word document, Excel spreadsheet, [http://www.mindman.com Mind Manager] mind-map, Corel clipart, MS Equation, chemical formula, animation, video, etc. The number of files you could reuse is only limited by OLE servers installed in your Windows. Once your create a [[Glossary:Collection|collection]] with OLE objects, you can redistribute your files among users who do not have corresponding server applications. For example, if you insert a Mind Manager mind map and your customer does not have Mind Manager installed, he will still be able to use your [[Glossary:Collection|collection]]. He will not, however, be able to edit the mind map. This would require having Mind Manager installed. The dialog box displayed with '''Insert OLE object''' makes it possible to select one of the two options: 
+**create a new OLE file (you only have to pick from the list of OLE servers available in your installation such as Bitmap Image, Wave Sound, WordPad Document, etc.) 
+**create an OLE file from an original document (e.g. MS Word document or MS Excel chart)
+
+=== OLE properties ===
+
+*'''OLE properties''' - display the properties of the OLE object 
+
+=== Button text ===
+
+*'''Button text''' - change the text on buttons used in [[Scripts|script]] or binary [[Glossary:Component|components]]
+**'''Play''' - change the text displayed before the script or program is executed 
+**'''Stop''' - change the text displayed when the script or program is running
+
+=== Delete component ===
+
+*'''Delete component''' (''Ctrl+Del'') - delete the current [[Glossary:Component|component]]. If this component uses the last link to a given [[Glossary:Registry_member|registry member]] (i.e. no other components link to this member), the member will also be deleted (in case of sounds, images, videos, etc. you will first be asked to confirm deleting the registry file)
+
+=== File ===
+
+*'''File''' 
+**'''View file''' (''F9'') - view the file associated with the [[Glossary:Component|component]] in the default viewer application (e.g. Internet Explorer for HTML, MS Word for rich texts, etc.) 
+**'''Edit file''' (''Ctrl+F9'') - edit the file associated with the [[Glossary:Component|component]] (e.g. sound file in sound components, image file in image components, HTML text in [[HTML component|HTML components]], etc.). '''Edit file''' will use the default editor assigned for editing files of the selected type. To quickly edit files, use ''Ctrl+T'' to switch to the appropriate [[Glossary:Component|component]] and press ''Ctrl+F9''. For example, if you use ''MS Office'', ''Ctrl+F9'' on rich text [[Glossary:Component|components]] will launch MS Word, while ''Ctrl+F9'' on [[HTML component|HTML components]] will launch ''MS Expression Web'' and open the associated HTML file. '''Edit file''' is very useful with [[HTML component|HTML components]] if you want to edit the text in all [[Glossary:Component|components]] that use the file (editing the text inside the component will only change that particular text in that particular [[Glossary:Element|element]]) 
+**'''View in folder''' - open the file in its location in the original folder (usually subfolder of [\ELEMENTS])
+**'''<span id="Import_file">Import file</span>''' (''Ctrl+Q'') - import a file to the [[Glossary:Component|component]]. The file will be integrated with the [[Glossary:Registry|registry]] corresponding with the current [[Glossary:Component|component]] (e.g. image registry in the case of an image component). '''Import file''' creates a link from the current [[Glossary:Component|component]] to the newly created [[Glossary:Registry_member|registry member]] (e.g. the imported picture or sound). For example, if you want your sound [[Glossary:Component|component]] to play a given MP3 file, choose '''[[#File|File]] : Import file''', pick the MP3 file in the file dialog box and click '''OK'''. Your MP3 file will be integrated with the sound [[Glossary:Registry|registry]] and a link to this file will be registered with the current component. Unlike the option [[#External_file|'''External file''']], '''Import file''' will create a copy of the imported file in the [[SuperMemo files#elements|''[ELEMENTS]'' folder]] and increase the size of the [[Glossary:Collection|collection]]. Optionally, '''Import file''' can delete the originally imported file (e.g. to speed up integrating downloaded images with your collection without clogging up your hard disk) 
+**'''Save file''' - save the file associated with the [[Glossary:Component|component]] in a selected location 
+**'''<span id="Delete_file">Delete file</span>''' - delete the file associated with the current [[Glossary:Component|component]] (compare [[#Delete_registry_link|'''Delete registry link''']]) 
+**'''Copy path''' - copy to the clipboard the path to the file associated with the [[Glossary:Component|component]]
+**'''View source''' (''Shift+Ctrl+F6'') - view or edit the source file of richly formatted texts (in HTML or RTF format). '''View source''' is useful with [[HTML component|HTML components]] if you want to edit the text in all [[Glossary:Component|components]] that use the file (editing the text inside the component will only change that particular text in that particular element). '''View source''' is also very useful if a given HTML code does not edit properly in SuperMemo. You can tweak individual HTML tags and make sure the code is edited clean and exactly to your specifications 
+**'''Paste special''' - use the paste special command on an OLE object 
+**'''Select previous component''' - set the current [[Glossary:Component|component]] in the [[Glossary:Presentation_mode|presentation mode]] and set the previous component in the [[Glossary:Editing_mode|editing mode]] (see '''[[Element menu#Components|Components]] : [[Element menu#Component_order|Component order]]''' on the [[element menu]]) 
+**'''Select next component''' (''Ctrl+T'') - set the current [[Glossary:Component|component]] in the [[Glossary:Presentation_mode|presentation mode]] and set the next component in the [[Glossary:Editing_mode|editing mode]]
+
+=== Mode ===
+
+*'''Mode''' - determine how the [[Glossary:Component|component]] is displayed and processed 
+**[[Glossary:Presentation_mode|'''Presentation mode''']] (''Esc'') - display the [[Glossary:Component|component]] in the way it will be seen in the learning process 
+**[[Glossary:Editing_mode|'''Editing mode''']] - prepare the [[Glossary:Component|component]] for editing 
+**[[Glossary:Dragging_mode|'''Dragging mode''']] - prepare the [[Glossary:Component|component]] for dragging or sizing 
+**'''Send to back''' - temporarily send the [[Glossary:Component|component]] to the back behind all components lying currently underneath
+
+=== Browser menu ===
+
+*'''Browser menu''' - display the Internet Explorer menu in [[HTML component|HTML components]]. The Internet Explorer menu will replace the component menu. To return to the component menu, click the text to edit (or choose ''Ctrl+T'')
+
+== More about the Component menu ==
+
+You can set a given [[Glossary:Component|component]] in the [[Glossary:Editing_mode|editing mode]] and make it current by pressing ''Alt'' and clicking the component (some components will switch directly to the [[Glossary:Dragging_mode|dragging mode]] wherever the editing mode is absent or irrelevant). If you ''Alt+click'' a [[Glossary:Component|component]] in the [[Glossary:Editing_mode|editing mode]], it will be switched to the [[Glossary:Dragging_mode|dragging mode]]. If you ''Alt+click'' the [[Glossary:Component|component]] in the [[Glossary:Dragging_mode|dragging mode]], it will return to the [[Glossary:Presentation_mode|presentation mode]]. ''Alt+click'' is very useful. Try it now several times on any [[Glossary:Component|component]]. 
+
+''Alt+click'' on the empty element area will act as if all [[Glossary:Component|components]] were ''Alt+clicked''. This is the fastest way of switching all components to the [[Glossary:Editing_mode|editing mode]] (or later to the [[Glossary:Dragging_mode|dragging mode]] and back to the [[Glossary:Presentation_mode|display mode]]). You will also need ''Alt+click'' on the element area to switch the mode of [[OLE component|OLE components]] that do not respond to ''Alt+click''. 
+
+[[OLE component|OLE components]] display their own context menus in the [[Glossary:Editing_mode|editing mode]]. This menu is dependent on the OLE server application that handles a given OLE object (e.g. if you use an MS Word OLE object, MS Word context menu will be opened if you right click over the [[OLE component]]). 
+
+== Pictures ==
+
+In the picture below, several portions of the panorama of Freiburg have been extracted into separate [[Glossary:Element|elements]] (<span id="picture_extract">extracts</span> are marked on the original picture in yellow-red): 
+
+[[Image:Freiburg panorama (original).jpg|center|800px|SuperMemo: The original picture of the Freiburg panorama (too large to view its details) from which 4 picture extracts (marked with bright yellow-red rectangles) have been produced]] 
+
+An exemplary picture of the '''<span id="Download_images">Download images</span>''' option in action: 
+
+[[Image:Download images.jpg|center|600px|SuperMemo: Download images dialog box makes it possible for you to get images embedded in local pages imported from the net and put them to the image registry]]
+{{:File:Download images.jpg}}
+
+Exemplary use of [[Glossary:Occlusion test|Occlusion test]] generator:
+[[File:Learning anatomy with occlusion tests in SuperMemo 19.jpg|center|600px]]
+{{:File:Learning anatomy with occlusion tests in SuperMemo 19.jpg}}

@@ -1,0 +1,5 @@
+;<span id="Hint">hint</span>
+:message that makes it easy to understand the use of a given interface element in [[Glossary:SuperMemo|SuperMemo]]. To view '''hints''' pause the mouse pointer over a button or menu item. '''Hints''' are displayed on the [[status bar]] along the bottom of the screen (you can show the [[status bar]] with '''[[Window menu|Window]] : [[Window menu#Status bar|Status bar]]''' from the [[main menu]]).
+:You can turn hints on/off by:
+:# checking '''[[Window menu|Window]] : [[Window menu#Hints|Hints]]''', or
+:# double-clicking the hint panel on the [[status bar]]

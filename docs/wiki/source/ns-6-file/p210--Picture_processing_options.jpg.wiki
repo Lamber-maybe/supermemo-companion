@@ -1,0 +1,3 @@
+<blockquote>
+'''''Figure:''' Picture processing options available by pressing Shift+Ctrl+F8 ('''[[Component menu#Image|Image]] : Process''' from the image [[component menu]])''
+</blockquote>

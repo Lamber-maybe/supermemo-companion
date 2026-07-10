@@ -1,0 +1,2 @@
+;<span id="FSRS">FSRS</span>
+:popular free open source [[Glossary:Spaced_repetition|spaced repetition]] algorithm based on the [https://supermemo.guru/wiki/Two_component_model_of_memory two component model of memory]. It was included in SuperMemo 20 for the sake of metric comparisons with SuperMemo algorithms. As much as [[Algorithm SM-20]], '''FSRS''' can be optimized with machine learning on the basis of user data.

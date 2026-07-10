@@ -1,0 +1,2 @@
+;<span id="Optimum_interval">optimum interval</span>
+:in [[Glossary:SuperMemo|SuperMemo]], an [[Glossary:Interval|inter-repetition interval]] that is likely to result in the probability of forgetting equal to the [[Glossary:Requested_forgetting_index|requested forgetting index]]. In other words, the '''optimum interval''' is the best possible [[Glossary:Interval|interval]] that will ensure the speed of learning chosen by the user

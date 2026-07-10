@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Glossary:R-Metric — SuperMemo Help mirror</title>
+<style>body { font-family: Georgia, 'Times New Roman', serif; max-width: 1040px; margin: 0 auto; padding: 1.5rem; color: #202122; line-height: 1.58; }
+h1, h2, h3, h4, h5, h6 { font-family: system-ui, sans-serif; line-height: 1.25; }
+a { color: #0645ad; } a:visited { color: #0b0080; }
+.mirror-meta { color: #54595d; font: 0.85rem/1.45 system-ui, sans-serif; border-bottom: 1px solid #eaecf0; padding-bottom: .8rem; margin-bottom: 1.2rem; }
+.mirror-meta code { color: #202122; }
+table { border-collapse: collapse; margin: 1rem 0; max-width: 100%; }
+td, th { border: 1px solid #a2a9b1; padding: .4rem .6rem; vertical-align: top; }
+th { background: #eaecf0; }
+img, video { max-width: 100%; height: auto; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1rem; overflow-x: auto; }
+code { background: #f8f9fa; padding: .1rem .25rem; }
+.toc, .navbox { background: #f8f9fa; border: 1px solid #a2a9b1; padding: .8rem; }
+.redirect { background: #f8f9fa; border-left: .3rem solid #36c; padding: .8rem 1rem; }</style>
+</head>
+<body>
+<div class="mirror-meta">
+<a href="../../_index.html">Mirror index</a> ·
+<a href="../../source/ns-100-glossary/p601--R-Metric.wiki">View raw source</a> ·
+<a href="https://help.supermemo.org/wiki/Glossary:R-Metric">Official page</a> ·
+revision <a href="https://help.supermemo.org/index.php?title=Glossary%3AR-Metric&amp;oldid=12271"><code>12271</code></a>
+</div>
+<h1>Glossary:R-Metric</h1>
+<main id="mw-content-text"><div class="mw-parser-output"><dl><dt><span id="R-Metric">R-Metric</span> (Recall Metric)</dt>
+<dd><figure class="mw-default-size" typeof="mw:File/Thumb"><a href="../../source/ns-6-file/p551--Recall_metric.jpg.wiki" class="mw-file-description"><img src="https://help.supermemo.org/images/thumb/0/04/Recall_metric.jpg/300px-Recall_metric.jpg" decoding="async" loading="lazy" width="300" height="178" class="mw-file-element" srcset="https://help.supermemo.org/images/thumb/0/04/Recall_metric.jpg/450px-Recall_metric.jpg 1.5x, https://help.supermemo.org/images/thumb/0/04/Recall_metric.jpg/600px-Recall_metric.jpg 2x"></a><figcaption>SuperMemo: Algorithm SM-19 performance metric</figcaption></figure>Absolute measure of <a href="p341--Spaced_repetition.html" title="Glossary:Spaced repetition">spaced repetition</a> algorithm performance based on their ability to predict recall before a <a href="p287--Grade.html" title="Glossary:Grade">grade</a> is scored. As of <a class="external text" href="https://supermemo.store/products/supermemo-20-for-windows">SuperMemo 20</a>, <b>R-Metric</b> compares <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19">Algorithm SM-19</a> against an optimally weighted average of predictions from SM-2, <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-15">SM-15</a>, <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19">SM-19</a>, <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-20">SM-20</a>, and <a href="p738--FSRS.html" class="mw-redirect" title="FSRS">FSRS</a>. The weighting is determined by <a href="../ns-0-main/p747--Algorithm_Arena.html" title="Algorithm Arena">Algorithm Arena</a>, where more accurate algorithms gain weight. <b>R-Metric</b> is shown as a percentage in <b><a href="../ns-0-main/p15--Toolkit_menu.html" title="Toolkit menu">Toolkit</a>&nbsp;: <a href="../ns-0-main/p15--Toolkit_menu.html#Statistics" title="Toolkit menu">Statistics</a>&nbsp;: <a href="../ns-0-main/p141--Analysis.html" title="Analysis">Analysis</a>&nbsp;: <a href="../ns-0-main/p141--Analysis.html#Use" title="Analysis">Use</a>&nbsp;: Efficiency&nbsp;: <a href="../ns-0-main/p141--Analysis.html#Use_:Efficiency:_R-Metric" title="Analysis">R-Metric</a></b>. It is the difference between the performance of the two competing predictions: <code>R-Metric=LSRM(Alg-19)-LSRM(Arena)</code>, where <code>LSRM</code> is the least squares predicted recall measure. <b>R-Metric</b> less than zero shows the superiority of <a class="external text" href="https://supermemo.guru/wiki/Algorithm_SM-19">Algorithm SM-19</a>. <b>R-Metric</b> greater than zero indicates the superiority of the weighted algorithm blend. <code>LSRM</code> is the square root of the average of squared absolute differences in recall predictions: <code>abs(Recall-PredictedRecall)</code>, where <code>Recall</code> is 0 for failing <a href="p287--Grade.html" title="Glossary:Grade">grades</a> and 1 for passing <a href="p287--Grade.html" title="Glossary:Grade">grades</a>. <code>PredictedRecall</code> is the prediction issued by the algorithm before the <a href="p333--Repetition.html" title="Glossary:Repetition">repetition</a>. Expect a negative metric before <a href="../ns-0-main/p747--Algorithm_Arena.html" title="Algorithm Arena">Algorithm Arena</a> determines how well individual algorithms perform in the collection.</dd></dl>
+<!-- 
+NewPP limit report
+Cached time: 20260710173802
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.025 seconds
+Real time usage: 0.027 seconds
+Preprocessor visited node count: 2/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 1/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key guru_Help20:pcache:601:|#|:idhash:canonical and timestamp 20260710173802 and revision id 12271. Rendering was triggered because: page-view
+ -->
+</div></main>
+</body>
+</html>

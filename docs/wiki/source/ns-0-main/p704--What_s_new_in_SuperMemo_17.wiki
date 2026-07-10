@@ -1,0 +1,549 @@
+<div class="bs-callout bs-callout-warning">
+SuperMemo 17 represents a radical break with the past. A great deal of functionality was removed on the basis of:
+# little popularity and
+# high cost (in confusion, bugs, programming, maintenance, etc.).
+For that reasons, review the [[#Warnings|'''list of warnings''']] carefully before you upgrade. 
+</div>
+
+== New features ==
+
+=== Top ten ===
+
+# [[Neural creativity]] - boost your creativity and problem solving powers using the same tricks as your brain uses in information processing 
+# [[SuperMemo Algorithm|Algorithm SM-17]] - new algorithm allows of an effective repetition at any time: in 20 sec or with a 20-year delay. SuperMemo can handle it all. If you play with [[Glossary:Interval|intervals]] or do [[subset review]], the algorithm improves SuperMemo's predictive powers by [[Analysis#Use : Efficiency : R-Metric|5-10%]], which is a lot in terms of learning efficiency!
+# [[Concepts|Concepts and concept maps]] - link information in between [[Glossary:Branch|branches]] of the [[Glossary:Knowledge_tree|knowledge tree]]. For example, group together all you know about the ''flu virus'' and beat the flu by knowing its tricks (e.g. using [[neural creativity]])
+# Full user lists in [[Glossary:Registry|registries]] - [[#Registries provide access to all member users|no more limit on member usership]]. Now you can find all [[Glossary:Element|elements]] using texts, pictures, etc. even if these go into hundred thousands
+# Multithreaded image downloads - no more wait for pictures to download. They will get to SuperMemo before you have time to review them 
+# [[References#Image references|Image references]] - keep all information about the image (incl. the source URL) and prevent importing the same image twice even if you change its name, overwrite the actual file, etc.
+# Deprecating URLs - if your partly-processed Wikipedia article is 10 years old, you might prefer to deprecate, deprioritize, and import an up-to-date version without wasting prior work. URL deprecation will make sure that you will be directed to the new version at duplicate detection or when you plan a review
+# '''[[#Fit all pictures example|Fit all pictures]]''' - with a keystroke, economize space in your element containing multiple pictures of various sizes
+# '''[[Web import]] : Browse duplicates''' - check all prior duplicated web imports to see if they are worth replacing with newer/up-to-date articles, pictures, etc.
+# [[SuperMemo Commander|'''Commander''']]: '''Import file''' - you can download files from the web directly to a [[Glossary:Component|component]] or import files from a disk
+
+=== Algorithm ===
+* [[SuperMemo Algorithm|Algorithm SM-17]]
+* first repetition [[Glossary:Forgetting_curve|forgetting curve]] spanning a decade (rather than 3 weeks)
+* power approximation for the first heterogeneous [[Glossary:Forgetting_curve|forgetting curve]]
+* [[Memory graphs (4D)|4D Graphs for the analysis of optimization matrices]] (3D graphs with an item difficulty slider for animation in the 4th dimension). The graphs can be rotated in all dimensions. Thus they can also be flattened to 2D to form contour maps. They can also be exported to Excel for further analysis. See [[#Recall matrix visualization|example]]
+* procedures for computing matrices and function approximations can run live with real-time graph updates
+* Algorithm SM-2 heuristic is used to "guess" missing [[Repetition history|repetition histories]] from before 1996 (those can also be used in DSR model estimations)
+* predicting future [[Glossary:Stability|S]] and [[Glossary:Retrievability|R]] in repetition history list
+* computing post-lapse stability from [[Glossary:Retrievability|retrievability]] and [[Glossary:Lapse|memory lapses]] (rather than just [[Glossary:Lapse|memory lapses]])
+* [[Glossary:Stability_increase_matrix|SInc[] matrix]] (stability increase) can be computed for a [[Glossary:Subset|subset]] of [[Glossary:Element|elements]]
+* user can define the degree of difference between algorithms [[SuperMemo Algorithm SM-15|SM-15]] and [[SuperMemo Algorithm|SM-17]] that will produce a user alert with an option of manually choosing the [[Glossary:Interval|interval]]
+* '''[[Tools]] : [[Tools#Statistics|Statistics]] : [[Analysis]] : [[Analysis#Use|Use]] : Efficiency : [[Analysis#Use_:_Efficiency_:_R-Metric|R-metric]]''' to see changes in the difference between the performance of [[SuperMemo Algorithm SM-15|Algorithms SM-15]] and [[SuperMemo Algorithm|SM-17]] over time
+* '''[[Tools]] : [[Tools#Statistics|Statistics]] : [[Statistics]] : [[Glossary:R-Metric|R-metric]]''' to see the difference in performance of [[SuperMemo Algorithm SM-15|Algorithms SM-15]] and [[SuperMemo Algorithm|SM-17]] on a given day (in percent)
+* detailed log of repetition results, retrievability predictions, intervals, metrics, etc. (for comparing [[SuperMemo Algorithm SM-15|Algorithm SM-15]] with [[SuperMemo Algorithm|Algorithm SM-17]])
+* computing the expected number of repetitions in a selected period depending on the [[Glossary:Forgetting_index|forgetting index]] (e.g. '''[[Element menu#Learning|Learning]] : Statistics : Best forgetting index''')
+* simulating learning outcomes at various levels of the [[Glossary:Forgetting_index|forgetting index]] ('''[[Element menu#Learning|Learning]] : Statistics : Export forgetting index data''')
+
+==== Repetition histories ====
+* [[Repetition history|repetition histories]] show the estimates: [[Glossary:Retrievability|retrievability]] at repetition, and [[Glossary:Stability|stability]] after the repetition
+* missing [[Repetition history|repetition histories]] can be filled up with data suggested by simulations based on older algorithms
+* [[Repetition history|repetition histories]] are now editable
+* color codes are used in [[Repetition history|repetition histories]] to display failed repetitions, data discrepancies, estimated records, etc. (see [[#Color coded repetition histories|below]])
+* postpone count recorded in [[repetition history]]
+
+=== Concepts ===
+
+* new element type: [[Glossary:Concept|concept]]
+* using [[Glossary:Concept|concepts]] to supplant [[Glossary:Category|categories]]
+* [[Concepts|concept maps]] ([[#Concept map|example]])
+* inter-[[Glossary:Element|element]] [[Glossary:Link|links]]
+* template auto-apply can be set separately for [[Glossary:Item|items]], [[Glossary:Topic|topics]] and similar [[Glossary:Template|templates]] (i.e. templates determined by suffixes such as ''Picture'')
+
+=== Incremental learning ===
+
+* [[Glossary:Neural review|neural review]] - automatic semantic review based on [[Glossary:Concept_map|concept maps]] and [[Glossary:Spreading_activation|spreading activation]] (for details see: [[Neural creativity]])
+* multithreading in image downloads
+* capturing images via HTML renderer if they cannot be retrieved from the cache or downloaded
+* [[Visual learning#Image references|image references]]
+* deprecating references: if your partly-processed Wikipedia article is very old, you might prefer to deprecate, deprioritize, and import an up-to-date version without wasting prior work. URL deprecation will make sure that you will be directed to the new version at duplicate detection or when you plan a review 
+* preventing duplicate image downloads by storing image URLs in [[Visual learning#Image references|image references]]
+* '''Fit all pictures''' for economizing element view space (see [[#Fit all pictures example|below]])
+* '''Browse duplicates''' in [[Web import|web imports]] to view all previously imported [[Glossary:Element|elements]] (''Ctrl+Shift+B'')
+* '''Extract''' button on the [[learnbar]] can also be used to extract from [http://youtube.com YouTube] videos and picture selections, and so does ''Alt+X''
+* [[Glossary:Extract|extracts]] use <template name>+Extract [[Glossary:Template|template]] if available to help you control templates used in extracts
+* priority fields and the [[Priority queue#Priority queue in SuperMemo|'''Element priority''' dialog box]] coloring have been modified along user suggestions. [[Glossary:Priority|Priorities]] now use a full spectrum progression instead of a single hue color progression. High [[Glossary:Priority|priorities]] are <span style="padding: 3px; color: #fff; background-color: red;">red</span>, low priorities are <span style="padding: 3px; color: #fff; background-color: blue;">blue</span>, and intermediate priorities are set in a gradient (see [[#Priority dialog|below]]). The current [[Glossary:Element|element]] in the [[Priority queue#Priority queue in SuperMemo|'''Element priority''' dialog box]] is displayed in <span style="padding: 3px; background-color: yellow;">yellow</span>
+
+=== Learning ===
+
+* '''[[Element menu#Learning|Learning]] : Add to subset''' on the [[element menu]]
+* '''[[Learning tab in Options#Skip_final_drill|Skip final drill]]''' is now on by default
+
+=== Components ===
+
+* '''Delete components''' allows of deleting multiple component objects with a single confirmation
+* '''Impose template''' deletes all unused component objects with a single confirmation
+
+=== Templates ===
+
+* separate auto-apply setting for picture [[Glossary:Template|templates]] (in [[Concepts#Concept registry|concept registry]])
+* automatic use of <template name>+''Extract'' [[Glossary:Template|template]] on [[Glossary:Extract|extracts]] produced by [[Glossary:Element|elements]] with a template <template name>
+* for multiple combinations of applicable templates, SuperMemo displays the list of templates to choose from
+
+=== Registries ===
+* new link and concept registries for organizing knowledge into graph-like structures (e.g. for [[Neural creativity|neural review]])
+* '''Externalize files''' (opposite to '''Internalize files''') can be used to move registry files to secondary storage (e.g. for slimmer backups or keeping large files on a different drive)
+* '''Insert''' in [[Glossary:Registry|registries]] allows of inserting multiple image, sound or text objects indicated by the checkbox selection 
+* object file delete can now work with secondary storage too (e.g. when cleaning up unused members); you can still keep your secondary storage unchanged, but you need to make it read-only at the file level
+* exporting [[Glossary:Registry_subset|registry subset]] as text
+* generating [[Glossary:Element|elements]] from a [[Glossary:Registry_subset|registry subset]]
+* using colors to distinguish between different registry file formats (e.g. for pictures: jpg, gif, png, etc.)
+* reference button allows of switching from image to its reference in the reference registry
+* reference button allows of switching from image reference to its image in the image registry ('''Go to''' goes to the first element using the image)
+* [[References#Image references|image references]] point to the source image in the [[status bar]]
+* URLs encoded in image name members are automatically converted to image references on first use in the registry (they can also be converted in one go with '''Generate references''')
+* global image replace displays the number of elements affected
+
+=== Browser ===
+* sorting by memory stability
+* sorting by memory retrievability
+* '''First repetition''' column
+* inserting an image to all browser [[Glossary:Element|elements]] with a single confirmation and without inserting duplicates
+* in addition to sorting by text size, the [[browser]] can now also be sorted by the size of pictures in [[Glossary:Element|elements]]
+* '''Done''' on the entire [[browser]] can be executed with a single confirmation for all [[Glossary:Element|elements]]
+* prolonged sort procedures display a progress box (instead of just an hourglass)
+* browser column sequences and width are collection specific (previously these were global). This makes it easier to browse different type of material where different information receives a different priority
+* recent and total postpones are reported in subset statistics
+* all forms of sorting by repetition date have a resolution of 2 minutes (previously 1 day)
+
+=== Contents ===
+* [[Glossary:Node|nodes]] display [[Glossary:Descendant|descendant]] counts (no more need for the '''Data/Stats''' tab in the [[Contents toolbar|toolbar]])
+
+=== Statistics ===
+* new and richer [[Element data|element data statistics]] with configurable layout. New parameters:
+** changes to [[Element data#DSR Stats|DSR model values]]: [[Glossary:Stability|stability]], [[Glossary:Retrievability|retrievability]], [[Glossary:Difficulty|difficulty]]
+** [[Element data#First|first repetition date]]
+** [[Element data#Last|last repetition date]] and [[Element data#Time|time]]
+** [[Element data#Change|priority change]] due to positive grading
+** [[Element data#Int17_vs_Int16|interval comparisons between algorithms used in SuperMemo 16 and SuperMemo 17]]
+** [[Element data#Passed|time interval since the last repetition]] down to a second
+** [[Element data#Outstanding_Queue_Posit|position]] of the [[Glossary:Element|element]] in the [[Glossary:Outstanding_queue|outstanding queue]]
+** [[Element data#Postpones|current and total postpones]]
+** [[Element data#Concept_group|concept group]] (if assigned)
+** [[Element data#Template|template]] (if applied), and more
+* '''Review''' field in Statistics show the size of the neural queue, subset learning statistics, or the learning stage (such as ''pending'', ''drill'', etc.)
+* '''[[Analysis]] : [[Analysis#Distributions|Distributions]] : Difficulty'''
+* '''[[Analysis]] : [[Analysis#Use|Use]]''' graphs optimally re-scale the vertical axis for best display of data (e.g. when zooming in)
+* '''[[Repairing collections|Repair collection]]''' reports the count of unused [[Glossary:Registry_member|members]] in all [[Glossary:Registry|registries]]
+* graph smoothing in '''[[Analysis]]''' rescales the vertical axis for easier visual analysis
+
+=== Search ===
+* second search string in AND-search is highlighted in a different color
+* highlight style for the second search string can be part of a stylesheet (e.g. default stylesheet, component stylesheet, etc.)
+
+=== Imports ===
+* non-English Wikipedias use the same filter as the English Wikipedia (making all imports easier and cleaner)
+* mobile Wikipedias use the same filter as the English Wikipedia
+* normalizing Wikipedia URLs to make sure: https://en.wikipedia.org/?title=Nikola_Tesla and https://en.wikipedia.org/wiki/Nikola_Tesla are detected as duplicates
+* multiple options for repetition history import (e.g. verification, adding selected records, full replace, etc.)(see [[#Repetition history import|below]])
+* using Google Publisher Tags to remove advertising from imported articles
+
+=== Exports ===
+* repetition histories can be exported as text (SuperMemo format) or as CSV (e.g. for analysis in Excel)(items only)
+* root article pointer would not be restored after a transfer of learning material to another collection
+
+=== Interface ===
+* larger dialog boxes to accommodate increasing popularity of higher screen resolutions
+* 13 news commands in the [[Commander]] (e.g. template operations)
+* Tiling dialog does not close on second ''Enter'', but allows of more tiling configuration tries 
+* '''Next repetition''' label on the [[learnbar]] shows mnemonic <span style="padding: 3px; background-color: yellow;">dismissed</span>, <span style="padding: 3px; background-color: aqua;">pending</span> or <span style="padding: 3px; color: white; background-color: blue;">memorized</span> colors
+* ''Esc'' or ''Enter'' in the [[Element data|'''Element data''' window]] brings up the [[element window]]
+* [[status bar]] separates the number of [[Glossary:Memorized_element|memorized]] [[Glossary:Item|items]] from the number of memorized [[Glossary:Topic|topics]]
+* proportion of the reviewed [[Glossary:Outstanding_element|outstanding elements]] is displayed on the [[status bar]]'s progress bar
+* ''Ctrl+A'' and ''Alt+A'' to check all in choices checklists (also collection repair options)
+
+=== SleepChart ===
+* circadian alertness graph is based on retrievability predictions taken from the DSR model (calculations take long but show up live in the graph)
+* two-dimensional alertness/recall graph (homeostatic and circadian dimensions)(in '''[[Tools menu|Tools]] : [[Tools menu#Memory|Memory]] : [[Memory graphs (4D)|4D Graphs]] : Sleep''')
+
+=== Tasklists ===
+
+* '''Find all''' searches for all [[Glossary:Task|tasks]] in the current [[Glossary:Tasklist|tasklist]] and opens the results in a [[Glossary:Browser|browser]]
+* Tasklist chooser (based on a collection chooser) makes transfer of tasks between tasklists easier
+
+=== Plan ===
+
+* '''Adjust from now''' and '''Adjust from selected''' make it possible to optimize the remaining portion of the schedule without affecting delay analysis on portions executed thus far (button '''Adjust''' provides all adjust options)
+* schedule termination options: time of sleep vs. current time (shortcut ''Ctrl+Shift+Enter'')
+* '''Plan : Export''' exports the time shift of the activity from the start of the day
+
+=== Performance ===
+
+* radical slim-down and shedding of least popular functions
+* [[Glossary:Registry|registries]] provide access to all member users (see [[#Registries provide access to all member users|below]])
+* [[#Better memory management|better memory management]]
+* element filespace cleanup is done only at '''[[Repairing collections|Repair collection]]''' speeding up all filespace operations
+* faster mathematical functions
+* better tolerance to script problems in Internet Explorer
+* filespace verification run without other collection checks is now 10x faster
+* reference registration is much faster now
+* faster '''Mercy'''
+* template delete scans member user lists for fast detach/impose (older SuperMemo's had to scan all elements due to incomplete template usership registration)
+* tasklist delete scans member user lists for task reset (older SuperMemo's had to scan all elements due to incomplete tasklist usership registration)
+* speeding up list comparisons at recovery by using assembly language
+* speeding up registry user processing by using assembly language
+* limiting lexicon member usership to 500 for performance reasons
+
+=== Files ===
+* detecting DropBox conflict files and removing those at '''Repair collection''' (this does not imply that it is safe to run DropBox synchronization while SuperMemo is running)
+
+=== HTML ===
+* adding '''Advertising''' option to cut adverts at HTML filtering
+
+=== Other ===
+
+* new data structures provide an easy path towards further enhancements in the future, and faster operations at present (e.g. [[references]], [[Glossary:Tasklist|tasklist]], [[Glossary:Concept|concepts]], etc.)
+* full error log for each [[Glossary:Collection|collection]] for more effective bug hunts
+* formatting large element numbers helps correct reading
+* formatting large [[Glossary:Interval|intervals]] as ''years:months:days'' helps interpretation (formatting can be turned off in the [[Element data|'''Element data''' window]])
+* '''Search''' field in the file browser
+* '''Repair collection''' checks if all repetition histories are reflected in the timeline
+
+== Bugs and annoyances ==
+
+=== Incremental reading ===
+
+* cloze deletion texts would occasionally get misaligned (e.g. losing a space after the selection). This bug has first been reported in 2004!
+* ''Ctrl+Shift+R'' could back out from the current learning mode
+* cloze deletions can no longer be executed on items (to prevent confusion in beginners)
+* '''Dismember''' would not auto-save current element, which might result in a different outcome (e.g. adding element based on a component that should be deleted)
+* '''Dismember''' would leave the last dismembered element icon not updated
+
+=== Learning ===
+
+* there were no grade key shortcuts in [[Leeches#Leech_Alert_Wizard|leech manager]]
+* random test and random review could slow down substantially in a collection with many deleted elements
+* postpone statistic was limited to 255 cases
+* '''[[Glossary:Dismiss|Dismiss]]''' in '''[[Contents]]''' and in the [[element window]] display a warning if the [[Glossary:Element|element]] has already been dismissed
+* '''[[Glossary:Dismiss|Dismiss]]''' on the day of [[Glossary:Repetition|repetition]] would not register its timing in [[repetition history]]
+* increasing maximum allowed interval from 80 to 120 years (even if the interval reaches beyond a lifetime, we do not want to be bothered by collection data integrity alerts)
+* '''Show answer''' would not set the answer component as the current component
+
+=== Components ===
+
+* player position would not be reset when importing new sounds or videos
+* player position would not be reset when linking new sounds or videos
+* pasting an image followed by tiling might affect the sizing of [[Glossary:Component|components]] in the original [[Glossary:Template|template]] without confirmation
+* automatic title update on text edits would fail in some longer titles that required trimming
+* deleting a marked picture would mark the preceding component
+
+=== Search ===
+
+* OR-search would often fail to find the correct set of [[Glossary:Element|elements]]
+* match words search could fail if not case sensitive
+* '''Search and Replace''' with empty text would cause errors
+* procedure for clearing up search highlights might block the use of default element at ''Esc''
+
+=== Registries ===
+
+* ''Ctrl+E'' did not work for text edits as stated in the documentation
+* inserting multiple component objects from the [[Glossary:Registry|registry]] does not ask about the import mode, and all [[Glossary:Registry_member|members]] are inserted to newly created [[Glossary:Component|components]]
+* sound files defined with the universal extension .* could not be internalized
+* internalization might trip on deleted files
+* old sound and video formats would still be reported as separate categories in size statistics
+* file size reports would use two digits after the decimal point, which would provide for inaccurate progress checks
+* member merge at registry rename would fail to delete files if they were playing at the moment of the merge (e.g. when renaming the current sound and discarding it for a better sound with the same name)
+* when switching between registry subsets, highlighted member is preserved, if possible (previously, the member at the top of the list would be preserved)
+* merged member selection would be lost when switching registry subset if the member was just a redirect
+* deleted references would cause a volley of warnings. Now the cleanup is silent and occurs behind the scenes or during '''Repair collection'''
+* '''Delete unused''' would ignore user choice '''All''' (all deleted [[Glossary:Registry_member|members]] would ask for a confirmation)
+* '''Delete unused''' would not update the member list box if it was affected by the delete
+* '''List''' would be too slow on large users lists. Now, all users lists above 200 [[Glossary:Element|elements]] use the [[browser]] to quickly display the list
+* file import directly to the registry would fail to set the main registry subset
+* sound could not be renamed by editing texts in the registry text field
+* '''Add''' would not work in the tasklist registry
+* registry sorting would use ordinals instead of priorities
+* registry user lists are compared only 50 deep in integrity check to speed up '''Repair collection'''
+
+=== Browser ===
+* delete and '''Done''' would not update the [[Browser|visual browser]]
+* when the last position in priority spread goes beyond the maximum range, it is not skipped ([http://supermemopedia.com/wiki/Bug_in_spread_priorities_in_the_browser as previously]), but reduced to the maximum range
+* RTF texts would fail to display in visual browser (visual browser message processing would block RTF to HTML format text upgrades)
+* '''Filter: Last''' and '''Next repetition''' are limited to the first day, today, or the last day where appropriate (''0'' or ''-'' can be used for default minimum or maximum)
+* maximized [[browser]] could change the position of the [[element window]] in the default [[Glossary:Layout|layout]]
+* ''Del'' key would not work in the [[Browser|visual browser]]
+* randomizing the [[browser]] would not affect the visual browser
+* sorting by first repetition date would fail for items with repetition histories reaching before the first day of the learning process (e.g. after transfer from older collections)
+* deleted items in the browser could cause Mercy problem
+* '''Impose''' and '''Transfer''' shortcuts would not work in the browser without the toolbar dock
+
+=== Contents ===
+* stricter warning to prevent confusion between '''Arrange in folders''' and '''Regroup in folders'''. It was too easy to destroy the tree structure by mistakenly arranging it in numbered folders
+* copy while editing '''[[Contents]]''' copies the selected text, not the entire [[Glossary:Node|node]]
+* [[Contents toolbar#Synchronize|'''Synchronize''' button]] is down by default (as per [http://supermemopedia.com/wiki/Make_Contents:Synchronize_ON_by_default user suggestion])
+
+=== Templates ===
+* setting '''AutoPlay''' would only modify the template leaving the source unaffected. This might reverse the attribute when another template was applied
+* apply template can no longer change element type
+
+=== References ===
+* default reference font would not provide full Unicode support (e.g. distorting Arabic texts)
+
+=== Interface ===
+* at startup, the [[element window]] would push the [[Element data|'''Element data''' window]] to its bottom edge
+* left and right arrows would skip '''All''' in query dialogs
+* generic Windows query dialogs would be used in 12 places instead of SuperMemo query with customizable font
+* occasional poor visibility of progress numbers on the progress bar (due to a poor choice of colors)
+* slow refresh of status bar data could slow down some massive database update operations
+* text margin too narrow when editing texts in Windows 10
+* [[status bar]] would sometimes become transparent in Windows 10
+* editing [[Glossary:Ordinal_number|ordinals]] in the [[Priority queue#Priority queue in SuperMemo|'''Element priority''' dialog box]] was not possible
+* localized versions would not show English-only hints
+* progress box might occasionally hide behind other windows
+
+=== Imports ===
+* change to Google URLs made it hard to import images straight from the results page
+* whenever the contents of Internet Explorer cannot be accessed, SuperMemo will import the URL link instead (e.g. for later retrieval)
+* empty Internet Explorer will display a warning at '''Check selected''' instead of trying to access non-existent memory structures
+* overcoming some image download protections (e.g. when the source dumps an HTML redirect in the cache instead of the actual image)
+* wrong file extensions or zero-sized files would cause errors when searching the Internet Explorer cache
+* thumbs for SVG files would slow down imports with preview request messages (now SVGs are imported as thumbs directly from the browser renderer and can be substituted with a global picture replace)
+* Wikipedia imports would ignore '''Local pages with local images''' setting
+* some Wikipedia icons would be skipped in filtering
+* if thumbs differed by resolution, [http://supermemopedia.com/wiki/Duplicate_image_not_detected full image duplicate detection could fail]
+* no longer reporting ''No image data associated with the URL''. If the URL has been imported/used before importing an image (without the actual image in the [[Glossary:Registry|registry]]), the duplicate is just ignored
+* in [[Web import]], shortcut ''Alt+P'' does '''Page of images''' instead of '''Pictures''' due to frequent and costly confusion between these two options ('''Pictures''' is now available with ''Alt+U'')
+* if there are problems with image downloads, source tabs are not closed in Internet Explorer (e.g. to make it possible to import via copy&paste)
+* in mail imports for large mail folders, import would slow down due to back up of messages related to updating collection statistics
+* in '''Import : Files and folders''' for large folders with many files, import would slow down due to back up of messages related to updating collection statistics
+* instead of a double warning, pasting elements from an empty clipboard results in creating an empty element ready for editing
+
+=== Exports ===
+* wrong element [[Glossary:Priority|priorities]] set at [[Glossary:Element|element]] transfer or [[Glossary:Collection|collection]] merging
+
+=== Video ===
+
+* error message when extracting videos with non-standard [[Glossary:Template|templates]]
+* default YouTube player version is 3 (the hanging avert problem that required version 2 has been fixed by YouTube)(see warnings about the future of incremental video based on YouTube)
+* YouTube videos and file videos would use different extract title formats
+* YouTube videos and file videos would use different priority scheme for [[Glossary:Extract|extracts]] (high extract [[Glossary:Priority|priorities]] would result on extract crowding)
+* https://youtu.be/ links would not paste as YouTube videos
+
+=== SleepChart ===
+
+* repetitions timeline would not display without sleep data
+* timeline conflict reported a wrong conflict date
+* one extra day would be painted at the top of '''[[SleepChart]]''' for certain sizes of fonts
+* DST and midnight shift could conspire to prevent recording a learning block in the timeline
+* sleep block overlap conflict detection would fail if the overlap spanned two days with the new block starting at 00:00 (failing to check the prior day)
+
+=== Plan ===
+
+* '''Plan''' would not get hidden when hiding SuperMemo
+* right click on R column would duplicate it
+* cursor might be invisible while editing in Windows 10 (at certain font sizes)
+
+=== Algorithm ===
+
+* wrong [[Glossary:U-Factor|U-Factor]] might be reported for [[Glossary:Interval|intervals]] beyond 15 years
+* range check errors could interrupt memory simulations for negative [[Glossary:Interval|intervals]] (e.g. with repetitions executed previously in older [[Glossary:Collection|collections]])
+
+=== Statistics ===
+
+* for scant data, '''Use''' graphs would expand into the future instead of the past (misleading)
+* '''Analysis : Use''' would allow of inspecting only data 5 years back
+* retention graph would be hard to read due to outliers (esp. days without repetitions)
+
+=== Files ===
+
+* default subset path is changed only with user's permission
+* directory sizing skipped hidden files, while [[Glossary:Collection|collection]] copying did not. This would cause ''Done>Total'' errors at '''[[File menu#Copy collection|Copy collection]]'''
+* file browser could list some files twice in the file window (due to a double match of the extension on the extension filter)
+* folder browser would not allow of navigating above the default path level
+* image '''Clone''' would change image import path to that of the clone
+* backup path would get reset if it did not exist (e.g. if the backup drive was disconnected)
+* more detailed and more meaningful error reporting of filespace allocation problems
+* more prominent warning at aborting '''[[File menu#Copy collection|Copy collection]]''' (previously, it was too easy to confuse [[Glossary:Collection|collections]] after the act)
+* path and drive checks would not work on unnamed network drives
+* backing up from a collection upgrade removes the collection from the file pick list
+
+=== Database ===
+
+* [[Element data#Reps|repetitions]] and [[Element data#Lapses|lapses]] used to be limited to 255
+* repetition time used to be recorded with 10 min resolution, now it is recorded precisely
+
+=== Repair ===
+
+* hidden files lurking in ''[ELEMENTS]'' folder would not be detected/deleted
+* no more ''Element does not belong to the indicated category'' warning. [[Glossary:Concept_group|Concept group]] does not need to occur in the ancestor path of the [[Glossary:Element|element]]
+* transition from encoded one-byte hour field to precise repetition timing dispensed with a number of ambiguities, bugs, difficulties, and many lines of code in repetition history checkups. There could still be some ambiguities and unresolved issues at the upgrade stage (from SuperMemo 16 to SuperMemo 17), however, the new record should even allow of consecutive reviews separated by seconds (e.g. as part of [[subset review]])
+* tasklist recovery would fail to recover [[Glossary:Task|tasks]] that had no associated [[Glossary:Element|elements]]
+* '''[[Repairing collections|Repair collection]]''' was insufficiently protected from possible bugs in code that might result in incomplete checkup with possible serious integrity issues
+
+=== HTML ===
+
+* ''Ctrl+O'' of Internet Explorer would conflict with ''Ctrl+O'' in SuperMemo. This might have resulted in loading unwanted pages to SuperMemo while typing fast (and accidentally confirming with ''Enter''). SuperMemo 17 does not prevent that, however, pages loaded from external sources are not used to replace the original text thus making it easy to back up from the problem with ''Alt+Left''
+* portions of some texts would temporarily turn black after extracts in Windows 10. Those portions required text scrolling to repaint the blackened area. This phenomenon has largely been eliminated
+* exceptions that occur in Internet Explorer at message loop would disrupt HTML editing. Now they are ignored without handling and offending messages are skipped in the queue
+* exceptions that occur in Internet Explorer in [[HTML component|HTML components]] will now identify the [[Glossary:Element|element]] in which the problem happened
+* IFRAME was able to hang up a page due to circular reloads caused by CSC_NAVIGATEBACK
+* use of default HTML fonts for questions and answers is off by default as it would cause confusion with stylesheet settings
+* silent handling of errors in mouse clicks on HTML elements
+
+=== XML ===
+
+* character 08 used in bitmaps might corrupt XML files
+* spelling components would not export as answers if covered with plain text components in a template
+
+=== Mail ===
+
+* empty [[HTML component]] might prevent sending pictures without Photo E-mail intermediary (e.g. invoking ''Sign in to Windows Live Mail'' request, or equivalent)
+* plain text edits might not auto-save if they have been sent via mail before saving
+* slow import of folders with hundreds or thousands of e-mails
+
+== Warnings ==
+
+* SuperMemo 17 can only upgrade [[Glossary:Collection|collections]] in SuperMemo 16 format; to upgrade older collections, you will need SuperMemo 16 as an intermediary (SuperMemo 16 is free on request for users of SuperMemo 17)
+* SuperMemo 17 has been developed and most extensively tested in Windows 10. Older versions of Windows may show [[Minimum_requirements|minor interface glitches]]
+* some code that protected inter-element HTML links from bugs in Internet Explorer 8 has been removed due to its size and complexity. If you still use Internet Explorer 8 and you make [[Glossary:Link|links]] between [[Glossary:Element|elements]] within HTML, please see if your [[Glossary:Collection|collection]] isn't affected before you upgrade
+* SuperMemo 17 ignores the '''Line''' [[Glossary:Component|component]] from earlier versions; if you need lines, you may need to use pictures or backgrounds or other solutions before you upgrade
+* [[Incremental_video#Incremental_video_with_YouTube:_Outline|YouTube-based incremental video]] may soon stop working due to changes in YouTube API. This problem will affect all SuperMemos! See [http://supermemopedia.com/wiki/What_are_the_YouTube_API_changes_that_threaten_incremental_video_in_all_versions_of_SuperMemo%3F details]
+* 800x600 screen resolution may no longer suffice. All SuperMemo dialogs have been scaled up to improve handling of small fonts in Windows 10. This goes counter to some suggestions of users who use SuperMemo on tablets or lower resolution screens. If you use a tablet, be sure you test the new version before you make a committing step. See: [http://supermemopedia.com/wiki/High_DPi Clarification]
+* SuperMemo 17 supports only on-line help files: wiki and HTML (compiled CHM and local HTML documentation are no longer supported)
+* [[#Delay parameter has been removed|'''Delay''' parameter has been removed]]. For items you can use [[Glossary:Retrievability|retrievability (R)]] instead
+* '''Random learning''' is no longer supported. Use [[subset learning]] on randomized browser instead
+* SuperMemo will no longer recognize old CD-ROMs such as Cross Country, Advanced English 1994, Video English, etc. You can still use those as [[Glossary:Secondary_storage|secondary storage]]
+* the whole menu of options for expanding [[Glossary:Tasklist|tasklist]] has been removed (articles, e-mails, HTML files, etc.). You can still add to tasklist by pasting to a [[Glossary:Task|task]] or converting an [[Glossary:Element|element]] to a task 
+* [[Glossary:Tasklist|tasklists]] no longer use tasklist archives. Keeping [[Glossary:Task|tasks]] [[Glossary:Dismissed_element|dismissed]] in place is a better archiving practice that preserves the history of work with tasks
+* [[Glossary:Category|categories]] have been replaced with [[Glossary:Concept|concepts]]. There is no equivalent of category registration for [[Glossary:Element|elements]]. Elements can be added to a [[Glossary:Concept_group|concept group]] ([[Glossary:Branch|branch]] associated with a [[Glossary:Concept|concept]]), but they do not register with the concept. This speeds up SuperMemo and reduces the size of [[Glossary:Collection|collections]]. [[Glossary:Concept|Concepts]] do not register newly added [[Glossary:Element|elements]]. You need to set links on elements that truly matter for the concept, the full list of added [[Glossary:Element|elements]] is still available from the concept [[Glossary:Root_node|root]] as long as you keep all elements within the group (see explanations [[#Element_registration_with_concept_groups_is_not_obligatory|below]])
+* '''read-only''' and '''learn-only''' modes have been scrapped. All [[Glossary:Collection|collections]] are '''full access'''
+* '''Hide navigation''' option has been scrapped
+* '''Hide level''' option has been scrapped
+* '''Replace template''' option has been scrapped (use '''Apply''' and '''Impose''')
+* some collection files will increase in side due to new database fields. Element information file is now 2.5x larger, which amounts to some 0.1GB for a million element [[Glossary:Collection|collection]]. [[Repetition history]] accommodates new fields used by [[SuperMemo Algorithm|Algorithm SM-17]] and may also grow to 0.1GB for a million repetitions
+* your default append [[Glossary:Hook_node|hook]] will point to the first [[Glossary:Concept|concept]] on the list rather than to your default [[Glossary:Category|category]]. Before you start adding new material, be sure to choose the relevant concept. If you fail to do so, you may need to locate and move the added material later on
+* click on Alarm display makes it possible to set the new alarm. Click on '''Shift''' adds to the current time. Previously only '''Shift''' was used to set the time
+* no debugging mode (all errors are logged in a file)
+* '''Actions''' toolbar has been removed. Some of its functionality has been removed, some of it can be found elsewhere
+* global block on [[scripts]] is no longer available
+* global block on players is no longer available
+* task auto-evaluate is gone
+* component ClipBox has been scrapped
+* GPS functions have been removed (e.g. pointing to a picture on Google Maps, etc.)
+* OEM text format is no longer supported (you should be able to dispense with OEM texts at upgrade to Unicode versions of SuperMemo: 15, 16 or 17)
+
+== Examples ==
+
+=== Concept map ===
+
+[[Image:Concept map.jpg|800px|center|SuperMemo: An exemplary concept map displaying outgoing links for the current element]]
+
+=== Memory status ===
+
+<div class="center">
+[[Image:Memory status.jpg|800px|SuperMemo: Changes in two variables of long-term memory]]
+{{:Image:Memory status.jpg}}
+</div>
+
+=== Fit all pictures example ===
+
+'''Fit all pictures''' for images in the '''[[SuperMemo Commander|Commander]]''' makes it possible to save element space and organize multiple images.
+
+For example:
+
+<ol>
+<li>'''Image download:''' After a download of seven images from [http://en.wikipedia.org Wikipedia], the text is displaced by a large number of big image components:
+<blockquote>
+[[File:Fitall1.jpg|800px]]
+</blockquote>
+</li>
+
+<li>'''Image tiling:''' Those image [[Glossary:Component|components]] can be tiled into a single column to reduce the image area width:
+<blockquote>
+[[File:Fitall2.jpg|800px]]
+</blockquote>
+</li>
+
+<li>'''Image fitting:''' In the text step, '''Fit all pictures''' can be used. '''Fit all''' is the same as '''Fit picture''', but it is executed on all images. The images are pushed to the right and all space left over is reused maximally to provide more room for the text:
+<blockquote>
+[[File:Fitall3.jpg|800px]]
+</blockquote>
+</ol>
+
+=== Priority dialog ===
+
+<div class="center">
+[[File:Element_priority.jpg|800px|SuperMemo: Priority dialog]]
+{{:File:Element_priority.jpg}}
+</div>
+
+
+=== SuperMemo backgrounds in Windows 10 ===
+
+<div class="center">
+[[File:Collection background.jpg|800px|SuperMemo: In Windows 10, SuperMemo background can be used as a nice visual collection chooser between active collections opened in separate instances of SuperMemo running simultaneously]]
+{{:File:Collection background.jpg}}
+</div>
+
+=== Contents window with descendant counts ===
+
+<div class="center">
+[[Image:Contents_window.jpg|558px|center|SuperMemo: The contents window displaying the knowledge tree (i.e. the hierarchical structure of elements) of a collection]]
+{{:Image:Contents_window.jpg}}
+</div>
+
+=== Recall matrix visualization ===
+
+<div class="center">
+[[File:Recall.jpg|800px|SuperMemo: The Recall[] matrix graph showing actual recall differs from predicted retrievability]]
+{{:File:Recall.jpg}}
+</div>
+
+=== First forgetting curve spanning a decade ===
+
+<div class="center">
+[[Image:First forgetting curve.jpg|800px|SuperMemo: The first forgetting curve (first repetition for items with no lapses)]]
+{{:Image:First forgetting curve.jpg}}
+</div>
+
+=== Color coded repetition histories ===
+
+<div class="center">
+[[Image:Repetition history.jpg|800px|SuperMemo: Repetition history dialog box displaying the history of repetitions for the current element]]
+{{:Image:Repetition history.jpg}}
+</div>
+
+== Notes ==
+
+=== Registries provide access to all member users ===
+
+In older SuperMemos, registry member users lists are limited to 500 elements/objects for performance reasons.
+
+Access to full user lists is extremely useful but longer lists would significantly slow down SuperMemo. Lists might be kept in contiguous file in memory to resolve this problem, however, one contiguous file would slow down SuperMemo even further esp. if it had to be paged. Keeping lists for individual members would solve the speed issue, but this would require as many files as there are members in registries, which would go into millions for larger collections.
+
+SuperMemo 17 adopts an golden mean solution: short lists are kept in the LST file as before, longer lists are kept in contiguous files loaded to memory on demand. The cut off point for memory files was chosen on the basis of performance statistics (to minimize the number of files without noticeably degrading performance). The optimum was set for collections with a million elements. Small collections will behave as before. Large collections will store long lists in dedicated usership files, which should rarely number more than a dozen or for most used registries (esp. texts).
+
+For large collections, the performance might degrade slightly, but this should be well compensated by the increase in the speed of computers in the two years that passed since the release of SuperMemo 16.
+
+=== Element registration with concept groups is not obligatory ===
+
+Elements do not register with the default concept group when being added to a collection.
+
+The reasons:
+* registration was costly performance-wise: it would slow down SuperMemo at all branch operations 
+* registration was costly in terms of hard disk space: e.g. 100,000 element collection would waste 0.5 MB in rarely used membership files 
+* when asked about it, users of SuperMemo 16 rarely knew that elements register with categories
+* elements added to a concept can be viewed from the branch formed by the root (elements moved elsewhere can always be added to concept usership list) 
+* requiring an active act on adding to concept usership increases the quality of registry member user lists by eliminating less relevant links
+
+=== Better memory management ===
+
+SuperMemo 17 provides superior memory management based on Delphi's native solutions rather than the old memory manager written in assembly language back in 1995. Large block memory operations should now be faster making SuperMemo faster in many contexts
+
+=== Repetition history import ===
+
+'''[[File]] : [[File#Import|Import]] : Repetition history''' provides several options:
+* Compare old and new histories first
+* List new records in imported history
+* List new records in [[Glossary:Collection|collection]]'s history
+* Add new records to current history
+* Add current records to imported history
+* Replace current [[repetition history]]
+
+=== Delay parameter has been removed ===
+
+'''Delay''' parameter has been inaccurate due to changes to [[Glossary:U-Factor|U-Factors]] with [[Glossary:Auto-postpone|auto-postpone]]. [[Glossary:Retrievability|Retrievability]] is a better marker of delays. You can sort the browser by [[Glossary:Retrievability|retrievability]] to see which [[Glossary:Item|items]] have been most delayed. Low retrievability means high delay.
+
+__NOTOC__

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Using subsets — SuperMemo Help mirror</title>
+<style>body { font-family: Georgia, 'Times New Roman', serif; max-width: 1040px; margin: 0 auto; padding: 1.5rem; color: #202122; line-height: 1.58; }
+h1, h2, h3, h4, h5, h6 { font-family: system-ui, sans-serif; line-height: 1.25; }
+a { color: #0645ad; } a:visited { color: #0b0080; }
+.mirror-meta { color: #54595d; font: 0.85rem/1.45 system-ui, sans-serif; border-bottom: 1px solid #eaecf0; padding-bottom: .8rem; margin-bottom: 1.2rem; }
+.mirror-meta code { color: #202122; }
+table { border-collapse: collapse; margin: 1rem 0; max-width: 100%; }
+td, th { border: 1px solid #a2a9b1; padding: .4rem .6rem; vertical-align: top; }
+th { background: #eaecf0; }
+img, video { max-width: 100%; height: auto; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1rem; overflow-x: auto; }
+code { background: #f8f9fa; padding: .1rem .25rem; }
+.toc, .navbox { background: #f8f9fa; border: 1px solid #a2a9b1; padding: .8rem; }
+.redirect { background: #f8f9fa; border-left: .3rem solid #36c; padding: .8rem 1rem; }</style>
+</head>
+<body>
+<div class="mirror-meta">
+<a href="../../_index.html">Mirror index</a> ·
+<a href="../../source/ns-0-main/p82--Using_subsets.wiki">View raw source</a> ·
+<a href="https://help.supermemo.org/wiki/Using_subsets">Official page</a> ·
+revision <a href="https://help.supermemo.org/index.php?title=Using%20subsets&amp;oldid=11781"><code>11781</code></a>
+</div>
+<h1>Using subsets</h1>
+<main id="mw-content-text"><div class="mw-parser-output"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" aria-label="Hide the table of contents"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Choosing_a_subset"><span class="tocnumber">1</span> <span class="toctext">Choosing a subset</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Creating_subset_files"><span class="tocnumber">2</span> <span class="toctext">Creating subset files</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Using_subsets"><span class="tocnumber">3</span> <span class="toctext">Using subsets</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Video"><span class="tocnumber">4</span> <span class="toctext">Video</span></a></li>
+</ul>
+</div>
+
+<p>In SuperMemo, subsets are sets of <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">elements</a>. Subsets are usually viewed in the <a href="p79--Browser.html" title="Browser">browser</a>. Subsets are processed with <a href="p83--Subset_operations.html" title="Subset operations">subset operations</a>. Subsets can be stored in subset files for later use. The default extension of subset files is <i>sub</i>. Each <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a> in a subset file is stored as a four-byte element number. This way, subset file size in bytes is four times the number of <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">elements</a> in the subset. The same subset files can be used by different <a href="../ns-100-glossary/p265--Collection.html" title="Glossary:Collection">collections</a>, but such use is meaningful only if the collections have the same numbering of <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">elements</a> (e.g. if these are copies of the same collection).
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Choosing_a_subset">Choosing a subset</h2></div>
+<p>To select a <a href="../ns-100-glossary/p344--Subset.html" title="Glossary:Subset">subset</a> and open it in the <a href="p79--Browser.html" title="Browser">browser</a>, you may use many options that are too numerous to list. Here are only a few frequently used examples:
+</p>
+<ul><li><b><a href="p12--Search_menu.html" title="Search menu">Search</a>&nbsp;: <a href="p385--Find_elements.html" title="Find elements">Find elements</a></b> (<i>Ctrl+F</i>) - to collect <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">elements</a> containing the same text (e.g. "<i>Eisenhower</i>")</li>
+<li><b><a href="p14--View_menu.html" title="View menu">View</a>&nbsp;: <a href="p14--View_menu.html#Outstanding" title="View menu">Outstanding</a></b> - to inspect all <a href="../ns-100-glossary/p317--Outstanding_element.html" title="Glossary:Outstanding element">outstanding elements</a></li>
+<li><b><a href="p85--Contents_menu.html#View" title="Contents menu">View</a>&nbsp;: <a href="p85--Contents_menu.html#Branch" title="Contents menu">Branch</a></b> in the <a href="p86--Contents.html" title="Contents"><b>Contents</b> window</a> - to inspect <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">elements</a> belonging to a single <a href="../ns-100-glossary/p258--Branch.html" title="Glossary:Branch">branch</a></li>
+<li><b><a href="p14--View_menu.html" title="View menu">View</a>&nbsp;: <a href="p129--Element_filter.html" title="Element filter">Filter</a></b> - to inspect all <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">elements</a> that fall into a selected range of <a href="../ns-100-glossary/p450--Priority.html" title="Glossary:Priority">priority</a>, <a href="../ns-100-glossary/p297--Interval.html" title="Glossary:Interval">interval</a>, repetition date, <a href="../ns-100-glossary/p272--Difficulty.html" title="Glossary:Difficulty">difficulty</a>, etc.</li>
+<li><b><a href="p14--View_menu.html" title="View menu">View</a>&nbsp;: <a href="p14--View_menu.html#Subset" title="View menu">Subset</a></b> - to open a given subset file in the <a href="p79--Browser.html" title="Browser">browser</a></li>
+<li><a href="p78--Browser_menu.html#Child" title="Browser menu">Child</a> options on the <a href="p78--Browser_menu.html" title="Browser menu">browser menu</a> - to create a sub-browser with all <a href="../ns-100-glossary/p309--Memorized_element.html" title="Glossary:Memorized element">memorized</a>, <a href="../ns-100-glossary/p320--Pending_element.html" title="Glossary:Pending element">pending</a>, <a href="../ns-100-glossary/p274--Dismissed_element.html" title="Glossary:Dismissed element">dismissed</a> or selected <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">elements</a> from the current <a href="p79--Browser.html" title="Browser">browser</a></li>
+<li>Subset operations in <a href="../ns-100-glossary/p327--Registry.html" title="Glossary:Registry">registries</a> with <b><a href="p93--Registry_menu.html#View" title="Registry menu">View</a>&nbsp;: <a href="p93--Registry_menu.html#Browse_current" title="Registry menu">Browse current</a></b>, <b><a href="p93--Registry_menu.html#View" title="Registry menu">View</a>&nbsp;: <a href="p93--Registry_menu.html#Browse_selected" title="Registry menu">Browse selected</a></b>, and <b><a href="p93--Registry_menu.html#View" title="Registry menu">View</a>&nbsp;: <a href="p93--Registry_menu.html#Browse_all" title="Registry menu">Browse all</a></b> - to create <a href="p79--Browser.html" title="Browser">browsers</a> with <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">elements</a> using a given subset of <a href="../ns-100-glossary/p329--Registry_member.html" title="Glossary:Registry member">registry members</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Creating_subset_files">Creating subset files</h2></div>
+<p>To create a subset file use one of the following options:
+</p>
+<ul><li><b><a href="p78--Browser_menu.html#Subset" title="Browser menu">Subset</a>&nbsp;: Save all</b> on the <a href="p78--Browser_menu.html" title="Browser menu">browser menu</a> saves the contents of the <a href="p79--Browser.html" title="Browser">browser</a> in a subset file (e.g. this option used on the browser opened with <b><a href="p14--View_menu.html" title="View menu">View</a>&nbsp;: <a href="p14--View_menu.html#Memorized" title="View menu">Memorized</a></b> will create a <a href="../ns-100-glossary/p344--Subset.html" title="Glossary:Subset">subset</a> with all <a href="../ns-100-glossary/p309--Memorized_element.html" title="Glossary:Memorized element">memorized elements</a>)</li>
+<li><b><a href="p78--Browser_menu.html#Select" title="Browser menu">Select</a>&nbsp;: Save selection</b> on the <a href="p78--Browser_menu.html" title="Browser menu">browser menu</a> saves all selected <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">elements</a> in the <a href="p79--Browser.html" title="Browser">browser</a>. Selections are made by clicking the leftmost browser column or with subset operations such as <b><a href="p78--Browser_menu.html#Select" title="Browser menu">Select</a>&nbsp;: Browser range</b>, etc.</li>
+<li><b><a href="p85--Contents_menu.html#Export" title="Contents menu">Export</a>&nbsp;: Subset</b> on the <a href="p85--Contents_menu.html" title="Contents menu">contents menu</a> saves a <a href="../ns-100-glossary/p258--Branch.html" title="Glossary:Branch">contents branch</a> in a subset file</li></ul>
+<p>Some subset files are created automatically for you. You can view them with <b><a href="p14--View_menu.html" title="View menu">View</a>&nbsp;: <a href="p14--View_menu.html#Subset" title="View menu">Subset</a></b>. For example: <i>last_browser</i> (<a href="../ns-100-glossary/p344--Subset.html" title="Glossary:Subset">subset</a> with all <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">elements</a> displayed in the last opened <a href="p79--Browser.html" title="Browser">browser</a>), <i>searched</i> (subset with all elements found with the last <i>Ctrl+F</i> search), <i>last_child</i> (subset with elements extracted with the last <b><a href="p78--Browser_menu.html#Child" title="Browser menu">Child</a></b> operation in the <a href="p79--Browser.html" title="Browser">browser</a>), <i>tasklist</i> (subset will all <a href="../ns-100-glossary/p346--Task.html" title="Glossary:Task">tasks</a> extracted with <b>Tools&nbsp;: Open in browser</b> on the <a href="p148--Tasklist_manager.html#Tasklist_manager_menu" title="Tasklist manager">tasklist manager menu</a>), etc.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Using_subsets">Using subsets</h2></div>
+<p><a href="../ns-100-glossary/p344--Subset.html" title="Glossary:Subset">Subset</a> can be processed using a nearly infinite combination of options and commands in SuperMemo. Here are only a few examples:
+</p>
+<ul><li><b><a href="p83--Subset_operations.html" title="Subset operations">Process browser&gt;</a>&nbsp;: <a href="p83--Subset_operations.html#Learning" title="Subset operations">Learning</a>&nbsp;: Learn</b> (<i>Ctrl+L</i>) on the <a href="p78--Browser_menu.html" title="Browser menu">browser processing menu</a> makes it possible to make repetitions on a <a href="../ns-100-glossary/p280--Element_subset.html" title="Glossary:Element subset">subset of elements</a></li>
+<li><b><a href="p83--Subset_operations.html" title="Subset operations">Process browser&gt;</a>&nbsp;: <a href="p83--Subset_operations.html#Learning" title="Subset operations">Learning</a>&nbsp;: Review all</b> on the <a href="p78--Browser_menu.html" title="Browser menu">browser processing menu</a> makes it possible to execute repetitions on the whole <a href="../ns-100-glossary/p344--Subset.html" title="Glossary:Subset">subset</a>. <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">Elements</a> that are not <a href="../ns-100-glossary/p317--Outstanding_element.html" title="Glossary:Outstanding element">outstanding</a> will be subject to <a href="../ns-100-glossary/p482--Mid-interval_repetition.html" title="Glossary:Mid-interval repetition">mid-interval repetition</a>. Only <a href="../ns-100-glossary/p274--Dismissed_element.html" title="Glossary:Dismissed element">dismissed elements</a> will not be processed</li>
+<li><b><a href="p83--Subset_operations.html" title="Subset operations">Process browser&gt;</a>&nbsp;: <a href="p6--Postpone.html" title="Postpone">Postpone</a></b> on the <a href="p78--Browser_menu.html" title="Browser menu">browser processing menu</a> postpones <a href="../ns-100-glossary/p318--Outstanding_material.html" title="Glossary:Outstanding material">outstanding repetitions</a> in a <a href="../ns-100-glossary/p280--Element_subset.html" title="Glossary:Element subset">subset of elements</a></li>
+<li><b><a href="p78--Browser_menu.html#Export" title="Browser menu">Export</a>&nbsp;: Transfer elements</b> on the <a href="p78--Browser_menu.html" title="Browser menu">browser menu</a> makes it possible to transfer the <a href="../ns-100-glossary/p280--Element_subset.html" title="Glossary:Element subset">subset of element</a> to another <a href="../ns-100-glossary/p265--Collection.html" title="Glossary:Collection">collection</a></li>
+<li><b><a href="p78--Browser_menu.html#Export" title="Browser menu">Export</a>&nbsp;: XML</b> on the <a href="p78--Browser_menu.html" title="Browser menu">browser menu</a> makes it possible to export a <a href="../ns-100-glossary/p280--Element_subset.html" title="Glossary:Element subset">subset of elements</a> in the XML format (e.g. for using it with other SuperMemos such as <a class="external text" href="http://www.super-memo.com/supforpocpc.html">SuperMemo for Pocket PC</a>, etc.)</li>
+<li><b><a href="p78--Browser_menu.html#Export" title="Browser menu">Export</a>&nbsp;: Q&amp;A text file</b> on the <a href="p78--Browser_menu.html" title="Browser menu">browser menu</a> makes it possible to export a <a href="../ns-100-glossary/p280--Element_subset.html" title="Glossary:Element subset">subset of elements</a> as a text file of questions and answers</li>
+<li><b><a href="p78--Browser_menu.html#Sort" title="Browser menu">Sort</a></b> options on the <a href="p78--Browser_menu.html" title="Browser menu">browser menu</a> help you review a <a href="../ns-100-glossary/p280--Element_subset.html" title="Glossary:Element subset">subset of elements</a> sorted by <a href="../ns-100-glossary/p297--Interval.html" title="Glossary:Interval">intervals</a>, <a href="../ns-100-glossary/p272--Difficulty.html" title="Glossary:Difficulty">difficulty</a>, <a href="../ns-100-glossary/p301--Lapse.html" title="Glossary:Lapse">memory lapses</a>, etc.</li>
+<li><b><a href="p93--Registry_menu.html#Subset" title="Registry menu">Subset</a>&nbsp;: <a href="p93--Registry_menu.html#Match_to_subset" title="Registry menu">Match to subset</a></b> on the <a href="p93--Registry_menu.html" title="Registry menu">registry menu</a> displays all <a href="../ns-100-glossary/p329--Registry_member.html" title="Glossary:Registry member">registry members</a> that are in use by the <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">elements</a> of a given <a href="../ns-100-glossary/p344--Subset.html" title="Glossary:Subset">subset</a></li></ul>
+<div class="mw-heading mw-heading2"><h2 id="Video">Video</h2></div>
+<ul><li><a class="external text" href="https://www.youtube.com/watch?v=ffy4vskpYZk">Introduction to subset files</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260710174227
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.033 seconds
+Real time usage: 0.034 seconds
+Preprocessor visited node count: 122/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key guru_Help20:pcache:82:|#|:idhash:canonical and timestamp 20260710174227 and revision id 11781. Rendering was triggered because: page-view
+ -->
+</div></main>
+</body>
+</html>

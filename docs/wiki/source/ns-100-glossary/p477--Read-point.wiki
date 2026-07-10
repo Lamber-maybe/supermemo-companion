@@ -1,0 +1,2 @@
+;<span id="Read-point">read-point</span>
+:recurring selection made by [[Glossary:SuperMemo|SuperMemo]] in an article. Each time you come back to the article, the selection will be restored to show you the fragment that should be processed next. To set your own '''read-point''', use ''Ctrl+F7''. To clear it, use ''Ctrl+Shift+F7''

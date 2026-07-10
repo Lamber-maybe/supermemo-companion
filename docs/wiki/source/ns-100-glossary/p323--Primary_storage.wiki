@@ -1,0 +1,2 @@
+;<span id="Primary_storage">primary storage</span>
+:place on the user's hard disk where the current [[Glossary:Collection|collection]] is located. Compare: [[Glossary:Secondary_storage|secondary storage]]

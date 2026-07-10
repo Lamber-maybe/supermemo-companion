@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PDF — SuperMemo Help mirror</title>
+<style>body { font-family: Georgia, 'Times New Roman', serif; max-width: 1040px; margin: 0 auto; padding: 1.5rem; color: #202122; line-height: 1.58; }
+h1, h2, h3, h4, h5, h6 { font-family: system-ui, sans-serif; line-height: 1.25; }
+a { color: #0645ad; } a:visited { color: #0b0080; }
+.mirror-meta { color: #54595d; font: 0.85rem/1.45 system-ui, sans-serif; border-bottom: 1px solid #eaecf0; padding-bottom: .8rem; margin-bottom: 1.2rem; }
+.mirror-meta code { color: #202122; }
+table { border-collapse: collapse; margin: 1rem 0; max-width: 100%; }
+td, th { border: 1px solid #a2a9b1; padding: .4rem .6rem; vertical-align: top; }
+th { background: #eaecf0; }
+img, video { max-width: 100%; height: auto; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1rem; overflow-x: auto; }
+code { background: #f8f9fa; padding: .1rem .25rem; }
+.toc, .navbox { background: #f8f9fa; border: 1px solid #a2a9b1; padding: .8rem; }
+.redirect { background: #f8f9fa; border-left: .3rem solid #36c; padding: .8rem 1rem; }</style>
+</head>
+<body>
+<div class="mirror-meta">
+<a href="../../_index.html">Mirror index</a> ·
+<a href="../../source/ns-0-main/p735--PDF.wiki">View raw source</a> ·
+<a href="https://help.supermemo.org/wiki/PDF">Official page</a> ·
+revision <a href="https://help.supermemo.org/index.php?title=PDF&amp;oldid=12329"><code>12329</code></a>
+</div>
+<h1>PDF</h1>
+<main id="mw-content-text"><div class="mw-parser-output"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" aria-label="Hide the table of contents"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Importing_PDF"><span class="tocnumber">1</span> <span class="toctext">Importing PDF</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#PDF_component_modes"><span class="tocnumber">2</span> <span class="toctext">PDF component modes</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#PDF_editor"><span class="tocnumber">3</span> <span class="toctext">PDF editor</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Picture"><span class="tocnumber">4</span> <span class="toctext">Picture</span></a></li>
+</ul>
+</div>
+
+<div class="mw-heading mw-heading2"><h2 id="Importing_PDF">Importing PDF</h2></div>
+<p>You can import PDF files into SuperMemo in three ways:
+</p>
+<ul><li><b>File&nbsp;: Import&nbsp;: Files and folders</b> - Use this option for bulk import (e.g. large PDF archives).</li></ul>
+<ul><li><b>Web import</b> - Recommended when using predefined templates (make sure they include <i>Article WV</i>). Use <b>Add predefined templates</b> if it is missing, or create your own <a href="p727--WebView_component.html" class="mw-redirect" title="WebView">WebView</a> template.</li></ul>
+<ul><li><b>File&nbsp;: Import file</b> - Available on the <a href="p76--Component_menu.html" title="Component menu">component menu</a> in <a href="p727--WebView_component.html" title="WebView component">WebView component</a>. Use this for single files stored on your disk</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="PDF_component_modes">PDF component modes</h2></div>
+<p>All PDF processing in SuperMemo 20 is handled within the <a href="p727--WebView_component.html" title="WebView component">WebView component</a>. Depending on your workflow, you can use one of three modes:
+</p>
+<ul><li><b>Viewer mode</b></li></ul>
+<p>Default interface in <i>display mode</i>. Uses the Chromium engine for standard reading, navigation, and bookmarks.
+</p>
+<ul><li><b>PDF editor</b></li></ul>
+<p>Available in <i>editing mode</i> (<code>Ctrl+E</code>). Enables <a href="p470--Incremental_learning.html" title="Incremental learning">incremental learning</a> features such as highlighting, <a href="../ns-100-glossary/p477--Read-point.html" title="Glossary:Read-point">read-points</a>, and <a href="../ns-100-glossary/p485--Extract.html" title="Glossary:Extract">extracts</a>.
+</p>
+<ul><li><b>PDF → HTML converter</b></li></ul>
+<p>Converts the document to plain HTML. Useful for the classic <a href="../ns-100-glossary/p295--Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a> workflow.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="PDF_editor">PDF editor</h2></div>
+<p>In the PDF editor, your reading progress (scroll position) is tracked and saved automatically. You can also manually mark your position using <b>Bookmark</b> in the top toolbar.
+</p><p>Selecting text opens a floating toolbar with key learning tools:
+</p>
+<ul><li><b>Highlight</b></li></ul>
+<p>Marks the selected text in yellow. Highlights and progress are stored with your <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">elements</a>.
+</p>
+<ul><li><b>Extract → SM</b></li></ul>
+<p>Sends the selected text directly to your knowledge base, creating a child <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a> under the current PDF topic.
+</p>
+<ul><li><b>Picture extract</b></li></ul>
+<p>Creates an image extract from clipboard content.
+</p>
+<ul><li><b>Snip and extract</b></li></ul>
+<p>Creates an image extract using the Windows Snipping Tool.
+</p><p>Each extracted element automatically includes a back-reference to the source PDF and the exact page number.
+</p><p>The viewer sidebar lists all extracts. Clicking an entry jumps directly to its original location in the document.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Picture">Picture</h2></div>
+<figure class="mw-halign-center" typeof="mw:File"><a href="../../source/ns-6-file/p751--Incremental_reading_in_PDF_files_in_SuperMemo_20.png.wiki" class="mw-file-description"><img src="https://help.supermemo.org/images/thumb/0/01/Incremental_reading_in_PDF_files_in_SuperMemo_20.png/800px-Incremental_reading_in_PDF_files_in_SuperMemo_20.png" decoding="async" loading="lazy" width="800" height="403" class="mw-file-element" srcset="https://help.supermemo.org/images/thumb/0/01/Incremental_reading_in_PDF_files_in_SuperMemo_20.png/1200px-Incremental_reading_in_PDF_files_in_SuperMemo_20.png 1.5x, https://help.supermemo.org/images/thumb/0/01/Incremental_reading_in_PDF_files_in_SuperMemo_20.png/1600px-Incremental_reading_in_PDF_files_in_SuperMemo_20.png 2x"></a><figcaption></figcaption></figure>
+<blockquote>
+<p><i><b>Figure:</b> SuperMemo 20 allows importing PDF files for <a href="p4--Incremental_reading.html" title="Incremental reading">incremental reading</a>. For quick preview, the standard Chromium viewer is used (top left), while editing is handled by a dedicated open-source incremental reading PDF editor (top right). In this example, the <a href="p685--Extract.html" title="Extract">extract</a> option is used to generate a new element with the selected short passage (bottom).</i>
+</p>
+</blockquote>
+<!-- 
+NewPP limit report
+Cached time: 20260710010635
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.029 seconds
+Real time usage: 0.033 seconds
+Preprocessor visited node count: 27/1000000
+Post‐expand include size: 786/2097152 bytes
+Template argument size: 348/2097152 bytes
+Highest expansion depth: 4/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.446      1 File:Incremental_reading_in_PDF_files_in_SuperMemo_20.png
+100.00%    4.446      1 -total
+ 39.95%    1.776      1 Template:Fig
+-->
+
+<!-- Saved in parser cache with key guru_Help20:pcache:735:|#|:idhash:canonical and timestamp 20260710010635 and revision id 12329. Rendering was triggered because: page-view
+ -->
+</div></main>
+</body>
+</html>

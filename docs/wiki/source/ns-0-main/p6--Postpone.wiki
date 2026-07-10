@@ -1,0 +1,160 @@
+__TOC__
+
+'''[[Learn menu | Learn]] : [[Learn menu#Postpone|Postpone]]''' can be used to move [[Glossary:Outstanding_element|outstanding material]] review to a later time whenever you cannot cope with your daily load of repetitions. This option is particularly useful in heavily overloaded [[incremental reading]]. To fully understand the importance of '''Postpone''', you need to master the concept of [[incremental reading]] first.
+
+== Why is Postpone important? ==
+
+Before the advent of [[incremental reading]] in SuperMemo, you had two extreme alternatives:
+
+# '''traditional learning''' with high volume of the learning material and dismal [[Glossary:Retention|retention]]. This learning can be called High In - High Out (HIHO) as high volumes of knowledge processed on the input are accompanied by equally high volumes of knowledge on the "output" (i.e. lost out to forgetting)
+# '''SuperMemo''' with a small volume of strategic material remembered for years with a [[Glossary:Forgetting_index| predetermined level of knowledge retention]] (LILO - Low knowledge input with low forgetting outflow)
+
+Neither alternative provides a complete solution to the problem of forgetting. The balance between the two alternatives was left to the student. The optimum strategy was to use traditional learning to sift the strategic material, and then to memorize mission-critical material with SuperMemo.
+
+The confinement of SuperMemo to strategic high-retention material was a powerful inhibitory force against SuperMemo's universal adoption:
+
+# The process of selecting the strategic knowledge was not automated
+# The student had to type in most of the learned knowledge to the program
+# The student had to master [http://super-memory.com/articles/20rules.htm knowledge structuring skills] to make the memorized knowledge truly applicable
+# [[Glossary:Review|Passive review]] was discounted as ineffective and was not used as a knowledge prioritization tool
+# [[Glossary:Retention|Retention]] was programmable solely via the [[Glossary:Forgetting_index|forgetting index]] (within 3-20% forgetting rate)
+# Accumulation of [[Glossary:Outstanding_element|outstanding material]] after a short break was listed as the number one cause of users dropping SuperMemo for good
+
+[[Incremental reading]] bridges the worlds of traditional learning and that of SuperMemo by providing a fluent transition between all priority levels starting from quick review, to repeated [[Glossary:Review|passive review]], to [[Glossary:Review|active review]], and to active recall at all levels of the [[Glossary:Forgetting_index|forgetting index]] down to 3% (i.e. nearly 99% recall rate). [[Incremental reading]] also includes an anti-[[Glossary:Overload|overload]] option: '''Postpone''' that blurs the concept of the must-do [[Glossary:Outstanding_element|outstanding material]] that had levied a heavy toll on the ranks of SuperMemo users.
+
+Before SuperMemo 2002, [[incremental reading]] did not automate the process of "prioritizing by overflow". In other words, high volumes of learning would force the student to manually reschedule learning in [[Glossary:Branch|branches]] or [[Glossary:Element_subset|subsets]] of lower priority. Manual rescheduling of the material was necessary to protect core knowledge from a dramatic drop in [[Glossary:Retention|retention]]. Substantially reduced [[Glossary:Retention|retention]] slows down the learning process not only via the [http://super-memory.com/articles/theory.htm ''forgetting index vs. acquisition rate''] relationship, but also through unraveling of the [[incremental reading]] process where the new knowledge is built on a shaky foundation of what has been learned earlier. In addition, the flow of thought in incrementally read articles becomes disrupted if the core knowledge [[Glossary:Retention|retention]] is not protected.
+
+SuperMemo 2002 introduced '''Postpone''' to make it possible to reschedule lower priority material with a keystroke. The student could now painstakingly work out [[Glossary:Priority|priorities]] for individual [[Glossary:Element_subset|subsets]] or [[Glossary:Branch|branches]] of knowledge and then apply these easily on a daily basis.
+
+SuperMemo 2006 dramatically simplified the process of handling material overflow by introducing the [[Glossary:Auto-postpone|auto-postpone]] option ('''[[Learn menu |Learn]] : [[Learn menu#Postpone|Postpone]] : Auto-postpone'''). With [[Glossary:Auto-postpone|auto-postpone]], you only need to define the [[Glossary:Priority|priority]] of your [[Glossary:Element|elements]]. You can safely leave all [[#Parameters tab|postpone parameters]] in their default settings as these are now primarily used only to define the degree of postpone, which only defines the size of the pool of the low priority material used in interspersing the repetition queue without affecting the high priority material. In simple terms, you do not need to understand '''Postpone''' to use it effectively in [[incremental reading]]. Just leave '''[[Learn menu | Learn]] : [[Learn menu#Postpone|Postpone]] : Auto-postpone''' checked. You can re-visit the subject if [[Glossary:Auto-postpone|auto-postpone]] does not sufficiently reduce the workload in your [[Glossary:Collection|collection]].
+
+<div class="bs-callout bs-callout-warning">
+'''Warning!''' Each time you use '''Postpone''' you depart from your chosen level of [[Glossary:Retention|knowledge retention]]! Before you turn '''[[Glossary:Auto-postpone|auto-postpone]]''' make sure that your material is well prioritized. Only then you will be sure that only low-priority elements suffer more forgetting.
+</div>
+
+To see the effects of rescheduling on the [[Glossary:Forgetting_index|forgetting index]] see: [http://super-memory.com/articles/theory.htm#FI_Recovery Theoretical aspects of learning] (forgetting index recovery figure).
+
+== Postpone dialog  ==
+
+The '''Postpone''' dialog box presented below includes three tabs: '''[[#Scope_tab|Scope]]''', [[#Parameters_tab|'''Parameters''']], and [[#Adjust_tab|'''Adjust''']]. 
+
+=== Scope tab  ===
+
+The '''Scope''' tab settings are mostly done automatically for you depending on the context in which you use '''Postpone'''. The [[#Parameters_tab|'''Parameters''']] tab makes it possible to define the degree to which [[Glossary:Item|items]] and/or [[Glossary:Topic|topics]] are postponed in the selected [[Glossary:Element_subset|subset]], and which [[Glossary:Item|items]] and/or [[Glossary:Topic|topics]] are exempt from rescheduling. Once you define [[#Paramters_tab|'''Parameters''']] you can save the new setting on the '''Scope''' tab with '''Settings : Save'''. Later you can restore the setting by using '''Settings : Name''' box. 
+
+'''Skip the following number of top priority elements''' determines how many [[Glossary:Element|elements]] should be left after the '''Postpone'''. If you choose ''50'', '''Postpone''' will first execute a standard postpone procedure, and then it will postpone more, if needed, until only 50 [[Glossary:Element|elements]] remain un-postponed. This option is useful in '''[[Glossary:Auto-postpone|auto-postpone]]''' if you want to ensure that you inherit no more than a given number of [[Glossary:Outstanding_element|outstanding elements]] from prior days of learning.
+
+<div class="center">
+[[Image:Postpone outstanding elements Scope.jpg|center|800px|SuperMemo: The Scope page of the Postpone outstanding elements dialog box]] 
+<blockquote>'''''Figure:''' A typical use of '''Postpone''' in the [[browser]]: you can select the number of [[Glossary:Element|elements]] to remain [[Glossary:Outstanding_element|outstanding]] (here 50), and click '''Postpone'''''</blockquote>
+</div>
+
+=== Parameters tab  ===
+
+You need to understand the '''Parameters''' tab if you want to customize the degree of delay in rescheduling. 
+
+'''Important!''' Some parameters must fall into a certain valid range. SuperMemo will correct those for you without warning. For example, if you set the minimum delay interval for items as 100 days, SuperMemo will change it to 30 days to make sure that you cannot force items to get a review chance at frequencies less than once per month. Naturally, other parameters permitting, less critical items might get delayed more (as determined by the '''Maximum interval''' for items).
+
+<div class="center">
+[[Image:Postpone outstanding elements Parameters.jpg|center|800px|SuperMemo: The Parameters tab of the Postpone outstanding elements dialog box]] 
+<blockquote>'''''Figure:''' Exemplary settings of '''Postpone''' parameters. '''Delay factor''' of 10 for [[Glossary:Topic|topics]] means that [[Glossary:Topic|topic]] [[Glossary:Interval|intervals]] will be multiplied by 10, but will not be longer than 199 days, or shorter than 33 days. [[Glossary:Interval|Intervals]] beyond 2500 days will qualify for a postpone skip (i.e. those [[Glossary:Element|elements]] will not be postponed, unless forced by the '''Method''' used on the '''Scope''' page). Postpone skip will also affect: [[Glossary:Item|items]] with the [[Glossary:Forgetting_index|forgetting index]] less than 6, [[Glossary:Topic|topics]] with [[Glossary:A-Factor|A-Factors]] less than 1.01, [[Glossary:Element|elements]] that have been postponed more than 250 times, and [[Glossary:Item|items]] with [[Glossary:Priority|priority]] greater than 3.5% (i.e. falling into the 0% to 3.5% range) and [[Glossary:Topic|topics]] with [[Glossary:Priority|priority]] greater than 0.0065%.''</blockquote>
+</div>
+
+'''Delay factor''' determines how much [[Glossary:Element|elements]] should be delayed. For example, if you choose the delay of 1.1 (10%) on an [[Glossary:Element|element]] with the [[Glossary:Interval|interval]] of 100 days, it will be delayed by ten days, i.e. rescheduled to the [[Glossary:Interval|interval]] of 110 days. '''Postpone''' will always increase [[Glossary:Interval|intervals]] by no less than one day from the present day. This way, all [[Glossary:Item|items]] on which '''Postpone''' is executed fall out of the [[Glossary:Outstanding_element|outstanding]] subset. 
+
+'''Maximum interval''' puts a ceiling on the length of the delay interval. For example, if you choose the delay of 1.1 on an [[Glossary:Element|element]] with the [[Glossary:Interval|interval]] of 200 days, and the maximum [[Glossary:Interval|interval]] is 5 days, the [[Glossary:Element|element]] will be delayed only by 5 days (instead of the 20 days produced by multiplying the original [[Glossary:Interval|interval]] by the delay factor). 
+
+'''Minimum interval''' puts a floor on the length of the delay interval. For example, if you set it to 3, all delayed [[Glossary:Element|elements]] will be delayed by no less than 3 days. 
+
+'''<span id="Skip_conditions">Skip conditions</span>''' determine which elements will be exempt from delay. 
+<blockquote>
+*if you check '''Skip items''' or '''Skip topics''', [[Glossary:Item|items]] or [[Glossary:Topic|topics]] (respectively) will not be rescheduled 
+*'''Interval beyond''' will exempt [[Glossary:Element|elements]] with [[Glossary:Interval|intervals]] longer than a selected value. For example, if you set '''Interval beyond''' to 320 days, no [[Glossary:Element|elements]] with [[Glossary:Interval|interval]] longer than 320 days will be rescheduled. This can help you avoid infinite postpones. Once the [[Glossary:Element|element]] is postponed beyond a given [[Glossary:Interval|interval]], it will automatically enter the core of [[Glossary:Element|elements]] that will not be postponed 
+*'''Forgetting index below''' makes it possible to determine the level of the [[Glossary:Forgetting_index|forgetting index]] that will prevent [[Glossary:Item|items]] from being postponed. For example, if you set '''Forgetting index below''' to 5%, [[Glossary:Item|items]] with the [[Glossary:Forgetting_index|forgetting index]] of 3% and 4% will not be rescheduled. This way you can make sure that the most important [[Glossary:Item|items]] in your [[Glossary:Collection|collection]] are protected from a drop in [[Glossary:Retention|retention]] 
+*'''A-Factor below''' is analogous to '''Forgetting index below'''. The only difference is that you will use it with [[Glossary:Topic|topics]] instead of [[Glossary:Item|items]]. Set [[Glossary:A-Factor|A-Factor]] of most important articles to a very low value (e.g. 1.01). This way you will be able to filter them out at '''Postpone''' and make sure they never get rescheduled 
+*'''Postpone count''' helps you prevent numerous postpones. For example, if you set the postpone count to 6 in the '''Items''' column, [[Glossary:Item|items]] will only be postponed 6 times. After that, '''Postpone''' will not affect them 
+*'''Priority (%)''' makes it possible to avoid rescheduling of elements whose [[Glossary:Priority|priority]] falls into a selected percentile bracket (low % indicates high priority)
+</blockquote>
+
+=== Adjust tab  ===
+
+The '''Adjust''' tab can be used for fine tuning delays on subsets with a complex [[Glossary:Priority|priority]] structure of individual [[Glossary:Branch|branches]] of knowledge. '''Sub-branch postpones''' determine how the rescheduling procedure interprets [[Glossary:Branch|branches]] included in the [[Glossary:Element_subset|subset]] that have their own postpone settings defined. Here are the possible options: 
+
+*'''Respect settings''' - respect the setting defined for individual [[Glossary:Branch|branches]] and ignore the currently used global setting of the '''Parameters''' tab. For a comprehensive postpone towards the end of your learning day (i.e. at times when you want to focus on your core knowledge), postpone all less important [[Glossary:Branch|branches]] and be more lenient on [[Glossary:Branch|branches]] that include most vital pieces of knowledge 
+*'''Ignore settings''' - use the '''Parameters''' tab setting for all [[Glossary:Element|elements]] in the postponed subset. Ignore all [[Glossary:Branch|branch]] postpone definitions. For example, if you want to postpone all [[Glossary:Topic|topics]] in your [[Glossary:Collection|collection]], you can ignore the settings for individual [[Glossary:Branch|branches]], which may have '''Skip topics''' selected. This option is the fastest as it does not need to scan [[Glossary:Branch|branches]] for individual postpone definitions 
+*'''Always choose most conservative settings''' - check the [[Glossary:Branch|branch]] setting and postpone as little as possible (i.e. choose the definition that is least drastic) 
+*'''Always choose most liberal settings''' - check the [[Glossary:Branch|branch]] setting and postpone as much as possible (i.e. choose the definition that provides for the highest delay). For example, minutes before you finish your learning day, postpone whatever can be postponed and focus only on the cream of the crop of your knowledge
+
+Advanced settings on the '''Adjust tab''' include:
+
+* '''Include elements that are not outstanding''' for switching between '''Postpone''' and '''Dilute''',
+* '''Modify item delay in proportion to the forgetting index''' for delaying [[Glossary:Item|items]] in proportion to the [[Glossary:Forgetting_index|forgetting index]],
+* '''Modify topic delay in proportion to A-Factor''' for delaying [[Glossary:Topic|topics]] in proportion to their [[Glossary:A-Factor|A-Factor]], and
+* '''Modify delay in proportion to element priority''' for delaying [[Glossary:Element|elements]] in proportion to their [[Glossary:Priority|priority]].
+
+=== Simulate, Postpone and Dilute  ===
+
+Once you define the settings on the '''Parameters''' tab and, optionally, fine tune them on the '''Adjust''' tab, save them with '''Save''' on the '''Scope''' tab. You can now test the postpone procedure by clicking '''Simulate'''. If you are not satisfied with the results, redefine '''Parameters'''. Once you are happy with the result of the simulation, '''Save''' the settings and choose '''Postpone'''. 
+
+The option '''Dilute''' (e.g. '''[[Subset operations#Learning|Learning]] : Dilute''' on the [[Subset operations|subset processing menu]]) should only be used in rare circumstances. It is analogous to '''Postpone''' but it also delays elements that are not [[Glossary:Outstanding_element|outstanding]]. There are two main reasons for using '''Dilute''': 
+
+*it may happen that you learn a lot of material in a [[Glossary:Branch|branch]] that is no longer important to you. Instead of deleting such a [[Glossary:Branch|branch]], you may decide to incrementally sift it of the less relevant material. To reduce the emphasis on this [[Glossary:Branch|branch]] in your daily review, use '''Dilute''' and spread the material over a longer period of time. Also use '''[[Subset operations#Priority|Priority]] : Decrease''' on the [[Subset operations|subset processing menu]] in the browser to make sure this low-priority material does not play an excessive role in your learning 
+*if you transfer a portion of your learning process to another SuperMemo using XML export, you can '''Dilute''' the transferred material and continue learning on two independent platforms (e.g. pocket SuperMemo and SuperMemo for Windows). '''Dilute''' will prevent duplicating repetitions. See: [http://super-memory.com/articles/soft/pocket.htm Revolution in the pocket]
+
+== Auto-Postpone ==
+
+'''[[Glossary:Auto-postpone|Auto-postpone]]''' option is available with '''[[Learn menu | Learn]] : [[Learn menu#Postpone|Postpone]] : Auto-postpone'''. It makes sure that excess repetitions are automatically postponed before the learning begins (if the option is checked). 
+
+'''[[Glossary:Auto-postpone|Auto-postpone]]''' affects only [[Glossary:Outstanding_element|outstanding elements]] scheduled on preceding days. For example, on Dec 1, 2009, repetitions from all days up to Nov 30, 2009 will be subject to default '''Postpone'''. Only repetitions scheduled on Dec 1, 2009 (and in the future) will not be affected.
+
+To edit the default postpone settings, use '''[[View menu | View]] : Outstanding''' and '''[[Browser menu#Process browser>|Process browser>]] : [[Subset operations#Postpone|Postpone]]''' on the [[browser menu]]. '''Skip the following number of top priority elements''' can be used to determine how many [[Glossary:Element|elements]] will be skipped when executing '''[[Glossary:Auto-postpone|Auto-postpone]]'''. This field is independent of '''Skip conditions'''. If you set this field to 50, you will ensure that on any given day, only that day's repetitions and 50 unexecuted outstanding repetitions will be kept in the [[Glossary:Outstanding_queue|outstanding queue]]. 
+
+For example, if (1) '''Skip the following number of top priority elements''' is set to 50, and if (2) you have 600 outstanding repetitions from previous days, and if (3) you have 200 new outstanding repetitions, then 550 repetitions will be auto-postponed (600-50=550). This way, you will have 50+200=250 repetitions to make.
+
+== Using Postpone in various contexts ==
+
+* globally - to postpone [[Glossary:Element|elements]] globally use '''[[Learn menu | Learn]] : [[Learn menu#Postpone|Postpone]] : All elements'''
+* [[browser]] - to postpone [[Glossary:Element|elements]] listed in a [[Glossary:Browser|browser]], use '''Postpone''' on the [[Subset operations|subset processing menu]] (see also: [[Using subsets]])
+* [[Contents|'''Contents''' window]] - to postpone [[Glossary:Element|elements]] in a given [[Glossary:Branch|branch]], select it in the [[Contents|'''Contents''' window]], and use '''Postpone''' on the [[Subset operations|subset processing menu]]
+*  [[element window]] - to postpone [[Glossary:Element|elements]] belonging to any [[Glossary:Ancestor|ancestor]] [[Glossary:Branch|branch]] of the current [[Glossary:Element|element]] (e.g. during repetitions), choose '''[[Element menu#Learning|Learning]] : Postpone branch''' on the [[element menu]]. Respond with '''No''' until you reach the desired [[Glossary:Ancestor|ancestor]] [[Glossary:Branch|branch]]
+* '''Ancestors''' window (''Shift+Ctrl+X'') - right-click over any [[Glossary:Ancestor|ancestor]] [[Glossary:Branch|branch]] and choose '''Postpone branch'''
+
+== Examples ==
+
+If your daily load of [[Glossary:Item|items]] and [[Glossary:Topic|topics]] keeps increasing, you can dilute the learning process with selective postpones from time to time. For example, you can opt to delay repetitions in subsets such as:
+
+* all articles and [[Glossary:Extract|extracts]]
+* all newly added material
+* all material in a given knowledge [[Glossary:Branch|branch]] (e.g. ''chemistry'')
+* all difficult material
+* all short-[[Glossary:Interval|interval]] material, etc.
+
+Here are some typical ways in which you will execute '''[[Postpone]]''':
+
+* to postpone [[Glossary:Topic|topics]], '''[[Learn menu | Learn]] : [[Learn menu#Postpone|Postpone]] : Topics'''
+* to postpone all [[Glossary:Item|items]] (but not [[Glossary:Topic|topics]]) in a given [[Glossary:Branch|branch]] (e.g. all new [[Glossary:Item|items]] in your ''new items'' branch):
+*# select the [[Glossary:Branch|branch]] in the [[Contents|'''Contents''' window]]
+*# choose '''[[Contents menu#View|View]] : Branch''' on the [[contents menu]]
+*# choose '''[[Browser menu#Child|Child]] : Items''' on the [[browser menu]]
+*# choose '''[[Browser menu#Process browser>|Process browser>]] : [[Subset operations#Postpone|Postpone]]''' on the [[browser menu]]
+* to postpone all repetitions in a [[Glossary:Branch|branch]] to which a given [[Glossary:Element|element]] belongs:
+*# choose '''[[Element menu#Learning|Learning]] : Postpone branch''' on the [[element menu]] when you see an [[Glossary:Element|element]] belonging to a lower priority [[Glossary:Branch|branch]]. For example, when SuperMemo brings for review an [[Glossary:Item|item]] on ''the Bill of Rights'', you might decide that your ''US Constitution'' branch should be postponed (e.g. because its priority is less than that of [[Glossary:Branch|branches]] related to your profession)
+*# answer '''No''' until the desired parent [[Glossary:Branch|branch]] is reached (SuperMemo will scan [[Glossary:Ancestor|ancestor]] [[Glossary:Branch|branches]] from the present one up to the [[Glossary:Root_node|root]] of the [[Glossary:Knowledge_tree|knowledge tree]])
+
+== Postpone or Mercy? ==
+
+'''Postpone''' should drastically reduce the role of '''[[Mercy]]''' in SuperMemo. However, you may still need '''[[Mercy]]''' in the following circumstances:
+
+# Randomizing repetitions ('''[[Toolkit menu |Toolkit]] : [[Mercy]] : [[Mercy criteria | Criteria]] : Randomize''')
+# Rescheduling the outstanding material after a longer break (with chosen  '''[[Mercy]] : [[Mercy criteria | Criteria]]''')
+# Advancing future repetitions to an earlier date (e.g. before a vacation)
+
+For more details see: [[Postpone, Advance and Mercy]]
+
+== Further reading ==
+
+* [[Incremental reading]]
+* [[Priority queue]]
+* [https://supermemopedia.com/wiki/Postpone_does_not_work_as_expected Postpone affects only outstanding elements, not today's elements]
+* [https://super-memory.com/help/faq/read.htm FAQ: Incremental reading (and Postpone)]
+* [https://supermemopedia.com/wiki/Learning FAQ: Learning]

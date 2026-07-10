@@ -1,0 +1,1 @@
+#redirect [[Menus,_buttons,_dialogs,_etc.]]

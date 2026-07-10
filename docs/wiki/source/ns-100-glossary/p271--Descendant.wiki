@@ -1,0 +1,6 @@
+;<span id="Descendant">descendant</span>
+:[[Glossary:Element|element]] in the [[Glossary:Contents_window|'''Contents''' window]] that is located one or more levels below the element which makes its [[Glossary:Ancestor|ancestor]]. All the [[Glossary:Element|elements]] at the same indentation in the [[Glossary:Knowledge_tree|knowledge tree]] are [[Glossary:Child|children]] of their single [[Glossary:Parent|parent]] (they are [[Glossary:Sibling|siblings]] to each other) whereas '''descendants''' are all the [[Glossary:Element|elements]] below the ancestor level.
+:See also:
+:*[[Building the knowledge tree]]
+:*[[Contents|'''Contents''' window]]
+:*[https://en.wikipedia.org/wiki/Tree_(data_structure) Tree structure] at Wikipedia

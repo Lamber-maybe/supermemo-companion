@@ -1,0 +1,206 @@
+__TOC__
+
+== Incremental picture processing and learning ==
+
+A picture is worth a thousand words. This ageless maxim expresses a well-known fact taken from neuroscience: we have an extremely effective visual memory system that should be used often to complement the memory systems used for more abstract knowledge that is the chief target of [[incremental learning]]. Pictures have a great mnemonic power and should be used profusely to illustrate the learning material. SuperMemo implements picture operations that should make your work with pictures easier than ever as long as you master the basic skills of visual learning.
+
+'''Visual learning''' is an equivalent of [[incremental reading]], but is used to master material represented as pictures. In visual learning, you get a series of pictures as your input, and produce lasting memories of the most important pictures, picture fragments, or annotations associated with pictures. Pictures may be a part of your standard learning process, or may be taken from a specific picture or photo [[Glossary:Collection|collection]], e.g. your [http://supermemopedia.com/wiki/Why_SuperMemo,_not_Photo_Gallery%3F family photo album].
+
+The tools and techniques of visual learning can also be used to learn texts that are available only as pictures (e.g. book snapshots, read-only PDF screen prints, paper notes, etc.). A scanner or a digital camera can be used to take pictures of the notes. However, text searches cannot be executed unless high-quality OCR software is used or picture texts are annotated manually.
+
+== Adding pictures to SuperMemo ==
+
+=== Pasting pictures from the clipboard ===
+
+To paste a picture to SuperMemo, copy it first to the clipboard. In SuperMemo, go to the [[Glossary:Element|element]] that is to display the picture. Make sure you are in the [[Glossary:Presentation_mode|presentation mode]] (e.g. press ''Esc'' a few times if you are not sure). Press ''Shift+Insert'' or ''Ctrl+V'' to paste the picture or click the '''Paste''' button ([[File:Paste.png|SuperMemo: Insert the contents of the clipboard]]) on the [[learnbar]].
+
+If the [[Glossary:Element|element]] does not have image [[Glossary:Component|components]], SuperMemo will shift the existing [[Glossary:Component|components]] to the left to make space for the picture. Otherwise it will reuse the first empty image [[Glossary:Component|component]], or tile existing images to add a new one in the space devoted to pictures. Depending on your [[Glossary:Concept|concept]] [[Glossary:Template|template]] settings, and the existence of picture [[Glossary:Template|templates]] associated with your default [[Glossary:Template|template]], SuperMemo may also prompt you ''Do you want to use a picture template?''
+
+If your [[Glossary:Template|template]] has a picture hosting equivalent, you will be asked if the picture [[Glossary:Template|template]] should be used. The picture [[Glossary:Template|template]] should have the same name as the currently applied [[Glossary:Template|template]] with the suffix ''Picture'' or ''P''. For example, if the applied [[Glossary:Template|template]] is called ''Physics'', and you want picture [[Glossary:Template|template]] to be suggested automatically for [[Glossary:Element|elements]] with the ''Physics'' [[Glossary:Template|template]], name the picture [[Glossary:Template|template]] ''Physics Picture'' or ''PhysicsP'' in the [[Glossary:Template|template]] [[Glossary:Registry|registry]] (e.g. available via '''[[Search menu|Search]] : [[Search menu#Templates|Templates]]''' on the [[main menu]]).
+
+A newly pasted picture is always added to the image [[Glossary:Registry|registry]] and becomes linked to the image [[Glossary:Component|component]] that hosts it.
+
+<div class="center">
+[[Image:Paste picture from the clipboard.jpg|800px|SuperMemo: Pasting four pictures of a naked mole rat into a single element]] 
+<blockquote>
+'''''Figure''': Several pictures of a naked mole rat have been pasted to the presented [[Glossary:Element|element]]. After economizing space for the first picture, SuperMemo will tile the remaining pictures in the available area on the right of the [[Glossary:Element_window|element window]] (or in the relevant picture area if a custom-made picture [[Glossary:Template|template]] is applied when pasting). Note that you can accomplish the same effect with '''[[Web import]]''' if you select '''Page of images'''.''
+</blockquote>
+</div>
+
+=== Importing pictures from a local drive ===
+
+==== A single picture ====
+
+If your picture resides on the hard disk:
+
+# right-click over the image [[Glossary:Component|component]] you want to import the picture to,
+# choose '''[[Component menu#File|File]] : [[Component menu#Import file|Import file]]''',
+# choose the picture from the disk.
+
+==== A folder of pictures ====
+
+If you want to import an entire album of pictures stored in a specific folder on your hard disk, use '''[[File menu|File]] : [[File menu#Import|Import]] : Files and folders''', and choose the folder to import. All files (including non-picture files) will be imported to separate [[Glossary:Element|elements]] that will form a [[Glossary:Knowledge_tree|tree structure]] in the [[Contents|'''Contents''' window]] analogous to the structure of imported folders (i.e. the selected folder and its subfolders (if any)). Note that you can automatically delete imported pictures from the import folder. Use this option with caution. To accelerate the import, there is no undo for import delete. Moreover, if you choose a wrong folder, the process may take ages and you will end up with a [[Glossary:Collection|collection]] peppered with, for example, EXE applications.
+
+=== Importing pictures from the web ===
+
+You can import pictures from the web. You can either search for pictures (e.g. with [http://www.google.pl/imghp Google Images]), or you can import pictures that are included in the articles that you process with [[Glossary:Incremental_reading|incremental reading]].
+
+==== Import from the web ====
+
+If you find some pictures on the net, open them in Microsoft Edge, and use ''Shift+F8'' to import them to SuperMemo. See [[Web import]] for details. Download progress for large pictures is displayed on the [[status bar]].
+
+The import [[Glossary:Template|template]] is determined as follows:
+
+# Default [[Glossary:Topic|topic]] [[Glossary:Template|template]] for the current [[Glossary:Concept_group|concept group]] is used if it contains at least one text [[Glossary:Component|component]] (for picture descriptions) and one image [[Glossary:Component|component]] (for the picture)
+# Predefined ''Article Picture'' [[Glossary:Template|template]] is used if it still exists (you can redefine this [[Glossary:Template|template]] or save your own [[Glossary:Template|template]] under this name as long as it contains the required text and image [[Glossary:Component|components]])
+# In all other cases, [[Glossary:Template|template]]-less [[Glossary:Element|element]] is created with text and image [[Glossary:Component|components]] as required by the import procedure
+
+==== Import from articles included in SuperMemo ====
+
+Once you import an article from the net, all its pictures will still reside on the net. If you would like to make sure you do not lose those pictures (e.g. when the article is pulled off), or if you want the pictures to show up in all [[Glossary:Extract|extracts]] and [[Glossary:Cloze_deletion|clozes]] produced in [[Glossary:Incremental_reading|incremental reading]], use ''Ctrl+F8'' ('''[[Component menu#Download images|Download images]]''' on the HTML [[component menu]]).
+
+<div class="center">
+[[Image:Download images.jpg|771px|SuperMemo: Download images dialog box makes it possible for you to get images embedded in local pages imported from the net and put them to the image registry]] 
+{{:File:Download images.jpg}}
+</div>
+
+=== Pictures as answers ===
+
+If you want a picture to be part of the answer (i.e. not visible at question time), check '''[[Component menu#Answer|Answer]]''' on the image [[component menu]].
+
+== Tiling pictures ==
+
+If you are not happy with the way your pictures are tiled, you can rearrange the [[Glossary:Component|components]] and re-tile your pictures. To rearrange [[Glossary:Component|components]], set them in the [[Glossary:Dragging_mode|dragging mode]] first. You can switch a [[Glossary:Component|component]] to the [[Glossary:Dragging_mode|dragging mode]] with ''Alt+click'' (click twice until the [[Glossary:Component|component]] becomes gray and draggable). You can switch all the [[Glossary:Component|components]] to the [[Glossary:Dragging_mode|dragging mode]] with the '''Switch mode''' button ([[File:Switch mode.png|SuperMemo: Switch element from presentation to editing to drag&size mode]]) on the [[learnbar]], with double ''Alt+click'' over an empty [[Glossary:Element|element]] area, over the [[navigation bar]], or over the bottom bar of the [[Glossary:Element_window|element window]]. Once in the [[Glossary:Dragging_mode|dragging mode]], [[Glossary:Component|components]] can be moved around with the mouse.
+
+To tile [[Glossary:Component|components]], set the to-be-tiled [[Glossary:Component|components]] in the [[Glossary:Dragging_mode|dragging mode]], and choose '''Tile components''' in the '''[[SuperMemo Commander|Commander]]''' (''Ctrl+Enter''), or '''[[Element menu#Components|Components]] : Tile components''' (''Shift+Alt+T'') on the [[element menu]]. Component tiling assistance will help you arrange the [[Glossary:Component|components]] into the optimum set of rows and columns. [[Glossary:Component|Components]] will be tiled into the rectangle determined by the topmost, bottommost, rightmost and leftmost edges of all the [[Glossary:Component|components]] selected for tiling. Positions of all other [[Glossary:Component|components]] are not taken into consideration. Note that once you change either '''Rows''' or '''Columns''' you need to press ''Enter'' in order to recalculate the other parameter and to update the preview grid.
+
+To choose [[Glossary:Component|components]] to tile, you can also press ''Ctrl+E'' to set all [[Glossary:Component|components]] in the [[Glossary:Editing_mode|editing mode]], and return non-tile [[Glossary:Component|components]] to the [[Glossary:Presentation_mode|presentation mode]] with double or triple ''Alt+click''. Finally, you can just check or uncheck the [[Glossary:Component|components]] on the list displayed right before they are to be tiled.
+
+<div class="center">
+[[Image:Tile arrangement.jpg|center|800px|SuperMemo: Tiling Rafael Nadal pictures with component tiling assistance]] 
+{{:Image:Tile arrangement.jpg}}
+</div>
+
+== Big pictures ==
+
+=== Zooming, slicing, trimming, and cropping pictures ===
+
+Some pictures are too big to be effectively used in learning. They carry too much information. In some cases you will want to focus on the important part of the picture, in other cases you will just want to discard unnecessary information.
+
+For example, when learning political geography, you might import a huge map of Africa to SuperMemo. However, for individual [[Glossary:Item|items]], you might want to limit the displayed portion of the picture to a single country with its direct neighbors.
+
+<div class="center">
+[[Image:Unzoomed picture.jpg|800px|SuperMemo: The unzoomed picture of the African political map used to illustrate elements related to Africa]] 
+{{:File:Unzoomed picture.jpg}}
+</div>
+
+<div class="center">
+[[Image:Zoomed picture.jpg|800px|SuperMemo: The picture of the African political map zoomed in on Rwanda to illustrate to an item about the assassination of the President Habyarimana in 1994]] 
+{{:File:Zoomed picture.jpg}}
+</div>
+
+To display only a small portion of a picture in a given [[Glossary:Element|element]], enter the [[Glossary:Zoom&trim_mode|zoom&amp;trim mode]] by <i>Alt+clicking</i> the picture. You can now use several operations to zoom in onto the interesting portion of the picture:
+
+* '''Zoom''': click the middle mouse button to zoom in on an interesting portion of the picture
+* '''Unzoom''': ''Shift+click'' the middle button to unzoom
+* '''Move''': ''Shift+drag'' the zoomed picture to adjust the displayed area
+* '''Trim''': ''Ctrl+swipe'' unwanted edges of the picture:
+*# press ''Ctrl'',
+*# point to the edge that is to be cut out,
+*# press down the mouse, and
+*# move it in the direction of the area that is to be cut.
+* '''Select''': drag and select to mark the area that is to be displayed in the picture:
+*# point to one corner of the desired area,
+*# press down the left mouse button,
+*# drag the selection marquee to select a portion of the picture, and
+*# release the mouse button to slice the picture.
+
+Once you zoom in onto the interesting area, press ''Esc'' to quit the [[Glossary:Zoom&trim_mode|zoom&amp;trim mode]]. You will be given the following options:
+
+[[Image:Zoom and trim options.jpg|center|800px|SuperMemo: The list of options presented upon quitting the zoom&trim mode]]
+
+* '''Leave the picture zoomed/trimmed without changing the file'''. This will display the selected portion of the picture in the current [[Glossary:Element|element]] without changing the original picture file that might be used elsewhere in its entirety or with other portions zoomed onto. This is the default option. When you revisit the [[Glossary:Element|element]], it will still be marked with a zoom border. However, the lime-colored border of the [[Glossary:Zoom&trim_mode|zoom&amp;trim mode]] will be replaced with a red border, which indicates a zoomed picture in the [[Glossary:Presentation_mode|display mode]].
+* '''Permanently cut/crop the zoomed/trimmed image file'''. This will replace the original picture file with a smaller picture representing the zoomed-in area).
+* '''Unzoom/undo'''. This will cancel the changes introduced in the [[Glossary:Zoom&trim_mode|zoom&amp;trim mode]].
+* '''Cancel'''. This does nothing (i.e. you will stay in the [[Glossary:Zoom&trim_mode|zoom&amp;trim mode]])
+
+If you leave the [[Glossary:Element|element]] without terminating the [[Glossary:Zoom&trim_mode|zoom&amp;trim mode]], the picture will remained zoomed, and the original picture file will remain unchanged (i.e. as if you chose the default option when terminating the [[Glossary:Zoom&trim_mode|zoom&amp;trim mode]] with ''Esc'')
+
+=== Picture processing options ===
+
+You can quickly access picture processing options with ''Shift+Ctrl+F8''. If you have more than one picture in the [[Glossary:Element|element]], start from clicking the one that you want to process.
+
+<div class="center">
+[[Image:Picture processing options.jpg|571px|SuperMemo: Picture processing options available by pressing Shift+Ctrl+F8 (Image : Process from the image component menu)]] 
+{{:Image:Picture processing options.jpg}}
+</div>
+
+The following picture processing options are available:
+
+* '''Zoom''' - enter the [[Glossary:Zoom&trim_mode|zoom&amp;trim mode]] (you can enter this mode even faster with ''Alt+click'' over the image)
+* '''Unzoom''' - unzoom the zoomed picture, i.e. show the entire original picture
+* '''Extract''' (''Alt+X'') - extract portion of a picture into a new [[Glossary:Element|element]]. SuperMemo (1) duplicates the [[Glossary:Element|element]], (2) clones the image, and (3) enters the trim&amp;zoom mode. This will, in essence, produce an [[Glossary:Extract|extract]] in the same way as you produce a [[Glossary:Extract|text extract]] in [[Glossary:Incremental_reading|incremental reading]]. Once you finish selecting or trimming the [[Glossary:Extract|extract]], press ''Esc'', and choose '''Permanently cut/crop the zoomed/trimmed image file'''. If you do not want the original picture to be marked with extract boundaries, respond with '''''No''''' to ''Replace picture with a JPG image?'' After executing '''Extract''', you will have two [[Glossary:Element|elements]]: one with the original picture with extract boundaries marked (or unchanged, if you do not want to modify the picture), and the new [[Glossary:Element|element]] with a new picture, which is a portion of the original picture (see: [[#Example of a picture extract|example]])
+* '''Crop''' - delete invisible portions of the picture from the original file (i.e. reduce its size to the visible portion of the zoomed picture). This will affect all [[Glossary:Element|elements]] that use this picture
+* '''Clone''' - create a copy of a picture in the image [[Glossary:Registry|registry]] (this way, cropping a picture or marking it with extracted portions will not affect other [[Glossary:Element|elements]] that use the same picture in the [[Glossary:Collection|collection]])
+* '''Compress''' - reduce the size of the picture by choosing a new size; compression will produce a file that is no greater than the size you choose. In most cases, you can compress a 2-5 MB picture to 200-500 kB without noticing the difference in quality
+* '''Scale''' - reduce the size of the picture by reducing its quality, increasing compression, reducing its dimensions, trimming its edges, etc
+
+== Extracting pictures from larger pictures ==
+
+Extracting picture fragments from larger pictures is analogous to extracting fragments of texts in [[Glossary:Incremental_reading|incremental reading]]. They can also be executed with the same shortcut ''Alt+X''. The ''Alt+X'' will work for a picture [[Glossary:Extract|extract]] if (1) no text is selected, and (2) there is a picture available in the [[Glossary:Element|element]].
+
+When you press ''Alt+X'' on a picture, the [[Glossary:Element|element]] will be duplicated (as is the case with text [[Glossary:Extract|extracts]]), the picture will be cloned (i.e. a duplicate of its original will be created), and you will enter the [[Glossary:Zoom&trim_mode|zoom&amp;trim mode]]. Once you zoom onto a portion of the picture, press ''Esc'' to crop the [[Glossary:Extract|extract]] and return to the original [[Glossary:Element|element]] (from which the [[Glossary:Extract|extract]] has been made). SuperMemo will ask you: ''Replace picture with a JPG image?'' Note that the above sequence is slightly different from the one you use in extracting texts: you press ''Alt+X'' and generate a new [[Glossary:Element|element]] '''before''' you select a picture fragment.
+
+[[Image:Replace picture with a JPG image.jpg|center|800px|SuperMemo: The choice given to the user whether to mark the extracted portion with a bright yellow-red rectangle in the original picture]] 
+
+If you choose '''''Yes''''', the original big picture will be marked with a bright yellow-red extract rectangle (marking the area that has been extracted). If extract rectangles overlap, you may wish to answer
+'''''No''''' to make sure the [[Glossary:Extract|extracts]] themselves do not get obscured by previous extract borders; however, in such cases you will need to remember which portions of the picture have already been extracted. This means that in those cases you will rather need to do all your [[Glossary:Extract|extracts]] one after another (i.e. while you keep your progress fresh in memory).
+
+=== Example of a picture extract ===
+
+This large picture of a stunning Freiburg panorama is too large to view details in SuperMemo. You can therefore extract all interesting portions for independent review. After producing an [[Glossary:Extract|extract]], yellow-red border can indicate which portions of the picture have already been processed:
+
+[[Image:Freiburg panorama (original).jpg|center|800px|SuperMemo: The original picture of the Freiburg panorama (too large to view its details) from which 4 picture extracts (marked with bright yellow-red rectangles) have been produced]]
+
+Individual [[Glossary:Extract|extracts]] are small enough to view details without zooming:
+
+[[Image:Freiburg panorama (extract).jpg|center|800px|SuperMemo: The 2nd extract produced from the original picture of the Freiburg panorama (now small enough to view its details)]]
+
+Instead of extracting portions of the panorama, you might equally well just zoom in. However, if you extract only a tiny portion of pictures from a very large image, [[Glossary:Extract|extracts]] will consume less disk space because the portions of the picture you are not interested in will be discarded.
+
+== Cloze for pictures ==
+
+To create graphic deletion tests ([[Glossary:Occlusion_test|occlusion tests]]), use the following approaches:
+
+=== Multiple items ===
+
+To create many [[Glossary:Occlusion test|occlusion tests]] at once, do the following:
+
+# Create a template element with at least one picture
+# Type "Occlusion" in the [[Commander]] (''Ctrl+Enter'')
+# Mark occlusion rectangles with click&drag
+# Choose one of occlusion options at the bottom (leftmost by default)
+
+In the picture below, the four buttons at the bottom have the following functions:
+# Hide one, reveal others (in each item, one rectangle occludes one area of the picture)
+# Show one, hide others (in each item, many rectangles occlude many areas and reveal one, or more)
+# Clear all rectangles to start fresh
+# Add all rectangles to the current element without creating items (e.g. to adjust rectangles, colors, etc.)
+
+See: [https://www.youtube.com/watch?v=70JFgD4bEk8 Learning anatomy with Occlusion tests] (video)
+
+[[File:Learning anatomy with occlusion tests in SuperMemo 19.jpg|center|800px]]
+{{:File:Learning anatomy with occlusion tests in SuperMemo 19.jpg}}
+
+=== Incremental approach ===
+
+# Choose '''Add new''' (''Alt+A'') to add a new [[Glossary:Item|item]]
+# Apply the ''Occlusion'' [[Glossary:Template|template]] (e.g. press ''Ctrl+Shift+M'' and choose &quot;''Occlusion''&quot;) 
+# Paste the image prepared for the graphic test (e.g. ''Ctrl+V'')
+# Use ''Ctrl+T'' a few times to select the occlusion rectangle 
+# Size the rectangle so that to occlude the portion that makes the question 
+# Type in the question (e.g. &quot;''What portion of the image is covered by the red rectangle?''&quot;) 
+# Type in the answer 
+# Use ''Shift+Alt+L'' to test your new [[Glossary:Occlusion_test|occlusion test]]
+# Use '''[[Element menu#Edit|Edit]] : Duplicate''' (''Alt+D'') on the [[element menu]] to generate more tests with the same picture
+# Remember that for best scaling results you need to keep your [[Glossary:Template|template]]/[[Glossary:Element|element]] '''[[Element menu#Scaled|Scaled]]''' and your picture '''[[Component menu#Image|Image]] : Stretch : Filled''' (without those two, resizing the [[Glossary:Element|element]] will move the rectangle relative to the image and reveal the answer)

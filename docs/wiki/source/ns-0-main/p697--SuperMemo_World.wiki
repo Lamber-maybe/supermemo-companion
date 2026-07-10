@@ -1,0 +1,8 @@
+'''SuperMemo World''' is a Polish company. Founded in 1991, SuperMemo World develops [[SuperMemo]] applications. 
+
+For the origins of SuperMemo see: [https://supermemo.guru/wiki/History_of_spaced_repetition History of spaced repetition]
+
+See also:
+* [https://supermemo.guru/wiki/SuperMemo_Guru Articles about SuperMemo, memory and creativity]
+* [https://supermemo.com On-line SuperMemo]
+* [https://supermemo.store/products/supermemo-19-for-windows SuperMemo for Windows] (based on [[incremental reading]])

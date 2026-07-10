@@ -1,0 +1,2 @@
+;<span id="Leech">leech</span>
+:particularly difficult [[Glossary:Item|item]] that causes problems in learning. The definition of a '''leech''' is specified by means of the [[Element filter|'''Element filter''' dialog box]] used in '''[[View menu|View]] : [[View menu#Other|Other]] : [[Leeches]]''' (''Shift+F3'') from the [[main menu]]. A semi-leech is an [[Glossary:Item|item]] that is not a '''leech''' but will become one once it is forgotten. See: [[Leeches]]

@@ -1,0 +1,6 @@
+;<span id="Leaf">leaf</span>
+:one childless [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|knowledge tree]] presented in the [[Glossary:Contents_window|'''Contents''' window]] (an [[Glossary:Item|item]], [[Glossary:Topic|topic]], [[Glossary:Concept|concept]] or [[Glossary:Task|task]] in the [[Glossary:Collection|collection]]). You can add new '''leaves''' with '''Add''' and '''Insert''' (''Ins'') at the bottom of the [[Glossary:Contents_window|'''Contents''' window]], or with options on the [[Edit menu|'''Edit''']] submenu of the [[main menu]].
+:See also:
+:*[[Building the knowledge tree]]
+:*[[Contents|'''Contents''' window]]
+:*[https://en.wikipedia.org/wiki/Tree_(data_structure) Tree structure] at Wikipedia

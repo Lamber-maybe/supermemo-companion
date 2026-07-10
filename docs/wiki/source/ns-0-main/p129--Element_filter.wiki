@@ -1,0 +1,27 @@
+'''[[View menu | View]] : Filter''' (from the [[main menu]]) can be used to find all [[Glossary:Element|elements]] meeting a specific set of criteria such as the number of repetitions, [[Glossary:Priority|priority]], number of [[Glossary:Lapse|memory lapses]], length of the current [[Glossary:Interval|interval]], status ([[Glossary:Memorized_element|memorized]], [[Glossary:Pending_element|pending]], or [[Glossary:Dismissed_element|dismissed]]), type ([[Glossary:Item|item]], [[Glossary:Topic|topic]] or [[Glossary:Task|task]]), etc.
+
+[[Image:Element_filter.jpg|594px|center|SuperMemo: Element filter dialog box which you can use to browse all elements that meet your search criteria (e.g. in leech hunting)]]
+
+The following fields can be used to select the minimum and the maximum values that fall into the searched range:
+
+* '''Priority''' - [[Glossary:Priority|priority]] of a given [[Glossary:Element|element]]
+* '''Repetitions''' - number of [[Glossary:Repetition|repetitions]] made with a given [[Glossary:Element|element]]
+* '''Lapses''' - number of times a given [[Glossary:Element|element]] was forgotten
+* '''Interval''' - number of days between the last repetition and the next repetition
+* '''Last repetition''' - the date of the last repetition (note that dates before 1987 are considered an error and the year is replaced with the current year)
+* '''Next repetition''' - the date of the next repetition (note that dates before 1987 and after 2099 are considered an error and the year is replaced with the current year)
+* '''A-Factor''' - value of [[Glossary:A-Factor|A-Factor]] assigned to a given [[Glossary:Element|element]]
+* '''Forgetting index''' - probability of forgetting a given [[Glossary:Element|element]] during each repetition
+* '''Ordinal number''' - [[Glossary:Ordinal number|ordinal number]] assigned to a given [[Glossary:Element|element]]
+* '''U-Factor''' - [[Glossary:U-Factor|U-Factor]] associated with an [[Glossary:Element|element]]
+* '''Postpones''' - the number of times a given [[Glossary:Element|element]] has been postponed (with '''[[Postpone]]''')
+
+If you do not want to use a given criterion, deselect the check-box associated with a given field. If you do want to use it, select the check-box and specify appropriate minimum and maximum values.
+
+The fields '''Type''' and '''Status''' make it possible to find [[Glossary:Item|items]], [[Glossary:Topic|topics]] or [[Glossary:Task|tasks]] with different [[Glossary:Pending_element|pending]], [[Glossary:Memorized_element|memorized]] or [[Glossary:Dismissed_element|dismissed]] status. For example, to find all memorized non-task elements, check '''Item''', '''Topic''' and '''Memorized''' and leave the remaining fields unchecked.
+
+Once you click '''OK''', all [[Glossary:Element|elements]] meeting the specified criteria will be found and displayed in a [[browser]].
+
+You can save filter settings for future use by clicking the diskette button at the bottom of the dialog. The settings are kept in the file ''filter.ini'' in the [[SuperMemo files#Collection files|''&lt;collection name&gt;'' folder]].
+
+The filter dialog box is also used with '''[[View menu|View]] : [[View menu#Other|Other]] : [[Leeches]]''' (''Shift+F3'') to locate all most difficult items in the [[Glossary:Collection|collection]]. It can also be used to filter [[Glossary:Element|elements]] in the [[browser]] with '''[[Browser menu#Child|Child]] : Filter''' on the [[browser menu]].

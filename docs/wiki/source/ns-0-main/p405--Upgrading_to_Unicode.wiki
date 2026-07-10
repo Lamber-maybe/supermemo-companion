@@ -1,0 +1,83 @@
+= Introduction =
+
+Some very old [[Glossary:Collection|collections]] may need to be upgraded to Unicode. If you have [[Glossary:Collection|collections]] created with SuperMemo 14 (aka SuperMemo 2008) this text is for you. Otherwise, ignore the instructions below.
+
+Starting with SuperMemo 15 (2011), all texts in SuperMemo are represented in Unicode. This means that all older [[Glossary:Collection|collections]] need to be upgraded to the Unicode encoding.
+
+= Make a backup!  =
+
+SuperMemo 18 can only use collections created with SuperMemo 16 or SuperMemo 17. This is why you may need to use SuperMemo 16 Light, or SuperMemo 16 Trial to execute the upgrade to Unicode before you upgrade to SuperMemo 18 (see: [https://supermemopedia.com/wiki/Download_SuperMemo Download SuperMemo]). If you are not sure, send [https://supermemopedia.com/wiki/E-mail e-mail] to receive help. SuperMemo 16 is free for users of SuperMemo 17 and SuperMemo 18.
+
+Before you upgrade your [[Glossary:Collection|collections]] to Unicode, back up all your learning data! This way will be able to try the upgrade procedure again in case you make wrong choices or the conversion does not bring a desired effect. While upgrading, SuperMemo will ask you if you would like to backup your [[Glossary:Collection|collection]]. '''Choose yes''' (default)! 
+
+For more about backup see: [[Backup]].
+
+= Conversion to Unicode  =
+
+As upgrading to Unicode requires some knowledge of [http://en.wikipedia.org/wiki/Locale System Locale], this page provides the ABC rules for the upgrade. 
+
+When you open an old [[Glossary:Collection|collection]], SuperMemo will automatically beging the upgrade. You will first be asked: 
+<pre>SuperMemo 16 needs to convert old collections to Unicode. Please choose:
+
+* I use English. Go ahead with the default conversion
+* I know what code page or system locale I use in this collection
+* Please help me
+* Cancel
+</pre> 
+If you never use foreign languages, and your Windows uses English locale (e.g. US, UK, etc.), you can choose the first option '''Go ahead'''. However, if you ever created your collections using foreign non-Latin symbols (e.g. Russian, Hebrew, Japanese, Arabic, Chinese, etc.), you will need to tell SuperMemo which [http://en.wikipedia.org/wiki/Code_page code page] you want to use for the conversion. If you choose '''I know what code page or system locale I use in this collection''', SuperMemo will help you pick the code page with the following dialog: 
+<pre>
+Choose a code page for conversion to Unicode:
+
+English (old SuperMemos)
+1250 — Central and East European Latin
+1251 — Cyrillic
+1252 — West European Latin
+1253 — Greek
+1254 — Turkish
+1255 — Hebrew
+1256 — Arabic
+1257 — Baltic
+1258 — Vietnamese
+874 — Thai
+932 — Japanese
+936 — Simplified Chinese
+949 — Korean
+950 — Traditional Chinese
+Other
+Cancel
+</pre> 
+If your code page is not listed here, choose '''Other''', see [http://msdn.microsoft.com/en-us/goglobal/bb964653.aspx Microsoft documentation] and input the correct code page number.
+
+= More help needed  =
+
+If you choose '''Please help''' in the Unicode upgrade dialog, you will get a list of hints that will help you make a conversion: 
+<pre>Please choose the point you are most certain about:
+
+* I use English in English Windows and with an English locale (e.g. US, UK, etc.)
+* I do not use plain text components, I only use rich formatting (RTF or HTML)
+* I only use incremental reading and I import my texts from my web browser
+* I purchased this collection from SuperMemo World
+* I created my plain text elements using a non-English system locale, which I know
+* I know which code page my collection needs for the upgrade
+* I create my collections myself in non-English Windows and/or with non-English locale
+* My collection uses a mix of different languages that each requires a different code page
+* I have no idea what you are talking about. Please help me
+* I do not know, but I want to risk a default upgrade with English defaults
+* I want to receive personal help via e-mail
+* Cancel
+</pre> 
+'''Important!'''. Several points on this list may hold true for you. Choose the one that you think is closest or which you are most certain of. If the above list does not help, you can always get in touch via e-mail and receive personal help. 
+
+Here is the interpretation of the individual options: 
+
+*'''I use English in English Windows and with an English locale (e.g. US, UK, etc.):''' SuperMemo will proceed with the default upgrade using 1252 — West European Latin code page 
+*'''I do not use plain text components, I only use rich formatting (RTF or HTML):''' Only plain text components and titles are affected by the conversion. If you use rich text components, you do not need to care how SuperMemo names registry members. If you ever see incorrect titles in SuperMemo, you can auto-correct each time you make edits to your elements 
+*'''I only use incremental reading and I import my texts from my web browser:''' Incremental reading relies on HTML and is unaffected (as in the previous point). 
+*'''I purchased this collection from SuperMemo World:''' Choose this option if you purchased this collection from super-memo.com 
+*'''I created my plain text elements using a non-English system locale, which I know:''' Use this option if you know the system locale (or the code page) in which you developed your collection (if you used different locales, only locales that were used to create plain text components matter 
+*'''I know which code page my collection needs for the upgrade:''' Use this option if you know the exact code page number needed for the upgrade 
+*'''I create my collections myself in non-English Windows and/or with non-English locale:''' Use this option if you use non-English Windows and/or non-English locale. Remember that if you used different Windows or locale settings, this qualifies as a "mixed collection" and you should choose: '''My collection uses a mix of different languages that each requires a different code page:''' 
+*'''My collection uses a mix of different languages that each requires a different code page:''' If you mixed many languages, different fonts, different code pages, different locale settings, etc. the upgrade may not be straightfoward. You would do best by choosing this option to get personal assistance in converting your collection. 
+*'''I have no idea what you are talking about. Please help me:''' This choice will open the present web page. If this is still not enough, please ask your questions by editing his page or choose '''I want to receive personal help via e-mail''' next time the upgrade help dialog shows up again 
+*'''I do not know, but I want to risk a default upgrade with English defaults:''' Choose this option if you do not want to waste any more time and you prefer to risk the default upgrade and see how it works out for you. Be sure that you have already made a backup of your collection. Without a backup, you will not be able to reverse the changes! 
+*'''I want to receive personal help via e-mail:''' Use this option if you want to get in touch via e-mail and receive personal assistance

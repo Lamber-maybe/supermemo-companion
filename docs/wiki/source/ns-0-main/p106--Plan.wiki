@@ -1,0 +1,282 @@
+__TOC__ 
+
+== Introduction ==
+
+If you think "''I wish there were 20 of me''" or "''There aren't enough hours in the day''", SuperMemo can help you with '''[[Toolkit menu|Toolkit]] : Plan'''. 
+
+'''[[Toolkit menu|Toolkit]] : Plan''' can help you do two things:
+# first you say what you would like to do, and then
+# you let SuperMemo compute what can realistically be done within a day.
+
+When using '''Plan''' you produce a list of activities and the desired time allocations for these activities. SuperMemo then checks the available time, and shortens all activities in proportion. If your days are repetitive, you can fine-tune your schedule to the last minute. If they are not, you can still benefit by planning in advance and tracking your progress as you go.
+
+If you are not sure '''Plan''' would be a useful tool for you, read: "''[https://supermemo.guru/wiki/Planning_a_perfect_productive_day_without_stress Planning a perfect productive day without stress]''". Future society will certainly drift in the direction of a deadline-free, creative work that will excellently fit dynamic scheduling offered by '''Plan'''.
+
+== Employing Plan ==
+
+'''Plan''' can be used to plan your entire day, or it can be used to plan shorter slots, e.g. your daily learning slot. For example, your 2-hour-long learning schedule in the evening could look like this: 
+
+#30 min - surfing the net (searching for interesting articles) 
+#30 min - reviewing articles, quick reading, importing the most valuable articles to SuperMemo 
+#30 min - reading in SuperMemo, introducing new articles to the learning process, topic repetitions, extracting new [[Glossary:Topic|topics]], generating [[Glossary:Cloze_deletion|cloze deletions]]
+#30 min - core item repetitions in SuperMemo
+
+Using '''Plan''' to plan the entire day works best for people who are not limited by meetings, deadlines, and multiple interruptions. It is most suited for those who can freely schedule activities throughout the day. But, with some skill and effort, it can also be used by those whose days change at a minute's notice, and those whose days are not composed of regularly repeating activities. 
+
+The main purpose of '''Plan''' is to '''keep optimum proportions of time devoted to particular activities in your schedule''' (e.g. 25 minutes for e-mail, 25 minutes for web surfing, 105 minutes for learning, 45 minutes for sports, 2.3 hours for the kids, etc.). 
+
+An optimally adjusted schedule is a powerful tool that can help you understand nuances of time-management. You can make one-minute daily adjustments to the schedule in order to maximize the effectiveness of your work, your health, your family life, and minimize stress and chaos introduced by poor planning. It will give you a quality insight into your own life. It will help you see the connection between your activities and their results. It will ensure that you stop neglecting lesser things that can produce major problems in a long run. '''Plan''' is highly recommended for people with low-stress tolerance and perpetual problem with organizing their day. 
+
+With '''[[Toolkit menu|Toolkit]] : Plan''' you first create a schedule and then execute it. 
+
+== Creating a new schedule ==
+
+#Choose '''[[Toolkit menu|Toolkit]] : Plan''' or press ''Ctrl+P'' 
+#Click on the '''hours''' field at the top and type in the length of your schedule in hours (e.g. type 18.3 if you want your waking day to last 18.3 hours) 
+#Click on the '''Activity''' field in the first row (the one which starts at 0:00) and type in your first activity of the day, e.g. ''Breakfast and news'' 
+#Press ''Enter'' to move to the '''Length''' column 
+#Type the length of time in minutes you would like to spend on your first activity (e.g. 22 minutes for ''Breakfast and news'') 
+#Press ''Enter'' to move to the second row (second activity). Ignore all other fields. At this point they are mostly meaningless! 
+#Type in the second activity and the time you would like to devote to it (e.g. ''[[Incremental reading]]'', 90 minutes) 
+#Press ''Enter'' again to create the third activity, type its name and time 
+#Keep on typing in your activities until your schedule is complete. Do not look at the sum of times of the activities. Always use the length of time you would want to spend on an activity; even if it is not very realistic 
+#See the picture below for an exemplary whole-day schedule 
+#Type in the start time of your schedule template (''Start'' field in the first row) or leave it as 0:00 if you often change the start time. The schedule in the picture begins at 7:00 (which means 7 am) 
+#If some activities must start at a specific hour, click the ''Start'' field of these activities and type in the start time (fixed time will be marked as an ''F'' on the left). The exemplary schedule below, has two activities that begin at fixed time (''Breakfast at 7:00'', and ''Family at 16:00''); the rest is composed of ''floating activities'' whose timing is optimized by SuperMemo 
+#You can now inspect other fields of your schedule. ''ActLen'' will tell you how much SuperMemo can actually allocate for a given activity. This will often be less than ''Length''. After all, we nearly always have greater plans than we can squeeze into 24 hours. In the picture below, ''Work'' begins at 8:55. The desired length of this activity is 240 minutes, but there isn't enough time before ''Family'' at 16. SuperMemo must then reduce the time for this slot down to 226 minutes. If fixed activities squeeze other activities too much, you can reshuffle activities by dragging them (grab the activity with the mouse by the gray field on the left) 
+#''OptLen'' indicates how much SuperMemo could allocate for an activity if there were no fixed-time activities. For example, SuperMemo could allocate 232 minutes for ''Work'' if it was not squeezed into the slot between 7:00 am and 16:00. This column helps you assess the damage inflicted by fixed slot timing and fixed slot duration. 
+#''OptStart'' indicates the optimum start hour for an activity if there were no fixed-time activities (<code>OptStart[n-1]+OptLen[n-1]=OptStart[n]</code>). If ''Work'' could start at 8:58 and the ''Work: e-mail'' slot at 12:49, you would be able to use the optimum 232 minutes for that slot. This column tells you how much the timing of slots departs from the optimum schedule as a result of fixed timing or duration. 
+#''OptShift'' equals ''OptStart'' minus ''Start''. This column tells you how much the relative timing of slots changes as a result of fixed timing or duration. 
+#''Delay'' indicates the delay in minutes of the actual activity start (the ''Start'' column) as compared with the optimum start (''OptStart''). In other words, ''Delay=Start-OptStart [min]''. For example, ''Work'' begins 2.9 minutes after the optimum time, and ''Rest'' comes 12 minutes late as compared with the optimum, which is 8 hours and 21 minutes from waking (see: [https://supermemo.guru/wiki/Best_time_for_napping Best time for napping]). The delay (or advancement) of other slots is proportionally reduced down to zero as the schedule progresses towards the last activity of the day: ''sleep'', which is planned 17 hours from waking (as determined by the length of the schedule at the top of the '''Plan''' window) 
+#The ''Percent'' column tells you what proportion of time has been used for a given activity as compared with the optimum time. In a schedule without fixed activities, this column always shows 100% for all activities. Due to the fixed-time for ''Family'' at 16, all preceding activities are reduced to 94% of their optimum value. The only exception is ''Sport'', which is ''rigid'' (marked with ''R''). Evening activities are closer to the optimum at 99%.
+
+[[Image:SuperMemo Schedule Plan.png|center|800px|SuperMemo: An exemplary Toolkit : Plan schedule]]
+
+== Executing the schedule  ==
+
+Your schedule template defines your optimum at which you should strive. However, in real life you will never reach this optimum. This is why you will always need to start a day with your schedule template and modify the schedule in real-time as you go. The process of executing the schedule may also use the sound alarm that will help you terminate activities when their time is up. 
+
+#At the beginning of your working day, open '''[[Toolkit menu|Toolkit]] : Plan''' (''Ctrl+P'') 
+#Choose the schedule template in the combo box in the top-left corner (on the first day, you will probably only have one schedule listed there: your original schedule template created above).
+#Choose '''Menu : Save as''' (the '''Menu''' button is the first button on the toolbar) or press ''Ctrl+Shift+S'' 
+#SuperMemo, by default, will name your today's schedule by using today's date (e.g. "''Nov 08, 2006, Wed.txt''"). Note the ''txt'' extension indicating that each schedule is a simple text file that can be inspected with Notepad 
+#If the present time differs from ''Start'' time for the first activity, click on the first activity and click the button '''Begin''' (the one with the clock icon) or press ''Alt+B''. '''Begin''' inserts the current time in the ''Start'' field of the selected activity. '''Begin''' also starts the alarm timer. The alarm will sound shortly before the end of the current activity. You can determine the sound file to play at alarm time by using '''Menu : Alarm : Choose music'''. When the alarm comes up (see the [[#Alarm|picture below]]), you will be able to prolong the activity by a few minutes if necessary. The ''ActLen'' field of the first activity tells you the actual allocated length of the activity in minutes 
+#Once the alarm sounds or you complete your first activity, click on the row corresponding with the next activity and click '''Begin''' again. This will update the start time of the newly started activity. The whole schedule is automatically rebuilt and optimized. You will see changes to the actual length (''ActLen''), delay (''Delay'') and other columns in the schedule. The new alarm will be set to ring shortly before the end of the current activity according to the new optimum 
+#Upon the next alarm, click '''Begin''' on the next activity and execute it as well. Repeat these steps until you reach the end of your schedule or until it is forcefully terminated (e.g. by other obligations or by the time you should go to sleep) 
+#At the end of the schedule, select the last executed activity and choose '''Menu : Terminate'''. Your schedule is complete. At '''Terminate''', answer ''Yes'' to "''Use current time to terminate?''". "''No''" is reserved for cases when you fail to '''Terminate''' at the end of the schedule due to an emergency, and you still will want to keep accurate data for the sake of statistics or diary records. You can also routinely use '''Terminate''' at the beginning of the next day if you turn off your computer some time before sleep (e.g. before ''Shower'') 
+#On the next day, optionally, process the schedule, e.g. use '''Terminate''' (if not terminated on the previous day), execute [[#Schedule_analysis|schedule analysis]], compute schedule statistics, export the schedule to your diary, etc. In the end, choose '''Menu : Tools : Archive''' (''Shift+Ctrl+A'') to save the schedule in the archive 
+#Go back to Step 1
+
+This is how the schedule could have looked after having been executed (as exported with '''Export''' on the toolbar): 
+
+<STRONG><FONT size=4>Sep 07, 2019, Sat (17.17 h)</FONT> </STRONG>
+<P>
+<UL type=circle>
+<LI>07:15 - TV: Breakfast and news<I><FONT size=1> (45 min 225% of 20 min; shift=00:00)</FONT></I></LI>
+<LI>08:00 - SM: Incremental reading<I><FONT size=1> (80 min 80% of 100 min; shift=00:45)</FONT></I></LI>
+<LI>09:20 - Jobs: Planning the day<I><FONT size=1> (13 min 260% of 5 min; shift=02:05)</FONT></I></LI>
+<LI>09:33 - Work: DBT programming<I><FONT size=1> (270 min 113% of 240 min; shift=02:18)</FONT></I></LI>
+<LI>14:03 - Sport: warm up<I><FONT size=1> (8 min 36% of 22 min; shift=06:48)</FONT></I></LI>
+<LI>14:11 - Sport: jogging 8 km<I><FONT size=1> (74 min 123% of 60 min; shift=06:56)</FONT></I></LI>
+<LI>15:25 - Meal: Dinner and movies<I><FONT size=1> (40 min 89% of 45 min; shift=08:10)</FONT></I></LI>
+<LI>16:05 - Family: uncle Jan and his crazy kids<I><FONT size=1> (260 min 217% of 120 min; shift=08:50)</FONT></I></LI>
+<LI>20:25 - Family: x<I><FONT size=1> (85 min 71% of 120 min; shift=13:10)</FONT></I></LI>
+<LI>21:50 - SM: Incremental reading<I><FONT size=1> (70 min 280% of 25 min; shift=14:35)</FONT></I></LI>
+<LI>23:00 - Shower<I><FONT size=1> (11 min 92% of 12 min; shift=15:45)</FONT></I></LI>
+<LI>23:11 - YT: evening lectures<I><FONT size=1> (74 min 76% of 97 min; shift=15:56)</FONT></I></LI>
+<LI>00:25 - sleep</LI></UL>
+
+The above file is directly importable to your diary providing a daily record of your performance. Note than none of the activities lasted as long as planned (100%). The figures in the parentheses indicate the actual length (''ActLen'' field), the percentage of time devoted to the activity as compared with the optimum time (''OptLen'' field). Note also that the total time was increased to 17.17 hours on this particular day due to going to sleep 10 minutes later than the optimum (00:15) and 25 minutes later than planned (00:25 instead of 00:00).
+
+== Alarm  ==
+
+Shortly before the end of the current activity, the alarm is raised. You can either stop the alarm or snooze it by typing in the number of minutes to pass until the alarm is to be raised again. 
+
+[[Image:Alarm.jpg|center|800px|SuperMemo: Incremental writing of a SuperMemo FAQ entry with exactly two minutes left until the activity comes to an end (at 23:39:48)]] 
+
+If you turn off the computer or just exit SuperMemo, the alarm will not be raised. If you want to quit SuperMemo and still keep the alarm going, send SuperMemo to the notification area (formerly known as the system tray or the status area) with '''[[Window menu|Window]] : [[Window menu#Hide SuperMemo|Hide SuperMemo]]''' (''Shift+Ctrl+G''). You can see the time remaining to the next alarm by moving the mouse over the SuperMemo icon in the notification area. To bring SuperMemo back out of the notification area (colloquially known as the system tray), click its icon on your Windows desktop or in the area. You can also bring SuperMemo back with its Windows shortcut (if you have created one). 
+
+While the alarm is on, it plays your selected sound file (use '''Menu : Alarm : Choose music''' to change the file).
+
+== Schedule analysis  ==
+
+If you keep overrunning your allocated time slots, the remaining activities of the day will progressively get squeezed. This is the main problem with using '''Plan'''. The problem, naturally, does not come from the system of optimizing your day with '''Plan'''. The problem comes from our natural tendency to add time to enjoyable slots, from being late, as well as from being interrupted by unexpected events (e.g. phone calls). '''If you do not religiously stick to the schedule, schedule optimization will not work!''' A vast majority of users of '''Plan''' report doing well only in the first half of the day, while activities scheduled for the evening usually get squeezed beyond usability. This is where schedule analysis with '''Delays''' comes handy. It helps you better understand your weaknesses, as well as weak spots in the schedule (i.e. activities for which you allocate too little time, activities which you tend to overrun, etc.). 
+
+Your schedule will keep requiring fine-tuning (i.e. adding a few minutes here, taking away a few minutes there, etc.). You may always want to reduce the time for breakfast, and increase the time for sports or education; however, your plans may be unrealistic. In the exemplary schedule in the picture, you may find yourself spending an average of 35 minutes for breakfast as opposed to the desired 22 minutes. To prevent this from happening, you should use the button '''Delays''' to honestly analyze your schedule and realistically adjust the length of activities that you never manage to complete in time or which never get enough time as compared with the plan. Use your currently executed schedule to analyze today's (or yesterday's) delays, and use your schedule template to correct weak spots. 
+
+The delay analysis of the schedule presented in the previous paragraph would produce the following outcome: 
+
+<B><FONT size=4>Delays: Sep 07, 2019, Sat (17.17 h)</FONT> </B></P>
+<P>
+<UL type=circle>
+<LI><B>140 min.</B>: Family: uncle Jan and his crazy kids <I>(120-&gt;260 min.)</I></LI>
+<LI><B>45 min.</B>: SM: Incremental reading <I>(25-&gt;70 min.)</I></LI>
+<LI><B>30 min.</B>: Work: DBT programming <I>(240-&gt;270 min.)</I></LI>
+<LI><B>25 min.</B>: TV: Breakfast and news <I>(20-&gt;45 min.)</I></LI>
+<LI><B>14 min.</B>: Sport: jogging 8 km <I>(60-&gt;74 min.)</I></LI>
+<LI><B>8 min.</B>: Jobs: Planning the day <I>(5-&gt;13 min.)</I></LI>
+<LI><B>-1 min.</B>: Shower <I>(12-&gt;11 min.)</I></LI>
+<LI><B>-5 min.</B>: Meal: Dinner and movies <I>(45-&gt;40 min.)</I></LI>
+<LI><B>-14 min.</B>: Sport: warm up <I>(22-&gt;8 min.)</I></LI>
+<LI><B>-20 min.</B>: SM: Incremental reading <I>(100-&gt;80 min.)</I></LI>
+<LI><B>-23 min.</B>: YT: evening lectures <I>(97-&gt;74 min.)</I></LI>
+<LI><B>-35 min.</B>: Family: x <I>(120-&gt;85 min.)</I></LI></UL><B>Delayed: </B>04:22 hours <BR><B>Extras: </B>00:00 hours <BR><B>Lost: </B>01:38 hours <BR>
+<P>
+<I><FONT size=2>(exported: Sep 08, 2019, Sun, 08:21:10)</Font></I>
+<P>
+
+In the schedule above, there were delays of 4 hours and 22 min. There were no extra slots inserted. The losses in shortened activities stood at 1 hour and 38 min. Those numbers are relative to your originally desired values. Once you use '''Adjust''', delays and losses should be of the same value.
+
+In the schedule analyzed, the ''Family'' slot was the greatest schedule offender. You have devoted 260 minutes instead of the planned 120 minutes. This produced a 55 min. delay in the schedule. In conclusion, you may decide to either improve your discipline or increase the desired length of time devoted to individual slots (e.g. increase the family slot). It is enough you go through the slots that produce delays. Extending these slots will automatically shorten all other slots. 
+
+As for the slots that produced negative delay, you may want to check for consequences of doing less than planned. Those may be strategic slots that you like less or execute too late (e.g. while being tired, or when the other activities in the schedule squeeze the slot in question out of the allocated time). 
+
+Once your schedule seems perfect, you should by all means avoid delays, which call the whole idea of schedule optimization in question. You have to realistically adjust the lengths of activities and strive at completing individual slots ahead of time. This will prevent end-of-schedule activities from being a constant casualty of delays. 
+
+Once your schedule stabilizes and you can efficiently stick to its timing, you can use the button '''Adjust''' on the toolbar that will copy ''ActLen'' fields to ''Length'' fields. This will help you adjust realistic length figures in schedule analysis. Usually, your first plans will by far exceed your abilities, hence the importance of the '''Adjust''' option. Note that in earlier SuperMemos, ''OptLen'' field was used in ''ActLen''. This would not account for fixed-time slots that may require compressing preceding or succeeding activities. Now, even if you use fixed times (e.g. to perfectly time your nap, or to squeeze in an appointment), after '''Adjust''', the % column should all be set to 100%.
+
+Remember to use '''Adjust''' only on your template schedule, or, partially, at the beginning of a new slot, otherwise you won't be able to do delay analysis ('''Plan''' would now think that you are doing your things optimally).
+
+== Exceptions and emergencies  ==
+
+The following circumstances may call for special actions in the schedule manager: 
+
+#'''Moving an activity''' - if you need to change the sequence of floating activities, you can drag one ahead of another (e.g. you may drag e-mail ahead of SuperMemo if you expect your colleague to send you an important article to [[Incremental reading|read incrementally]]). To drag an activity, press the left mouse button down on the gray column on the left and drag the activity up or down 
+#'''Adding an activity''' - during the execution of your schedule, you might figure out that you need to insert an additional activity (e.g. an unexpected family visit). For that purpose, select the activity before which the new slot is to be inserted, and press ''Ins'' (or choose '''Menu : Insert'''). Type in the length of the new slot or type in the expected start time and end time. All activities before and after the inserted activity will optimally be stretched or compressed (with the assumption that no activity will be split). If compression is disproportionate on one side of the inserted activity, move some floating activities away from the overcrowded part 
+#'''Splitting an activity''' - if you want to insert a short break into an activity (e.g. breaking news on TV in your learning slot) you can choose '''Menu : Split''' (''Ctrl+T''). This will help you execute an activity in two portions. SuperMemo will use the time that elapsed from the beginning of the slot as the split default. For example, if your learning slot is 120 minutes but you are sleepy and would like to take a refreshing nap before you continue until the end of the slot you will want to split it and proceed with a nap slot ahead of the remaining part of the slot. 
+#'''Merging activities''' - if you want to conglomerate activities, move one of them to make sure it precedes the other. Choose the first activity and select '''Menu : Merge'''. For example, if you want to exceptionally take the kids to the cinema in your ''Kids'' slot, you may figure out that the slot is too short. You could then give up your ''House: tasklist'' and merge it with the kids slot. If this is still not enough, you could merge in ''E-mail''. When you merge two or more slots, you should remember to avoid consuming strategic slots by less important activities. Otherwise, you will defeat the main purpose of '''Plan''': self-discipline in sticking to optimum proportions of activities. If you decide to merge your learning slot with house [[Glossary:Tasklist|tasklist]] in order to make orders in the shed, you will lose your learning slot. Not only will you lose a strategic slot, you will also not be able to effectively run the schedule analysis for that day 
+#'''Fix the starting hour of an activity''' - if you plan to take kids to the cinema at 18:00, you can click the ''Kids'' slot and type in the fixed hour in the ''Start'' column. All your activities before and after that slot will be compressed or extended proportionally. You can reduce the resulting imbalance by moving some activities from more crowded to less crowded portions of the schedule 
+#'''Removing an activity''' - if you want to skip an activity due to delays or due to its lower priority, you can delete it with ''Del''. Alternatively, in '''Delays''', you can focus only on adding time to activities that take more than you plan. In such cases, deleted slots will gradually be squeezed in length in the original schedule by expanding the slots that gain time upon the delete 
+#'''Rigid activities''' - if you happen to adjust the time of a single slot again and again, and you know precisely how much time you want allocated to that slot, you can save time by clicking the ''R'' column and making that slot ''rigid''. Rigid slot will always take as much as you plan for it. For example, if you always overrun ''Rest and newspapers'' due to the lazy human nature, and you never want to allocate a minute beyond the originally planned 30 minutes, set this slot as rigid 30 minutes and never worry about adjusting it again
+
+== Activity statistics  ==
+
+If you would like to keep statistics of individual activities, group activities by starting their name with the same keyword. For example, name your SuperMemo repetition slots as ''Reps A'', ''Reps B'' and ''Reps C''. If you select '''Stats''' on the toolbar, SuperMemo will add up the time used for repetitions by adding the length of the three slots starting with the keyword ''Reps''. If you want to modify the length of the activity in the statistics, e.g. due to a short break, list the corrected length immediately after the keyword. For example, if ''Reps B'' lasted 23 minutes, but you had to leave for the toilet, you could correct it to read as ''Reps 18 B''. SuperMemo will then add 18 minutes of ''Reps'' to statistics instead of 23 minutes. 
+
+If you want to keep additional statistics, you can list them inside individual slots by preceding the keyword with ++ and following it with a statistic. For example, if you want to keep statistics of individual sport efforts in your 2-hour sports slot, you could write down the sports slot as:<br>''Sports 120: ++Jogging 20 (two rounds), ++Gym 15 (low-back strengthening), ++Swimming 25, ++Sauna 20, walking back home'' 
+
+For the schedule above, the daily totals will look as follows: 
+
+<B><FONT size=4>TOTALS: Sep 07, 2019, Sat (17.17 h)</FONT> </B></P>
+<P>
+<UL type=circle>
+<OL><FONT size=3>
+<LI>Family 345 min. (05:45) <FONT size=2>
+<UL>
+<LI>260 Family: uncle Jan and his crazy kids</LI>
+<LI>85 Family: x</LI></UL></FONT></LI>
+<LI>Work 270 min. (04:30) <FONT size=2>
+<UL>
+<LI>270 Work: DBT programming</LI></UL></FONT></LI>
+<LI>SM 150 min. (02:30) <FONT size=2>
+<UL>
+<LI>80 SM: Incremental reading</LI>
+<LI>70 SM: Incremental reading</LI></UL></FONT></LI>
+<LI>Sport 82 min. (01:22) <FONT size=2>
+<UL>
+<LI>8 Sport: warm up</LI>
+<LI>74 Sport: jogging 8 km</LI></UL></FONT></LI>
+<LI>YT 74 min. (01:14) <FONT size=2>
+<UL>
+<LI>74 YT: evening lectures</LI></UL></FONT></LI>
+<LI>TV 45 min. (00:45) <FONT size=2>
+<UL>
+<LI>45 TV: Breakfast and news</LI></UL></FONT></LI>
+<LI>Meal 40 min. (00:40) <FONT size=2>
+<UL>
+<LI>40 Meal: Dinner and movies</LI></UL></FONT></LI>
+<LI>Jobs 13 min. (00:13) <FONT size=2>
+<UL>
+<LI>13 Jobs: Planning the day</LI></UL></FONT></LI>
+<LI>Shower 11 min. (00:11) <FONT size=2>
+<UL>
+<LI>11 Shower</LI></UL></FONT></LI></FONT></OL></UL>
+
+To keep monthly and annual statistics, you need to compute your '''Stats''' daily and keep '''Monthly statistics update''' and '''Annual statistics update''' checked. 
+
+If you keep '''Monthly statistics update''' checked when using '''Stats''', SuperMemo will store daily statistics in your monthly statistics file. If you check '''Annual statistics update''', SuperMemo will collect all monthly statistics (from monthly statistics files), generate an annual statistics file, and display it in your default spreadsheet (e.g. in Excel).
+
+For the above example, the following files will be used to store statistics: 
+
+*monthly statistics for September 2019: ''&lt;SuperMemo folder&gt;\plans\stats\2019\2019 Sep.csv'' 
+*annual statistics for 2019: ''&lt;SuperMemo folder&gt;\plans\stats\2019\2019 Year Totals.csv''
+
+== Activity parameters  ==
+
+If your schedule is overcrowded with multiple slots, you can group some of them together, and make SuperMemo randomly choose one on a given day, another on another day, etc. For that purpose choose '''Menu : Activities''' or press ''Shift+Ctrl+E''. List the activities in individual rows of the '''Activity Options''' dialog box. Specify the length of individual activities and the maximum length of the slot in '''Length (min)'''. On saving the new schedule with '''Save as''', SuperMemo will randomly select one of the listed activities and choose its proposed length in schedule optimization (on condition the length is not longer than the maximum length allowed for that slot). For example, if you would like to alternatively browse New Scientist, cnn.com and Scientific American websites, and your time is too short to go to all these places in your reading slot, you can ask SuperMemo to randomly assign a single site on a given day, so that you could explore them individually. SuperMemo may then list the following entry in the schedule: 
+<blockquote>''{#R: 16 Read NS | 10 Read cnn.com | 13 Read SciAm}''</blockquote>
+In this case, '''Plan''' will try to allocate randomly 16 minutes for NS, 10 min. for cnn.com or 13 min. for SciAm. As always, the actual length of these activities will depend on the allocation of time for other things on this particular day.<br>Instead of using random allocations, you can also choose to assign a different slot to each day of the week (use '''Choice method: By day''' in '''Activity Options'''). For example: 
+<blockquote>''{#D: 10 Read: cnn.com | 16 Read: NS | 13 Read: SciAm | 16 Read: NS | 15 Read: Wikipedia | 16 Read: Economist | 16 Read: PCMag.com}'' </blockquote>
+In this case, '''Plan''' will try to allocate 10 min for ''cnn.com'' on Monday, 16 min. for ''New Scientist'' on Tuesday, etc.
+
+== Other options&nbsp;: Toolbar  ==
+
+*'''Menu''' - '''Plan''' menu (see [[#Menu|below]]) 
+*'''Save''' (<kbd>Ctrl</kbd>+<kbd>S</kbd>) - save the currently edited schedule on the disk 
+*'''Begin''' (<kbd>Alt</kbd>+<kbd>B</kbd>) - begin executing the selected activity. This sets the ''Start'' time of the activity to the current time and activates the alarm timer  
+*'''Export''' - export the schedule as HTML (e.g. to use it as a diary entry skeleton) 
+*'''Delays''' - see which activities introduce delays in the schedule 
+*'''Edit''' (<kbd>Alt</kbd>+<kbd>Enter</kbd>, <kbd>Ctrl</kbd>+<kbd>E</kbd>, <kbd>Alt</kbd>+<kbd>E</kbd>, or double-click) - edit the activity (e.g. when it requires a longer description). Editing in-place can be activated with <kbd>Enter</kbd> or <kbd>Ctrl</kbd>+<kbd>M</kbd>. To clear the name of the activity ''and'' edit in-place, use <kbd>Ctrl</kbd>+<kbd>H</kbd>
+*'''Stats''' - add up activity statistics. Daily statistics are displayed as an HTML file. Monthly and annual statistics are kept in comma-separated file format (e.g. for use with spreadsheets) 
+*'''Adjust''' - convert the "desired schedule" into the "optimum schedule" to use more realistic timing when fine-tuning the schedule (copy ''OptLen'' fields to ''Length'' fields) 
+*'''Split''' (<kbd>Ctrl</kbd>+<kbd>T</kbd> or <kbd>Alt</kbd>+<kbd>P</kbd>) - split the activity in two 
+*'''Fix''' (<kbd>Ctrl</kbd>+<kbd>F</kbd> or <kbd>Alt</kbd>+<kbd>F</kbd>) - fix the selected activity at its current start time (SuperMemo will not change the start time)
+
+== Other options&nbsp;: <span id="Menu">Menu</span>  ==
+
+[[Image:Schedule plan menu.jpg|center|SuperMemo: Toolkit : Plan: Local menu]] 
+
+*'''Open''' (<kbd>Ctrl</kbd>+<kbd>O</kbd>) - open another schedule 
+*'''New''' (<kbd>Ctrl</kbd>+<kbd>N</kbd>) - start creating a new schedule template 
+*'''Save''' (<kbd>Ctrl</kbd>+<kbd>S</kbd>) - same as the '''Save''' button (above) 
+*'''Save as''' (<kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>S</kbd>) - save the currently selected schedule template on a given day before executing the schedule 
+*'''Edit''' (<kbd>Ctrl</kbd>+<kbd>E</kbd>) - same as the '''Edit''' button (above) 
+*'''Activities''' (<kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>E</kbd>) - define activities that should be used in '''Plan''' on different days 
+*'''Begin''' (<kbd>Alt</kbd>+<kbd>B</kbd>) - same as the '''Begin''' button (above) 
+*'''Insert''' (<kbd>Ins</kbd>) - insert an activity 
+*'''Delete''' (<kbd>Ctrl</kbd>+<kbd>Del</kbd>) - delete an activity 
+*'''Split''' (<kbd>Ctrl</kbd>+<kbd>T</kbd>) - same as the '''Split''' button (above) 
+*'''Merge''' - merge the currently selected activity with the one that follows 
+*'''Fix''' (<kbd>Ctrl</kbd>+<kbd>F</kbd>) - same as the '''Fix''' button (above) 
+*'''Terminate''' (<kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>Enter</kbd>) - terminate the schedule on the selected activity (either at current time, e.g. if you are going to sleep, or at the activity's start time, e.g. if you are marking the termination hour for statistics on the next day) 
+*'''Alarm''' 
+**'''Begin''' - same as the '''Begin''' button (above) 
+**'''Remind''' - set the alarm to be raised at the end of the currently scheduled activity 
+**'''Set alarm''' - set the alarm to be raised at a desired time 
+**'''Stop''' - stop the alarm timer 
+**'''Disable alarm''' - prevents starting alarm when starting activities, and prevents synchronization of alarms between instances of SuperMemo 
+**'''Choose music''' - select a sound file that will be played at alarm time
+*'''Tools''' 
+**'''Export''' - same as the '''Export''' button (above) 
+**'''Totals''' - same as the '''Stats''' button (above) 
+**'''Delays''' - same as the '''Delays''' button (above) 
+**'''Archive''' (<kbd>Shift</kbd>+<kbd>Ctrl</kbd>+<kbd>A</kbd>) - move the schedule to the archive 
+**'''Adjust''' - same as the '''Adjust''' button (above) 
+**'''Adjust from now''' - set optimal activity length as of the present moment
+**'''Adjust from selected''' - set optimal activity length as of the selected activity
+** '''Begin and Shift''' (<kbd>Ctrl</kbd>+<kbd>B</kbd>) - same as '''Begin''', but the remaining slots are optimized. In case of delayed execution, fixed slots are shifted proportionally to compress the schedule and to gradually realign the schedule with the optimum
+**'''Reset''' - reset the schedule, i.e. set all ''Length'' fields to the optimum possible length, unfix start times and adjust start times to the optimum listed in the ''OptStart'' column 
+** '''Import diary''' - import a set of schedules stored in a single folder
+** '''Import statistics''' - import statistics from a set of scheduled stored in a single folder
+** '''Archive schedules''' - import statistics and archive a set of schedules stored in a single folder 
+**'''Paste from diary''' - paste an HTML diary text from the clipboard (as exported earlier with '''Export''')
+** '''Process schedules''' - import, process statistics, and archive a set of schedules stored in the default [Plan] folder
+*'''Close''' (<kbd>Esc</kbd>) - close the '''Schedule plan''' window
+
+== Video ==
+
+The following video demonstration explains:
+* how to build an exemplary template schedule
+* how to execute the schedule
+* how to analyze delays and modify the template
+* how to see annual statistics
+
+<div class="center">
+    <youtube>nuftJuUFSbY</youtube>
+</div>
+
+<!-- The video: [https://www.youtube.com/watch?v=nuftJuUFSbY My perfect life with Plan] -->
+
+== FAQs ==
+
+See: [https://supermemopedia.com/wiki/Toolkit_:_Plan_FAQ Plan FAQs at supermemopedia.com]

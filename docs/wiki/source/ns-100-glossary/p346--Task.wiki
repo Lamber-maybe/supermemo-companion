@@ -1,0 +1,6 @@
+;<span id="Task">task</span>
+:[[Glossary:Element|element]] that represents a to-do task. For example, a '''task''' may have a form of an article that is waiting for reading on a prioritized [[Glossary:Tasklist|tasklist]] called a [[Glossary:Reading list|reading list]].
+:See also:
+:*[https://super-memory.com/articles/tasklists.htm Break free from work overload] - rationale behind [[Glossary:Tasklist|tasklists]],
+:*[[Tasklist manager|Tasklists]] - how to use [[Glossary:Tasklist|tasklists]], and
+:*[[Incremental learning]] - alternative to [[Glossary:Tasklist|tasklists]] in creative jobs

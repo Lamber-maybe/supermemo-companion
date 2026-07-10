@@ -1,0 +1,2 @@
+;<span id="Outstanding_material">outstanding material</span>
+:all [[Glossary:Outstanding_element|outstanding elements]], i.e. [[Glossary:Element|elements]] whose next repetition date is less or equal today's date

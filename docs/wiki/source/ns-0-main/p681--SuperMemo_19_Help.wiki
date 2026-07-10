@@ -1,0 +1,66 @@
+__NOTOC__
+
+<!-- Hero Section -->
+<div style="text-align: center; padding: 20px; background: #e6f0ff; border: 1px solid #ddd;">
+== Welcome to SuperMemo 19 ==
+Master anything with the world’s leading learning system, backed by decades of memory science.<br />
+[[Introduction|Take a 3-Minute Tour]] | [https://youtu.be/DoQoeK53bP8 Watch the Intro Video]
+</div>
+
+<!-- Featured Image -->
+<div style="text-align: center; margin: 20px 0;">
+[[File:SuperMemo 19 with dual monitor support.jpg|center|500px|alt=SuperMemo 19 running on dual monitors|SuperMemo 19 for Windows at the Professional level running on two monitors]]
+</div>
+
+<!-- Main Sections -->
+{| style="width: 100%; margin: 20px 0;"
+|-
+| style="width: 33%; vertical-align: top; padding: 10px; background: #fff; border: 1px solid #ddd;" |
+=== Get Started ===
+<div style="background: #f0f7ff; padding: 5px; margin-bottom: 10px;">Explore SuperMemo</div>
+* [[SuperMemo|What is SuperMemo?]]
+* [[Features|Key Features]]
+* [[What's new in SuperMemo?|What’s New in SuperMemo 19]]
+* [[SuperMemo Screenshot Tour|See It in Action]] (Screen Tour)
+* [[Minimum requirements|System Requirements]]
+* [https://www.super-memory.com/help/faq/before.htm FAQ: Before You Buy]
+
+| style="width: 33%; vertical-align: top; padding: 10px; background: #fff; border: 1px solid #ddd;" |
+
+=== Learn SuperMemo ===
+<div style="background: #f0f7ff; padding: 5px; margin-bottom: 10px;">Start Learning</div>
+* [[Installing SuperMemo (in a minute)|Install in 1 Minute]]
+* [[Introduction|Beginner’s Guide (3 min)]]
+* [[Step-by-step to SuperMemo mastery|Mastery Course (1 month)]]
+* [[Incremental learning|Incremental Learning]]
+* [[Hints&Tips|Quick Tips]]
+* [https://supermemo.guru/wiki/20_rules_of_knowledge_formulation 20 Rules for Learning]
+
+| style="width: 33%; vertical-align: top; padding: 10px; background: #fff; border: 1px solid #ddd;" |
+
+=== Support & Resources ===
+<div style="background: #f0f7ff; padding: 5px; margin-bottom: 10px;">Get Help</div>
+* [[Menus, buttons, dialogs, etc.|Interface Guide]] (menus, windows and buttons)
+* [[Overview articles|How-To Guides]]
+* [https://supermemopedia.com/wiki/FAQ FAQs]
+* [[Technical support|Contact Support]]
+<div style="background: #f0f7ff; padding: 5px; margin: 10px 0;">Video</div>
+* [https://www.youtube.com/@SuperMemoVideo Video Tutorials ('''SuperMemo Video''')]
+* [https://www.youtube.com/@PleasurableLearning Video Tips & Overviews ('''Pleasurable Learning''')]
+* [https://supermemopedia.com/wiki/The_Pleasurable_Guide_To_SuperMemo Guide to SuperMemo course at "Pleasurable learning"]
+
+|}
+
+<!-- Call to Action -->
+<div style="text-align: center; padding: 20px; background: #e6f0ff; border: 1px solid #ddd;">
+
+== Ready to Transform Your Learning? ==
+Join thousands of learners using SuperMemo to master new skills.<br />
+[https://super-memory.com/english/down.htm Download Now]
+</div>
+
+<!-- Footer -->
+<div style="font-size: 90%; color: #666; text-align: center; margin-top: 20px; padding-top: 10px; border-top: 1px solid #ddd;">
+Need help with an older version? Check our [https://help18.supermemo.org/wiki/SuperMemo_18_Help archive].<br />
+Have ideas? [[Feature request|Share your feedback]].
+</div>

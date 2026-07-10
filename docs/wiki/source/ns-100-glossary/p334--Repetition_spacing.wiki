@@ -1,0 +1,2 @@
+;<span id="Repetition_spacing">repetition spacing</span>
+:see [[Glossary:Spaced_repetition|spaced repetition]]

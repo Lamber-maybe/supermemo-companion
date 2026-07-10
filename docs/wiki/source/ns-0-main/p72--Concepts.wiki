@@ -1,0 +1,420 @@
+== Introducing concepts ==
+
+'''Concepts''' in SuperMemo can be used to organize knowledge. They can be used to add elements to dedicated subject branches of the knowledge tree (e.g. ''chemistry'' branch, ''biology'' branch, etc.). They can also be used to inter-link elements stored in various branches into networks called '''concept maps''' (e.g. ''flu virus'' knowledge). Concepts also underlie a powerful problem solving tool based on a new type of subset review: [[Glossary:Neural review|neural review]] (see: [[Neural creativity]] for more).
+
+== Concepts terminology ==
+
+A '''concept''' is an [[Glossary:Element|element]] associated with an idea or subject. Multiple elements can form [[Glossary:Link|links]] to a concept. Links indicate that [[Glossary:Element|elements]] are associated with the idea represented by the concept. For example, if you learn about infections, you can define a concept ''flu virus''. You can link this concept with many [[Glossary:Element|elements]] related to flu. Each time you want to learn about flu, you might begin from the concept ''flu virus''.
+
+This article focuses on '''concept groups'''. A concept group is a [[Glossary:Branch|branch]] in the [[Contents|'''Contents''' window]] associated with a concept such as chemistry, biology, geography, my family, pictures, etc. The term '''concept''' is used in four main contexts:
+
+;concept element
+:[[Glossary:Element|element]] used to build a portion of a [[Glossary:Concept_map|concept map]] (e.g. an idea, or an article from [http://en.wikipedia.org Wikipedia], etc.)
+;concept member
+:[[Glossary:Registry_member|member]] of the [[#Concept registry|concept registry]] used in concept housekeeping (esp. concept search uses when building a [[Glossary:Concept_map|concept map]]) 
+;concept group
+:[[Glossary:Branch|branch]] of [[Glossary:Element|elements]] rooted in a [[Glossary:Concept|concept]]. This is similar to [[Glossary:Category|category]] known from older SuperMemos. For performance reasons, [[Glossary:Element|elements]] in the '''concept group''' are not registered with a [[Glossary:Concept|concept]]. Even though '''concept groups''' are used in [[Glossary:Spreading_activation|spreading activation]] in neural creativity the links formed by [[Glossary:Parent|parent]]-[[Glossary:Child|child]]-[[Glossary:Sibling|sibling]] relationships are taken as only [[Neural creativity#Spreading activation algorithm|carrying minor priority]] (in comparison to [[Glossary:Concept|concept]]-concept, concept-[[Glossary:Element|element]] and element-element [[Glossary:Link|links]] set by the user) 
+;concept map
+:interlinked graph of [[Glossary:Element|elements]] used as the skeleton for [[#Spreading activation|spreading activation]]. It may also be used in reference to its diagrammatic representation
+;concept box
+:search box for concepts on the [[navigation bar]] in the [[element window]] (also in '''[[Web import]]'''). To start searching, press ''C'' or click the box, and start typing
+
+== Concept groups ==
+
+When you work with a [[Glossary:Collection|collection]] which includes material belonging to different subjects, you may want to keep different subjects in different sections of the [[Glossary:Knowledge_tree|knowledge tree]] available in the [[Contents|'''Contents''' window]] (e.g. economics, computer science, geography, etc.).
+
+To help you organize different subjects in one [[Glossary:Collection|collection]], SuperMemo employs '''concept groups'''. A concept group is set of [[Glossary:Element|elements]] added to a [[Glossary:Branch|knowledge tree branch]] associated with a given [[Glossary:Concept|concept]]. A concept group can be seen as a tool for building a section of the [[Glossary:Knowledge_tree|knowledge tree]]. One concept group is used for adding material related to one subject. [[Glossary:Element|Elements]] added to a given concept group may use their own [[Glossary:Template|template]] that determines their look (e.g. images, sounds, colors, fonts, sizes of text fields, number of shape components, etc.). For more about templates, see: [[Templates|Using templates]].
+
+In older SuperMemos, the role similar to concept groups was played by [[Glossary:Category|categories]]. The main difference between concept groups and categories is that the former are associated with [[Glossary:Concept|concepts]] that play multiple roles in SuperMemo (starting with SuperMemo 17).
+
+The optimum strategy for maximizing the inflow of quality knowledge into the learning process at minimum time is to create a ''To Do'' concept group, to which you add all the knowledge you want to master (e.g. articles, rough notes, rough [[Glossary:Item|items]], etc. belonging to all various subjects). You can process this ''To Do'' knowledge for optimal recall in the course of repetitions. Only when [[Glossary:Item|items assume]] their ultimate well-structured shape (see: [http://super-memory.com/articles/20rules.htm 20 rules of formulating knowledge]), you can move them to their target concept group. Alternatively, you can use concept/elements links to associated items together (e.g. for review before an exam).
+
+=== Creating concept groups ===
+
+Suppose you would like to create a dedicated [[Glossary:Concept_group|concept group]] for your [[Glossary:Item|items]] related to the European Union simply called ''European Union''. Instead of the ''Item'' template, which is the default [[Glossary:Template|template]] used for all newly added [[Glossary:Item|items]], you could define your custom ''European Union'' template to be used with this [[Glossary:Concept_group|concept group]]. All [[Glossary:Item|items]] added to the concept group will share the ''European Union'' look (i.e. have the ''European Union'' [[Glossary:Template|template]] applied). You will only need to select ''European Union'' in the '''Concept box''' on the [[navigation bar]] at the top of the [[element window]].
+
+The fastest way to create a concept is to use ''Ctrl+Shift+P'' on a topic and to change its type from '''Topic''' to '''Concept'''.
+
+You can also create a new [[Glossary:Concept_group|concept group]] using the following steps:
+
+# Choose '''[[Edit menu|Edit]] : [[Edit menu#Create a concept|Create a concept]]''' on the [[main menu]]
+# Type in the name of a new [[Glossary:Concept_group|concept group]] (e.g. geography, biology, etc.), and
+# Click '''OK''' to create the concept for the group
+
+Choose short names for your [[Glossary:Concept group|concept groups]] so they would be easily identifiable in the '''Concept box''' on the in the [[navigation bar]].
+
+'''[[Edit menu#Create a concept|Create a concept]]''' will add a new [[Glossary:Concept|concept element]] as a [[Glossary:Child|child]] of the root of the [[Glossary:Collection|collection]]. Alternatively, you can convert any existing element into a [[Glossary:Concept|concept]] using [[SuperMemo Commander|'''Commander''']]'s '''Concept: Make'''.
+
+If you want the [[Glossary:Element|elements]] related to a selected [[Glossary:Concept_group|concept group]] have custom looks, you can change its [[Glossary:Template|templates]] via '''[[Search menu|Search]] : [[Search menu#Concepts|Concepts]]''' (from the [[main menu]]) at any time. '''Item template''' will determine the look of your question-answer [[Glossary:Item|items]] in the [[Glossary:Concept_group|concept group]]. You can also choose other template formats for [[Glossary:Item|items]] (e.g. [[Glossary:Occlusion_test|occlusion test]], multiple choice test, etc.). '''Topic template''' will define how the articles added to the [[Glossary:Concept_group|concept group]] will look like (e.g. when you import them with ''Ctrl+N'' in [[incremental reading]]).
+
+==== Creating concept groups: Tips ====
+
+* When you first create a [[Glossary:Concept_group|concept group]], SuperMemo will root it in a [[Glossary:Concept|concept]] in the [[Glossary:Knowledge_tree|knowledge tree]] (it will either create a new [[Glossary:Concept|concept element]] or convert an existing element for that purpose). This new [[Glossary:Element|element]] is a special element called the [[Glossary:Root_node|root node]]: the ancestor of all elements in the group. Initially, the root node will have been assigned as both the [[Glossary:Root_node|root node]] and the [[Glossary:Hook_node|hook node]] (i.e. the parent of newly added elements in the group). The root and the hook are the same at first as they equal to the only [[Glossary:Element|element]] in the [[Glossary:Concept_group|concept group]]. All [[Glossary:Element|elements]] added as [[Glossary:Descendant|descendants]] of this first root/hook concept element will form the [[Glossary:Concept_group|concept group]].
+* Press ''Alt+A'' if you want to add [[Glossary:Item|items]] to the default [[Glossary:Concept_group|concept group]]. If you click '''[[Contents]]''', you will see your newly added [[Glossary:Item|items]] become [[Glossary:Child|children]] of the [[Glossary:Hook_node|hook element]] and [[Glossary:Descendant|descendants]] of the [[Glossary:Root_node|root element]] (i.e. the [[Glossary:Branch|branch]] created with '''[[Edit menu|Edit]] : [[Edit menu#Create a concept|Create a concept]]''' or similar).
+* While there can be more than one [[Glossary:Concept_group|concept groups]], there can only be one "current" concept group. As you create new [[Glossary:Element|elements]] (using any means other than directly in the [[Glossary:Knowledge_tree|knowledge tree]]) they will be added to the current [[Glossary:Concept_group|concept group]]. What this means is that they will be added as a [[Glossary:Child|child]] of the [[Glossary:Element|element]] currently assigned as the [[Glossary:Hook_node|hook node]]. This is why it is called the "hook" node. It is the one that catches all the new [[Glossary:Element|elements]]. In addition to determining the new element's location, the current [[Glossary:Concept_group|concept group]] determines most of the default properties for the new [[Glossary:Element|element]]. Most important is the default [[Glossary:Template|template]]
+* In the [[navigation bar]] located at the top of the [[element window]], in the '''Concept box''', you will see that your new [[Glossary:Concept_group|concept group]] became the current one. This means that choosing '''[[Add new]]''' will add new [[Glossary:Item|items]] to the new [[Glossary:Concept_group|concept group]].
+* You can also create a [[Glossary:Concept_group|concept group]] by right-clicking on an existing [[Glossary:Branch|branch]] in the [[Glossary:Knowledge_tree|knowledge tree]] and choosing '''[[Contents menu#Concept|Concept]] : Create''' (''Ctrl+K'') from the [[contents menu]].
+* By default, the top-most [[Glossary:Branch|branch]] of any [[Glossary:Collection|collection]] is a [[Glossary:Root_node|root node]] of the default [[Glossary:Concept_group|concept group]] created while creating the collection. This [[Glossary:Concept_group|concept group]] receives the same name as the [[Glossary:Collection|collection]]
+* [[Glossary:Concept_group|Concept groups]] cannot have sub-concept groups. Instead you can create many [[Glossary:Concept_group|concept groups]] as [[Glossary:Child|children]] of the same [[Glossary:Branch|branch]]. For example, you can create a [[Glossary:Branch|branch]] ''Language'', add two [[Glossary:Child|children]] ''Grammar'' and ''Vocabulary''. Those [[Glossary:Child|children]] can become [[Glossary:Root_node|roots]] of their respective [[Glossary:Concept_group|concept groups]]: ''Language : Grammar'' and ''Language : Vocabulary''
+* You add to the current [[Glossary:Concept_group|concept group]] with '''[[Add new]]'''. You do not operate on concept groups using the [[Glossary:Knowledge_tree|knowledge tree]] and the [[Contents|'''Contents''' window]]
+
+=== Using concept groups ===
+
+When you click the '''[[Add new]]''' button, a new [[Glossary:Element|element]] is created in the location and using the [[Glossary:Template|template]] determined by the current [[Glossary:Concept_group|concept group]] (as chosen in the '''Concept box''' in the [[navigation bar]] at the top of the [[element window]]).
+While you are adding new [[Glossary:Element|elements]], if you decide you want this element to go into a different major portion of the [[Glossary:Knowledge_tree|knowledge tree]] then all you have to do is change the current [[Glossary:Concept_group|concept group]] before creating the new element. That new [[Glossary:Element|element]] will then be appended in the appropriate location of that other section of the [[Glossary:Knowledge_tree|tree]] and the appropriate [[Glossary:Template|template]] will be used. If you start creating elements for a different subject then you just change the default [[Glossary:Concept_group|concept group]] again.
+In order to achieve this convenience it may be necessary to create a rather large set of [[Glossary:Concept_group|concept groups]], especially if you keep all your information in one [[Glossary:Collection|collection]]. You may want to create [[Glossary:Concept_group|concept groups]] for more than just each major "group" of information. You may want to create one for each type of question you might ask for each different subject. You may even want to break your subjects down into smaller sub-topics so that you can choose an appropriate [[Glossary:Concept_group|concept group]] to get the new [[Glossary:Element|elements]] closer to other related information.
+
+In [[incremental reading]], instead of frequently changing [[Glossary:Concept_group|concept groups]] while [[Add new|adding new elements]], you are more likely to use a big ''TO DO'' [[Glossary:Concept_group|concept group]], and move individual [[Glossary:Item|items]] to their final concept groups only when they are finished in the incremental learning process (e.g. via the '''[[Element parameters]]''' dialog box available by choosing '''[[Element menu#Edit|Edit]] : [[Element parameters]]''' from the [[element menu]], or pressing ''Shift+Ctrl+P'').
+
+==== Moving elements to a concept group ====
+
+===== Moving a single element =====
+
+Suppose you had imported an article about Irish referendum on the expansion of the European Union. Imagine that in the course of [[incremental reading]] you extracted an [[Glossary:Item|item]] that you have polished over the last several [[Glossary:Repetition|repetitions]] and now would like to move to your ''European Union'' [[Glossary:Concept_group|concept group]].
+
+To move an [[Glossary:Element|element]] to a selected [[Glossary:Concept_group|concept group]]:
+
+# Right-click over the [[navigation bar]] (e.g. navigation buttons), and choose '''[[Element menu#Edit|Edit]] : [[Element parameters]]''' (Ctrl+Shift+P) from the [[element menu]],
+# In the '''[[Element parameters]]''' dialog box, select the target [[Glossary:Concept_group|concept group]] from the '''Group''' drop-down menu (e.g. European Union),
+# Click '''OK''' to close the dialog box and save the selection you have made
+
+===== Moving a subset of elements =====
+
+Use [[browser]] to move a [[Glossary:Element_subset|subset of elements]] to a desired [[Glossary:Concept_group|concept group]]:
+
+# On the [[browser toolbar]], click the '''[[Subset operations|Subset processing menu]]''' button (2nd from the left), and then choose '''[[Subset operations#Move|Move]] : To a concept''',
+# In the [[#Concept registry|Concept registry]], in its left pane, select the [[Glossary:Concept|concept]] that you want to move a given [[Glossary:Element_subset|subset of elements]] under,
+# Click the '''Accept''' button to close the [[registry window]] and move the [[Glossary:Element_subset|subset of elements]] listed in the [[browser]] to the [[Glossary:Concept_group|concept group]] related to the selected [[Glossary:Concept|concept]],
+# Click '''Yes''' to the ''Do you want to move all browser elements?'' query,
+# Click '''OK''' on an information dialog reporting how many [[Glossary:Element|elements]] have been successfully moved to under the selected [[Glossary:Concept|concept]]
+
+Unlike it was the case in earlier SuperMemos, the '''Group''' parameter of individual elements will not change. You can still change it with '''Set concept group''' on the '''[[Subset operations|Subset processing menu]]'''.
+
+=== Tips: Using concepts ===
+
+* If you define a new [[The look of elements|look for elements]] in your [[Glossary:Collection|collection]], you can select '''[[Element menu#Template|Template]] : [[Element menu#Save as default|Save as default]]''' on the [[element menu]] to save the look as the default [[Glossary:Template|template]] for the current [[Glossary:Concept_group|concept group]]
+* You can right-click anywhere in the [[Glossary:Knowledge_tree|knowledge tree]] and choose '''[[Contents menu#New|New]] : Item''' from the [[contents menu]], and SuperMemo will create an [[Glossary:Item|item]] there. However, it will then use its own pre-defined item [[Glossary:Template|template]]. This can be confusing.
+* Since there is no way to tell by looking at it whether an [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|tree]] is a [[Glossary:Root_node|root node]] of a [[Glossary:Concept_group|concept group]] it may be useful to prefix the names of these [[Glossary:Element|elements]] with ''Grp:'' (or similar)
+* If you delete a [[Glossary:Concept|concept]] from the [[#Concept registry|Concept registry]], it does not delete the associated portion of the [[Glossary:Knowledge_tree|knowledge tree]]. You can create a new [[Glossary:Concept_group|concept group]] for that portion, or leave it without a concept group assignment.
+* It is possible to have more than one [[Glossary:Concept_group|concept group]] have the same [[Glossary:Root_node|root]] and/or [[Glossary:Hook_node|hook]]. This could be useful for quickly choosing among multiple [[Glossary:Template|templates]] while still appending new [[Glossary:Element|elements]] in the same location
+
+=== Summary: Concept groups ===
+
+[[Glossary:Concept_group|Concept groups]] make it easy to add same-looking [[Glossary:Element|elements]] to a selected [[Glossary:Branch|branch]] of the [[Glossary:Knowledge_tree|knowledge tree]] (in the [[Contents|'''Contents''' window]]). You can just keep pressing the '''[[Add new]]''' button confident that the new [[Glossary:Element|element]] is going to end up right at the end of the list of elements under the [[Glossary:Hook_node|hook node]] of the [[Glossary:Concept_group|concept group]] you are currently working with. If you decide to look at some other [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|knowledge tree]], you can go right back to adding new elements and they will still be added where they were being added before. This way, if you are reviewing [[Glossary:Element|elements]] in the [[Glossary:Knowledge_tree|tree]] and decide to add another element, it will go at the end of the list of elements for that [[Glossary:Concept_group|concept group]] where it belongs.
+
+== Concept registry ==
+
+The concept [[Glossary:Registry|registry]] is used to keep the sorted list of [[Glossary:Concept|concepts]]. Each concept is associated with a concept [[Glossary:Registry_member|registry member]].
+
+In the registry, each [[Glossary:Concept|concept]] also shows a [[#Concept properties|set of properties]] that can be used in managing a [[Glossary:Concept_group|concept group]].
+
+The concept [[Glossary:Registry|registry]] can be opened with '''[[Search menu#Search|Search]] : [[Search menu#Concepts|Concepts]]''' on the [[main menu]]. You may find it useful in the following circumstances: 
+
+* If you want to change the name of a [[Glossary:Concept_group|concept group]], use '''Rename''' in the concept [[Glossary:Registry|registry]]
+* If you want to change the [[Glossary:Template|template]] used for [[Glossary:Item|items]] in the [[Glossary:Concept_group|concept group]]:
+*# click the '''Item template''' button in the concept [[Glossary:Registry|registry]],
+*# select a new [[Glossary:Template|template]] from the template registry, and
+*# choose '''Accept''' to confirm your selection and return to the concept registry.
+* To delete a [[Glossary:Concept|concept]] (but not the associated section of the [[Glossary:Knowledge_tree|knowledge tree]]), choose '''Delete''' in the concepts [[Glossary:Registry|registry]]
+* To decide if the selected [[Glossary:Template|template]] should be applied automatically when moving [[Glossary:Element|elements]] into the [[Glossary:Concept_group|concept group]], use the corresponding '''Auto-apply''' checkbox 
+
+It is not recommended to change '''[[Glossary:Root_node|root node]]''' or '''[[Glossary:Hook_node|hook node]]''' manually unless you fully understand the way SuperMemo builds folders under the concept group root. Choosing root/hook wrongly may result in an unexpected rearrangement of your entire [[Glossary:knowledge_tree|knowledge tree]] (SuperMemo rebuilds the concept group [[Glossary:Branch|branch]] when you add too many [[Glossary:Element|elements]] to its [[Glossary:Hook_node|hook node]]).
+
+=== Concept properties ===
+
+If you would like to change concept properties, choose '''[[Search menu|Search]] : [[Search menu#Concepts|Concepts]]''' on the [[main menu]], or click the button to the left of the '''Concept box''' in the [[navigation bar]]. It will open the concepts [[Glossary:Registry|registry]] with all [[Glossary:Concept|concepts]] that you have defined for the [[Glossary:Collection|collection]]:
+
+[[Image:Concept registry.jpg|744px|center|SuperMemo: Concept registry which you can use to execute neural review on selected members and change their properties]]
+
+Each [[Glossary:Concept|concept]] in the [[Glossary:Registry|registry]] is characterized by the following properties (compare with the picture above):
+
+* '''name''' - the name of the [[Glossary:Concept|concept]] (e.g. ''English grammar quirks''). All concept names are displayed on the left in the concept [[Glossary:Registry|registry]]. Concept names are unique. If you try to create a second ''English grammar quirks'' concept, SuperMemo will change the new name (e.g. to ''English grammar quirks#'', ''English grammar quirks@'' or similar)
+* '''Root element''' (or ''root node'') - the [[Glossary:Element|element]] which is the [[Glossary:Ancestor|ancestor]] of all elements included under the [[Glossary:Concept|concept]] (i.e. all elements under the concept are [[Glossary:Descendant|descendants]] of the [[Glossary:Root_node|root]]). By default, this is the same [[Glossary:Element|element]] that was added as a concept when using '''[[Edit menu|Edit]] : [[Edit menu#Create a concept|Create a concept]]''' from the [[main menu]]. The root node determines the section of the knowledge tree that may be rebuilt by SuperMemo in cases where branches overflow with new elements. Other areas of the tree are not affected by changes to the concept group. In most cases, you do not need to change the root node of a concept group. If you change the root node, the concept group will continue building up in a new location of the knowledge tree. You should [http://supermemopedia.com/wiki/SuperMemo_messed_up_my_Contents_structure avoid setting the root of the collection as a root node]. This is equivalent to giving SuperMemo a permission to rework your entire knowledge tree when branches overflow
+* '''Hook branch'''  (or ''hook node'') - the [[Glossary:Element|element]] to which new elements related to the [[Glossary:Concept|concept]] are added as [[Glossary:Child|children]] when you choose '''[[Add new]]''' (e.g. by pressing ''Alt+A''). This [[Glossary:Element|element]] is chosen automatically by SuperMemo and you do not have to change it. [[Glossary:Hook_node|Hook]] is either equal to the [[Glossary:Root_node|root]] (e.g. at the beginning of the concept's life) or is a [[Glossary:Descendant|descendant]] of the [[Glossary:Root_node|root]] (when the root already contains many [[Glossary:Child|children]]). Note that '''[[Add new]]''' adds [[Glossary:Element|elements]] to the [[Glossary:Hook_node|hook]] of the current [[Glossary:Concept_group|concept group]] (as selected in the '''Concept box''' in the [[navigation bar]]). Once the number of [[Glossary:Child|children]] under a given [[Glossary:Hook_node|hook]] exceeds a [[SuperMemo tab in Options#Limit|defined limit]], a new hook node is chosen automatically by SuperMemo
+* '''Item template''' - the [[Glossary:Template|template]] that determines the look of [[Glossary:Item|items]] under the [[Glossary:Concept|concept]]
+* '''Topic template''' - the [[Glossary:Template|template]] used for [[Glossary:Topic|topics]] under the [[Glossary:Concept|concept]]
+* '''Task template''' - the [[Glossary:Template|template]] used for [[Glossary:Task|tasks]] under the [[Glossary:Concept|concept]]
+* '''Default priority''' - the default [[Glossary:Priority|priority]] for [[Glossary:Element|elements]] added to the [[Glossary:Concept_group|concept group]] related to the [[Glossary:Concept|concept]]
+* '''Auto-apply...''' - property which determines if '''[[Element menu#Apply template|Apply template]]''' is to be used automatically on [[Glossary:Element|elements]] moved from another [[Glossary:Concept_group|concept group]] under the [[Glossary:Concept|concept]] in question (as with ''Shift+Ctrl+P''). If '''Auto-apply...''' is checked, the [[Glossary:Template|template]] will be applied automatically. If it is unchecked, the template will not be applied. If it is grayed, SuperMemo will prompt you before applying the concept template (use the grayed option if you are not sure which one is appropriate)
+
+== Neural review ==
+
+'''Neural review''' is a type of review that follows meaningful connections between pieces of knowledge. It takes inspiration from how the brain follows associated ideas. Neural review automates the review of knowledge associated with selected concepts or ideas, e.g. in problem solving, creative writing, etc.
+For example, in a neural review of ''dogs'', there is a good chance of learning about ''puppies'' or ''puddles'', but there is also a chance of learning about cats and somewhat lesser chance of learning about cars. 
+Neural review follows the ''spread of neural activation'' in a network of inter-element connections. [[Glossary:Element|Elements]] are linked with [[Glossary:Concept|concepts]], other elements, or form connections with their neighbors in the [[Glossary:Knowledge_tree|knowledge tree]]. All those links and connections receive weights based on their importance and the [[Glossary:Priority|priority]] of connected [[Glossary:Element|elements]]. Neural review follows those connections and is initiated by executing '''[[Learn menu|Learn]] : [[Learn menu#Go neural|Go neural]]''' (''Ctrl+F2''). Neural review carries a degree of randomness. As such it can be very helpful in associating ideas in neural creativity. See also: [[Glossary:Spreading activation|Spreading activation]]
+
+== Neural creativity ==
+
+'''Neural creativity''' is creativity induced with the help of neural review. In neural review, SuperMemo successively feeds the user with knowledge associated with a selected topic or a chosen subset of topics. When a network of conceptual [[Glossary:Link|links]] connects areas of knowledge, they form semantic space that can be explored in a neural manner that helps forming new associations, and generate ideas. This process is conducive to research, invention, problem solving, etc. Metaphorically speaking, neural creativity helps emulate a thinking process in a human brain extended by knowledge stored in SuperMemo. 
+
+Neural creativity employs the incremental learning process to produce new ideas in a neural fashion. In neural creativity, closely related [[Glossary:Concept|concepts]] are more likely to show up when executing a neural review of a studied subject. If you are fluent in [[incremental learning]], you may wonder how a neural review differs from a [[Subset learning#Semantic review|semantic review]]. The main difference is that in semantic review the whole burden of juggling the semantics is in your hands. You need to know the tools of [[incremental learning]] to execute a [[Subset learning#Semantic review|semantic review]] well. In neural review, the whole process will be reduced to pressing a single button in SuperMemo.
+
+Unlike it is the case with semantic review in SuperMemo, or simply googling for knowledge, the whole process of associating pieces of knowledge is automated. To give it a try, pick a subject and '''Go neural''' (''Ctrl+F2'').
+
+For more see: [[Neural creativity]].
+
+== Summary ==
+
+Here is the typical way of working with [[Glossary:Concept_group|concept groups]]: 
+
+# Use '''Concept: Make''' in the '''[[SuperMemo Commander|Commander]] to convert a [[Glossary:Branch|branch]] to a [[Glossary:Concept|concept]]
+# Use '''[[Element menu#Template|Template]] : [[Element menu#Save as default|Save as default]]''' on the [[element menu]] to save the default element [[Glossary:Template|template]] (or use '''[[Search menu|Search]] : [[Search menu#Concepts|Concepts]]''' to change concept templates)
+# To start adding [[Glossary:Element|elements]] to another [[Glossary:Concept_group|concept group]] (e.g. to start working with ''Chemistry'' after finishing your work with ''Geography''), choose the new working [[Glossary:Concept_group|concept group]] in the '''Concept box''' in the [[navigation bar]] at the top of the [[element window]]
+# To move a ready [[Glossary:Item|item]] from under the '''TO DO''' [[Glossary:Concept|concept]] to a target [[Glossary:Concept_group|concept group]] (e.g. ''Chemistry''):
+## press ''Shift+Ctrl+P'' to open the '''[[Element parameters]]''',
+## select the target [[Glossary:Concept_group|concept group]] in the '''Group''' drop-down menu, and
+## choose '''OK''' to confirm your selection and close the dialog box
+
+== FAQs ==
+
+=== What is the difference between concepts and categories? ===
+
+See: [http://supermemopedia.com/wiki/Categories_vs_Concepts Concepts vs. Categories]
+-----
+=== Where is Search : Concepts? ===
+
+See: [https://supermemopedia.com/wiki/Where_is_Search:Concepts Where is Search : Concepts?]
+-----
+
+=== Add new adds to a collection not a specific concept group ===
+<small>(Barrett L. Oct 01, 2007, 09:09:33)</small>
+
+'''Question'''
+
+When I am working in a [[Glossary:Concept_group|concept group]] and want to add a new [[Glossary:Item|item]], I click '''[[Add new]]'''. However, this creates a [[Glossary:Child|child]] in my [[Glossary:Collection|collection]], and does not place the new item in the appropriate folder. How do I add new [[Glossary:Item|items]] directly to a [[Glossary:Concept_group|concept group]]?
+
+'''Answer'''
+
+Where '''[[Add new]]''' appends new [[Glossary:Item|items]] depends on the currently selected [[Glossary:Concept_group|concept group]]. If you create a new [[Glossary:Collection|collection]], it has one [[Glossary:Element|element]] (the root element) which also makes up the only and current [[Glossary:Concept_group|concept group]] in the [[Glossary:Collection|collection]]. If you want '''[[Add new]]''' to append [[Glossary:Item|items]] to a given [[Glossary:Concept_group|concept group]] (provided there are more concept groups in your [[Glossary:Collection|collection]]), you need to select it first in the '''Concept box''' in the [[navigation bar]] at the top of the [[element window]].
+
+-----
+
+=== Importing data into a specific concept group ===
+<small>(Barrett L., Oct 01, 2007, 09:09:33)</small>
+
+'''Question'''
+
+I am having some difficulty importing data. For some reason, I cannot import data into a specific [[Glossary:Concept_group|concept group]]. I have the concept group that I wish to import data selected/opened, but when I "import" all the data simply goes directly into my [[Glossary:Collection|collection]]. I can then manually drop this imported data into the appropriate [[Glossary:Concept_group|concept group]], but this is cumbersome.
+
+'''Answer'''
+
+If you want to import data into a specific [[Glossary:Concept_group|concept group]], it is not enough if you just select it in the [[Contents|'''Contents''' window]]. You need to select it to be the current [[Glossary:Concept_group|concept group]] for your [[Glossary:Collection|collection]]. You do it by using the '''Concept box''' in the [[navigation bar]] at the top of the [[element window]].
+
+-----
+
+=== Use Add in the Contents window to place an item in the knowledge tree ===
+<small>(R.K., Sun, Jun 17, 2001 17:54)</small>
+
+'''Question'''
+
+I would expect SuperMemo to add a new [[Glossary:Item|item]] as a straight neighbor of the previously added [[Glossary:Element|element]] in the [[Contents|'''Contents''' window]]. Why isn't it so?
+
+'''Answer'''
+
+Selection in the [[Contents|'''Contents''' window]] is too transient to be the basis of choosing the insertion point for new material with '''[[Add new]]''' (''Alt+A''). This would require constant user attention as to the present selection. As a remedy, the notion of a [[Glossary:Concept_group|concept group]] has been introduced. Each concept, such as ''biology'' or ''geography'', has its own insertion point called a [[Glossary:Hook_node|hook]]. Now, all you have to do is to select a [[Glossary:Concept_group|concept group]] in the '''Concept box''' in the [[navigation bar]], and '''[[Add new]]''' will add new [[Glossary:Item|items]] under that [[Glossary:Concept|concept]]. Added [[Glossary:Element|elements]] will be listed sequentially as neighbors. However, if you would like to add new [[Glossary:Item|items]] to the location determined by the selection in the [[Contents|'''Contents''' window]], use '''Add''' at the bottom of the window instead.
+
+-----
+
+=== Branch selection does not affect the template used ===
+<small>(Vidar Garlie, Norway, Mar 18, 1999)</small>
+
+'''Question'''
+
+When I go to the [[Contents|'''Contents''' window]], select a concept [[Glossary:Branch|branch]] and press ''Alt+A'', the [[Glossary:Template|template]] of this [[Glossary:Concept_group|concept group]] is not used! Can you help?
+
+'''Answer'''
+
+To use a concept [[Glossary:Template|template]], you have to first choose the [[Glossary:Concept_group|concept group]] in the '''Concept box''' in the [[navigation bar]]. Selecting [[Glossary:Branch|branches]] in the [[Contents|'''Contents''' window]] does not affect the current concept group selection.
+
+-----
+
+=== Searching a concept group ===
+<small>(Maarten Mols, Mon Feb 17, 2003 4:23 am)</small>
+
+'''Question'''
+
+How can I limit '''[[Search menu|Search]] : [[Find elements]]''' to a certain [[Glossary:Concept_group|concept group]]? 
+
+'''Answer'''
+
+# Go to the [[Glossary:Root_node|root]] of the [[Glossary:Concept_group|concept group]] (in the [[Contents|'''Contents''' window]]) 
+# Choose '''Search branch''' (''Ctrl+F'') 
+
+or 
+
+# Search for the term 
+# In the search [[browser]], choose '''[[Contents menu#Child|Child]] : Branch''' (and select concept group [[Glossary:Root_node|root]])
+
+or
+
+# Open the [[Glossary:Concept_group|concept group]] in the [[browser]] ('''[[Contents menu#View|View]] : Branch''' in the [[Contents|'''Contents''' window]] on the concept group [[Glossary:Root_node|root]])
+# Choose '''Search browser''' (''Ctrl+F'')
+
+-----
+
+=== You can make repetitions on elements belonging to a given branch ===
+<small>(louis_lheureux, Canada, Monday, November 18, 2002 11:22 PM)</small>
+
+'''Question'''
+
+Is there a way to make a given [[Glossary:Concept_group|concept group]] the default concept group for learning each time I press the '''[[Learn]]''' button?
+
+'''Answer'''
+
+No. However, you can select a given [[Glossary:Branch|branch]] in the [[Contents|'''Contents''' window]] and make repetitions only on [[Glossary:Element|elements]] that belong to this [[Glossary:Branch|branch]]. To make repetitions only in a given branch: 
+# Press the '''[[Contents]]''' button (''Alt+C'') to switch to the [[Contents|'''Contents''' window]], 
+# In the [[Contents|'''Contents''' window]], select a [[Glossary:Branch|branch]], in which you would like to make repetitions,
+# Press the '''Learn''' button (''Ctrl+L'') to start repetitions on [[Glossary:Element|elements]] that belong to the selected [[Glossary:Branch|branch]]
+
+-----
+
+=== You can rehearse only those elements that belong to a selected concept group ===
+<small>(louis_lheureux, Canada, Monday, November 18, 2002 11:22 PM)</small>
+
+'''Question'''
+
+In my daily random repetitions of the [[Glossary:Outstanding_material|outstanding material]], I have stumbled upon an [[Glossary:Element|element]] that belongs to my ''History'' [[Glossary:Concept_group|concept group]]. Is there a quick way to make repetitions on the rest of [[Glossary:Element|elements]] belonging to this [[Glossary:Concept_group|concept group]]?
+
+'''Answer'''
+
+Once you see any [[Glossary:Element|element]] that belongs to a given [[Glossary:Concept_group|concept group]], right-click your mouse and then choose '''[[Element menu#Learning|Learning]] : Learn branch''' from the [[element menu]]
+
+-----
+
+=== Reviewing concept group elements ahead of their schedule ===
+<small>(Sat Feb 6, 2010 10:26 pm)</small>
+
+'''Question'''
+
+If I review all [[Glossary:Element|elements]] in a [[Glossary:Concept_group|concept group]], will SuperMemo adjust the reviewing process to fit what I need to review after that?
+
+'''Answer'''
+
+Yes, however, you need to use the one of the '''Review''' options as opposed to one of the '''Test''' options. For example:
+
+# Click '''[[Contents]]''' in the [[element window]], and, in the [[Contents|'''Contents''' window]], select the concept group branch/folder you want to review the [[Glossary:Element|elements]] of, and press ''Ctrl+Space'' to display them in the [[browser]]
+# Then press ''Ctrl+L'' to review the [[Glossary:Outstanding_element|outstanding elements]] from the [[browser]]
+
+-----
+
+=== Are concept groups treated distinctively in learning? ===
+<small>(anonymous, Jul 22, 2010, 16:10:40)</small>
+
+'''Question'''
+
+I was wondering if [[Glossary:Concept_group|concept groups]] are treated differently concerning the scheduling of the [[Glossary:Item|items]], since different subjects hold different levels of difficulty.
+
+'''Answer'''
+
+[[Glossary:Item|Items]] belonging to different [[Glossary:Concept_group|concept groups]] are treated in the same way. The only difference is that you can define a default [[Glossary:Priority|priority]] for the entire concept group. New [[Glossary:Item|items]] added to a modified [[Glossary:Concept_group|concept group]] will have a distinctive [[Glossary:Priority|priority]]. This way they can be reviewed more often, or less often, and they can be remembered better, or worse, depending on the setting and how overloaded your learning process is.
+
+-----
+
+=== You can make SuperMemo automatically apply concept group template when moving an element to a concept group ===
+<small>(Anatoliy Lipatov, Ukraine, Friday, January 10, 2003 8:59 AM)</small>
+
+'''Question'''
+
+Each time I create an [[Glossary:Extract|extract]], SuperMemo asks me the following question: 
+
+ Do you want to apply this template? 
+ Article
+
+Is there an option to turn it off?
+
+'''Answer'''
+
+# Open the concept [[Glossary:Registry|registry]] with '''[[Search menu|Search]] : Concepts''' from the [[main menu]], 
+# In the left pane, click the [[Glossary:Concept_group|concept group]], which you would not like SuperMemo not to ask this question for,
+# In the top-right pane, click the '''Auto-apply topic templates''' checkbox until it is checked and not grayed
+
+-----
+
+=== Applying concept group template without being prompted about it ===
+<small>(Kyle F., Sunday, August 24, 2008 11:33 PM)</small>
+
+'''Question'''
+
+When I create a [[Glossary:Cloze_deletion|cloze deletion]], Supermemo asks me ''Do you want to apply this template?''. I ALWAYS want to apply the concept group [[Glossary:Template|template]]. Can get SuperMemo to apply the concept group template without asking me?
+
+'''Answer'''
+
+Yes, you can. You need to go to the concept [[Glossary:Registry|registry]]. You can do that by selecting '''[[Search menu|Search]] : Concepts''' from the [[main menu]]. In the top right pane, there is a group of '''Auto-apply...''' checkboxes. Each checkbox has the following three states:
+* ''unchecked'' - SuperMemo will not automatically apply the concept group [[Glossary:Template|template]] to the [[Glossary:Element|element]] which is being moved to the [[Glossary:Concept_group|concept group]].
+* ''checked against the gray background'' - you will be asked you whether you want to apply the concept group template to the element you are moving to the concept group.
+* ''checked on white'' - the program will automatically apply the concept group template to the element which is being moved to the concept group.
+You need to click a relevant '''Auto-apply...''' checkbox to change the control state from the ''grayed checked'' to ''checked'' state. This will solve your problem.
+
+Remember, since it is a concept group-specific setting you need to do it for each and every [[Glossary:Concept|concept]] in the [[Glossary:Registry|registry]].
+
+-----
+
+=== How can I change the layout for each concept group? ===
+
+'''Question'''
+
+How could I configure a single [[Glossary:Element|element]] in a [[Glossary:Concept_group|concept group]] with a different layout than the others in the same concept group?
+
+Whenever I adjust the layout (i. e. increase/decrease the size of a text box), the layout changes for all the [[Glossary:Element|elements]] in the [[Glossary:Concept_group|concept group]]. is there a way to prevent that from happening?
+
+'''Answer'''
+
+Use '''[[Element menu#Template|Template]] : Detach template''' on the [[element menu]] before you start making any changes to a given [[Glossary:Element|element]].
+
+Note that the term [[Glossary:Layout|layout]] is used to describe the position and size of windows in SuperMemo. For the position and size of [[Glossary:Component|components]], we use the term [[Glossary:Template|template]].
+
+-----
+
+=== Each concept group has its own hook ===
+<small>(Ahmet, Tuesday, December 10, 2002 9:07 PM)</small>
+
+'''Question'''
+
+Could you please introduce a shortcut key for the '''Set hook''' command available in the [[Contents|'''Contents''' window]] as I add a lot of new [[Glossary:Element|elements]] and have to use it each time a given element is from different discipline?
+
+'''Answer'''
+
+You do not need to set a [[Glossary:Hook_node|hook]] for a given [[Glossary:Concept_group|concept group]] each time you would like to add new [[Glossary:Element|elements]] to it. When you create [[Glossary:Concept_group|concept groups]], each has by default its own [[Glossary:Hook_node|hook]], which is usually the [[Glossary:Root_node|root node]] of a given [[Glossary:Concept_group|concept group]]. If you would like to add [[Glossary:Element|elements]] to a different concept group, you change the active [[Glossary:Concept_group|concept group]] to the one, to which you would like to add new [[Glossary:Element|elements]]. You can change the active [[Glossary:Concept_group|concept group]] by selecting it in the '''Concept box''' in the [[navigation bar]].
+
+-----
+
+=== What's the use of the concept group's root node ===
+<small>(Alessandro, Monday, April 19, 2010 5:32 AM)</small>
+
+'''Question'''
+
+I can understand the use of the [[Glossary:Hook_node|hook node]]. But the [[Glossary:Root_node|root node]] has no apparent use.
+
+'''Answer'''
+
+Being able to locate the [[Glossary:Root_node|root node]] of a given [[Glossary:Concept_group|concept group]] is helpful when you want to execute operations (e.g. apply specific [[Glossary:Template|template]]) on the [[Glossary:Child|child elements]] of this concept group. When you know it, it is enough you right-click it in the [[Contents|'''Contents''' window]] and choose '''Process branch>''' from the [[Contents menu|pop-up menu]]. This will display another pop-up menu with a number of operations you will be able to perform on the [[Glossary:Element|elements]] belonging to this [[Glossary:Node|node]].
+
+<small>
+'''Technical'''
+
+The most important function of the [[Glossary:Root_node|root node]] is technical. This function is fulfilled without your involvement. If you exceed the number of children in a [[Glossary:Node|node]], a new node is created. However, if you exceed the number of [[Glossary:Node|nodes]], the entire concept group tree needs to be rearranged. Those changes will happen under the [[Glossary:Root_node|root node]]. Other portions of the [[Glossary:Knowledge_tree|tree]] will not be affected to make sure the rearrangement does not touch [[Glossary:Element|elements]] that belong to other [[Glossary:Concept_group|concept groups]]. If you have thousands of [[Glossary:Element|elements]] under the [[Glossary:Root_node|root]], you may need a few levels of [[Glossary:Node|nodes]] to make sure no node exceed the [[SuperMemo tab in Options#limit|children limit per branch]]. Those extra levels are added only when needed. If your [[SuperMemo tab in Options#limit|children limit]] is 50, you will need one level until you reach 50 [[Glossary:Element|elements]], then the level #2 is added providing spaces for roughly 50x50=2500 elements. If you run out of that space, Level #3 will provide for 50x50x50=125,000 [[Glossary:Element|elements]] (minus folder elements). You are then unlikely to run out of space for Level #4 that will hold over 6 million [[Glossary:Element|elements]].
+</small>
+
+-----
+
+=== Applying filter to a selected concept group ===
+<small>(Manuel S., Thu Oct 15, 2009 2:22 pm)</small>
+
+'''Question'''
+
+Is it possible to apply the filter to a selected [[Glossary:Concept_group|concept group]] only?
+
+'''Answer'''
+
+Yes.
+
+# Right-click the concept group [[Glossary:Root_node|root]] in the [[Contents|'''Contents''' window]], and press ''Ctrl+Enter''
+# In the [[browser]], right-click, choose '''[[Browser menu#Subset|Subset]] : Save all''' to save the [[Glossary:Concept_group|concept group]]'s [[Glossary:Element|elements]] to a [[Glossary:Subset|subset file]], and close the [[browser]]
+# From the [[main menu]], choose '''[[View menu|View]] : [[Element filter|Filter]]''' to apply a selected set of criteria to the entire [[Glossary:Collection|collection]]
+# In the [[browser]] (that opens with the [[Glossary:Collection|collection]]'s [[Glossary:Element|elements]] that satisfy the chosen criteria), right-click, choose '''[[Browser menu#Subset|Subset]] : Intersect subset file''', and select the subset file saved in Step #2
+
+== Videos ==
+
+This is how you can import Wikipedia articles to a specific concept group:
+
+{{#ev:youtube|0bdDk3Y2I8Q}}

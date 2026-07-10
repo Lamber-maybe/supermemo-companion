@@ -1,0 +1,2 @@
+;<span id="Subset_review">subset review</span>
+:review of elements in a [[Glossary:element_subset|subset]]. '''Subset review''' may, for example, review all items related to ''geology'', or all elements related to ''Nuclear power in the United States''. '''Subset review''' may be based on a variety of subsets. For example, it may have a form of [[Glossary:Search&review|search&review]], [[Glossary:Neural review|neural review]], branch review, and more

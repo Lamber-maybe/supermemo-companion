@@ -1,0 +1,1 @@
+{{Fig|'''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Statistics|Statistics]] : [[Analysis]] : [[Analysis#Distributions|Distributions]] : [[Analysis#A-Factors|A-Factors]]''' shows you how [[Glossary:A-Factor|A-Factor]]s are distributed in your [[Glossary:Collection|collection]]}}

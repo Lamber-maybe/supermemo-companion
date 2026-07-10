@@ -1,0 +1,3 @@
+<blockquote>
+'''''Figure:''' Sleep and learning timeline in the '''Dense''' view used to visualize long-term trends.''
+</blockquote>

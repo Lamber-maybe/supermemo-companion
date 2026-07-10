@@ -1,0 +1,311 @@
+== Introduction  ==
+
+Sleep is vital for learning. To sleep well and to learn well, you need to understand your own circadian rhythm. '''Sleep Chart''' in SuperMemo was designed to assist you in that task. It can help you optimize the timing of sleep as well as to optimize the timing of your learning. You can inspect the timeline of learning that is generated automatically. Your sleep data must be logged manually in the '''Sleep Chart'''. Collecting your sleep data can be useful in understanding the link between sleep and learning. 
+
+At minimum skill level, you can use '''Sleep Chart''' for basic visual inspection of your favorite learning and sleep hours. However, more advanced functions such as optimizing the time for learning or the time for sleep require advanced analysis and understanding of circadian rhythms. Currently, the toolset for analysing the impact of sleep on learning is very limited. However, if you start logging your sleep data today, you will be able to use future, more advanced versions of SuperMemo to study and understand your sleep and learning. 
+
+You can access '''Sleep Chart''' with:
+# '''[[Toolkit menu|Toolkit]] : Sleep Chart''' on the [[main menu]],
+# [[SuperMemo Commander]], or
+# by just pressing ''F12.''
+
+<div class="center">
+[[Image:Sleep and learning timeline.jpg|800px|SuperMemo: Toolkit : Sleep Chart : Timeline displaying repetitions blocks of the current collection (in red) and sleep blocks (in blue)]] 
+{{:Image:Sleep and learning timeline.jpg}}
+
+[[Image:Sleep and learning timeline (Dense view).jpg|800px|SuperMemo: Sleep and learning timeline in the '''Dense''' view used to visualize long-term trends]]
+{{:Image:Sleep and learning timeline (Dense view).jpg}}
+</div>
+
+=== Repetitions timeline  ===
+
+The timeline of repetitions is collected automatically and is separate for each [[Glossary:Collection|collection]]. Each time your make repetitions with SuperMemo, the learning block is added to the timeline (displayed in <span style="padding: 3px; color: white; background-color: red;">red</span>).
+
+=== Sleep timeline  ===
+
+The timeline of sleep must be logged manually. There is only one sleep timeline in SuperMemo (unlike repetition timelines that are separate for individual [[Glossary:Collection|collections]]). If you move SuperMemo between computers, remember to move your sleep timeline as well. The timeline is stored in the ''[SLEEP]'' subfolder of the SuperMemo folder as ''sleep.tim ''(e.g. ''d:\sm17\sleep\sleep.tim''). This file's name and location cannot be customized. This file is compatible with SleepChart and can be opened and edited in that application independent of SuperMemo. 
+
+To log a block of sleep, click the beginning of the block (sleep start) and then click the end of the block (sleep end). You can also start from clicking the end of sleep first. Sleep blocks above 22 hours are disallowed. Sleep blocks cannot overlap with repetitions timeline (you cannot learn with SuperMemo and be asleep at the same time). If you have already collected your sleep data in [http://www.super-memory.com/articles/sleepchart.htm SleepChart], you can import this data with '''File : Import : SleepChart file'''. You can also import data from a spreadsheet in the CSV format. If you import files from SleepChart, you can test for sleep and learning overlaps with '''File : Verify : Block overlaps'''. Protection from block overlaps is an important advantage of using SuperMemo over SleepChart, in which it was very easy to fall out of phase in logging data (e.g. by failing to fill out a single day and noticing that only a month later). You can mark blocks of forcefully delayed sleep, as well as mark blocks cut short with an alarm clock or other factors. Please note that you can get best analytical results if you do not artificially regulate sleep (e.g. with an alarm clock, sleeping pills, etc.). Applied models will not fully account for artificial intervention. Last but not least, natural sleep is what you should aim for in learning as well as for the sake of maximum health and well-being. Natural free-running sleep will maximize your fun in life!
+
+== Timeline graphs ==
+
+Currently you can use 11 analytical graphs in '''Sleep Chart'''. This set is likely to grow in future releases of SuperMemo as more gets to be known about information that can be extracted from correlations found in sleep&learning data. If you deem the presented analytical power as insufficient today, it should not stop you from collecting sleep data. Start today! Every data point can contribute to valuable conclusions in the future.
+
+=== Timeline ===
+
+Timeline displays repetitions blocks of the current [[Glossary:Collection|collection]] (in <span style="padding: 3px; color: white; background-color: red;">red</span>) and sleep blocks (in <span style="padding: 3px; color: white; background-color: blue;">blue</span>). Dates and total repetition time are displayed on the right. Sleep blocks can be consolidated with '''Consolidate''' button on the toolbar. For example, if you woke up for 5-10 min. in the night, consolidation will make SuperMemo treat the entire night block as a single entity (short awakenings are a frequent occurrence, even if we are not aware of them, and have little impact on learning). Sleep optimization data can be displayed in this graph. Most importantly, two independent models are used to predict middle-of-the-night points as well as the expected optimum retirement and awakening times. Those approximations may be helpful in optimizing sleep in people who work shifts or sleep in irregular hours for various reasons. For example, after a week of irregular sleep, it may be difficult to determine the optimum retirement hour that is likely to produce best quality sleep. Going to sleep too early might result in premature awakening (which may often ruin the night sleep entirely). Going to sleep too late may result in short night sleep, sleep deprivation, and reduced alertness on the following day. Predicting optimum sleep time on the basis of sleep history is inexact science, and two models used may produce different outcomes. '''Important!''' Your natural instinct should always take precedence over mathematical models. Moreover, best results in sleep optimization are accomplished in free-running sleep. If you use an alarm clock, or force yourself awake through the night, or take sleeping pills, the models may not adequately account for the chaotic change that is occurring in your sleep control systems.
+
+It is impossible to provide a sure&simple way of interpreting the following graphs. Only rough guidelines are provided. For more detailed interpretation, send your data to ''sleep2016(AT)supermemo(DOT)org''. Your data will be used to improve future analytics. If possible, you will also receive personal help in interpreting your results.
+
+<div class="center">
+[[Image:Sleep_and_learning_timeline_with_optimization_data.jpg|800px|SuperMemo: Sleep and repetitions timeline displaying repetitions blocks of the current collection (in red) and sleep blocks (in blue) with recomputed circadian approximations on the current data]]
+{{:Image:Sleep and learning timeline with optimization data.jpg}}
+</div>
+
+=== Circadian ===
+
+The circadian graph in SleepChart can help you better understand your sleep patterns, as well as to visualize the degree of cycle instability (i.e. how difficult it is for your sleep-wake cycle to fit into 24 hours). You will need a few months of data before the graph becomes meaningful. In addition, subjective night approximation lines in the sleep log are subject to substantial [http://en.wikipedia.org/wiki/Hysterisis hysteresis]. If your lifestyle changes dramatically (e.g. as a result of a therapy), you may need a few weeks for the approximation lines to align properly with data. The circadian graph may then be more difficult to interpret. In such cases, you can use '''From the first day''' and '''To the last day''' options to demarcate the period of interest. This will limit the analysis to a selected period characterized by a selected lifestyle.
+
+<div class="center">
+[[Image:Circadian.jpg|800px|SuperMemo: Circadian graph plotting your favorite sleep times as counted from natural awakening (blue homeostatic line), as well as the resulting average sleep length produced by various retirement hours (red circadian line). The slanting green line separates the graph into the areas of phase advanced (right) and phase delays (left). The line is determined by points in the graph where the waking time (horizontal axis) added to the sleep time (left vertical axis) equals to 24.0 hours. The place where the green breakeven line crosses the red sleep length line determines the optimum balanced sleep cycle of 24 hours.]]
+<blockquote>
+'''''Figure:''' Circadian and homeostatic sleepiness. Circadian graph plotting your favorite sleep times as counted from natural awakening (<span style="padding: 3px; color: white; background-color: blue;">blue homeostatic line</span>), as well as the resulting average sleep length produced by various retirement hours (<span style="padding: 3px; color: #FFF; background-color: red;">red circadian line</span>). The <span style="padding: 3px; color: #FFF; background-color: green;">slanting green line</span> separates the graph into the areas of phase advanced (right) and phase delays (left). The line is determined by points in the graph where the waking time (horizontal axis) added to the sleep time (left vertical axis) equals to 24.0 hours. The place where the <span style="padding: 3px; color: #FFF; background-color: green;">green breakeven line</span> crosses the <span style="padding: 3px; color: #FFF; background-color: red;">red sleep length line</span> determines the optimum balanced sleep cycle of 24 hours. The greater the angle between the <span style="padding: 3px; color: #FFF; background-color: green;">green</span> and <span style="padding: 3px; color: #FFF; background-color: red;">red</span> lines, the harder it is to balance sleep and fit it into the 24h cycle of the rotating earth. In the presented example, the longest sleep occurs after a 17-hour day, the best adjusted cycle happens after a 19-hour day, while the usual waking day lasts around 20 hours.
+''
+</blockquote>
+</div>
+
+==== Sleep initiation ====
+
+'''<span style="padding: 3px; color: white; background-color: blue;">Blue line</span> shows the preferred time to fall asleep'''. It corresponds with sleep propensity derived from the number of sleep blocks falling into a given hour of the waking day, where zero on the horizontal axis refers to the hour of waking up. Percentage of sleep episodes initiated at any given time is displayed on the right vertical axis. The blue line roughly expresses your "tiredness of wakefulness". It also expresses your ability to fall asleep. Your own optimum bedtime hour is your personal characteristic as it differs between people. For most people the optimum bedtime falls into the range of 16-20 hours from waking. In the example, the most favored bed time occurs in the 18th hour of waking.
+
+==== Sleep maintenance ====
+
+'''<span style="padding: 3px; color: white; background-color: red;">Red line</span> shows the average length of sleep'''. This line is a rough reflection of the ability to maintain sleep, i.e. the longest sleep episodes occur during the subjective night. The average length of sleep is displayed on the left vertical axis. The graph will tell you that even if you are able to initiate sleep during the day, it will never last long. In most cases of regular sleepers, only after 11-14 hours of waking does the length of initiated sleep start increasing. Note that the sleep length graph is slightly phase shifted in reference to the preferred sleep initiation time due to the fact that long sleep is mostly achieved by initiating sleep early.
+
+==== Optimizing bedtime ====
+
+If you are trying to determine your optimum bedtime, find the evening peak in the <span style="padding: 3px; color: white; background-color: blue;">blue curve</span> and choose nearby points that produce sufficiently long sleep (<span style="padding: 3px; color: white; background-color: red;">red curve</span> high enough). In addition, pay attention to the fact that your waking and sleeping time should add up to 24 hours, otherwise you will experience phase shifts.
+
+Some people take naps during the day. Others don't. In nappers, the <span style="padding: 3px; color: white; background-color: blue;">blue curve</span> should also point to the maximum mid-day alertness dip. Short nap time may actually be a sign of good nap timing as long as the nap is not taken too early in reference to the <span style="padding: 3px; color: white; background-color: blue;">blue curve</span>. Non-nappers will also experience a peak of sleepiness around the 7th hour even though their <span style="padding: 3px; color: white; background-color: blue;">blue curve</span> will not show as a prominent bulge.
+
+If the graph shows that your optimum nap time falls into the 8th hour, and you wake up at 6 am, you should take a break at around 14:00 (2 pm) and look for a secluded place for a few minutes of rest. You could also plan your lunch at around 13:00-13:30 to complete a perfect setting for a siesta.
+
+=== Learning circadian cycle ===
+
+If you learn "on demand" (as opposed to planned learning in a specific time of day), you can see the circadian plot of your learning analogous to the SleepChart plot. This shows you when you like to learn and for how long.
+
+<div class="center">
+[[File:Learning_circadian_cycle.jpg|800px|SleepChart: Learning circadian cycle. The exemplary picture proves that morning is the best time to learn with a "second (circadian) wind" in the evening. The morning learning time is short and sharp with longer individual learning blocks, while the evening time spans over a longer period but shows gradually decreasing drop in the "power to learn" (2h average in the morning, 1h average in the 12th hour, down to 5-10 min. at the end of the day).]]
+<blockquote>'''''Figure:''' Learning circadian cycle. The exemplary picture proves that morning is the best time to learn with a "second (circadian) wind" in the evening (<span style="padding: 3px; color: white; background-color: blue;">blue line</span>). The morning learning time is short and sharp with longer individual learning blocks, while the evening time spans over a longer period but shows gradually decreasing drop in the "power to learn" (2h average in the morning, 1h average in the 12th hour, down to 5-10 min. at the end of the day)(<span style="padding: 3px; color: white; background-color: red;">red line</span>). The rapid increase in the length of blocks after 21sth hour (<span style="padding: 3px; color: white; background-color: red;">red line</span>) represents the days of "early rising with extra learning power". Even though those early learning blocks are long, they do not occur often (as indicated by low <span style="padding: 3px; color: white; background-color: blue;">blue line</span>, which represent "frequency of learning" at that particular time).''</blockquote>
+</div>
+
+=== Phase shift  ===
+
+The phase shift graph may be used by people in free running sleep suffering from ASPS or DSPS. This graph shows the degree of phase-shift as well as its dependence on the time of day. The graph can be used to see the expected bedtime given a specific natural waking time:
+
+<div class="center">
+[[File:Phase shift.jpg|800px|Phase shift graph shows the degree of phase-shift as well as its dependence on the time of day and can be used to see the expected bedtime given a specific natural waking time]]
+{{:File:Phase shift.jpg}}
+</div>
+
+'''Remember!''' Each individual will have a his or her own unique graph. Moreover, the graph will look differently if it is taken at times of work or at times of summer vacation. It will be affected by stresses at work and at home. It may even change when you move from one house to another, or when you change the climate zone. The graph will accurately reflect your rhythm only if you adhere to free running sleep. If you use an alarm clock, this graph will be meaningless!
+
+=== Alertness  ===
+
+In healthy individuals who are not sleep deprived and who sleep in the correct phase, the best learning results are obtained early in the morning. This easily reproducible observation was an incentive to introduce two options in SuperMemo that help users of the program study their alertness throughout the learning day. The term ''alertness'', in SuperMemo, is used interchangeably to describe two different measures of cognitive function:
+# inverse of sleep propensity (or sleep drive) as derived from the [[#Two-component model of sleep in SleepChart|two component model]], and
+# the average grade in learning with SuperMemo which corresponds with memory recall.
+Both expressions of alertness are closely correlated. SuperMemo measures alertness as well as attempts to predict changes in alertness in two different time frames intended to separate the homeostatic and circadian components of sleep propensity. Both approaches require a sleep log for the measurements and for the predictions to be possible. To demonstrate the homeostatic changes to alertness, SuperMemo measures the learning performance since the last sleep episode. To demonstrate the circadian changes to alertness, SuperMemo measures the learning performance in reference to the circadian time (i.e. time measured since the optimum natural waking hour) in periods that may or may not include intervening sleep episodes. As it can be seen in the enclosed pictures, it is not possible to fully deconvolve the impact of homeostatic and circadian sleep propensity on learning. Homeostatic graphs will always include a small circadian bump related to post-siesta learning, while circadian graphs will be affected by sleep habits that are closely correlated with the circadian cycle, esp. in free running sleep.
+
+If you have already collected your sleep data with [http://www.super-memory.com/articles/sleepchart.htm SleepChart], you can see your wake-recall correlations with the newest SuperMemo. Note that only repetitions executed with SuperMemo 13.0 (2006) or later will be included in the graphs as earlier SuperMemos did not store precise time of repetitions in repetition history.
+
+You can see how fast your alertness, recall and grades drop during the day by inspecting the '''Alertness (H)''' graph in SuperMemo. In this graph, you can see the time that has passed since the last sleep block, and how your recall changes in waking:
+
+<div class="center">
+[[File:Alertness homeostatic.jpg|800px|SuperMemo: Toolkit : Sleep Chart : Alertness (H) graph makes it possible to visually inspect how recall decreases during a waking day]]
+{{:File:Alertness homeostatic.jpg}}
+</div>
+
+In '''Alertness (H)''', the minimum length of a sleep episode in consideration is determined by '''Min. sleep block (h)''' box (0.2 hours, or 12 min. is the default minimum). Shorter sleep blocks are disregarded in plotting this graph. Homeostatic alertness half-life (in hours) tells you when your learning capacity drops by half after waking. You can modify this parameter to look for a better curve fit in your case (the '''Model''' button must be depressed). See '''Deviation''' to evaluate the fit. This half-life can differ between individuals. Notably, it is very short in narcoleptics, and very long in natural non-nappers.
+
+The circadian changes in alertness can be seen in the '''Alertness (C)''' graph, which plots alertness throughout the day in reference to the circadian time measured from the actual waking time or from the optimum natural waking time:
+
+<div class="center">
+[[File:Alertness circadian.jpg|800px|Alertness (C) graph showing the powerfully biphasic nature of the human circadian cycle.]]
+{{:Image:Alertness circadian.jpg}}
+</div>
+
+==== Alertness approximation buttons  ====
+
+*'''Homeostatic''' - approximation of the homeostatic alertness (inverse of the homeostatic sleep drive). Depending on the status of the&nbsp;'''Model''' button, the approximation is either a theoretical negatively exponential curve that provides the best fit to the alertness data, or is taken from the two-processes model providing best fit to the sleep log data. 
+*'''Circadian''' - approximation of the circadian alertness (inverse of the circadian sleep drive). Depending on the status of the '''Model '''button, the approximation is adjusted for the actual waking time or for the predicted optimum waking time taken from the two-processes sleep model. Depending on the status of the '''Exp FI''' button, the graph is also adjusted for the theoretical association between grades and recall (as opposed to only fail vs. success measurement). 
+*'''Alertness''' - resultant alertness that combines homeostatic and circadian alertness (inverse of the modelled sleep drive). The formula used to combine the two components of alertness has been derived heuristically to provide a good fit to sleep log and recall data. 
+*'''Wake''' - waking time proportion at a given point in circadian time (this is a straight line in the homeostatic graph as all points in the graph are plotted after the last registered sleep episode). The waking proportion is not to scale as all approximation graphs are stretched between minimum and maximum levels for better graph clarity.
+
+==== Other alertness graph buttons  ====
+
+*'''Model''' - switch between actual waking time and the modelled predicted optimum waking time taken from the two-processes model. This button also switches to the negatively exponential approximation of the wake-vs-recall curve (as opposed to the curve taken from the two-processes sleep model). 
+*'''Exp FI''' - use expected forgetting index estimations to differentiate between grades in the learning process (when this button is depressed, only fail and pass grades are taken as recall 0 and 1). 
+*'''Excel''' - export data to Excel.
+
+==== Homeostatic alertness parameters  ====
+
+When displaying the homeostatic alertness, you can adjust two parameters (bottom of the graph): 
+
+*minimum length of sleep blocks considered (in hours). All sleep episodes lasting less than the said parameter will be ignored in the graph. 
+*homeostatic alertness halflife (in hours). This number tells you when your learning capacity drops by half after waking. You can modify this parameter to look for a better curve fit ('''Model''' must be depressed). See '''Deviation''' to evaluate the fit. This halflife can differ between individuals. Notably, it is very short in narcoleptics, and very long in natural non-nappers.
+
+=== Napping ===
+
+This graph lets you know how much time you need to compensate with naps if your night time gets shortened.
+
+<div class="center">
+[[File:Napping vs core sleep.jpg|800px|Correlation between the duration of nighttime core sleep and the total duration of naps]]
+<blockquote>'''''Figure:''' Optimum nap duration. When the correlation between the duration of nighttime core sleep and the total duration of naps is investigated, a rather non-linear relationship emerges. In the presented example, a negatively exponential function provides far better fit to data than a linear function. However, in the most studied range corresponding with the nighttime sleep ranging from 4 to 8 hours, a nearly linear relationship can be observed where each hour of lost night sleep requires 20 min. of replacement nap time. This shows than napping has a powerful compensatory power.''</blockquote>
+</div>
+
+=== REM ===
+
+This tab is included in SuperMemo for research purposes only. Using circadian phase misalignment in nighttime sleep blocks, SleepChart attempts to make heuristic guesses on the possible sleep architecture, incl. the proportion of REM sleep achieved. This can then be correlated with the quality of learning on the following day. SuperMemo REM heuristic has not been properly validated. If you use different REM measurement methods (e.g. based on nighttime mobility), you may obtain different results. In particular, polysomnographic measurements are the best way to get data on the proportion of REM in night sleep.
+
+=== Sleep block length distribution ===
+
+NREM-REM sleep cycles take roughly 90 min. A popular myth says that the length of a healthy night-time sleep episode will therefore always be a multiple of 90 min. Another myth says that it is ok to interrupt sleep after a multiple of 90 min. A variant of both myths says that sleep is supposed to last a multiple of a period that is specific to a given individual.
+
+SleepChart displays the distribution of the length of all sleep episodes. That distribution can be used to invalidate the claim that sleep blocks cluster in multiples of 90 min.
+
+<div class="center">
+[[File:Sleep block length distribution (monophasic sleeper).gif|800px|SleepChart: The sleep block length distribution of a monophasic sleeper]]
+<blockquote>'''''Figure:''' Sleep block length distribution in a monophasic sleeper. In the presented example, the graph indeed shows clusters at: 1, 2, 3, 3.5, 4, 5, 6, 7, 8, 9, and 10 hours. However, upon closer scrutiny, this clustering comes only from inaccurate logging by the subject (it is easier to mark 3.0 hour block than 2.95 hour block). There is no 90 min. trend discernible, however, one might be tempted to notice a multiple of 60 minutes.''</blockquote>
+</div>
+
+<div class="center">
+[[File:Sleep block length distribution (semi-log scale) (biphasic sleeper).jpg|800px|SleepChart: The sleep block length distribution of a biphasic sleeper (semi-log scale)]]
+<blockquote>'''''Figure:''' Sleep block length distribution in a biphasic sleeper. This graph uses a semi-log scale, which is better for visualizing short sleep blocks of a habitual napper. In this case, a biphasic sleeper shows only one significant cluster at 7 hours of sleep. This cluster was again caused by imprecise logging.''</blockquote>
+</div>
+
+<div class="center">
+[[File:Sleep block length distribution (7h per night monophasic sleeper).jpg|800px|A sleep block distribution of a regular 7-hours-per-night monophasic sleeper. There are a few peaks discernible, however, no regular sleep length multiple. In particular, no peaks around the expected 5.5 and 8.5 hours.]]
+<blockquote>'''''Figure:''' Sleep block length distribution in a regular 7-hours-per-night monophasic sleeper. There are a few peaks discernible, however, no regular sleep length multiple. In particular, no peaks around the expected 5.5 and 8.5 hours.''</blockquote>
+</div>
+
+=== Periodogram ===
+
+This graph helps you detect the frequencies that underlie your sleep cycles (circadian cycles and ultradian cycles).
+
+<div class="center">
+[[File:Periodogram.jpg|800px|SleepChart: Examplary spectrogram shows a sleep with a prevailing frequency corresponding with a period of 24.454 hours (i.e. 27 minutes more than a 24 h day-night cycle). There is also a cluster of periods around 12.1-12.8 hours (those are reflected by a midday circadian low time suitable for siesta naps)]]
+<blockquote>'''''Figure:''' Examplary spectrogram shows a sleep with a prevailing frequency corresponding with a period of 24.454 hours (i.e. 27 minutes more than a 24 h day-night cycle). There is also a cluster of periods around 12.1-12.8 hours (those are reflected by a midday circadian low time suitable for siesta naps)''</blockquote>
+</div>
+
+=== Learning ===
+
+This graph lets you see the correlation between the amount of learning and your sleep needs (the correlation may surprise you as it often happens that on a good day you learn more while you sleep less).
+
+=== Memory consolidation ===
+
+The decline in the ability to consolidate memories during the waking day follows a curve that mirrors the decline in the ability to recall things from memory! As the day goes on, the ability to store facts in memory declines. Short naps seem to restore the memory consolidation power to baseline. As much as recall, consolidation seems to be inversely correlated with the homeostatic drive to sleep.
+
+The conclusion is that in free running sleep (i.e. primarily in the absence of an alarm clock), '''we can get best learning results if we learn early in the morning'''. The same holds for exams. The recall and exam results will be best if the exam is held in the morning even though some time for pre-exam cramming may skew the outcome.
+
+==== Correlation between recall and consolidation ====
+
+The fact that both recall and consolidation curves seem to follow a very similar course during a waking day seems to indicate that they both may depend on the same underlying mechanism. This conclusion is amplified by the fact that recall is a passive process, while consolidation is an active process of forming new or reconsolidating old memories. We can hypothesize that the underlying mechanism is therefore not molecular. The decline in recall and consolidation might simply be caused by a decline in operational efficiency of the neural networks involved in learning. That efficiency, expressed as alertness (see: [[#Alertness|Alertness in SuperMemo]]), depends on both homeostatic and circadian components of the sleep drive. The homeostatic component determines an overall decline in network efficiency over the course of a waking day, while the circadian component allows of a small bump in the second half of the waking day, presumably due to a neurohormonal impact of the circadian cycle on the overall function of the central nervous system.
+
+==== Good learning days ====
+
+The correlation between recall and consolidation can also be seen in abstraction from the circadian time. If the overall recall and consolidation data are taken from individual days of learning process, they correlate pretty well too.
+
+In SuperMemo, you can see that learning days that are good for recall are also good for memory consolidation. Recall is expressed as a fraction of correct answers on a given day. Consolidation is expressed as a fraction of correct answers on the day of the next repetition that follows the one on the day for which the consolidation is measured.
+
+We can conclude that good learning days are equally good for recall as they are for consolidation. A more general conclusion is that successful recall is essential for consolidation of memories.
+
+<div class="center">
+[[File:Recall vs consolidation (SleepChart).jpg|800px|Exemplary graph showing how good memory recall improves memory consolidation.]]
+<blockquote>'''''Figure:''' Exemplary graph showing how good memory recall improves memory consolidation. The relationship between recall and consolidation is nearly linear. The graph was plotted using over 800,000 repetitions in SuperMemo, with 538,000 of these contributing their data to the consolidation estimates. Recall levels with fewer than 3000 data points have been omitted from the graph. The '''Deviation''' parameter says how well the linear fit matches the data (the less the deviation, the better the fit). The deviation is computed as a square root of the average of squared differences between the approximation and the data.''</blockquote>
+</div>
+
+<div class="center">
+[[File:Consolidation vs recall (SleepChart).jpg|800px|Exemplary graph showing the average recall for days producing a given level of memory consolidation.]]
+<blockquote>'''''Figure:''' Exemplary graph showing the average recall for days producing a given level of memory consolidation. The relationship between consolidation and recall is nearly linear. The graph was plotted using over 800,000 repetitions in SuperMemo. Consolidation levels with fewer than 3,000 data points have been omitted from the graph. Lowered recall for consolidation of 100% comes from the fact that this consolidation level is overrepresented by small sample days where lucky perfect recall in just a few items may result in perfect consolidation reading without actually saying anything about the recall on the day the consolidating repetition took place. Sufficiently large number of such cases will let consolidation category of 100% pass the 3,000 data points outlier limit set for this graph, and result in a recall level that is much closer to the average level.''</blockquote>
+</div>
+
+== SleepChart menu ==
+
+The main menu of SleepChart provides a few commands for timeline file management and statistics.
+* '''File'''
+** '''New''' - create a new sleep/timeline file
+** '''Open''' - open a SleepChart file
+** '''Save''' - save the current timeline file
+** '''Save as''' - save the current timeline file under a new name
+** '''Import''' 
+*** '''SleepChart file''' - import a SleepChart file into the current SleepChart file. Resolve contradictions and skip duplicates
+*** '''Excel file''' - import sleep data stored as coma-separated CSV file (format: millennium day, sleep start hour, sleep end hour)
+*** '''New default''' - set a new SleepChart file as a default file for the current collection
+*** '''Make default''' - set the currently opened SleepChart file as the default file for the current collection
+*** '''Replace''' - Import a SleepChart file as the new main default sleep record in SuperMemo
+*** '''Superimpose''' - display another SleepChart file super-imposed on the current file (this option is disabled in contexts where it might result in confusion between files in editing)
+** '''Export'''
+*** '''To Excel''' - export the SleepChart file in the CSV format
+*** '''Sleep length data''' - export sleep length data as CSV, and report the number of missing day records in the file
+*** '''Periodogram data''' - export data for Fourier analysis of sleep spectra
+*** '''Recursive PRC''' - export recursive PRC data for the analysis of sleep phase shifts
+** '''Verify'''
+*** '''Repetition history''' - compare the sleep file with repetition history to seek discrepancies (e.g. files taken from different individuals)
+*** '''Block overlaps''' - check of sleep block data overlap due to human error
+* '''Edit : Go to day''' - go to a specific day in data
+* '''Options'''
+** '''Age'''
+***'''Baby''' - interpret data taken from a little baby before the circadian cycle develops (first 6-10 months of life)
+***'''Child''' - interpret data taken from children aged 1-3
+***'''Adult''' - default adult analysis of the circadian cycle (when using data that mix child and adult modes, the scope of analysis can be limited with '''From''' and '''To''' options on the '''Circadian''' tab)
+** '''Statistics''' - choose the default statistic displayed on the right of the sleep log
+** '''Consolidation''' - choose the display form for the memory effect graph
+* '''Help'''
+** '''SleepChart Help (F1)''' - open this web page (e.g. by pressing ''F1'')
+** '''SleepChart Guru''' - open details of SleepChart use and theory at [[SuperMemo Guru]]
+
+== Two-component sleep model  ==
+
+SuperMemo uses a two-component sleep model inspired by the publications of Alexander A. Borbély and Peter Achermann. Unlike other models, SuperMemo uses user's sleep data to predict the homeostatic and circadian status of overall sleep propensity. This model is helpful in choosing the optimum time for learning on a given day (given a particular history of sleep). It can also help planning the optimum bedtime in cases where the sleep pattern is highly irregular. The model does not predicate on the timing and duration of NREM and REM sleep episodes.
+
+The model is tuned to fit typical SleepChart data logs. However, there are individual genetic differences that affect the length of the circadian cycle, steepness of the homeostatic decline in alertness, sleep length preferences, sleep architecture, spectral properties of sleep, fragmentation of sleep, etc. This model is limited in accounting for these variables. If you are sleepy against the simulations based on the model, you can probably trust your own instincts better. If you feel alert against the simulations based on the model, you can certainly get down to learning and ignore predictions of the model. Moreover, sleep patterns are a good measure of your sleep control systems only if they are not artificially disturbed (e.g. by forcefully delaying sleep, using alarm clock, using medication, etc.). In other words, if you are not free running your sleep, the presented model may fail to map your circadian rhythms correctly. You can mark blocks as artificially shortened or delayed ('''Forced awakening''' and '''Delayed retirement''' on the context menu available with a right-click). However, marked blocks will have a limited effect as there is no way of knowing the degree of the cut into the sleeping patterns, and, consequently, knowing the resulting perturbation in the sleep control system produced by artificially modified sleep.
+
+In Borbély model, the timing of sleep is determined by the points in which the curves representing the homeostatic and circadian processes cross. SuperMemo uses a simpler, but more intuitive approach, in which both components of sleepiness are integrated into an overall alertness level (<span style="padding: 3px; background-color: red; color: white;">red line</span> in the graph). '''The advantage of that approach is the possibility of instant feedback from an actual learning process''', where the level of memory recall is supposed to correlate directly with the level of alertness determined by the model. The formula for integrating the two components of sleep into overall alertness was chosen heuristically with the help of alertness data gathered in SuperMemo. The purpose of the integration was to achieve the best possible match of the predicted alertness in the model with the average recall level in SuperMemo. As it has been shown earlier, both homeostatic sleepiness and circadian sleepiness affect the grades in SuperMemo, however, only a combined effect of both components provides a good match with the changes of recall for different combinations of homeostatic and circadian sleepiness. In the model used in SuperMemo, sleep is initiated when the overall alertness drops below a certain level. Sleep may thus be initiated by both components of sleepiness independently, but the timing and duration of sleep will differ for various combinations of changes in the homeostatic and circadian sleep propensity. Despite using a different approach to determining the sleep onset, predictions of the model fit the actual sleep log data pretty well in free running condition in cases studied.
+
+To see the predictions of the model for your own sleep data for any given day, make sure you have your sleep log filled out for recent days in SleepChart, and shift-click the day in question in the sleep log.
+
+<div class="center">
+[[File:Sleep propensity.jpg|800px|The predictions of the two-component sleep model about the homeostatic and circadian status of your alertness]]
+{{:File:Sleep propensity.jpg}}
+</div>
+
+To see a more accurate presentation of your own homeostatic and circadian alertness in SuperMemo, see the '''[[#Alertness|Alertness]]''' tab in SleepChart.
+
+== FAQ ==
+
+=== You can abandon SleepChart ===
+
+'''Question'''
+
+I used to log my sleep into SleepChart. Once this file is imported to SuperMemo, should I abandon the SleepChart file and log sleep details directly into SuperMemo? 
+
+'''Answer'''
+
+Yes. All SleepChart functionality has been included in SuperMemo. You can quickly get '''Sleep Chart''' with ''F12''. However, there is full compatibility at the file level, and you can always go back to SleepChart in the future, or introduce sleep blocks using SleepChart if it is more convenient (and does not lead to confusion). All you need to remember is to use the file at the right location: ''SuperMemoFolder/sleep/sleep.tim''. SuperMemo will always use the file at this location only. 
+
+----
+
+=== You need to copy sleep timeline when reinstalling SuperMemo ===
+
+'''Question'''
+
+I installed a new version of SuperMemo and copied my collections into that installation. However, my sleep timeline disappeared. 
+
+'''Answer'''
+
+In addition to copying your collections, you will need to copy the following file: ''&lt;SuperMemoFolder&gt;\sleep\sleep.tim''. This file must be placed in the ''\sleep'' folder in the new installation.
+
+----
+
+=== Gaps in Timeline ===
+
+'''Question'''
+
+I had been meticulously recording my sleep for about 6 months until I lost track for a couple of weeks and then began recording my sleep once more. How are such gaps in SleepChart treated? Can anything be done afterwards to minimise the damage to the data?
+
+'''Answer'''
+
+Currently, SuperMemo has very weak protections against missing data. If you use your data to study sleep cycles, you could try to roughly estimate the sleep hours for the period and fill in the approximate data. However, it is hard to say how this will affect sleep&amp;learning correlations. Even a small change could produce a major difference in graphs. You could backup ''sleep.tim'' file, fill in the approximations and peek at the '''Alertness''' graph. If it has not been disturbed much, you might leave the approximated data and hope that with the inflow of new sleep and learning data, the damage will be diluted. Hopefully, overtime, SuperMemo will add mechanisms to better cope with missing sleep data. However, if you want to understand your own sleep and memory, you would do best by just being religiously systematic with logging in your sleep blocks.
+
+----
+
+=== Should I log light sleep ===
+
+'''Question'''
+
+Hello, should log the time from when you get into bed or try to estimate the time at which you actually fall asleep? I sometimes take up two hours to truly fall asleep even if I am tired. And if I spent an hour on my bed in a kind of light sleep but conscious (or meditating), should I log that in? Or should I just try to truly sleep when I am in my bed?
+
+'''Answer'''
+
+As SleepChart does not provide for differentiating between sleep stages (this would require some advanced measurement technology), you can use ''conscious mind'' as the sole indicator. Light sleep with loss of consciousness should mark as blue=sleep, while tossing and turning or meditation without the loss of conscious thinking should mark as white=wake. If you happen to guess you had short moments of sleep (1-2 min.), you could mark these as short vertical blue sleep lines. Whether you are interested in optimizing sleep (e.g. when to go to sleep) or in viewing your learning performance in waking time, SuperMemo shall cope ok with a degree of imprecision in logging sleep in situations like the one described.

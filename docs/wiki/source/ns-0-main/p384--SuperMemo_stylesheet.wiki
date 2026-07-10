@@ -1,0 +1,29 @@
+== Introduction ==
+
+Stylesheets make it easy to format text in many elements in SuperMemo. You can edit individual stylesheets with '''Text : Style : Edit style''' on the [[component menu]], or you can edit the default stylesheet that is used by default in new elements with '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Fonts tab in Options|Fonts]] : Stylesheet'''. Stylesheets can then be associated with [[template]]s for easy reuse.
+
+== SuperMemo Stylesheet editor ==
+
+Use the '''SuperMemo Stylesheet''' editor (see the picture) to customize the default stylesheet for those [[HTML component|HTML components]], which do not use any stylesheet from the stylesheet [[Glossary:Registry|registry]].
+
+[[File:SuperMemo stylesheet editor.jpg|center|800px|SuperMemo Stylesheet editor that helps you customize the CSS rules defined in the default SuperMemo stylesheet]]
+
+== SuperMemo Stylesheet options ==
+
+The following is a detailed breakdown of the '''SuperMemo Stylesheet''' editor:
+
+* '''CSS rule combo box''' - contains the list of CSS rules available in the default SuperMemo stylsheet. Allows you to select the CSS rule you want to customize/preview. For example, if you change the font in the ''Text'' rule, that font will change in texts that use the edited stylesheet and do not specify an overriding font
+* '''Font''' - opens the standard Windows '''Font''' dialog box which assists you in changing the font, as well as its style, size and other properties for the currently selected CSS rule
+* '''Color''' - opens the standard Windows '''Color''' dialog box which helps you choose the text color for the currently selected CSS rule
+* '''Background''' - opens the standard Windows '''Color''' dialog box which assists you in selecting the background color for the currently selected CSS rule
+* '''Delete''' - removes the contents of the currently selected CSS rule from the default stylesheet
+* '''Sample box''' - lets you preview the effects of the changes that you make to the currently selected CSS rule
+* '''Stylesheet description''' - displays the name of the edited stylesheet and its location. The default stylesheet is in the file ''supermemo.css'' in the ''[BIN]'' subfolder. New stylesheets are kept in the "[ELEMENTS]" folder of the collection
+* '''OK''' - closes the '''SuperMemo Stylesheet''' editor
+* '''Close''' - closes the '''SuperMemo Stylesheet''' editor
+* '''Edit''' - if you know CSS, you could use this button to open the default SuperMemo stylesheet in the default editor (e.g. Notepad), and manually edit individual CSS rules beyond the basic properties provided in the editor (e.g. you could increase the spacing between lines of text of a given CSS rule by adding the ''line-height'' CSS property)
+* '''View''' - open the default SuperMemo stylesheet in the program set on your computer to open ''.css'' files
+
+== Video example ==
+
+This is how you can [https://www.youtube.com/watch?v=A7hhUh9h0fQ change fonts with the use of stylesheets] and [[templates]]:

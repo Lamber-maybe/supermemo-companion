@@ -1,0 +1,21 @@
+'''Mouse''' tab in '''[[Toolkit menu|Toolkit]] : [[Options]]''' makes it possible to define the behavior of the program in response to mouse actions
+
+[[Image:options_mouse.jpg|center|SuperMemo: Toolkit : Options : Mouse tab]]
+
+The options of this dialog box:
+
+* '''Edit components''' - how [[Glossary:Component|components]] can be edited or previewed:
+** '''Edit on Alt+click''' - clicking [[Glossary:Component|components]] with ''Alt'' pressed will make them enter the [[Glossary:Editing_mode|editing mode]]. This option has no effect on [[OLE component|OLE components]] when their mouse processing is handled by the OLE server application. For example, if you link an Excel spreadsheet, Excel menu will open with the right-click, etc.
+** '''Edit on click''' - clicking [[Glossary:Component|components]] will let you edit texts (or drag images). This option is checked by default. You can turn it off if you do not want your students to modify texts while learning. [[Glossary:Component|Components]] that are not mouse-editable are switched to the [[Glossary:Dragging_mode|dragging mode]] instead. This makes it easier to immediately drag and resize them
+** '''Preview on Ctrl+click''' - clicking [[Glossary:Component|components]] with ''Ctrl'' pressed will open the file associated with the component in the default viewer (plain texts will be opened in the translation dialog box). This option makes it easy to open HTML files in your default web browser (e.g. Internet Explorer) with a single mouse click or preview images in the default image viewer
+* '''Drag components''' - how [[Glossary:Component|components]] can be made draggable:
+** '''On Alt+dblclick''' - [[Glossary:Component|components]] can be dragged with ''Alt+arrows'' upon clicking them twice with ''Alt'' pressed. This option has no effect on [[OLE component|OLE components]] in the [[Glossary:Editing_mode|editing mode]]. Edited [[OLE component|OLE components]] behave like MS Word for Word documents, like MS Excel for Excel spreadsheets, etc.
+** '''On Ctrl+Shift+drag''' - [[Glossary:Component|components]] can be dragged when ''Ctrl'' and ''Shift'' are pressed. Note that it will not work if you attempt to ''Ctrl+Shift+drag'' [[HTML component|HTML components]]
+* '''Translation''' - how to get the translation of text [[Glossary:Component|components]]: 
+** '''On mouse move''' - translations appear when the mouse moves over a given text [[Glossary:Component|component]]
+** '''On middle button click''' - translations appear when a given text [[Glossary:Component|component]] is clicked with the middle mouse button (or the mouse wheel)
+** '''On Ctrl+click''' - translations appear in a dedicated dialog box upon ''Ctrl''-clicking text [[Glossary:Component|components]] (this option makes it also possible to edit original texts along with their translations)
+* '''Phonetic transcription''' - how phonetic transcription of text [[Glossary:Component|components]] is accomplished by using the mouse
+** '''On mouse move''' - transcriptions appear when the mouse moves over a given text [[Glossary:Component|component]]
+** '''On middle button click''' - transcriptions appear when a given text [[Glossary:Component|component]] is clicked with the middle mouse button (or the mouse wheel)
+** '''On Ctrl+click''' - transcriptions appear upon ''Ctrl''-clicking text [[Glossary:Component|components]]

@@ -1,0 +1,2 @@
+;<span id="Contents_window">Contents window</span>
+:window that displays the hierarchical structure of knowledge in a [[Glossary:Collection|collection]]. That structure is called the [[Glossary:Knowledge_tree|knowledge tree]]. It is available by clicking '''[[Contents]]''' in the [[Glossary:Element_window|element window]]. Read more: '''[[Contents]]'''

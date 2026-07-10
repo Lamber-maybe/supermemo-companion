@@ -1,0 +1,7 @@
+;<span id="Burden">burden</span>
+:in the [[Statistics|'''Statistics''' window]], a number which estimates the average number of [[Glossary:Element|elements]] that have to be repeated daily (this statistic may overestimate the workload in [[Glossary:Collection|collections]] where '''[[Postpone]]''' is used often): 
+:<blockquote>
+:<code>'''burden''' = 1/I<sub>1</sub>+1/I<sub>2</sub>+ ... + 1/I<sub>n</sub></code>
+:where:
+:*<code>I<sub>n</sub></code> - current [[Glossary:Interval|interval]] of the ''n''-th [[Glossary:Item|item]]
+:</blockquote>

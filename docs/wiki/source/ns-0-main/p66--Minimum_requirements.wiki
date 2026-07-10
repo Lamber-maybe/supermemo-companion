@@ -1,0 +1,33 @@
+== SuperMemo 20 requirements ==
+
+* '''Windows 11 (recommended)'''. Windows 10 is also ok. Older versions may show minor interface glitches, but SuperMemo should still be usable even in Windows XP. Incremental reading works in Vista. In Windows 7 use Windows Aero scheme. Ask for a trial version if you want to be sure. 
+* 4 GB memory (2 GB might also suffice, but SuperMemo might be slower)
+* 100 MB free disk space (more recommended for larger [[Glossary:Collection|collection]]s of learning material; for example, [http://super-memory.com/english/ae.htm Advanced English] without sounds requires 140 MB, while sounds and picture add up to over 2 GB)
+* display 3840 × 2160 (4K UHD) or higher recommended; 2560 × 1440 (QHD / 2K) is ok too; minimum 1920 × 1080 (Full HD); if you are not sure download a demo (32-bit version with smaller icons is also available)
+
+== Additional requirements for special functions ==
+
+* (recommended) [https://www.microsoft.com/en-us/edge MS Edge] for [[Web import|imports from the web]] 
+* (optional) [https://google.com/chrome Google Chrome] for [[Web import|imports from the web]] if this is your preferred browser
+* some AI options may require your own AppKey (available free from Google)
+* YouTube references may require your own AppKey (otherwise, YouTube is fully functional in SuperMemo)
+* optimizing [[FSRS]] or SM-20 algorithms may require access to [https://api.supermemo.com/ SuperMemo.com API] (unoptimized algorithm still compete well in the [[Algorithm Arena]])
+* to use e-mail in SuperMemo: MAPI-compliant e-mail software for Windows recommended (e.g. [https://www.thunderbird.net/ Thunderbird], Windows Live Mail, Windows Mail, MS Outlook, Outlook Express, etc.)
+* to use automatic e-mail import in [[Incremental mail processing|incremental learning]]: Windows Live Mail, Windows Mail, or MS Outlook 2000 or later (Windows Live Mail recommended)
+* 32-bit version of SuperMemo 20 is available
+
+== Compatibility ==
+* SuperMemo 20 opens SuperMemo 19 [[Glossary:Collection|collections]], but SuperMemo 19 may struggle with SuperMemo 20 collection (e.g. due to the [[WebView component]])
+* RTF components are now deprecated. You can still use old [[Glossary:Collection|collections]], but further use will be more difficult with some options removed
+
+== Requirements for upgrade from older versions of SuperMemo ==
+
+* '''[https://supermemopedia.com/wiki/Download_SuperMemo SuperMemo 16 for Windows]''' (freeware) to upgrade [[Glossary:Collection|collections]] used with SuperMemo 98 Freeware, SuperMemo 2004 Freeware, SuperMemo 10 thru 15, or Multimedia SuperMemo. SuperMemo 16 is free for users of SuperMemo 18 (ask for download instructions if needed)
+* [https://supermemopedia.com/wiki/Download_SuperMemo SuperMemo 2004] (freeware, trial, or equivalent) to upgrade [[Glossary:Collection|collections]] used with SuperMemo 6 for DOS or SuperMemo 7 for Windows
+
+== FAQ ==
+
+* [https://supermemopedia.com/wiki/Hardware_recommendations_to_run_SM_faster How to improve the performance of SuperMemo?]
+
+== See Also ==
+[https://youtu.be/vCNP03_m-qM Video: Hardware Recommendations for SuperMemo 18]

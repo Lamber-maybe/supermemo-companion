@@ -1,0 +1,2 @@
+;<span id="Graphic_deletion">graphic deletion</span>
+:see [[Glossary:Occlusion_test|occlusion test]]

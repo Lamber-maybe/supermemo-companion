@@ -1,0 +1,47 @@
+== Importing PDF ==
+
+You can import PDF files into SuperMemo in three ways:
+
+* '''File : Import : Files and folders''' - Use this option for bulk import (e.g. large PDF archives).
+
+* '''Web import''' - Recommended when using predefined templates (make sure they include ''Article WV''). Use '''Add predefined templates''' if it is missing, or create your own [[WebView]] template.
+
+* '''File : Import file''' - Available on the [[component menu]] in [[WebView component]]. Use this for single files stored on your disk
+
+== PDF component modes ==
+
+All PDF processing in SuperMemo 20 is handled within the [[WebView component]]. Depending on your workflow, you can use one of three modes:
+
+* '''Viewer mode'''  
+Default interface in ''display mode''. Uses the Chromium engine for standard reading, navigation, and bookmarks.
+
+* '''PDF editor'''  
+Available in ''editing mode'' (<code>Ctrl+E</code>). Enables [[incremental learning]] features such as highlighting, [[Glossary:Read-point|read-points]], and [[Glossary:Extract|extracts]].
+
+* '''PDF → HTML converter'''  
+Converts the document to plain HTML. Useful for the classic [[Glossary:Incremental reading|incremental reading]] workflow.
+
+== PDF editor ==
+
+In the PDF editor, your reading progress (scroll position) is tracked and saved automatically. You can also manually mark your position using '''Bookmark''' in the top toolbar.
+
+Selecting text opens a floating toolbar with key learning tools:
+
+* '''Highlight'''  
+Marks the selected text in yellow. Highlights and progress are stored with your [[Glossary:Element|elements]].
+
+* '''Extract → SM'''  
+Sends the selected text directly to your knowledge base, creating a child [[Glossary:Element|element]] under the current PDF topic.
+
+* '''Picture extract'''  
+Creates an image extract from clipboard content.
+
+* '''Snip and extract'''  
+Creates an image extract using the Windows Snipping Tool.
+
+Each extracted element automatically includes a back-reference to the source PDF and the exact page number.
+
+The viewer sidebar lists all extracts. Clicking an entry jumps directly to its original location in the document.
+== Picture ==
+[[File:Incremental reading in PDF files in SuperMemo 20.png|center|800px]]
+{{:File:Incremental reading in PDF files in SuperMemo 20.png}}

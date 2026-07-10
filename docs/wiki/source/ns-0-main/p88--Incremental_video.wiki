@@ -1,0 +1,338 @@
+__TOC__
+
+== What is incremental video? ==
+
+Incremental video is a technique for learning or watching video recordings with the view to forming lasting memories of the material viewed. Incremental video makes it possible to learn from multiple sources of video without neglecting any one of them. The processing of individual sources proceeds in parallel and time allocations for individual sources depend on student's priorities. Incremental video is to video as [[Glossary:Incremental_reading|incremental reading]] is to learning from electronic texts. In incremental video, it is the user who decides which portions of a video are important to remember. Those portions are part of a standard learning process known from other applications of SuperMemo. Each portion of the video forms a separate [[Glossary:Topic|topic]] that is reviewed at increasing [[Glossary:Interval|intervals]]. Despite working with thousands of videos, you do not ever need to feel lost, ever get bored, or ever miss a valuable scene. You can also use SuperMemo as your video or music jukebox. You can work with individual videos for mere seconds. Just as much as is needed to set the new viewing point, determine the [[Glossary:Priority|priority]] and determine the date of the next viewing. This way, you can process dozens of videos daily and work with thousands of videos in parallel. You shall feel overwhelmed with the richness of [http://youtube.com YouTube] never again!
+
+On the face of it, incremental video looks like channel-zapping on steroids. However, it is also a powerful learning technique that makes it easy to process thousands of videos in parallel without getting lost. It also makes it easy to learn individual video scenes for long-term [[Glossary:Retention|retention]]. It can be used to learn sports, master musical instruments, understand biology, or learn fun dialogs in your favorite movies. Individual videos are processed in small portions. Viewing can be resumed at any time at the last viewing position. Best pieces are preserved for repeat viewing. Individual videos are prioritized and served on a daily basis in manageable portions in order of [[Glossary:Priority|priority]].
+
+Although incremental video can roughly be implemented with a pair of digital video recorders working in tandem, only SuperMemo provides a bona fide implementation with the whole set of incremental learning tools. SuperMemo makes it possible to learn from standard video files (e.g. MP4). It also makes it easy to learn from [http://youtube.com YouTube] videos. At the moment of writing these words, no other software in the world provides the incremental video learning toolset.
+
+<div class="center">
+[[Image:Incremental video.jpg|800px|SuperMemo: Incremental video in action - Incremental learning about how synapses work based on a video imported from YouTube]]
+<blockquote>
+'''''Figure''': Exemplary screenshot from an incremental video process in SuperMemo.''
+</blockquote>
+</div>
+
+=== Incremental video with YouTube ===
+
+Incremental video in SuperMemo can use [https://youtube.com YouTube] videos. You can capitalize on the video streaming power of [https://youtube.com YouTube] and the speed up SuperMemo. You will also dramatically save on the hard disk space. Videos are notorious hogs of space, your [https://youtube.com YouTube] [[Glossary:Collection|collections]] will take a '''tiny fraction of space''' needed for video based on local files. [https://youtube.com YouTube] [[Glossary:Collection|collection]] will actually take less space than [[Glossary:Incremental_reading|incremental reading]] [[Glossary:Collection|collections]] while carrying lots of learning power. Videos in SuperMemo are '''automatically stripped of advertising'''. It provides for a smother viewing experience even if you do not plan to use extracts. Last but not least, SuperMemo may encourage you to upload your own educational videos to [http://youtube.com YouTube] and thus share them with others.
+
+=== Incremental video with video files ===
+
+Incremental video in SuperMemo can use video files from your local drive. You do not need to limit your learning to videos available from [http://youtube.com YouTube] that can be notoriously volatile (e.g. with accounts closed for copyright violations, embedding blocked by account holders, videos made private, etc.). You are not limited by the need to access the Internet. You can also process private videos.
+
+Using incremental video with local files requires computers with significant processing power. On a strong PC, processing video files is fast and painless. It may be slower on weaker PCs. Your [[Glossary:Collection|collections]] may grow to be terabytes large, which is the main disadvantage of keeping files local. Make sure you have a big dedicated external drive for a backup of your material. The time-scale resolution of local videos is higher than that of [http://youtube.com YouTube]-based videos, which are limited to setting '''Start''' and '''Stop''' points in increments of 1 second. With local files, you can review fragments that last milliseconds. You can review your best football move at nauseam. Moreover, with local files, you can work when disconnected from the net.
+
+Incremental video can use local files in several video formats (incl. MP4, WMV, AVI, MOV, Mpeg, and more). Not all video formats are supported. Before you commit to SuperMemo, give it a try to see if your files can be processed or converted to acceptable format with third party tools.
+
+== Incremental video in SuperMemo ==
+
+SuperMemo is a pioneer of '''incremental video'''. For those who are familiar with [[Glossary:Incremental_reading|incremental reading]], incremental video is an analogous technique. Instead of text [[Glossary:Extract|extracts]], you generate [[extract|video extracts]], i.e. portions of a larger video. Video [[Glossary:Extract|extracts]] are viewed repeatedly in increasing [[Glossary:Interval|intervals]] (as it is the case with other pieces of information in SuperMemo).
+
+Individual videos and their [[Glossary:Extract|extracts]] are treated in the same way as all other [[Glossary:Topic|topic elements]] and enter the learning process according to the rules that are known from [[Glossary:Incremental_reading|incremental reading]]. Currently, only [[Glossary:Passive_review|passive review]] of [[Glossary:Extract|extracts]] is supported. There is no equivalent of [[Glossary:Cloze deletion|cloze deletion]] in incremental video. However, you can use videos as answers if you choose so.
+
+=== Incremental video with YouTube: Outline ===
+
+This is how you work with incremental video in SuperMemo:
+
+# open your favorite YouTube videos in Internet Explorer
+# choose YouTube import option to import videos to SuperMemo (e.g. ''Shift+Ctrl+Y'')
+# use '''[[Learn]]''' to process individual videos
+# use '''Start''' and '''Stop''' buttons to mark interesting scenes
+# use '''Extract''' to generate new [[Glossary:Element|elements]] with scenes extending from '''Start''' to '''Stop'''
+# use learning tools in SuperMemo to prioritize, schedule, and organize videos and video [[Glossary:Extract|extracts]]
+
+For a demo see this YouTube video: [https://youtu.be/qhkM_ZqfmnI Incremental video with SuperMemo 17].
+
+[[Image:Incremental video with YouTube Extract.jpg|800px|center|SuperMemo: An extract created from the "Giulio Tonini's 2011 Allen Institute for Brain Science Symposium" YouTube video in the process of incremental video watching]] 
+{{:Image:Incremental video with YouTube Extract.jpg}}
+
+==== Importing videos from YouTube ====
+
+To import videos for incremental learning do the following:
+
+# open [https://youtube.com YouTube] videos in a supported [[web browser]] (e.g. MS Edge)
+# choose one of the following:
+#* press ''Shift+F8''
+#* '''Import articles''' on the [[learnbar]] (right-click over the '''Add a new article''' button)
+#* '''[[Edit menu|Edit]] : [[Web import]]''' from the [[main menu]]
+# optionally, set import options (e.g. which videos to import, video [[Glossary:Priority|priority]], name of the import [[Glossary:Concept|concept]], etc.)
+# click '''Import'''
+
+If you see a video embedded in a webpage choose '''Copy video URL''' on the [https://youtube.com YouTube] video context menu (right click), and paste the video to SuperMemo with ''Ctrl+N'' (as you would paste any
+webpage).
+
+If you receive a video forward from SuperMemo, you can copy its code from the body of the mail and paste it to your [[Glossary:Collection|collection]] with ''Ctrl+N'' (as you would paste any text or article).
+
+Versions from Oct 2024 or later, support importing live video (also during the broadcast).
+
+[[Image:YouTube import.jpg|center|800px|SuperMemo: Importing videos from YouTube for incremental learning]]
+{{:Image:YouTube import.jpg}}
+
+==== Importing references ====
+As of SuperMemo 20, references import automatically with your video. At the top of video description (on the right in default ''YouTube'' or ''YouTubeWV'' template), you should see ''date'', ''views'', and the ''description'', followed by standard SuperMemo references that also include ''#Author''. 
+
+If you imported videos with earlier versions of SuperMemo, you can download references with '''Reference : Download''' on the [[component menu]].
+
+'''Important!''' If references do not import, and you get the verbatim YouTube page, it means that the API key had been rotated (e.g. due to abuse), and you may need to update SuperMemo (re-run the installer). If your missing references do not update automatically, use '''Reference : Download'''.
+
+==== Viewing YouTube videos ====
+
+Use '''[[Learn]]''' in the same way as when learning with SuperMemo. The videos start automatically. When you get bored or need to watch other videos, press '''Start''' to mark the point from which you will resume the video next time you see it. If you find an important fragment that you would like to learn or view again, press '''Start''' at the beginning of the fragment, and '''Stop''' at the end of the fragment. 
+
+===== Extracting fragments for review =====
+
+Use '''Test''' to view the fragment again. Press '''Extract''' if you would like to create a new fragment that should take part in the learning process as a separate [[Glossary:Element|element]].
+
+You can generate [[Glossary:Extract|extracts]] without interrupting the viewing process. Extract [[Glossary:Element|elements]] are generated only when you move on to the next [[Glossary:Element|element]] or when you press ''Alt+X''.
+
+===== Bookmark =====
+
+You can use '''Mark''' and '''Resume''' to set a bookmark that will not affect the point from which video starts (e.g. when preparing an [[Glossary:Extract|extract]]).
+
+===== Sorting videos =====
+
+If you get the same videos over and over again, and you would like to get some variety independent of video [[Glossary:Priority|priority]], use '''[[Learn menu|Learn]] : [[Learn menu#Sorting|Sorting]] : Sorting criteria''' and increase '''Randomization''' (move the thumb from '''Prioritized topics''' towards '''Randomized topics''', i.e. to the right).
+
+===== Skipping =====
+
+You can press <kbd>Left</kbd> and <kbd>Right arrow</kbd> keys to skip video 5 seconds back or forward. You can use other [https://support.google.com/youtube/answer/7631406 YouTube shortcuts] accordingly. For this, the focus must be on the video (if the focus is on the control panel, click the video to re-enable the shortcuts).
+
+===== Cross-inspiration =====
+
+If you are not sure how to handle the incremental learning process, [[Glossary:Incremental_reading|incremental reading]] is a good introduction to understanding incremental video.
+
+==== Forwarding video fragments to friends ====
+
+If you forward a [http://youtube.com YouTube] [[Glossary:Element|element]] in SuperMemo via e-mail to others, it will include the link and start:stop boundaries of the video. Forwarded videos can be viewed in a web browser or directly in SuperMemo with '''Start''' and '''Stop''' buttons set to make sure only the recommended fragment plays.
+
+Your e-mail will look similar to this one:
+
+<pre>
+Please have a look at this YouTube video:
+https://www.youtube.com/embed/yVq4ARIlNVg?start=471&end=3150
+
+See the fragment from 7:51 to 52:30.
+
+If you are using SuperMemo, you can also:
+
+(1) select this code (e.g. triple click): 
+
+        {SuperMemoYouTube:yVq4ARIlNVg,7:51,52:30,0:00,3}
+
+(2) copy the code to clipboard (e.g. Ctrl+C)
+(3) use Ctrl+N to paste the code to SuperMemo
+
+Sender ID: SuperMemo Research
+
+==================================================
+#Subject: #EIE23: Jonathan Haidt: Smartphones vs. Smart Kids - YouTube:
+#Author: Jonathan Haidt
+#Date: Imported on Dec 28, 2023, 17:29:21
+#Source: Edge import from YouTube
+#Link: https://youtube.com/watch?v=yVq4ARIlNVg
+#Comment: recommended at Ja Nauczyciel
+#Collection: YOUTUBE [Element=26660]
+#Generated: Dec 28, 2023, Thu, 23:40:20
+#Software: SuperMemo 19 (Build 19.03, Dec 20, 2023)
+
+</pre>
+
+==== Exemplary YouTube videos ====
+
+Incremental video is a video equivalent of [[Glossary:Incremental_reading|incremental reading]]. However, there are many things you may wish to learn that are best mastered with video and cannot be substituted with reading. The list is truly endless. However, here are just a few examples taken from [http://youtube.com YouTube] to give you the first sense of why incremental video is an important component of incremental learning:
+
+* learn a foreign language with the help of movies, speeches, lectures, etc.
+* learn recent history with archive footage
+* explore the student's video paradise: [http://www.youtube.com/user/khanacademy Khan Academy]
+* learn to play a musical instrument using video tutorial produced by experts or best artists
+* learn to play along or sing along your favorite songs
+* use [http://en.wikipedia.org/wiki/Michael_Phelps Mike Phelps] videos to learn how to swim butterfly
+* recover from injuries by learning physiotherapeutic exercises
+* watch movies incrementally
+* listen to your favorite music
+* watch historic sports events
+* watch video lectures from reputable universities
+* enjoy or learn the best jokes or comedy pieces by Leno, Connan, Jon Stewart, and others
+* master speechmaking with videos of MLK, JFK, Reagan, or Obama
+* seek motivation from Tony Robbins or other self-help gurus
+* learn to cook
+* relive memorable moments in the lives of your family and friends
+* learn physiology, geology, physics, or history, wherever a video explanation is needed
+* learn sign language, volleyball, soccer, etc.
+
+=== Incremental video with video files: Outline ===
+
+This is how you work with video files using incremental video in SuperMemo:
+
+# put your video files into a single empty folder
+# use '''[[File menu|File]] : [[File menu#Import|Import]] : Files and folders''' to import the contents of that folder to SuperMemo  
+# use '''[[Learn]]''' to process individual videos
+# use '''Start''' and '''End''' buttons to mark interesting scenes
+# use '''Extract''' to generate new [[Glossary:Element|elements]] with scenes marked with '''Start''' and '''End'''
+# use learning tools of SuperMemo to prioritize, schedule, and organize videos and video [[Glossary:Extract|extracts]]
+
+<div class="center">
+[[File:Incremental video with video file Extract.jpg|800px|SuperMemo: An incremental video extract from the 2013 men's singles US Open final between Novak Djokovic and Rafael Nadal]]
+{{:File:Incremental video with video file Extract.jpg}}
+</div>
+
+==== Video deletion ====
+
+Incremental video is currently most suited for processing video or audio material passively with the most interesting portions extracted for [[Glossary:Passive_review|passive review]] as [[Glossary:Topic|topics]]. Currently you cannot &quot;cloze delete&quot; portions of video or audio files with a keystroke, however, you can easily use video [[Glossary:Extract|extracts]] as answers to text questions, or video questions. For that purpose, mark your sound or video [[Glossary:Component|components]] with the '''[[Component menu#Answer|Answer]]''' attribute. You can also define [[Glossary:Template|templates]] that will make that process easier.
+
+==== Viewing video files and learning ====
+
+Use '''[[Learn]]''' in the same way as when learning with SuperMemo. The videos start automatically if you have '''[[Element menu#AutoPlay|AutoPlay]]''' checked on the [[element menu]]. When you get bored or need to watch other videos, press '''Start''' (on the '''Extractor''' panel). '''Start''' marks the point from which you will resume the video next time you see it. If you find an important fragment that you would like to learn or view again, press '''Start''' at the beginning of the fragment, and '''End''' at the end of the fragment. Use '''Test''' to view the fragment again. Press '''Extract''' if you would like to create a new [[Glossary:Element|element]] with the extracted fragment that should take part in the learning process.
+
+If you get the same videos over and over again, and you would like to get some variety (even though the videos might be of top [[Glossary:Priority|priority]]), use '''[[Learn menu|Learn]] : [[Learn menu#Sorting|Sorting]] : Sorting criteria''' and increase '''Randomization''' (move the thumb from '''Prioritized topics''' towards '''Randomized topics''').
+
+If you are not sure how to handle the incremental learning process, [[Glossary:Incremental_reading|incremental reading]] is a good introduction to understanding incremental video.
+
+==== Exemplary video files ====
+
+For a list of exemplary videos that may be used in incremental learning see: [[#Exemplary YouTube videos|Exemplary YouTube videos]].
+
+Note that not all video material may be learned with the help of [http://youtube.com YouTube]. There might be copyright or privacy issues. There is also one pesky problem with [http://youtube.com YouTube] that can ruin any long-term learning process: videos can be pulled at any minute (unless you upload them yourself for public viewing with full respect to copyright). Last but not least, the time resolution of local file incremental video is higher that that of [http://youtube.com YouTube]-based video. You can set your starting point with millisecond precision (as opposed to 1 second resolution of [http://youtube.com YouTube] videos).
+
+Material that might work better with files on your local hard disk include:
+
+* lectures or interviews that are available for download but not published at [http://youtube.com YouTube]
+* lectures or interviews that are available for download and you wish to keep local (e.g. to ensure speed, precision, persistence, or offline viewing)
+* copyrighted material from [http://itunes.com iTunes]
+* movies
+* home video
+* language courses
+* all other files that you want to learn but cannot upload to [http://youtube.com YouTube] (or just you do not want to be bothered with the hassle)
+
+== Hints: Incremental video ==
+
+=== Hints: Incremental video with YouTube ===
+
+* Define &quot;''YouTube Extract''&quot; [[Glossary:Template|template]] to have it used for [[Glossary:Extract|extracts]] from [http://youtube.com YouTube] videos (as long as you use the &quot;''YouTube''&quot; [[Glossary:Template|template]]). Otherwise, &quot;''YouTube''&quot; [[Glossary:Template|template]] will be used with the background changed to <span style="padding: 3px; background-color: yellow;">yellow</span>. The simplest approach is to save your &quot;''YouTube''&quot; [[Glossary:Template|template]] with the new name (&quot;''YouTube Extract''&quot;) and then redefine it (e.g. by changing the element color). Differentiating videos from their [[Glossary:Extract|extracts]] (e.g. by color) is important for your strategies in optimizing the learning process.
+* Incremental video is less incremental than [[Glossary:Incremental_reading|incremental reading]]. Incremental video was designed on the assumption that, unlike in [[Glossary:Incremental_reading|incremental reading]], you go through the main body of the video linearly. This is because of multiple context problems when splitting videos into smaller portions and watching them in unpredictable order. This way, once you make an [[Glossary:Extract|extract]], the assumption is, you do not come back to the once viewed portion of the video as it is already part of the [[Glossary:Extract|extract]]. When you return to process the video, you start from the last position extracted or marked with '''Start'''. In other words, as you do not extract without viewing, there should be little needed for sub-extracts
+* Check for the availability of additional soundtracks. You can pick your favorite language and continue viewing incrementally. The soundtrack setting is preserved between sessions. The default setting is determined by your past choices (it is not set in SuperMemo).
+
+=== Hints: Incremental video with local files ===
+
+* Define &quot;''Video Extract''&quot; [[Glossary:Template|template]] to have your [[Glossary:Template|template]] used for [[Glossary:Extract|extracts]]. Otherwise, The &quot;''Video''&quot; [[Glossary:Template|template]] will be used with the background changed to <span style="padding: 3px; background-color: yellow;">yellow</span>. The simplest approach is to save your &quot;''Video''&quot; [[Glossary:Template|template]] with the new name (&quot;''Video Extract''&quot;) and then redefine it (e.g. by changing the element color to the desired extract color). Color differentiation is important for optimizing the strategies in processing videos
+* If you want your [[Glossary:Extract|extracts]] to run in an infinite loop, make sure you check '''Continuous''' on the [[component menu]] in your video extract [[Glossary:Template|template]]
+* There isn't much performance penalty for processing large video files. You can import whole DVDs too and process them incrementally
+* Not all file formats are supported, however, most formats can easily be converted to MP4 (e.g. with [http://www.freewarefiles.com/XMedia-Recode_program_47942.html XMedia Recode]).
+* Note that some MP4 files may not work correctly in SuperMemo. Please test a trial SuperMemo before you make a major commitment
+
+=== Problems with YouTube-based incremental video ===
+
+Here are some problems you may encounter when learning with [http://youtube.com YouTube]-based incremental video:
+
+* [http://youtube.com YouTube] videos can be removed at any time. They can also have embedding disabled. This is a major problem for the present implementation of YouTube-based incremental video in SuperMemo. There are no API tools that could allow of legal localization of YouTube contents (at the moment of writing). However, the problem mostly affects copyrighted material that shows up on [http://youtube.com YouTube] illegally (e.g. movies, music, etc.). Occasionally, video authors themselves remove content. This should never be a problem though if you use your own videos. Hopefully, there will be more and more persistent content uploaded for educational purposes.  
+* ''Alt+Left arrow'' shortcut is used by Internet Explorer to return to the previously visited page. As a result, it also works like an Undo for your '''Start:Stop''' setting. To return to the previous page in SuperMemo, use the '''Back''' button ([[File:Back.gif|Back enables you to go back to the most recently visited element]]) on the [[navigation bar]]
+* it may happen that your network is down or the Internet is slow when working with [http://youtube.com YouTube] videos. You may therefore prefer to keep videos in a dedicated incremental video [[Glossary:Collection|collection]] to learn how to handle videos and prevent interruptions to learning in cases of network problems. You can always stop working with your incremental video [[Glossary:Collection|collection]], return to your regular learning, and resume video learning when the network returns to normal functionality
+* if you would like to use SuperMemo as your [http://youtube.com YouTube] jukebox, you should also keep music videos in a single [[Glossary:Collection|collection]] (or mark them all with a specific keyword for fast [[subset learning]]). You can later hide your jukebox [[Glossary:Collection|collection]] in the system tray. Your jukebox will play only the selected fragments of individual videos in order of [[Glossary:Priority|priority]] as specified in your [[Priority queue#Sorting repetitions|sorting criteria]]. As in [[Glossary:Incremental_reading|incremental reading]], using [[Glossary:Interval|intervals]] and [[Glossary:Priority|priorities]] is a good remedy against getting bored with a given song or video
+* videos cannot be played in SuperMemo if their embedding is blocked (you will see a message ''Embedding Disabled By Request''). Those videos you can only watch on [http://youtube.com YouTube]. This means that those videos are pretty useless in your incremental video learning; however, you can still use prioritization and scheduling tools to choose which videos should be played in which sequence and on which day. Note also that many of those videos are uploaded multiple times by various users, and you only need to search for an alternative that can be embedded
+
+=== Your own incremental video script ===
+
+Videos are handled with the help of [https://developers.google.com/youtube/iframe_api_reference YouTube Player API] in [[HTML component|HTML components]] using a small JavaScript program. When you first run SuperMemo, it writes this script into a file stored in the ''[BIN]'' subfolder of the folder in which you installed SuperMemo. The name of the file is ''YouTube.htm''. If you know JavaScript, you can substitute your own incremental video script in that file (e.g. to change the layout, size of buttons, or even add new functions for processing videos). Here are the only components of the script that you need to preserve:
+
+* the order of <code>INPUT</code> fields (these are used by SuperMemo to collect extract boundaries)
+* <code>SELECT</code> and <code>OPTION</code> fields for generating [[Glossary:Extract|extracts]]
+* <code>INPUT</code> field with YouTube video ID substituted by SuperMemo (<code>id=&quot;videoid&quot;</code>)
+* <code>INPUT</code> field that determines the position of video start and end (<code>id=&quot;startvideoat&quot;</code> and <code>id=&quot;stopvideoat&quot;</code>)(must be &quot;''0:00:00''&quot;)
+
+The most important change you may wish to introduce is to decide between <code>version=2</code> and <code>version=3</code> of the player. Both have their bugs and disadvantages. For more see [https://supermemopedia.com/wiki/Incremental_video_does_not_work Player Version Issues]. The version of the player you choose will be picked by default in all your YouTube [[Glossary:Element|elements]].
+
+If you would like to share your own script with others, you can upload it to [https://supermemopedia.com SuperMemoPedia].
+=== Upgrading to WebView ===
+As of SuperMemo 20, you can improve your YouTube experience by switching from [[HTML component]]s to [[WebView component]]s. 
+
+This is how you can switch your old collection to WebView:
+# open [[template]] [[registry]] over any YouTube element
+# use '''Add predefined templates'''
+# choose ''YouTubeWV'' (WebView template)
+# apply the template with '''Accept'''
+# use '''Template : Save as default''' on the [[element menu]]
+# use the name ''YouTube'' (this overwrites the old template based on HTML components, and uses the new [[WebView component]]
+
+The control panel retains the legacy design, but includes many enhancements to improve usability: arrow keys skip playback forward or backward, recommendations remain accessible during browsing, playback continues uninterrupted while you search for the next video, etc.
+
+==== Keyboard Shortcuts ====
+
+===== SuperMemo WebView Shortcuts =====
+
+{| class="wikitable"
+! Shortcut !! Action !! Context
+|-
+| <kbd>Space</kbd> || Play / Pause || Element Window / WebView (if not in input field)
+|-
+| <kbd>←</kbd> || Jump backward 5 seconds || Element Window / WebView
+|-
+| <kbd>→</kbd> || Jump forward 5 seconds || Element Window / WebView
+|-
+| <kbd>Ctrl</kbd>+<kbd>1</kbd> || Focus the YouTube video player || Element Window / WebView
+|-
+| <kbd>Ctrl</kbd>+<kbd>2</kbd> || Focus the SuperMemo control panel (buttons) || Element Window / WebView
+|-
+| <kbd>Ctrl</kbd>+<kbd>Tab</kbd> || Cycle focus between player and control panel || WebView
+|-
+| <kbd>Ctrl</kbd>+<kbd>3</kbd> / <kbd>Esc</kbd> || Escape / Stop (return focus to SuperMemo) || Element Window / WebView
+|-
+| <kbd>R</kbd> || Toggle "Repeat" checkbox || WebView (if not in input field)
+|-
+| <kbd>Enter</kbd> || Pass Enter to SuperMemo (e.g. Next / Grade) || WebView (if not in input field)
+|}
+
+''Note: The <kbd>Space</kbd>, <kbd>←</kbd>, and <kbd>→</kbd> shortcuts only work when focus is '''not''' inside a text input field (such as the "Extract name" or time fields).''
+
+===== SuperMemo Element Window Shortcuts =====
+
+{| class="wikitable"
+! Shortcut !! Action
+|-
+| <kbd>Alt</kbd>+<kbd>X</kbd> || Extract fragment
+|-
+| <kbd>Ctrl</kbd>+<kbd>L</kbd> || Learn
+|-
+| <kbd>Ctrl</kbd>+<kbd>N</kbd> || Add new article
+|-
+| <kbd>Ctrl</kbd>+<kbd>F</kbd> || Find elements
+|-
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> || Element parameters
+|}
+
+===== Native YouTube Shortcuts (player focus) =====
+
+When the YouTube player has focus (e.g. after clicking the video or pressing <kbd>Ctrl</kbd>+<kbd>1</kbd>), the standard YouTube keyboard shortcuts apply. These work both inside and outside of SuperMemo. See [https://support.google.com/youtube/answer/7631406 official list].
+
+{| class="wikitable"
+! Shortcut !! Action
+|-
+| <kbd>K</kbd> / <kbd>Space</kbd> || Play / Pause
+|-
+| <kbd>J</kbd> || Rewind 10 seconds
+|-
+| <kbd>L</kbd> || Fast forward 10 seconds
+|-
+| <kbd>F</kbd> || Toggle full screen
+|-
+| <kbd>M</kbd> || Mute / Unmute
+|-
+| <kbd>0</kbd>–<kbd>9</kbd> || Jump to 0%–90% of the video
+|-
+| <kbd><</kbd> / <kbd>></kbd> || Decrease / Increase playback rate
+|-
+| <kbd>C</kbd> || Toggle captions (if available)
+|-
+| <kbd>Shift</kbd>+<kbd>N</kbd> || Next video (if in a playlist)
+|-
+| <kbd>Shift</kbd>+<kbd>P</kbd> || Previous video (if in a playlist)
+|-
+| <kbd>?</kbd> || Show full native shortcut list overlay
+|}
+
+== Example ==
+See:
+* [https://www.youtube.com/watch?v=4ojhSl2m3bM Learning history with SuperMemo 19] (YouTube)
+* [https://supermemopedia.com/wiki/Incremental_video._Learning_history_with_YouTube How to upgrade?]

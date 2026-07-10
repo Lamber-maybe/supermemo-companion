@@ -1,0 +1,206 @@
+Text is the primary way in which you represent knowledge in SuperMemo. You will spend a lot of time processing texts, esp. if you learn to employ [[Glossary:Incremental_reading|incremental reading]]. This is why your decisions about choosing appropriate text [[Glossary:Component|components]] are important. 
+
+Plain text [[Glossary:Component|components]] have traditionally been the most often used text components in earlier versions of SuperMemo. They consume little space and can be searched at high speeds with SuperMemo low-level search procedures. With the advent of [[Glossary:Incremental_reading|incremental reading]], however, [[HTML component|HTML components]] have become the default text [[Glossary:Component|components]] in SuperMemo. [[HTML component|HTML components]] provide many formatting options, however, they consume more disk space. If disk space is very important for you, use ''Classic'' [[Glossary:Template|template]] (and its derivatives) for [[Glossary:Item|items]] instead of HTML-based templates (see: [[Templates|Using templates]]). Optimally, you should use [[HTML component|HTML components]] with [[Glossary:Incremental_reading|incremental reading]] and use ''Classic'' plain text [[Glossary:Template|templates]] on [[Glossary:Item|items]] that have been completed (i.e. formulated in their final shape). SuperMemo automatically removes formatting from texts used in plain text [[Glossary:Component|components]] when you run '''[[File menu|File]] : [[Repairing collections|Repair collection]]''' with '''Rebuild registries''' checked. This practice helps you keep your [[Glossary:Collection|collections]] compact and fast. 
+
+The table below summarizes pros and cons of using various text [[Glossary:Component|components]] in SuperMemo: 
+
+{| style="background-color: rgb(192, 192, 192);" border="1" cellspacing="5" cellpadding="5"
+|-
+| align="center" | '''Type''' 
+| align="center" | '''Advantages''' 
+| align="center" | '''Disadvantages''' 
+| align="center" | '''Typical use'''
+|-
+| [[HTML component|'''HTML''' component]] 
+This [[Glossary:Component|component]] is used by [[Glossary:Template|templates]] such as ''Item'', ''Article'', ''Item Picture'', etc. 
+
+| 
+#richest formatting 
+#full incremental reading support 
+#full HTML and JavaScript support 
+#images can be inserted in the text 
+#Unicode support 
+#search possible 
+#search&replace possible 
+#phonetic transcription possible 
+#can use stylesheets
+
+| 
+#Internet Explorer 6.0 or later required 
+#fonts can be modified by [[Glossary:Template|templates]] only before the text is typed in (unless you use a stylesheet with the template) 
+#all texts kept in separate files (this slows down copying of large [[Glossary:Collection|collections]])
+
+| 
+#default text format 
+#[[Glossary:Incremental_reading|incremental reading]]
+#richly formatted files with scripts and multimedia 
+#whole websites 
+#files that can be displayed in Internet Explorer (e.g. XLS, PDF, DOC, RTF, GIF, etc.)
+
+|-
+| [[WebView component|'''WebView''' component]]
+This [[Glossary:Component|component]] uses a modern browser engine (e.g. Chromium-based WebView) to display HTML content.
+
+|
+#modern HTML, CSS, and JavaScript support
+#renders pages more accurately than Internet Explorer
+#better security and stability
+#full Unicode support
+#fast rendering of large documents
+#supports modern web standards (HTML5, CSS3)
+#search possible
+#search&replace possible
+
+|
+#may not support all legacy Internet Explorer features
+#slightly higher memory use than the classic HTML component
+#some older scripts or templates may require adaptation
+#[[incremental reading]] support is rudimentary
+
+|
+#modern HTML content
+#web pages requiring up‑to‑date browser standards
+#items using interactive JavaScript widgets
+#incremental reading when modern rendering is preferred
+
+|-
+| '''Plain text''' component 
+This [[Glossary:Component|component]] is used by the ''Classic'' template 
+
+| 
+#fonts can be modified globally via [[Glossary:Template|templates]]
+#small size of data 
+#speed 
+#can be made transparent (e.g. to write over images) 
+#search possible 
+#search&replace possible (including [[Filter files|'''Apply filter''']]) 
+#automatic translation and phonetic transcription
+
+| 
+#no rich formatting 
+#unsuitable for [[Glossary:Incremental_reading|incremental reading]]
+
+| 
+#simple question-answer [[Glossary:Item|items]] (e.g. created with '''Remember cloze''') 
+#transparent labels
+
+|-
+| '''Rich text (RTF)''' component 
+This [[Glossary:Component|component]] is used in templates such as ''RTF Article'', ''RTF Item'', etc. 
+
+| 
+#rich text formatting 
+#subset of [[Glossary:Incremental_reading|incremental reading]]
+#search possible 
+#search&replace possible 
+#phonetic transcription possible
+
+| 
+#may not be supported in the future 
+#large size of files 
+#very slow processing of longer texts or large [[Glossary:Collection|collections]]
+#cannot modify font with [[Glossary:Template|templates]] nor stylesheets 
+#cannot interlace pictures and other multimedia
+
+| 
+#[[Glossary:Incremental_reading|incremental reading]] in the absence of Internet Explorer 
+#rich formatting in the absence of Internet Explorer
+
+|-
+| '''Spelling''' [[Glossary:Component|component]]
+Used in the [[Glossary:Template|template]] ''Spelling'' 
+
+| 
+#used for spelling tests 
+#small size 
+#speed 
+#font modifiable via [[Glossary:Template|templates]]
+#search possible 
+#search&replace possible
+
+| 
+#useless beyond spelling tests
+
+| 
+#spelling exercises
+
+|-
+| Binary [[Glossary:Component|component]]
+| 
+#using all possible proprietary formats that are not supported by other [[Glossary:Component|components]]
+
+| 
+#clicking the '''Run''' button is necessary to view the text 
+#files can only be edited if the proprietary editor is installed 
+#words do not enter the lexicon 
+#search not possible 
+#search&replace not possible 
+#translation and phonetic transcription not available 
+#cannot modify font via [[Glossary:Template|templates]]
+
+| 
+#importing all text formats that are not supported by the [[HTML component]] (e.g. mind maps, etc.)
+
+|-
+| [[OLE component|'''OLE''' component]] 
+| 
+#using proprietary formats that support OLE (e.g. mind maps)
+
+| 
+#requires a relevant OLE server 
+#very large size of files 
+#files can only be edited if the proprietary editor is installed 
+#words do not enter the lexicon 
+#search not possible 
+#search&replace not possible 
+#translation and phonetic transcription not available 
+#may be annoyingly unstable if there are problems with the OLE server 
+#cannot modify font via [[Glossary:Template|templates]]
+
+| 
+#using data formats that cannot be used with [[HTML component]] but support OLE in the presence of an OLE server
+
+|-
+| '''Sound''' [[Glossary:Component|component]] 
+| 
+#sound can be associated with the text 
+#search possible 
+#search&replace possible (including [[Filter files|'''Apply filter''']]) 
+#font modifiable via [[Glossary:Template|templates]] 
+#phonetic transcription and translation supported
+
+| 
+#slow 
+#cannot be made transparent 
+#provides no advantages over plain text if no sound is associated
+
+| 
+#pronunciation exercises 
+#learning material narration
+
+|-
+| '''Image''' [[Glossary:Component|component]] 
+| 
+#can represent most complex formatting needed for mathematical or chemical formulas (as a picture, e.g. JPG)
+
+| 
+#large size of files 
+#words do not enter the lexicon 
+#search not possible 
+#search&replace not possible 
+#translation and phonetic transcription not available 
+#cannot modify font via [[Glossary:Template|templates]]
+
+| 
+#complex formulas that are hard to represent in HTML or OLE
+
+|}
+
+
+== See also ==
+
+*[https://super-memory.com/help/faq/texts.htm '''FAQ''': Text components] 
+*[[Using fonts]] 
+*[[Fonts tab in Options|Font options]] 
+*[https://supermemopedia.com/wiki/Finding_out_the_default_font_size_used_in_HTML_components#Followup FAQ: Why so many complex components?] 
+*[https://supermemopedia.com/wiki/How_can_I_see_if_a_component_is_plain_or_HTML%3F How to differentiate between plain text and HTML?]

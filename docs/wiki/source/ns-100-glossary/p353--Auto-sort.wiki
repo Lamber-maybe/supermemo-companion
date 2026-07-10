@@ -1,0 +1,2 @@
+;<span id="Auto-sort">auto-sort</span>
+:option available with '''[[Learn menu|Learn]] : [[Learn menu#Sorting|Sorting]] : Auto-sort repetitions''' (from the [[main menu]]) that makes sure that repetitions are sorted by [[Glossary:Priority|priority]] (if it is checked)

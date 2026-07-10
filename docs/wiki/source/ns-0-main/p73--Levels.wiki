@@ -1,0 +1,21 @@
+'''[[File menu | File]] : [[File menu#Level|Level]]''' menu makes it possible to adapt the functionality of SuperMemo to your proficiency level. Use lower [[Glossary:Level|levels]] in the beginning and move to higher [[Glossary:Level|levels]] as your knowledge of SuperMemo advances:
+
+# '''Beginner''' - this is the default [[Glossary:Level|level]] that provides only the most essential operations for using the program, i.e. adding new material and learning it (see the [[#Beginner level | picture below]])
+# '''Basic''' - the difficulty [[Glossary:Level|level]] that builds upon the '''Beginner''' [[Glossary:Level|level]] and introduces a stripped down [[learnbar]] with the most important options such as '''Remember extract''', '''Remember cloze''', etc. used in [[Glossary:Incremental_reading|incremental reading]]. It also introduces functions for editing the knowledge tree: '''Add''', '''Sibling''', '''Insert''', etc. 
+# '''Middle''' - this [[Glossary:Level|level]] introduces collection management functions ('''[[File menu#Delete collection|Delete collection]]''', '''[[File menu#Merge collection|Merge collection]]''', etc.), editing [[Glossary:Component|components]], advanced search functions and browsing functions, '''[[Options]]''', '''[[Mercy]]''' and layout management
+# '''Professional'''- this [[Glossary:Level|level]] provides full functionality of SuperMemo for advanced users
+
+The [[Glossary:Level|levels]] in SuperMemo can be changed by means of '''[[File menu | File]] : [[File menu#Level|Level]]'''. Additionally the shortcut ''Ctrl+Alt+F12'' can be used to circle between [[Glossary:Level|levels]]
+
+If you would like to use SuperMemo in your own language, both '''Beginner''' and '''Basic''' [[Glossary:Level|levels]] provide simple interfaces that can entirely be localized by means of '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Language tab in Options | Language]] : [[Localization table]]''' (see: [http://super-memory.com/english/trafiles.htm International interfaces for SuperMemo]).
+
+'''Warrior layout''' on the '''[[File menu | File]] : [[File menu#Level|Level]]''' menu applies the ''Classic'' [[Glossary:Layout|layout]] known from older SuperMemos (with full statistics display), and sets SuperMemo on the '''Professional''' level.
+
+== Beginner level ==
+
+[[Image:Add_new.jpg|center|600px|SuperMemo: The main program window at the Beginner level]]
+
+== Professional level ==
+
+[[Image:Professional_level.jpg|600px|center|SuperMemo: SuperMemo {{SMVER}} at the Professional level]]
+{{:Image:Professional level.jpg}}

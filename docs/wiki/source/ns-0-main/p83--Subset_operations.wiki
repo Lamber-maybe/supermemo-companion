@@ -1,0 +1,169 @@
+== Accessing the subset processing menu ==
+
+Subset processing menu helps you execute operations on a set of [[Glossary:Element|elements]] in a given [[Glossary:Collection|collection]].
+
+You can process [[Glossary:Element|elements]] from a given [[Glossary:Branch|branch]] of the [[Glossary:Knowledge_tree|knowledge tree]], or elements in a [[browser]], or all elements in the collection.
+
+Subset processing menu is available as '''Process collection>''' on the [[File menu|'''File''']] menu, as '''Process branch>''' on the [[contents menu]], or as '''Process browser>''' on the [[browser menu]]. 
+
+The menu can also be accessed in the '''[[Contents]]''' and in the [[browser]] with a dedicated menu button on the toolbar (second from the left in both cases).
+
+== Subset processing menu items ==
+
+The options of the subset processing menu are listed below. ''Subset elements'' should be understood as ''the [[Glossary:Element|elements]] of a given [[Glossary:Collection|collection]]'', ''the [[Glossary:Element|elements]] of a given [[Glossary:Branch|branch]]'' or ''the [[Glossary:Element|elements]] listed in the [[browser]]'' (depending on the context in which the menu is used: [[File menu|'''File''']] menu, '''[[Contents]]''', or [[browser]], respectively). 
+
+=== Learning ===
+
+*'''Learning''' 
+**[[Subset learning|'''Learn''']] (''Ctrl+L'') - make [[Glossary:Outstanding_material|outstanding repetitions]] on [[Glossary:Element|elements]] included in the subset. The sequence of repetitions is determined by how [[Glossary:Element|elements]] are sorted in the subset (i.e. not by the global repetition schedule). Once [[Glossary:Outstanding_material|outstanding repetitions]] are made, proceed with memorizing subset [[Glossary:Element|elements]] that are listed in the [[Glossary:Pending_queue|pending queue]]. '''Learn''' in the [[browser]] can use [[Priority queue#Sorting repetitions|your sorting criteria]] if you choose '''[[Browser menu#Sort|Sort]] : For Review''' (''Ctrl+S'') on the [[browser menu]]
+**[[Subset learning|'''Review all''']] (''Shift+Ctrl+L'') - review all [[Glossary:Element|elements]] in the subset. Elements that are not outstanding are subject to [[Glossary:Mid-interval_repetition|mid-interval repetition]]. Mid-interval repetition results in optimally rescheduling the [[Glossary:Element|element]]. If the review [[Glossary:Interval|interval]] is much shorter than the optimum interval, the new interval will not be much longer than the preceding interval. If the review [[Glossary:Interval|interval]] is close to the optimum interval, the new interval will be nearly as long as if the repetition took place at the optimum time. [[Glossary:Dismissed element|Dismissed elements]] are not subject to review. [[Glossary:Element|Elements]] that have already been reviewed on this particular day will also be skipped. Use '''Review all''' if you urgently need to review a portion of material (e.g. before an exam). You could use '''Learn''' before using '''Review all''' to make sure you start from the [[Glossary:Outstanding_material|outstanding material]] (incl. [[Glossary:Item|items]] that are most likely to be forgotten). Alternatively, you could sort the subset by the date of the next repetition (starting from the earliest dates) to maximize subset recall in case you do not manage to complete the entire review 
+**'''Review topics''' - review [[Glossary:Topic|topics]] only. Unlike '''Review all''', this option does not review [[Glossary:Item|items]]. This makes it possible to use it often without a detriment to the learning process. Abusing '''Review all''' can result in an increase in total workload and a decrease in [[Glossary:Retention|retention]]. In particular, important [[Glossary:Item|items]] may be sent to excessively long [[Glossary:Interval|interval]] due to repetition clustering (i.e. similar items serving as answer cues and masking recall problems) 
+**'''<span id="dilute">Dilute</span>''' - same as '''[[Postpone]]''' but with this difference that all [[Glossary:Element|elements]] in the subset will be affected (not only [[Glossary:Outstanding_element|outstanding elements]]) 
+**'''<span id="Reschedule">Spread</span>''' - reschedule all [[Glossary:Element|elements]] equally in a given period of time (e.g. make sure that all [[Glossary:Item|items]] related to geography are rescheduled in equal portions of 20 items per day in the period of one month). Please note that you might want to first choose '''[[Browser menu#Child|Child]] : Outstanding''' to make sure that you reschedule only [[Glossary:Outstanding_material|outstanding repetitions]], i.e. not all repetitions in the entire subset. You can also choose '''[[Browser menu#Child|Child]] : Items''' to make sure you reschedule only item repetitions. For more details see: [[Mercy]] 
+**'''Remember''' - memorize all [[Glossary:Element|elements]] that have not yet been memorized 
+**'''Forget''' - remove all [[Glossary:Memorized_element|memorized elements]] from the learning process and put them at the end of the [[Glossary:Pending_queue|pending queue]] 
+**'''Dismiss''' - [[Glossary:Dismiss|dismiss]] all [[Glossary:Element|elements]], i.e. ignore them in the learning process 
+**'''Undismiss''' - return all [[Glossary:Dismissed_element|dismissed elements]] to the [[Glossary:Pending_queue|pending queue]] 
+**'''Done''' - execute '''Done''' on all [[Glossary:Element|elements]]. Upon confirmation, '''Done''' will delete the contents of individual [[Glossary:Element|elements]], [[Glossary:Dismiss|dismiss]] them, and delete the elements that have no [[Glossary:Child|children]] (for more see: [[Incremental reading]]) 
+**'''<span id="add_to_outstanding">[[Add to outstanding]]</span>''' - spread [[Glossary:Element|elements]] equally in the [[Glossary:Outstanding_queue|outstanding queue]]. The elements are not physically rescheduled in the [[Glossary:Collection|collection]] (i.e. the repetition date does not change, and if the review does not take place, the scheduling will remain unchanged on the next day). This is the only case in SuperMemo where an [[Glossary:Element|element]] is outstanding while possibly being scheduled for review on a date later than ''today''. [[Glossary:Priority|Element priority]] increases slightly upon the success of the operation. Once the repetition is made, it is executed in the same way as other [[Glossary:Mid-interval_repetition|mid-interval repetitions]]. For an [[Glossary:Element|element]] to be added to the [[Glossary:Outstanding_queue|outstanding queue]], the following conditions must be met: 
+***[[Glossary:Element|element]] must be memorized 
+***[[Glossary:Element|element]] cannot have been reviewed earlier on the same day 
+***the new position in the [[Glossary:Outstanding_queue|outstanding queue]] must be less than the old position (if any)
+**'''Add all to outstanding''' - add all [[Glossary:Element|elements]] to the [[Glossary:Outstanding_queue|outstanding queue]] (including those that have already been reviewed on this day)
+**'''Add to drill''' - add all [[Glossary:Element|elements]] in the subset to the end of the [[Glossary:Final_drill_queue|final drill queue]] 
+**'''Reset history''' - reset the [[repetition history]] of all [[Glossary:Element|elements]] in the subset
+
+=== Postpone ===
+
+*'''[[Postpone]]''' - increase [[Glossary:Interval|intervals]] of all [[Glossary:Outstanding_material|outstanding repetitions]] in the subset by a selected factor (e.g. 1.02 will increase intervals by 2%)
+
+=== Advance ===
+
+*'''<span id="Advance">Advance</span>''' - opposite to '''[[Postpone]]'''. In the case of [[Glossary:Topic|topics]], [[Glossary:Element|elements]] will be rescheduled with new [[Glossary:Interval|intervals]] falling into a selected range. For example, if you want to thoroughly review all [[Glossary:Topic|topics]] related to ''whiplash injury'' over the period of two weeks, search for ''whiplash'' (''Ctrl+F''), choose '''Advance''', and select 14 (number of days in the review period). '''Advance''' works differently for [[Glossary:Item|items]]. All items will be rescheduled within the period of the advance [[Glossary:Interval|interval]] starting with tomorrow. Unlike in the case of [[Glossary:Topic|topics]], item [[Glossary:Interval|intervals]] may still be very long. Just short enough to fall within the review period. For those [[Glossary:Item|items]] that are lucky to retain long [[Glossary:Interval|intervals]], if your recall is good, you will not need to waste time on reviewing them frequently after the review period. The formula for the next repetition date is the same for [[Glossary:Topic|topics]] and [[Glossary:Item|items]]: <code>today+[1..Advance Interval]</code>. The formula for the new [[Glossary:Interval|interval]] is: <code>[1..AdvanceInterval]</code> for [[Glossary:Topic|topics]] and <code>(Today + [1..AdvanceInterval] - LastRepetition)</code> for [[Glossary:Item|items]]. See: [[Advancing elements]]
+
+=== Priority ===
+
+*'''Priority''' - change the [[Glossary:Priority|priority]] of all [[Glossary:Element|elements]] in the subset. '''Warning! Inexperienced users tend to abuse the possibility of increasing the [[Glossary:Priority|priority]] in a large subset!'''. This must be done with caution as it is very easy to neglect large portions of the learning material through massive up-prioritizations of other portions:
+**'''Increase''' - increase the [[Glossary:Priority|priority]] of [[Glossary:Element|elements]] in the subset. If you choose the default change of 50%, all [[Glossary:Priority|priorities]] will be multiplied by 0.5. For example, [[Glossary:Element|elements]] with [[Glossary:Priority|priority]] 70% will have their priority increased to 35% (70%*0.5=35%). Note that in massive changes to [[Glossary:Priority|priority]], [[Glossary:Element|elements]] listed at the beginning of the subset will be modified first. This means that changes to the [[Glossary:Priority|priority]] of later [[Glossary:Element|elements]] will affect the priority of elements modified first. In addition, [[Glossary:Priority|priorities]] are rounded by position to the nearest integer. As a result, not always will you get the exact increase in [[Glossary:Priority|priority]] as indicated by the '''Change''' field 
+**'''Decrease''' - decrease the [[Glossary:Priority|priority]] of [[Glossary:Element|elements]] in the subset. If you choose the default change of 150%, all [[Glossary:Priority|priorities]] will be multiplied by 1.5. For example, [[Glossary:Element|elements]] with [[Glossary:Priority|priority]] 50% will have their priority decreased to 75% (50%*1.5=75%) 
+**'''<span id="spread_priorities">Spread</span>''' - spread the [[Glossary:Priority|priority]] of [[Glossary:Element|elements]] within a selected range. For example, if you choose a range from 1% to 10%, and the subset has 10 [[Glossary:Element|elements]], they will roughly receive the priorities of 1%, 2%, 3%, etc. Remember that rounding errors may produce different figures if the [[Glossary:Collection|collection]] is small. In addition, in a narrow priority range, [[Glossary:Element|elements]] processed first may be displaced by elements processed later due to rounding errors. If there aren't enough priority positions to spread within the subset, the '''Step''' field will display 0 (on the yellow background) and the procedure will be disabled 
+**'''Adjust''' - the same as '''Spread''' but the checkbox '''Adjust''' is checked. This retains the priority proportions between [[Glossary:Element|elements]]. If '''Adjust''' is unchecked, the spread is equal (equal [[Glossary:Priority|priority]] increments between [[Glossary:Element|elements]]). If this field is checked, the distribution of [[Glossary:Priority|priority]] within the subset will retain its profile (e.g. a large number of high priority elements, will retain their high priority within the new range and will not be pushed to lower priority by an equal spread)
+
+=== Forgetting index ===
+
+*'''<span id="Forgetting_index">Forgetting index</span>''' - change the [[Glossary:Forgetting_index|forgetting index]] of all [[Glossary:Element|elements]] in the subset 
+**'''Set forgetting index''' - assign a given [[Glossary:Forgetting_index|forgetting index]]
+**'''Default forgetting index''' - make all [[Glossary:Element|elements]] use the [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo#default_forgetting_index default forgetting index]. The default forgetting index is set with '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Learning tab in Options|Learning]] : [[Learning tab in Options#Forgetting_index|Forgetting index]]'''
+
+=== A-Factor ===
+
+*'''A-Factor''' - change the [[Glossary:A-Factor|A-Factor]] of all [[Glossary:Element|elements]] in the subset: 
+**'''Set A-Factor''' - set the [[Glossary:A-Factor|A-Factor]] to a selected value 
+**'''Modify A-Factor''' - multiply [[Glossary:A-Factor|A-Factors]] by a selected number
+
+=== Ordinal ===
+
+*'''Ordinal''' - change the [[Glossary:Ordinal_number|ordinal number]] of all [[Glossary:Element|elements]] in the subset: 
+**'''Set ordinal''' - give all [[Glossary:Element|elements]] the same [[Glossary:Ordinal_number|ordinal number]]
+**'''Set difficulty ordinal''' - give all [[Glossary:Element|elements]] [[Glossary:Ordinal_number|ordinals]] derived from item [[Glossary:Difficulty|difficulty]] (easier [[Glossary:Item|items]] will get lower ordinals). This makes it possible, for example, to sort the [[Glossary:Pending_queue|pending queue]] in such a way that easy [[Glossary:Element|elements]] come first in learning 
+**'''Spread ordinals''' - give all [[Glossary:Element|elements]] [[Glossary:Ordinal_number|ordinals]] increasing in equal steps from a given lower limit to a given higher limit 
+**'''Blend ordinals''' - set [[Glossary:Ordinal_number|ordinals]] by position in the subset weighed against the position in another subset. If you have the same set sorted in two different ways, you can find a sorting order that falls into the middle between these two sorting orders. For example, if you have a [[Glossary:Collection|collection]] that has been ordered by the position of [[Glossary:Element|elements]] in individual [[Glossary:Branch|branches]], you can set up a [[Glossary:Pending_queue|pending queue]] in such a way that difficult elements are pushed slightly towards the end of the queue. To accomplish this goal, sort the set by [[Glossary:Difficulty|difficulty]] and save it in a subset file. Then sort the set by the original order and blend ordinals with the previously saved difficulty order set. The blend factor will determine how much the current sorting order is modified (0 for no change and 1 for the order from the subset file) 
+**'''Set position ordinal''' - give all [[Glossary:Element|elements]] [[Glossary:Ordinal_number|ordinal numbers]] equal to their physical position in the [[Glossary:Collection|collection]] (e.g. to sort the [[Glossary:Pending_queue|pending queue]] in the order of adding elements into the collection) 
+**'''Set pending ordinal''' - give all [[Glossary:Element|elements]] [[Glossary:Ordinal_number|ordinal numbers]] equal to their position in the [[Glossary:Pending_queue|pending queue]]
+
+=== Export ===
+
+*'''Export''' - export all [[Glossary:Element|elements]] in the subset 
+**'''Document (HTML)''' - export all [[Glossary:Element|elements]] into a single text file 
+**'''Q&amp;A text file''' - export all [[Glossary:Element|elements]] into a Q&amp;A text file 
+**'''All texts''' - export all [[Glossary:Element|elements]] into a single unformatted text file
+
+=== Move ===
+
+*'''Move''' 
+**'''To a branch''' - move the [[Glossary:Element|elements]] to a selected [[Glossary:Branch|branch]] in the [[Glossary#Knowledge_tree|knowledge tree]]. The elements will be moved in the order they are sorted in the [[browser]]. You can use this option, for example, to sort [[Glossary:Branch|branches]] using your own criteria (e.g. [[Glossary:Priority|priority]], [[Glossary:Interval|interval]], alphabetically, etc.) 
+**'''To a concept''' - move the [[Glossary:Element|elements]] to a selected [[Glossary#Concept_group|concept group]]
+
+=== Template ===
+
+*'''Template''' - template operations (for more details see: [[Templates|Using templates]]) 
+**'''Apply template''' - apply a selected [[Glossary:Template|template]] to all [[Glossary:Element|elements]] in a given element subset. Unlike in earlier versions of SuperMemo, this operation is reversible. You can always apply a different [[Glossary:Template|template]] or use '''[[Element menu#Template|Template]] : Detach template''' on the [[element menu]] to remove the applied template from individual [[Glossary:Element|elements]]. Note that the shortcut ''Ctrl+Shift+M'' will also work in the [[browser]] or in the [[Contents|'''Contents''' window]], however, it will only apply the template to the [[Glossary:Element|element]] that is currently displayed in the [[element window]] 
+**'''Impose template''' - execute '''Impose template''' operation on all [[Glossary:Element|elements]] in the subset. This will make sure that the source template of all [[Glossary:Element|elements]] is overwritten with the [[Glossary:Template|template]] applied to those elements 
+**'''Detach template''' - detach [[Glossary:Template|template]] from all [[Glossary:Element|elements]] in the subset and display their original template-less source data 
+**'''Replace template''' - replace the [[Glossary:Template|template]] in all [[Glossary:Element|elements]] (see [[Templates|Using templates]]). This operation is similar to '''Apply template''' but it is not reversible, i.e. the source template of all [[Glossary:Element|elements]] will be overwritten 
+**'''Add template''' - add a [[Glossary:Template|template]] to all [[Glossary:Element|elements]] (see [[Templates|Using templates]]). You can use this option, for example, to add a specific [[Glossary:Component|component]] to all [[Glossary:Element|elements]] in the subset 
+**'''Insert picture''' - add a picture illustration to all [[Glossary:Element|elements]] in the subset
+
+=== Type ===
+
+*'''Type''' - change the type of [[Glossary:Element|element]]s. See: [[Items, topics, concepts, and tasks]]
+**'''Make items''' - convert all [[Glossary:Element|element]]s to [[Glossary:Item|item]]s ([[Glossary:Task|tasks]] will not be affected)
+**'''Make topics''' - convert all [[Glossary:Element|element]]s to [[Glossary:Topic|topic]]s
+**'''Make concepts''' - convert all [[Glossary:Element|element]]s into [[Glossary:Concept|concept]]s
+
+=== Set title ===
+
+*'''Set title''' - assign a given title to all [[Glossary:Element|elements]] in the subset
+
+=== Set concept group ===
+
+*'''Set concept group''' - set all element affiliations to a given [[Glossary:Concept_group|concept group]]
+
+=== Reference ===
+
+*'''Reference''' - modify [[references]] in a subset of [[Glossary:Element|elements]]
+**'''Set reference''' - assign the same references to all [[Glossary:Element|elements]] in a set
+**'''Merge reference''' - add reference fields to a set of [[Glossary:Element|elements]]
+**'''Delete reference''' - delete references from the subset [[Glossary:Element|elements]]
+
+=== Statistics ===
+
+*'''<span id="Statistics">Statistics</span>''' (''Shift+Ctrl+B'') - collect learning statistics for all [[Glossary:Element|elements]] in the subset. In the example below, a subset of 45843 [[Glossary:Element|elements]] is being analyzed. Some exemplary statistics of interest: the average [[Glossary:item|item]] [[Glossary:Interval|interval]] is 4288.903 days, the average number of repetitions is 6.693, and the [[Glossary:Measured_forgetting_index|measured forgetting index]] is slightly higher than the [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo#requested_forgetting_index requested forgetting index] (this is quite understandable considering a high number of postpones). The [[Glossary:Forgetting_index|forgetting index]] for the first repetition equals 51.86% only to drop to 7.9% for most recently executed repetitions. Overall [[Glossary:Retention|retention]] is 93.26% and the total size of texts in the subset is 2.579 MB.
+<pre>
+SUBSET STATISTICS (Feb 26, 2016)
+d:\colls\Advanced English 2016
+ 
+Elements: 45843
+Items: 44800
+Topics: 1043
+Memorized: 44801
+Dismissed: 1044
+ 
+Items: 22.87% of all items
+Topics: 0.25% of all topics
+Memorized: 8.40% of all memorized
+Burden: 30.413 elements/day (2.98%)
+Item Burden: 30.41 items/day (9.98%)
+Topic Burden: 0.003 topic/day (0%)
+Item Priority: 40.5964
+Topic Priority: 2.3695
+Item Repetitions: 6.693
+Topic Reviews: 0.006
+Item Interval: 4288.903
+Topic Interval: 0.276
+Item A-Factor: 4.127
+Topic A-Factor: 2.551
+Average recent postpones for items: 103.878
+Average total postpones for items: 104.898
+Average recent postpones for topics: 0.003
+Average total postpones for topics: 0.003
+Recent postpones sum: 4653718 + 3
+Total postpones sum: 4699435 + 3
+ 
+Requested forgetting index: 9.99%
+Measured forgetting index: 13.17%
+First repetition f. index: 51.86%
+Last repetition f. index: 7.9%
+Forgetting index cases: 183393
+RETENTION: 93.26%
+ 
+Item text size: 2.576 MB
+Topic/task text size: 2934 bytes
+Total text size: 2.579 MB
+</pre>
+
+== Video ==
+
+'''Add to outstanding''' in [[subset review]]:
+
+{{#ev:youtube|1mzhbXx8DXE}}

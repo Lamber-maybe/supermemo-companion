@@ -1,0 +1,41 @@
+'''Edit''' toolbar can be displayed by clicking the '''Edit''' tab at the bottom of the [[element window]] (you need to turn on the '''Middle''' or higher [[Glossary:Level|level]] for this to work):
+
+<div class="center">
+[[Image:Edit_toolbar.jpg|800px|center|SuperMemo: The Format toolbar at the bottom of the element window. It hosts operations that you will need to edit HTML and rich text components (fonts, alignment, bullets, etc.) as well as some other editing options such as: copy element, paste element, editing and dragging modes, etc.]]
+{{:Image:Edit_toolbar.jpg}}
+</div>
+
+Here is the use of individual buttons:
+
+* '''Menu buttons''' - open menus otherwise available with right-click over the element display area and over individual [[Glossary:Component|components]]:
+** '''Element menu''' (''Alt+F10'') - open the [[element menu]] with operations related to the currently displayed [[Glossary:Element|element]]
+** '''Component menu''' (''Alt+F12'') - open the current [[component menu]] with operations related to the current [[Glossary:Component|component]]
+* '''Copy element''' - copy the currently displayed [[Glossary:Element|element]] to the clipboard
+* '''Paste element''' - paste the [[Glossary:Element|element]] from the clipboard (the element is added as a new element to the current [[Glossary:Concept_group|concept group]] in the current [[Glossary:Collection|collection]])
+* '''Delete element''' (''Shift+Ctrl+Del'') - delete the currently displayed [[Glossary:Element|element]] (and all its [[Glossary:Child|children]] if any)
+* '''Text attribute buttons''' - change properties of texts in the currently selected [[Glossary:Component|component]]:
+** '''Bold font''' (''Ctrl+B'') - change the bold attribute of the font in text [[Glossary:Component|components]] or in a rich text component selection
+** '''Italics font''' (''Ctrl+I'') - change the italics attribute of the font in text [[Glossary:Component|components]] or in a rich text component selection
+** '''Underlined font''' (''Ctrl+U'') - change the underline attribute of the font in text [[Glossary:Component|components]] or in a rich text component selection
+** '''Font''' - change the font in the current text [[Glossary:Component|component]] or in the current selection of the rich text component
+** '''Font color''' - change the color of the font in the current text [[Glossary:Component|component]] or in the current selection of the rich text component
+** '''Increase font size''' (''Ctrl+]'') - increase the size of the font in a text [[Glossary:Component|component]] or the size of the selected text in a rich text component
+** '''Reduce font size''' (''Ctrl+['') - decrease the size of the font in a text [[Glossary:Component|component]] or the size of the selected text in a rich text component
+** '''Subscript''' - change the selected text to subscript (only in [[HTML component|HTML components]])
+** '''Superscript''' - change the selected text to superscript (only in [[HTML component|HTML components]])
+** '''Align left''' - align the selected text to the left
+** '''Align center''' - center the selected text
+** '''Align right''' - align the selected text to the right
+** '''Bullets''' (''Shift+Ctrl+L'') - convert the currently selected text to a bulleted text (only in rich text and [[HTML component|HTML components]])
+** '''Numbering''' - convert the currently selected text to a numbered list (only in [[HTML component|HTML components]])
+** '''Outdent''' - outdent the selected text (only in [[HTML component|HTML components]])
+** '''Indent''' - indent the selected text (only in [[HTML component|HTML components]])
+* '''Component color''' - change the color of the currently selected [[Glossary:Component|component]]
+* '''Alignment and size''' - makes it possible to size and align all [[Glossary:Component|components]] that are currently in the [[Glossary:Editing_mode|editing]] or [[Glossary:Dragging mode|dragging mode]]
+* '''Save as default template''' - save the current layout and component attributes as a [[Glossary:Template|template]] for future use in other [[Glossary:Element|elements]] in the current [[Glossary:Concept_group|concept group]]
+* '''Apply template''' (''Shift+Ctrl+M'') - apply a previously saved [[Glossary:Template|template]] to the current [[Glossary:Element|element]]
+* '''Component display mode buttons''' - change the way the [[Glossary:Component|components]] are displayed and acted upon:
+** [[Glossary:Presentation mode|'''Presentation mode''']] (''Esc'') - set all [[Glossary:Component|components]] in way they will be seen by the student during repetitions
+** [[Glossary:Editing mode|'''Editing mode''']] (''Alt+click'') - set all [[Glossary:Component|components]] in the mode that makes it possible to edit texts, edit [[OLE component|OLE objects]], etc.
+** [[Glossary:Dragging mode|'''Dragging mode''']] (''Alt+double click'') - set all [[Glossary:Component|components]] in the mode that makes dragging and sizing possible
+** '''Switch mode''' (''Ctrl+E'') - switch from [[Glossary:Presentation_mode|presentation]] to [[Glossary:Editing_mode|editing]] to [[Glossary:Dragging_mode|drag&size mode]]

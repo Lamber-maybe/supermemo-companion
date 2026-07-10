@@ -1,0 +1,2 @@
+;<span id="Registry_position">registry position</span>
+:number corresponding with the physical position of a given [[Glossary:Registry_member|registry member]] in a [[Glossary:Registry|registry]]. This number can be seen at the bottom of the [[Glossary:Registry_window|registry window]]. See: [[Glossary:Registry_index|registry index]]

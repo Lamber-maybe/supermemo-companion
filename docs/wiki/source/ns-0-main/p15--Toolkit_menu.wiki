@@ -1,0 +1,90 @@
+__TOC__
+
+The '''Toolkit''' submenu on the [[main menu]] provides the following options (assuming '''[[File menu|File]] : [[File menu#Level|Level]] : Professional''' checked): 
+
+== Toolkit menu items ==
+
+=== Commander ===
+
+* '''[[Commander]]''' (''Ctrl+Enter'') - choose a SuperMemo command to execute
+
+=== Calendar ===
+
+* '''[[Calendar]]''' (''Ctrl+W'') - the daily and the monthly calendar of repetitions.
+
+=== Sleep Chart ===
+
+* '''[[Sleep Chart]]''' (''F12'') - record of repetition and/or sleep blocks that will help you see your timing pattern in learning and sleeping
+
+=== Plan ===
+
+* '''[[Plan]]''' (''Ctrl+P'') - a schedule manager that will help you plan your time by adjusting proportions of time you spend on individual activities
+
+=== Mercy ===
+
+* '''[[Mercy]]''' (''Shift+Alt+M'') - a dialog box that makes it possible to reschedule repetitions (e.g. before or after a holiday break). Use '''Mercy''' only if you want to redistribute the [[Glossary:Outstanding_element|outstanding material]] in a selected period of time. If you cannot cope with material [[Glossary:Overload|overload]], you should rather use '''[[Postpone]]'''
+
+=== Tasklist ===
+
+* [[Tasklist manager | '''Tasklist''']] (''F4'') - a tasklist manager to sort or edit the current [[Glossary:Tasklist|tasklist]]
+
+=== Statistics ===
+
+* '''Statistics'''
+** '''[[Statistics]]''' - a window with the main statistics of the learning process
+** '''[[Element data]]''' - a window with the statistics related to the current [[Glossary:Element|element]]. This window also displays the repetition statistics after a [[Glossary:Repetition|repetition]]
+** '''[[Analysis]]''' (''Shift+Alt+A'') - a dialog box with various statistics related to the learning process and the [https://supermemo.guru/wiki/SuperMemo_Algorithm SuperMemo Algorithm]
+** '''Simulation''' - a dialog box that makes it possible to simulate the course of learning over many years using real data collected during repetitions (see: [http://super-memory.com/articles/theory.htm Theoretical aspects of SuperMemo]). Please note that for a low value of the [[Glossary:Forgetting_index|forgetting index]], the simulation procedure may be inaccurate (see: [http://super-memory.com/help/faq/algorithm.htm#Simulation_inaccurate FAQ]). The simulation uses the OF matrix used by Algorithm SM-15 (i.e. it is not based on Algorithm SM-17)
+** '''Report''' - generate a text file with statistics displayed in the [[Statistics|'''Statistics''' window]] 
+** '''Reset data'''
+*** '''Forgetting index record''' - reset the record of repetition grades used in computing the [[Glossary:Measured_forgetting_index|measured forgetting index]]
+*** '''Forgetting index vs priority record''' - reset the record of the [[Glossary:Forgetting_index|forgetting index]] measured for different priority categories (as visible in '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Statistics|Statistics]] : [[Analysis]] : [[Analysis#Graphs|Graphs]] : [[Analysis#Forgetting_Index_vs._Priority|Forgetting Index vs. Priority]]''')
+*** '''First grade vs A-Factor record''' - reset the record of the correlation between between first grades and [[Glossary:A-Factor|A-Factors]]
+*** '''Grade vs forgetting index''' - reset the correlation between the [[Glossary:Grade|grade]]s and the [[Glossary:Forgetting_index|forgetting index]]
+*** '''Average response time''' - reset the record of the average time it takes to respond to questions in your [[Glossary:Collection|collection]]
+*** '''Repetition statistics''' - recompute repetition counts in [[Workload]] to account for elements that have been deleted since
+*** '''Repetitions history calendar''' - recompute the history of use of elements on individual days (accessible from [[Workload]]). Those statistics are kept as subsets in ''\history'' collection subfolder
+*** '''Repetition history''' - delete the history of repetitions without affecting the learning process
+*** '''Optimization matrices''' - reset the optimization matrices used in the learning process (RF, OF, repetition cases, forgetting curves, etc.)
+
+=== Memory ===
+
+* '''Memory'''
+** '''[[Memory graphs (4D)|4D Graphs]]''' (''F7'') - visual presentation of memory functions, their approximations as used by [https://supermemo.guru/wiki/SuperMemo_Algorithm SuperMemo Algorithm], and options for resetting and re-computing memory data on the basis of [[Repetition history|repetition histories]]
+** '''Memory status''' (''F2'') - show changes to memory status over time
+** '''Total knowledge''' - compute the progression timeline of total knowledge
+** '''Export data''' - export memory data for all [[Glossary:Item|item]]s
+** '''Re-compute difficulties''' - update item difficulties in element data for more accurate display and browsing
+
+=== Neural analysis ===
+
+* '''Neural analysis''' - build a neural queue and show how activation spreads in the network
+
+=== Randomize ===
+
+* '''Randomize'''
+** '''Drill''' - randomize the [[Glossary:Final drill queue|final drill queue]] 
+** '''Pending''' - randomize the [[Glossary:Pending queue|pending queue]]
+
+=== Random test ===
+
+* '''Random test''' - run random repetitions on various [[Glossary:Element_subset|subsets]] of the current [[Glossary:Collection|collection]] (random repetitions do not count in the learning process). The following tests can be found on the '''Random test''' submenu:
+** '''Resume test'''
+** '''All''' (''Alt+F11'') - run a random test on all [[Glossary:Element|elements]]
+** '''Pending''' - run a random test on [[Glossary:Pending_element|pending elements]]
+** '''Memorized''' - run a random test on [[Glossary:Memorized_element|memorized elements]]
+** '''Dismissed''' - run a random test on [[Glossary:Dismissed_element|dismissed elements]]
+** '''Topics''' - run a random test on [[Glossary:Topic|topics]]
+** '''Items''' - run a random test on [[Glossary:Item|items]]
+** '''Filter''' - use the [[element filter]] and run a random test on a subset of filtered elements
+** '''Leeches''' - run a random test on [[Glossary:Leech|difficult elements]]
+** '''Subset''' - run a random test on a selected element subset
+** '''Branch''' - run a random test on the currently selected [[Glossary:Branch|branch]] in the [[Contents|'''Contents''' window]]
+
+=== Random review ===
+
+* '''Random review''' (''F11'') - randomly review [[Glossary:Element|elements]] in the current [[Glossary:Collection|collection]]
+
+=== Options ===
+
+* '''[[Options]]''' - open a tabbed dialog box with options such as the default interface font, [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo#default_forgetting_index default forgetting index], path to files on an external drive, default stylesheet, password, sound feedback, background image, translation language, etc.

@@ -1,0 +1,10 @@
+;<span id="Final_drill">final drill</span>
+:last (optional) stage of the learning process on a given day, in which only [[Glossary:item|items]] that scored a [[Glossary:Grade|grade]] less than '''Good (4)''' are repeated, as long as they continue scoring below '''Good'''. On the next day, the [[Glossary:Final_drill_queue|final drill queue]] is again shifted to the end of the learning day.
+
+:The '''final drill''' stage is not executed if '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Learning tab in Options|Learning]] : [[Learning tab in Options#Skip_final_drill|Skip final drill]]''' is checked.
+
+:To delete the queue, use '''[[Learn menu|Learn]] : [[Learn menu#Cut drills|Cut drills]]''' from the [[main menu]]. If the final drill exceeds 500 items and is older than 10 days, SuperMemo will propose its deletion.
+
+:'''Important:''' Since October 2024, the '''final drill''' no longer follows a strict sequential order. To facilitate longer drills on particularly difficult material, some elements in the queue are randomly prioritized for review. This approach helps reinforce connections between concepts and improves the chances of completing the drill, even when certain portions remain challenging. If the randomization makes the drill feel too easy, you can assign a failing grade without negative consequences. This change facilitates cramming for a deadline at school. For details, see [https://supermemopedia.com/wiki/Final_drill_algorithm here].
+
+:As of SuperMemo 20, '''active final drill''' ensures that repetitions on successive days are registered in the [[repetition history]] to minimize interference with the [[SuperMemo Algorithm]].

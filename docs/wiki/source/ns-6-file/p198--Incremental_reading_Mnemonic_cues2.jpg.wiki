@@ -1,0 +1,1 @@
+{{Fig|A [[Glossary:Topic|topic]] about [https://en.wikipedia.org/wiki/Henipavirus henipavirus] in the [[HTML component]] on the left and 4 images taken from it with '''[[Component menu#Download images|Download images]]''' (Ctrl+F8) in their individual image [[Glossary:Component|component]]s on the right.}}

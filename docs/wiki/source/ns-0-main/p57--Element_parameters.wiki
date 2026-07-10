@@ -1,0 +1,59 @@
+== Items, Topics and Concepts ==
+
+If you choose '''[[Edit menu#Edit|Edit]] : Edit parameters''' on the [[element menu]], or press ''Ctrl+Shift+P'', a dialog box with the following parameters will open:
+
+[[Image:Element_parameters.jpg|522px|center|SuperMemo: The Element tab in the element parameters dialog box]]
+
+* '''Title''' - title of the [[Glossary:Element|element]]
+* '''Interval''' - the [[Glossary:Interval|interval]] between the last repetition and the next repetition (in days). Click the '''Calendar''' button to the right to change the [[Glossary:Interval|interval]] by selecting a calendar date
+* '''Next repetition''' - date of the next repetition. Click the '''Calendar''' button to the right to change the date of the next repetition by selecting a calendar date or an [[Glossary:Interval|interval]]
+* '''Priority''' - [[Glossary:Priority|priority]] of the [[Glossary:Element|element]] (% position in the [[Glossary:Priority_queue|priority queue]]). The lower the number, the higher the [[Glossary:Priority|priority]]
+* '''Ordinal''' - current [[Glossary:Ordinal number|ordinal number]] assigned to the [[Glossary:Element|element]]. You can use [[Glossary:Ordinal_number|ordinals]] to sort the [[Glossary:Pending_queue|pending queue]]. This is particularly useful if you plan to release your own [[Glossary:Collection|collection]] for use by others
+* '''Forgetting index''' - current [[Glossary:Forgetting_index|forgetting index]] requested for the [[Glossary:Element|element]]. [[Glossary:Forgetting_index|Forgetting index]] will determine how well you remember the [[Glossary:Element|element]]. [[Glossary:Forgetting_index|Forgetting index]] is not used by [[Glossary:Topic|topics]] or [[Glossary:Task|tasks]], but will take effect once you generate new [[Glossary:Item|items]] from the topic (e.g. with '''Remember cloze''')
+* '''A-Factor''' - current [[Glossary:A-Factor|A-Factor]] associated with the [[Glossary:Element|element]]. In SuperMemo {{SMVER}}, [[Glossary:A-Factor|A-Factors]] reflect the way topic [[Glossary:Interval|intervals]] are computed. The greater the [[Glossary:A-Factor|A-Factor]], the faster the increase in [[Glossary:Interval|intervals]] between successive reviews. A-Factor can be edited for topics. In items, it is determined by Algorithm SM-15
+* '''Element type''' - determine the type of the [[Glossary:Element|element]]: [[Glossary:Item|item]], [[Glossary:Topic|topic]], [[Glossary:Concept|concept]] or [[Glossary:Task|task]]
+* '''Group''' - makes it possible to move the [[Glossary:Element|element]] to another [[Glossary:Concept_group|concept group]] (i.e. different location in the [[Contents|'''Contents''' window]], different look, etc.)
+* '''Template''' - makes it possible to change the way your current [[Glossary:Element|element]] looks (by applying a [[Glossary:Template|template]])
+* '''Comment''' - the comment associated with the [[Glossary:Element|element]]. If you want to write a multi-line comment, use ''Ctrl+Enter'' to begin a new line (''Enter'' will accept the setting and close the dialog box)
+* buttons at the bottom of the dialog window:
+** '''[[Repetition history|History]]''' - displays the window with the [[Glossary:Element|element]]'s [[repetition history]]
+** '''Difficulty''' - displays the [[Glossary:Difficulty|difficulty]] of the [[Glossary:Item|item]] and how it is computed (this option works only for memorized items)
+** '''OK''' - accepts changes to the element's parameters
+** '''Cancel''' - discards changes to the element's parameters
+** '''Help''' - displays this help page
+
+You are most likely to use the element parameters dialog box in the following circumstances (sorted by importance):
+
+# Changing [[Glossary:Element|element]]'s [[Glossary:Forgetting index|forgetting index]] (open the dialog, press ''Alt+F'', and type in the new value).
+# Moving the [[Glossary:Element|element]] to another [[Glossary:Concept_group|concept group]] (open the dialog, choose another concept group in the '''Group''' drop-down menu, and click '''OK''')
+# Changing the [[Glossary:Element|element]]'s [[Glossary:Template|template]] when moving to another [[Glossary:Concept_group|concept group]]. If you only want to change the [[Glossary:Template|template]] of the [[Glossary:Element|element]], it is faster to use '''Apply template''' (''Shift+Ctrl+M'')
+# Changing [[Glossary:Element|element]]'s [[Glossary:Priority|priority]]. More often though, you are likely to use ''Alt+P'' to change element's priority by percent or by position
+# Changing [[Glossary:Element|element]]'s [[Glossary:A-Factor|A-Factor]] in [[Glossary:Incremental_reading|incremental reading]]. Set [[Glossary:A-Factor|A-Factor]] to ''1.01'' if you want your article to come up often in [[Glossary:Incremental_reading|incremental reading]] (you can use 0 to make SuperMemo choose lowest possible value). Set [[Glossary:A-Factor|A-Factor]] to ''1.5'' or more if the article is of lower priority. You can also change [[Glossary:A-Factor|A-Factor]] in [[Glossary:Topic|topics]] without opening this dialog with ''Shift+Ctrl+Up arrow'' or ''Shift+Ctrl+Down arrow''
+# Changing [[Glossary:Element|element]]'s [[Glossary:Ordinal_number|ordinal]] (open the dialog, press ''Alt+O'', and type in the new value).
+# Adding a comment (type it in the '''Comment''' field)
+# Viewing the details of difficulty estimation for a given [[Glossary:Element|element]] (click '''Difficulty'''). This option is also available by right-clicking of the [[Element data|'''Element data''' window]] and choosing '''Difficulty''' from the context menu.
+
+== Tasks ==
+
+[[Glossary:Element|Elements]] that are [[Glossary:Task|tasks]] have the '''Task''' tab enabled in the '''Element parameters''' dialog box:
+
+[[Image:Task_parameters.jpg|522px|center|SuperMemo: The Task tab of the Element parameters dialog box]]
+
+The '''Task''' tab includes the following task parameters (this tab is invisible for all remaining [[Items, topics, concepts, and tasks|element types]]): 
+
+* '''Tasklist''' - the [[Glossary:Tasklist|tasklist]] to which the displayed [[Glossary:Task|task]] belongs. You can move the [[Glossary:Task|task]] to another [[Glossary:Tasklist|tasklist]] by selecting the new tasklist in this combo box. You can edit [[Glossary:Tasklist|tasklists]] using the [[tasklist manager]]
+* '''Description''' - description of the [[Glossary:Task|task]] that will be displayed in the [[tasklist manager]]. This description is also used by default as the title of the [[Glossary:Task|task element]] and as the initial contents of the [[Glossary:Component|component]] that is used to describe the task in detail. If you want to write a multi-line description, use ''Ctrl+Enter'' to begin a new line (''Enter'' will accept the setting and close the dialog box)
+* '''Value''' - value of the [[Glossary:Task|task]]
+* '''Pos''' - position of the [[Glossary:Task|task]] on the currently selected [[Glossary:Tasklist|tasklist]]. Note that it may differ from the position in the [[tasklist manager]] as [[Glossary:Task|tasks]] with the same ''Val/Time'' ratio are reshuffled randomly)
+* '''Time''' - time (in hours) needed to execute the [[Glossary:Task|task]]. E.g. if you think it will take you 10 min to complete the [[Glossary:Task|task]], type ''0.16''.
+* '''Val/Time''' - task priority expressed in value earned in unit time (''priority=value/time''). Note that the deadline function may modify the actual value of '''Val/Time''' on a given day
+* '''Max''' - maximum task priority, i.e. priority without considering the deadline function. This value is not used in sorting the [[Glossary:Tasklist|tasklist]]
+* '''Introduced''' - the date on which the [[Glossary:Task|task]] has been introduced into the [[Glossary:Collection|collection]]
+* '''Deadline''' - the deadline for executing the [[Glossary:Task|task]] (see '''Deadline function''' below)
+* '''Half-Time''' - the time at which the priority of the [[Glossary:Task|task]] will reach half of its maximum value before reaching the maximum on the deadline date (see '''Deadline function''' below)
+* '''Deadline function''' - the function that determines how the priority of the [[Glossary:Task|task]] changes with passing time
+** '''None''' - '''Val/Time''' is always equal its maximum value displayed as '''Max'''. This function is typical for [[Glossary:Reading_list|reading lists]] where there are no reading deadlines
+** '''Standard''' - standard deadline function in which the priority increases gradually to reach '''Max/2''' at '''Half-Time''' and '''Max''' at '''Deadline'''. If there is a deadline for a [[Glossary:Task|task]], usually it becomes truly urgent only directly before the deadline. Your phone bill payment might be a typical example of standard deadline function
+** '''Post-Date''' - priority is zero until the '''Deadline''' and '''Max''' after the deadline. This function is useful for [[Glossary:Task|tasks]] that cannot be done before a certain date or which make no sense before a date. An example of post-date task might be buying a ticket that will become available only on a certain date
+** '''Decline''' - priority declines gradually from its peak value of '''Max''' to '''Max/2''' at '''Half-Time'''. This function can be used for [[Glossary:Task|tasks]] that gradually decline in value. Responding to an e-mail is often subject to declining priority. Very often, the older the e-mail the less sense it makes to respond to it
+** '''Post-Decline''' - priority declines gradually from its peak value of '''Max''' at '''Deadline''' to '''Max/2''' at '''Half-Time'''. This function can be used for [[Glossary:Task|tasks]] that gradually decline in value after some date. An example of a post-decline [[Glossary:Task|tasks]] is sending congratulations on the occasion of an appointment to a new position. It does not make sense before the position is actually taken over and it gradually becomes obsolete after the fact

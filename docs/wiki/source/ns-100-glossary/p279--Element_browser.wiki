@@ -1,0 +1,2 @@
+;<span id="Element_browser">element browser</span>
+:see [[Glossary:Browser|browser]]

@@ -1,0 +1,41 @@
+== Element window ==
+
+The element window displays your learning material. You can see one "page of information" at a time. The displayed page or flashcard is called an [[Glossary:element|element]]:
+
+[[Image:Element_window.jpg|600px|center|SuperMemo: The element window displaying a cloze produced from a larger article about sleep dreams]]
+{{:Image:Element_window.jpg}}
+
+== Parts of the window ==
+
+The parts of the element window from the top are:
+
+* Caption - displays the title of the current [[Glossary:Element|element]] (e.g. the caption in the picture above shows the title of the element as ''Ascending reticular activation during REM as compared to waking may favor a more [...] cholinergic route leading from the brainstem to the basal forebrain over a more dorsal ...''). Usually, SuperMemo uses the first question [[Glossary:Component|component]] to automatically provide the title for the [[Glossary:Element|element]]. You can always change the title (e.g. with ''Alt+T'')
+* [[Main menu]] - the main menu of [[SuperMemo]]
+* [[Navigation bar]] - buttons most often used when navigating through the [[Glossary:Collection|collection]] ('''[[Contents]]''', '''Search''', '''History''', etc.)
+* Element display area (in the middle of the window) which hosts [[Glossary:Component|components]] such as the question, the answer, video, [[HTML component|HTML components]], etc.
+* Bottom panel:
+** '''[[Learn]]''' - review the [[Glossary:Outstanding_material|outstanding material]] and learn new material (same as ''Ctrl+L'' or '''[[Learn menu|Learn]] : [[Learn menu#Learn|Learn]]''' on the [[main menu]])
+** '''[[Add new]]''' - add new [[Glossary:Item|items]] (same as ''Alt+A'' or '''[[Edit menu|Edit]] : [[Edit menu#Add a new item|Add a new item]]''' on the [[main menu]])
+** '''Control bar''' - featuring a set of toolbars providing a quick access to all the most important functions for reading, learning, and editing (it is not available at the '''Beginner''' [[Glossary:Level|level]]). The following toolbars are available:
+*** [[Learnbar|'''Learn''']] - toolbar with the most important functions for reading (import, extract, cloze, etc.), learning (current priority, current interval, etc.), and editing
+*** [[Edit toolbar|'''Edit''']] - toolbar with operations that you will need to edit [[Using text components|HTML and rich text components]] (fonts, alignment, bullets, etc.) as well as some other editing options such as: copy [[Glossary:Element|element]], paste element, [[Glossary:Editing_mode|editing]] and [[Glossary:Dragging_mode|dragging]] modes, etc.
+*** [[Read toolbar|'''Read''']] - toolbar with options used in [[Glossary:Incremental_reading|incremental reading]]
+*** [[Compose toolbar|'''Compose''']] - toolbar with buttons that you will need to build your [[Glossary:Element|elements]] by adding [[Glossary:Component|components]] of different type (e.g. text, sound, image, HTML, etc.) and with different properties (e.g. font, color, transparency, sound file, etc.)
+*** [[Tools toolbar|'''Tools''']] - toolbar with speed-buttons that provide one-click access to the most frequently used operations in SuperMemo. 
+*** [[Alarm toolbar|'''Alarm''']] - toolbar with an alarm timer and stop-watch
+
+'''[[Element menu]]''': The element window also provides a number of advanced options from the [[element menu]]. To open this menu right-click over the element area that is not covered with [[Glossary:Component|components]]. If you are not sure what the location of [[Glossary:Component|components]] is or components cover all [[Glossary:Element|element]]'s display area, right-click over the [[navigation bar]] (e.g. over the '''Contents''' button). You can also open this menu by pressing ''Alt+F10''. This menu should not be confused with the [[component menu]] that is opened by a right-click over [[Glossary:Component|components]] (or ''Alt+F12'').
+
+'''[[Element menu#Edit|Edit]] : Element parameters''' (''Ctrl+Shift+P'') will open the [[Element parameters|'''Element parameters''' dialog box]].
+
+== Related subjects ==
+
+* swapping questions with answers: [[Element menu]]
+* deleting [[Glossary:Element|elements]]: [[Element menu]]
+* adding new [[Glossary:Component|components]]: [[Compose toolbar|'''Compose''' toolbar]]
+* element [[Glossary:Priority|priority]]: [[Priority queue]]
+
+== See also ==
+
+* [https://supermemopedia.com/wiki/ABC Beginner questions at SuperMemopedia.com]
+* [http://super-memory.com/help/faq/begin.htm Beginner's FAQ at super-memory.com]

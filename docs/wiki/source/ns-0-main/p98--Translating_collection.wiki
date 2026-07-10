@@ -1,0 +1,57 @@
+__TOC__
+
+You can translate SuperMemo [[Glossary:Collection|collections]] to any language:
+
+== Creating translation registry ==
+
+To translate your [[Glossary:Collection|collection]] to a foreign language start with creating a translation [[Glossary:Registry|registry]]:
+
+# Choose '''[[File menu|File]] : [[Levels|Level]] : Professional'''
+# Choose '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Language tab in Options|Language]]'''
+# At '''Collection translation''' type the name of the language
+# Close the '''[[Options]]''' dialog by choosing '''OK''' (this will create an empty translation registry)
+# Translate the [[Glossary:collection|collection]] using either [[#Interactive translation (single translator)|interactive translation]] (simpler and more reliable but requiring the use of SuperMemo) or [[#Team translation|using text files]] (easier in teams and not requiring the translators to know or use SuperMemo)
+
+== Interactive translation (single translator) ==
+
+To proceed with interactive translation of your [[Glossary:Collection|collection]] do the following (recommended for an individual translator):
+
+# Make sure the translation [[Glossary:Registry|registry]] for your language has been created (i.e. that you passed all steps from the previous paragraph). You can see translation registry files at [[SuperMemo files#Collection files|''<SuperMemo folder>\SYSTEMS\<your collection name>\TRANSLAT\<translation language>.*'']]
+# Go to the first [[Glossary:Element|element]] in the [[Glossary:Collection|collection]]
+# Use ''Alt+PgUp'' and ''Alt+PgDn'' to move between pages (or ''Ctrl+G'' to jump to a specific page); note that element numbers may be unrelated to the order of [[Glossary:Element|elements]] in the [[Glossary:Knowledge_tree|knowledge tree]]
+# On each page, locate all text [[Glossary:Component|components]] and use ''Ctrl+click'' to open the translation dialog box for each. In SuperMemo 18, only plain text, RTF, and spell-pad [[Glossary:Component|components]] will react to ''Ctrl+click'' with opening the translation dialog box (HTML components will be supported in the next version)
+# Type in the translation in the lower pane (the original stays unchanged in the upper pane). Note that the texts you have translated in earlier pages will already have been translated
+
+== Translation in text files (<span id="Team translation">team translation</span>) ==
+
+To proceed with translation in text files do the following (recommended for team translation):
+
+# Make sure the translation [[Glossary:Registry|registry]] for your language has been created (i.e that you passed all steps from the paragraph devoted to creating the translation registry). You can see translation registry files at [[SuperMemo files#Collection files|''<SuperMemo folder>\SYSTEMS\<your collection name>\TRANSLAT\<translation language>.*'']]
+# Decide which [[Glossary:Branch|branches]] of the [[Glossary:Knowledge tree|knowledge tree]] in the [[Contents|'''Contents''' window]] should be translated by individual translators
+# Create [[Glossary:Element_subset|subset files]] for each [[Glossary:Branch|branch]]. For this purpose do the following:
+#* right-click a selected [[Glossary:Branch|branch]] in the [[Contents|'''Contents''' window]]
+#* choose '''[[Contents menu#Export|Export]] : Subset''' from the [[contents menu]]
+# Export individual [[Glossary:Branch|branches]] as text files with '''[[File menu|File]] : [[File menu#Export|Export]] : Translation''':
+#* choose '''Sorting : By occurrence'''
+#* choose '''Output texts : Not translated'''
+#* choose '''Output elements : Subset'''
+#* use '''Browse''' to select the subset files created in the previous step
+#* leave '''Do not output duplicated entries''' unchecked
+#* leave '''Output context''' checked
+# Let the translators replace ''???'' strings in exported text files with appropriate translations (do not change anything else in the file!)
+# As soon as individual translated files are becoming available, import them with '''[[File menu|File]] : [[File menu#Import|Import]] : Translation'''
+# Note that the same strings translated differently by different authors will be merged. This is not an error-proof procedure and you will have to manually resolve the import conflicts. '''[[File menu|File]] : [[File menu#Import|Import]] : Translation''' will generate a report with all merged entries listed. The fastest way to resolve merged strings is:
+#* copy the original string from the import report file to the clipboard
+#* using '''[[Search menu|Search]] : [[Search menu#Texts|Texts]]''', paste the string in the search input box
+#* correct the translation directly in the text [[Glossary:Registry|registry]] as it appears on the screen
+
+[[Image:Translation_registry.jpg|800px|center|SuperMemo: Translation registry stores translation texts that correspond with the text registry in the currently selected translation language]]
+
+== Useful tips ==
+
+# In most [[Glossary:Element|elements]], you can use ''PgDn'' and ''PgUp'' instead of ''Alt+PgUp'' and ''Alt+PgDn''
+# Do not change the original texts in text files, even if you find mistakes! Otherwise, your translation will not be importable to your mother [[Glossary:Collection|collection]]
+# You can easily review, search for and change translations by using '''[[Search menu|Search]] : [[Search menu#Other registries|Other registries]] : <Language> translation'''. The same can be accomplished with '''[[Search menu|Search]] : [[Search menu#Texts|Texts]]''' with this difference that search and sorting will concern only the original texts
+# The percent of the work done can be viewed in the caption of the translation [[Glossary:Registry|registry]] ('''[[Search menu|Search]] : [[Search menu#Other registries|Other registries]] : <Language> translation''')
+# When working in a team, try to minimize the differences in translating individual entries by frequently exporting and importing back partly translated files. This will also reduce the duplicated effort of translators working on different [[Glossary:Branch|branches]]
+# To see untranslated entries in the text [[Glossary:Registry|registry]] ('''[[Search menu|Search]] : [[Search menu#Texts|Texts]]'''), you can choose '''[[Registry menu#Subset|Subset]] : Select untranslated''' on the [[registry menu]]. Untranslated [[Glossary:Registry_member|members]] will be displayed as a [[Glossary:Registry_subset|registry subset]]

@@ -1,0 +1,276 @@
+__TOC__
+
+The tabbed dialog available with '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Statistics|Statistics]] : Analysis''' (''Shift+Alt+A'') in SuperMemo provides graphs and tables that illustrate the current state of the learning process in the currently opened [[Glossary:Collection|collection]]. 
+
+In addition to '''Analysis''', SuperMemo provides multiple other [[Theory|analytical tools]].
+
+== Use  ==
+
+Graphs of changes in the statistics of the learning process over time. These graphs record daily changes to statistics such as the number of [[Glossary:Memorized_element|memorized]] [[Glossary:Item|items]], [[Glossary:Measured_forgetting_index|measured forgetting index]] or the number of [[Glossary:Outstanding_element|outstanding]] [[Glossary:Item|items]] for a given day. The first non-zero value of the day is recorded. If that value increases afterwards, that increase is ignored (except a few cases such as the statistic of newly [[Glossary:Memorized_element|memorized]] [[Glossary:Item|items]], etc.). If you have a break in learning, the last recorded non-zero value will propagate through the period in which you did not use SuperMemo (except a few cases such as the statistics of repetitions made, etc.). 
+
+To zoom in on a portion of the graph (as in pictures below), sweep the portions of the graphs that are to be removed with the mouse, i.e. point at the day of focus, move the mouse left and release the mouse button. This cuts away part of the graph in the direction that the mouse was moved. You can also use ''Ctrl+Left'' and ''Ctrl+Right'' buttons to zoom in (see [[#Use context menu | below]])
+
+=== Use statistics ===
+
+Here are the statistics recorded daily by SuperMemo and displayed on the '''Use''' tab: 
+
+==== Work done ====
+*'''Use time''' - your daily total time in which you actively used a given [[Glossary:Collection|collection]]. The time is taken from learning blocks record ('''[[Toolkit menu|Toolkit]] : [[Sleep Chart]]''' in red). Days count from midnight to midnight (i.e. midnight shift is disregarded)
+*'''Recall time''' - your daily total time which you spent on trying to recall answers to questions 
+*'''Repetitions''' - your daily recorded number of [[Glossary:Item|item]] and [[Glossary:Topic|topic]] reviews 
+*'''Item repetitions''' - your daily record of [[Glossary:Item|item]] repetitions 
+*'''Topic reviews''' - your daily record of [[Glossary:Topic|topic]] reviews
+==== Outstanding ====
+*'''Outstanding''' - number of all [[Glossary:Outstanding_element|outstanding elements]] scheduled for a given day 
+*'''Outstanding items''' - number of [[Glossary:Outstanding_element|outstanding]] [[Glossary:Item|items]] scheduled for a given day 
+*'''Outstanding topics''' - number of [[Glossary:Outstanding_element|outstanding]] [[Glossary:Topic|topics]] scheduled for a given day
+==== Burden ====
+*'''Burden''' - current [[Glossary:Burden|''Burden'' parameter]] record. [[Glossary:Burden|Burden]] estimates the number of [[Glossary:Element|elements]] scheduled for [[Glossary:Repetition|repetition]] daily on the assumption of no delays in the learning process. [[Glossary:Burden|Burden]] is the sum of [[Glossary:Interval|interval]] reciprocals. '''[[Glossary:Burden|Burden]] = [[Glossary:Item|Item]] [[Glossary:Burden|burden]] + [[Glossary:Topic|Topic]] [[Glossary:Burden|burden]]''' 
+*'''Item burden''' - current '''[[Glossary:Burden|Burden]]''' for [[Glossary:Item|items]]
+*'''Topic burden''' - current '''[[Glossary:Burden|Burden]]''' for [[Glossary:Topic|topics]]
+==== Element count ====
+*'''Elements''' - total number of [[Glossary:Element|elements]] in the [[Glossary:Collection|collection]] as recorded on a given day (i.e. [[Glossary:Topic|topics]] + [[Glossary:Concept|concepts]] + [[Glossary:Item|items]] + [[Glossary:Task|tasks]]) 
+*'''Items''' - number of [[Glossary:Item|items]] in the [[Glossary:Collection|collection]] as recorded on a given day 
+*'''Topics and tasks''' - number of [[Glossary:Topic|topics]] and [[Glossary:Task|tasks]] in the [[Glossary:Collection|collection]] as recorded on a given day (see [[#Use.C2.A0:_Element_count.C2.A0:_Topics_and_tasks|exemplary graph below]])
+*'''Tasklist ''[name of the current tasklist]'' '''- number of [[Glossary:Task|tasks]] on the currently used [[Glossary:Tasklist|tasklist]] (its name is displayed in parenthesis). Use the '''Set''' button in the [[tasklist manager]] to change the currently selected [[Glossary:Tasklist|tasklist]].
+
+==== Memorized ====
+*'''Memorized''' - number of [[Glossary:Element|elements]] taking part in the learning process (i.e. not [[Glossary:Dismissed_element|dismissed]] and not [[Glossary:Pending_element|pending]]) 
+*'''Memorized items''' - number of [[Glossary:Item|items]] taking part in the learning process 
+*'''Memorized topics''' - number of [[Glossary:Topic|topics]] taking part in the learning process
+==== Newly memorized ====
+*'''Newly memorized''' - new [[Glossary:Element|elements]] memorized on a given day (see [[#Use.C2.A0:_Newly_memorized|exemplary graph below]]) 
+*'''New items''' - new [[Glossary:Item|items]] memorized on a given day 
+*'''New topics''' - new [[Glossary:Topic|topics]] memorized on a given day
+==== Efficiency ====
+*'''Forgetting index''' - [[Glossary:Measured_forgetting_index|measured forgetting index]] (data stored with a degree of smoothing to visualize trends)
+*'''Retention''' - [[Glossary:Retention|retention]] as measured on each day. This graph is smoothed for better readability of long term trends. For a more precise reading, see the next tab: '''Recall'''. The '''Retention''' tab can now hold over a decade of data and is retained for compatibility. '''Recall''' tab contains unprocessed raw data that you can always polish with '''Smooth''' to visualize trends
+*'''Recall''' - proportion of correct answers on each day (as registered by [https://supermemo.guru/wiki/Algorithm_SM-18 Algorithm SM-18]). This is raw unprocessed data that you can export to Excel for your own analysis. Compare with the '''[[Glossary:Retention|Retention]]''' tab. It should also correspond roughly with data displayed on the '''Forgetting index''' tab (Recall is 100% minus the forgetting index)
+*'''R in SM15''' - [[Glossary:Retrievability|retrievability]] (R) estimated by the [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm SM-15] (R denotes predicted [[Glossary:Retention|retention]], while Recall denotes the measured value).
+*'''R in SM19''' - [[Glossary:Retrievability|retrievability]] (R) estimated by [https://supermemo.guru/wiki/Algorithm_SM-19 Algorithm SM-19]
+*'''SM15/SM19 Diff''' - percentage point difference between recall estimation deviations by SuperMemo algorithms <code>(abs(R15-Recall)-abs(R19-Recall))</code>. The higher the difference, the better the performance of the [https://supermemo.guru/wiki/Algorithm_SM-19 Algorithm SM-19]. It is the ability of the algorithm to accurately predict the probability of forgetting that makes its strength in [[Glossary:Spaced_repetition|spaced repetition]]. This tab shows you how close Algorithm SM-19 is to predicting the recall accurately (as compared with older algorithms)
+*'''FSRS Metric''' - performance metric for Algorithm [[Glossary:FSRS|FSRS]]. It is a square root of the average of prediction differences squared expressed in percentage points (lower number means better recall prediction accuracy)
+*'''SM15 Metric''' - performance metric for [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm SM-15]. It is a square root of the average of prediction differences squared expressed in percentage points (lower number means better recall prediction accuracy)
+*'''SM19 Metric''' - performance metric for [https://supermemo.guru/wiki/Algorithm_SM-19 Algorithm SM-19]. It is computed in the same way as the analogous parameter on the '''SM15 Metric''' tab. Ideally, numbers on this tab should be lower though, indicating superiority of Algorithm SM-19
+*'''R-Metric(F)''' - Comparison between Algorithm SM-19 and FSRS.
+*'''R-Metric(15)''' - Comparison between Algorithm SM-19 and SM-15.
+*'''R-Metric''' - Compares weighted algorithms with [https://supermemo.guru/wiki/Algorithm_SM-19 Algorithm SM-19]. '''[[Glossary:R-Metric|R-Metric]]''' serves as the primary benchmark for the [[Algorithm Arena]]. A positive '''R-Metric''' indicates that weighted algorithms outperform Algorithm SM-19 for your [[Glossary:Collection|collection]], while a negative value indicates SM-19 performs better. Because forgetting is stochastic, daily values fluctuate significantly. You need a high volume of daily [[Glossary:Repetition|repetitions]] for stable, consistent results. For a sample graph based on 8,800 data points, see: [[#Use_:_Efficiency_:_R-Metric|example below]].
+*'''Topic load''' - proportion of [[Glossary:Topic|topics]] scheduled for [[Glossary:Review|review]] on a given day among all [[Glossary:Element|elements]] scheduled. ''[[Glossary:Topic|Topic]] load = [[Glossary:Outstanding_element|Outstanding]] [[Glossary:Topic|topics]] / [[Glossary:Outstanding_element|outstanding elements]]''. [[Glossary:Topic|Topic]] load is expressed in percent for any given day. [[Glossary:Topic|Topic]] load should not be confused with '''proportion of [[Glossary:Topic|topics]]''' in [[Priority_queue#Sorting_repetitions|sorting criteria]]. Proportion of [[Glossary:Topic|topics]] is determined independent of the [[Glossary:Topic|topic]] load if possible (e.g. for zero [[Glossary:Topic|topic]] load, you cannot achieve proportion greater than zero, etc.). If you do not use [[Glossary:Auto-sort|auto-sorting]], [[Glossary:Topic|topic]] load tells you what proportion of your repetitions is made of [[Glossary:Topic|topics]].
+==== Overload ====
+*'''Elements''' - the percent of all outstanding repetitions executed 
+*'''Items''' - the percent of [[Glossary:Outstanding_element|outstanding]] [[Glossary:Item|item]] repetitions executed 
+*'''Topics''' - the percent of [[Glossary:Outstanding_element|outstanding]] [[Glossary:Topic|topic]] reviews done
+==== Priority protection ====
+*'''Items''' - the highest priority [[Glossary:Item|item]] (with the lowest %) that was missed in repetitions. (The actual % in the [[Glossary:Outstanding_queue|outstanding queue]] can be much higher (because you mostly review high [[Glossary:Priority|priorities]])) 
+*'''Topics''' - the highest priority [[Glossary:Topic|topic]] (with the lowest %) that was missed in repetitions. (see: [[#Use.C2.A0:_Priority_protection.C2.A0:_Topics|exemplary graph below]])
+
+=== Use context menu ===
+
+* '''Next''' (''Ctrl+Tab'') - switch to the next major Use statistic tab
+* '''Previous''' (''Shift+Ctrl+Tab'') - switch back to the previous major Use statistic tab
+* '''Next secondary''' (''Tab'') - switch to the next tab in the secondary row
+* '''Previous secondary''' (''Shift+Tab'') - switch to the previous tab in the secondary row
+* '''Cut off left''' (''Ctrl+Right arrow'') - cut off the left part of the graph to zoom in on the rest of it
+* '''Cut off right''' (''Ctrl+Left arrow'') - cut off the right part of the graph to zoom in on the rest of it
+* '''Cut off top''' (''Ctrl+Down arrow'') - cut off the top part of the graph to zoom in on the rest of it
+* '''Export''' - export the currently displayed statistic to a CSV file (the file can be found in the [[Glossary:Collection|collection]]'s [STATS] subfolder
+* '''Import''' - import data for the currently displayed statistic
+* '''Simulate''' - simulate the stochastic choice of the first interval for flat curves
+* '''Close''' (''Esc'') - close the '''Analysis''' window
+
+=== Examples ===
+
+==== Use : Efficiency : R-Metric ====
+
+<div class="center">
+[[Image:Recall metric.jpg|800px|SuperMemo: Algorithm SM-18 performance metric]]
+{{:Image:Recall metric.jpg}}
+</div>
+
+==== Use : Element count : Topics and tasks ====
+
+<div class="center">
+[[Image:Topics and tasks count.jpg|800px|SuperMemo: Toolkit : Statistics : Analysis : Use : Element count : Topics and tasks shows you how many topics and tasks there were in your collection on individual days]]
+{{:Image:Topics and tasks count.jpg}}
+</div>
+
+==== Use : Newly memorized ====
+
+<div class="center">
+[[Image:Newly memorized.jpg|800px|SuperMemo: Toolkit : Statistics : Analysis : Use : Newly memorized shows you how many elements you memorized on individual days]]
+{{:Image:Newly memorized.jpg}}
+</div>
+
+==== Use : Efficiency : Forgetting index ==== 
+
+<div class="center">
+[[Image:Daily measured forgetting index.jpg|800px|SuperMemo: Toolkit : Statistics : Analysis : Use : Efficiency : Forgetting index shows you the changes to the measured forgetting index on individual days]]
+{{:Image:Daily measured forgetting index.jpg}}
+</div>
+
+==== Use : Priority protection : Items ====
+
+<div class="center">
+[[Image:Item priority protection.jpg|800px|SuperMemo: Toolkit : Statistics : Analysis : Use : Priority protection : Items shows your actual processing capacity for high-priority items on individual days]]
+{{:Image:Item priority protection.jpg}}
+</div>
+
+==== Use : Priority protection : Topics ====
+
+<div class="center">
+[[Image:Topic priority protection.jpg|800px|SuperMemo: Toolkit : Statistics : Analysis : Use : Priority protection : Topics shows your actual processing capacity for high-priority topics on individual days]]
+{{:Image:Topic priority protection.jpg}}
+</div>
+
+== Forgetting ==
+
+SuperMemo generates 400 independent [[Glossary:Forgetting_curve|forgetting curves]] to compute the [[Glossary:Stability increase matrix|SInc matrix]] used in [[Algorithm SM-19]]. These curves map to a grid of 20 [[Glossary:Stability|stability]] categories by 20 [[Glossary:Difficulty|difficulty]] categories.
+
+To view a specific curve, select the relevant tabs at the bottom of the window. The horizontal axis tracks time, displayed either as: (1) [[Glossary:Retrievability|retrievability]], or (2) days (specifically for the first [[Glossary:Repetition|repetition]]). The vertical axis shows your [[Glossary:Retention|knowledge retention]] as a percentage. You can also export the data for any curve by right-clicking the graph and choosing '''Export'''.
+
+Blue approximations by [[Algorithm SM-19]] are based on actual sample of data for that particular curve. Purple approximations by [[Algorithm SM-20]] are based on all data and the two-component model of memory. Algorithm SM-20 may seem to provide a weaker local fit but correspond with a better global metric.
+
+[[Image:First forgetting curve.jpg|center|600px|SuperMemo: The first forgetting curve (first repetition for items with no lapses)]]
+{{:Image:First forgetting curve.jpg}}
+
+== Forgetting (UF)  ==
+
+This tab displays forgetting data as used in older SuperMemos. It is only used to record and display comparisons between the new algorithm and the older algorithms.
+
+400 [[Glossary:Forgetting_curve|forgetting curves]] are independently plotted in order to compute the RF matrix in [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm SM-15]. These correspond to 20 repetition number categories and 20 [[Glossary:A-Factor|A-Factor]] categories. For data representation convenience, the columns of the RF matrix for the first repetition are indexed by the number of [[Glossary:Lapse|memory lapses]] rather than by the [[Glossary:A-Factor|A-Factor]]. By choosing a proper combination of tabs at the bottom of the graph, you can select a [[Glossary:Forgetting_curve|forgetting curve]] of interest. Horizontal axis represents time expressed as: (1) [[Glossary:U-Factor|U-Factor]], i.e. the ratio of subsequent inter-repetition [[Glossary:Interval|intervals]], or (2) days (only for the first [[Glossary:Repetition|repetition]]). Vertical axis represents [[Glossary:Retention|knowledge retention]] in percent. 
+
+[[Image:Forgetting curves.jpg|600px|center|SuperMemo: Toolkit : Statistics : Analysis : Forgetting (UF) graphs for 20 repetition number categories multiplied by 20 A-Factor categories]] 
+{{:Image:Forgetting curves.jpg}}
+
+[[Image:Cumulative forgetting curve.jpg|center|800px|SuperMemo: In SuperMemo 18, forgetting curves can be normalized over A-Factors at different repetition categories. As a result, you can display (1) your cumulative forgetting curve (blue dots), (2) its negative exponential approximation used by SuperMemo (red line) and (3) individual data points from all forgetting curves collected by SuperMemo (yellow circles).]] 
+{{:Image:Cumulative forgetting curve.jpg}}
+
+== Forgetting (PLS) ==
+
+The '''Forgetting (PLS)''' tab illustrates the post-[[Glossary:Lapse|lapse]] [[Glossary:Forgetting curve|forgetting curve]] for [[Glossary:Item|items]] that have been forgotten exactly once.
+
+[[File:Post-lapse stability in SuperMemo (first interval).png|800px|center]]
+{{:File:Post-lapse stability in SuperMemo (first interval).png}}
+
+== Stabilization ==
+
+The tab marked '''Stabiliz.''' in '''Analysis''' can be used to inspect [[Glossary:stabilization curve|stabilization curve]]s in SuperMemo.
+
+[[File:Stabilization curve.jpg|800px|center|Inspecting stabilization curves for various levels of stability and difficulty]]
+{{:File:Stabilization curve.jpg}}
+
+== Graphs  ==
+
+=== Forgetting Index vs. Priority ===
+
+'''Forgetting Index vs. Priority''' - this graph shows you how forgetting depends on the [[Glossary:Priority|priority]] of the learning material. If you always go through your [[Glossary:Outstanding_element|outstanding material]] in time and if you stick to the [http://super-memory.com/articles/20rules.htm 20 rules of knowledge formulation], your [[Glossary:Measured_forgetting_index|measured forgetting index]] should be the same as the [[Glossary:Requested_forgetting_index|requested forgetting index]]. This graph will then show a flat straight line passing horizontally at the level of the [[Glossary:Forgetting_index|forgetting index]]. However, once you start overloading the learning process and using '''[[Postpone]]''' or '''[[Mercy]]''', your [[Glossary:Measured_forgetting_index|measured forgetting index]] will increase. If you always sort your repetitions by [[Glossary:Priority|priority]] (e.g. by leaving '''[[Learn_menu|Learn]] : [[Learn_menu#Sorting|Sorting]] : Auto-sort repetitions''' checked), you should still ensure that your [[Glossary:Measured_forgetting_index|measured forgetting index]] equals the [[Glossary:Requested_forgetting_index|requested forgetting index]] for high priority [[Glossary:Element|elements]] (i.e. on the left side of the graph). Your [[Glossary:Measured_forgetting_index|measured forgetting index]] for low priority material will be higher, and the greater the [[Glossary:Overload|overload]] the greater the difference. If you change your [[Priority_queue#Sorting_repetitions|repetition sorting criteria]] by increasing randomization of repetitions, this graph will be flatter and the [[Glossary:Measured_forgetting_index|measured forgetting index]] for high priority material will be higher.
+
+=== First interval ===
+
+'''First interval''' - the length of the first [[Glossary:Interval|interval]] after the first [[Glossary:Repetition|repetition]] depends on the number of times a given [[Glossary:Item|item]] has been forgotten. Note that the first [[Glossary:Repetition|repetition]] here means the first [[Glossary:Repetition|repetition]] after forgetting, ''not'' the first repetition ever. In other words, a twice repeated [[Glossary:Item|item]] will have the repetition number equal to one after it has been forgotten; the repetition number will not equal three. The first [[Glossary:Interval|interval]] graph shows exponential regression curve that approximates the length of the first [[Glossary:Interval|interval]] for different numbers of [[Glossary:Lapse|memory lapses]] (including the zero-lapses category that corresponds with newly [[Glossary:memorized_element|memorized]] [[Glossary:Item|items]]). In the graph below, blue circles correspond to data collected in the learning process (the greater the circle, the more repetitions have been recorded).
+
+<div class="center">
+[[Image:First interval.jpg|800px|SuperMemo: Toolkit : Statistics : Analysis : Graphs : First Interval shows you exponential regression curve that approximates the length of the first interval for different numbers of memory lapses]]
+{{:Image:First interval.jpg}}
+</div>
+
+=== D-Factor vs. A-Factor ===
+
+'''D-Factor vs. A-Factor''' - DF-AF graph shows decay constants of the power approximation of [[Glossary:R-Factor|R-Factors]] along columns of the [[Glossary:RF_matrix|RF matrix]]. You need to understand [https://supermemo.guru/wiki/Algorithm_SM-15 SuperMemo Algorithm SM-15] to understand this graph. The horizontal axis represents [[Glossary:A-Factor|A-Factor]], while the vertical axis represents [[Glossary:D-Factor|D-Factor]] (i.e. Decay Factor). [[Glossary:D-Factor|D-Factor]] is a decay constant of the power approximation of curves that can be inspected in the '''[[#Approximations|Approximations]]''' tab of the '''Analysis''' dialog box.
+
+=== First Grade vs. A-Factor ===
+
+'''First Grade vs. A-Factor''' - G-AF graph correlates the first [[Glossary:Grade|grade]] obtained by an [[Glossary:Item|item]] with the ultimate estimation of its [[Glossary:A-Factor|A-Factor]] value. At each [[Glossary:Repetition|repetition]], the current [[Glossary:Element|element]]'s old [[Glossary:A-Factor|A-Factor]] estimation is removed from the graph and the new estimation is added. This graph is used by [https://supermemo.guru/wiki/Algorithm_SM-15 SuperMemo Algorithm SM-15] to quickly estimate the first value of [[Glossary:A-Factor|A-Factor]] at the moment when all we know about an [[Glossary:Element|element]] is the first [[Glossary:Grade|grade]] it has scored in its first [[Glossary:Repetition|repetition]].
+
+=== Grade vs. Forgetting Index ===
+
+'''<span id="G-FI_graph">Grade vs. Forgetting Index</span>''' - FI-G graph correlates the [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo#expected_forgetting_index expected forgetting index] with the [[Glossary:Grade|grade]] scored at repetitions. You need to understand [https://supermemo.guru/wiki/Algorithm_SM-15 SuperMemo Algorithm SM-15] to understand this graph. You can imagine that the [[Glossary:Forgetting_curve|forgetting curve]] graph might use the average [[Glossary:Grade|grade]] instead of the [[Glossary:Retention|retention]] on its vertical axis. If you correlated this grade with the [[Glossary:Forgetting_index|forgetting index]], you would arrive at the FI-G graph. This graph is used to compute an [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo#estimated_forgetting_index estimated forgetting index] that is in turn used to normalize grades (for delayed or advanced repetitions) and estimate the new value of [[Glossary:Item|item]]'s [[Glossary:A-Factor|A-Factor]]. The grade is computed using the formula: ''Grade=Exp(A*FI+B)'', where A and B are parameters of an exponential regression run over raw data collected during repetitions.
+
+[[Image:Grade vs Forgetting index.jpg|center|800px|SuperMemo: Toolkit : Statistics : Analysis : Graphs : Grade vs. Forgetting index graph]]
+
+== Distributions ==
+
+=== Intervals ===
+
+'''Intervals''' - distribution of inter-repetition [[Glossary:Interval|intervals]] in a given [[Glossary:Collection|collection]]. By changing the setting of the combo box at the bottom of the dialog, you can see [[Glossary:Interval|interval]] distributions for all [[Glossary:Element|elements]] in the [[Glossary:Collection|collection]], for only [[Glossary:Item|items]], and for only [[Glossary:Topic|topics]].
+
+=== A-Factors ===
+
+'''A-Factors''' - distribution of [[Glossary#A-factor|A-Factors]] in a given [[Glossary:Collection|collection]]. The distribution itself is not used in [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm SM-15], and merely results from it. Note that [[Glossary:Topic|topics]] and [[Glossary:Item|items]] use different [[Glossary:A-Factor|A-Factor]] categories. Choose ''Items only'' or ''Topics only'' at the bottom to see distributions for items or topics respectively. If you choose ''All elements'' you will see a less meaningful conglomerate distribution indexed by [[Glossary:A-Factor|A-Factor]] category number.
+[[Image:AFactors distribution.jpg|center|800px|SuperMemo: Toolkit : Statistics : Analysis : Distributions : A-Factors shows you how A-Factors are distributed in your collection]]
+
+=== Difficulties ===
+
+'''Difficulties''' - distribution of item difficulties as determined by [https://supermemo.guru/wiki/Algorithm_SM-18 Algorithm SM-18]. See also: [[Glossary:Difficulty|difficulties]]
+
+=== Repetitions ===
+
+'''Repetitions''' - distribution of the number of [[Glossary:Repetition|repetitions]] of [[Glossary:Item|items]] or [[Glossary:Topic|topics]] in a given [[Glossary:Collection|collection]]; only [[Glossary:Memorized_element|memorized elements]] are considered in the distribution, i.e. there is no zero-repetitions category.
+
+=== Lapses ===
+
+'''Lapses''' - distribution of the number of times particular [[Glossary:Item|items]] in the [[Glossary:Collection|collection]] have been forgotten; only [[Glossary:Memorized_element|memorized elements]] are considered. You should never have more than 10% of [[Glossary:Item|items]] with more than 3-4 lapses. If this is not the case, you should re-examine the way in which you formulate [[Glossary:Item|items]] (see [http://www.super-memory.com/articles/20rules.htm 20 Rules of Formulating Knowledge]). As [[Glossary:Topic|topics]] are never "forgotten" at repetition time, there are no [[Glossary:Lapse|lapses]] listed in '''Lapses''' if you select ''Topics only'' in the element type combo box.
+[[Image:Lapses distribution.jpg|center|800px|SuperMemo: Toolkit : Statistics : Analysis : Distributions : Lapses shows you how memory lapses are distributed in your collection]]
+
+== 3-D Curves  ==
+
+These graphs show the [[Glossary:Forgetting_curve|forgetting curves]] in 3 dimensions. There are 20 graphs available with [[Glossary:A-Factor|A-Factor]] tabs at the bottom. Each graph corresponds to a different [[Glossary:A-Factor|A-Factor]] (from 1.2 to 6.9). The X axis represents time (as in '''[[#Forgetting curves|Forgetting curves]]'''). The Y axis represents [[Glossary:Repetition_category|repetition category]] (roughly corresponding to the repetition number). The vertical Z axis represents [[Glossary:Retention|retention]] in percent (i.e. how much is remembered at a given moment in time). For better visibility, you can rotate 3-D [[Glossary:Forgetting_curve|forgetting curves]] with '''Rotate''', or smooth them with '''Smooth'''. '''Rotate '''swings the graph on its Z axis by 90 degrees clockwise (as viewed from above). This means that X and Y axes get swapped. Note that smoothing proceeds along the Y axis. This makes it possible to align incompletely plotted [[Glossary:Forgetting_curve|forgetting curves]] from different [[Glossary:Repetition_category|repetition categories]]. However, once you click '''Rotate''', Y axis smoothing will produce a different result (e.g. after the first '''Rotate''', smoothing will reduce kinks along the [[Glossary:Repetition_category|repetition categories]]). For the best illustration of the forgetting process, smooth the graph before you rotate it. <!-- Uhhh.... better explain X- and Y-axes; which one goes into the screen? And what is "repetition category"? -->
+
+<div class="center">
+[[Image:AFactor_3D_Curve.jpg|800px|SuperMemo: Exemplary 3-D graph of forgetting curves for A-Factor=3.6]]
+{{:Image:AFactor_3D_Curve.jpg}}
+</div>
+
+== 3-D Graphs  ==
+
+3-D graphs that visually represent [[Glossary:R-Factor|RF]], [[Glossary:O-Factor|OF]], and Cases matrices (see: [[#Matrices|'''Matrices''']] below)
+
+== S. decay ==
+
+Graphs that show how SInc slope is computed.
+
+== OF decay ==
+
+20 power approximation curves that show the decline of [[Glossary:R-Factor|R-Factors]] along columns of the [[Glossary:RF_matrix|RF matrix]]. You need to understand [https://supermemo.guru/wiki/Algorithm_SM-15 SuperMemo Algorithm SM-15] to understand these graphs. For each [[Glossary:A-Factor|A-Factor]], with increasing values of the repetition number, the value of [[Glossary:R-Factor|R-Factor]] decreases (at least theoretically it should decrease). Power regression is used to illustrate the degree of this decline that is best reflected by the decay constant called here [[Glossary:D-Factor|D-Factor]]. By choosing the [[Glossary:A-Factor|A-Factor]] tab at the bottom of the graph, you can view a corresponding [[Glossary:R-Factor|R-Factor]] approximation curve. The horizontal axis represents the repetition number category, while the vertical axis represents [[Glossary:R-Factor|R-Factor]]. The value of [[Glossary:D-Factor|D-Factor]] is shown at the top of the graph. The blue polyline shows [[Glossary:R-Factor|R-Factors]] as derived from repetition data. The red curve shows the fixed-point power approximation of [[Glossary:R-Factor|R-Factor]]. The green curve shows the fixed-point power approximation of [[Glossary:R-Factor|R-Factor]] derived from the OF matrix; this is equivalent to substituting the [[Glossary:D-Factor|D-Factor]] obtained by fixed-point power approximation of [[Glossary:R-Factor|R-Factors]] for the [[Glossary:D-Factor|D-Factor]] obtained from DF-AF linear regression. A fixed-point approach is used for both approximations since for the repetition number equal to two, [[Glossary:R-Factor|R-Factor]] equals [[Glossary:A-Factor|A-Factor]].
+
+== Matrices  ==
+
+You need to understand [[SuperMemo Algorithm]] to understand these tables. 
+
+* '''Recall''' - recall derived from [[Glossary:Recall matrix|Recall[] matrix]]
+* '''Metric''' - recall metric that shows the accuracy of recall predictions for different levels of [[Glossary:Stability|stability]] and [[Glossary:Difficulty|difficulty]]
+* '''Cases''' - repetition cases used in computing the stabilization matrix
+* '''R90''' - predicted [[Glossary:Retrievability|retrievability]] at recall of 90%
+* '''SInc''' - stabilization expressed as [[Glossary:Stability increase matrix|stability increase matrix SInc[]]]
+* '''Intervals''' - matrix of [[Glossary:Optimum_interval|optimum intervals]] derived from the OF matrix
+* '''R-Factors''' - matrix of [[Glossary:R-Factor|retention factors]]
+* '''OF matrix''' - matrix of [[Glossary:O-Factor|optimal factors]] indexed by the repetition number and [[Glossary:A-Factor|A-Factor]] (except for the first [[Glossary:Repetition|repetition]], [[Glossary:A-Factor|A-Factor]] is replaced with [[Glossary:Lapse|memory lapses]])
+* '''RF Cases''' - matrix of repetition cases used to compute the corresponding entries of the [[Glossary:RF_matrix|RF matrix]] (double click an entry to view the relevant [[Glossary:Forgetting_curve|forgetting curve]]). This matrix can be edited manually (e.g. if you want to change the weight of some measurements during repetitions)
+
+[[File:Recall metric matrix measures the accuracy of recall prediction in SuperMemo.jpg|center|600px]]
+{{:File:Recall metric matrix measures the accuracy of recall prediction in SuperMemo.jpg}}
+
+[[File:Estimate of optimum intervals in spaced repetition in SuperMemo.jpg|center|600px|SuperMemo: Toolkit : Statistics : Matrices : Intervals displays the matrix of optimum intervals derived from the OF matrix]]
+{{:File:Estimate of optimum intervals in spaced repetition in SuperMemo.jpg}}
+
+== Metrics ==
+Comparison of algorithms SM-15, SM-19, SM-20 and FSRS in their accuracy of predicting recall at different levels of [[Glossary:Retrievability|retrievabilty]]
+
+[[File:Predicting recall makes the basis of Universal Metrics for spaced repetition algorithms (incl. SM-20 and FSRS).png|600px|center]]
+{{:File:Predicting recall makes the basis of Universal Metrics for spaced repetition algorithms (incl. SM-20 and FSRS).png}}
+
+Note: To populate this graph, you must recompute the memory model by pressing <code>F7</code> and clicking '''Compute'''.
+
+== FAQ ==
+
+* [https://supermemopedia.com/wiki/Weirdness_in_my_collection I worry my graphs look weird and I do something wrong]
+* [https://supermemopedia.com/wiki/Random_numbers_showed_up_in_data_used_by_the_algorithm Errors in data in Analysis]
+
+== Further reading  ==
+*[[Memory graphs (4D)]]
+*[https://supermemo.guru/wiki/SuperMemo_Algorithm SuperMemo Algorithm]
+*[https://supermemo.guru/wiki/Algorithm_SM-18 Algorithm SM-18]
+*[https://supermemo.guru/wiki/Algorithm_SM-17 Algorithm SM-17] 
+*[https://supermemo.guru/wiki/Algorithm_SM-15 SuperMemo Algorithm SM-15]
+*[http://super-memory.com/help/faq/memory.htm FAQ: Memory and learning] 
+*[http://super-memory.com/articles/theory.htm SuperMemo Theory]

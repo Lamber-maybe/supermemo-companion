@@ -1,0 +1,19 @@
+After you add new [[Glossary:Element|elements]], you will often want to make them look differently.
+
+If you want to change the way your new [[Glossary:Element|elements]] look, you will need to learn some more advanced options of SuperMemo. This way you will be able to change colors, change fonts, add pictures, add sounds, take advantage of multiple choice tests, etc.
+
+<div class="bs-callout bs-callout-warning">
+'''Important!''' You may need to change the [[Glossary:Level|difficulty level]] with '''[[File menu|File]] : [[Levels|Level]]''' to make sure that some of the options below become available.
+</div>
+
+This is the list of skills that will help you change the way your learning material looks, and the way it is organized:
+
+# [[Component menu]] - if you right-click over a question or an answer, you will see a [[component menu]]. For example, select some text, right-click the selection, and choose '''[[Component menu#Text|Text]] : Font : Edit font''' on the [[component menu]]. This way you will be able to change the font in the selected text (this method will only work in [[Using text components|HTML and RTF text components]]) 
+# [[Element menu]] - if you press ''Alt+F10'' (or right-click over the [[navigation bar]]), you will see the [[element menu]]. For example, choose '''[[Element menu#Color|Color]]''' on the [[element menu]]. This way you will be able the change the color of the [[Glossary:Element|element]]
+# [[Compose toolbar|'''Compose''' toolbar]] - at the bottom panel of the [[element window]] you can find the [[Compose toolbar|'''Compose''' toolbar]]. It will help you add various component types to your [[Glossary:Element|elements]] (e.g. pictures, sounds, video, etc.). You can also use '''[[Edit menu|Edit]] : [[Edit menu#Add components|Add components]]''' from the [[main menu]] for the same purpose. There is more. For example, to paste a picture from the clipboard, press ''Shift+Ins'' or ''Ctrl+V''. If a new image does not paste, press ''Esc'' a few times (e.g. to complete the current editing operation). If the image still does not paste, make sure it is indeed stored in the clipboard.
+# [[Templates]] - a template is a definition of an [[Glossary:Element|element]]'s appearance. For example, you can define an [[Glossary:Element|element]] that contains a description text, a picture and a spelling-test [[Glossary:Component|component]]. You can save such an [[Glossary:Element|element]] as a [[Glossary:Template|template]] and make sure all your new elements look this way. See it in action: change the colors of one of your [[Glossary:Item|items]] and choose '''[[Element menu#Template|Template]] : Save as default''' on the [[element menu]]. '''Add new''' will now add [[Glossary:Item|items]] that look like your modified item
+# [[Concepts]] - if you want to divide your learning material into sections such as ''Biology'', ''Geography'', ''Chemistry'', etc. you can use concepts. A concept group is a group of elements that have a similar look and belong to the same section of the [[Glossary:Knowledge_tree|knowledge tree]]
+
+== See also ==
+
+* [http://super-memory.com/help/faq/begin.htm Beginner FAQ]

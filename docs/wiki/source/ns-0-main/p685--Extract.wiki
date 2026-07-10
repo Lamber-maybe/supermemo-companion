@@ -1,0 +1,16 @@
+[[Glossary:Extract|Extract]]s are portions of the learning material that can be processed independently. Extracts can be nested. For example, you can extract chapters from a book, sections from a chapter, paragraphs from a section, and sentences from a paragraph. Sentences can be processed further with [[Glossary:Cloze_deletion|cloze deletion]]s.
+
+To extract a portion of the text in [[incremental reading]], select the portion to be extracted and press ''Alt+X'' (you can also click the extract icon on the [[learnbar]]). The extract will be stored in a separate [[Glossary:Element|element]], which enters the learning process as the [[Glossary:Child|child]] of the extract's origin.
+
+To extract a portion of a [https://youtube.com YouTube] video, press '''Start''' at the beginning of the extracted clip, '''Stop''' at the end, and '''Extract'''. The extract will be created when you press ''Alt+X'' or go to the next [[Glossary:Element|element]] in the [[Glossary:Outstanding_queue|outstanding queue]].
+
+To extract a portion of an audio or a video file, use the extractor panel of the sound or video component. Press '''Start''', '''Stop''' and '''Extract'''.
+
+To extract a portion of a picture:
+# select the picture (click)
+# press ''Alt+X''
+#  select a portion by dragging the mouse
+# press ''Esc''
+For details see: [[Visual learning]]
+
+If you navigate to an external site in SuperMemo (e.g. by clicking a link in a [https://wikipedia.org Wikipedia] article import), you can also extract a portion of that external site by selecting a portion of the text and pressing the extract icon. This function is useful if your [[web browser]] is not fully supported. For example, you can import article links and then process the article inside SuperMemo.

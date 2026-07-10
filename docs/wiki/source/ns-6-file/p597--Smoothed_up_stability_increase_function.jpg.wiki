@@ -1,0 +1,3 @@
+<blockquote>
+'''''Figure:''' A 3D graph of [[Glossary:Stability_increase_matrix|SInc[] matrix]] made regular by checking '''Average''' and rotated around the ''Stability increase'' axis (vertical). The graph is based on 272 repetition cases (all data points included) for [[Glossary:Item|items]] with [[Glossary:Difficulty|difficulty]]=0.05. The '''Average''' checkbox helps you extract best data using data-rich neighboring entries and theoretical SInc[] predictions where no data is available. This is particularly useful for scarce data in new collections (as the one used in the picture)''
+</blockquote>

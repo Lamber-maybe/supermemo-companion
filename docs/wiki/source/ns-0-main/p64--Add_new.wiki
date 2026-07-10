@@ -1,0 +1,23 @@
+Button '''Add new''' at the bottom of the screen makes it possible to add new questions and answers to your [[Glossary:Collection|collection]]:
+
+[[Image:Add_new.jpg|center|800px|SuperMemo: Adding new questions and answers at the Beginner level]]
+
+If you click '''Add new''' (or press ''Alt+A''), SuperMemo will add a new [[Glossary:Item|item]] to your [[Glossary:Collection|collection]], and create two text fields: one for the question, and one for the answer.
+
+To complete your item:
+
+# type the question,
+# press ''Esc'' to move to the answer field,
+# type the answer, and
+# press ''Esc'' again to finish.
+
+You can jump between the question and the answer by pressing ''Ctrl+T''. If question and answer fields are inactive (e.g. after pressing ''Esc'' a few times), you can edit the question by pressing ''Q'' or edit the answer by pressing ''A''. You can also start editing them with a click of the mouse. If you want to make both fields editable with a single keystroke, press ''Ctrl+E''.
+
+See also:
+
+* If typing your items seems like too much work, read about the advanced ways of creating your [[Glossary:Collection|collections]] with minimum typing: [[Incremental learning]]
+* If you want to change the way your [[Glossary:Item|items]] look, read: [[The look of elements|Changing the way your elements look]]
+* More about the structure of your [[Glossary:Collection|collection]]: [[Building the knowledge tree|Adding elements in the '''Contents''' window]]
+* [https://supermemopedia.com/wiki/ABC Beginner FAQ]
+
+'''Remember!''' The place where your new [[Glossary:Item|items]] are added in the [[Glossary:Knowledge_tree|knowledge tree]] is determined by the [[Concepts|default concept group]], not the current selection in the [[Contents|'''Contents''' window]].

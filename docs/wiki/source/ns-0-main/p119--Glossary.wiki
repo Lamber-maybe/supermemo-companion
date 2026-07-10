@@ -1,0 +1,345 @@
+== A ==
+
+{{Glossary:A-Factor}}
+
+{{Glossary:Acquisition rate}}
+
+{{Glossary:Active recall}}
+
+{{Glossary:Ancestor}}
+
+{{Glossary:Auto-postpone}}
+
+{{Glossary:Auto-sort}}
+
+== B ==
+
+{{Glossary:Back-retention}}
+
+{{Glossary:Binary component}} 
+
+{{Glossary:Branch}} 
+
+{{Glossary:Browser}}
+
+{{Glossary:Burden}}
+
+== C ==
+
+{{Glossary:Category}}
+
+{{Glossary:Child}}
+
+{{Glossary:Cloze deletion}}
+
+{{Glossary:Cloze for pictures}}
+
+{{Glossary:Cloze interval}}
+
+{{Glossary:Collection}}
+
+{{Glossary:Component}}
+
+{{Glossary:Computational spaced repetition}}
+
+{{Glossary:Concept}}
+
+{{Glossary:Concept group}}
+
+{{Glossary:Concept map}}
+
+{{Glossary:Consolidation}}
+
+{{Glossary:Contents window}}
+
+== D ==
+
+{{Glossary:D-Factor}}
+
+{{Glossary:Delay}}
+
+{{Glossary:Descendant}}
+
+{{Glossary:Difficulty}}
+
+{{Glossary:Dismiss}}
+
+{{Glossary:Dismissed element}}
+
+{{Glossary:Dragging mode}}
+
+{{Glossary:DSR model}}
+
+== E ==
+
+{{Glossary:E-Factor}}
+
+{{Glossary:Editing mode}}
+
+{{Glossary:Element}}
+
+{{Glossary:Element browser}}
+
+{{Glossary:Element subset}}
+
+{{Glossary:Element window}}
+
+{{Glossary:Extract}}
+
+== F ==
+
+{{Glossary:Filespace}}
+
+{{Glossary:Filespace slot}}
+
+{{Glossary:Final drill}}
+
+{{Glossary:Final drill queue}}
+
+{{Glossary:Flashcard}}
+
+{{Glossary:Forget}}
+
+{{Glossary:Forgetting curve}}
+
+{{Glossary:Forgetting index}}
+
+{{Glossary:Free running sleep}}
+
+== G ==
+
+{{Glossary:Grade}}
+
+{{Glossary:Graphic cloze deletion}}
+
+{{Glossary:Graphic deletion}}
+
+== H ==
+
+{{Glossary:Hierarchy}}
+
+{{Glossary:Hierarchy node/branch/leaf}}
+
+{{Glossary:Hint}}
+
+{{Glossary:Hook node}}
+
+{{Glossary:Hyperlink}}
+
+== I ==
+
+{{Glossary:Incremental audio}}
+
+{{Glossary:Incremental learning}}
+
+{{Glossary:Incremental reading}}
+
+{{Glossary:Incremental video}}
+
+{{Glossary:Incremental writing}}
+
+{{Glossary:Interval}}
+
+{{Glossary:Item}}
+
+== K ==
+
+{{Glossary:Knowledge tree}}
+
+== L ==
+
+{{Glossary:Lapse}}
+
+{{Glossary:Layout}}
+
+{{Glossary:Leaf}}
+
+{{Glossary:Leech}}
+
+{{Glossary:Leitner system}}
+
+{{Glossary:Level}}
+
+{{Glossary:Link}}
+
+== M ==
+
+{{Glossary:Matrix smoothing}}
+
+{{Glossary:Measured forgetting index}}
+
+{{Glossary:Memorize}}
+
+{{Glossary:Memorized element}}
+
+{{Glossary:Memory lapse}}
+
+{{Glossary:Mid-interval repetition}}
+
+{{Glossary:Minimum information principle}}
+
+{{Glossary:Mnemonic hyperspace}}
+
+== N ==
+
+{{Glossary:Neural creativity}}
+
+{{Glossary:Neural queue}}
+
+{{Glossary:Neural review}}
+
+{{Glossary:Node}}
+
+== O ==
+
+{{Glossary:O-Factor}}
+
+{{Glossary:OF matrix}}
+
+{{Glossary:Occlusion test}}
+
+{{Glossary:Optimum interval}}
+
+{{Glossary:Ordinal number}}
+
+{{Glossary:Outstanding element}}
+
+{{Glossary:Outstanding material}}
+
+{{Glossary:Outstanding queue}}
+
+{{Glossary:Overload}}
+
+== P ==
+
+{{Glossary:Parent}}
+
+{{Glossary:Passive review}}
+
+{{Glossary:Pending element}}
+
+{{Glossary:Pending queue}}
+
+{{Glossary:Post-lapse stability}}
+
+{{Glossary:Presentation mode}}
+
+{{Glossary:Primary storage}}
+
+{{Glossary:Priority}}
+
+{{Glossary:Priority bias}}
+
+{{Glossary:Priority queue}}
+
+== Q ==
+
+{{Glossary:Q&amp;A format}}
+
+== R ==
+
+{{Glossary:R-Factor}}
+
+{{Glossary:R-Metric}}
+
+{{Glossary:RF matrix}}
+
+{{Glossary:Read-point}}
+
+{{Glossary:Reading list}}
+
+{{Glossary:Recall matrix}}
+
+{{Glossary:Recognition}}
+
+{{Glossary:Registry}}
+
+{{Glossary:Registry index}}
+
+{{Glossary:Registry member}}
+
+{{Glossary:Registry object}}
+
+{{Glossary:Registry position}}
+
+{{Glossary:Registry subset}}
+
+{{Glossary:Registry window}}
+
+{{Glossary:Remember}}
+
+{{Glossary:Remembered element}}
+
+{{Glossary:Repetition}}
+
+{{Glossary:Repetition category}}
+
+{{Glossary:Repetition spacing}}
+
+{{Glossary:Requested forgetting index}}
+
+{{Glossary:Retention}}
+
+{{Glossary:Retrievability}}
+
+{{Glossary:Review}}
+
+{{Glossary:Root node}}
+
+== S ==
+
+{{Glossary:Script}}
+
+{{Glossary:Search&review}}
+
+{{Glossary:Secondary storage}} 
+
+{{Glossary:Sibling}}
+
+{{Glossary:Spaced repetition}}
+
+{{Glossary:Spacing effect}}
+
+{{Glossary:Splitmark}}
+
+{{Glossary:Spreading activation}}
+
+{{Glossary:Stability}}
+
+{{Glossary:Stability increase matrix}}
+
+{{Glossary:Stabilization curve}}
+
+{{Glossary:Startup interval}}
+
+{{Glossary:Startup stability}}
+
+{{Glossary:Subset}}
+
+{{Glossary:Subset review}}
+
+{{Glossary:SuperMemo}}
+
+== T ==
+
+{{Glossary:Task}}
+
+{{Glossary:Tasklist}}
+
+{{Glossary:Template}}
+
+{{Glossary:Topic}}
+
+== U ==
+
+{{Glossary:U-Factor}}
+
+== V ==
+
+{{Glossary:Visual browser}}
+
+{{Glossary:Visual learning}}
+
+== Z ==
+
+{{Glossary:Zoom&trim mode}}

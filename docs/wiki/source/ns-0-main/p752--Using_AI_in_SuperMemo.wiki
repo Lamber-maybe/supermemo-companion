@@ -1,0 +1,88 @@
+== Using AI in SuperMemo ==
+
+[[SuperMemo]] can use AI to explain difficult text in a short form that is easier to understand. When you meet a hard passage, SuperMemo can give you a quick explanation without leaving your workflow.
+
+SuperMemo uses the free Gemini Flash model by default. This means many users can start immediately, with no setup. If needed, you can also replace the default settings with your own model, API key, and server URL.
+
+== What AI features do ==
+
+Features such as '''AI Explain''' or '''Explain Extract''' send selected text to the configured AI model and ask for a concise explanation in plain text. The answer is meant to help you understand the material quickly.
+
+== About the default key ==
+
+SuperMemo includes a default Gemini key so that AI features can work immediately out of the box. This key is not available to the user and is obfuscated. Obfuscation is only meant to avoid casual exposure. It is not a strong security method, so advanced users are encouraged to use their own key if they want full control, privacy, or reliability.
+
+You can then decide whether to keep reading, simplify the source, or turn the explanation into a set of [[Glossary:Cloze_deletion|cloze deletion]]s.
+
+== Configuration ==
+
+AI options are stored in ''[[supermemo.ini]]'', which makes configuration simple and transparent. SuperMemo currently supports two formats:
+* Gemini
+* OpenAI-compatible
+
+The basic configuration looks like this:
+
+ [AI] 
+   Enabled=1 
+   Provider=gemini 
+   TimeoutMs=30000 
+ [AI.Gemini] 
+   Model=gemini-2.5-flash 
+   ApiKey=REPLACE_WITH_YOUR_GEMINI_KEY 
+   BaseURL=https://generativelanguage.googleapis.com 
+ [AI.OpenAI] 
+  Model=gpt-4.1-mini 
+  ApiKey=REPLACE_WITH_YOUR_OPENAI_KEY 
+  BaseURL=https://api.openai.com 
+
+If Provider=gemini, SuperMemo uses the [AI.Gemini] section.
+If Provider=openai, SuperMemo uses the [AI.OpenAI] section.
+
+This means you can easily:
+* stay with the default Gemini setup,
+* use your own Gemini key,
+* use your own OpenAI key,
+* connect to another OpenAI-compatible service.
+
+== Other compatible services ==
+
+The OpenAI-compatible format is also useful beyond OpenAI itself. Some local or third-party tools expose an OpenAI-style API. This can include services such as LM Studio, Ollama gateways, OpenRouter, or other compatible servers.
+
+This is mainly relevant to advanced users. In such cases, you would usually set:
+* Provider=openai
+* BaseURL= to the local or remote compatible server
+* ApiKey= if the server requires one
+* Model= to the model name expected by that server
+For most users, this is optional. The default Gemini configuration is the easiest way to get started.
+
+== Limitations ==
+
+AI is helpful, but it is not always right. Please keep these limitations in mind:
+* AI can make mistakes.
+* AI may oversimplify difficult ideas.
+* AI may miss context that is obvious to a human reader.
+
+Online AI depends on network access and the availability of the chosen service. Response quality depends on the selected model. For this reason, AI explanations should be treated as help for understanding, not as unquestionable truth.
+== Example ==
+If you want to use OpenRouter, it should usually work via the OpenAI-compatible path.
+
+They would typically set:
+  [AI] 
+    Enabled=1 
+    Provider=openai 
+    TimeoutMs=30000 
+  [AI.OpenAI] 
+    Model=YOUR_OPENROUTER_MODEL 
+    ApiKey=YOUR_OPENROUTER_API_KEY 
+    BaseURL=https://openrouter.ai/api 
+
+The important part is:
+* Provider=openai
+* BaseURL=https://openrouter.ai/api
+* Model= must match an OpenRouter model name
+* ApiKey= must be the OpenRouter key
+
+== A good way to use AI in SuperMemo ==
+
+The best use of AI is not to replace learning, but to remove friction. When a sentence is too dense, a concept too abstract, or a passage too technical, AI can help you get unstuck in seconds.
+Once you understand the idea, you can continue learning in the usual SuperMemo way: actively, critically, and with pleasure. AI works best as a friendly assistant, not as a final authority.

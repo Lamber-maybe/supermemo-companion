@@ -1,0 +1,3 @@
+<blockquote>
+'''''Figure:''' '''Element priority''' dialog box which you can use to set or change the [[Glossary:Priority|priority]] of an [[Glossary:Element|element]] in SuperMemo. '''Position''' is the position in the [[Glossary:Priority_queue|priority queue]]. '''Percent''' is the [[Glossary:Priority|priority]] (0% means maximum priority). Colors reflect the [[Glossary:Priority|priority]]: <span style="padding: 3px; color: #fff; background-color: red;">red</span> - highest, <span style="padding: 3px; color: #fff; background-color: blue;">blue</span> - lowest. '''Before''' and '''After''' show the [[Glossary:Element|elements]] placed before and after the current element in the [[Glossary:Priority_queue|priority queue]].''
+</blockquote>

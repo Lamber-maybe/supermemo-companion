@@ -1,0 +1,42 @@
+{
+  "export_file": "SuperMemo+Help-20260710172640.xml",
+  "export_sha256": "2586d979b5b5501740ba001fa960700adad17c072d5d675528b53b021e617bb4",
+  "fetched_at": "2026-07-10T17:26:44Z",
+  "manifest_sha256": "73c5638fe0339e0731c1124c2949818a5c8098a1cb5083ed6bab5732314f686e",
+  "page_count": 570,
+  "page_counts_by_namespace": {
+    "0": 209,
+    "10": 4,
+    "100": 154,
+    "6": 203
+  },
+  "redirect_counts_by_namespace": {
+    "0": 55,
+    "6": 4
+  },
+  "rendered_official_page_count": 308,
+  "rendered_page_count": 363,
+  "schema_version": 1,
+  "scope": {
+    "current_revision_only": true,
+    "dependency_namespaces": [
+      6,
+      10
+    ],
+    "documentation_namespaces": [
+      0,
+      100
+    ],
+    "media_binaries_included": false,
+    "revision_history_included": false,
+    "talk_user_and_mediawiki_namespaces_included": false
+  },
+  "siteinfo": {
+    "base": "http://help.supermemo.org/wiki/Main_Page",
+    "case": "first-letter",
+    "dbname": "guru_Help20",
+    "generator": "MediaWiki 1.44.0",
+    "sitename": "SuperMemo Help"
+  },
+  "source": "https://help.supermemo.org"
+}

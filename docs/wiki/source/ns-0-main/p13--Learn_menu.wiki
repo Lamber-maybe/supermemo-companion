@@ -1,0 +1,52 @@
+__TOC__
+
+The '''Learn''' submenu of the [[main menu]] is available at '''Middle''' or higher [[Glossary:Level|levels]] and provides the following options: 
+
+== Learn menu items ==
+
+=== Learn ===
+
+* '''Learn''' (<kbd>Ctrl</kbd>+<kbd>L</kbd>) - proceed with all stages of the learning process:
+*# review the [[Glossary:Outstanding_material|outstanding material]] - in the first stage, repetitions scheduled for the current day and all preceding days are executed
+*# learn new material - in this stage new [[Glossary:Element|elements]] are memorized (if available in the [[Glossary:Pending queue|pending queue]])
+*# go through the [[Glossary:Final_drill|final drill]] - in the last stage, final drill is executed in which all [[Glossary:Element|elements]] that scored a grade below '''Good''' (i.e. 4) are repeated until they all score at least '''Good''' (final drill is executed only if '''Skip final drill''' is unchecked in '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Learning tab in Options|Learning]]''').
+
+'''Learn : Learn''' is equivalent to choosing the button [[Learn]] at the bottom of the [[element window]] or pressing ''Ctrl+L''
+
+=== Go neural ===
+
+* '''Go neural''' (<kbd>Ctrl</kbd>+<kbd>F2</kbd>) - begin [[Glossary:neural review|neural review]] starting with the [[Glossary:Element|element]] currently displayed in the [[element window]]. For details see: [[Neural creativity]]
+
+=== Stages ===
+
+* '''Stages''' - execute only one of the learning stages:
+** '''Outstanding material''' - proceed with repetitions of the [[Glossary:Outstanding material|outstanding material]]. Repetitions scheduled for the current day and all preceding days are executed
+** '''New material''' - memorize new material. [[Glossary:Element|Elements]] are introduced in the learning process in the order in which they are stored in the [[Glossary:Pending queue|pending queue]]
+** '''Final drill''' (<kbd>Ctrl</kbd>+<kbd>F4</kbd>) - repeat only [[Glossary:Element|elements]] scheduled for the [[Glossary:Final_drill|final drill]], i.e. all elements that have scored less than '''Good''' during earlier repetitions (or have been introduced to the final drill manually)
+
+=== Sorting ===
+
+* '''Sorting''' - sorting repetitions
+** '''Auto-sort repetitions''' - make sure that repetitions are automatically sorted at the beginning of the learning day. Sorting ensures that high-priority [[Glossary:Element|elements]] are reviewed first and that only a small proportion of [[Glossary:Topic|topics]] is intermingled with repetitions of [[Glossary:Item|items]]
+** '''Sorting criteria''' - determine the criteria used in sorting repetitions: degree of randomization of the learning queue (individually for [[Glossary:Item|items]] and [[Glossary:Topic|topics]]) and the proportion of topics in the queue
+** '''Sort now''' - sort repetitions using criteria determined by '''Sorting criteria''' (above)
+
+=== Postpone ===
+
+* '''[[Postpone]]''' - postpone [[Glossary:Outstanding_material|outstanding repetitions]] or dilute the learning process
+** '''Auto-postpone''' - make sure that repetitions that have not been executed on previous days are automatically postponed to prevent excessive accumulation of [[Glossary:Outstanding_material|outstanding repetitions]]
+** '''Topics''' - [[postpone]] all [[Glossary:Outstanding_element|outstanding]] [[Glossary:Topic|topics]]
+** '''Items''' - [[postpone]] all [[Glossary:Outstanding_element|outstanding]] [[Glossary:Item|items]]
+** '''All elements''' - [[postpone]] all outstanding [[Glossary:Item|items]], [[Glossary:Topic|topics]], [[Glossary:Concept|concepts]] and [[Glossary:Task|tasks]] (i.e. postpone all [[Glossary:Outstanding_element|outstanding elements]])
+
+=== Random ===
+
+* '''Random'''
+** '''Randomize repetitions''' - randomly mix all [[Glossary:Outstanding_material|outstanding repetitions]] scheduled for today. This option helps you better understand the structure of the outstanding material and how to remedy the backlog of repetitions. You should normally use learning in order of [[Glossary:Priority|priority]], and only use '''Randomize repetitions''' from time to time to glimpse at the distribution of various pieces of knowledge independent of their priority. See also: [[Incremental reading]]
+** '''Random learning''' (<kbd>Ctrl</kbd>+<kbd>F11</kbd>) - learn new [[Glossary:Element|elements]] by randomly reviewing the [[Glossary:Pending_queue|pending queue]] (compare '''[[Contents]] : [[Subset learning|Learn]]''')
+
+=== Drill ===
+
+* '''Drill'''
+** '''Final drill''' (<kbd>Ctrl</kbd>+<kbd>F4</kbd>) - go through the final revision of the material repeated recently
+** '''<span id="Cut drills">Cut drills</span>''' - delete [[Glossary:Item|items]] scheduled for [[Glossary:Final_drill|final drill]] (i.e. the last stage of '''Learn : Learn'''). Final drill [[Glossary:Element|elements]] are stored in the file [[SuperMemo files#Collection files|''<collection folder>\INFO\drill.dat'']]. '''Cut drills''' simply deletes this file and makes it possible to skip the final drill state. You can skip the final drill if you have a great deal of [[Glossary:Outstanding_element|outstanding]] [[Glossary:Item|items]]. In such cases, catching up with the [[Glossary:Outstanding_material|outstanding material]] is of highest priority

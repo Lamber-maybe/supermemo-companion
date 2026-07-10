@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Filter files — SuperMemo Help mirror</title>
+<style>body { font-family: Georgia, 'Times New Roman', serif; max-width: 1040px; margin: 0 auto; padding: 1.5rem; color: #202122; line-height: 1.58; }
+h1, h2, h3, h4, h5, h6 { font-family: system-ui, sans-serif; line-height: 1.25; }
+a { color: #0645ad; } a:visited { color: #0b0080; }
+.mirror-meta { color: #54595d; font: 0.85rem/1.45 system-ui, sans-serif; border-bottom: 1px solid #eaecf0; padding-bottom: .8rem; margin-bottom: 1.2rem; }
+.mirror-meta code { color: #202122; }
+table { border-collapse: collapse; margin: 1rem 0; max-width: 100%; }
+td, th { border: 1px solid #a2a9b1; padding: .4rem .6rem; vertical-align: top; }
+th { background: #eaecf0; }
+img, video { max-width: 100%; height: auto; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1rem; overflow-x: auto; }
+code { background: #f8f9fa; padding: .1rem .25rem; }
+.toc, .navbox { background: #f8f9fa; border: 1px solid #a2a9b1; padding: .8rem; }
+.redirect { background: #f8f9fa; border-left: .3rem solid #36c; padding: .8rem 1rem; }</style>
+</head>
+<body>
+<div class="mirror-meta">
+<a href="../../_index.html">Mirror index</a> ·
+<a href="../../source/ns-0-main/p113--Filter_files.wiki">View raw source</a> ·
+<a href="https://help.supermemo.org/wiki/Filter_files">Official page</a> ·
+revision <a href="https://help.supermemo.org/index.php?title=Filter%20files&amp;oldid=10404"><code>10404</code></a>
+</div>
+<h1>Filter files</h1>
+<main id="mw-content-text"><div class="mw-parser-output"><p>Filter files with the extension <i>flt</i> can be used in SuperMemo to globally process texts in the <a href="../ns-100-glossary/p265--Collection.html" title="Glossary:Collection">collection</a>. For example, it is more convenient to do multiple replace text operations with filters that to do it manually with <a href="p93--Registry_menu.html#Find_and_replace" title="Registry menu"><b>Search and replace</b></a> on the <a href="p93--Registry_menu.html" title="Registry menu">registry menu</a>. 
+</p><p>As filters are now less often used, filter files in SuperMemo 18 do not support the complete filter file specification from SuperMemo 6 and SuperMemo 7. You will mostly want to use filter files in the following circumstances: 
+</p>
+<ol><li>replacing a large number of texts with selected strings in the <a href="../ns-100-glossary/p265--Collection.html" title="Glossary:Collection">collection</a></li>
+<li>removing comments and other delimited texts from the <a href="../ns-100-glossary/p265--Collection.html" title="Glossary:Collection">collection</a></li></ol>
+<p>Filter files are text files than can be edited manually. They are made of sections such as <i>[REPLACE]</i>, <i>[DELIMITERS]</i>, <i>[CUT]</i>, etc. Each section contains a list of arguments placed in separate lines. For example, the <i>[REPLACE]</i> section will contain pairs of strings: strings to be replaced and string to be put in place of replaced strings. 
+</p><p>This is an exemplary contents of a filter file (see below for the effect of such a filter on a collection): 
+</p>
+<blockquote><p><i>[DELIMITERS]</i><br><i>&lt; &gt; cut</i><br><i>{ } cut</i><br><i>[REPLACE]</i><br><i>histol: histology:</i><br><i>physiol: physiology:</i><br><i>mem: ''</i><br><i>endocr: ''</i><br></p></blockquote>
+<p>If you open the text <a href="../ns-100-glossary/p327--Registry.html" title="Glossary:Registry">registry</a> with <b><a href="p12--Search_menu.html" title="Search menu">Search</a>&nbsp;: <a href="p12--Search_menu.html#Texts" title="Search menu">Texts</a></b>, choose <b><a href="p93--Registry_menu.html#Search" title="Registry menu">Search</a>&nbsp;: Apply filter</b> on the <a href="p93--Registry_menu.html" title="Registry menu">registry menu</a> and select such a file, the following changes will be made to texts throughout the <a href="../ns-100-glossary/p265--Collection.html" title="Glossary:Collection">collection</a>: 
+</p>
+<ol><li>all texts delimited with angle brackets will be removed</li>
+<li>all texts delimited with braces will be removed</li>
+<li>texts like <i>histol:</i> and <i>physiol:</i> will be replaced with <i>histology:</i> and <i>physiology:</i> respectively</li>
+<li>texts like <i>mem:</i> and <i>endocr:</i> will be removed</li></ol>
+<p>You can also use filters with <b><a href="p11--Edit_menu.html" title="Edit menu">Edit</a>&nbsp;: <a href="p11--Edit_menu.html#Edit_text" title="Edit menu">Edit text</a>&nbsp;: Apply filter</b> from the <a href="p9--Main_menu.html" title="Main menu">main menu</a>.
+</p><p>Filter files are by default stored in the <a href="p99--SuperMemo_files.html#Collection_files" title="SuperMemo files"><i>[FILTERS]</i> subfolder</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260710173413
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.008 seconds
+Real time usage: 0.008 seconds
+Preprocessor visited node count: 7/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 4/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key guru_Help20:pcache:113:|#|:idhash:canonical and timestamp 20260710173413 and revision id 10404. Rendering was triggered because: page-view
+ -->
+</div></main>
+</body>
+</html>

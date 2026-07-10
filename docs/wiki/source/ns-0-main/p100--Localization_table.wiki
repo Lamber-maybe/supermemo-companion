@@ -1,0 +1,44 @@
+__TOC__
+
+== Translating the interface of SuperMemo ==
+
+With '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Language tab in Options|Language]] : Localization table''', you can quickly translate the entire interface of SuperMemo to your native language (only at the '''Beginner''' and '''Basic''' [[Glossary:Level|levels]]). 
+
+The whole translation can be done in 5 minutes, as the entire interface of basic SuperMemo consists of only about 50 strings!
+
+This is the procedure:
+
+# Choose '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Language tab in Options|Language]]'''
+# Click the field '''Localization language''' (or press ''Alt+I'')
+# Type the name of your language (e.g. ''Spanish'')
+# Choose '''Localization table'''
+# In the column '''Translation''', type in the translation of texts displayed in the column '''Original'''
+# If necessary, select a localization font by clicking the '''Font''' button in the left-bottom corner of the localization table
+# Choose '''OK''' and your translation will appear in the interface of the program
+
+The translation file is a text file. It is kept at [[SuperMemo files#Program files|''<SuperMemo folder>\TRANSLAT\<language>.tra'']]
+
+== Downloading ready-made interfaces ==
+
+You can download some SuperMemo interfaces from [http://super-memory.com/english/trafiles.htm International Interfaces for SuperMemo].
+
+If you do not find an interface in your language, we will be happy to add your own translation. You can [http://super-memory.com/english/contact.htm send it via e-mail]
+
+== Changing the interface ==
+
+<div class="bs-callout bs-callout-warning">
+'''Important!''' Localization affects only the options available on the '''Beginner''' and '''Basic''' [[Glossary:Level|levels]] 
+</div>
+
+To change the interface in SuperMemo using a downloaded interface file do the following:
+
+# Download an interface file from [http://super-memory.com/english/trafiles.htm International Interfaces for SuperMemo] (only 1000 bytes!)
+# Copy the interface file to the subfolder ''TRANSLAT'' in the [[SuperMemo files|&lt;SuperMemo&gt; folder]] (the filename is ''<language name>.tra'')
+# Choose the interface's name in '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Language tab in Options|Language]] : Localization language'''
+
+An alternative approach is to:
+
+# Download an interface from [http://super-memory.com/english/trafiles.htm International Interfaces for SuperMemo] (only 1000 bytes!)
+# Choose '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Language tab in Options|Language]] : Localization table'''
+# Type the language name in the '''Localization language''' field (you do not have to use the name of the downloaded file)
+# Choose '''Import''' in '''Localization table''' and select the downloaded interface file (the filename is ''<interface name>.tra'')

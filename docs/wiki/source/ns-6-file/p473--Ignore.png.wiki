@@ -1,0 +1,1 @@
+'''[[Component menu#Reading|Reading]] : Ignore''' makes it possible for you to mark an unimportant fragment with the <span class="ignore">ignore</span> style.

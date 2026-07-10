@@ -1,0 +1,2 @@
+;<span id="Splitmark">splitmark</span>
+:boundary mark by which a large article will be split into smaller portions for faster loading and processing in [[Glossary:SuperMemo|SuperMemo]]. It can be a short text (e.g. ''###SplitMark###'' or any custom string), an HTML tag (e.g. <code>HR</code> (also called '''splitline'''), <code>H1</code> through <code>H6</code>, <code>DIV</code>) or a Wiki headline. You can quickly insert a splitmark by choosing '''[[Component menu#Reading|Reading]] : Split : Insert splitline''' (''Shift+Alt+H'') from the HTML [[component menu]]

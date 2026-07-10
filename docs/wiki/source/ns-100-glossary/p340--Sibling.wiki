@@ -1,0 +1,6 @@
+;<span id="Sibling">sibling</span>
+:[[Glossary:Element|element]] in the [[Glossary:Contents_window|'''Contents''' window]] that is located on the same level of the [[Glossary:Knowledge_tree|knowledge tree]] as the element in question.
+:See also:
+:*[[Building the knowledge tree]]
+:*[[Contents|'''Contents''' window]]
+:*[https://en.wikipedia.org/wiki/Tree_(data_structure) Tree structure] at Wikipedia

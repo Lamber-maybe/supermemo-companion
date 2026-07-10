@@ -1,0 +1,23 @@
+Here is the '''Tools''' toolbar at the control bar at the bottom of the [[element window]]: 
+
+<div class="center">
+[[Image:Tools_toolbar.jpg|SuperMemo: Tools toolbar at the bottom of the element window. It features speed-buttons that provide one-click access to the most frequently used operations in SuperMemo]]
+{{Image:Tools_toolbar.jpg}}
+</div>
+
+The '''Tools''' toolbar hosts the following controls:
+
+* '''Open collection''' - opens a new [[Glossary:Collection|collection]]
+* '''Quick backup''' (''Shift+F12'') - copy the entire [[Glossary:Collection|collection]] to a selected backup folder with the current date stamp
+* '''[[Find elements]]''' (''Ctrl+F'') - searches for [[Glossary:Element|elements]] containing a given string
+* '''Web search''' (''Ctrl+F3'') - searches the web for the currently selected text
+* '''Layout manager''' - open a layout manager that makes it possible to select, apply, save or delete [[Glossary:Layout|layouts]]
+* '''Save layout''' (''Shift+Ctrl+F5'') - saves the current position of windows to be uses by default in the future
+* '''Apply default layout''' (''Ctrl+F5'') - restores the default window [[Glossary:Layout|layout]] (as saved with '''Save layout''')
+* '''[[Calendar]]''' (''Ctrl+W'') - opens the calendar of repetitions
+* '''Outstanding''' - opens a [[browser]] with all [[Glossary:Outstanding_element|outstanding elements]] (i.e. elements scheduled for repetition today)
+* '''Ancestors''' (''Shift+Ctrl+X'') - shows a window with the list of [[Glossary:Ancestor|ancestors]] of the currently displayed [[Glossary:Element|element]]. To keep this window on the screen, position it conveniently, and choose '''Save layout''' button described above
+* '''Images''' - open the image [[Glossary:Registry|registry]]
+* '''Sounds''' - open the sound [[Glossary:Registry|registry]]
+* '''Tasklists''' - can open the tasklist [[Glossary:Registry|registry]] in order to change tasklist properties (or to choose the default/current [[Glossary:Tasklist|tasklist]] by clicking '''Accept''' or pressing ''Enter'')
+* '''Hints''' - turn on or turn off displaying [[Glossary#hint|hints]] when the mouse pauses over buttons. In addition, this option affects whether the [[status bar]] shows the hints when the mouse pauses over a menu option

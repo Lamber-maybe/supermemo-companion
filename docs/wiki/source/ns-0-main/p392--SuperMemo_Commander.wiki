@@ -1,0 +1,107 @@
+== Introducing SuperMemo Commander ==
+
+Throughout its 24 year development (the Delphi line), SuperMemo for Windows has been enabled with a multitude of options available in a myriad of contexts. All of them implemented with an intention to improve the learning experience. The feature set is always being reorganized and often pruned. By embracing the NUI (Natural User Interface) design philosophy we have gone as far as to intentionally avoid adding new buttons, menu items, options, etc. Yet we keep receiving complaints from confused students.
+
+Newer SuperMemos attempt to relieve the feature bloat by introducing '''SuperMemo Commander''' (available with '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Commander|Commander]]'''; alternatively, and more quickly, press ''Ctrl+Enter''). The tool makes it possible for you to quickly execute (often deeply-buried) commands via mnemonic keyboard shortcuts. Only the hardest to access options have been included in [[#Available commands|the Commander list]]. The list is open to changes upon user suggestions. The names of commands can be changed by the user.
+
+<div class="center">
+[[Image:SuperMemo Commander.jpg|800px|SuperMemo: SuperMemo Commander (available with Toolkit : Commander; alternatively, and more quickly, with Ctrl+Enter) allows of fast execution of commands via mnemonic keyboard shortcuts]]
+</div>
+
+<onlyinclude>
+For example, to open the [[SleepChart|Sleep Chart]] press:
+# ''Ctrl+Enter'' - to open SuperMemo Commander
+# ''S'' - for [[SleepChart|Sleep Chart]] mnemonic. This will limit the list to only those commands beginning with ''s''
+# ''Down arrow'' repeatedly to move down to ''Sleep Chart'''
+# ''Enter''
+</onlyinclude>
+You can create an alias for a selected mnemonic keyboard shortcut. To do that:
+# Select the command in the first '''Command''' column
+# Click '''Rename''' (''Alt+R'') to the right
+# In the '''Command name''' dialog box, type the new name, and click '''OK'''
+
+== Available commands ==
+
+The command set is easily expandable in future updates to SuperMemo. If you cannot remember a shortcut or need to often use a command available from a deeply nested menu or a button that is not part of your layout, send your request for new commands via e-mail.
+
+* '''Alarm: Cancel''' - cancel the alarm setting to make sure the alarm does not sound
+* '''Alarm: Set''' - determine the time that should elapse before the alarm is sounded
+* '''Ancestors: Show''' - show the window with the list of [[Glossary:Ancestor|ancestors]] of the current [[Glossary:Element|element]] (same as ''Ctrl+Shift+X'')
+* '''Bullet''' - insert a bullet into an [[HTML component]] (same as ''Ctrl+Shift+L'')
+* '''Capitalize text''' - convert a text to a lowercase with the first character in uppercase (Sentence case.)
+* '''Compress images''' - compress all images to a predetermined maximum size
+* '''Concept: Link''' - associate the current [[Glossary:Element|element]] with a selected [[Glossary:Concept|concept]]
+* '''Concept: Make''' - create a new [[Glossary:Concept|concept]] based on the current [[Glossary:Element|element]]
+* '''Delete after cursor''' - delete all text after the current selection or cursor position in an [[HTML component]] (same as ''Alt+.'')
+* '''[[Delete before cursor]]''' - delete all text before the current selection or cursor position in an [[HTML component]] (same as ''Alt+\'')
+* '''Deprecate article''' - mark an article reference as "outdated" so that its newer versions might be imported (e.g. from [http://en.wikipedia.org Wikipedia])
+* '''Dismember''' - separate [[Glossary:Component|components]] in individual [[Glossary:Element|elements]] (e.g. to split an e-mail with multiple attachments to separate elements each holding a single attachment)
+* '''Done!''' - delete all [[Glossary:Component|components]], [[Glossary:Dismiss|dismiss]] the [[Glossary:Element|element]], or delete the childless element (same as ''Ctrl+Shift+Enter'')
+* '''Duplicate element''' - create a copy of the current [[Glossary:Element|element]] and make it a [[Glossary:Child|child]] of the original (same as ''Alt+D'')
+* '''E-mail: Answer''' - reply to a selected text or forward the current [[Glossary:Element|element]] via e-mail (same as ''Ctrl+Shift+E'')
+* '''E-mail: Paste''' - paste e-mail stored in the clipboard (Outlook, Windows (Live) Mail, etc.)
+* '''Explain''' - explain the current [[Glossary:Element|element]] or text selection using AI (see: [[Using AI in SuperMemo]])
+* '''Fit all pictures''' - adjust the size of selected image [[Glossary:Component|components]] to the size of pictures
+* '''Fit picture''' - save space in the [[Glossary:Element|element]] by reducing the size of the image [[Glossary:Component|component]] to the size of the picture
+* '''Fit to component''' - adjust the size of [[Glossary:Component|components]] around a selected component
+* '''Highlight: Clear''' - clear search highlights
+* '''Highlight: Show''' - show search highlights
+* '''Highlighter font''' - apply the highlighter font to the selected text
+* '''Horizontal line''' - insert a horizontal line into an [[HTML component]] (same as ''Shift+Alt+H'')
+* '''Hyperlink: Element''' - create a link from the selected text to an [[Glossary:Element|element]] in the [[Glossary:Collection|collection]]
+* '''Import file''' - import a file from the web or from a disk
+* '''Link: Contents''' - create a link between the [[Glossary:Element|element]] and another one in the [[Contents|'''Contents''' window]]
+* '''Markdown''' - transform plain text formatted in [https://en.wikipedia.org/wiki/Markdown markdown] to [https://en.wikipedia.org/wiki/HTML richly formatted text] (e.g. ''"*Plaque Formation*: In Alzheimer's disease"'' will become ''"'''Plaque Formation''': In Alzheimer's disease"')
+* '''Occlusion test''' - creates a set of occlusion tests based on a template item (see [[:File:Learning anatomy with occlusion tests in SuperMemo 19.jpg|picture]])
+* '''Outstanding''' - show [[Glossary:Outstanding_element|outstanding element]] in the [[browser]]
+* '''Parse HTML''' - convert HTML code to formatted text (same as ''Shift+Ctrl+1'')
+* '''Paste: Article''' - paste the text of an article stored in the clipboard into a new [[Glossary:Element|element]] (same as ''Ctrl+N'')
+* '''Plan''' - open the [[plan]] of the day (same as ''Ctrl+P'')
+* '''Pronunciation: Add''' - add a new word-transcription pair to the phonetic [[Glossary:Registry|registry]]
+* '''Reference: Edit''' - edit [[references]] associated with the [[Glossary:Element|element]]
+* '''Reference: Show''' - show [[references]] associated with the [[Glossary:Element|element]]
+* '''Remove formatting: Front''' - remove HTML formatting from before the text (all tags before the actual text will be removed)
+* '''Remove formatting: Plain text''' - remove HTML formatting from the entire text (same as ''Shift+Ctrl+F12'')
+* '''Remove formatting: Selection''' - remove HTML formatting from the selected text
+* '''Reopen favorite''' - choose from a list of the most often used [[Glossary:Collection|collections]] (same as ''Ctrl+O'')
+* '''Save file''' - save file associated with the current [[Glossary:Component|component]]
+* '''Search web''' - search the web for the selected text with a chosen service (same as ''Ctrl+F3'')
+* '''Sleep Chart''' - open the [[Sleep Chart|timeline of sleep and learning]] (same as ''F12'')
+* '''Sort repetitions''' - sort the [[Glossary:Outstanding_queue|outstanding queue]] using [[Priority queue#Sorting repetitions|current sorting criteria]]
+* '''Split: Split the article''' - split the article into portions marked by [[Glossary:Splitmark|split-marks]]
+* '''Style: Apply style''' - apply a selected style from the Style [[Glossary:Registry|registry]] to the currently selected HTML text
+* '''Subset: Add''' - add the current [[Glossary:Element|element]] to a chosen [[Glossary:Subset|subset]]
+* '''Tasklist: Add task''' - add a new [[Glossary:Task|task]] to the current [[Glossary:Tasklist|tasklist]] (same as ''Alt+F1'')
+* '''Template: Apply''' - choose a [[Glossary:Template|template]] that should be used with the current [[Glossary:Element|element]] (same as ''Shift+Ctrl+M'')
+* '''Template: Detach''' - detach the [[Glossary:Template|template]] from the current [[Glossary:Element|element]] to expose the original looks
+* '''Template: Impose''' - detach the [[Glossary:Template|template]] from the current [[Glossary:Element|element]] without changing its looks (same as ''Shift+Ctrl+F2'')
+* '''Tile components''' - arrange selected [[Glossary:Component|components]] in equally sizes rows and columns (same as ''Shift+Alt+T'')
+* '''Undo repetition''' - undo the effects of the most recent [[Glossary:Repetition|repetition]]
+* '''Unit: Convert''' - performs all imperial unit conversions with 4 keystrokes
+* '''Unzoom image''' - remove trim/zoom from the current image
+* '''Zoom image mode''' - enter the [[Glossary:Zoom&trim_mode|zoom mode]] for the current image to trim, zoom or crop images
+
+== SuperMemo Commander dialog box ==
+
+In the top part of the dialog box, you can see the following three columns:
+
+* '''Command'''
+** Command text box - the text box which you start typing the name of the SuperMemo command you want to execute in
+** Command list box - the list of available commands (the list gets filtered by the name that you can type in the text box above)
+* '''Custom name'''
+** Custom name text box - the text box which you start typing the custom name for the command you want to execute in (to quickly move to this field, press ''Alt+U'')
+** Custom name list box - the list of available custom names (the list gets filtered by the name that you type in the text box above)
+* Buttons
+** '''OK''' (''Enter'') - close the commander and execute the selected command
+** '''Cancel''' (''Esc'') - close the commander without executing any command
+** '''Rename''' (''Alt+R'') - give your own name to a given command (the custom names are stored in the ''commands.ini'' file located in the ''[BIN]'' subfolder of your SuperMemo installation)
+** '''Default''' - restore the default command names in the '''Custom name''' column (it effectively deletes the ''commands.ini'' file from the ''[BIN]'' subfolder)
+
+At the bottom, you can read the description of the currently selected command.
+
+== SuperMemo Commander context menu ==
+
+Right click anywhere within the dialog box to display the menu
+
+* '''Execute''' (<code>Enter</code>) - execute the selected command and close the commander
+* '''Close''' (<code>Esc</code>) - close the commander without executing any command

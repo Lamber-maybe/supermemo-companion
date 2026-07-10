@@ -1,0 +1,92 @@
+== Why need references?  ==
+
+In [[Glossary:Incremental_reading|incremental reading]], you always need to quickly recover the context of a question or a piece of text. The easiest way to recover context quickly is via references. References propagate from [[Glossary:Element|element]] to element as you produce [[Glossary:Extract|extracts]] and [[Glossary:Cloze_deletion|cloze deletions]]. With all [[Glossary:Child|child elements]] produced from a given text marked with references, you would never need to worry about losing the context of the question. 
+
+For example: 
+<div class="center"><div style="border-bottom: black 1px solid; text-align: left; border-left: black 1px solid; width: 800px; border-top: black 1px solid; border-right: black 1px solid" class="inset">
+'''Q''': He was born in <span class="cloze">[...](year)</span>
+</div></div>
+cannot be answered without the context. However, the following question is already easier to understand: 
+<div class="center"><div style="border-bottom: black 1px solid; text-align: left; border-left: black 1px solid; width: 800px; border-top: black 1px solid; border-right: black 1px solid" class="inset">
+'''Q''': He was born in <span class="cloze">[...](year)</span> 
+
+----
+
+<span class="reference">#Title: Barrack Obama<br>#Source: Wikipedia</span>
+</div></div>
+To speed up learning, in the incremental reading process, the above question should naturally be replaced with: 
+<div class="center"><div style="border-bottom: black 1px solid; text-align: left; border-left: black 1px solid; width: 800px; border-top: black 1px solid; border-right: black 1px solid" class="inset">
+'''Q''': Obama was born in <span class="cloze">[...](year)</span>
+</div></div>
+or 
+<div class="center"><div style="border-bottom: black 1px solid; text-align: left; border-left: black 1px solid; width: 800px; border-top: black 1px solid; border-right: black 1px solid" class="inset">
+'''Q''': Obama was born in <span class="cloze">[...](year)</span> 
+
+----
+
+<span class="reference">#Title: Barrack Obama<br>#Source: Wikipedia</span>
+</div></div>
+References are not stored in HTML files that hold your articles but in a reference [[Glossary:Registry|registry]] (i.e. in a separate database). The reference registry does not hold the text of references either. All reference texts are held in the text [[Glossary:Registry|registry]] and are available for global text searches. In earlier versions of SuperMemo, each text would keep its own copy of references. In newer SuperMemos, [[Glossary:Element|elements]] keep only pointers to reference [[Glossary:Registry|registry]], which in turn keeps pointers to individual text fields in the text registry. As a result, many [[Glossary:Element|elements]] can hold the same reference, and many references can hold the same text. This results in a significant saving in space in your [[Glossary:Collection|collection]]. More importantly, you can update the reference in a single [[Glossary:Element|element]] and see the change show in all [[Glossary:Element|elements]] using the same reference. This way, you do not need to waste time on search&amp;replace to correct a single misspelling or reference inaccuracy that propagated to many [[Glossary:Element|elements]].
+
+== Example ==
+
+If you select the title of the source article and press ''Alt+T'' ('''[[Component menu#Reference|Reference]] : Title''' on the HTML [[component menu]]), each [[Glossary:Extract|extract]] will be marked by the title of the source article. If you use '''[[Edit menu|Edit]] : [[Web import]] : All''', your articles will be provided with basic references (such as <span class="reference">#Title</span>, <span class="reference">#Link</span>, <span class="reference">#Date</span>, etc.). If you need more context (e.g. to add the author, the journal, etc.), you can use the reference link button ([[Image:Reference button.gif|SuperMemo: Reference button on the navigation bar in the element window]]) on the [[navigation bar]] to jump to the source article from which the [[Glossary:Extract|extract]] was produced. On the parent article, that button will lead you to the original link on the net. 
+
+<div class="center">
+[[Image:Incremental reading Extract.jpg|800px|SuperMemo: An extract produced from an article about the greenhouse effect (references (in pink) at the bottom are added automatically)]] 
+{{:Image:Incremental reading Extract.jpg}}
+</div>
+
+== Reference system highlights  ==
+
+*To mark texts as reference fields use the '''[[Component menu#Reference|Reference]]''' submenu on the HTML [[component menu]] (e.g. '''[[Component menu#Reference|Reference]] : Select''' or ''Alt+Q'') 
+*Reference fields <span class="reference">#Article</span>, <span class="reference">#Parent</span> and <span class="reference">#Concept group</span> are added automatically and are not stored in the reference [[Glossary:Registry|registry]]. These fields are not generated in [[Glossary:Element|elements]] that have no other reference fields defined 
+*References marked with ''Alt+Q'' options show up in the reference field and can be deleted from the text's body (if no longer needed) 
+*Hover your mouse over the '''Reference link''' button ([[Image:Reference button.gif|SuperMemo: Reference button on the navigation bar in the element window]]) on the [[navigation bar]] to quickly see the reference in longer extracts.
+*From the user's point of view, there is a little difference in the way the references are handled as compared with earlier SuperMemos. SuperMemo 2008 or later differentiates between the following 2 types of references edits:
+** '''local edits''' that affect only the present [[Glossary:Element|element]] and create a new reference record vs.
+** '''global edits''' which change the original reference in all the elements that use it.
+:When SuperMemo is not sure if your edits are local or global, it will ask you 
+* Note that all [[Glossary:Extract|extracts]] generate [[Glossary:Element|elements]] that are [[Glossary:Child|children]] of the original article. If you have problems with recalling the original context of a fragment, you can always call it back by pressing the '''Parent''' button on the [[navigation bar]]. You can also use the <strong>Reference link</strong> button ([[Image:Reference button.gif|SuperMemo: Reference button on the navigation bar in the element window]]) to get to the source article, or, if you have already reached it, to get to the original article on the web.
+* If you choose an empty selection for the <span class="reference">#Date</span> reference, you will mark the text with the current date and time stamp
+* AND-Search in SuperMemo works on texts, not on [[Glossary:Element|elements]]. This means that reference texts do not take part in AND-Search for the main body of text. This may result in false misses. In SuperMemo, texts and individual reference fields are all treated as separate texts and are all searched independently
+*Formatting of references can be changed via stylesheets 
+*Converting HTML to plain text does not affect the formatting of references (i.e. plain text entries can have their references formatted by a stylesheet)
+*You can edit references in the reference area or in a dedicated window that you can open by choosing '''[[Element menu#Reference|Reference]] : Edit''' from the [[element menu]]. You only need to use legal reference field tags at the beginning of each reference line (e.g. <span class="reference">#Author:</span>). If SuperMemo is not sure if your changes should apply to the current [[Glossary:Element|element]] only, or to all elements that use the reference, it will ask you
+*You can quickly modify (i.e. set, merge, and delete) the references across a number of [[Glossary:Element|elements]]. To do that, open them in the [[browser|element browser]], right-click your mouse and choose:
+** '''[[Subset operations|Process browser>]] : [[Subset operations#Reference|Reference]] : Set reference''' to set the same reference to a subset of elements,
+** '''[[Subset operations|Process browser>]] : [[Subset operations#Reference|Reference]] : Merge reference''' to add reference fields to a subset of elements,
+** '''[[Subset operations|Process browser>]] : [[Subset operations#Reference|Reference]] : Delete reference''' to remove reference fields from all elements in the [[Glossary:Subset|subset]]
+*References no longer clutter your HTML files. In the past, the size of references would often be greater than the length of the text itself 
+*Reference [[Glossary:Registry|registry]] keeps the references (see below), and their individual text fields are stored in the text registry
+*References are added to HTML texts at load time, so that you can still have references located at the bottom of your texts as in earlier versions of SuperMemo 
+*Adding an existing reference to an [[Glossary:Element|element]] (e.g. with '''[[Element menu#Reference|Reference]] : Link''' from the [[element menu]]) does not add to the size of the [[Glossary:Collection|collection]] 
+
+<div class="bs-callout bs-callout-danger">
+'''Important!''' '''Do not add your own non-reference texts below the horizontal bar marking the reference area'''. All reference field area is owned by SuperMemo. Any modifications to that area will be treated as changes to reference fields. Changes that do not conform with reference field formatting will be discarded without warning.
+</div>
+
+<div class="center">
+[[Image:References.jpg|800px|SuperMemo: References help you quickly recover the context of a given element as well as track its source and build a list of citations (in the picture: blue marks an incremental reading extract, yellow marks a search string (i.e. GABA-ergic), while pink marks the reference field, which will propagate to all children elements (extracts and clozes))]] 
+{{:File:References.jpg}}
+
+[[Image:Reference registry.jpg|800px|SuperMemo: References are kept in a dedicated registry while their individual text fields (e.g. title, author, date, source, etc.) are stored in the text registry, and thus are available for global text searches]]
+{{:File:Reference registry.jpg}}
+</div>
+
+== Editing references ==
+
+You an use '''Reference: Edit''' in [[SuperMemo Commander]], however, you can also edit references in the reference area (which is pink in the default stylesheet). You can safely delete reference fields, but you need to decide if that change should be local (for that [[Glossary:Element|element]] only) or global (for all elements using this reference). You will not be able to delete <span class="reference">#Article</span>, <span class="reference">#Parent:</span> or <span class="reference">#Concept group</span> fields because they are added automatically to the reference section (i.e. they are not part of the reference itself). You can freely change the text of references. Illegal changes are all changes that do not comply with the reference format, e.g. lines that do not start with reference field tags, or lines that start with unknown reference field tags (e.g. ''#Country''). If you are unsure how this process works, import a single article from [http://en.wikipedia.org Wikipedia] to a newly created [[Glossary:Collection|collection]], create some [[Glossary:Extract|extracts]] and play with editing to see how references are processed.
+
+== Image references ==
+
+Image references are created automatically when importing from the web or from an HTML document. In SuperMemo 16, unless you imported images with whole references pages, duplicate detection would depend on image names. If you renamed your images to make reuse easy, duplicate detection wouldn't work. This changed with SuperMemo 17. URLs are kept in the text [[Glossary:Registry|registry]] which can accept a degree of "garbage" as text reuse is automatic.
+The adopted complex solution may make SuperMemo a bit slower when importing images from imported articles or when importing pictures from the web. However, your [[Glossary:Collection|collection]] is unlikely to swell with multiple image duplicates. Duplicate imports are automatically prevented and the imported image is replaced with the stored original (wiki thumbs are replaced with their high-resolution originals).
+
+Image references allow of searching for picture names along other texts in [[Glossary:Element|elements]] with '''[[Edit menu|Edit]] : [[Find elements]]''' (''Ctrl+F'').
+
+You can find image references in the reference [[Glossary:Registry|registry]] (choose '''[[Search menu|Search]] : [[Search menu#References|References]]''' from the [[main menu]]). Alternatively, you can first locate the image via the image registry ('''[[Search menu|Search]] : Images''' from the [[main menu]]), and choose '''[[Registry menu#View|View]] : Reference''' from the [[registry menu]] (available with a right-click).
+
+In the reference [[Glossary:Registry|registry]], to view the image related to a given reference, click '''Go to''' at the bottom of the window.
+
+To see all [[Glossary:Element|elements]] associated with a given image/reference, click '''List''' at the bottom of either registry (image or reference).

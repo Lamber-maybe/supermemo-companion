@@ -1,0 +1,2 @@
+;<span id="Browser">browser</span>
+:window with a [[Glossary:Element_subset|subset of elements]]. '''Browsers''' are mostly available from the [[View menu|'''View''']] menu and provide a set of operations available from the [[browser menu]]. Read more: [[Browser|Browser window]]

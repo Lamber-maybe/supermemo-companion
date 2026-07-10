@@ -1,0 +1,326 @@
+== Mouse shortcuts ==
+
+* Click: edit [[Glossary:Component|component]] (e.g. to edit text)
+* Double click: in '''[[Web import]]''' dialog box, view the import tab corresponding to the active row in the [[web browser]]
+* Shift+Click: '''Edit file''' (e.g. to edit pictures)
+* Ctrl+Click:
+** In the [[element window]]: '''View file''' associated with the [[Glossary:Component|component]] (e.g. to view a picture in the default viewer)
+** In [[HTML component|HTML components]]: Ctrl+click works like in Internet Explorer (e.g. select paragraph or word, follow hyperlink, etc.)
+* Ctrl+Double click: in '''[[Web import]]''' dialog box, display the already imported [[Glossary:Element|element]] corresponding to the active tab in the [[element window]]
+* Alt+Click: switch [[Glossary:Component|components]] (or [[Glossary:Element|element]]) between [[Glossary:Presentation_mode|presentation]], [[Glossary:Editing_mode|editing]] and [[Glossary:Dragging_mode|dragging]] modes
+
+== Single keys ==
+
+* A: Edit the first answer
+* C: Select [[Glossary:Concept|concept]]
+* E: Edit texts
+* M
+** in the [[browser]]: memorize an element
+* Q: Edit the first question
+* Del:
+** Delete the currently displayed [[Glossary:Element|element]] (use ''Shift+Ctrl+Del'' when in the [[Glossary:Editing_mode|editing mode]])
+** In '''[[Web import]]''' dialog box: remove the active row from the import list and close its corresponding tab in the [[web browser]]
+* Ins
+** in the [[Contents|'''Contents''' window]]: insert [[Glossary:Element|element]]
+** in the [[browser]]: select or deselect the [[Glossary:Element|element]] 
+** in the [[plan]]: insert a new activity in the currently selected row
+* Tab
+** in dialogs: move to the next button, checkbox, etc.
+** in the [[element window]]: move to the next [[Glossary:Component|component]]
+** in the [[tasklist manager]]: select a new [[Glossary:Tasklist|tasklist]]
+* Enter
+** in [[browser]]: display the currently selected [[Glossary:Element|element]] in the [[element window]]
+* Esc
+** close the concept selection list
+
+== Function keys ==
+
+* F1: [[Menus, buttons, dialogs, etc. | Help]]
+* F2: '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Memory|Memory]] : Memory status'''
+* F3
+** in [[element window]], text [[Glossary:Component|components]]: search for a string
+** in [[Contents|'''Contents''' window]], [[Browser|element browser]], [[Registry window|registries]], [[tasklist manager]]: repeat last search
+* F4: Open the [[tasklist manager]] with the currently used [[Glossary:Tasklist|tasklist]]
+* F5: Apply '''Warrior layout''' without making it the default [[Glossary:Layout|layout]]
+* F6:
+** in HTML/RTF [[Glossary:Component|component]], filter source (e.g. to remove formatting that makes [[Glossary:Incremental_reading|incremental reading]] difficult)
+** in the '''[[File menu|File]] : [[File menu#Open collection|Open collection]]''' dialog box, rename the currently selected [[Glossary:Collection|collection]]
+* F7: '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Memory|Memory]] : [[Memory graphs (4D)|4D Graphs]]'''
+* F8: Not used consistently. It may show up in test, debug, or release versions in various contexts
+* F9: View the file associated with the [[Glossary:Component|component]]. For example, if you use MS Office, ''F9'' on rich text components will start editing your texts in MS Word, and ''F9'' on HTML components will use your default browser to view your HTML texts (see also: ''Ctrl+F9'' for editing files)
+* F11
+** Random review in [[Glossary:Collection|collection]], branch of the [[Glossary:Knowledge tree|knowledge tree]], or [[browser]]
+** Random jump/pick in a [[Glossary:Registry|registry]] or [[tasklist manager]]
+* F12: Sleep and learning timeline ('''[[Toolkit menu|Toolkit]] : [[Sleep Chart]]''')
+
+== Shift+key ==
+
+* Shift+Enter
+** in [[HTML component|HTML components]]: single-spaced new line in HTML (tag ''&lt;br&gt;'');
+** in the [[Contents|'''Contents''' window]]: '''View''' the currently focused [[Glossary:Element|element]]; ''Enter'' can also be used if the element does not have [[Glossary:Child|children]]
+* Shift+Tab: Move to the previous option or option group
+* Shift+F1: [[Menus, buttons, dialogs, etc. | Help]]
+* Shift+F2: Search [[Main Page|SuperMemo Wiki Help]]
+* Shift+F3: Search for [[Glossary:Leech|leeches]]
+* Shift+F4: Import mail from Windows (Live) Mail (or any other e-mail client supporting EML) or MS Outlook 2000 or later for [[Glossary:Incremental_reading|incremental reading]]
+* Shift+F8: [[Web import|Import articles from the web]]
+* Shift+F10: 
+** in the [[Contents|'''Contents''' window]], open the [[contents menu]]
+** in the [[Element window]], open the [[element menu]]
+** in browsers, open the [[browser menu]]
+** in [[Plan]], open the '''Plan''' menu
+* Shift+F12: '''[[Backup]]'''
+
+== Ctrl+key ==
+
+* Ctrl+click
+** in [[HTML component]]: select paragraph or word, follow hyperlink, etc. depending on the context
+** in image, sound, and video [[Glossary:Component|components]]: '''View''' the file in the associated application
+** in text, RTF and spelling [[Glossary:Component|components]]: view the translation
+** in script [[Glossary:Component|components]]: '''Edit''' the associated script file
+* Ctrl+Up: go to the parent of the current [[Glossary:Element|element]]
+* Ctrl+Down: in the [[Contents|'''Contents''' window]]: go to the last [[Glossary:Child|child]] of the current [[Glossary:Element|element]] (if available)
+* Ctrl+Enter
+** '''[[SuperMemo Commander]]'''
+** in the [[tasklist manager]]: display the currently selected task in the [[element window]]
+* Ctrl+Space
+** in the [[Contents|'''Contents''' window]]: browse the [[Glossary:Element|elements]] belonging to the selected [[Glossary:Branch|branch]]
+** in the [[element window]]: browse all [[Glossary:Descendant|descendants]] of the current [[Glossary:Element|element]]
+* Ctrl+]: increase font size
+* Ctrl+[: decrease font size
+* Ctrl+Del
+** in the [[element window]]: delete the current [[Glossary:Component|component]]
+** in the '''[[Plan]]''': delete the currently selected activity
+** in the [[tasklist manager]]: delete the currently selected [[Glossary:Task|task]]
+* Ctrl+Home: in the [[Contents|'''Contents''' window]], go the first [[Glossary:Element|element]] of the [[Glossary:Knowledge_tree|knowledge tree]]
+* Ctrl+End: in the [[Contents|'''Contents''' window]], go to the last [[Glossary:Element|element]] of the [[Glossary:Knowledge_tree|knowledge tree]]
+* Ctrl+F1: [[Menus, buttons, dialogs, etc. | Help]]
+* Ctrl+F2: '''[[Learn menu|Learn]] : [[Learn menu#Go neural|Go neural]]'''
+* Ctrl+F3: Search the web for the currently selected phrase (Google, Wikipedia, dictionaries, etc.)
+* Ctrl+F4: Go through the final revision of the material repeated recently ([[Glossary:Final_drill|final drill]] stage)
+* Ctrl+F5: Restore the default windows [[Glossary:Layout|layout]]
+* Ctrl+F7: Set a [[Glossary:Read-point|read-point]] in an article
+* Ctrl+F8: Download remote images referred to in an [[HTML component]]
+* Ctrl+F9: Edit the file associated with the [[Glossary:Component|component]]. For example, ''Ctrl+F9'' on image components will start editing your images in the default picture editor
+* Ctrl+F10: Play again (e.g. to repeat a sound when learning pronunciation)
+* Ctrl+F11
+** '''Random learning'''
+** in [[browser]]: Random test
+* Ctrl+F12: [[Repairing collections|Repair collection]]
+* Ctrl+A
+** in text [[Glossary:Component|components]]: '''Select All'''
+** in '''[[Web import]] : Check/Select all'''
+** in downloading images: '''Select All''' (selecting all images to download)
+* Ctrl+B
+** in [[Using text components|text components]]: bold font (if applicable)
+** in the [[registry window]]: view registry member users in the [[browser]] ('''[[Registry menu#View|View]] : Browse current''')
+* Ctrl+C: Copy to the clipboard
+* Ctrl+D
+** in the [[element window]]: [[Glossary:Dismiss|Dismiss]] the current [[Glossary:Element|element]]
+** in the [[tasklist manager]]: [[Glossary:Dismiss|Dismiss]] the current [[Glossary:Task|task]] (i.e. move it to the archive)
+** in the [[Contents|'''Contents''' window]]: [[Glossary:Dismiss|Dismiss]] the current [[Glossary:Element|element]]
+* Ctrl+E
+** in the [[element window]]: switch from the [[Glossary:Presentation_mode|presentation mode]] to the [[Glossary:Editing_mode|editing mode]], or from the editing mode to the drag-and-size mode, or from the [[Glossary:Dragging_mode|dragging mode]] to the presentation mode
+** in '''[[Plan]]''': edit the currently selected activity
+** in the [[tasklist manager]]: edit the currently selected [[Glossary:Task|task]]
+* Ctrl+F
+** '''[[Find elements]]'''
+** in '''[[Web import]]''', remove from the import list all the tabs that are already imported in the [[Glossary:Collection|collection]] or duplicate ones in the [[web browser]]
+** in the '''[[Plan]]''', '''Fix'''
+** in other windows, '''Find'''
+* Ctrl+G
+** go to an [[Glossary:Element|element]] with a given number (see the caption of [[Element data|'''Element data''' window]])
+** in the [[registry window]]: select a [[Glossary:Registry_member|registry member]] by its physical position in the [[Glossary:Registry|registry]]
+* Ctrl+H: in '''[[Web import]]''', set the ''HTML'' [[Web import#Import modes|import mode]] for the active row in the import list
+* Ctrl+I 
+** unlocked SuperMemo: Italic font in [[Using text components|text components]] (if applicable)
+** locked SuperMemo: '''[[File menu|File]] : [[File menu#Installation|Installation]] : Input password'''
+* Ctrl+J: '''[[Element menu#Learning|Learning]] : Reschedule'''
+* Ctrl+K
+** in the [[element window]]: Create a hyperlink
+** in the [[Contents|'''Contents''' window]]: Convert the current branch into a [[Glossary:Concept|concept]]
+* Ctrl+L
+** in the [[element window]]: '''[[Learn]]'''
+** in the [[Contents|'''Contents''' window]]: start [[Subset learning|branch learning]] beginning with the selected [[Glossary:Element|element]]
+** in [[browser]]: start [[subset learning]] on the browser
+** in '''[[Web import]]''': set the ''Link'' [[Web import#Import modes|import mode]] for the active row in the import list
+* Ctrl+M
+** '''Remember''', i.e. introduce an [[Glossary:Element|element]] into the learning process; make it memorized
+** in the [[tasklist manager]]: [[Glossary:Remember|memorize]] the currently selected [[Glossary:Task|task]]
+* Ctrl+N: Add a new article to the current [[Glossary:Concept_group|concept group]] by pasting the text from the clipboard
+* Ctrl+O
+** '''[[File menu|File]] : [[File menu#Favorites|Favorites]]''' (in [[incremental video]], when focus in placed on a YouTube video, ''Open address'' may override this shortcut, ''Alt+Home'' is a fast way out)
+** in the '''[[Plan]]''': open a plan
+* Ctrl+P:
+** in '''[[Web import]]''': set the ''Parse'' [[Web import#Import modes|import mode]] for the active row in the import list
+** '''[[Toolkit menu|Toolkit]] : [[Plan]]''' - plan your daily schedule
+* Ctrl+Q: '''[[Component menu#Import file|Import file]]''' (in a [[Glossary:Component|component]])(e.g. to add sound to a sound component)
+* Ctrl+R
+** in the main window, [[browser]], [[registry window]]: '''Search/Find and replace'''
+** in the '''[[Find elements]]''' dialog: restore the parameters of the most recently executed search
+* Ctrl+S
+** Search for texts containing a given string (globally or in [[Glossary:Registry|registries]])
+** in the [[browser]]: apply the default [[Priority queue#Sorting repetitions|sorting criteria]] to sort the [[browser]] (e.g. before review)
+** in the [[tasklist manager]]: sort the [[Glossary:Tasklist|tasklist]] for priority
+** in the '''[[Plan]]''': save changes to the current schedule
+* Ctrl+T
+** Edit next [[Glossary:Component|component]] (e.g. quickly switch between the question and the answer)
+** in '''[[Web import]]''': set the ''(Plain) Text'' [[Web import#Import modes|import mode]] for the active row in the import list
+** in the [[tasklist manager]]: transfer the currently selected [[Glossary:Task|task]] to another [[Glossary:Tasklist|tasklist]]
+** in the '''[[Plan]]''': '''Split''' the currently selected activity
+* Ctrl+U: Underline font in [[Using text components|text components]] (if applicable)
+* Ctrl+V: Paste from clipboard
+* Ctrl+W: '''[[Toolkit menu|Toolkit]] : [[Calendar]]'''
+* Ctrl+X: Cut
+* Ctrl+Y: Redo last Undo (in HTML text editing)
+* Ctrl+Z: Undo text editing (same as ''Alt+Backspace'')
+
+== Alt+key ==
+
+* Alt+\: in the [[Glossary:Editing_mode|editing mode]], delete texts before the cursor
+* Alt+.: Delete texts after the cursor (without [[references]])
+* Alt+Enter: in '''[[Toolkit menu|Toolkit]] : [[Plan]]''': start or end editing an activity 
+* Alt+Left arrow
+** in the [[element window]]: '''Back''', i.e. revisit a recently visited [[Glossary:Element|element]]
+** in the [[registry window]]: Change the [[Glossary:Registry_subset|registry subset]] to its immediate superset, if available
+* Alt+Right arrow
+** in the [[element window]]: '''Forward''', i.e. move forward on the list of recently visited [[Glossary:Element|elements]]
+** in the [[registry window]]: Change to the next [[Glossary:Registry_subset|registry subset]], if available
+* Alt+Backspace: Undo text editing (same as ''Ctrl+Z'')
+* Alt+PgUp: Previous [[Glossary:Element|element]] in the [[Glossary:knowledge_tree|knowledge tree]] (in the [[element window]])
+* Alt+PgDn: Next [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|knowledge tree]] (in the [[element window]])
+* Alt+Home: First [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|knowledge tree]] (in the [[element window]])
+* Alt+End: Last [[Glossary:Element|element]] in the [[Glossary:Knowledge tree|knowledge tree]] (in the [[element window]])
+* Alt+F1: Add a new [[Glossary:Task|task]]
+* Alt+F4: Close the program (or the currently active dialog box)
+* Alt+F7: Go to the [[Glossary:Read-point|read-point]] (in text, RTF and [[HTML component|HTML components]])
+* Alt+F10: Open the context menu of the currently active window ([[element window]], [[browser]], [[registry window]], etc.)
+* Alt+F11: '''Random test''' or '''Resume random test'''
+* Alt+F12: Open the [[component menu]] of the current [[Glossary:Component|component]]
+* Alt+A: '''[[Add new]]'''
+* Alt+B: Begin the currently selected activity in '''[[Plan]]'''
+* Alt+C:
+** In the [[element window]]: open the [[Contents|'''Contents''' window]] 
+** In the '''[[Web import]]''' dialog box: mark the current import tab as "to be closed (after import)"
+* Alt+D: Duplicate an [[Glossary:Element|element]]
+* Alt+E: [[Edit menu|'''Edit''' menu]]
+* Alt+F: [[File menu|'''File''' menu]]
+* Alt+G: Cancel [[Glossary:Grade|grade]]
+* Alt+H: [[Help menu|'''Help''' menu]]
+* Alt+L: [[Learn menu|'''Learn''' menu]]
+* Alt+N:
+** Add a new note empty [[Glossary:Topic|topic]] to the current [[Glossary:Concept_group|concept group]]
+** in the [[registry window]]: Start a [[Subset learning#Neural review|neural review]] over the selected [[Glossary:Registry_member|registry member]]
+* Alt+P:
+** Modify the [[Glossary:Priority|priority]] of the current [[Glossary:Element|element]]
+** in '''[[Web import]]''': move the focus to the '''Priority''' option group within the dialog box
+* Alt+Q: Choose a reference field label for the selected text (in HTML components)
+* Alt+R
+** in the [[element window]]: '''Rename member''' on the [[component menu]] to rename a [[Glossary:Registry_member|registry member]] associated with the [[Glossary:Component|component]]
+** in the [[registry window]]: '''Rename member''' on the [[registry menu]] to rename the selected [[Glossary:Registry_member|registry member]]
+** in the '''[[File menu|File]] : [[File menu#Open collection|Open collection]]''' dialog box, rename the currently selected [[Glossary:Collection|collection]]
+* Alt+S: [[Search menu|'''Search''' menu]] (on the '''Professional''' [[Glossary:Level|level]])
+* Alt+T: '''[[Element menu#Edit|Edit]] : Title''' or '''[[Component menu#Reference|Reference]] : Title''' depending on the current text selection and the current component type (in the [[element window]])
+* Alt+U: translate all text [[Glossary:Component|components]] in the [[element window]]
+* Alt+V: [[View menu|'''View''' menu]]
+* Alt+W: [[Window menu|'''Window''' menu]]
+* Alt+X
+** when text is selected in an [[HTML component]], it works the same as '''[[Component menu#Reading|Reading]] : Remember extract'''
+** when there is no text selected but there is a YouTube extract, it will extract it
+** when there is no text selected but there is a picture, it works the same as '''[[Component menu#Image|Image]] : Extract'''
+* Alt+Y: provide phonetic transcription to all text [[Glossary:Component|components]] in the [[element window]]
+* Alt+Z: '''[[Component menu#Reading|Reading]] : Remember cloze'''
+
+== Shift+Ctrl+key ==
+
+* Shift+Ctrl+Up arrow: Increase the [[Glossary:Priority|priority]] of the [[Glossary:Element|element]]
+** For [[Glossary:Topic|topics]]: it will decrease the current value of [[Glossary:A-Factor|A-Factor]]
+* Shift+Ctrl+Down arrow: Decrease the [[Glossary:Priority|priority]] of the [[Glossary:Element|element]]
+** For topics: it will increase the current value of [[Glossary:A-Factor|A-Factor]]
+* Shift+Ctrl+Enter
+** in the [[element window]] or in the [[Contents|'''Contents''' window]]: '''Done''' (i.e. [[Glossary:Dismiss|dismiss]] or delete an [[Glossary:Element|element]] that has been processed and is no longer needed)
+** in the [[registry window]]: display selected [[Glossary:Registry_member|registry members]] in a separate [[Glossary:Registry_subset|subset]]
+** in the [[tasklist manager]]: go to the currently selected [[Glossary:Task|task]]
+** in the '''[[Plan]]''': terminate the schedule at the selected activity
+* Shift+Ctrl+Del: in the [[element window]]: Delete the currently displayed [[Glossary:Element|element]] 
+* Shift+Ctrl+F2: '''[[Element menu#Template|Template]] : Impose template'''
+* Shift+Ctrl+F5: '''Save as default''' (window [[Glossary:Layout|layout]])
+* Shift+Ctrl+F6: View source code of HTML and RTF files (in HTML and rich edit [[Glossary:Component|components]])
+* Shift+Ctrl+F7: Clear a [[Glossary:Read-point|read-point]]
+* Shift+Ctrl+F8: Process image
+* Shift+Ctrl+F11: randomize the content of the [[Browser|element browser]]
+* Shift+Ctrl+F12: Convert formatted text (in HTML and rich edit [[Glossary:Component|components]]) to plain text
+* Shift+Ctrl+1: '''[[Component menu#Text|Text]] : Convert : Parse HTML''' (on the HTML [[component menu]])
+* Shift+Ctrl+A
+** [[Web import|Import web pages or pictures]] from the currently running instances of Internet Explorer
+** in '''[[Plan]]''': archive the current schedule
+* Shift+Ctrl+B
+** in the [[registry window]]: Open a [[browser]] with all [[Glossary:Element|elements]] that use any of the selected [[Glossary:Registry_member|members of the registry]]
+** in the [[tasklist manager]]: Browse all [[Glossary:Task|tasks]] in a given [[Glossary:Tasklist|tasklist]]
+** in the [[Contents|'''Contents''' window]] and in the [[browser]]: Compute statistics for a selected set of [[Glossary:Element|elements]]
+** in '''[[Web import]]''': open the [[Browser|SuperMemo browser]] with the [[Glossary:Element|elements]] from the web import list that have already been imported to the [[Glossary:Collection|collection]]
+* Shift+Ctrl+C: '''[[File menu|File]] : [[File menu#Copy collection|Copy collection]]''' (e.g. for backup purposes)
+* Shift+Ctrl+D: Add to [[Glossary:Final drill|final drill]]
+* Shift+Ctrl+E
+** in the [[element window]]: Send [[Glossary:Element|element]], files, or extract via e-mail
+** in '''[[Plan]]''': Define activities that should be used in '''[[Plan]]''' on different days
+* Shift+Ctrl+F: Link registry font (in text [[Glossary:Component|components]])
+* Shift+Ctrl+G: '''Hide SuperMemo''' and put it to the system tray/notification area
+* Shift+Ctrl+H: Display [[repetition history]] for the currently displayed [[Glossary:Element|element]] in the [[element window]]
+* Shift+Ctrl+I: '''[[Component menu#Reading|Reading]] : Ignore'''
+* Shift+Ctrl+J: '''Later today''', i.e. schedule the review of the [[Glossary:Element|element]] later today
+* Shift+Ctrl+K: Link registry member
+* Shift+Ctrl+L
+** when editing HTML: Add a bullet to the currently edited text
+** in the [[browser]]: '''Review all'''
+** in the [[Contents|'''Contents''' window]]: '''Review all'''
+* Shift+Ctrl+M
+** in the [[element window]]: Change the look of an [[Glossary:Element|element]] with a [[Glossary:Template|template]]
+** in the [[Contents|'''Contents''' window]]: Apply a selected [[Glossary:Template|template]] to the [[Glossary:Element|elements]] of a selected [[Glossary:Branch|branch]]
+** in a [[browser]]: Merge browser [[Glossary:Element|elements]] with [[Glossary:Template|template]]
+* Shift+Ctrl+O: Edit component order
+* Shift+Ctrl+P: Edit '''[[Element parameters]]'''
+* Shift+Ctrl+Q: Change the way in which the picture is stretched in the image [[Glossary:Component|component]]
+* Shift+Ctrl+R: '''Execute repetition''', i.e. execute a [[Glossary:Mid-interval_repetition|mid-interval repetition]] before its scheduled repetition date
+* Shift+Ctrl+S
+** in the [[element window]]: Swap question with answer
+** in the '''[[Plan]]''': save the schedule template for daily execution
+* Shift+Ctrl+T
+** in the [[element window]]: transfer the current [[Glossary:Element|element]] to another [[Glossary:Collection|collection]]
+** in the [[Contents|'''Contents''' window]]: replicate a [[Glossary:Branch|branch]] by transferring copies of its [[Glossary:Element|elements]] to another [[Glossary:Collection|collection]]
+* Shift+Ctrl+U: '''View source''' data of the [[Glossary:Element|element]] (i.e. without the applied [[Glossary:Template|template]])
+* Shift+Ctrl+V: Move current [[Glossary:Element|element]] to a selected [[Glossary:Branch|branch]] of the [[Glossary:Knowledge_tree|knowledge tree]] ('''[[Element menu#Edit|Edit]] : Move''')
+* Shift+Ctrl+W: Import from [http://en.wikipedia.org Wikipedia]
+* Shift+Ctrl+X: Display the '''Ancestors''' window with the position of the [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|knowledge tree]] 
+* Shift+Ctrl+Y: Import from [http://youtube.com YouTube]
+* Shift+Ctrl+Space: in the [[Glossary:Presentation_mode|presentation mode]], resume [[subset learning]]
+
+== Ctrl+Alt+key ==
+
+* Ctrl+Alt+Up: Drag up all [[Glossary:Component|components]] in [[Glossary:Dragging_mode|dragging mode]] (in the [[element window]])
+* Ctrl+Alt+Left: Drag left all [[Glossary:Component|components]] in [[Glossary:Dragging_mode|dragging mode]] (in the [[element window]])
+* Ctrl+Alt+Right: Drag right all [[Glossary:Component|components]] in [[Glossary:Dragging mode|dragging mode]] (in the [[element window]])
+* Ctrl+Alt+Down: Drag down all [[Glossary:Component|components]] in [[Glossary:Dragging mode|dragging mode]] (in the [[element window]])
+* Ctrl+Alt+Enter: Collapse the current branch (in the [[Glossary#contents window | contents window]])
+* Ctrl+Alt+F10: Show or hide the background behind SuperMemo
+* Ctrl+Alt+F12: Move one SuperMemo [[Glossary:Level|difficulty level]] up (see: Ctrl+Alt+Shift+F12)
+
+== Shift+Alt+key ==
+
+* Shift+Alt+A: '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Statistics|Statistics]] : [[Analysis]]'''
+* Shift+Alt+H: '''[[Component menu#Reading|Reading]] : Insert : Insert splitline''' (on the [[component menu]])
+* Shift+Alt+L: Test the repetition cycle (display [[Glossary:Component|components]] as if during learning using their '''[[Component menu#Display at|Display at]]''' property)
+* Shift+Alt+M: '''[[Mercy]]'''
+* Shift+Alt+T: Tile selected [[Glossary:Component|components]]
+* Shift+Alt+X: '''[[Component menu#Reading|Reading]] : Schedule extract''' (on the [[component menu]])
+
+== Ctrl+Alt+Shift+key ==
+
+* Ctrl+Alt+Shift+F12: Move one SuperMemo [[Glossary:Level|difficulty level]] down (see: Ctrl+Alt+F12)
+
+
+== Video Guides ==
+* [https://youtu.be/h8Y97it5hGY Supermemo Keyboard Shortcuts Explained!]
+* [https://youtu.be/Y_M9DA9pZdg Essential Incremental Reading Keyboard Shortcuts For Supermemo]
+* [https://youtu.be/XZ2Tcl9_6mI Most Useful Keyboard Shortcuts For Processing Text in Supermemo]
+* [https://youtu.be/OE3ryCtQLv8 Advanced Shortcuts for SuperMemo]

@@ -1,0 +1,7 @@
+;<span id="Dismiss">Dismiss</span>
+:operation that removes an [[Glossary:Element|element]] from the learning process (compare with [[Glossary:Forget|'''Forget''']] and [[Glossary:Remember|'''Remember''']]). '''Dismiss''' leaves the [[Glossary:Element|element]] in the [[Glossary:Collection|collection]], however, it will never show up when using '''[[Learn]]'''
+
+You can use  '''Dismiss''' for the following purposes: 
+* Removing parenting articles from [[incremental reading]] while keeping them as [[reference]]
+* Keeping searchable archive of knowledge that became outdated 
+* Converting topics to tasks (e.g. for prioritized entry into incremental reading), etc.

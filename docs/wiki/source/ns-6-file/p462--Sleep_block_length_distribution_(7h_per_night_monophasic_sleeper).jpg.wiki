@@ -1,0 +1,1 @@
+SleepChart: A sleep block distribution of a regular 7-hours-per-night monophasic sleeper. There are a few peaks discernible, however, no regular sleep length multiple. In particular, no peaks around the expected 5.5 and 8.5 hours.

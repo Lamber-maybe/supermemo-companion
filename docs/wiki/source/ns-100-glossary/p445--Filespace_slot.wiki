@@ -1,0 +1,2 @@
+;<span id="Filespace_slot">filespace slot</span>
+:single place for a single file allocated in the [[Glossary:Filespace|filespace]] in the [[SuperMemo files#elements|''[ELEMENTS]'' subfolder]]. For example, when allocating space for 300,000 files, SuperMemo may place a JPEG image file #288846 in the following slot ''ELEMENTS\1\2\3\4\288846.jpg''

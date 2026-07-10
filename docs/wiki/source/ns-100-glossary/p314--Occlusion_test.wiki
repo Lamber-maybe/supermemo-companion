@@ -1,0 +1,7 @@
+;<span id="Occlusion_test">occlusion test</span>
+:[[Glossary:Item|item]] that uses a picture whose part is deleted or occluded. During a repetition cycle, the occluded part is exposed at answer time. '''Occlusion tests''' can be used to learn geography, anatomy, mind maps, technical graphs, and other forms of knowledge that is presented in graphic form. Also called: '''graphic deletion test''' or '''cloze for pictures'''.
+:See also:
+:*Watch
+:** [https://www.youtube.com/watch?v=70JFgD4bEk8 Learning the anatomy of the hippocampus with occlusion tests and neural review in SuperMemo 19]
+:** [https://www.youtube.com/watch?v=yhGXStaowoc Learning Human Anatomy with SuperMemo]
+:*Read: [[Incremental_learning#Cloze_for_pictures|Creating occlusion tests]]

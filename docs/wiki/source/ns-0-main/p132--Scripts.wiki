@@ -1,0 +1,104 @@
+__TOC__
+
+<div class="bs-callout bs-callout-warning">
+Scripts were developed for early multimedia SuperMemo courses in the 1990s. They are retained for compatibility only. The tools of incremental learning, videos, HTML, etc. may be used instead at much lower implementation cost.
+</div>
+
+== Writing scripts to add life to SuperMemo elements ==
+
+The script [[Glossary:Component|component]] makes it possible to use a simple script language to manipulate other components in a given [[Glossary:Element|element]] (i.e. to display components, change their position, animate them, use them in learning tests, etc.). This way you can create interactive presentations, animation, video subtitling, drag-and-drop tests, hyperlinks to the Internet, e-mail links, etc.
+
+To create a script do the following:
+
+# create an [[Glossary:Element|element]] with contents of your choice ([[Glossary:Component|components]], their position, their attributes, etc.)
+# add a script [[Glossary:Component|component]] from the [[Compose toolbar|'''Compose''' toolbar]] (i.e. click the component button)
+# right-click the script [[Glossary:Component|component]] and choose the '''[[Component menu#Script|Script]]''' option on the [[component menu]]
+# write the script program (see below) and choose '''OK'''
+
+While writing the script, use the script editor's context menu that makes it possible to insert full command syntax into the editor (right-click the editor to open the menu).
+
+For example, to repeatedly play music from a sound [[Glossary:Component|component]] number 3 (see below), you could write:
+
+<pre>
+
+PLAY 3
+GOTO 1
+
+</pre>
+
+To view component number tags click '''123''' speed-button on the [[Compose toolbar|'''Compose''' toolbar]], or choose '''[[Element menu#Components|Components]] : Component order''' (''Shift+Ctrl+O'') on the [[element menu]]. Note, that when you right-click within the [[element window]], you will either open a [[component menu]] (if you click over a [[Glossary:Component|component]]) or the [[element menu]] (when you click an empty area within the [[Glossary:Element|element]]).
+
+The best way to learn more about scripts is to download a free [[Glossary:Collection|collection]] [http://sm.supermemo.org/sml/colls/advtest.htm ''Advanced Tests with SuperMemo''] which you can inspect for some simple examples. Use '''[[Search menu| Search]] : [[Search menu#Other registries|Other registries]] : Script''' to inspect scripts..
+
+Important: apostrophe is reserved in scripts for delimiting string variables. If you need to include an apostrophe in a string, use a backquote instead. For example:
+
+<pre>
+
+<nowiki>TEXTOUT 3 'I`m delighted to have met you'</nowiki>
+
+</pre>
+
+== Script commands used in SuperMemo ==
+
+=== Execute ===
+
+* '''Execute'''
+** To display another [[Glossary:Element|element]] of the [[Glossary:Collection|collection]] use '''Element''' (''Ctrl+E'') with the number of the element as the argument.<br />'''Syntax: <span style="color: red;"><span id="ELEMENT">ELEMENT</span> <Number></span>'''
+** To change the flow of script execution use '''Goto''' (''Ctrl+G'') with script label or script line as an argument.<br />'''Syntax: <span style="color: red;"><span id="GOTO">GOTO</span> <Label>|<Line></span>'''
+** To jump to a particular label in the script you need to define the label with '''Label'''.<br />'''Syntax: <span style="color: red;"><span id="LABEL">LABEL</span> <Name></span>'''
+** To display a message or warning use '''Message'''.<br />'''Syntax: <span style="color: red;">MESSAGE <Text></span>'''
+
+=== Internet ===
+
+* '''Internet'''
+** To make the users send an e-mail use '''MailTo'''.<br />'''Syntax: <span style="color: red;">MAILTO <Address> <Subject> <Body text> <Name></span>'''
+** To make SuperMemo display a selected page from the world wide web, use '''URL'''.<br />'''Syntax: <span style="color: red;">URL <nowiki>http://</nowiki><web address></span>'''
+
+=== Learn ===
+
+* '''Learn'''
+** To [[Glossary:Dismiss|dismiss]] the currently displayed [[Glossary:Element|element]] use '''Dismiss'''.<br />'''Syntax: <span style="color: red;">DISMISS</span>'''
+** To simulate the learning procedure (as if the user pressed the button '''Learn''') use '''Learn''' (''Ctrl+L'').<br />'''Syntax: <span style="color: red;">LEARN</span>'''
+
+=== Playing ===
+
+* '''Playing'''
+** To execute a frame of an animation sequence, use '''Frame'''. The <code><Component></code> argument specifies the image [[Glossary:Component|component]] within which the animation is executed (alternatively, BACKGROUND can be used to execute animation in element entire background). <code><Image Registry member></code> indicate the image that makes up the executed frame.<br />'''Syntax: <span style="color: red;"><span id="FRAME">FRAME</span> <Component>|BACKGROUND <Image registry member></span>'''
+** To play a sound, video, script or execute a binary object, use '''Play''' (''Ctrl+P'').<br />'''Syntax: <span style="color: red;"><span id="PLAY">PLAY</span> <Component> <Registry member></span>'''
+** To play a sound or video without suspending the execution of the script use '''Start''' (''Ctrl+T'').<br />'''Syntax: <span style="color: red;"><span id="START">START</span> <Component></span>'''
+** To stop the script use '''Stop'''.<br />'''Syntax: <span style="color: red;"><span id="STOP">STOP</span></span>'''
+** To play user recorded sound in the sound component use '''UPlay''' (to display the recorder panel in sound components check '''Sound : Panel : Recorder''' on sound [[component menu]]).<br />'''Syntax: <span style="color: red;"><span id="UPLAY">UPLAY</span> <Component></span>'''
+** To suspend the execution of a script for a number of milliseconds use '''Wait''' (''Ctrl+W'').<br />'''Syntax: <span style="color: red;"><span id="WAIT">WAIT</span> <Milliseconds></span>'''
+** To suspend the execution of a script until a given frame is displayed in a video sequence, or until a given position is reached in a sound track, use '''WaitFrame''' with the frame or position as an argument.<br />'''Syntax: <span style="color: red;"><span id="WAITFRAME">WAITFRAME</span> <Component> <Frame></span>'''
+
+=== Showing ===
+
+* '''Showing'''
+**  To display a given registry image in an image [[Glossary:Component|component]] use '''Display''' (''Ctrl+D''). Its first argument is the number of the image component in the [[Glossary:Element|element]]. Its second argument is the name of the image [[Glossary:Registry member|registry member]].<br />'''Syntax: <span style="color: red;"><span id="DISPLAY">DISPLAY</span> <Component> <Image registry member></span>'''
+** To change a font in a text, sound or spell-pad [[Glossary:Component|component]], use '''Font''' (''Ctrl+F'').<br />'''Syntax: <span style="color: red;"><span id="FONT">FONT</span> <Component> &lt;Font registry member&gt;</span>'''
+** To hide a [[Glossary:Component|component]] use '''Hide''' (''Ctrl+H'').<br />'''Syntax: <span style="color: red;"><span id="HIDE">HIDE</span> <Component></span>'''
+** To move a [[Glossary:Component|component]] to a new location use '''Move'''.<br />'''Syntax: <span style="color: red;"><span id="MOVE">MOVE</span> <Component> <X> <Y></span>'''
+** To show a hidden [[Glossary:Component|component]], use '''Show''' (''Ctrl+S'').<br />'''Syntax: <span style="color: red;"><span id="SHOW">SHOW</span> <Component></span>'''
+** To display a particular text in a text [[Glossary:Component|component]] use '''TextOut''' (''Ctrl+X'').<br />'''Syntax: <span style="color: red;"><span id="TEXTOUT">TEXTOUT</span> <Component> '<Text>'</span>'''
+** To change the display status of a [[Glossary:Component|component]] (from hide to show, or from show to hide), use '''Toggle'''.<br />'''Syntax: <span style="color: red;"><span id="TOGGLE">TOGGLE</span> <Component></span>'''
+** To translate a text [[Glossary:Component|component]] to the currently selected translation language choose '''Translate''' (see '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Language tab in Options|Language]]''' for interface and collection translation options).<br />'''Syntax: <span style="color: red;"><span id="TRANSLAT">TRANSLATE</span> <Component></span>'''
+
+=== SuperMemo ===
+
+* '''SuperMemo'''
+** To switch SuperMemo to a selected difficulty [[Glossary:Level|level]] use '''Level'''.<br />'''Syntax: <span style="color: red;">LEVEL BEGINNER|BASIC|MIDDLE|PROFESSIONAL</span>'''
+** To show or hide the [[status bar]] use '''Status'''.<br />'''Syntax: <span style="color: red;">STATUS ON|OFF</span>'''
+** To open the '''[[Question of the Day]]''' dialog box use '''Tips'''.<br />'''Syntax: <span style="color: red;">TIPS</span>'''
+
+=== Tests ===
+
+* '''Tests'''
+**  To start a [[Test elements#Multiple_Drag.26Match_test|Drag&Match exercise]] for multiple labels and multiple images use '''DragMatch (multiple)'''.<br />'''Syntax: <span style="color: red;"><span id="DRAGMATCH">DRAGMATCH</span> [<Label List>] [<Image list>]</span>'''<br /> For example: ''DRAGMATCH [1,3,4,5] [6,7,8,9]''
+**  To start a [[Test elements#Single_Drag.26Match_test|Drag&Match exercise]] single image [[Glossary:Component|component]] with specified hit areas and multiple labels use '''DragMatch (single)'''.<br />'''Syntax: <span style="color: red;"><span id="DRAGMATCH">DRAGMATCH</span> DRAGMATCH <Component> [<Label List>] [<Rectangle List>]</span>'''<br /> For example: ''DRAGMATCH 1 [1,2] [(100,100,30,20),(150,200,50,20)]''<br /> Hints: Use '''[[Component menu#Image|Image]] : Edit hit-area''' on the [[Component menu|image pop-up menu]] to determine the positions of rectangles without complex coordinate calculations. Remember about the space between square brackets. See [http://sm.supermemo.org/sml/colls/advtest.htm example]
+** To determine if labels erase background of the image on which they are dropped in [[Test elements#Drag.26Match_tests|Drag&Match exercises]], use '''DragTextMode'''.<br />'''Syntax: <span style="color: red;"><span id="DRAGTEXTMODE">DRAGTEXTMODE</span> OPAQUE|TRANSPARENT</span>'''
+**  To design [[Test elements#Point.26Click_test|Point&Click exercises]] use '''HitTest'''. Use an image that displays the hit area as the first argument, and a list of points that specify the correct hit area.<br />'''Syntax: <span style="color: red;"><span id="HITTEST">HITTEST</span> <Component> [<list of points: (x1,y1)(x2,y2), etc.>]</span>'''<br /> For example: ''HITTEST 1 [(10,10),(100,10),(100,100),(10,100)]''<br /> Use '''[[Component menu#Image|Image]] : Edit hit-area''' on the [[Component menu|image pop-up menu]] to determine the position of the hit area without worrying about coordinates. The hit area may include no more than five points. See [http://sm.supermemo.org/sml/colls/advtest.htm example]
+**  To suspend the execution of a script until a grade is provided (e.g. in [[Test elements#Tests_which_are_more_difficult_to_prepare|Drag&Match exercises or Point&Click exercises]]) use '''WaitGrade'''.<br />'''Syntax: <span style="color: red;"><span id="WAITGRADE">WAITGRADE</span></span>'''
+
+=== Comment ===
+
+* To insert a comment into the script, put it in a separate line and precede it with a semicolon.<br />'''Syntax: <span style="color: red;">;<Comment></span>'''

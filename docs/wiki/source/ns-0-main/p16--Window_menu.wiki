@@ -1,0 +1,79 @@
+__TOC__
+
+The '''Window''' submenu on the [[main menu]] provides the following options (only at '''Middle''' or higher [[Glossary:Level|levels]]): 
+
+== Window menu items ==
+
+=== Themes ===
+
+*'''Themes''' - choose a theme that makes SuperMemo look best for you (see the video at the bottom of this page)
+
+=== Layout ===
+
+*'''Layout''' - management of [[Glossary:Layout|layouts]] that determine where SuperMemo windows and toolbars are placed: 
+**'''Layout manager''' - open a layout manager that makes it possible to select, apply, save or delete [[Glossary:Layout|layouts]] 
+**'''Apply default layout''' (''Ctrl+F5'') - restore the windows layout last saved with '''Layout : Save as default''' (below) 
+**'''Warrior layout''' (''F5'') - arrange windows in the way optimized for the use of [[Glossary:Incremental_reading|incremental reading]]. Compare: '''[[File menu|File]] : [[File menu#Level|Level]] : Warrior layout''' 
+**'''<span id="Classic">Classic</span> layout''' - arrange windows in the manner known from [http://super-memory.com/english/sms.htm early versions of SuperMemo], i.e. with the [[Statistics|'''Statistics''' window]] conveniently aligned to the left of the [[element window]]. This arrangement is useful when you make repetitions and like to constantly follow the progress of learning. You can make this [[Glossary:Layout|layout]] permanent with '''Layout : Save as default''' (below) 
+**'''Save custom layout''' - save the current windows layout under a selected name 
+**'''Save as default''' (''Shift+Ctrl+F5'') - save the current layout of windows as your default [[Glossary:Layout|layout]]. Each time you enter the currently used [[Glossary:Collection|collection]], this [[Glossary:Layout|layout]] will be used
+**'''Background color''' - set the color of the background window displayed with '''Window : Background''' (above). Setting the background color is the fastest way of differentiating between [[Glossary:Collection|collections]] (e.g. main collection, working copy, backup, test collection, family member's copy, etc.) 
+**'''Background picture''' - select a picture displayed in the SuperMemo background (if set with '''Window : Background''' above) 
+**'''About picture''' - select a picture displayed in the SuperMemo splash screen as well as in '''[[Help menu|Help]] : [[Help menu#About|About]]'''
+
+=== Dark mode ===
+
+*'''Dark mode''' - sets a dark theme, and a dark [[Glossary:Stylesheet|stylesheet]] (no effect on [[Glossary:Template|template]] colors)
+
+=== Icons ===
+
+*'''Icons''' - adjust toolbar and menu icon size for different screen resolutions
+**'''Large''' - use the largest practical icon size for different screen resolutions
+**'''Small''' - use compact icons (large toolbars switch to medium or smaller bars switch to small)
+**'''Tiny''' - use the smallest practical icons for low-resolution screens
+
+=== Hints ===
+
+*'''Hints''' - turn on or turn off displaying [[Glossary#hint|hints]] when the mouse pauses over buttons. In addition, this option affects whether the [[status bar]] shows the hints when the mouse pauses over a menu option
+
+=== Contents ===
+
+*'''Contents''' (''Alt+C'') - select the current [[Glossary:Element|element]] in the [[Contents|'''Contents''' window]] 
+
+=== Status bar ===
+
+*'''Status bar''' - show or hide the [[status bar]] (at the bottom of the screen)
+
+=== Background ===
+
+*'''Background''' (''Ctrl+Alt+F10'') - show or hide the background behind windows used by SuperMemo (to minimize distraction caused by background applications) 
+
+=== Statistics ===
+
+*'''Statistics''' - show the window with the main [[Statistics|learning process statistics]] in the currently opened [[Glossary:Collection|collection]]
+
+=== Element data ===
+
+*'''[[Element data]]''' - show the window with the statistics of the currently displayed [[Glossary:Element|element]]
+
+=== Ancestors ===
+
+*'''Ancestors''' (''Shift+Ctrl+X'') - open the '''Ancestors''' window that makes it possible to go to a given [[Glossary:Ancestor|ancestor]] with a click
+
+=== Hide SuperMemo ===
+
+*'''Hide SuperMemo''' (''Shift+Ctrl+G'') - hide SuperMemo from view and move its icon from the taskbar to the notification area near the system clock (''notification area'' is colloquially known as the system tray). This option is particularly useful if you use '''[[Toolkit menu|Toolkit]] : [[Plan]]''' to organize your day. This way you can hide SuperMemo from view and focus on activity at hand. SuperMemo will then automatically reappear towards the end of the slot. If you pause your mouse over the SuperMemo icon in the notification area, you will be able to see how much time is left until the end of the activity when the alarm is raised.
+
+=== Custom layout list ===
+
+*'''1-9''' - choose one of up to nine custom [[Glossary:Layout|layouts]] defined earlier and saved with '''Save custom layout'''. The selected [[Glossary:Layout|layout]] automatically becomes the default layout
+
+== Videos ==
+
+How to make icons smaller in SuperMemo:
+
+<youtube>oh8TQotG91w</youtube>
+
+Exemplary skin types (themes) used in SuperMemo ('''Window : Themes'''):
+
+<youtube>FRWPzd43l0I</youtube>

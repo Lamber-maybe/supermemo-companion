@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advancing elements — SuperMemo Help mirror</title>
+<style>body { font-family: Georgia, 'Times New Roman', serif; max-width: 1040px; margin: 0 auto; padding: 1.5rem; color: #202122; line-height: 1.58; }
+h1, h2, h3, h4, h5, h6 { font-family: system-ui, sans-serif; line-height: 1.25; }
+a { color: #0645ad; } a:visited { color: #0b0080; }
+.mirror-meta { color: #54595d; font: 0.85rem/1.45 system-ui, sans-serif; border-bottom: 1px solid #eaecf0; padding-bottom: .8rem; margin-bottom: 1.2rem; }
+.mirror-meta code { color: #202122; }
+table { border-collapse: collapse; margin: 1rem 0; max-width: 100%; }
+td, th { border: 1px solid #a2a9b1; padding: .4rem .6rem; vertical-align: top; }
+th { background: #eaecf0; }
+img, video { max-width: 100%; height: auto; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1rem; overflow-x: auto; }
+code { background: #f8f9fa; padding: .1rem .25rem; }
+.toc, .navbox { background: #f8f9fa; border: 1px solid #a2a9b1; padding: .8rem; }
+.redirect { background: #f8f9fa; border-left: .3rem solid #36c; padding: .8rem 1rem; }</style>
+</head>
+<body>
+<div class="mirror-meta">
+<a href="../../_index.html">Mirror index</a> ·
+<a href="../../source/ns-0-main/p625--Advancing_elements.wiki">View raw source</a> ·
+<a href="https://help.supermemo.org/wiki/Advancing_elements">Official page</a> ·
+revision <a href="https://help.supermemo.org/index.php?title=Advancing%20elements&amp;oldid=9745"><code>9745</code></a>
+</div>
+<h1>Advancing elements</h1>
+<main id="mw-content-text"><div class="mw-parser-output"><p><b>Advancing elements</b> is moving their repetition to an earlier date. It is the opposite of <b><a href="p6--Postpone.html" title="Postpone">Postpone</a></b>.
+</p><p><b>Advance</b> is helpful if you want to review topics in a specific short period (e.g. a week). It is also useful to make a thorough review of a subset of items, e.g. in case knowledge changes or portions of knowledge get damaged by <a class="external text" href="http://supermemo.guru/wiki/Forgetting">forgetting</a>.
+</p><p>In case of <a href="../ns-100-glossary/p349--Topic.html" title="Glossary:Topic">topics</a>, <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">elements</a> will be rescheduled with new <a href="../ns-100-glossary/p297--Interval.html" title="Glossary:Interval">intervals</a> falling into a selected range. For example, if you want to thoroughly review all <a href="../ns-100-glossary/p349--Topic.html" title="Glossary:Topic">topics</a> related to <i>whiplash injury</i> over the period of two weeks, search for <i>whiplash</i> (<i>Ctrl+F</i>), choose <b>Advance</b>, and select 14 (number of days in the review period). 
+</p><p>For <a href="../ns-100-glossary/p298--Item.html" title="Glossary:Item">items</a>, <b>Advance</b> works differently. All items will be rescheduled within the period of the advance <a href="../ns-100-glossary/p297--Interval.html" title="Glossary:Interval">interval</a> starting with tomorrow. Unlike in the case of <a href="../ns-100-glossary/p349--Topic.html" title="Glossary:Topic">topics</a>, item <a href="../ns-100-glossary/p297--Interval.html" title="Glossary:Interval">intervals</a> may still be very long. Just short enough to fall within the review period. For those <a href="../ns-100-glossary/p298--Item.html" title="Glossary:Item">items</a> that are lucky to retain long <a href="../ns-100-glossary/p297--Interval.html" title="Glossary:Interval">intervals</a>, if your recall is good, you will not need to waste time on reviewing them frequently after the review period. The formula for the next repetition date is the same for <a href="../ns-100-glossary/p349--Topic.html" title="Glossary:Topic">topics</a> and <a href="../ns-100-glossary/p298--Item.html" title="Glossary:Item">items</a>: <code>today+[1..Advance Interval]</code>. The formula for the new <a href="../ns-100-glossary/p297--Interval.html" title="Glossary:Interval">interval</a> is: <code>[1..AdvanceInterval]</code> for <a href="../ns-100-glossary/p349--Topic.html" title="Glossary:Topic">topics</a> and <code>(Today + [1..AdvanceInterval] - LastRepetition)</code> for <a href="../ns-100-glossary/p298--Item.html" title="Glossary:Item">items</a>.
+</p><p><b>Advance topics</b>: If you specify the maximum <a href="../ns-100-glossary/p297--Interval.html" title="Glossary:Interval">interval</a> as 100, all <a href="../ns-100-glossary/p349--Topic.html" title="Glossary:Topic">topics</a> with longer interval will receive intervals randomly dispersed within the 1..100 range. <a href="../ns-100-glossary/p349--Topic.html" title="Glossary:Topic">Topics</a> with <a href="../ns-100-glossary/p297--Interval.html" title="Glossary:Interval">intervals</a> shorter than 100 will remain untouched. <b>Advance topics</b> executes <a href="../ns-100-glossary/p482--Mid-interval_repetition.html" title="Glossary:Mid-interval repetition">mid-interval repetition</a> on the affected <a href="../ns-100-glossary/p349--Topic.html" title="Glossary:Topic">topics</a> (unlike <b>Advance items</b>).
+</p><p><b>Advance items</b>: If you specify the maximum <a href="../ns-100-glossary/p297--Interval.html" title="Glossary:Interval">interval</a> as 1000, all <a href="../ns-100-glossary/p298--Item.html" title="Glossary:Item">items</a> with interval longer than 1000 will receive intervals randomly shortened so that to schedule a repetition between today or the day when the interval reaches 1000 days. All <a href="../ns-100-glossary/p298--Item.html" title="Glossary:Item">items</a> repeated before 1000 days ago, will be scheduled for repetition today. Unlike <b>Advance topics</b>, <b>Advance items</b> shortens <a href="../ns-100-glossary/p297--Interval.html" title="Glossary:Interval">intervals</a> without executing a <a href="../ns-100-glossary/p482--Mid-interval_repetition.html" title="Glossary:Mid-interval repetition">mid-interval repetition</a> (which would be illegal from the learning process standpoint as no repetition can be considered executed without you actually reviewing it).
+</p><p>You can execute advance using <a href="p83--Subset_operations.html#Advance" title="Subset operations">subset operations</a> in the <a href="p79--Browser.html" title="Browser">browser</a> or in the <a href="p86--Contents.html" title="Contents">contents</a> window. You can also use the <a href="p81--Browser_toolbar.html" title="Browser toolbar">Browser toolbar</a>.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260710173338
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.009 seconds
+Real time usage: 0.009 seconds
+Preprocessor visited node count: 1/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 1/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key guru_Help20:pcache:625:|#|:idhash:canonical and timestamp 20260710173338 and revision id 9745. Rendering was triggered because: page-view
+ -->
+</div></main>
+</body>
+</html>

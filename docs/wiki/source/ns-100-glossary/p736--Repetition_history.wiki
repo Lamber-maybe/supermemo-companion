@@ -1,0 +1,3 @@
+'''Repetition history''' is the ordered log of all past reviews for a given [[Glossary:Element|element]]. This record stores the exact timing and the [[Glossary:Grade|grade]] scored during each review. SuperMemo needs this history to estimate the element's [[Glossary:Stability|memory stability]] and calculate its future schedule.
+
+For more, see: [[Repetition history]]

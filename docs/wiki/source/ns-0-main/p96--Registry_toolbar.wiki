@@ -1,0 +1,24 @@
+The toolbar at the top of the [[registry window]] provides a quick access to the most often used registry functions. 
+
+[[Image:Image registry.jpg|center|785px|SuperMemo: Image registry (registry toolbar at the top) which you can use to review images used in your collection]] 
+
+Here is the use of the individual buttons (compare with the picture above): 
+
+*'''Menu''' (''Alt+F10'') - open the [[registry menu]] (also available with a right-click over the [[registry window]]) 
+*'''List''' - list users of the currently selected [[Glossary:Registry_member|registry member]] in the element list (bottom-right) 
+*'''Go to''' - go to the first user of the currently selected [[Glossary:Registry_member|registry member]] and close the [[registry window]]
+*'''View''' - display the [[Glossary:Element|element]] selected in the element list or display the first user of the currently selected [[Glossary:Registry_member|registry member]] (if the element list is not shown). The element is shown in the [[element window]] without closing the [[registry window]]. Note that elements are displayed each time you click on the entries in the element list (which can be shown with '''List''' above)
+*'''Go neural''' (''Alt+N'') - execute the [[Subset learning#Neural review|neural review]] over the selected [[Glossary:Registry_member|registry member]]
+*'''Find''' (''Ctrl+S'') - find [[Glossary:Registry_member|registry members]] containing a given string in their name. Only the current [[Glossary:Registry_subset|registry subset]] is searched. For example, to search for all pictures with the word "''virus''" in their name, use '''[[Search menu|Search]] : [[Search menu#Images|Images]]''' on the [[main menu]], click the '''Find''' button, type ''virus'', and press ''Enter'' 
+*'''Find and replace''' (''Ctrl+R'') - replace strings in the current [[Glossary:Registry_subset|registry subset]]
+*'''Superset''' - move to the immediate superset of [[Glossary:Registry_member|registry members]] (if any). For example, after searching the registry with ''Ctrl+S'', your results are displayed as a new registry subset. You can move back to the search superset by clicking '''Superset''' button or pressing ''Alt+Left''
+*'''Subset''' - move to the next subset (if any). For example, after searching the registry with ''Ctrl+S'', your results are displayed as a new [[Glossary:Registry_subset|registry subset]]. You can search again to create yet another subset (AND-search). You can move between subsets by pressing ''Alt+Left'' and ''Alt+Right'' 
+*'''Create selected subset''' - create a new [[Glossary:Registry_subset|registry subset]] from the currently selected [[Glossary:Registry_member|members]]
+*'''Create unselected subset''' - create a new [[Glossary:Registry_subset|registry subset]] from the [[Glossary:Registry_member|members]] which are not selected at the moment
+*'''Random jump''' (''F11'') - select a new randomly chosen [[Glossary:Registry_member|registry member]] (e.g. to quickly review the registry at random) 
+*'''Font''' (only in the font registry) - edit the font associated with the currently selected [[Glossary:Registry_member|registry member]]
+*'''Switch to twin''' - switch to the twin registry and select the twin member of the currently selected member (e.g. switch from text registry to translation registry, or switch between the twins of the phonetic transcription registry) 
+*'''<span id="Browse_button">Browse</span>''' - use the [[browser]] to display all [[Glossary:Element|elements]] that use the currently selected [[Glossary:Registry_subset|registry subset]]. Note that the button [[Registry window#Browse|'''Browse''']] at the bottom of the window puts only the users of the selected [[Glossary:Registry_member|member]] in the [[browser]] while the '''Browse''' on the toolbar puts the users of all subset members in the [[browser]] 
+*'''Import''' - import files directly into the registry 
+*'''Stretch''' (only in the image registry) - stretch images proportionally to fill out the display panel at maximum possible size 
+*'''Export''' - export/save the object associated with the currently selected [[Glossary:Registry_member|member]] (if exportable). For example, save a picture displayed in the image registry

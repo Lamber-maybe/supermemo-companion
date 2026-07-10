@@ -1,0 +1,2 @@
+;<span id="Recognition">recognition</span>
+:ability to passively recognize a memory. For example, you may not remember the answer to ''What is the capital of Sierra Leone?'', however, you may recognize ''Freetown'' as the capital once you hear the name. Or you can say ''I knew that'' once someone tells you that ''Freetown is the capital of Sierra Leone''

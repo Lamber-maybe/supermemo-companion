@@ -1,0 +1,60 @@
+== Help menu items ==
+
+'''Help''' submenu on the [[main menu]] provides the following options: 
+
+=== Welcome - ABC ===
+
+*'''Welcome - ABC''' - open the [[Introduction|welcome page]] of SuperMemo help with a 3-minute introduction to SuperMemo 
+
+=== Guide ===
+
+*'''Guide''' - open the [[Step-by-step to SuperMemo mastery|step-by-step guide]] with the most important steps towards mastering SuperMemo (one month course) 
+
+=== Contents ===
+
+*'''Contents''' - open the help's [[Main Page|table of contents]]
+
+=== FAQ ===
+
+*'''FAQ''' - open the page with the most [http://super-memory.com/help/faq/index.htm frequently asked questions about SuperMemo] 
+
+=== Hints and tips ===
+
+*'''Hints and tips''' - open the page with the [[Hints&Tips|most useful hints and tips]] 
+
+=== Context ===
+
+*'''Context''' (''F1'') - open the page most relevant to the current context. For example, if you are in the '''Contents''' window, pressing ''F1'' will open the [[Contents|'''Contents''' page]]. To open context help for menus, you need to first select an active menu item for ''F1'' to work (inactive or disabled menu items do not activate help). For example, choose '''[[Component menu#Answer|Answer]]''' on the [[Component menu|component menu]] and press ''F1'' to get the help page describing the menu.
+
+=== User survey ===
+
+*'''User survey''' - open the [https://supermemopedia.com/wiki/User_Survey questionnaire page at SuperMemopedia.com]. You can send your feedback via mail, leave it at SuperMemopedia.com, or read notes left by other users. Thank you in advance for your help in improving SuperMemo
+
+=== Web ===
+
+*'''Web''' 
+**'''On-line help''' - open the help file directly from SuperMemo Website
+**'''YouTube''' - open a [https://www.youtube.com/channel/UCqmYtieCc3liSTYxLwk_MLw/videos dedicated YouTube channel] with video tutorials about SuperMemo 
+**'''Search Wiki Help''' (''Shift+F2'') - search [[Main Page|SuperMemo Help]] at [http://supermemo.org supermemo.org]. This is a wiki version of help and may include comments made by users of SuperMemo. To search the original unchanged help file use '''Search HTML Help''' below 
+**'''Search HTML Help''' - search SuperMemo Help at [http://super-memory.com SuperMemo Website]
+**'''Search SuperMemoPedia''' - search [https://supermemopedia.com SuperMemoPedia], i.e. a wiki system created to help users solve their problems 
+**'''Search Web''' - use Google to search for articles about SuperMemo
+
+=== E-mail ===
+
+*'''E-mail''' 
+**'''Support''' - open [[Technical support|this page]] on the web 
+**'''Bug report''' - send a bug report. When reporting a bug, remember to always use this option to ensure your system data and the bug context are included
+
+=== Question of the Day ===
+
+*[[Question of the Day|'''Question of the Day''']] - equivalent of the tip of the day in other programs. In SuperMemo, tips are formulated as simple questions-and-answers. If you decide to introduce some tips into the learning process, just click the button '''Remember''' in the '''Question of the Day''' dialog box. If you think a tip is not worth knowing, click '''Delete'''. Note that tips in SuperMemo are a mini-metaphor of the SuperMemo paradigm! If you click '''Remember''', questions will enter the learning process as [[Glossary:item|items]].
+
+=== About ===
+
+*'''About''' - dialog box with the release date of your current SuperMemo. Click '''Choose picture''' to change the picture displayed when SuperMemo starts up. If you downloaded SuperMemo from a franchising website, you will also find here the address of your local distributor and information about technical support in your native language; click the underlined reseller's name
+
+<div class="center">
+[[Image:Help Web submenu.jpg|800px|SuperMemo: Help : Web submenu that you can use to get more help on SuperMemo on the web]]
+{{:Image:Help Web submenu.jpg}}
+</div>

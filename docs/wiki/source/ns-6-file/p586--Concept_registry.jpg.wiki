@@ -1,0 +1,3 @@
+<blockquote>
+'''''Figure:''' Concept [[Glossary:Registry|registry]] which you can use to execute [[Glossary:Neural_review|neural review]] on selected [[Glossary:Registry_member|members]] and change their properties (e.g. [[Glossary:Hook_node|hook]], [[Glossary:Template|templates]], default [[Glossary:Priority|priority]], etc.).''
+</blockquote>

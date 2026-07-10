@@ -1,0 +1,113 @@
+__TOC__
+
+== Overview ==
+
+If you would like to display files created in MS Word, Excel, Equation, PowerPoint, Corel, [http://www.mindman.com Mind Manager], etc. you can use the OLE [[Glossary:Component|component]]. The OLE component can display files created with any application that supports OLE 2.0. If this application supports in-place activation, you will also be able to edit these files without quitting SuperMemo. For example, if you insert an MS Word document into an OLE [[Glossary:Component|component]] and switch to [[Glossary:Editing_mode|editing mode]], SuperMemo menus and toolbars will be replaced by Word menus and toolbars.
+
+As all other [[Glossary:Component|components]], the OLE component is available from the [[Compose toolbar|'''Compose''' toolbar]]. To be able to edit files inserted in the OLE [[Glossary:Component|component]] you will need an appropriate server application (e.g. MS Word, Corel, Mind Manager, etc.). However, you do not need any software to display these files in the [[Glossary:Presentation mode|presentation mode]].
+
+To add an OLE [[Glossary:Component|component]], click '''OLE''' button on the [[Compose toolbar|'''Compose''' toolbar]]. You might resize and reposition it within the [[Glossary:Element|element]].
+
+The OLE [[Glossary:Component|component]] will show as an empty rectangle. You may need to turn off '''[[Element menu#Scaled|Scaled]]''' property on the [[element menu]] or in your [[Glossary:Template|template]] due to sizing problems with various OLE objects.
+
+If you want to import a ready file, right-click the OLE [[Glossary:Component|component]], and choose '''Insert OLE object''', click '''Create from File''' in the '''Insert Object''' dialog box and choose the file by typing its name or clicking '''Browse'''.
+
+If you want to create a new file and edit its contents, right-click the OLE [[Glossary:Component|component]], and choose '''Insert OLE object''', and pick from the list of OLE servers available in your Windows installation. When you click '''OK''', the appropriate server will be called and you will be able to edit your file (e.g. Microsoft equation, Excel chart, PowerPoint presentation, etc.). When you press ''Esc'', SuperMemo will display the file in the [[Glossary:Presentation_mode|presentation mode]] (i.e. the way it will look during repetitions or on the computer of the users of your [[Glossary:Collection|collection]]).
+
+Please note that the pop-up menu in the OLE [[Glossary:Component|component]] is mode sensitive, i.e. it will display the OLE server pop-up menu in the [[Glossary:Editing_mode|editing mode]] and standard SuperMemo options in the [[Glossary:Presentation_mode|presentation mode]]. In the presentation mode you will be able to use options such as '''[[Component menu#Display At|Display At]]''', '''[[Component menu#Answer|Answer]]''', etc. In the [[Glossary:Editing_mode|editing mode]] you will be able to use options depending on your OLE server (e.g. if your server is MS Excel, you will be able to use '''Cut''', '''Copy''', '''Format cells''', etc.).
+
+The simplest way to switch between presentation and [[Glossary:Editing mode|editing modes]] is to choose one of the following: 
+
+* ''Alt+click'' over the element display area
+* press ''Ctrl+T'' until you reach the OLE [[Glossary:Component|component]]
+* click the '''Editing mode''' button (blue-notebook) on the [[Edit toolbar|'''Edit''' toolbar]] (''Ctrl+E'')
+
+In the picture below, an OLE [[Glossary:Component|component]] is used to import an editable <span id="mind-map">mind-map</span> created with [http://www.mindman.com Mind Manager] (courtesy of John England, TeamLink Australia Pty Ltd):
+
+[[Image:6_steps_mind_map.jpg|center|SuperMemo: "6 steps to excellent memory" editable mind map created in Mind Manager and imported in an OLE component]]
+
+In the picture below, an Excel spreadsheet is being edited inside SuperMemo (notice the standard Excel toolbars right below the [[navigation bar]]) via OLE in-place activation:
+
+[[Image:Excel_OLE_inplace_activation.jpg|800px|center|SuperMemo: An Excel spreadsheet being edited inside SuperMemo via OLE in-place activation]]
+
+If your OLE server shows stability problems or does not work seamlessly with SuperMemo, your OLE file may still work fine in the [[Glossary:Presentation_mode|presentation mode]]. You will be able to redistribute your [[Glossary:Collection|collection]] without worrying about its performance on the user's machine.
+
+== FAQ ==
+
+=== You can use mind-maps with SuperMemo ===
+
+{{Mail Header
+|from=Pascal Heimlicher
+|country=Switzerland
+|sent=Tue, Aug 07, 2001 1:53 AM
+|subject=
+}} 
+
+'''<span id="6029-8637">Question</span>'''
+
+Is there a possibility to learn with mindmaps I've created in MindManager. Where can I find a description?
+
+'''Answer'''
+
+If you would like to use mindmaps editable with Mind Manager via OLE, see: [[#mind-map|OLE component]]. You can also export mindmaps as graphic files and used them with image [[Glossary:Component|components]]. Some of users use Mind Manager. Remember to turn off the '''[[Element menu#Scaled|Scaled]]''' parameter in your [[Glossary:Template|template]] (on the [[element menu]]) 
+
+----
+
+=== Learning large mind-maps ===
+
+{{Mail Header
+|from=Marcelo de Oliveira Azevedo
+|country=Brazil
+|sent=Tuesday, August 20, 2002 1:02 AM
+|subject=
+}} 
+
+'''<span id="12540-3392">Question</span>'''
+
+I'm having troubles with large mindmaps: I can't see the entire one. What's the solution?
+
+'''Answer'''
+
+If you are using mind-maps with OLE, their behavior will depend on the mind-map OLE server. If you are using mind-maps with HTML or with the image [[Glossary:Component|component]], you can view the file with ''F9''.
+
+It is important to know that in [[Glossary:Active_recall|active recall]], you only need a small portion of your mind-map to efficiently execute your repetitions. Ideally, you should convert your mind-map to a graphic file and paste only small portions of this file as separate [[Glossary:Topic|topics]] (alternatively, you can use the image component's [[Glossary:Zoom&trim_mode|zoom&trim mode]]). Then, you can use questions referring to individual portions of the map or use [[Glossary:Occlusion_test|occlusion tests]] to cover parts of the map. Asking questions about the mind-map is by far simpler and often more effective. [[Glossary:Occlusion_test|Occlusion tests]] are harder to build but easier to recall. Consequently, you may want to use [[Glossary:Occlusion_test|occlusion tests]] on large volume material where speed of learning is more important than precise map recall.
+
+In any case, large mindmap preview in SuperMemo should not be necessary
+
+----
+
+=== It is possible to use Acrobat Reader files with SuperMemo ===
+
+{{Mail Header
+|from=Mala Kaur
+|country=
+|sent=Tuesday, July 24, 2001 6:03 AM
+|subject=
+}} 
+
+'''<span id="5891-5237">Question</span>'''
+
+I wanted to import PDF files to SuperMemo for reading and copying certain items for further analysis. I initially tried to use '''Insert OLE object''' but I found OLE mechanisms unstable
+
+'''Answer'''
+
+Another approach is to use the [[HTML component|web browser (HTML) component]]. Then use '''[[HTML_link_menu|Insert HTML link]] : HTML file''' (on the [[Component menu|HTML component pop-up menu]]) and link to the PDF file. Using this option the PDF file is not immediately visible as only files of type ''*.txt'', ''*.htm'', ''*.rtf'' are listed. To visualize the PDF files on your drive type in ''*.pdf'' in the file name field and they become visible in the '''File''' window. Naturally, you need to have ''Acrobat Reader'' installed to view the file in SuperMemo. You can, of course, copy the text with the tools provided for the PDF viewer and use it for further SuperMemo purposes. The same method works for ''Excel'' files, ''Word'' files, etc.
+
+----
+
+=== SuperMemo will often not be able to use a given server to display your data correctly ===
+
+{{Mail Header
+|from=Tomasz Szynalski
+|country=Poland
+|sent=Dec 2, 1998
+|subject=
+}} 
+
+'''<span id="MS Equation">Question</span>'''
+
+When I create an MS Equation formula in the OLE [[Glossary:Component|component]], the equation is unnaturally large and distorted. How can I go around this bug?
+
+'''Answer'''
+
+Rendering of the OLE object is done by the server application, MS Equation in this case. You have to fix the problem in MS Equation by adjusting display attributes (e.g. reducing the size of fonts in this case)

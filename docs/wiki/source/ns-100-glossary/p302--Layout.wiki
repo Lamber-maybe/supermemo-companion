@@ -1,0 +1,3 @@
+;<span id="Layout">layout</span>
+:position and size of windows and toolbars in [[Glossary:SuperMemo|SuperMemo]]. '''Layouts''' can be changed with '''[[Window menu|Window]] : [[Window menu#Layout|Layout]]''' menu. In particular, use ''Ctrl+Shift+F5'' to save your favorite '''layout'''. 9 first-defined '''layouts''' are accessible through the '''[[Window menu|Window]]''' menu. There is no need to save '''layouts''' for [[Glossary:Contents window|'''Contents''']] and [[Glossary:Browser|browser]] '''layouts''' as they are saved automatically. Find out more: [[Layouts]].
+:Compare: [[Glossary:Template|Template]]

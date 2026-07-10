@@ -1,0 +1,7 @@
+'''stylesheet'''
+
+A piece of CSS (Cascading Style Sheet) code used to control the visual formatting and appearance of HTML-based elements in SuperMemo, such as components, templates, and article content. Stylesheets define properties like fonts, colors, margins, backgrounds, and other layout characteristics.
+
+SuperMemo ships with two default stylesheets stored in the <code>bin</code> folder of your SuperMemo installation: <code>supermemo.css</code> (standard appearance) and <code>DarkMode.css</code> (for dark theme display). SuperMemo also provides 11 styles used in [[incremental reading]].
+
+User-created custom stylesheets are stored in the style [[glossary:registry|registry]], which is accessible via '''Search : Other : Style'''. A stylesheet from the registry can be applied to individual components or templates to achieve consistent formatting across a [[glossary:collection|collection]].

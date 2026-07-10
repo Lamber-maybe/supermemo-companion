@@ -1,0 +1,134 @@
+__TOC__
+
+The '''Edit''' submenu of the [[main menu]] makes it possible to add new [[Glossary:Element|elements]], enrich them with [[Glossary:Component|components]] (e.g. sounds or pictures), delete elements, edit elements, and more. The '''Edit''' submenu is available only after you enter the '''Middle''' or '''Professional''' [[Glossary:Level|levels]] (with '''[[File menu | File]] : [[Levels | Level]]''').
+
+== Edit menu items ==
+
+Here are the options on the '''Edit''' submenu:
+
+=== Add a new item ===
+
+* '''Add a new item''' (''Alt+A'') - add a new [[Glossary:Item|item]] to the current [[Glossary:Collection|collection]]. An item is an [[Glossary:Element|element]] that takes part in repetitions and often has the question-answer form (see also: [[Items, topics, concepts, and tasks|Topics vs. items]]). The [[Glossary:Item|item]] is added to the current [[Glossary:Concept group|concept group]] (as selected in the '''Default concept group''' field on the [[navigation bar]] at the top of the [[element window]])
+
+=== Add a new article ===
+
+* '''Add a new article''' (''Ctrl+N'') - add a new article to the current [[Glossary:Collection|collection]]. The article is pasted from the clipboard. It is added to the current [[Glossary:Concept group|concept group]] (as selected in the '''Default concept group''' field on the [[navigation bar]] at the top of the [[element window]]).
+
+=== Add a new task ===
+
+* '''Add a new task''' (''Alt+F1'') - add a new [[Glossary:Task|task]] to the current [[Glossary:Tasklist|tasklist]]. To see the current [[Glossary:Tasklist|tasklist]], use the [[tasklist manager]] (e.g. press ''F4''). To change the current tasklist, in the [[tasklist manager]], select the tasklist from the '''Tasklist combo box''', and click '''Set''' next to it.
+
+=== Add a note ===
+
+* '''Add a note''' (''Alt+N'') - add a new note to the current [[Glossary:Concept_group|concept group]]. A note is a [[Glossary:Topic|topic]] that uses the default topic [[Glossary:Template|template]] (originally, a single scaleable [[HTML component]]). Use this option to type in rough notes into your [[Glossary:Collection|collection]]. You can then process your notes in the process of [[Glossary:Incremental_reading|incremental reading]]
+
+=== Web import ===
+
+*'''[[Web import]]''' (''Shift+F8'') - import pages from a supported [[web  browser]] (e.g. MS Edge as in the picture)
+
+[[Image:YouTube_import.jpg|800px|center|SuperMemo: Importing videos from YouTube for incremental learning]]
+{{:Image:YouTube_import.jpg}}
+
+=== Internet Explorer ===
+
+<ul>
+<li>'''[[Import from Internet Explorer|Internet Explorer]]''' - import pages from Internet Explorer</li>
+<ul>
+<li>'''Import''' (''Shift+Ctrl+A'') - import learning material from Internet Explorer. You can import the content or links to web pages currently opened in Internet Explorer. If you have more than one tab opened, you can import from many web pages at once. This option also makes it possible to close the tabs you no longer needed (e.g. during or after page import), import pictures, import live pages, etc. Web import as '''Local pages''' takes only the selected portion of the text in the browser (or all text, it none is selected); this does not apply to [http://en.wikipedia.org Wikipedia] or [http://youtube.com YouTube] imports (below); imported selections are marked as ''Portion of:'' in the reference title. Typical web import with only a portion of text selected in the browser. All references are added automatically.
+
+<div class="center">
+
+<div class="inset" style="border: 1px solid black; width: 800px; text-align: left;">
+
+Grays Harbor filed for a preliminary permit to test technology for a 100-megawatt wave park to be floated 20 to 25 miles off the San Francisco coast. Grays' San Francisco Ocean Energy Project "may also generate power from wind turbines" placed on the wave-energy converters, according to the company's application.
+
+So far the project has generated heated opposition from a coalition of environmental groups, surfers and commercial fishing organizations that have intervened in the case.  They argue that the wave farm's location in federally protected marine sanctuaries near the Farallon Islands could harm endangered whales, turtles and seabirds as well as interfere with surfers, sailors and pose a navigation hazard for oil tankers and other ships
+
+----
+<span style="line-height: 1em; color: #C40000; background-color: #FFA6FF; font-family: Times New Roman; font-style: italic; font-size: 10pt;">
+<nowiki>#Title: Selected portion of: San Francisco's wave farm fight - Green Wombat</nowiki><br /><nowiki>#Date: Mar 03, 2009, 08:41:48</nowiki><br /><nowiki>#Source: Web import: "San Francisco wave farm"</nowiki><br /><nowiki>#Link:</nowiki> [http://greenwombat.blogs.fortune.cnn.com/2009/03/02/san-franciscos-wave-farm-fight/ http://greenwombat.blogs.fortune.cnn.com/2009/03/02/san-franciscos-wave-farm-fight/]
+</span>
+
+</div>
+
+'''''Figure:''' Typical web import with only a portion of text selected in the browser. All [[references]] are added automatically.''
+
+</div>
+
+</li>
+
+<li>'''<span id="Wikipedia">Wikipedia</span>''' (''Shift+Ctrl+W'') - import pages from [http://en.wikipedia.org/wiki/Main_Page Wikipedia]. This will either import currently opened Wikipedia articles or let you specify the name of the article to import. This options also applies a Wikipedia-specific filter to help you remove garbage that will not take part in learning (margins, options, edit links, etc.)
+
+<div class="center">
+[[Image:Wikipedia_import.jpg|800px|SuperMemo: Importing articles about the microbiology of gastroenteritis from Wikipedia for incremental learning]]
+{{:Image:Wikipedia import.jpg}}
+</div>
+
+</li>
+
+<li>[[Incremental video | '''YouTube''']] (''Shift+Ctrl+Y'') - import [http://www.youtube.com/ YouTube] videos for incremental learning ([[incremental video]]). This will either import currently opened [http://youtube.com YouTube] videos or let you specify keywords that should be used to search for the video.
+
+</li>
+
+<li>'''Pictures''' - import pictures opened in Internet Explorer</li>
+
+</ul>
+
+</li>
+
+</ul>
+
+</ul>
+
+=== Mail import ===
+
+* '''Mail import''' (''Shift+F4'') - import mail from Windows (Live) Mail (or any e-mail client supporting EML) or MS Outlook 2000 or later into a series of [[Glossary:Topic|topics]] for [[Glossary:Incremental_reading|incremental reading]] (see: [[Incremental mail processing| Using e-mail with SuperMemo]])
+
+=== Open web links ===
+
+* '''Open web links''' - open all web pages to which the current [[Glossary:Element|element]] links to
+
+=== Add components ===
+
+* '''Add components''' - add new [[Glossary:Component|components]] in the [[element window]]. This is an alternative way of building your [[Glossary:Element|elements]]. More often you will use the [[Compose toolbar | '''Compose''' toolbar]] at the bottom of the [[element window]]:
+** '''Image''' - image [[Glossary:Component|component]] for displaying pictures (''BMP'', ''JPEG'', ''GIF'', ''PNG'', etc.). Note that you may prefer to simply paste pictures to SuperMemo. SuperMemo will create an image component for you
+** '''Sound''' - sound [[Glossary:Component|component]] for playing sound files (''WAV'', ''MID'', ''MP3'', ''Real Audio'', etc.)
+** '''Video''' - video [[Glossary:Component|component]] for playing video files (''AVI'', ''MPEG'', ''MP4'', ''WMV'', etc.)
+** '''HTML''' - [[HTML component]] that can be used to display HTML files. Note that you may prefer to use ready-made HTML [[Glossary:Template|templates]] or paste your texts to SuperMemo (e.g. with ''Ctrl+N'')
+** '''Text''' - plain text [[Glossary:Component|component]]
+** '''Spell''' - spell-pad [[Glossary:Component|component]] for spelling exercises
+
+=== Registry texts ===
+
+* '''Registry texts'''
+** '''Edit title''' (''Alt+T'') - edit the text currently displayed in the title bar of the [[element window]]
+** '''Edit first question''' (''Q'') - edit the first text [[Glossary:Component|component]] that is visible at the question time
+** '''Edit first answer''' (''A'') - edit the first text [[Glossary:Component|component]] that is marked as an answer
+** '''Edit all''' (''E'') - switch all text [[Glossary:Component|components]] to the [[Glossary:Editing_mode|editing mode]]
+** '''Add pronunciation''' - add a word-transcription pair to the phonetic transcription [[Glossary:Registry|registry]] (only if this registry has been created with '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Language tab in Options|Language]] : Phonetic transcription''')
+** '''Apply filter''' - process all texts used by all [[Glossary:Element|elements]] in the [[Glossary:Collection|collection]] with a [[Filter files|filter file]] (e.g. replace a set of strings with another set of string, remove delimited comments, move delimited comments to the comments registry, etc.)
+
+=== Create a concept ===
+
+* '''Create a concept''' - create a new [[Glossary:Concept|concept]] to add new [[Glossary:Element|elements]] to its [[Glossary:Branch|branch]]
+
+=== Create a tasklist ===
+
+* '''Create a tasklist''' - create a new [[Glossary:Concept|concept]] (as with '''Create a concept''' above) and add a [[Glossary:Tasklist|tasklist]] rooted in that concept
+
+=== Delete element ===
+
+* '''Delete element''' (''Shift+Ctrl+Del'') - delete the currently displayed [[Glossary#element | element]]
+
+=== Delete components ===
+
+* '''Delete components''' - delete selected [[Glossary:Component|components]] from the currently displayed [[Glossary:Element|element]]
+
+=== Menus ===
+
+* '''Menus''' - make it possible to open currently available context menus for individual windows or [[Glossary:Component|components]]:
+** '''Element>''' (''Alt+F10'') - open the [[element menu]]
+** '''Component>''' (''Alt+F12'') - open the [[component menu]] (for the currently selected [[Glossary:Component|component]] in the [[element window]])
+** '''Contents>''' - open the [[contents menu]]
+** '''Browser>''' - open the [[browser menu]]
+** '''Registry>''' - open the [[registry menu]] (for the currently active [[registry window]])

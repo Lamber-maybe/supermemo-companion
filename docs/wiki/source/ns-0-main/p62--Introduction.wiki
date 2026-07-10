@@ -1,0 +1,35 @@
+== SuperMemo will help you learn faster! == 
+
+It is enough that you spend 3 minutes reading this page to be able to begin learning with SuperMemo! 
+
+For a good start, you only need two options: 
+
+#'''[[Add new]]''' - to add new questions and answers to SuperMemo (keyboard: ''Alt+A'') 
+#'''[[Learn]]''' - to review the material that you want to remember (keyboard: ''Ctrl+L'')
+
+[[Image:Add new.jpg|500px|SuperMemo: Adding new questions and answers at the Beginner Level]] 
+{{:Image:Add new.jpg}}
+
+'''Start learning now!''' Initially you may doubt the power of SuperMemo. Trust it for 1-2 weeks and you will begin to understand it better. Add at least 50-100 questions-answer pairs related to your job, your life, or your interests. See how SuperMemo schedules the material for review. See how your memory gets a boost from reviewing that material.
+
+== Summary: The ABC of SuperMemo ==
+
+*<span style="color: red; font-size: xx-large; font-weight: bold">A</span>dd new material with '''[[Add new]]''' (''Alt+A'') 
+*<span style="color: red; font-size: xx-large; font-weight: bold">B</span>e sure to review your daily dose of material with '''[[Learn]]''' (''Ctrl+L'') 
+*<span style="color: red; font-size: xx-large; font-weight: bold">C</span>herish the blessing of empowering wisdom! (which in simple English means: [https://supermemo.guru/wiki/Pleasure_of_learning Have fun with your new knowledge])
+
+{{Important note|Option '''Learn''' will ask you to review your material only after a few days. For that reason, spend your first days on adding new material for learning}}
+
+== Important reading ==
+*[https://supermemopedia.com/wiki/ABC Beginner's FAQ] - questions most often asked by SuperMemo beginners (SuperMemopedia). You can add your own.
+*[https://super-memory.com/help/faq/begin.htm Beginner's FAQ] - questions most often asked by SuperMemo beginners (super-memory.com)
+*[https://www.youtube.com/playlist?list=PLPw7ZTjtZfQafUUGa8cAbNnszIByNQ_z1 Introduction to SuperMemo] - YouTube playlist at Pleasurable Learning
+*[https://supermemopedia.com/wiki/SuperMemo_is_too_difficult! SuperMemo is too difficult!!!]
+*[[Step-by-step to SuperMemo mastery|Step by step to SuperMemo Mastery: '''User's Guide''']] - this step-by-step course of SuperMemo will help you learn the most important skills of an advanced SuperMemo user in a sequence that will maximize the gradual increase in your productivity 
+*[[Backup|'''Backup''']] - to make sure you never lose your learning investment, you must learn how to back up your learning material! 
+*[https://supermemo.guru/wiki/20_rules_of_knowledge_formulation 20 rules of formulating knowledge] - the way you put your questions and answers together may determine the degree of your success 
+*[https://super-memory.com/articles/decalog.htm SuperMemo Decalog] - SuperMemo beginners tend to make the same mistakes. This text will help you avoid these mistakes and enjoy efficient learning 
+*[[Incremental learning]] - adding questions and answers is the "old way" in SuperMemo. The new way is ''incremental learning''. Incremental learning is more complex and requires more experience. However, it is by far the best way to learn new material imported from the web
+*[https://supermemopedia.com SuperMemopedia] - Encyclopedia of SuperMemo written by users of SuperMemo
+*[https://www.antimoon.com/how/usingsm-firstcoll.htm Starting your first SuperMemo collection] - ABC of SuperMemo by [https://www.antimoon.com Antimoon.com]
+*[https://supermemo.guru/wiki/Pleasure_of_learning Pleasure of learning] - you must never forget that learning must be fun, or it may rather result in … [https://supermemo.guru/wiki/Hating_SuperMemo hating SuperMemo!]

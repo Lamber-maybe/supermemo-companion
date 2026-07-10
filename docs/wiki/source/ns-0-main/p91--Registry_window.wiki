@@ -1,0 +1,52 @@
+__TOC__
+
+Registries in SuperMemo are sorted sets of objects used such as texts, images, sounds, fonts, etc. By using registries, SuperMemo reduces the overall size of [[Glossary:Collection|collections]], and makes it easy to reuse objects already introduced into the current collection. For more information about registries see: [[Using registries]].
+
+All existing registries can be accessed from the [[Search menu|'''Search''']] menu.
+
+A registry window is used to access individual [[Glossary:Registry_member|members of a registry]].
+
+== Parts of the registry window ==
+
+[[Image:Image_registry.jpg|650px|center|SuperMemo: Image registry which you can use to review images used in your collection]]
+{{:Image:Image_registry.jpg}}
+
+* caption - name of the [[Glossary:Registry|registry]] and the total number of [[Glossary:Registry_member|registry members]]. ''Here the image registry keeps 21,645 pictures''
+* [[registry toolbar]] (below the caption) - tool buttons providing mouse shortcuts to the most often used registry options (incl. access to the [[registry menu]])
+* editing field (under the toolbar) - field used in incremental search, i.e. searching for [[Glossary:Registry_member|members]] by typing in initial characters of their names
+* list of member names (left panel) - alphabetically sorted list of names of individual [[Glossary:Registry member|registry members]]. ''Here the list displays images from "Citric acid cycle (Krebs cycle, TCA cycle)" to "Climate scientists poll". The scrollbar on the right side of the list box shows the approximate position of this subset of images in the alphabetical list''
+* object display field (right top panel) - field that is used to display the object that is currently selected in the list of [[Glossary:Registry_member|members]] (on the left side). In some [[Glossary:Registry|registries]] this field is empty (e.g. sound registry, program registry, etc.) or is divided into two parts (e.g. text registry displays text translations, lexical registry displays phonetic transcription of individual words, translation registry displays the original texts, etc.). ''Here the Citric acid cycle (Krebs cycle, TCA cycle) is presented''
+* element list (right bottom panel) - upon clicking '''List''' at the bottom of the registry window, the element list is filled out with all [[Glossary:Element|elements]] that use a given [[Glossary:Registry_member|registry member]].
+* [[#Status bar|status bar]] (above the button panel) - information about the currently selected [[Glossary:Registry_member|member]]
+* [[#Button panel|button panel]] (at the very bottom)
+
+A right click over the registry window opens the [[registry menu]] with advanced operations on the [[Glossary:Registry|registry]].
+
+== Status bar ==
+
+* [[Glossary:Registry_index|registry index]] (i.e. the ordinal position of the [[Glossary:Registry_member|registry member]] in the [[Glossary:Registry|registry]])
+* number of [[Glossary:Element|elements]] that use the [[Glossary:Registry_member|member]]
+* [[Glossary:Registry position|physical position in the registry]]
+* number of the filespace slot (if any) - a numbered position of a file in the [[SuperMemo files#elements|''[ELEMENTS]'' subfolder]]. The first file will get the slot one, second slot two, etc. (e.g. ''1.jpg'', ''2.htm'', ''3.wav'', etc.), and
+* (if relevant) path to the [[Glossary:Registry_member|registry member]] file with the file size ''In the example above, the picture is alphabetically the 3637th picture in the registry, it is used by 55 [[Glossary:Element|elements]], it is physically placed at the position 2270 in the [[Glossary:Registry|registry]], and it uses the filespace slot number 196,353. The actual jpg file is located in the folder c:\colls\All\elements\21\24\15\ and is named 196353.jpg (note that the name is the same as the number of the filespace slot). The size of this file is 121,712 bytes and it was created on Oct 21, 2006 at 17:54:34''
+
+== Button panel ==
+
+* '''<span id="Browse">Browse</span>''' - display all [[Glossary:Element|elements]] that use the currently selected [[Glossary:Registry_member|registry member]] in an [[Browser|element browser]]. Note that the [[Registry toolbar#Browse button|'''Browse''' button]] on the [[Registry toolbar|toolbar]] can be used to display all [[Glossary:Element|elements]] that use all [[Glossary:Registry_member|registry members]] belonging to the current [[Glossary:Registry_subset|subset]]
+* '''List''' - list the [[Glossary:Element|elements]] that use the currently selected [[Glossary:Registry_member|registry member]] (the list is displayed in the element list at the bottom right panel of the window)
+* '''Go to''' - go to the first [[Glossary:Element|element]] using the currently selected [[Glossary:Registry_member|registry member]]
+* '''Neural''' (''Alt+N'') - execute the [[Subset learning#Neural review|neural review]] over the selected [[Glossary:Registry_member|registry member]]
+* '''Rename''' (''Alt+R'') - change the name of the currently selected [[Glossary:Registry_member|registry member]]
+* '''Insert''' - create a new [[Glossary:Component|component]] with a link to the currently selected [[Glossary:Registry_member|member]]. SuperMemo will ask you if the component should be created in the current [[Glossary:Element|element]] displayed in the [[element window]] or if a new element should be created
+* '''Add''' - add a new [[Glossary:Registry_member|registry member]] to the [[Glossary:Registry|registry]]
+* '''<span id="Apply">Accept</span>''' - link the currently selected [[Glossary:Registry_member|registry member]] with the requesting source (e.g. if you choose '''[[Component menu#Links|Links]] : Registry member''' on the sound [[component menu]], the component will be linked with a sound object associated with the sound registry member selected at the moment of pressing '''Accept''')
+
+== Exemplary registry windows ==
+
+=== Concept registry window ===
+
+[[Image:Concept_registry.jpg|800px|center|SuperMemo: Concept registry which you can use to execute neural review on selected members and change their properties]]
+
+=== Translation registry window ===
+
+[[Image:Translation_registry.jpg|800px|center|SuperMemo: Translation registry stores translation texts that correspond with the text registry in the currently selected translation language]]

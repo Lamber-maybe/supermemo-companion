@@ -18,6 +18,8 @@ it is context, not a diary.
 - **Card preferences:** e.g. prefer cloze style; anchors not precise values;
   no multiple-choice
 - **Docs mirror (optional):** local path to your own crawl of
-  help.supermemo.org, e.g. `~/Documents/supermemo-doc/wiki`. The full
-  wiki already ships with the repo in `docs/` — set this only if you
-  keep a fresher or larger crawl; it then takes precedence.
+  help.supermemo.org, e.g. `~/Documents/supermemo-doc/wiki`. A
+  revision-pinned Main + Glossary mirror already ships in `docs/wiki/`.
+  Set this only for a demonstrably fresher or broader crawl; ideally it
+  should expose a manifest/snapshot so the agent can compare revisions
+  rather than assuming the whole directory is newer.

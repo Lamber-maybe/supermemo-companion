@@ -1,0 +1,117 @@
+__TOC__
+
+SuperMemo 20 includes two newest [[Glossary:Spaced repetition|spaced repetition]] xxx algorithms: [[Algorithm SM-19]] and [[Algorithm SM-20]]. These algorithms are based on entirely different approaches to modeling memory.
+
+[[Algorithm SM-19]] follows the older paradigm based on optimization matrices. In contrast, [[Algorithm SM-20]] uses a machine-learned memory model. Both algorithms were developed using large datasets collected from thousands of users, with some collections containing up to a million repetitions.
+
+'''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Memory|Memory]] : 4D Graphs''' played an important role in analyzing and debugging [[Algorithm SM-19]]. The insights gained from these tools also helped inspire the development of [[Algorithm SM-20]].
+
+If you want to understand [[Algorithm SM-19]] or help improve it further, explore these tools and analyze your own learning data. Human memory is a stochastic system, so perfect prediction is impossible, but analysis can help us approach the optimal scheduling of repetitions.
+
+'''Important:''' The graphs shown in the [[#Pictures|examples below]] require a [[Glossary:Collection|collection]] with a mature learning history. New collections do not yet contain enough repetition data to produce meaningful graphs.
+== Available memory graphs ==
+
+All memory graphs provide a 3-dimensional view with rotation along all 2 axes (X and Y), and a slider for animation in the 3rd dimension along [[Glossary:Difficulty|item difficulty]].
+
+The following memory graphs are available with '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Memory|Memory]] : 4D Graphs''' on its individual tabs:
+
+* Matrices -
+** S90 - stabilization at [[Glossary:Retrievability|retrievability]] of 90%
+** SIncMin - minimum stabilization in the stabilization curve
+** SIncMax - maximum stabilization in the stabilization curve
+** Gain - spacing effect expressed as a stabilization gain in the stabilization curve
+** Decay - stabilization decay in the stabilization curve
+** OS - optimum stabilization derived from stabilization increase using approximation formulas analogous to those used in deriving the matrix of [[Glossary:O-Factor|O-Factor]]s from the matrix of [[Glossary:R-Factor|R-Factor]]s
+** Recall - actual recall measured at the predicted [[Glossary:Retrievability|retrievability]] of 90%
+** R90 - predicted [[Glossary:Retrievability|retrievability]] at recall of 90%
+** Metric - recall metric that shows the accuracy of recall predictions for different levels of [[Glossary:Stability|stability]] and [[Glossary:Difficulty|difficulty]]
+** Cases - repetition cases used in computing the stabilization matrix
+** RF - [[Glossary:RF matrix|R-Factor matrix]] of [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm SM-15]
+** OF - [[Glossary:OF matrix|O-Factor matrix]] of [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm SM-15]
+** Intervals - [[Glossary:Optimum interval|optimum interval]]s matrix
+** RF Cases - repetition cases used in computing the [[Glossary:RF_matrix|R-Factor matrix]] of [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm SM-15]
+* '''Stabilization''': the function that tells you how much [[Glossary:Stability|memory stability]] increases with a [[Glossary:Repetition|repetition]]. If you click '''Compute''', all [[Repetition history|repetition histories]] will be scanned to compute the [[Glossary:Stability_increase_matrix|SInc[] matrix]]. For a given [[Glossary:Difficulty|item difficulty]], the increase depends on [[Glossary:Stability|stability]] and [[Glossary:Retrievability|retrievabilty]]. To view the 3-rd dimension of [[Glossary:Difficulty|difficulty]], slide the thumb on the '''Difficulty''' slider. See [[#Stability increase function|example]]
+* '''SInc Approx''': approximation of the function represented by the [[Glossary:Stability_increase_matrix|stability increase matrix]]. If you click '''Compute''', SuperMemo will look for the best fit to data (which is the SInc[] matrix computed on the '''Stabilization''' tab). See [[#Stability increase function approximation|example]]
+* '''Recall''': the function that tells you how well actual recall corresponds with [[Glossary:Retrievability|retrievability]] predicted by SuperMemo. The difference between comes primarily from the difficulty in [http://super-memory.com/articles/20rules.htm formulating perfect items] that would produce purely exponential forgetting. In addition, SuperMemo itself is far from perfect in sorting [[Glossary:Item|items]] by [[Glossary:Difficulty|difficulty]]. See [[#Recall|example]]
+* '''Recall Approx''': approximation of the function represented by the [[Glossary:Recall_matrix|Recall[] matrix]]. If you click '''Compute''', SuperMemo will look for the best fit to data (which is the Recall[] matrix computed on the '''Recall''' tab). See [[#Recall approximation|example]]
+* '''First Interval''': the function that illustrates [[Glossary:Post-lapse_stability|post-lapse stability]] depending on the number of [[Glossary:Lapse|lapses]] and [[Glossary:Retrievability|retrievability]] at failure. It is the equivalent of the first-interval graph extended into the retrievability dimension. [[Glossary:Retrievability|Retrievability]] is important in that a failure at low retrievability does not need to signify the [[Glossary:Item|item]] is difficult and [[Glossary:Post-lapse_stability|post-lapse stability]] is low. See [[#First interval|example]]
+* '''PLS Approx''': approximation of the function represented by post-lapse stability matrix. If you click '''Compute''', SuperMemo will look for the best fit to data (which is the post-lapse matrix computed on the '''First Interval''' tab). See [[#First interval approximation|example]]
+* '''Sleep''': correlation between recall and the [[SleepChart#Two-component_sleep_model|two components of sleep]]. This is a 2-dimensional graph that combines [[SleepChart#Alertness|'''Alertness (H)''' and '''Alertness (C)''']] of '''[[Sleep Chart]]'''. As the data is not part of Algorithm SM-18 optimization, you need to click '''Compute''' to collect data needed to display this graph
+* '''Forgetting''': 3D [[Glossary:Forgetting_curve|forgetting curves]] collected by [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm SM-15]. This is the same graph as the one displayed by '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Statistics|Statistics]] : [[Analysis]] : [[Analysis#3-D Curves|3-D Curves]]''' with the added benefit of 3-axis rotation in space and '''[[Glossary:A-Factor|A-Factor]]''' slider for the 4th dimension.
+* '''RF Matrix''': 3D [[Glossary:RF_matrix|RF matrix]] collected by [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm SM-15]. This is the same graph as the one displayed by '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Statistics|Statistics]] : [[Analysis]] : [[Analysis#3-D Graphs|3-D Graphs]] : R-Factor Matrix''' with the added benefit of 3-axis rotation in space
+
+== Graph analysis controls ==
+
+* '''X''' and '''Y''' axis rotation (top 2 sliders)
+* '''Difficulty''' slider (for animation in the 3rd dimension)
+* Repetition cases in consideration
+* '''Cases''': the label showing the total number of repetition cases in consideration
+* '''Compute''': recompute the graph using the data in the [[Glossary:Collection|collection]]
+* '''Reset''': reset the memory matrices
+* '''Smoothing''': average neighboring entries in matrices
+* '''Subset''': select a [[Glossary:Element_subset|subset of elements]] for which matrices should be computed
+* '''Reset Cases''': reset the count of repetition cases without changing the data (i.e. values of entries in matrices)
+* '''Export''': export data for analysis in Excel (see: [https://supermemopedia.com/wiki/Why_is_the_first_interval_after_forgetting_so_short exemplary analysis])
+* '''Average''' checkbox: the "golden mean" average of the data with:
+*# the best-fit approximation, and
+*# data-rich neighboring entries in proportion to available information
+
+== Pictures ==
+
+=== Stability increase function ===
+
+<div class="center">
+[[Image:Stability increase function.png|800px|SuperMemo: 3D graph of SInc[] matrix based on 61,768 repetition cases for items with difficulty=0.8]]
+{{:Image:Stability increase function.png}}
+</div>
+
+=== Stability increase function contour map ===
+
+<div class="center">
+[[Image:Stability increase function contour map.jpg|800px|SuperMemo: A "from above" view at the SInc[] matrix providing a contour map]]
+{{:Image:Stability increase function contour map.jpg}}
+</div>
+
+=== Stability increase approximation ===
+
+<div class="center">
+[[File:Stability increase function approximation.jpg|800px|SuperMemo: Approximating the SInc[] matrix with the best-fit function used by default in SuperMemo to compute the increase in stability (e.g. in cases of lack of data)]]
+{{File:Stability increase function approximation.jpg}}
+</div>
+
+=== Recall ===
+
+<div class="center">
+[[File:Recall.jpg|800px|SuperMemo: The Recall[] matrix graph showing actual recall differs from predicted retrievability]]
+{{:File:Recall.jpg}}
+</div>
+
+=== Recall approximation ===
+
+<div class="center">
+[[File:Recall approximation.jpg|800px|SuperMemo: Approximating the Recall[] matrix with the best-fit function to compute default recall in conditions of data scarcity]]
+{{:File:Recall approximation.jpg}}
+</div>
+
+=== Recall approximation curve ===
+
+<div class="center">
+[[File:Recall approximation curve.jpg|800px|SuperMemo: Approximating the Recall[] matrix with the best-fit function to compute default recall in conditions of data scarcity]]
+{{:File:Recall approximation curve.jpg}}
+</div>
+
+=== First interval ===
+
+First interval after forgetting is usually very short (1-4 days). It is longest for freshly memorized items that have not been forgotten yet.
+
+[[File:Post-lapse stability graph in spaced repetition.png|center|800px]]
+{{:File:Post-lapse stability graph in spaced repetition.png}}
+
+See: [https://supermemopedia.com/wiki/Why_is_the_first_interval_after_forgetting_so_short Why is my first interval so short?]
+
+=== First interval approximation ===
+
+The tab '''PLS Approx''' (post-lapse stability approximation) makes it possible to search for an optimal surface that best models the first post‑lapse interval as a function of retrievability and the number of memory lapses:
+
+[[File:Post-lapse stability approximation in spaced repetition.png|center|800px]]
+{{:File:Post-lapse stability approximation in spaced repetition.png}}

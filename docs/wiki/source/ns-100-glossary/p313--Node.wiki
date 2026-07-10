@@ -1,0 +1,6 @@
+;<span id="Node">node</span>
+:one [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|knowledge tree]] presented in the [[Glossary:Contents_window|'''Contents''' window]] (a single [[Glossary:Item|item]], [[Glossary:Topic|topic]], [[Glossary:Concept|concept]] or [[Glossary:Task|task]] in the [[Glossary:Collection|collection]]). You can add new '''nodes''' with '''Add''' and '''Insert''' (''Ins'') at the bottom of the [[Glossary:Contents_window|'''Contents''' window]], or with options on the [[Edit menu|'''Edit''']] submenu of the [[main menu]]. If a '''node''' does not have [[Glossary:Child|children]], it is called a [[Glossary:Leaf|leaf]]. If the '''node''' has [[Glossary:Child|children]], it is called a [[Glossary:Branch|branch]]. If a '''node''' is used as a container for other nodes, it may also be called a '''folder'''. The [[contents menu]] provides some [[Subset operations|operations on entire branches]] such as: '''Learn''', '''Review all''', '''Statistics''', etc.
+:See also:
+:*[[Building the knowledge tree]]
+:*[[Contents|'''Contents''' window]]
+:*[https://en.wikipedia.org/wiki/Tree_(data_structure) Tree structure] at Wikipedia

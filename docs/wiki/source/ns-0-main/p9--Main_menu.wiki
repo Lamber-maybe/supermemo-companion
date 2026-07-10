@@ -1,0 +1,12 @@
+You have to choose [[Levels|'''Middle''' or '''Professional''']] [[Glossary:Level|level]] to see the full main menu (the [[Levels|'''Beginner''' and '''Basic''']] [[Glossary:Level|levels]] will only display the '''[[File menu|File]]''' and [[Help menu|'''Help''']] menus). The following submenus can be found on the main menu of SuperMemo:
+
+*[[File menu|'''File''']] submenu contains options for managing files of a SuperMemo [[Glossary:Collection|collection]]. For example: creating a new [[Glossary:Collection|collection]], deleting a [[Glossary:Collection|collection]], [[Repairing collections|recovering from a collection damage]], etc. It also makes it possible to choose between [[Levels|'''Basic''', '''Beginner''', '''Middle''', and '''Professional''']] [[Glossary:Level|levels]]
+*[[Edit menu|'''Edit''']] submenu contains editing options such as: add [[Glossary:Element|element]], delete [[Glossary:Element|element]], edit [[Glossary:Element|element]], [[web import]], etc. 
+*[[Search menu|'''Search''']] submenu makes it possible to search for texts, files, [[Glossary:Element|elements]], pictures, etc. 
+*[[Learn menu|'''Learn''']] submenu contains options for learning such as learning stages, repetition sorting, postpone tools, etc. 
+*[[View menu|'''View''']] submenu makes it possible to view [[Glossary:Element_subset|subsets]] of [[Glossary:Element|elements]] in [[Glossary:Browser|element browsers]] (e.g. [[Glossary:Memorized element|memorized elements]], [[Glossary:Leech|difficult elements]], [[Glossary:Outstanding_element|outstanding elements]], neural queue, [[priority queue]], etc.) 
+*[[Toolkit menu|'''Toolkit''']] submenu contains various tools such as '''[[Options]]''', [[SuperMemo Commander|command list]], [[Calendar|calendar of repetitions]], [[Mercy|repetition rescheduling tools]], statistical tools, [[Sleep Chart|sleep and learning timeline]], '''[[Plan]]''', [[Tasklist manager]], etc. 
+*[[Window menu|'''Window''']] submenu makes it possible to conveniently arrange windows on the SuperMemo desktop, choose between previously saved [[Glossary:Layout|layouts]], change themes, etc. 
+*[[Help menu|'''Help''']] submenu contains options that can be useful to learn more about SuperMemo: this help, [[Question of the Day]], links to [http://www.super-memory.com SuperMemo's Website], etc.
+
+[[Image:File menu.jpg|center|SuperMemo: File menu which you can use to manage your collections]]

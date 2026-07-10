@@ -1,0 +1,24 @@
+You can display the '''Alarm''' toolbar in the following ways (at '''Middle''' or higher [[Glossary:Level|level]]) by clicking the '''Alarm''' tab at the bottom of the [[element window]].
+
+<div class="center">
+[[File:Alarm toolbar.jpg|SuperMemo: Alarm toolbar with an alarm timer and stop-watch at the the bottom of the element window]]
+{{:File:Alarm toolbar.jpg}}
+</div>
+
+== Toolbar option groups ==
+
+The toolbar features the the following main option groups:
+* [[#Alarm|Alarm]]
+* [[#Timer|Timer]]
+
+=== Alarm ===
+
+* Alarm countdown timer - displays how much time is left until the alarm is raised (in yellow), or ''Alarm!'' when the time is up
+* '''Start/Shift''' - sets the time when the next alarm should be raised. Once the countdown has started, the '''Set''' button turns to '''Shift'''. By clicking the latter, you can shorten/extend the amount of time until the next alarm
+* '''Stop''' - cancel the current alarm, resets the alarm countdown timer, hides the '''Alarm''' toolbar and displays the [[learnbar]]
+
+=== Timer ===
+
+* '''Learning time stopwatch''' - displays the total time you spend on answering questions (i.e. it is automatically suspended/stopped once you press the '''Show answer''' button). The time you spend on reviewing topics is not included.
+* '''Start/Pause/Restart''' - (re)starts/pauses the learning time stopwatch
+* '''Reset''' - resets the learning time stopwatch

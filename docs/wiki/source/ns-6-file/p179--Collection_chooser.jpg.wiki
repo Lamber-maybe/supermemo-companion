@@ -1,0 +1,1 @@
+{{Fig|'''Collection chooser''' available with '''[[File menu|File]] : [[File menu#Favorites|Favorites]]''' (Ctrl+O) helps you quickly access your most frequently used [[Glossary:Collection|collection]]s}}

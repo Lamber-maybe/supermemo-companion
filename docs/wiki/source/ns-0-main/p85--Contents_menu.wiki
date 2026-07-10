@@ -1,0 +1,110 @@
+== Accessing the contents menu ==
+
+The contents menu in the [[Contents|'''Contents''' window]] can be used for operations on the [[Glossary:Knowledge_tree|knowledge tree]]. To open this menu:
+
+* press ''Shift+F10'' in the [[Contents|'''Contents''' window]],
+* right-click over the selected [[Glossary:Branch|branch]] of the [[Glossary:Knowledge_tree|knowledge tree]], or
+* press ''Apps Key'' ([[Image:Application key.gif|Application key allows you to open a pop-up menu relevant for the current context]]) (context menu key left of the right ''Ctrl'' key).
+
+== Contents menu items ==
+
+The contents menu includes the following options: 
+
+=== New ===
+
+*'''New''' - add new [[Glossary:Element|elements]]
+**'''Item''' - create a new [[Glossary:Item|item]] as a [[Glossary:Child|child]] of the selected [[Glossary:Element|element]]
+**'''Topic''' - create a new [[Glossary:Topic|topic]] as a [[Glossary:Child|child]] of the selected [[Glossary:Element|element]]
+**'''Add child''' - add a new [[Glossary:Element|element]] as a child of the currently selected element. A child is an element that is one level down in the [[Glossary:Knowledge_tree|knowledge tree]]. The type of the [[Glossary:Element|element]] is determined by the default type in the '''Element type''' combo box (at the bottom of the [[Contents|'''Contents''' window]]) 
+**'''Insert sibling''' (''Ins'') - insert a new [[Glossary:Element|element]] in the place of the currently selected element (the current element moves one position down). The type of the new [[Glossary:Element|element]] is determined by the default type in the '''Element type''' combo box (at the bottom of the [[Contents|'''Contents''' window]]) 
+**'''Duplicate''' (''Alt+D'') - duplicate the currently selected [[Glossary:Element|element]] and attach the duplicate as a [[Glossary:Child|child]] of the duplicated element 
+**'''Folder''' - create a [[Glossary:Dismissed_element|dismissed]] [[Glossary:Template|template]]-less [[Glossary:Topic|topic]], which can act as a folder for holding other [[Glossary:Element|elements]]
+
+=== View ===
+
+*'''View''' 
+**'''Element''' (''Shift+Enter'') - bring the [[element window]] to the front with the currently selected [[Glossary:Element|element]]
+**'''<span id="Branch">Branch</span>''' (''Ctrl+Space'') - put all [[Glossary:Element|elements]] belonging to the selected [[Glossary:Branch|branches]] in the [[Browser|element browser]]
+**'''Descendants''' - put all [[Glossary#Descendant|descendants]] of the selected [[Glossary:Branch|branches]] in the [[Browser|element browser]] (see: [https://supermemopedia.com/wiki/Difference_between_View_Branch_and_View_Descendants_in_Contents_Menu interpretation])
+**'''Selection '''- view all selected [[Glossary:Element|elements]] in the [[Browser|element browser]]
+**'''Children''' - put all [[Glossary:Child|children]] of the currently selected [[Glossary:Branch|branch]] in the [[Browser|element browser]] 
+**'''Map''' - view the currently [[Glossary:Branch|branch]] as a map
+**'''Parent''' (''Ctrl+Up'') - go to the parent element of the presently selected [[Glossary:Element|element]]
+**'''First child''' - go to the first [[Glossary:Child|child]] of the currently selected [[Glossary:Element|element]]
+**'''Last child''' (''Ctrl+Down'') - go to the last [[Glossary:Child|child]] of the currently selected [[Glossary:Element|element]]
+**'''Collapse''' (''Ctrl+Alt+Enter'') - collapse the current [[Glossary:Branch|branch]]
+
+=== Rename ===
+
+*'''Rename''' - change the title of the currently selected [[Glossary:Element|element]]
+
+=== Copy ===
+
+*'''Copy''' - copy the currently selected [[Glossary:Element|element]] to the clipboard
+
+=== Paste ===
+
+*'''Paste''' - paste the [[Glossary:Element|element]] from the clipboard (previously put there with '''Copy''' above)
+
+=== Delete ===
+
+*'''Delete''' - delete the currently selected [[Glossary:Element|element]] and all its [[Glossary#Child|children]] and [[Glossary#Descendant|descendants]] (if any)
+
+=== Move ===
+
+*'''Move''' (''Shift+Ctrl+V'') - move the currently selected [[Glossary:Element|element]] to a new location in the [[Glossary:Knowledge_tree|tree]]. Use '''Accept''' (at the bottom of the window) or double-click to point to the new location for the [[Glossary:Element|element]]
+
+=== Learn ===
+
+*[[Subset learning|'''Learn''']] (''Ctrl+L'') - make repetitions on the currently selected [[Glossary:Branch|branch]] and memorize [[Glossary:Pending_element|pending elements]] belonging to the branch
+
+=== Dismiss ===
+
+*'''Dismiss''' (''Ctrl+D'') - [[Glossary:Dismiss|dismiss]] the currently selected [[Glossary:Element|element]]
+
+=== Search ===
+
+*'''Search''' 
+**'''Find''' - find a string in the first title in expanded [[Glossary:Branch|branches]] below the currently selected [[Glossary:Element|element]]
+**'''Find next''' (''F3'') - repeat the last search done with '''Search : Find''' above
+**'''Search branch''' (''Ctrl+F'') - search for a text in the selected [[Glossary:Branch|branch]]. All texts are considered in search (i.e. not only titles)
+
+=== Concept ===
+
+*'''Concept''' - options for managing [[Glossary:Concept|concepts]] 
+**'''<span id="Create_new_category">Create</span>''' (''Ctrl+K'') - create a new [[Glossary:Concept|concept]] with the currently selected [[Glossary:Element|element]] as the [[Glossary:Root_node|root]]. The [[Glossary:Concept|concept]] will take the title of its [[Glossary:Root_node|root element]] as its name. You can change that to a shorter or more mnemonic name. The currently selected [[Glossary:Element|element]] will also become the first [[Glossary:Hook_node|hook]] of the [[Glossary:Concept|concept]]
+**'''<span id="Make_root">Set root</span>''' - make the currently selected [[Glossary:Element|element]] the [[Glossary:Root_node|root]] of the current [[Glossary:Concept_group|concept group]] (the current [[Glossary:Concept_group|concept group]] is displayed on the [[navigation bar]] in the [[element window]]). The [[Glossary:Root_node|root]] is the [[Glossary:Element|element]] that is the [[Glossary:Ancestor|ascendant]] of all elements in the [[Glossary:Concept_group|concept group]]
+**'''<span id="Make_hook">Set hook</span>''' - make the currently selected [[Glossary:Element|element]] the [[Glossary:Hook_node|hook]] of the current [[Glossary:Concept_group|concept group]] (the current concept group is displayed on the [[navigation bar]] in the [[element window]]). Once you change the [[Glossary:Hook_node|hook]], all newly added [[Glossary:Element|elements]] will be [[Glossary:Child|children]] of the hook (only within the current [[Glossary:Concept_group|concept group]])
+
+=== Export ===
+
+*'''Export''' 
+**'''Transfer elements''' - transfer the entire [[Glossary:Branch|branch]] to another [[Glossary:Collection|collection]]. This option is similar to '''[[File menu|File]] : [[File menu#Merge collection|Merge collection]]'''; however, only the selected [[Glossary:Branch|branch]] is transferred (as opposed to the entire [[Glossary:Collection|collection]])
+**'''Document''' - export all texts from the currently selected [[Glossary:Branch|branch]] as a single HTML document 
+**'''Q&amp;A text file''' - export all [[Glossary:Item|items]] from the currently selected [[Glossary:Branch|branch]] to a Q&amp;A text file 
+**'''XML''' - export all [[Glossary:Element|elements]] from the currently selected [[Glossary:Branch|branch]] in the XML format that can be imported to other SuperMemos. XML files may also be imported back to SuperMemo for Windows 
+**'''HTML''' - export the currently selected [[Glossary:Branch|branch]] to HTML. Not all [[Glossary:Component|component]] types can be exported. The component layout is not preserved 
+**'''Source text''' - export the currently selected [[Glossary:Branch|branch]] source text in the text format 
+**'''Subset''' - export a [[Glossary:Subset|subset]] as text. This option is the same as '''Export : Source text''' with this exception that only the [[Glossary:Element|elements]] belonging to a selected [[Glossary:Subset|subset]] are exported. Read more: [[Using subsets]] 
+**'''Learning data''' - export the learning process from all [[Glossary:Element|elements]] in the currently selected [[Glossary:Branch|branch]]. You can later use '''[[File menu|File]] : [[File menu#Import|Import]] : Learning process''' to import such a file to the same [[Glossary:Collection|collection]] or a subset collection derived from the original collection (e.g. generated to make repetitions on a notebook with limited space or performance)
+
+=== Tools ===
+
+*'''Tools''' 
+** '''Name node''' - automatically assign a name and date to an import folder using the titles of imported children
+**'''Regroup in folders''' - group all [[Glossary:Child|children]] in the [[Glossary:Branch|branch]] into a number of branches with equal number of children. Do not affect further [[Glossary:Descendant|descendants]]. Unlike '''Arrange in folders''' below, this option preserves the structure of knowledge generated with [[Glossary:Incremental_reading|incremental reading]] 
+**'''<span id="Arrange">Arrange in folders</span>''' - group all [[Glossary:Element|elements]] in the [[Glossary:Branch|branch]] into a number of branches with equal number of [[Glossary:Child|children]]. For example, if your [[Glossary:Branch|branch]] contains 100 [[Glossary:Element|elements]], you can use '''Arrange in folders''' to create 10 empty elements used as placeholders for the remaining elements. Each of those newly created [[Glossary:Element|elements]] will host 10 [[Glossary:Child|children]]. Thus all your 100 [[Glossary:Element|elements]] will be grouped in 10 [[Glossary:Branch|branches]] with 10 [[Glossary:Child|children]] each
+**'''Flatten''' - convert a branched [[Glossary:Node|tree node]] into a flat linear structure of [[Glossary:Sibling|sibling]]s 
+**'''Random test''' (''F11'') - run a random test on all [[Glossary:Element|elements]] in the selected [[Glossary:Branch|branch]]
+
+=== Font ===
+
+*'''Font''' - change the font used in the [[Contents|'''Contents''' window]]
+
+=== Process branch> ===
+
+*'''Process branch>''' - process all [[Glossary:Element|elements]] in a given [[Glossary:Branch|branch]] using options available from the [[Subset operations|subset processing menu]]
+
+=== Close ===
+
+*'''Close''' (''Ctrl+F4'') - close the [[Contents|'''Contents''' window]]. You can re-open it by choosing '''Contents''' in the [[element window]]

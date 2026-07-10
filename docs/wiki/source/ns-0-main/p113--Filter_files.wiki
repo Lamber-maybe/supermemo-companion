@@ -1,0 +1,21 @@
+Filter files with the extension ''flt'' can be used in SuperMemo to globally process texts in the [[Glossary:Collection|collection]]. For example, it is more convenient to do multiple replace text operations with filters that to do it manually with [[Registry menu#Find_and_replace|'''Search and replace''']] on the [[registry menu]]. 
+
+As filters are now less often used, filter files in SuperMemo 18 do not support the complete filter file specification from SuperMemo 6 and SuperMemo 7. You will mostly want to use filter files in the following circumstances: 
+
+#replacing a large number of texts with selected strings in the [[Glossary:Collection|collection]] 
+#removing comments and other delimited texts from the [[Glossary:Collection|collection]]
+
+Filter files are text files than can be edited manually. They are made of sections such as ''[REPLACE]'', ''[DELIMITERS]'', ''[CUT]'', etc. Each section contains a list of arguments placed in separate lines. For example, the ''[REPLACE]'' section will contain pairs of strings: strings to be replaced and string to be put in place of replaced strings. 
+
+This is an exemplary contents of a filter file (see below for the effect of such a filter on a collection): 
+<blockquote>''[DELIMITERS]''<br>''&lt; &gt; cut''<br>''{ } cut''<br>''[REPLACE]''<br>''histol: histology:''<br>''physiol: physiology:''<br>''mem: <nowiki>''</nowiki>''<br>''endocr: <nowiki>''</nowiki>''<br></blockquote>
+If you open the text [[Glossary:Registry|registry]] with '''[[Search menu|Search]] : [[Search menu#Texts|Texts]]''', choose '''[[Registry menu#Search|Search]] : Apply filter''' on the [[registry menu]] and select such a file, the following changes will be made to texts throughout the [[Glossary:Collection|collection]]: 
+
+#all texts delimited with angle brackets will be removed 
+#all texts delimited with braces will be removed 
+#texts like ''histol:'' and ''physiol:'' will be replaced with ''histology:'' and ''physiology:'' respectively 
+#texts like ''mem:'' and ''endocr:'' will be removed
+
+You can also use filters with '''[[Edit menu|Edit]] : [[Edit menu#Edit text|Edit text]] : Apply filter''' from the [[main menu]].
+
+Filter files are by default stored in the [[SuperMemo files#Collection files|''[FILTERS]'' subfolder]]

@@ -1,0 +1,56 @@
+== Introduction ==
+
+'''WebView component''' is a sister of the [[HTML component]]. It extends [[SuperMemo]] into areas enabled by modern Chromium‑based browsers. While the current implementation is limited, it provides a clean foundation for future expansion and simplifies the adoption of new web technologies.
+
+== Technical ==
+
+SuperMemo integrates '''WebView4Delphi''', a modern wrapper around Microsoft’s WebView2 engine. This choice gives us a lightweight, fast, and future‑oriented browser layer with a very small footprint and native Windows integration. WebView4Delphi exposes a broad and flexible API, supports advanced scripting and embedding scenarios, and receives frequent updates that closely track Microsoft’s evolving Edge/Chromium platform.
+
+We wanted a component with a vast range of options, regular maintenance, and long‑term alignment with the Chromium ecosystem, without the deployment burden of shipping a full embedded browser engine such as CEF.
+
+We did not adopt Delphi’s built‑in '''TEdgeBrowser''' because its API surface is significantly more limited and tied to Delphi’s release cycle. WebView4Delphi provides much more complete WebView2 coverage, faster updates, and greater flexibility for advanced features required by SuperMemo’s architecture.
+
+Our choice seems optimum for the longevity of SuperMemo in the modern Chromium-based web browser ecosystem.
+
+== Usability ==
+
+Because the WebView component uses a modern Chromium engine, it unlocks many improvements for everyday learning:
+* '''Math:''' Proper rendering of complex mathematical formulas.
+* '''Wikipedia:''' Smoother browsing, formatting, and importing from Wikipedia pages.
+* '''Pasting images as Base64:''' Instant image embedding without file management (see details [[WebView component#Pasting images|below]]).
+* '''[[PDF]]:''' Native support for [[incremental reading]] in PDFs 
+* '''Scripting:''' Full support for modern web scripts and interactive web content.
+* '''Flawless YouTube:''' Seamless playback of YouTube videos directly inside your WebView components (with a wider range of options than in [[HTML component]]s).
+* '''HTML parsing:''' Mshtml tends to "repair" HTML (e.g. unbalanced tags). This could corrupt texts in [[HTML component]]s 
+
+=== Pasting images ===
+
+The [[HTML component]] and WebView components handle pasted images differently. The traditional [[HTML component]] stores pasted images in the [[glossary:filespace|filespace]], keeps their record in the [[glossary:registry|registry]], and uses reference counting to delete them when they are no longer needed.
+
+This mechanism has not been implemented in the WebView component due to its ability to encode images in HTML in Base64 format. This solution goes around the [[glossary:registry|registry]] and image registration altogether. Duplicate images take more space, but there is no need for a complex reference count, and no risk of clogging up the [[glossary:filespace|filespace]] with unused images.
+
+== Comparing HTML and WebView components ==
+* Only WebView displays PDF
+* Only WebView allows for [[incremental reading]] in PDF
+* Only WebView can convert PDF to HTML
+* Only WebView supports inline SVG images that may show up in some web imports
+* Images: HTML stores them in the registry and in the [[Glossary:filespace|filespace]]; WebView stores them inline as Base64
+* FullHTML not recommended in HTML (unless in Read-only components); FullHTML recommended in WebView
+* HTML is faster than WebView
+* WebView does not implement the full range of functionality known from HTML
+* WebView displays in modern standards; HTML in convenient way (simplified HTML)
+* Media and scripting available in WebView (not in HTML)
+* WebView recommended for mathematical formulas
+* [[HTML component]] is more likely to corrupt HTML formatting when repairing erroneous tags
+
+'''Recommendation:''' Use WebView only for YouTube, PDF, math, and texts that must be beautiful or run scripts. Use HTML in all other cases, esp. for speedy [[incremental reading]]
+
+== Requirements ==
+
+WebView comes preinstalled in Windows 11 and nearly all Windows 10 installations.
+
+In case of trouble, you can reinstall directly from Microsoft [https://developer.microsoft.com/en-us/microsoft-edge/webview2/?form=MA13LH#download here].
+
+For SuperMemo WebView problems, install the latest '''Evergreen''' WebView2 Runtime. This is the recommended choice for almost all users and apps, including SuperMemo.
+
+SuperMemo comes installed with WebView2Loader.dll, however, 32-bit loader is needed for 32-bit version (64-bit is default). SuperMemo will alert you at the start.

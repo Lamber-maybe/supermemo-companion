@@ -1,0 +1,2 @@
+;<span id="Pending_element">pending element</span>
+:[[Glossary:Element|element]] that awaits memorization in the [[Glossary:Pending_queue|pending queue]]. To move an [[Glossary:Element|element]] to the end of the [[Glossary:Pending_queue|pending queue]], you can do choose '''[[Element menu#Learning|Learning]] : [[Glossary:Remember|Remember]]''' and '''[[Element menu#Learning|Learning]] : [[Glossary:Forget|Forget]]''' from the [[element menu]] (in that sequence)

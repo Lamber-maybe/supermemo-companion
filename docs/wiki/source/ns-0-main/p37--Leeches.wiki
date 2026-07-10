@@ -1,0 +1,144 @@
+== Difficult material: leeches  ==
+
+Learning material can be inherently difficult (e.g. numbers, sets, enumerations, etc.) or it can be wrongly formulated. Mnemonic techniques and other tools can be used in tackling inherently difficult material (see: [http://super-memo.com/articles/20rules.htm 20 rules of formulating knowledge in learning]) 
+
+<div class="bs-callout bs-callout-warning">
+'''Important! A small proportion of difficult items in SuperMemo can consume a large proportion of your time'''
+</div>
+
+The term ''leech'' is used in SuperMemo to refer to ill-formulated [[Glossary:Item|items]]. An [[Glossary:Element|element]] is called a [[Glossary:Leech|leech]] when it meets user-defined ''leech criteria'' such as the number of [[Glossary:Lapse|memory lapses]] and the current [[Glossary:Interval|interval]]. These parameters can be defined when using '''[[View menu|View]] : [[View menu#Other|Other]] : Leeches''' (''Shift+F3''). An [[Glossary:Element|element]] becomes a [[Glossary:Leech|leech]] when the number of [[Glossary:Lapse|memory lapses]] passes a defined limit. However, an [[Glossary:Element|element]] is no longer considered a [[Glossary:Leech|leech]] if it is remembered beyond a certain [[Glossary:Interval|interval]] (independent of the number of [[Glossary:Lapse|lapses]]).
+
+<div class="bs-callout bs-callout-warning">
+'''Difficult items (leeches) make people quit SuperMemo. Hunt them to boost your success!'''
+</div>
+
+== Leech Hunting Options  ==
+
+Although '''[[View menu|View]] : [[View menu#Other|Other]] : Leeches''' (''Shift+F3'') can be used to review, delete and reformulate [[Glossary:Leech|leeches]], the best approach to tackling most leeches is to review them in detail one by one in the course of the learning process. In '''[[Toolkit menu|Toolkit]] : [[Options]] : Leeches''', you can select the following leech management options: 
+
+*'''None''' - no leech management. During repetitions SuperMemo will treat [[Glossary:Leech|leeches]] in the same way as other [[Glossary:Element|elements]] 
+*'''Wizard''' - upon encountering a [[Glossary:Leech|leech]] during repetitions, SuperMemo will open the '''Leech Alert!''' wizard (see below). This is the recommended choice for rational supervision of the learning process 
+*'''Auto-forget''' - upon encountering a [[Glossary:Leech|leech]] during repetitions, SuperMemo will automatically remove the leech from the learning process and put it at the end of the [[Glossary:Pending_queue|pending queue]] (i.e. the queue of elements awaiting memorization) 
+*'''Auto-postpone''' - upon encountering a [[Glossary:Leech|leech]] during repetitions, SuperMemo will automatically reset the learning parameters of the [[Glossary:Element|element]] and schedule it for repetition after a sufficiently long [[Glossary:Interval|interval]]. Quite often, taking a break from repetitions of a [[Glossary:Leech|leech]] may help overcome an erroneous memory pattern. For example, if you tend to confuse Nigeria and Niger on the African map, taking a 50-100 day break from making repetitions on this subject may actually resolve the confusion by cleaning your memory from erroneous traces. Once you consciously re-memorize the position of both countries on the map, the problem may be solved once and for all. '''Important!''' '''Auto-postpone''' may also produce infinite leech loops in which you will indefinitely try to postpone ill-structured material never actually solving the problem!
+
+[[Image:Options leeches.jpg|center|SuperMemo: Toolkit : Options : Leeches tab]] 
+
+'''Include semi-leeches''' checkbox can be used to tighten the criteria for a leech warning. A ''semi-leech'' is an [[Glossary:Element|element]] that is one [[Glossary:Lapse|memory lapse]] away from becoming a [[Glossary:Leech|leech]]. For example, if a leech is defined as an [[Glossary:Element|element]] with five or more [[Glossary:Lapse|lapses]] and an [[Glossary:Interval|interval]] up to 60 days, an element with four lapses and 1000 day interval will be a ''semi-leech'' (because after a single lapse, it will reach 5 lapses combined with a short interval thus becoming a leech). If your [[Glossary:Collection|collection]] is well-structured and you do not encounter many [[Glossary:Leech|leeches]], you can turn '''Include semi-leeches''' on to tighten leech supervision.
+
+== Leech Alert Wizard  ==
+
+If you choose '''[[Toolkit menu|Toolkit]] : [[Options]] : Leeches : Wizard''', the following dialog will be displayed each time you encounter a [[Glossary:Leech|leech]] during repetitions: 
+
+<div class="center">
+[[Image:Leech alert.jpg|745px|SuperMemo: A Leech Alert raised for an item that has already been forgotten 30 times which qualifies it as an intractable one requiring user's attention and action]] 
+{{:Image:Leech alert.jpg}}
+</div>
+
+This is the function of individual controls: 
+
+*'''Continue''' (''Esc'') - continue with repetitions without taking any action 
+*'''Show answer''' (default action) - show the answer to the question posed by the [[Glossary:Leech|leech]]
+*'''Help''' - display this page
+*'''Lapses''' - graphically displays the number of [[Glossary:Lapse|memory lapses]] 
+*'''Interval''' - graphically displays the length of the current [[Glossary:Interval|interval]] 
+*'''Postpone''' - reset the [[Glossary:Leech|leech]] and schedule it at an [[Glossary:Interval|interval]] defined in '''Postpone interval''' field 
+*'''Edit''' - edit the [[Glossary:Leech|leech]] 
+*'''Forget''' - remove the [[Glossary:Leech|leech]] from the learning process and add it at the bottom of the [[Glossary:Pending_queue|pending queue]]
+*'''Dismiss''' - remove the [[Glossary:Leech|leech]] from the learning process or the [[Glossary:Pending_queue|pending queue]] (i.e. dismiss the leech) 
+*'''Delete''' - delete the [[Glossary:Leech|leech]] and all its [[Glossary:Child|children]]  elements
+*'''Auto-postpone''' - turn on the auto-postpone mode for leeches
+*'''Auto-forget''' - turn on the auto-forget mode 
+*'''Include semi-leeches''' - allow of evoking the leech alert on semi-leeches 
+*'''Parameters''' - edit [[element parameters]] (e.g. [[Glossary:Forgetting_index|forgetting index]]) 
+*'''Reschedule''' - reschedule the [[Glossary:Leech|leech]] by specifying the next repetition date 
+*'''Save layout''' - save the current [[Glossary:Layout|layout]] and preserve the position of the '''Leech alert!''' wizard 
+*'''Great-Bad''' - grades that can be used to evaluate your response to the question posed by the [[Glossary:Leech|leech]] (these act in the same way as grade buttons in the [[element window]])
+
+== Recommended leech strategy  ==
+
+*In heavily overloaded [[Glossary:Incremental_reading|incremental reading]], use '''Auto-sort''' and '''Auto-postpone''' to reduce the flow of [[Glossary:Leech|leeches]] to a trickle
+*If you learn large volumes of [[Glossary:Item|items]] and you can afford lower [[Glossary:Retention|retention]], use '''Auto-forget''' 
+*If you are not sure you can use '''Auto-forget''' due to higher retention requirements but still press on high speed of learning, use '''Auto-postpone''' 
+*If you want to eliminate [[Glossary:Leech|leeches]] without risking a drop in [[Glossary:Retention|retention]] choose '''Wizard''' in leech management options
+
+If you use the wizard, make the following choices upon encountering a leech: 
+
+*For less important [[Glossary:Leech|leeches]], choose one of the following in the increasing order of leech importance: 
+*#'''Delete''' or '''Dismiss''' (use '''Dismiss''' if the [[Glossary:Leech|leech]] may include valuable [[Glossary:Child|children]] or if you want leave it for future reference) 
+*#'''Forget''' (the [[Glossary:Leech|leech]] will come back once you memorize the whole [[Glossary:Pending_queue|pending queue]]) 
+*#'''Postpone''' (the [[Glossary:Leech|leech]] will come back after the period defined in '''Postpone interval''' passes) 
+*#'''Reschedule''' (use '''Reschedule''' to bring the [[Glossary:Leech|leech]] at a specified [[Glossary:Interval|interval]] that may be shorter than '''Postpone interval''')
+*If you cannot make an evaluation without actually responding to the leech question, choose '''Show answer''' and reevaluate the [[Glossary:Leech|leech]]. If you recall the answer correctly, you should rather grade your response and defer your action until the next repetition (chances are, your leech will fall out from the leech criteria) 
+*The most efficient method of dealing with [[Glossary:Leech|leeches]] is to choose '''Edit'''; however, you will need lots of experience to figure out how to properly formulate the material, split it into smallest possible components and use mnemonic techniques (see: [http://super-memory.com/articles/20rules.htm 20 rules of formulating knowledge]) 
+*If you do not know what to do with a given [[Glossary:Leech|leech]], you can just press ''Esc'' and continue with repetitions. '''Warning!''' This can easily become a habit and all the idea behind the leech alert will be defeated! Before using ''Esc'' becomes automatic, read this text carefully and learn to make your leech-related decisions!
+
+== Defining and viewing leeches  ==
+
+The option '''[[View menu|View]] : [[View menu#Other|Other]] : Leeches''' (''Shift+F3'') can be used to locate [[Glossary:Leech|leeches]] in your [[Glossary:Collection|collection]]. This option uses the '''[[Element filter]]''' dialog box that can be used to find all [[Glossary:Element|elements]] meeting a specific set of criteria such as the number of repetitions, number of [[Glossary:Lapse|memory lapses]], length of the current [[Glossary:Interval|interval]], status ([[Glossary:Memorized_element|memorized]], [[Glossary:Pending_element|pending]], or [[Glossary:Dismissed_element|dismissed]]), type ([[Glossary:Item|item]], [[Glossary:Topic|topic]] or [[Glossary:Task|task]]), etc. 
+
+The purpose of locating [[Glossary:Leech|leeches]] is to reedit most intractable [[Glossary:Item|items]] with a view to applying appropriate [http://super-memory.com/articles/20rules.htm mnemonic techniques]. Alternatively, you can reset [[Glossary:Element|elements]] (e.g. to deal with them later), [[Glossary:Dismiss|dismiss]] them (to use them only as reference, e.g. with '''[[Search menu|Search]] : [[Find elements]]'''), or simply delete them. 
+
+A new powerful tool against [[Glossary:Leech|leeches]] is a possibility of exporting your leeches to a handheld device (see: [http://super-memory.com/articles/soft/pocket.htm Revolution in the pocket]). Although, it may seem that pocket repetitions are usually done in conditions of lesser focus, working in the leech-only mode sets your brain onto an emergency alertness level. You approach repetitions differently if recall failure is expected. At time, this is enough to wrap your mind around harder material and gradually reduce the leech load. 
+
+To maximize the effectiveness of the learning process, you should learn to use '''[[View menu|View]] : [[View menu#Other|Other]] : [[Leeches]]''' and periodically remove from your [[Glossary:Collection|collection]] most intractable and badly structured material. 
+
+[[Image:Element filter.jpg|center|594px|SuperMemo: Element filter dialog box which you can use to browse all elements that meet your search criteria (e.g. in leech hunting)]] 
+
+The following fields can be used to select the minimum and the maximum values that fall into the range defined for difficult [[Glossary:Element|elements]]: 
+
+*'''Repetitions''' - number of repetitions made with a given [[Glossary:Element|element]]. This is not a good criterion for defining [[Glossary:Leech|leeches]] and is turned off by default 
+*'''Lapses''' - number of times a given [[Glossary:Element|element]] was forgotten. This is the primary field for defining [[Glossary:Leech|leeches]]. For example, if you want to find all [[Glossary:Element|elements]] that have been forgotten at least 5 times, set '''Minimum''' at 5 and '''Maximum''' at 100 (or other value that is greater than maximum number of [[Glossary:Lapse|lapses]]) 
+*'''Interval''' - number of days between the last repetition and the next repetition. You might want to limit [[Glossary:Interval|intervals]] to some value (e.g. 1 to 50 days) to account for the fact that even [[Glossary:Element|elements]] that have been forgotten many times may be disregarded as [[Glossary:Leech|leeches]] if they had passed a certain length of [[Glossary:Interval|interval]] without being forgotten 
+*'''Last repetition''' - number of days between the first day of the learning process and the last repetition date (see '''[[Toolkit menu|Toolkit]] : [[Calendar]]''' to view day numbering). This field should not be used in searching for [[Glossary:Leech|leeches]] 
+*'''Next repetition''' - number of days between the first day of the learning process and the next repetition date. This field should not be used in searching for [[Glossary:Leech|leeches]] 
+*'''A-Factor''' - value of [[Glossary#A-Factor|A-Factor]] assigned to a given [[Glossary:Element|element]]. This is not a good criterion for defining [[Glossary:Leech|leeches]]. If you want to use it, choose the lower range of [[Glossary:A-Factor|A-Factors]] (e.g. from 1.2 to 1.5) 
+*'''Forgetting index''' - probability of forgetting a given [[Glossary:Element|element]] during each repetition. The [[Glossary:Forgetting_index|forgetting index]] is set by the user and is by no means a reflection of [[Glossary:Difficulty|element difficulty]]. You might use it however to locate [[Glossary:Item|items]] of lower priority (e.g. as defined by a higher [[Glossary:Forgetting_index|forgetting index]]). By using the '''Forgetting index''' field you might sharpen the leech criteria for [[Glossary:Element|elements]] that are of lower priority. For example, you might decide to reset all [[Glossary:Leech|leeches]] and be more strict with resetting [[Glossary:Element|elements]] to which you assigned a higher [[Glossary:Forgetting_index|forgetting index]] 
+*'''Ordinal number''' - [[Glossary:Ordinal_number|ordinal number]] assigned to a given [[Glossary:Element|element]]. The ordinal number is set by the user and is by no means a reflection of [[Glossary:Difficulty|element difficulty]]. You might use it however to locate [[Glossary:Item|items]] of lower priority (e.g. as defined by a higher [[Glossary:Ordinal_number|ordinal numbers]]). This way you might sharpen the leech criteria for [[Glossary:Element|elements]] that are of lower priority
+
+If you do not want to use a given criterion, uncheck the check-box associated with a given field. If you do want to use it, check the check-box and specify appropriate '''Minimum''' and '''Maximum''' values. 
+
+By definition, all [[Glossary:Leech|leeches]] are [[Glossary:Memorized_element|memorized]] [[Glossary:Item|items]]. This is why '''Type''' and '''Status''' fields of '''Element filter''' are disabled. 
+
+Once you click '''OK''', all [[Glossary:Leech|leeches]] meeting the specified criteria will be found and will be displayed in a [[browser]]. You can then use '''Learn''' (''Ctrl+L'') in the leech browser to make repetitions in the leech subset only. 
+
+Using '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Random test|Random test]] : Leeches''' you can run a random test on all [[Glossary:Leech|leeches]]. However, you should remember that part of the leech problem is repetition that is too frequent (i.e. causing the [[Glossary:Spacing_effect|spacing effect]]). This is why '''Auto-postpone''' and '''Auto-forget''' are so efficient. This is also why [[Glossary:Leech|leeches]] are much less of a problem in heavily overloaded [[Glossary:Incremental_reading|incremental reading]]. 
+
+Leech parameters are stored between sessions in the [[SuperMemo files#Collection files|file ''&lt;supermemo folder&gt;\&lt;systems&gt;\&lt;collection name&gt;\collection.ini'']]  in the section ''[Leech]''
+
+== FAQ  ==
+
+=== You can clear the Leech Alert with Esc ===
+
+{{Mail Header
+|from=Jens Buurgaard Nielsen
+|country=Denmark
+|sent=Thursday, August 09, 2001 9:53 PM
+|subject=
+}} 
+
+'''<span id="6047-7093">Question</span>'''
+
+'''Leech alert''': Nice feature, but I hate that per default, the leech window becomes active. I don't want to move my mouse to another window to do the grading. I often use ''Space'' bar to activate the default button, and sometimes, it automatically moves to '''Postpone''' when I intended to grade myself '''Good'''
+
+'''Answer'''
+
+You can either disable leech alert entirely in '''Options''' or just clear it with ''Esc'' and continue the repetition cycle using standard keys 
+
+----
+
+=== Semi-leeches cannot be auto-forgotten ===
+
+{{Mail Header
+|from=Mike Condron
+|country=USA
+|sent=Thursday, August 09, 2001 9:53 PM
+|subject=
+}} 
+
+'''<span id="semi-leech">Question</span>'''
+
+Why can I not choose '''Include semi-leeches''' in leech manager for auto-postpone or auto-forget?
+
+'''Answer'''
+
+Semi-leeches are not leeches. They can be scheduled for repetition at very long intervals. Removing them from or reintroducing them to the learning process would add a substantial cost to learning

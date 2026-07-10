@@ -1,0 +1,40 @@
+== The 3 Key Facts About SuperMemo ==
+
+# '''Learn faster, remember for years''': SuperMemo is a powerful learning method that helps you retain knowledge for life — not just for exams.
+# '''Available everywhere''': Use SuperMemo on '''Windows''', '''Android''', '''iOS''', or right in your [https://supermemo.com web browser].
+# '''Powered by science''': SuperMemo is built on the [https://supermemo.guru/wiki/Two_component_model_of_memory science of long-term memory] and decades of research.
+
+== How SuperMemo Works ==
+
+# '''Capture what matters''': Turn facts, ideas, or anything you want to remember into learning material with SuperMemo.
+# '''Test your memory''': SuperMemo regularly checks your recall and builds a detailed model of your memory performance.
+# '''Review at the perfect time''': Based on your memory strength, SuperMemo schedules reviews just before forgetting sets in.
+# '''Save time and effort''': With the minimum number of reviews and no wasted effort, you'll be amazed at how much you can learn — and remember.
+
+== SuperMemo: More Than Just Repetition ==
+
+In addition to smart review scheduling, [https://supermemo.store SuperMemo {{SMVER}} for Windows] gives you a full toolkit to power up your brain:
+
+* read and remember huge amounts of information using [[incremental learning]]
+* learn with images, audio, and video
+* track and analyze your sleep
+* optimize learning based on your [https://supermemo.guru/wiki/SleepChart sleep patterns]
+* improve problem-solving with [[concepts|concept maps]]
+* boost your creativity with [[neural creativity]]
+* [[plan]] your days for productivity and minimal stress (see: [https://supermemo.guru/wiki/Planning_a_perfect_productive_day_without_stress Planning productive days])
+
+== Further Reading ==
+
+* [[Introduction|ABC of SuperMemo]]
+* [https://www.super-memory.com/english/princip.htm General principles of SuperMemo]
+* [[Four Decades: From SuperMemo 1.0 to SuperMemo 19.0]]
+* [https://supermemo.guru/wiki/History_of_SuperMemo History of SuperMemo]
+* [https://supermemo.guru/wiki/SuperMemo_Guru Articles about learning]
+* [https://www.youtube.com/watch?v=DoQoeK53bP8 Video: Incremental reading: Learning about nutrition from Wikipedia]
+* [https://www.youtube.com/watch?v=oNCLLNZEtz0 Video: What is Incremental Reading?]
+
+== Picture ==
+
+[[File:SuperMemo 19 with dual monitor support.jpg|center|500px|alt=SuperMemo 19 running on dual monitors|SuperMemo 19 for Windows at the Professional level running on two monitors]]
+
+__NOTOC__

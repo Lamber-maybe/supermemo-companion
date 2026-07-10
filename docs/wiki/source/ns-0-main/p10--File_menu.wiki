@@ -1,0 +1,183 @@
+__TOC__
+
+The '''File''' submenu on the [[main menu]] provides the options listed below. Most of these options are not visible at the '''Beginner''' [[Glossary:Level|level]]. Use '''File : [[Levels|Level]] : Professional''' to see all the options listed: 
+
+[[Image:File menu.jpg|center|SuperMemo: File menu which you can use to manage your collections]] 
+
+== File menu items ==
+
+=== Open collection ===
+
+*'''Open collection''' - open a new [[Glossary:Collection|collection]] for use with SuperMemo
+
+=== Favorites ===
+
+*'''[[Collection chooser|Favorites]]''' (''Ctrl+O'') - use a single keystroke to open an existing [[Glossary:Collection|collection]] from a predefined list of the collections you frequently work with.
+
+=== New collection ===
+
+*'''New collection''' - create a new empty [[Glossary:Collection|collection]]. To create the [[Glossary:Collection|collection]], type in its name and press ''Enter''. Users may find it surprising that SuperMemo features this option only after '''[[#Favorites|Favorites]]''' and not as the first one as the majority of other programs do. This stems from the fact that in the long-run you are far more likely to create a handful of [[Glossary:Collection|collections]], which you will later be reopening what might be even a couple of times a day each [[Glossary:Collection|collection]], instead of creating new [[Glossary:Collection|collections]] again and again.
+
+=== Backup ===
+
+*'''[[Backup]]''' (''Shift+F12'') - make a quick backup of the current [[Glossary:Collection|collection]]. The default backup folder is the [[SuperMemo files#Program files|''[BACKUP]'' subfolder]], however, you can choose a backup folder at other locations (e.g. flash drives, external hard drives, etc.). The backed-up [[Glossary:Collection|collection]] includes the date stamping in its name for easy review of your backups. The naming makes it easy to sort your backups by the date of creation. If you try to open a back up file, SuperMemo will warn you to make sure you do not learn with a wrong [[Glossary:Collection|collection]]. '''Backup''' does not back up less important files that do not take part in the learning process (e.g. reports). To back up all files, use '''File : [[#Copy collection|Copy collection]]''' (below). '''Important!!!''' Please read about [[Backup|backing up]]!
+
+=== Copy collection ===
+
+*'''Copy collection''' (''Shift+Ctrl+C'') - copy the currently opened [[Glossary:Collection|collection]] to a new location. If the destination [[Glossary:Collection|collection]] already exists, it will be deleted before copying begins. Note that '''Copy collection''' is used instead of '''Save As'''. The ''Copy'' name is used here to indicate that the [[Glossary:Collection|collection]] is not kept in computer memory but on the hard disk. After '''Copy collection''', both [[Glossary:Collection|collections]] are always identical
+
+=== Delete collection ===
+
+*'''Delete collection''' - delete the currently opened [[Glossary:Collection|collection]] after double confirmation. '''<span style="background-color: #ffff00">Important!</span>''' SuperMemo assumes that it owns all files kept in the [[Glossary:Collection|collection]] folder. Although it will ask you to confirm deleting the [[Glossary:Collection|collection]] folder, it will not attempt to search that folder for files that you might have put there manually. You should never keep your private files inside SuperMemo [[Glossary:Collection|collection]] folders
+
+=== Repair collection ===
+
+*'''[[Repairing collections|Repair collection]]''' (''Ctrl+F12'') - test the integrity of the [[Glossary:Collection|collection]] and recover from integrity problems (e.g. resulting from physical damage to [[SuperMemo files#Collection files|collection files]]). In various documents related to SuperMemo, the term ''recovery'' is often used in reference to using '''Repair collection'''
+
+=== Merge collection ===
+
+*'''Merge collection''' - copy the contents of the currently opened [[Glossary:Collection|collection]] into another [[Glossary:Collection|collection]]. Currently used material will be added to the material stored in the target [[Glossary:Collection|collection]]. To merge two [[Glossary:Collection|collections]]: 
+*#use '''Open collection''' to open the smaller of the two [[Glossary:Collection|collections]], 
+*#use '''Merge collection''' to indicate the name of the larger [[Glossary:Collection|collection]]. This sequence ensures that it is the smaller [[Glossary:Collection|collection]] that is transferred at merger. After the operation, the source [[Glossary:Collection|collection]] will remain unchanged. The target [[Glossary:Collection|collection]] will contain the larger [[Glossary:Collection|collection]] with the material from the smaller [[Glossary:Collection|collection]] appended. '''<span style="background-color: #ffff00">Important!</span>''' Not all properties of a [[Glossary:Collection|collection]] can be transferred. Review your material after the merge operation to be sure it can be effectively used in learning
+
+=== Import ===
+
+*'''Import''' - import external files in various formats 
+**'''Files and folders''' - import a selected folder with all its subfolders and files to SuperMemo. SuperMemo will recreate folder structure in the [[Contents|'''Contents''' window]] and will import all individual files in such a way that each file will be kept in a single newly created [[Glossary:Element|element]]. Use this option to incrementally clean up your hard disk from archive materials. You can, for example, import an old archive of articles that you never had time to review. You can import your mp3 collection or an archive folder with miscellaneous files that you want to review incrementally within a limited time slot. You can also import your entire family picture album that can later be reviewed in SuperMemo. Picture albums in SuperMemo are far more fun than static albums that offer no systematic review strategy. With '''Files and folders''' you may discover an entire new universe of application for SuperMemo. You can extend incremental reading into incremental processing of information, independent of its type and format. For example, as of SuperMemo 20, you can now directly import all your outstanding articles and books in PDF format for incremental processing.
+**<span id="qa_text">'''Q&amp;A text'''</span> - import a standard [[Glossary:Q&A format|Q&amp;A text file]] exported by various versions of SuperMemo or created manually. The Q&amp;A format is simple and is best illustrated by example:<blockquote><blockquote>''q: river''<br>''a: rivero''<br><br>''q: school''<br>''a: lernejo''<br><br>''q: hope''<br>''a: esperanto''</blockquote></blockquote>You can include HTML tags in such a file or use UTF-8 encoded texts. Remember not to: use angle brackets for comments as these will be ignored, not to enclose Q: and A: tags with HTML code, not to use HTML editors that add extra HTML tags (e.g. &lt;body&gt;), and not to rename your file from *.txt to *.html. For more see: [http://supermemopedia.com/wiki/Formatting_Q%26A Formatting Q&amp;A with HTML].You will find '''Q&amp;A text''' option particularly useful when using speech recognition software to quickly create question-and-answer [[Glossary:Collection|collection]] (e.g. with Dragon Naturally Speaking). Make sure you save the file as plain text (i.e. as with Notepad, not as ''rtf, doc'', etc.). You can also import Multiple Choice Test material. Add wrong answers with ''a1:, a2:, a3:'' tags. For example:<blockquote><blockquote>''q: What country borders with Nigeria?''<br>''a: Niger''<br>''a1: Tanzania''<br>''a2: Mozambique''<br>''a3: Iraq''<br>''a4: Somalia''</blockquote></blockquote>
+**'''XML import''' - import an XML file with SuperMemo learning material. Use a standard Q&amp;A [[Glossary:Template|template]] to add all [[Glossary:Item|items]]. Use [[Glossary:Topic|topics]] only as [[Glossary:Element|element]] folders. '''File : Import : XML import''' will retain the original folder structure of the [[Glossary:Knowledge_tree|knowledge tree]] if it is included in the XML file; however, some SuperMemos ignore the [[Glossary:Knowledge_tree|tree]] structure. In such cases, SuperMemo will build a regular folder structure for you. '''File : Import : XML import''' ignores [[Glossary:Element|element]] IDs. It imports all the material to newly created [[Glossary:Element|elements]]. The learning process is transferred as well (if included). If you would like to transfer only the learning process and update texts edited in other SuperMemos, use '''File : Import : XML Synchronize''' (below) 
+**'''XML Synchronize''' - import an XML file to update [[Glossary:Element|element]] texts and/or the learning process. See also: [http://super-memory.com/articles/soft/pocket.htm Revolution in the pocket] 
+**'''Repetition history''' - import [[repetition history]] exported with '''File : [[#Export|Export]] : Repetition history''' (see also: [[Repetition history]])
+**'''Learning process''' - restore the learning process backed up with '''File : [[#Export|Export]] : Learning process''' (see [[#Export_learning_process|below]]). If the file with the extension ''lr1'' is missing (copy of [[SuperMemo files#sm8opt.dat|''[INFO]\sm8opt.dat'']]), you can still use this option; however, user profile will be lost. For example, if you export your learning process to file ''my knowledge.txt'' it will be accompanied by ''my knowledge.lr1'' (which is a copy of the user memory profile ''[INFO]/sm8opt.dat'')
+**'''Source code''' - import a text file previously generated with:
+***'''File : [[#Export|Export]] : Source text''', '''File : [[#Export|Export]] : Transfer subset''',
+***'''[[Contents menu#Export|Export]] : Source code''' on the [[contents menu]], or
+***'''[[Browser menu#Export|Export]] : Source text''' on the [[browser menu]] 
+**'''Translation''' - import a file with the translation of the text [[Glossary:Registry|registry]] to a selected language
+
+=== Export ===
+
+*'''Export''' 
+**'''Document''' - export the entire [[Glossary:Collection|collection]] as a single HTML document 
+**'''Q&amp;A text file''' - export SuperMemo Q&amp;A files by using first question and first answer [[Glossary:Component|component]] of each [[Glossary:Element|element]] (if any) 
+**'''XML''' - export the [[Glossary:Collection|collection]] in the XML format that can be imported to other SuperMemos. XML files may also be imported back to SuperMemo for Windows with '''File : [[#Import|Import]] : XML Import''' (full import) or '''File : [[#Import|Import]] : XML Synchronize''' (learning process only and text edit updates) 
+**'''HTML''' - export the [[Glossary:Collection|collection]] to HTML files ready to be published on the web. SuperMemo converts individual [[Glossary:Item|items]] to portions of HTML file. Currently only text and image [[Glossary:Component|components]] are exported. Spelling drills, scripts, binary components, videos, shapes, etc. will not be included in the resulting files. Use '''File : Export : HTML''' to quickly produce a web-preview for your [[Glossary:Collection|collection]]. Your preview may include URLs to locations with further information about the [[Glossary:Collection|collection]] or [[Glossary:Collection|collection]] download. You can also use any HTML file as a template that will determine the looks of your exported [[Glossary:Collection|collection]]. All you need to do to create a template is to insert any or all of the following tags in the text of any HTML file: ''#Content#'', ''#Element#'', ''#Pages#'', ''#SuperMemo#'', ''#Author#'', ''#Download#''. SuperMemo will place relevant information in the place of these tags. Specify the name of the HTML template file in the field below '''Use Template''' in the HTML export dialog box (e.g. by clicking the file browser button on the right). See also: [http://supermemopedia.com/wiki/Formatting_HTML_export SuperMemo Wiki] 
+**'''<span id="Export_learning_process">Learning process</span>''' - store the learning process in a text file. This way, you do not have to back up large [[Glossary:Collection|collections]] such as [http://super-memory.com/english/aeintro.htm Advanced English]. It is enough to save the learning process and restore it if necessary. The original [[Glossary:Collection|collection]] (e.g. [http://super-memory.com/english/ae.htm Advanced English]) can be taken and provided with learning data restored from the text file. Along the text file, this procedure will also produce a file with the same name as the text file and with the extension ''lr1''. This is the user learning profile (copy of [[SuperMemo files#sm8opt.dat|''[INFO]/sm8opt.dat'']]). Deleting this file will deprive the learning process backup of information about the user profile; however, it will not prevent restoring the learning process (user profile will have to be built anew). The difference is only in the import: either you can import Q&amp;As as new [[Glossary:Item|items]] or just the learning process of the material that is already in the current [[Glossary:Collection|collection]]. Use '''File : Export : XML''' for all XML exports 
+**'''Repetition history''' - export [[repetition history]] to a text file. This file can be re-exported with '''File : [[#Import|Import]] : Repetition history''' (NB: currently, this is the only way to reduce the size of [[repetition history]] file: [[SuperMemo files#RepetitionHist.dat|''[INFO]/RepetitionHist.dat'']]) 
+**'''Source text''' - export [[Glossary:Collection|collection]] source text in the text format ([[Glossary:Element|elements]], their position in the [[Glossary:Knowledge_tree|knowledge tree]] and all [[Glossary:Component|components]]). Note that the user profile nor unused [[Glossary:Registry|registry]] entries will not be transferred. This file can later be imported to another [[Glossary:Collection|collection]] with '''File : [[#Import|Import]] : Source text''' 
+**'''Transfer subset''' - export a [[Glossary:Element_subset|subset]] as text. This option is the same as '''File : Export : Source text''' with this exception that only the [[Glossary:Element|elements]] belonging to a selected [[Glossary:Element_subset|subset]] are exported. Read more: [[Using subsets]] 
+**'''Lexicon''' - export the lexicon in the Q&amp;A format for import to SuperMemo. For example, Cross Country's ''Words'' [[Glossary:Collection|collection]] has been generated using this option in conjunction with '''File : [[#Import|Import]] : Q&amp;A text'''
+
+=== Tools ===
+
+*'''Tools '''
+**'''Collection size''' - display the total size of the [[Glossary:Collection|collection]] along with the [[Glossary:Primary_storage|primary storage]] and [[Glossary:Secondary_storage|secondary storage]] breakdown (see [[#File : Tools : Collection size|example]] below)
+**'''View as HTML''' - view the [[Glossary:Collection|collection]] as HTML. If HTML files are not available, they will be created first (as with '''File : [[#Export|Export]] : HTML''' above) 
+**'''View report''' - view any text file, esp. a SuperMemo report file (by default: text files with extension ''txt'' from the [[SuperMemo files#Collection files|''[REPORTS]'' subfolder]] such as ''[[Repairing collections|recover]].txt'', etc.) 
+**'''View FAQs''' - view the HTML file with FAQ questions and answers generated with FAQ options (e.g. '''[[Component menu#Reading|Reading]] : E-mail FAQ''' on the [[component menu]]). [http://super-memory.com/help/faq/ SuperMemo FAQs] at [http://super-memory.com super-memory.com] are generated with FAQ options in SuperMemo 
+**'''Reset collection''' - remove all learning data from the [[Glossary:Collection|collection]] to make it look as if it has not been used by anyone. '''File : [[#Tools|Tools]] : Reset collection''' is useful if you would like to pass your [[Glossary:Collection|collection]] to someone who would like to use it too. You can also reset your [[Glossary:Collection|collection]] if you would like to distribute it commercially. '''File : Tools : Reset collection''' will remove all data related to your learning process, and leave all [[Glossary:Memorized_element|memorized elements]] in the [[Glossary:Pending_element|pending]] (or [[Glossary:Dismissed_element|dismissed]]) state. Note that this operation does not remove comments from the comment registry
+**'''Move collection''' - copy the currently opened [[Glossary:Collection|collection]] to a new location and delete the original 
+**'''Rename collection''' - rename the [[Glossary:Collection|collection]]. '''File : Tools : Rename collection''' produces the same effect as '''File : [[#Tools|Tools]] : Move collection''', however, '''Rename''' is instant as long as the operation does not change the drive on which the [[Glossary:Collection|collection]] is located (otherwise '''Move''' is used for '''Rename'''). 
+**'''Garbage''' - delete selected files to reduce the size of the [[Glossary:Collection|collection]] (the saving might be the greatest in case you recorded lots of own recordings in the course of training pronunciation)
+
+=== Properties ===
+
+*'''Properties''' - display information such as [[Glossary:Collection|collection]] path, [[Glossary:Collection|collection]] size, SuperMemo path, SuperMemo version, system information and memory use (see [[#File : Properties|example]] below)
+
+=== Installation ===
+
+*'''Installation''' - see: [[Unlock SuperMemo|Unlocking SuperMemo]] for details 
+**'''Input password''' (''Ctrl+I'') - provide an unlock password. This option is active only in the locked SuperMemo and should be used to supply the unlock password received upon purchasing the product. See: [[Unlock SuperMemo|Unlocking SuperMemo]] 
+**'''Request password''' - open dialog box that makes it possible to send an e-mail to SuperMemo World with your registration data. In response you will immediately receive payment instructions 
+**'''Install icons''' - install SuperMemo icons on your Windows desktop and on the Start menu 
+**'''Lock''' - remove password and registration data from the currently opened [[Glossary:Collection|collection]]. You must use this option before redistributing your own [[Glossary:Collection|collections]]! Redistributing unlocked [[Glossary:Collection|collections]] violates your user license and spreads your registration data to other users. Locked [[Glossary:Collection|collection]] requires a password to get unlocked. It can also be unlocked by opening any unlocked/registered [[Glossary:Collection|collection]]
+**'''Publish''' - reset, clean, and lock the currently opened [[Glossary:Collection|collection]] for publishing
+**'''Owner: ''<the name of the SuperMemo owner>''''' - specify the name of the SuperMemo owner. For example, it will be used in mail signatures sent with '''Send element''' on the [[navigation bar]]
+**'''Author: ''<the name of the collection's author''''' - specify the name of the [[Glossary:Collection|collection]]'s author.
+
+=== Level ===
+
+*[[Levels|'''Level''']] - makes it possible to choose between '''Beginner''', '''Basic''', '''Middle''' and '''Professional''' [[Glossary:Level|levels of difficulty]]. You can start using SuperMemo on the '''Basic''' [[Glossary:Level|level]] and gradually jump to higher [[Glossary:Level|levels]] as soon as you master the functionality of a given [[Glossary:Level|level]]. This will make sure you learn SuperMemo starting with most essential functions: 
+**'''Beginner''' - the difficulty [[Glossary:Level|level]] recommended for complete beginners. It focuses on adding new material with '''Add new''' and learning with '''Learn''' 
+**'''Basic''' - the difficulty [[Glossary:Level|level]] that builds upon the '''Beginner''' [[Glossary:Level|level]] and introduces a stripped down [[learnbar]] with the most important options such as '''Remember extract''', '''Remember cloze''', etc. used in [[incremental reading]]. It also introduces functions for editing the [[Glossary:Knowledge_tree|knowledge tree]]: '''Add''', '''Sibling''', '''Insert''', etc. 
+**'''Middle''' - the [[Glossary:Level|level]] that introduces [[Glossary:Collection|collection]] management functions ('''[[#Delete collection|Delete collection]]''', '''[[#Merge collection|Merge collection]]''', etc.), editing [[Glossary:Component|components]], advanced search functions and browsing functions, '''[[Options]]''', '''[[Postpone]]''' and [[Glossary:Layout|layout]] management 
+**'''Professional''' - the [[Glossary:Level|level]] that comprises full functionality of SuperMemo with all advanced functions such as: [[#Import|import]]-[[#Export|export]], [[Tasklist manager|tasklists]], etc. 
+**'''Warrior layout''' - turn on the '''Professional''' [[Glossary:Level|level]] and define the [[Glossary:Layout|layout]] optimizing the use of your screen estate (esp. for [[incremental reading]]). The new [[Glossary:Layout|layout]] is called the ''Warrior layout'' (compare: '''[[Window menu|Window]] : [[Window menu#Layout|Layout]] : Warrior layout''') 
+**'''Next level''' (''Ctrl+Alt+F12'') - jump to a higher [[Glossary:Level|level]]. Note that this function is circular and will let you jump back from '''Professional''' to '''Beginner''' [[Glossary:Level|level]] 
+**'''Previous level''' (''Shift+Ctrl+Alt+F12'') - jump to a lower [[Glossary:Level|level]]
+
+=== Process collection> ===
+
+*'''Process collection&gt;''' - process all [[Glossary:Element|elements]] in the [[Glossary:Collection|collection]] using options available from the [[Subset operations|subset processing menu]]
+
+=== Exit ===
+
+*'''Exit''' (''Alt+F4'') - exit SuperMemo
+
+=== Most Recently Used (MRU) list ===
+
+*'''1-10''' - open one of the ten most recently opened [[Glossary#collection|collections]]
+
+== Examples ==
+
+=== File : Properties ===
+
+<pre>
+
+Collection name: ALL
+Path: D:\COLLS\ALL
+
+Collection File Structure: SuperMemo 16
+Program File Structure: SuperMemo 16
+Vacated storage slots: 2
+Running SuperMemo: C:\SM16\sm16.exe
+SuperMemo 16 (Build 16.0, Aug 1, 2013)
+
+Windows 8 ver. 6.2 (Build 9200) 
+Internet Explorer MSHTML Engine ver. 7.0 (0)
+IE Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.2; WOW64;
+ Trident/6.0; .NET4.0E; .NET4.0C; .NET CLR 3.5.30729; .NET CLR 2.0.50727; .NET CLR 3.0.30729; InfoPath.3; MDDRJS)
+User language: English (en-US)
+System language: English (en-US)
+Browser language: English (en-US)
+User: SMR
+Computer: SMR2013
+Total physical memory: 17.13 GB
+Free physical memory: 14.91 GB
+Page file: 34.31 GB
+Free page file: 31.69 GB
+Virtual memory: 2.15 GB
+Free virtual memory: 1.68 GB
+Extended virtual memory: 0 bytes
+SuperMemo heap memory: 17 MB
+Free heap memory: 1.82 MB
+Heap memory use: 89.31%
+Active Code Page: 1252
+OEM Code Page: 437
+Host: SMR2013
+Host HD: 77BE-E6FF
+IP Address: 192.168.11.6
+Owner: SMR
+Network installed
+
+</pre>
+
+=== File : Tools : Collection size ===
+
+<pre>
+
+Collection name: VIDEO
+Date: Apr 1, 2016, 20:44:15
+Path: D:\COLLS\VIDEO
+
+Primary storage: 32.05 GB
+Secondary storage: 0 bytes
+Total Size: 32.05 GB
+
+Collection File Structure: SuperMemo 17
+Program File Structure: SuperMemo 17
+Vacated storage slots: 1
+Running SuperMemo: C:\SM17\sm17.exe
+SuperMemo 17 (Build 17.0, Apr 1, 2016)
+
+</pre>

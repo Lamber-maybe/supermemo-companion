@@ -1,0 +1,2 @@
+;<span id="Element_subset">element subset</span>
+:set of [[Glossary:Element|elements]]. '''Subsets''' are often saved into files with the default extension ''sub''. You can create an '''element subset''' file by using the [[Glossary:Browser|element browser]] (e.g. '''[[Browser menu#Subset|Subset]] : Save all''' or '''[[Browser menu#Select|Select]] : Save selection''' in the [[browser menu]]). You can view an '''element subset''' file with '''[[View menu|View]] : [[View menu#Subset|Subset]]''' from the [[main menu]]. Read more: [[Using subsets]]

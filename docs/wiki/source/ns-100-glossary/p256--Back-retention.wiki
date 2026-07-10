@@ -1,0 +1,2 @@
+;<span id="Back-retention">back-retention</span>
+:outdated term for [[Glossary:Consolidation|consolidation]] in previous versions of SuperMemo

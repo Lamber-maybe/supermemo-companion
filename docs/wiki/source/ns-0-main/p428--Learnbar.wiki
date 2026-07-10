@@ -1,0 +1,205 @@
+__TOC__
+
+== Introduction ==
+
+'''Learning bar''' (also called '''learn bar''' or '''learnbar'''), which you can find in the control bar along the bottom of the [[element window]], encapsulates the most important options used for reading, learning, and editing the [[Glossary:Collection|collection]]. It was designed to make it faster and easier for both newcomers and seasoned pros to access most program functions with the use of a single hand. The functions can be executed using the mouse with the help of speed buttons and simple context menus (available with a right click). Learnbar icons have been made colorful to assist their mnemonic functions.
+
+<div class="center">
+[[Image:Element_window.jpg|800px|SuperMemo: The element window with the learnbar along its bottom]]
+<blockquote>'''''Figure:''' The [[element window]] with the learnbar along its bottom''</blockquote>
+</div>
+
+If you do not see the learning bar or some of its options, you need to switch SuperMemo to either '''Basic''' or higher [[Glossary:Level|levels]] first. You can do it by choosing '''[[File menu|File]] : [[File menu#Level|Level]] : Basic''', '''Middle''' or '''Professional''' or pressing ''Ctrl+Alt+F12'' repeatedly until you see it.
+
+== Buttons ==
+
+The following is the list of speed-buttons on the learnbar from left to right:
+
+=== Add a note ===
+
+* '''Add a note''' (''Alt+N'') -  add a new note to the current [[Glossary:Concept group|concept group]]. A note is a [[Glossary:Topic|topic]] that uses the default [[Glossary:Topic|topic]] [[Glossary:Template|template]] (originally, a single scaleable [[HTML component|HTML text component]]). Use this option to type in rough notes into your [[Glossary:Collection|collection]]. You can then process your notes in the process of [[incremental reading]].<br /><br />The button features a context menu, right-click it to open the menu, with the the following options:
+** '''Paste an article''' (''Ctrl+N'') - paste a new article from the clipboard to the current [[Glossary:Collection|collection]]
+** '''[[Web import|Import articles]]''' (''Shift+F8'') - import learning material from Microsoft Edge
+** '''Internet Explorer''' - import learning material from Internet Explorer
+*** '''Import articles''' (''Shift+Ctrl+A'') -  import learning material from Internet Explorer. You can import the content or links to web pages currently opened in Internet Explorer. If you have more than one tab opened, you can import from many web pages at once. This option also makes it possible to close the tabs you no longer needed (e.g. during or after import), import pictures, import live pages, etc. '''Web import''' as '''Local pages''' takes only the selected portion of the text in the browser (or all text, if none is selected); this does not apply to '''Wikipedia articles''' or '''YouTube imports''' (below)
+*** '''Import from Wikipedia''' (''Shift+Ctrl+W'') - import pages from [http://wikipedia.org Wikipedia]. This will either import currently opened [http://en.wikipedia.org Wikipedia] articles in Internet Explorer or let you specify the name of the article to import. This options also applies a [http://en.wikipedia.org Wikipedia]-specific filter to help you remove garbage that will not take part in learning (margins, options, edit links, etc.)
+*** '''Import YouTube videos''' (''Shift+Ctrl+Y'') - import [http://youtube.com YouTube] videos opened in Internet Explorer for [[incremental learning]] ([[incremental video]]). This will either import currently opened [http://youtube.com YouTube] videos or let you specify keywords that should be used to search for the video
+*** '''Import pictures''' - import all pictures opened in Internet Explorer
+** '''Import mail''' (''Shift+F4'') - import mail from Windows (Live) Mail (or any e-mail client supporting EML) or MS Outlook 2000 or later for [[Incremental mail processing|incremental processing]]
+** '''Import file''' (''Ctrl+Q'') - import a file to the currently selected [[Glossary:Component|component]]
+
+=== Paste an article ===
+
+* '''Paste an article''' (''Ctrl+N'') - paste a new article from the clipboard to the current [[Glossary:Collection|collection]].<br /><br />The button shares the context menu with the '''[[#Add a note|Add a note]]''' button.
+
+=== Extract ===
+
+<ul>
+<li>'''<span id="extract">Extract</span>''' (''Alt+X'') -  use the selected part of the text to create a new [[Glossary:Element|element]] and introduce this new [[Glossary:Element|element]] into the learning process. This is one of the most important options used in [[incremental reading]]. Use ''Alt+X'' on a selected text to tell SuperMemo that it is important and you want to better remember it in the future.<br /><br />The button features a context menu (right-click it to open the menu) with the the following options:
+<ul>
+<li>'''<span id="extract">Extract</span>''' (''Alt+X'') -  use the selected part of the text to create a new [[Glossary:Element|element]] and introduce this new [[Glossary:Element|element]] into the learning process. This is one of the most important options used in [[incremental reading]]. Use ''Alt+X'' on a selected text to tell SuperMemo that it is important and you want to better remember it in the future</li>
+<li>'''Cloze''' (''Alt+Z'') - create a new [[Glossary:Cloze_deletion|cloze deletion]] [[Glossary:Element|element]] based on the current text selection and memorize this [[Glossary:Element|element]].
+<blockquote>
+'''Example''': You can convert the following sentence:
+
+<blockquote>''In 1947 the UN voted to divide Palestine into Arab and Jewish states''</blockquote>
+
+to question:
+
+<blockquote>''In 1947 the UN voted to divide Palestine into Arab and <span class="cloze">[...]</span> states''</blockquote>
+
+by:
+# selecting the word ''Jewish'' and
+# choosing '''Cloze''' (or pressing ''Alt+Z'').
+</blockquote>
+In addition to '''Extract''' ([[#extract|above]]), this is the most important option of [[incremental reading]].
+</li>
+<li>'''Split''' - split the article into multiple [[Glossary:Topic|topics]] by using text markers such as headings, horizontal lines, [[Glossary:Splitmark|splitmarks]], etc. This can substantially accelerate decomposition of very long articles that load slowly and are processed slowly by SuperMemo. This option is particularly useful when processing [http://en.wikipedia.org Wikipedia] articles. It allows you to prioritize all subsections of the articles independently</li>
+<li>'''Highlight''' - highlight the currently selected text</li>
+<li>'''Ignore''' (''Shift+Ctrl+I'') - ignore the selected text in reading by marking it with the <span class="ignore">ignore</span> font</li>
+<li>'''Delete before cursor''' (''Alt+\'') - delete texts before the cursor (e.g. after processing it)</li>
+<li>'''Delete after cursor''' (''Alt+.'') - delete texts after the cursor without [[references]] (e.g. notes)</li>
+</li>
+</ul>
+</li>
+</ul>
+
+=== Cloze ===
+
+<ul>
+<li>'''Cloze''' (''Alt+Z'') - create a new [[Glossary:Cloze deletion|cloze deletion]] [[Glossary:Element|element]] based on the current text selection and memorize this [[Glossary:Element|element]].
+<blockquote>
+'''Example''': You can convert the following sentence:
+
+<blockquote>''In 1947 the UN voted to divide Palestine into Arab and Jewish states''</blockquote>
+
+to question:
+
+<blockquote>''In 1947 the UN voted to divide Palestine into Arab and <span class="cloze">[...]</span> states''</blockquote>
+
+by:
+# selecting the word ''Jewish'' and
+# choosing '''Cloze''' (or pressing ''Alt+Z'').
+</blockquote>
+The button shares the context menu with the '''[[#Extract|Extract]]''' button.
+</li>
+</ul>
+
+=== Priority options ===
+
+This option group consists of a field displaying the [[Glossary:Element|element]]'s [[Glossary:Priority|priority]] and a button for modifying it:
+* '''<span style="padding: 3px; background-color: rgb(76, 255, 130);">Priority as percentile from the top</span><span style="padding: 3px; background-color: rgb(115, 255, 157);">(Priority as a position in the [[priority queue]])</span>'''
+* '''Priority''' (''Alt+P'') - open the '''[[Priority queue#Priority Queue in SuperMemo|Element priority]]''' dialog box that makes it easy to modify the [[Glossary:Element|element]]'s [[Glossary:Priority|priority]] (by position or percent). It also makes it possible to modify the [[Glossary:Interval|interval]], [[Glossary:Forgetting_index|forgetting index]], etc. Once you choose a new [[Glossary:Priority|priority]], you can also see what [[Glossary:Element|elements]] precede or succeed that [[Glossary:Priority|priority]] in the [[priority queue]]. You can also see those [[Glossary:Element|elements]] with a click.<br /><br />The button features a context menu, right-click it to open the menu, with the the following options:
+** '''Priority''' (''Alt+P'') - same as above
+** '''Forgetting index''' - set the [[Glossary:Element|element]]'s [[Glossary#Forgetting index|forgetting index]]
+** '''Parameters''' (''Shift+Ctrl+P'') - open a dialog box with the [[Glossary:Element|element]]'s parameters (e.g. [[Glossary:Ordinal_number|ordinal]], [[Glossary#A-Factor|A-Factor]], concept group, etc.)
+
+=== Learning options ===
+
+* '''<span style="padding: 3px; background-color: yellow;">Interval</span>''' displaying the [[Glossary:Element|element]]'s current [[Glossary:Interval|interval]], i.e. period of time in days between the last and the next repetition/review
+* '''<span style="padding: 3px; background-color: aqua;">Repetitions</span>''' showing the number of [[Glossary:Repetition|repetitions]] of the displayed [[Glossary:Element|element]]. If the [[Glossary:Element|element]] had been forgotten, the number of [[Glossary:Memory_lapse|memory lapses]] is also displayed. Once the [[Glossary:Element|element]] is not recalled correctly, the count of [[Glossary:Repetition|repetitions]] begins from scratch (i.e. ''Repetitions'' equals ''1'' again).
+* button: '''Execute repetition''' (''Shift+Ctrl+R'') - execute a [[Glossary:Repetition|repetition]] now and determine the new [[Glossary:Interval|interval]] and the date of the next review
+* '''<span style="padding: 3px; color: white; background-color: blue;">Next repetition</span>''' - the date when the next repetition of the displayed [[Glossary:Element|element]] is scheduled (that date is preceded by the grade issued in the learning cycle at the time when the grade changes the next repetition date). The value is displayed against the mnemonic <span style="padding: 3px; background-color: yellow;">dismissed</span>, <span style="padding: 3px; background-color: aqua;">pending</span> or <span style="padding: 3px; color: white; background-color: blue;">memorized</span> colors corresponding to the [[Glossary:Element|element]]'s current status
+* button: '''Calendar''' (''Ctrl+W'') - view the [[Calendar|repetitions calendar]]
+* [[Glossary:Retrievability|Retrievability]] in %, the higher the redder
+* [[Glossary:Stability|Stability]] in days/months/years, the higher the bluer
+
+Both '''Execute repetition''' and '''Calendar''' buttons share a context menu (available with a right-click) with the following options:
+* '''Outstanding''' - lists outstanding elements in the browser
+* '''[[Calendar]]''' (''Ctrl+W'') - displays the [[Calendar|repetitions calendar]]
+* '''Execute repetition''' (''Shift+Ctrl+R'') - execute a [[Glossary:Repetition|repetition]] now and determine the new [[Glossary:Interval|interval]] and the date of the next review
+* '''Reschedule repetition''' (''Ctrl+J'') -  decide when to make the next [[Glossary:Repetition|repetition]] of the [[Glossary:Element|element]]
+* '''Move to later today''' (''Shift+Ctrl+J'') - schedule the [[Glossary:Element|element]] for review later today (see: [https://youtube.com/watch?v=uOgV3p_wPOw video explanation])
+* '''Dismiss''' (''Ctrl+D'') - ignore the displayed [[Glossary:Element|element]] in the learning process
+* '''Remember''' (''Ctrl+M'') -  memorize the [[Glossary:Element|element]] and introduce it into the learning process
+* '''Forget''' - remove the currently displayed [[Glossary:Element|element]] from the learning process
+* '''Mercy''' (''Shift+Alt+M'') - redistribute [[Glossary:Outstanding_element|outstanding elements]] equally in a period of time
+
+=== Done! ===
+
+* '''Done!''' (''Shift+Ctrl+Enter'') - terminate the review of an article in [[incremental reading]]. You can delete portions of the text or the whole text to save space. If the article has [[Glossary:Child|children]], SuperMemo will propose to [[Glossary:Dismiss|dismiss]] it. Otherwise it will propose to delete the article altogether.<br>The button features a context menu, right-click it to open the menu, with the the following options:
+** '''Done!''' (''Shift+Ctrl+Enter'') - same as above
+** '''Dismiss''' (''Ctrl+D'') - ignore the displayed [[Glossary:Element|element]] in the learning process
+** '''Delete component''' (''Ctrl+Del'') - delete the current [[Glossary:Component|component]]
+** '''Delete components''' - delete [[Glossary:Component|components]] selected from the list of all [[Glossary:Component|components]] (currently edited or sized [[Glossary:Component|components]] are selected by default)
+** '''Delete element''' (''Shift+Ctrl+Del'') - delete the currently displayed [[Glossary:Element|element]] and all its [[Glossary:Child|children]]
+
+=== Template options ===
+
+* '''Apply template''' (''Shift+Ctrl+M'') - use a selected [[Glossary:Template|template]] from the template [[Glossary:Registry|registry]] to modify the look of the [[Glossary:Element|element]].<br /><br />The button features a context menu, right-click it to open the menu, with the the following options:
+** '''Apply template''' (''Shift+Ctrl+M'') - same as above
+** '''Save template''' - save the currently displayed [[Glossary:Element|element]]'s layout as a [[Glossary:Template|template]] 
+** '''Save as default''' - save the current [[Glossary:Element|element]]'s layout as a [[Glossary:Template|template]] and make it the default template in the currently selected [[Concepts|concept groups]] 
+** '''Impose template''' (''Shift+Ctrl+F2'') - overwrite the source [[Glossary:Template|template]] with the currently applied [[Glossary:Template|template]] 
+** '''Detach template''' - restore the original look of the [[Glossary:Element|element]] from before the time the [[Glossary:Template|template]] was applied with '''Apply template''' (above)
+
+=== Choose font ===
+
+* '''Choose font''' - choose a font for the selected text or the entire [[Glossary:Component|component]]<br /><br />The button features a context menu (right-click it to open the menu) with the the following options:
+** '''Parse HTML''' (''Shift+Ctrl+1'') - remove HTML tags from the selected text. Note that this does not make the text formatless. Tags preceding the selection may still take effect
+** '''Clean lead HTML''' - remove leading HTML formatting tags
+** '''Convert to plain text''' (''Shift+Ctrl+F12'') - convert formatted text in HTML and RTF text [[Glossary:Component|components]] into plain text. Plain text takes much less space than formatted text
+** '''Filter HTML code''' (''F6'') - filter HTML texts for easier handling by SuperMemo. This is very helpful in reducing the number of errors displayed by Internet Explorer when processing tables and rich multimedia files in [[incremental reading]].
+** '''Edit stylesheet''' - edit the stylesheet associated with the current [[HTML component]]. This option uses the default text processor to edit the raw stylesheet rather than SuperMemo's own inbuilt stylesheet mini-editor for beginners 
+** '''UPPERCASE''' - convert the selected text to upper case (e.g. ''Pygmy Chimpanzee'' to ''PYGMY CHIMPANZEE'', ''pygmy chimpanzee'' to ''PYGMY CHIMPANZEE'', etc.)
+** '''lowercase''' - convert the selection to lower case (e.g. ''DEPECHE MODE'' to ''depeche mode'', ''Depeche Mode'' to ''depeche mode'', etc.)
+** '''Sentence case''' - convert the selected text to lower case with the first letter capital (e.g. PLATYHELMINTHES to Platyhelminthes). This option is often used to convert uppercase titles and proper names.
+** '''Convert to metric units''' - convert imperial units to metric units. For example, to convert stones and pounds to kilograms or Fahrenheit to Centigrade, select the relevant measure in the processed text and choose the relevant metric conversion option from the dialog box. You can also convert related unit pairs. For example, "5 foot 7 inch" written as "5:7" can be converted to 1.702 (meters) or "10 stone 3 pound" written as "10:3" can be converted to 64.864 (kilograms). Additionally, SuperMemo allows you to convert time to speed for a given distance.
+** '''Phonetic transcription''' (''Alt+Y'') - replace texts with their phonetic transcription when the mouse is hovered over the [[Glossary:Component|component]] (applies to text, RTF, and spell-pad [[Glossary:Component|components]] only)
+** '''Translate texts''' (''Alt+U'') - translate texts when the mouse is moved over the [[Glossary:Component|component]] (applies to text, RTF, and spell-pad [[Glossary:Component|components]] only)
+
+=== Remove formatting ===
+
+* '''Remove formatting''' - remove formatting from the selected text or the entire [[Glossary:Component|component]].<br /><br />The button shares the context menu with the '''[[#Choose font|Choose font]]''' button.
+
+=== Switch mode ===
+
+* '''Switch mode''' (''Ctrl+E'') - switch from [[Glossary:Presentation_mode|presentation]] to [[Glossary:Editing_mode|editing]] to drag&size mode.<br /><br />The button features a context menu, right-click it to open the menu, with the the following options:
+** '''Switch mode''' (''Ctrl+E'') - same as above
+** '''Presentation''' (''Esc'') - set all [[Glossary:Component|components]] to display in the way they will be seen by you during repetitions
+** '''Editing''' - set all [[Glossary:Component|components]] in the mode that makes it possible to edit texts, edit [[OLE component|OLE objects]], etc.
+** '''Dragging''' - set all [[Glossary:Component|components]] in the mode that makes both dragging and sizing possible
+** '''Tile components''' (''Shift+Alt+T'') - tile [[Glossary:Component|components]]. By default, only [[Glossary:Component|components]] set in the [[Glossary:Editing_mode|editing]] or [[Glossary:Dragging_mode|dragging]] modes are tiled, however, you can change that by checking [[Glossary:Component|components]] on the [[Glossary:Component|component]] list. [[Glossary:Component|Components]] are tiled in the area demarcated by the top-left corner of the top-left [[Glossary:Component|component]] and the bottom-right corner of the bottom-right [[Glossary:Component|component]] (only selected [[Glossary:Component|components]] are considered in determining that area). Some options automatically tile selected [[Glossary:Component|components]] (e.g. pasting images may tile image [[Glossary:Component|components]] if you confirm that you want them tiled)
+** '''Title''' (''Alt+T'') - set a new title. Either use the currently selected text or open the title window to edit the [[Glossary:Element|element]]'s title. Use ''Alt+T'' to quickly generate a title from text selections or text fields in the [[Glossary:Element|element]]. In [[HTML component|HTML components]], if you select a text for generating a title, ''Alt+T'' will also insert the title [reference tag (''<span class="reference">#Title:</span>''). Note that default titles given by SuperMemo, and titles that are identical to the first text in the [[Glossary:Element|element]] are automatically updated once you change the first text. Once you set a unique title, those updates will not take place. If you want to set Unicode titles, write the text in the [[HTML component]] first and use it to set the title with ''Alt+T''.
+** '''Edit reference''' - modify the current [[Glossary:Element|element]]'s [[References|reference]]
+** '''Select reference''' (''Alt+Q'') -  open a reference dialog box that helps you quickly mark portions of text with reference tags
+
+=== Duplicate ===
+
+*'''Duplicate element''' (''Alt+D'') - create a copy of the currently displayed [[Glossary:Element|element]]. The duplicate will be added as a [[Glossary:Child|child]] of the current [[Glossary:Element|element]] (in the [[Contents|'''Contents''' window]]).<br /><br />The button features a context menu, right-click it to open the menu, with the the following options:
+**'''Duplicate element''' (''Alt+D'') - same as above
+**'''Transfer element''' (''Shift+Ctrl+T'') - create a copy of the currently displayed [[Glossary:Element|element]] in a different [[Glossary:Collection|collection]]
+**'''Move element''' (''Shift+Ctrl+V'') - move the currently displayed [[Glossary:Element|element]] to a selected location in the [[Contents|'''Contents''' window]]
+**'''Swap QA''' (''Shift+Ctrl+S'') - swap the question with the answer (as in standard flashcard programs). Usually you need this option to swap questions with answers when you learn bilingual pairs of vocabulary. It is most useful in conjunction with '''Duplicate element''' (see above).
+**'''Copy element''' - copy the current [[Glossary:Element|element]] to the clipboard
+**'''Paste element''' - create a new [[Glossary:Element|element]] with the contents pasted from the clipboard
+
+=== Copy ===
+
+* '''Copy''' (''Ctrl+C'' or ''Ctrl+Ins'') - copy the selected text or image to the clipboard (to copy objects in [[HTML component|HTML components]] the way Internet Explorer does, first use '''Browser menu''' from the HTML [[component menu]]).<br /><br />The button features a context menu, right-click it to open the menu, with the the following options:
+** '''Cut''' (''Ctrl+X'' or ''Shift+Del'') - remove the selected text or image and copy it to the clipboard
+** '''Copy''' (''Ctrl+C'' or ''Ctrl+Ins'') - copy the selected objects (e.g. text, image, etc.) to the clipboard (to copy objects in [[HTML component|HTML components]] the way Internet Explorer does, first use '''Browser menu''' from the HTML [[component menu]])
+** '''Paste''' (''Ctrl+V'' or ''Shift+Ins'') - insert the contents of the clipboard at the selected location
+** '''Delete''' (''Del'') - delete text or image
+** '''Select all''' (''Ctrl+A'') - select the entire text in the currently edited text [[Glossary:Component|component]]
+
+=== Paste ===
+
+* '''Paste''' (''Ctrl+V'' or ''Shift+Ins'') - insert the contents of the clipboard at the selected location.<br /><br />The button shares the context menu with the '''[[#Copy|Copy]]''' button.
+
+=== Import all ===
+
+* '''[[Web import|Import articles]]''' (''Shift+F8'') - import learning material from Microsoft Edge. You can import the content or links to web pages currently opened in Microsoft's latest browser. If you have more than one tab opened, you can import from many web pages at once. This option also makes it possible to close the tabs you no longer need (e.g. during or after import), import pictures, etc.<br /><br />The button shares the context menu with the '''[[#Add a note|Add a note]]''' button.
+
+=== Edit file ===
+
+* '''Edit file''' (''Ctrl+F9'') - edit the file associated with the [[Glossary:Component|component]] (e.g. sound file in sound [[Glossary:Component|components]], image file in image [[Glossary:Component|components]], HTML text in [[HTML component|HTML components]], etc.). '''Edit file''' will use the default editor assigned for editing files of the selected type. To quickly edit files, use ''Ctrl+T'' to switch to the appropriate [[Glossary:Component|component]] and press [[Keyboard shortcuts|''Ctrl+F9'']].<br /><br />The button features a context menu, right-click it to open the menu, with the the following options:
+** '''View file''' (''F9'') - view the file associated with the [[Glossary:Component|component]] in the default viewer application (e.g. Internet Explorer for HTML, MS Word for rich texts, etc.) 
+** '''View source''' (''Shift+Ctrl+F6'') - view or edit the source file of richly formatted texts (in HTML or RTF format). View source is useful with [[HTML component|HTML components]] if you want to edit the text in all [[Glossary:Component|components]] that use the file (editing the text inside the [[Glossary:Component|component]] will only change that particular text in that particular [[Glossary:Element|element]]). '''View source''' is also very useful if a given HTML code does not edit properly in SuperMemo. You can tweak individual HTML tags and make sure the code is edited clean and exactly to your specifications
+** '''Edit file''' (''Ctrl+F9'') - same as above
+** '''Import file''' (''Ctrl+Q'') - import a file to the [[Glossary:Component|component]]. The file will be integrated with the [[Glossary:Registry|registry]] corresponding with the current [[Glossary:Component|component]] (e.g. image [[Glossary:Registry|registry]] in the case of an image [[Glossary:Component|component]]). '''Import file''' creates a link from the current [[Glossary:Component|component]] to the newly created [[Glossary:Registry_member|registry member]] (e.g. the imported picture or sound)
+** '''Save file''' - save the file associated with the [[Glossary:Component|component]] in a selected location
+
+=== Help ===
+
+* '''Help''' - display this help file explaining individual functions of the learnbar.

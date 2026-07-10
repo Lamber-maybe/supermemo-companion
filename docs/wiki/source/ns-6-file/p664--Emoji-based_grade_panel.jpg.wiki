@@ -1,0 +1,1 @@
+{{Fig|As of [https://help18.supermemo.org/wiki/What's_new_in_SuperMemo_18? SuperMemo 18], grades are illustrated with vivid emojis by default. If you prefer the old text-based grades (i.e. '''Great''', '''Pass''', '''Bad''', etc.), uncheck '''Grade icons''' in '''[[Toolkit menu|Toolkit]] : [[Options]] : [[SuperMemo tab in Options|SuperMemo]]'''.}}

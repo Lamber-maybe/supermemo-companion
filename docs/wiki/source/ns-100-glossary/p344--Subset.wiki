@@ -1,0 +1,6 @@
+;<span id="Subset">subset</span>
+:
+:#[[Glossary:Element_subset|element subset]]: set of [[Glossary:Element|elements]] saved in a file, or
+:#[[Glossary:Registry_subset|registry subset]]: set of [[Glossary:Registry_member|registry members]] saved in a file.
+:You can create an [[Glossary:Element_subset|element subset]] by using the [[Browser|element browser]] (e.g. '''[[Browser menu#Subset|Subset]] : Save all''' or '''[[Browser menu#Select|Select]] : Save selection''' on the [[browser menu]]). You can view an [[Glossary:Element_subset|element subset]] with '''[[View menu|View]] : [[View menu#Subset|Subset]]''' from the [[main menu]].
+:[[Glossary:Registry_subset|Registry subsets]] are mostly used in search and sort operations. For example, you could use ''Ctrl+S'' to find all texts containing the word ''virus''. Those will be displayed as a [[Glossary:Registry_subset|registry subset]] in the text [[Glossary:Registry_window|registry window]]. You could use ''Ctrl+S'' again to search for the word ''AIDS'' and generate a narrower subset that would contain both words ''virus'' and ''AIDS''

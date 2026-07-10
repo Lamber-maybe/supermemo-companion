@@ -1,0 +1,2 @@
+;<span id="Registry_index">registry index</span>
+:ordinal number of a given member in the sorted order of [[Glossary:Registry_member|registry members]] in a given [[Glossary:Registry|registry]]. For example, the lexicon [[Glossary:Registry|registry]] might start with ''aardvark'' at the '''registry index''' 1 and end with ''Zoloft'' at the '''registry index''' 23293. '''Registry index''' can be inspected at the bottom of the [[Glossary:Registry_window|registry window]]. See: [[Glossary:Registry_position|registry position]]

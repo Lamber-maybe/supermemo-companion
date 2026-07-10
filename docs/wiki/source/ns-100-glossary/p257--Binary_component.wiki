@@ -1,0 +1,2 @@
+;<span id="Binary_component">binary component</span> (program component)
+:[[Glossary:Component|component]] that can hold, preview or execute a binary file stored in any format or written in any language (e.g. EXE, PDF, CHM, etc.). '''Binary components''' make it possible to extend the range of applications of SuperMemo into any imaginable area. To prevent the automatic execution of '''binary components''', make sure that '''[[Element menu#AutoPlay|AutoPlay]]''' is unchecked on the [[element menu]].

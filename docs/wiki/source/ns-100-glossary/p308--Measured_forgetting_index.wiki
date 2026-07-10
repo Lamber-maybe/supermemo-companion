@@ -1,0 +1,2 @@
+;<span id="Measured_forgetting_index">measured forgetting index</span>
+:proportion of [[Glossary:Element|elements]] that are not remembered at repetitions. This is the [[Glossary:Forgetting index|forgetting index]] as actually measured during repetitions. See: [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo Forgetting index]

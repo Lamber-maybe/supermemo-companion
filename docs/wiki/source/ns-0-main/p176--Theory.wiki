@@ -1,0 +1,145 @@
+__TOC__ 
+
+== Available tools for memory and sleep analysis ==
+
+To study your memory and sleep, use options available in SuperMemo in the following places: 
+
+*[[Calendar]] 
+*[[Statistics|Learning statistics]] 
+*[[Element data|Element statistics]] 
+*[[Analysis]]
+*[[Memory graphs (4D)|Memory graphs]]
+*[[Repetition history]] 
+*[[Sleep Chart]]
+
+== Examples  ==
+
+=== Repetition calendar  ===
+
+You can use '''[[Toolkit menu|Toolkit]] : [[Calendar]]''' (''Ctrl+W'') to inspect the daily and the monthly calendar of repetitions. You can view the number of repetitions scheduled, number of scheduled [[Glossary:Topic|topics]], number of scheduled [[Glossary:Item|items]], as well as the record of past repetitions, and past [[Glossary:Retention|retention]], or how many new [[Glossary:Item|items]] were memorized. 
+
+==== Daily workload  ====
+
+[[Image:Daily workload.jpg|center|800px|SuperMemo: Toolkit : Workload : Daily tab showing the record of repetitions executed over a three-month period]]
+
+==== Monthly workload  ====
+
+[[Image:Monthly workload.jpg|center|800px|SuperMemo: Toolkit : Workload : Monthly tab showing the record of repetitions executed over a three-year period]]
+
+=== 4D memory graphs ===
+
+With '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Memory|Memory]] : [[Memory graphs (4D)|4D graphs]]''' you can visualize your memory in 4D:
+
+<div class="center">
+[[Image:Smoothed up stability increase function.jpg|800px|SuperMemo: A 3D graph of the smoothed up SInc[] matrix rotated along the X (Retrievability) axis based on 272 repetition cases for items with difficulty=0.05]]
+{{Image:Smoothed up stability increase function.jpg}}
+</div>
+
+=== Collection analysis  ===
+
+You can use '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Statistics|Statistics]] : [[Analysis]]''' (''Shift+Alt+A'') to inspect your [[Glossary:Forgetting_curve|forgetting curves]], daily changes to your [[Glossary:Measured_forgetting_index|measured forgetting index]], superiority of the latest [https://supermemo.guru/wiki/Algorithm_SM-17 Algorithm SM-17] over the previous generation spaced repetition algorithm, your learning [[Glossary:Overload|overload]], and many more: 
+
+==== Forgetting curves  ====
+
+===== Typical exponential forgetting curve =====
+
+[[Image:Forgetting curves.jpg|center|800px|SuperMemo: Toolkit : Statistics : Analysis : Forgetting Curves graphs for 20 repetition number categories multiplied by 20 A-Factor categories]]
+{{:Image:Forgetting curves.jpg}}
+
+===== First review forgetting curve =====
+
+[[Image:First forgetting curve.jpg|center|800px|SuperMemo: The first forgetting curve (first repetition for items with no lapses)]]
+{{:Image:First forgetting curve.jpg}}
+
+==== Daily changes to the measured forgetting index  ====
+
+<div class="center">
+[[Image:Daily measured forgetting index.jpg|800px|SuperMemo: Toolkit : Statistics : Analysis : Use : Efficiency : Forgetting index shows you the changes to the measured forgetting index on individual days]]
+{{Image:Daily measured forgetting index.jpg}}
+</div>
+
+==== R-Metric ====
+
+<div class="center">
+[[Image:Recall metric.jpg|800px|SuperMemo: Algorithm SM-18 performance metric]]
+{{:Image:Recall metric.jpg}}
+</div>
+
+==== Priorities missed due to overload  ====
+
+[[Image:Topic priority protection.jpg|center|800px|SuperMemo: Toolkit : Statistics : Analysis : Use : Priority protection : Topics shows your actual processing capacity for high-priority topics on individual days]]
+
+=== Collection statistics  ===
+
+You can use '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Statistics|Statistics]] : [[Statistics]]''' to supervise and understand your learning process: 
+
+[[Image:Statistics.jpg|center|186px|SuperMemo: The Statistics window where the main learning process statistics of the currently opened collection can be readily inspected]]
+
+=== Element data ===
+
+You can use '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Statistics|Statistics]] : [[Element data]]''' to inspect learning statistics of a given [[Glossary:Element|element]]: 
+
+[[Image:Element data.jpg|800px|center|Element data window after executing a repetition on an item about immunity]]
+
+=== Element repetition history  ===
+
+You can use '''[[Element menu#Learning|Learning]] : Statistics : [[Repetition history]]''' (''Shift+Ctrl+H'') (on the [[element menu]]) to inspect the [[Repetition history|history of repetitions]] for individual [[Glossary:Element|elements]]: 
+
+[[Image:Repetition history.jpg|center|800px|SuperMemo: Repetition history dialog box displaying the history of repetitions for the current element]]
+{{:Image:Repetition history.jpg}}
+
+=== Element memory status ===
+
+You can use '''[[Element menu#Learning|Learning]] : Statistics : Memory status''' (on the [[element menu]]) to see how [[Repetition history|history of repetitions]] translates into the changes in two variables of long-term memory (see also: [https://supermemo.guru/wiki/SuperMemo_Algorithm SuperMemo Algorithm]):
+
+<div class="center">
+[[Image:Memory status.jpg|800px|SuperMemo: Changes in two variables of long-term memory]]
+{{:Image:Memory status.jpg}}
+</div>
+
+=== Repetitions graph ===
+
+Repetitions graph for any [[Glossary:Element_subset|subsets of elements]] can be shown in the [[browser]] with '''[[Browser menu#Tools|Tools]] : Repetitions graph''' on the [[browser menu]]:
+
+<div class="center">
+[[File:Repetitions_graph.png|800px|SuperMemo: Time flow of knowledge in the learning process]]
+{{:Image:Repetitions_graph.png}}
+</div>
+
+=== Sleep Chart ===
+
+You can use '''[[Toolkit menu|Toolkit]] : [[Sleep Chart]]''' (''F12'') to optimize the timing of your sleep as well as the timing of your learning: 
+
+==== Sleep and repetitions timeline ====
+
+Inspect the timeline of repetitions and sleep: 
+
+<div class="center">
+[[Image:Sleep and learning timeline.jpg|800px|SuperMemo: SuperMemo: Sleep and repetitions timeline displaying repetitions blocks of the current collection (in red) and sleep blocks (in blue)]] 
+{{:Image:Sleep and learning timeline.jpg}}
+</div>
+
+Look for the best time for learning or sleep (see [[Sleep Chart]] for details): 
+
+<div class="center">
+[[Image:Sleep and learning timeline with optimization data.jpg|800px|SuperMemo: Sleep and repetitions timeline displaying repetitions blocks of the current collection (in red) and sleep blocks (in blue) with recomputed circadian approximations on the current data]]
+{{:Image:Sleep and learning timeline with optimization data.jpg}}
+</div>
+
+==== Alertness  ====
+
+See how your brain gradually loses its power during the day: 
+
+<div class="center">
+[[Image:Alertness homeostatic.jpg|800px|SuperMemo: Toolkit : Sleep Chart : Alertness (H) graph makes it possible for you to visually inspect how grades decrease during the waking day]]
+{{:Image:Alertness homeostatic.jpg}}
+</div>
+
+==== Two-component sleep model ====
+
+Look for the time of the day that should give you maximum learning power (''Shift+click'' a day in the sleep timeline). See when your learning is not likely to be effective and when you should rather go to sleep: 
+
+<div class="center">
+[[Image:Sleep propensity.jpg|800px|SuperMemo: The predictions of the two-component sleep model about the homeostatic and circadian status of your alertness]]
+{{:Image:Sleep propensity.jpg}}
+</div>

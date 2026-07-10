@@ -1,0 +1,58 @@
+== Policy ==
+
+<div class="bs-callout bs-callout-warning">
+'''Support Policy Statement''' 
+
+''All users of SuperMemo are entitled to free support via the Internet. However, we are no longer able to process all individual support queries. Please consider the documentation on the web as the primary source of support.'' 
+
+''The following types of mail messages will still be processed in the first order:'' 
+
+*''Mail with problems that may result in loss of your investment in learning (e.g. through loss of data)'' 
+*''Mail with grave complaints about SuperMemo not fulfilling its promise of accelerated learning''
+
+''Independently, the following types of mail will receive high priority:'' 
+
+*''Mail with suggestions for improving the documentation'' 
+*''Mail resulting from gaps in the documentation''
+
+''No mail will be ignored or discarded. However, the order of processing will reflect priority, not the order of arrival. This change in policy comes from the belief that the solution to the increasing number of support requests is not in adding people to hurrying short e-mail responses, but to improve the quality of on-line documentation serving many. This way we hope to shift resources from fire-fighting to construction'' 
+</div> 
+
+== SuperMemo is complex ==
+
+SuperMemo for Windows is well-known for its steep learning curve. If you feel lost, read this paragraph carefully: 
+
+<blockquote>
+
+Many users gradually move from being highly annoyed with the complexity, terminology, and design quirks of SuperMemo to being fluent and satisfied learners! '''The key to success is patience, the study of the documentation, and a gradual discovery of the toolset offered by SuperMemo!''' This process takes time, but the patient ones are rewarded with a new quality in learning! Begin with [[Introduction|ABC of SuperMemo]] and [[Step-by-step_to_SuperMemo_mastery|proceed with more complex aspects of the program gradually]]. It is very important to become fluent with the [[Glossary|terminology]] and the language of SuperMemo. Your first readings will be exhausting, but you will gain mastery over time! Continue with [[Step-by-step to SuperMemo mastery|Step by step guide to SuperMemo Mastery]]. Spread your reading over a longer period so it can dovetail with practical experience! 
+
+</blockquote>
+
+* [https://youtu.be/NU0pEkbMDJA?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=3582 The 6-phase Learning Curve Of SuperMemo (video)]
+* [https://youtu.be/NU0pEkbMDJA?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=4996 How To Flatten SuperMemo's Learning Curve (video)]
+* [https://youtu.be/NF7OdJ0nbSs?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=10704 What To Do After Finishing Supermemo's ABC Collection (video)]
+
+== How to get answers? ==
+
+If you encounter a question about SuperMemo you cannot answer, please follow the steps below: 
+
+#'''SuperMemo Documentation''': Check the [[Main Page|table of contents]] in this help file and try to navigate to a page with the answer to your problem. If you do not find it there where you expected it, please note exactly why. This is very important to improve the documentation! Remember that in most browsers, you can use ''Ctrl+F'' to search a page for a keyword you are looking for. You can use the '''Edit''' tab in the [[Main Page|editable/wiki version]] of the documentation and leave your notes, corrections, questions, or simple question marks for the gaps to be filled and difficult concepts to be explained. You can simply leave "xxx" in places that need more work
+#'''SuperMemo FAQ files''': If you cannot find the answer in the [[Main Page|table of contents]], try to find it in editable [https://supermemopedia.com/wiki/FAQ Wiki FAQ files] 
+#'''Full-text search''': If the answer is not in FAQ files, try the header search box at [https://super-memory.com super-memory.com] or use modern AI tools such as Bing or Bard
+#'''Ask Support''': To ask questions about SuperMemo, use '''[https://supermemopedia.com/wiki/Form:FAQ Ask]''' at SuperMemoPedia.com. You can also use [https://supermemopedia.com/wiki/FAQ Wiki FAQ]. Click '''Edit''' and write down your questions at the bottom of the page. If you are not familiar with Wiki, write your questions unformatted. They will be formatted/corrected for you at later time 
+#'''Support via e-mail''': If you still cannot find the answer do the following: 
+##Read this disclaimer: ''Questions sent to SuperMemo Support are used to enhance the [https://super-memory.com/help/faq/ FAQ section] at [https://super-memory.com super-memory.com]. '''FAQ questions are automatically tagged by inquirer's name and the date of the inquiry. If you wish to remain anonymous, please state so at the beginning of your message''' (or use an anonymous mail account name). Authors of questions '''do not receive payments''' for their contributions'' 
+##Questions will often be answered via [https://supermemopedia.com SuperMemopedia]. You should receive a notification via e-mail. If you do not, please monitor [https://supermemopedia.com/wiki/Special:RecentChanges recent changes] at SuperMemopedia.com 
+##When e-mailing questions, please try to explain why you could not find the answer to your problem in on-line documentation: what you searched for, where, and with what keywords. '''<span style="color: red;">This is very important to improve customer service!</span>''' 
+##For support in English, use '''[[Help menu|Help]] : [[Help menu#E-mail|E-mail]] : Support''' in SuperMemo. You can also use addresses listed [[E-mail|here]]. For other versions of SuperMemo, e.g. on-line SuperMemo at supermemo.com, iPhone, Android, etc. use the general support mail address: support(AT)supermemo(.)com (please note that this e-mail address is queued and only most urgent inquires receive timely replies)
+#'''Support via phone''': We do not provide support by phone in English. Check for exceptions at your local reseller for your national language support. Limited support in Polish and English is available for the '''registered''' users of Extreme English DVD and '''paying customers''' of [https://supermemo.com supermemo.com]
+
+== Feature request ==
+{{:Feature request}}
+
+== See also ==
+
+*[[E-mail|Contact]]
+*[[Minimum requirements]] 
+*[[Introduction|SuperMemo ABC]] 
+*[[Step-by-step to SuperMemo mastery|Step by Step: User's Guide]]

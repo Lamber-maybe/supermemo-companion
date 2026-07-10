@@ -148,8 +148,14 @@ skills/
     reference.md                 ← distilled SuperMemo reference (offline)
     incremental-learning.md      ← the method's philosophy, distilled
 docs/
-  wiki/                          ← the full official wiki, crawled (~210 pages, offline)
+  wiki/                          ← revision-pinned SuperMemo Help mirror
+    source/                      ← 570 exact View Source pages
+    rendered/                    ← 363 readable pages (308 expanded + 55 redirects)
+    manifest.jsonl               ← title/path/revision/provenance map
+    _index.html                  ← searchable offline page index
   articles/20rules.htm           ← Wozniak's formulation-rules article
+scripts/
+  import_supermemo_help.py       ← rebuild and validate the Wiki mirror
 examples/
   LEARNER.example.md             ← personal profile template
   sample-session.md              ← what good sessions look like
@@ -163,9 +169,10 @@ agent converses in **your** language.
 
 1. Clone this repository (or copy its files into your study folder).
 2. Copy `examples/LEARNER.example.md` to `LEARNER.md` and fill it in
-   (2 minutes — it's what makes the verdicts personal). The full official
-   wiki already ships in `docs/`; only if you keep your own fresher crawl,
-   put its path in the `Docs mirror` field and it takes precedence.
+   (2 minutes — it's what makes the verdicts personal). A revision-pinned
+   Main + Glossary mirror already ships in `docs/wiki/`; only if you keep
+   a demonstrably fresher or broader crawl should you put its path in the
+   `Docs mirror` field.
 3. Open your agent in the folder:
 
 | Tool | Setup |
@@ -219,8 +226,8 @@ model (Sonnet-class) follows them reliably.
    reclaimed review time, forever.
 5. **Coach on call.** Shortcuts, priorities, statistics, version quirks,
    design rationale — answered from the distilled offline reference and
-   the full official wiki bundled in `docs/`, with
-   [help.supermemo.org](https://help.supermemo.org) as the final authority.
+   the revision-pinned official source/rendered mirror bundled in `docs/`,
+   with [help.supermemo.org](https://help.supermemo.org) as the final authority.
 
 ## SuperMemo in ten lines
 
@@ -260,11 +267,13 @@ model (Sonnet-class) follows them reliably.
   instead of judgment-heavy prose, so smaller models stay reliable.
 - **Docs-grounded.** Tool answers come from a distilled offline reference
   (`skills/supermemo-coach/reference.md`) plus a philosophy digest
-  (`incremental-learning.md`), both backed by the complete official wiki
-  bundled in `docs/` (~210 pages) — the online wiki sits behind a
-  Cloudflare challenge, so the repo carries its own ground truth, with
-  help.supermemo.org as the final authority. The coach never guesses a
-  shortcut.
+  (`incremental-learning.md`), both backed by a revision-pinned
+  help.supermemo.org mirror: 363 Main + Glossary documentation pages,
+  with 570 raw current-revision pages after File metadata and templates
+  are included. Exact wikitext, expanded HTML, and revision provenance
+  are kept separately. The online wiki sits behind a Cloudflare challenge;
+  help.supermemo.org remains the final authority. The coach never guesses
+  a shortcut.
 - **A coach, not a chauffeur.** It refuses to card offload-grade material,
   and it refuses to read or formulate *for* you. Both refusals are the
   product.
@@ -323,9 +332,10 @@ Formulation principles adapted from Piotr Wozniak,
 [*Effective learning: Twenty rules of formulating knowledge*](https://super-memory.com/articles/20rules.htm).
 SuperMemo usage facts distilled from the
 [official SuperMemo documentation](https://help.supermemo.org).
-The official documentation bundled verbatim in `docs/` (help.supermemo.org
-wiki pages and the twenty-rules article) remains © SuperMemo World (see
-`docs/README.md`); the MIT license covers this project's own files only.
+The official documentation mirrored in `docs/` (exact help.supermemo.org
+wikitext, derived rendered pages, and the twenty-rules article) remains
+© SuperMemo World / its respective authors (see `docs/README.md`); the MIT
+license covers this project's own files only.
 
 ---
 
@@ -453,8 +463,14 @@ skills/
     reference.md                 ← 提炼后的 SuperMemo 离线参考
     incremental-learning.md      ← 渐进学习理念提炼
 docs/
-  wiki/                          ← 完整官方 wiki 抓取（英文，约 210 页，离线可用）
+  wiki/                          ← 固定 revision 的 SuperMemo Help 镜像
+    source/                      ← 570 个原样 View Source 页面
+    rendered/                    ← 363 个可读页面（308 展开页 + 55 重定向）
+    manifest.jsonl               ← 标题/路径/revision/来源清单
+    _index.html                  ← 可搜索的离线页面索引
   articles/20rules.htm           ← Wozniak《表述知识的二十条规则》原文
+scripts/
+  import_supermemo_help.py       ← 重建并校验 Wiki 镜像
 examples/
   LEARNER.example.md             ← 个人学习档案模板
   sample-session.md              ← 标准会话的样例
@@ -467,9 +483,9 @@ cards/                           ← 水蛭诊所的修复文件放这里（已 
 
 1. 克隆本仓库（或把文件复制进你的学习目录）。
 2. 把 `examples/LEARNER.example.md` 复制为根目录的 `LEARNER.md` 并填写
-   （2 分钟——判决的个性化全靠它）。完整官方 wiki 已随仓库自带
-   （`docs/`）；仅当你另有更新的自爬副本时，才需把路径填进 `Docs mirror`
-   一栏（它会优先生效）。
+   （2 分钟——判决的个性化全靠它）。固定 revision 的 Main + Glossary
+   镜像已随仓库自带（`docs/wiki/`）；仅当你另有可证明更新或覆盖更广的
+   自爬副本时，才需把路径填进 `Docs mirror` 一栏。
 3. 在此目录打开你的 Agent：
 
 | 工具 | 设置 |
@@ -514,8 +530,8 @@ cards/                           ← 水蛭诊所的修复文件放这里（已 
    （`Process browser> : Learning : Dismiss`）。每退役一张卡，就永久收回
    一份复习时间。
 5. **教练随叫随到。** 快捷键、优先级、统计、版本差异、设计理念——先查离
-   线精编参考，再查仓库自带的完整官方 wiki（`docs/`），最终以
-   [help.supermemo.org](https://help.supermemo.org) 为准。
+   线精编参考，再查仓库自带的固定 revision 官方源码/渲染镜像（`docs/`），
+   最终以 [help.supermemo.org](https://help.supermemo.org) 为准。
 
 ## 十行看懂 SuperMemo
 
@@ -545,9 +561,10 @@ cards/                           ← 水蛭诊所的修复文件放这里（已 
   何状态。用有序规则和固定输出形态取代依赖悟性的长文，小模型也能稳定执行。
 - **以官方文档为据。** 工具问题先查离线精编参考
   （`skills/supermemo-coach/reference.md`）与理念提炼
-  （`incremental-learning.md`），其下是仓库自带的完整官方 wiki
-  （`docs/`，英文，约 210 页）——在线 wiki 有 Cloudflare 拦截，程序化抓
-  取常被挡，所以仓库自带事实底本，最终以 help.supermemo.org 为准。coach
+  （`incremental-learning.md`），其下是仓库自带的固定 revision 镜像：
+  363 个 Main + Glossary 文档页；计入 File 描述与模板后共有 570 个 raw
+  当前 revision 页面。精确 wikitext、展开 HTML 与 revision 来源分层保存。
+  在线 wiki 有 Cloudflare 拦截，最终仍以 help.supermemo.org 为准。coach
   绝不猜快捷键。
 - **陪练，不代练。** 它拒绝为“外包级”材料制卡，也拒绝替你阅读、替你打初
   稿。这两种拒绝本身就是产品。
@@ -596,6 +613,6 @@ MIT，见 [LICENSE](LICENSE)。
 制卡原则改编自 Piotr Wozniak
 [《高效学习：表述知识的二十条规则》](https://super-memory.com/articles/20rules.htm)；
 SuperMemo 使用事实提炼自[官方文档](https://help.supermemo.org)。
-`docs/` 中逐字收录的官方文档（help.supermemo.org wiki 各页与《二十条规
-则》一文）版权仍归 SuperMemo World（见 `docs/README.md`）；MIT 许可证仅
-覆盖本项目自有文件。
+`docs/` 中镜像的官方文档（help.supermemo.org 原样 wikitext、派生渲染页与
+《二十条规则》一文）版权仍归 SuperMemo World / 各自作者（见
+`docs/README.md`）；MIT 许可证仅覆盖本项目自有文件。

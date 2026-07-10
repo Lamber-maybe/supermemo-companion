@@ -1,0 +1,16 @@
+<hr>
+
+<div class="inset" style="background-color: yellow;">
+
+'''Help Us Improve Our Documentation and Videos!'''
+
+If you’re struggling to find information on this website, need an overview of SuperMemo features, or would like a new help video, please consider one of these options:
+* '''Recommended:''' Add your questions or suggestions directly to relevant pages in [[Reference|SuperMemo Help]] (click the Edit tab to start writing; requires login).
+* Submit your ideas or feature requests at [https://supermemopedia.com/wiki/Website_suggestions SuperMemopedia].
+* Request a new [https://www.youtube.com/@SuperMemoVideo help video] or send feedback via e-mail (e.g., using '''[[Help]] : [[Help menu#E-mail|E-mail]] : Bug report''').
+
+Your input helps us create clearer documentation and better help videos, reducing support costs and enhancing your experience with SuperMemo.
+
+Thank you for your contributions!
+
+</div>

@@ -1,0 +1,1 @@
+A topic which is ignored in the learning process and which is not kept in the pending queue

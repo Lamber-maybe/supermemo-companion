@@ -1,0 +1,2 @@
+;<span id="Remember">Remember</span>
+:operation that introduces an [[Glossary:Element|element]] to repetitions. Compare: [[Glossary:Dismiss|'''Dismiss''']] and [[Glossary:Forget|'''Forget''']]

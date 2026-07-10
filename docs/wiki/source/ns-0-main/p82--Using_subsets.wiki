@@ -1,0 +1,40 @@
+__TOC__
+
+In SuperMemo, subsets are sets of [[Glossary:Element|elements]]. Subsets are usually viewed in the [[browser]]. Subsets are processed with [[subset operations]]. Subsets can be stored in subset files for later use. The default extension of subset files is ''sub''. Each [[Glossary:Element|element]] in a subset file is stored as a four-byte element number. This way, subset file size in bytes is four times the number of [[Glossary:Element|elements]] in the subset. The same subset files can be used by different [[Glossary:Collection|collections]], but such use is meaningful only if the collections have the same numbering of [[Glossary:Element|elements]] (e.g. if these are copies of the same collection).
+
+== Choosing a subset ==
+
+To select a [[Glossary:Subset|subset]] and open it in the [[browser]], you may use many options that are too numerous to list. Here are only a few frequently used examples:
+
+* '''[[Search menu|Search]] : [[Find elements]]''' (''Ctrl+F'') - to collect [[Glossary:Element|elements]] containing the same text (e.g. "''Eisenhower''")
+* '''[[View menu|View]] : [[View menu#Outstanding|Outstanding]]''' - to inspect all [[Glossary:Outstanding_element|outstanding elements]]
+* '''[[Contents menu#View|View]] : [[Contents menu#Branch|Branch]]''' in the [[Contents|'''Contents''' window]] - to inspect [[Glossary:Element|elements]] belonging to a single [[Glossary:Branch|branch]]
+* '''[[View menu|View]] : [[Element filter|Filter]]''' - to inspect all [[Glossary:Element|elements]] that fall into a selected range of [[Glossary:Priority|priority]], [[Glossary:Interval|interval]], repetition date, [[Glossary:Difficulty|difficulty]], etc.
+* '''[[View menu|View]] : [[View menu#Subset|Subset]]''' - to open a given subset file in the [[browser]]
+* [[Browser menu#Child|Child]] options on the [[browser menu]] - to create a sub-browser with all [[Glossary:Memorized_element|memorized]], [[Glossary:Pending_element|pending]], [[Glossary:Dismissed_element|dismissed]] or selected [[Glossary:Element|elements]] from the current [[browser]]
+* Subset operations in [[Glossary:Registry|registries]] with '''[[Registry menu#View|View]] : [[Registry menu#Browse current|Browse current]]''', '''[[Registry menu#View|View]] : [[Registry menu#Browse selected|Browse selected]]''', and '''[[Registry menu#View|View]] : [[Registry menu#Browse all|Browse all]]''' - to create [[browser|browsers]] with [[Glossary:Element|elements]] using a given subset of [[Glossary:Registry_member|registry members]]
+
+== Creating subset files ==
+
+To create a subset file use one of the following options:
+
+* '''[[Browser menu#Subset|Subset]] : Save all''' on the [[browser menu]] saves the contents of the [[browser]] in a subset file (e.g. this option used on the browser opened with '''[[View menu|View]] : [[View menu#Memorized|Memorized]]''' will create a [[Glossary:Subset|subset]] with all [[Glossary:Memorized_element|memorized elements]])
+* '''[[Browser menu#Select|Select]] : Save selection''' on the [[browser menu]] saves all selected [[Glossary:Element|elements]] in the [[browser]]. Selections are made by clicking the leftmost browser column or with subset operations such as '''[[Browser menu#Select|Select]] : Browser range''', etc.
+* '''[[Contents menu#Export|Export]] : Subset''' on the [[contents menu]] saves a [[Glossary:Branch|contents branch]] in a subset file
+
+Some subset files are created automatically for you. You can view them with '''[[View menu|View]] : [[View menu#Subset|Subset]]'''. For example: ''last_browser'' ([[Glossary:Subset|subset]] with all [[Glossary:Element|elements]] displayed in the last opened [[browser]]), ''searched'' (subset with all elements found with the last ''Ctrl+F'' search), ''last_child'' (subset with elements extracted with the last '''[[Browser menu#Child|Child]]''' operation in the [[browser]]), ''tasklist'' (subset will all [[Glossary:Task|tasks]] extracted with '''Tools : Open in browser''' on the [[Tasklist_manager#Tasklist_manager_menu|tasklist manager menu]]), etc.
+
+== Using subsets ==
+
+[[Glossary:Subset|Subset]] can be processed using a nearly infinite combination of options and commands in SuperMemo. Here are only a few examples:
+
+* '''[[Subset operations|Process browser>]] : [[Subset operations#Learning|Learning]] : Learn''' (''Ctrl+L'') on the [[Browser menu|browser processing menu]] makes it possible to make repetitions on a [[Glossary:Element_subset|subset of elements]]
+* '''[[Subset operations|Process browser>]] : [[Subset operations#Learning|Learning]] : Review all''' on the [[Browser menu|browser processing menu]] makes it possible to execute repetitions on the whole [[Glossary:Subset|subset]]. [[Glossary:Element|Elements]] that are not [[Glossary:Outstanding_element|outstanding]] will be subject to [[Glossary:Mid-interval_repetition|mid-interval repetition]]. Only [[Glossary:Dismissed_element|dismissed elements]] will not be processed
+* '''[[Subset operations|Process browser>]] : [[Postpone]]''' on the [[Browser menu|browser processing menu]] postpones [[Glossary:Outstanding_material|outstanding repetitions]] in a [[Glossary:Element_subset|subset of elements]]
+* '''[[Browser menu#Export|Export]] : Transfer elements''' on the [[browser menu]] makes it possible to transfer the [[Glossary:Element_subset|subset of element]] to another [[Glossary:Collection|collection]]
+* '''[[Browser menu#Export|Export]] : XML''' on the [[browser menu]] makes it possible to export a [[Glossary:Element_subset|subset of elements]] in the XML format (e.g. for using it with other SuperMemos such as [http://www.super-memo.com/supforpocpc.html SuperMemo for Pocket PC], etc.)
+* '''[[Browser menu#Export|Export]] : Q&A text file''' on the [[browser menu]] makes it possible to export a [[Glossary:Element_subset|subset of elements]] as a text file of questions and answers
+* '''[[Browser menu#Sort|Sort]]''' options on the [[browser menu]] help you review a [[Glossary:Element_subset|subset of elements]] sorted by [[Glossary:Interval|intervals]], [[Glossary:Difficulty|difficulty]], [[Glossary:Lapse|memory lapses]], etc.
+* '''[[Registry menu#Subset|Subset]] : [[Registry menu#Match to subset|Match to subset]]''' on the [[registry menu]] displays all [[Glossary:Registry_member|registry members]] that are in use by the [[Glossary:Element|elements]] of a given [[Glossary:Subset|subset]]
+== Video ==
+* [https://www.youtube.com/watch?v=ffy4vskpYZk Introduction to subset files]

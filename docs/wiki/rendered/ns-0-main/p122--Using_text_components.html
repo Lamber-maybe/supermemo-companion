@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Using text components — SuperMemo Help mirror</title>
+<style>body { font-family: Georgia, 'Times New Roman', serif; max-width: 1040px; margin: 0 auto; padding: 1.5rem; color: #202122; line-height: 1.58; }
+h1, h2, h3, h4, h5, h6 { font-family: system-ui, sans-serif; line-height: 1.25; }
+a { color: #0645ad; } a:visited { color: #0b0080; }
+.mirror-meta { color: #54595d; font: 0.85rem/1.45 system-ui, sans-serif; border-bottom: 1px solid #eaecf0; padding-bottom: .8rem; margin-bottom: 1.2rem; }
+.mirror-meta code { color: #202122; }
+table { border-collapse: collapse; margin: 1rem 0; max-width: 100%; }
+td, th { border: 1px solid #a2a9b1; padding: .4rem .6rem; vertical-align: top; }
+th { background: #eaecf0; }
+img, video { max-width: 100%; height: auto; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1rem; overflow-x: auto; }
+code { background: #f8f9fa; padding: .1rem .25rem; }
+.toc, .navbox { background: #f8f9fa; border: 1px solid #a2a9b1; padding: .8rem; }
+.redirect { background: #f8f9fa; border-left: .3rem solid #36c; padding: .8rem 1rem; }</style>
+</head>
+<body>
+<div class="mirror-meta">
+<a href="../../_index.html">Mirror index</a> ·
+<a href="../../source/ns-0-main/p122--Using_text_components.wiki">View raw source</a> ·
+<a href="https://help.supermemo.org/wiki/Using_text_components">Official page</a> ·
+revision <a href="https://help.supermemo.org/index.php?title=Using%20text%20components&amp;oldid=11997"><code>11997</code></a>
+</div>
+<h1>Using text components</h1>
+<main id="mw-content-text"><div class="mw-parser-output"><p>Text is the primary way in which you represent knowledge in SuperMemo. You will spend a lot of time processing texts, esp. if you learn to employ <a href="../ns-100-glossary/p295--Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>. This is why your decisions about choosing appropriate text <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">components</a> are important. 
+</p><p>Plain text <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">components</a> have traditionally been the most often used text components in earlier versions of SuperMemo. They consume little space and can be searched at high speeds with SuperMemo low-level search procedures. With the advent of <a href="../ns-100-glossary/p295--Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>, however, <a href="p121--HTML_component.html" title="HTML component">HTML components</a> have become the default text <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">components</a> in SuperMemo. <a href="p121--HTML_component.html" title="HTML component">HTML components</a> provide many formatting options, however, they consume more disk space. If disk space is very important for you, use <i>Classic</i> <a href="../ns-100-glossary/p348--Template.html" title="Glossary:Template">template</a> (and its derivatives) for <a href="../ns-100-glossary/p298--Item.html" title="Glossary:Item">items</a> instead of HTML-based templates (see: <a href="p71--Templates.html" title="Templates">Using templates</a>). Optimally, you should use <a href="p121--HTML_component.html" title="HTML component">HTML components</a> with <a href="../ns-100-glossary/p295--Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a> and use <i>Classic</i> plain text <a href="../ns-100-glossary/p348--Template.html" title="Glossary:Template">templates</a> on <a href="../ns-100-glossary/p298--Item.html" title="Glossary:Item">items</a> that have been completed (i.e. formulated in their final shape). SuperMemo automatically removes formatting from texts used in plain text <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">components</a> when you run <b><a href="p10--File_menu.html" title="File menu">File</a>&nbsp;: <a href="p104--Repairing_collections.html" title="Repairing collections">Repair collection</a></b> with <b>Rebuild registries</b> checked. This practice helps you keep your <a href="../ns-100-glossary/p265--Collection.html" title="Glossary:Collection">collections</a> compact and fast. 
+</p><p>The table below summarizes pros and cons of using various text <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">components</a> in SuperMemo: 
+</p>
+<table style="background-color: rgb(192, 192, 192);" border="1" cellspacing="5" cellpadding="5">
+
+<tbody><tr>
+<td align="center"><b>Type</b>
+</td>
+<td align="center"><b>Advantages</b>
+</td>
+<td align="center"><b>Disadvantages</b>
+</td>
+<td align="center"><b>Typical use</b>
+</td></tr>
+<tr>
+<td><a href="p121--HTML_component.html" title="HTML component"><b>HTML</b> component</a>
+<p>This <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">component</a> is used by <a href="../ns-100-glossary/p348--Template.html" title="Glossary:Template">templates</a> such as <i>Item</i>, <i>Article</i>, <i>Item Picture</i>, etc. 
+</p>
+</td>
+<td>
+<ol><li>richest formatting</li>
+<li>full incremental reading support</li>
+<li>full HTML and JavaScript support</li>
+<li>images can be inserted in the text</li>
+<li>Unicode support</li>
+<li>search possible</li>
+<li>search&amp;replace possible</li>
+<li>phonetic transcription possible</li>
+<li>can use stylesheets</li></ol>
+</td>
+<td>
+<ol><li>Internet Explorer 6.0 or later required</li>
+<li>fonts can be modified by <a href="../ns-100-glossary/p348--Template.html" title="Glossary:Template">templates</a> only before the text is typed in (unless you use a stylesheet with the template)</li>
+<li>all texts kept in separate files (this slows down copying of large <a href="../ns-100-glossary/p265--Collection.html" title="Glossary:Collection">collections</a>)</li></ol>
+</td>
+<td>
+<ol><li>default text format</li>
+<li><a href="../ns-100-glossary/p295--Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a></li>
+<li>richly formatted files with scripts and multimedia</li>
+<li>whole websites</li>
+<li>files that can be displayed in Internet Explorer (e.g. XLS, PDF, DOC, RTF, GIF, etc.)</li></ol>
+</td></tr>
+<tr>
+<td><a href="p727--WebView_component.html" title="WebView component"><b>WebView</b> component</a>
+<p>This <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">component</a> uses a modern browser engine (e.g. Chromium-based WebView) to display HTML content.
+</p>
+</td>
+<td>
+<ol><li>modern HTML, CSS, and JavaScript support</li>
+<li>renders pages more accurately than Internet Explorer</li>
+<li>better security and stability</li>
+<li>full Unicode support</li>
+<li>fast rendering of large documents</li>
+<li>supports modern web standards (HTML5, CSS3)</li>
+<li>search possible</li>
+<li>search&amp;replace possible</li></ol>
+</td>
+<td>
+<ol><li>may not support all legacy Internet Explorer features</li>
+<li>slightly higher memory use than the classic HTML component</li>
+<li>some older scripts or templates may require adaptation</li>
+<li><a href="p4--Incremental_reading.html" title="Incremental reading">incremental reading</a> support is rudimentary</li></ol>
+</td>
+<td>
+<ol><li>modern HTML content</li>
+<li>web pages requiring up‑to‑date browser standards</li>
+<li>items using interactive JavaScript widgets</li>
+<li>incremental reading when modern rendering is preferred</li></ol>
+</td></tr>
+<tr>
+<td><b>Plain text</b> component
+<p>This <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">component</a> is used by the <i>Classic</i> template 
+</p>
+</td>
+<td>
+<ol><li>fonts can be modified globally via <a href="../ns-100-glossary/p348--Template.html" title="Glossary:Template">templates</a></li>
+<li>small size of data</li>
+<li>speed</li>
+<li>can be made transparent (e.g. to write over images)</li>
+<li>search possible</li>
+<li>search&amp;replace possible (including <a href="p113--Filter_files.html" title="Filter files"><b>Apply filter</b></a>)</li>
+<li>automatic translation and phonetic transcription</li></ol>
+</td>
+<td>
+<ol><li>no rich formatting</li>
+<li>unsuitable for <a href="../ns-100-glossary/p295--Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a></li></ol>
+</td>
+<td>
+<ol><li>simple question-answer <a href="../ns-100-glossary/p298--Item.html" title="Glossary:Item">items</a> (e.g. created with <b>Remember cloze</b>)</li>
+<li>transparent labels</li></ol>
+</td></tr>
+<tr>
+<td><b>Rich text (RTF)</b> component
+<p>This <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">component</a> is used in templates such as <i>RTF Article</i>, <i>RTF Item</i>, etc. 
+</p>
+</td>
+<td>
+<ol><li>rich text formatting</li>
+<li>subset of <a href="../ns-100-glossary/p295--Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a></li>
+<li>search possible</li>
+<li>search&amp;replace possible</li>
+<li>phonetic transcription possible</li></ol>
+</td>
+<td>
+<ol><li>may not be supported in the future</li>
+<li>large size of files</li>
+<li>very slow processing of longer texts or large <a href="../ns-100-glossary/p265--Collection.html" title="Glossary:Collection">collections</a></li>
+<li>cannot modify font with <a href="../ns-100-glossary/p348--Template.html" title="Glossary:Template">templates</a> nor stylesheets</li>
+<li>cannot interlace pictures and other multimedia</li></ol>
+</td>
+<td>
+<ol><li><a href="../ns-100-glossary/p295--Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a> in the absence of Internet Explorer</li>
+<li>rich formatting in the absence of Internet Explorer</li></ol>
+</td></tr>
+<tr>
+<td><b>Spelling</b> <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">component</a>
+<p>Used in the <a href="../ns-100-glossary/p348--Template.html" title="Glossary:Template">template</a> <i>Spelling</i> 
+</p>
+</td>
+<td>
+<ol><li>used for spelling tests</li>
+<li>small size</li>
+<li>speed</li>
+<li>font modifiable via <a href="../ns-100-glossary/p348--Template.html" title="Glossary:Template">templates</a></li>
+<li>search possible</li>
+<li>search&amp;replace possible</li></ol>
+</td>
+<td>
+<ol><li>useless beyond spelling tests</li></ol>
+</td>
+<td>
+<ol><li>spelling exercises</li></ol>
+</td></tr>
+<tr>
+<td>Binary <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">component</a>
+</td>
+<td>
+<ol><li>using all possible proprietary formats that are not supported by other <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">components</a></li></ol>
+</td>
+<td>
+<ol><li>clicking the <b>Run</b> button is necessary to view the text</li>
+<li>files can only be edited if the proprietary editor is installed</li>
+<li>words do not enter the lexicon</li>
+<li>search not possible</li>
+<li>search&amp;replace not possible</li>
+<li>translation and phonetic transcription not available</li>
+<li>cannot modify font via <a href="../ns-100-glossary/p348--Template.html" title="Glossary:Template">templates</a></li></ol>
+</td>
+<td>
+<ol><li>importing all text formats that are not supported by the <a href="p121--HTML_component.html" title="HTML component">HTML component</a> (e.g. mind maps, etc.)</li></ol>
+</td></tr>
+<tr>
+<td><a href="p123--OLE_component.html" title="OLE component"><b>OLE</b> component</a>
+</td>
+<td>
+<ol><li>using proprietary formats that support OLE (e.g. mind maps)</li></ol>
+</td>
+<td>
+<ol><li>requires a relevant OLE server</li>
+<li>very large size of files</li>
+<li>files can only be edited if the proprietary editor is installed</li>
+<li>words do not enter the lexicon</li>
+<li>search not possible</li>
+<li>search&amp;replace not possible</li>
+<li>translation and phonetic transcription not available</li>
+<li>may be annoyingly unstable if there are problems with the OLE server</li>
+<li>cannot modify font via <a href="../ns-100-glossary/p348--Template.html" title="Glossary:Template">templates</a></li></ol>
+</td>
+<td>
+<ol><li>using data formats that cannot be used with <a href="p121--HTML_component.html" title="HTML component">HTML component</a> but support OLE in the presence of an OLE server</li></ol>
+</td></tr>
+<tr>
+<td><b>Sound</b> <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">component</a>
+</td>
+<td>
+<ol><li>sound can be associated with the text</li>
+<li>search possible</li>
+<li>search&amp;replace possible (including <a href="p113--Filter_files.html" title="Filter files"><b>Apply filter</b></a>)</li>
+<li>font modifiable via <a href="../ns-100-glossary/p348--Template.html" title="Glossary:Template">templates</a></li>
+<li>phonetic transcription and translation supported</li></ol>
+</td>
+<td>
+<ol><li>slow</li>
+<li>cannot be made transparent</li>
+<li>provides no advantages over plain text if no sound is associated</li></ol>
+</td>
+<td>
+<ol><li>pronunciation exercises</li>
+<li>learning material narration</li></ol>
+</td></tr>
+<tr>
+<td><b>Image</b> <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">component</a>
+</td>
+<td>
+<ol><li>can represent most complex formatting needed for mathematical or chemical formulas (as a picture, e.g. JPG)</li></ol>
+</td>
+<td>
+<ol><li>large size of files</li>
+<li>words do not enter the lexicon</li>
+<li>search not possible</li>
+<li>search&amp;replace not possible</li>
+<li>translation and phonetic transcription not available</li>
+<li>cannot modify font via <a href="../ns-100-glossary/p348--Template.html" title="Glossary:Template">templates</a></li></ol>
+</td>
+<td>
+<ol><li>complex formulas that are hard to represent in HTML or OLE</li></ol>
+</td></tr></tbody></table>
+<p><br>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="See_also">See also</h2></div>
+<ul><li><a class="external text" href="https://super-memory.com/help/faq/texts.htm"><b>FAQ</b>: Text components</a></li>
+<li><a href="p60--Using_fonts.html" title="Using fonts">Using fonts</a></li>
+<li><a href="p41--Fonts_tab_in_Options.html" title="Fonts tab in Options">Font options</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/Finding_out_the_default_font_size_used_in_HTML_components#Followup">FAQ: Why so many complex components?</a></li>
+<li><a class="external text" href="https://supermemopedia.com/wiki/How_can_I_see_if_a_component_is_plain_or_HTML%3F">How to differentiate between plain text and HTML?</a></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260710084130
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.022 seconds
+Real time usage: 0.023 seconds
+Preprocessor visited node count: 56/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key guru_Help20:pcache:122:|#|:idhash:canonical and timestamp 20260710084130 and revision id 11997. Rendering was triggered because: page-view
+ -->
+</div></main>
+</body>
+</html>

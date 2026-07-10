@@ -1,0 +1,1 @@
+'''Modify priority''' (''Alt+P'') lets you set the [[Glossary#priority|priority]] of the current [[Glossary#element|element]]

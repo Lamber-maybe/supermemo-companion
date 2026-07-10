@@ -1,0 +1,60 @@
+#[[Installing SuperMemo (in a minute)|Installing SuperMemo]] 
+#[[Unlock SuperMemo|Unlocking SuperMemo]] 
+#[[Step-by-step to SuperMemo mastery|Step by Step: User's Guide]] 
+#[[Overview articles|'''Overviews''']] 
+#*[[Incremental learning]]
+#*[[Incremental reading]] 
+#*[[Incremental video]] 
+#*[[Visual learning]]
+#*[[Priority queue]] 
+#*[[Backup]] 
+#*[[Building the knowledge tree|Knowledge tree]] 
+#*[[Concepts]]
+#*[[Neural creativity]]
+#*[https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo Forgetting index]
+#*[[Using fonts|Fonts]]
+#'''[[Main menu]]''' 
+#'''Windows used in SuperMemo, toolbars and menus:''' 
+#*'''[[Element window]]''' 
+#**[[Navigation bar]]
+#**[[Element menu]]
+#**[[Learning bar|'''Learn''' toolbar]]
+#**[[Edit toolbar|'''Edit''' toolbar]]
+#**[[Read toolbar|'''Read''' toolbar]]
+#**[[Compose toolbar|'''Compose''' toolbar]] 
+#**[[Tools toolbar|'''Tools''' toolbar]]
+#**[[Alarm toolbar|'''Alarm''' toolbar]]
+#*[[Contents|'''Contents''' window]]
+#**[[Contents menu]]
+#**[[Contents toolbar]]
+#*[[Browser|Browser window]] 
+#**[[Browser menu]]
+#**[[Browser toolbar]]
+#*[[Statistics|'''Statistics''' window]] 
+#*[[Element data|'''Element data''' window]] 
+#*[[Registry window]] 
+#**[[Registry toolbar]]
+#*'''Dialog boxes''' 
+#**[[Options]] 
+#**[[Element parameters]] 
+#**[[Sleep Chart]] 
+#**[[Analysis]]
+#*'''Tool/Status bars''' 
+#**[[Learnbar|Learning bar]]
+#**[[Compose toolbar]] 
+#**[[Edit toolbar]] 
+#**[[Read toolbar]]
+#**[[Status bar]]
+#'''Context dependent pop-up menus''' 
+#*'''[[Element menu]]''' 
+#*'''[[Component menu]]''' 
+#*[[Browser menu]] 
+#*[[Contents menu]] 
+#*[[Registry menu]]
+#*[[Subset operations|Subset processing menu]] (on [[Contents menu|contents]] and [[Browser menu|browser menus]])
+#[[Keyboard shortcuts]] 
+#<span id="Advanced_reference">Advanced reference</span> 
+#*[[Repair options]] 
+#*[[SuperMemo files]]
+
+{{:Feature request}}

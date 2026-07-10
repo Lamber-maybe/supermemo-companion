@@ -1,0 +1,1 @@
+An exemplary [[Glossary#cloze_deletion|cloze]] ready for '''[[Component menu#Decompose|Decompose]]'''.

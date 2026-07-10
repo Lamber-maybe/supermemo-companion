@@ -1,0 +1,1 @@
+'''[[Component menu#Reading|Reading]] : Remember cloze''' uses the currently selected text to create a [[Glossary#cloze deletion|cloze deletion]] and memorize it.

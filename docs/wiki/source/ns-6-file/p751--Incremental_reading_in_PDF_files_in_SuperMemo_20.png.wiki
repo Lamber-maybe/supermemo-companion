@@ -1,0 +1,1 @@
+{{Fig|SuperMemo 20 allows importing PDF files for [[incremental reading]]. For quick preview, the standard Chromium viewer is used (top left), while editing is handled by a dedicated open-source incremental reading PDF editor (top right). In this example, the [[extract]] option is used to generate a new element with the selected short passage (bottom).}}

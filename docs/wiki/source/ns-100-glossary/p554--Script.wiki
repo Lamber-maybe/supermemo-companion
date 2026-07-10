@@ -1,0 +1,2 @@
+;<span id="Script">script</span>
+:a list of commands available via the script [[Glossary:Component|component]] to manipulate other components in a given [[Glossary:Element|element]] (i.e. to display components, change their position, animate them, use them in learning tests, etc.). This way you can create interactive presentations, animation, [[Test elements|various tests]], etc.

@@ -1,0 +1,40 @@
+'''[[Toolkit menu|Toolkit]] : [[Mercy]] : Criteria''' dialog box can be used to determine the criteria by which [[Glossary:Item|items]] rescheduled with '''[[Toolkit menu| Toolkit]] : [[Mercy]]''' should be sorted.
+
+If you have just returned from vacation or had a longer break in learning, you will probably want to reschedule [[Glossary:Outstanding_material|outstanding repetitions]] over a longer period of time. This way you can avoid piles of work accumulated in SuperMemo.
+
+Depending on the nature of the material stored in your [[Glossary:Collection|collection]], you might want to use completely different criteria. For example, if you have added lots of important job-related information shortly before leaving for vacation, you might want to quickly go through this recently introduced material first. In other cases, you might want to ease the stress related to the return to repetitions by picking the easiest material first. You might also want to minimize the damage to the long-term learning process by starting with [[Glossary:Element|elements]] in which you have invested most, or those whose repetitions have been delayed to the largest degree.
+
+Use the following dialog box to set weight to individual criteria from 0% to 100%:
+
+[[Image:Mercy_criteria.jpg|center|SuperMemo: Repetition sorting criteria (for Mercy)]]
+
+== Sorting criteria ==
+
+# '''Priority''' - importance of [[Glossary:Element|elements]] as determined by [[Glossary:Priority|priority]] (as well as some other criteria, including the [[Glossary:Forgetting_index|forgetting index]])
+# '''Lateness''' - degree of delay of repetitions. Usually short-[[Glossary:Interval|interval]] [[Glossary:Element|elements]] are more likely to be forgotten as a result of delay. Use this criterion to minimize the forgetting rate during repetitions of the rescheduled material
+# '''Investment''' - investment of your time in memorizing [[Glossary:Item|items]]. The investment is determined by the number of repetitions, the number of [[Glossary:Lapse|memory lapses]], and most of all, the length of the [[Glossary:Interval|interval]]. Use this criterion to protect the material you have worked hardest on. Even though this is the material that is least likely to be forgotten, each [[Glossary:Lapse|memory lapse]] of high-investment material will result in a most painful increase in workload
+# '''Easiness''' - easiness of the [[Glossary:Element|elements]] as determined by the [[Glossary:Interval|interval]] and the number of [[Glossary:Lapse|memory lapses]] (the fewer the lapses and the longer the interval, the easier the element). Use this criterion to maximize the speed of learning, and to minimize the stress of handling the [[Glossary:Outstanding_material|outstanding material]]. You can opt for maximizing '''Easiness''' at times of crisis (i.e. when you cannot devote sufficient attention to repetitions). This way you can quickly dislodge most of the [[Glossary:Outstanding_material|outstanding material]] without adding many repetitions of newly forgotten [[Glossary:Element|elements]]. You can deal with the hardest part only then when the catch-up hardship period comes to the end
+# '''Recency''' - how recently the [[Glossary:Element|elements]] have been introduced into the learning process. The recency is determined by (1) [[Glossary:Interval|intervals]] (shorter intervals indicate recency), (2) [[Glossary:Lapse|memory lapses]] (lapses refute recency) and (3) number of repetitions (recent [[Glossary:Item|items]] have fewer repetitions made). Use this criterion when the most recently introduced material is of highest recall priority (e.g. in cases you memorized some critical job-related material before leaving for vacation). This criterion is also very useful if you are going through a crisis with your repetitions (''Do I really need to spend that much time with SuperMemo?''). '''Recency''' criterion will help you quickly realize what great stuff you have learned recently and what a pity it would be to lose it to forgetting. If the break is long enough, you will also see what a painful proportion of [[Glossary:Element|elements]] you have already lost!
+
+<div class="bs-callout bs-callout-warning">
+'''Warning!''' By abusing '''Recency''' and '''Easiness''' criteria you can indefinitely reschedule some harder long-[[Glossary:Interval|interval]] [[Glossary:Element|elements]]! You might be very disappointed in a year or two to discover that some [[Glossary:Element|elements]] have gained very long [[Glossary:Interval|intervals]] without a single repetition and have entirely faded from your memory!
+</div>
+
+The percentage values of the impact of individual criteria on sorting can be seen to the right from the slide-bars. Change those values by moving the sliders. For example, if you want to repeat rescheduled material with the easiest material coming first, put all sliders to the left and the '''Easiness''' slider on the right ('''Easiness'''=100%).
+
+Note that '''Investment''' criterion cannot drop below 2%. This is only to prevent the situation in which all criteria have the value 0%.
+
+== Sorting options ==
+
+# '''Use sorting criteria specified above''' - sorting will proceed along the criteria determined by the sliders: [[Glossary:Priority|priority]], lateness, investment, etc.
+# '''Reverse sorting order''' - sorting will be reversed. This can be used for example to use the '''Easiness''' criterion to sort repetitions starting from the most difficult material
+# '''Retain current repetition sequence''' - when using '''[[Subset operations#Reschedule|Spread]]''' in the [[browser]]: reschedule without sorting, i.e. without changing the current sorting of [[Glossary:Element|elements]] (i.e. the same repetition sequence will be executed but all repetitions will take place later than originally planned)
+# '''Randomize''' - randomize the sequence of rescheduled repetitions. This criterion might be used if you frequently run short-term rescheduling (e.g. to equalize the number of repetitions per day). Paradoxically, randomizing the sequence of rescheduled repetitions may show minimum side effects. Randomization prevents biased rescheduling that may accumulate over time when frequently using '''[[Mercy]]''' with the same set of fixed criteria such as easy-items-first, recent-items-first, etc.
+
+== Quickly rescheduling outstanding material using a given set of criteria ==
+
+# Choose '''[[Toolkit menu|Toolkit]] : [[Mercy]]''' (e.g. by pressing ''Shift+Alt+M'')
+# Choose '''Criteria''' and set the sliders according to your preferences
+# Choose the maximum acceptable number of repetitions per day and type it in at '''Number of elements per day'''. Alternatively, choose the period in which all [[Glossary:Outstanding_material|outstanding repetitions]] should be done and type it in at '''Rescheduling period'''
+# Choose '''Update''', e.g. by pressing ''Enter''. This will display the rescheduling parameters: number of [[Glossary:Item|items]] per day, length of the rescheduling period, the date on which last [[Glossary:Outstanding_element|outstanding repetitions]] will be made, etc.
+# If you are satisfied with your selection, click '''OK'''. Otherwise type in new parameters and choose '''Update''' again

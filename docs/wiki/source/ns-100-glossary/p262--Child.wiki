@@ -1,0 +1,6 @@
+;<span id="Child">child</span>
+:[[Glossary:Element|element]] in the [[Glossary:Contents_window|'''Contents''' window]] that is located one level below the element which makes its [[Glossary:Parent|parent]]. All the [[Glossary:Element|elements]] at the same indentation in the [[Glossary:Knowledge_tree|knowledge tree]] are '''children''' of their single parent (they are [[Glossary:Sibling|siblings]] to each other). [[Glossary:Descendant|Descendants]] are all the [[Glossary:Element|elements]] below the ancestor level. In [[Glossary:Incremental_reading|incremental learning]] all knowledge [[Glossary:Extract|extracts]] and [[Glossary:Cloze_deletion|clozes]] are created as '''children''' of their source.
+:See also:
+:*[[Building the knowledge tree]]
+:*[[Contents|'''Contents''' window]]
+:*[https://en.wikipedia.org/wiki/Tree_(data_structure) Tree structure] at Wikipedia

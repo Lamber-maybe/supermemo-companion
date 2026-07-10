@@ -1,0 +1,16 @@
+'''[[Toolkit menu| Toolkit]] : Options''' on the [[main menu]] opens the options dialog that makes it possible to customize SuperMemo and the learning process. See: [https://www.youtube.com/watch?v=X_9OZs0rA2M Quick overview] (video)
+
+'''Options''' dialog includes the following tabs:
+
+* [[Learning tab in Options | '''Learning''']] - options affecting the learning process such as: [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo speed of learning], working hours, [https://supermemo.guru/wiki/SuperMemo_Algorithm Algorithm SM-18] reporting, etc.
+* [[Access tab in Options | '''Access''']] - options affecting access to data: CD/DVD path, [[Glossary:Level|difficulty level]], [[Glossary:Collection|collection]] password, etc.
+* [[Language tab in Options | '''Language''']] - localization options such as: language to which the current [[Glossary:Collection|collection]] is translated, [[Localization table | SuperMemo interface language]], strings used in translating the interface, etc.
+* [[SuperMemo tab in Options | '''SuperMemo''']] - other options such as: [[Glossary:Knowledge_tree|knowledge tree]]'s [[Glossary:Branch|branch]] [[Glossary:Child|children]] limit, background image, sound feedback, etc.
+* [[Mouse tab in Options | '''Mouse''']] - interpretation of mouse behavior. For example, how [[Glossary:Component|components]] are edited or translated with the mouse, etc.
+* '''[[Leeches]]''' - options that help you eliminate wrongly formulated [[Glossary:Item|items]] from the learning process. If you choose '''Wizard''', all ill-structured [[Glossary:Item|items]] will open a [[Leeches#Leech_Alert_Wizard|leech manager dialog]] that will help you choose optimum processing steps to eliminate problems with difficult [[Glossary:Item|items]]
+* [[Fonts tab in Options | '''Fonts''']] - fonts used in SuperMemo interface, in questions, in answers, in the [[Contents|'''Contents''' window]], etc.
+* [[Email tab in Options|'''E-mail''']] - options for sending email from SuperMemo (e.g. to forward [[Glossary:Element|elements]])
+
+[[Image:options_learning.jpg|center|600px|SuperMemo: Toolkit : Options : Learning tab]]
+
+Global options of SuperMemo are stored in the file ''supermemo.ini'' in the SuperMemo subfolder ''BIN''.<br />Options that affect only the current [[Glossary:Collection | collection]] are stored in the file ''collection.ini'' in the [[Glossary:Collection|collection]] subfolder (named in the same way as the [[Glossary:Collection|collection]]). '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Options|Options]]''' will modify both these files and change relevant settings

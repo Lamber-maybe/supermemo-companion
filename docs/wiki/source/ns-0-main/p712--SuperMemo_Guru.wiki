@@ -1,0 +1,9 @@
+'''SuperMemo Guru''' is a collection of wiki articles about SuperMemo, memory, learning, sleep, creativity, problem-solving, brain science, health, and education.
+
+For the user of SuperMemo for Windows, some materials might be of particular interest:
+* [https://supermemo.guru/wiki/Incremental_reading_step_by_step Incremental reading step-by-step]
+* [https://supermemo.guru/wiki/How_to_read_a_book_in_an_hour How to read a book in an hour?]
+* [https://supermemo.guru/wiki/Incremental_reading_is_speed_reading_on_steroid Speed-reading on steroids]
+* [https://supermemo.guru/wiki/Advantages_of_incremental_reading Advantages of incremental reading]
+
+The website: [https://supermemo.guru/wiki/SuperMemo_Guru SuperMemo Guru]

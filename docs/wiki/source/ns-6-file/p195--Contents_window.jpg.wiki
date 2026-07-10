@@ -1,0 +1,3 @@
+<blockquote>
+'' '''Figure:''' The '''[[Contents]]''' window displaying the [[Glossary:Knowledge_tree|knowledge tree]] (i.e. the hierarchical structure of [[Glossary:Element|element]]s) of a [[Glossary:Collection|collection]]. In [https://super-memory.com/archive/help17/new.htm SuperMemo 17] or later, each [[Glossary:Branch|branch]] shows the number of its [[Glossary:Descendant|descendant]]s in the parentheses. [[Glossary:Concept|Concept]]s use their dedicated icon, which can be seen in the [[Glossary:Root_node|root]] (collection root is always a concept).''
+</blockquote>

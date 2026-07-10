@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SuperMemo Commander — SuperMemo Help mirror</title>
+<style>body { font-family: Georgia, 'Times New Roman', serif; max-width: 1040px; margin: 0 auto; padding: 1.5rem; color: #202122; line-height: 1.58; }
+h1, h2, h3, h4, h5, h6 { font-family: system-ui, sans-serif; line-height: 1.25; }
+a { color: #0645ad; } a:visited { color: #0b0080; }
+.mirror-meta { color: #54595d; font: 0.85rem/1.45 system-ui, sans-serif; border-bottom: 1px solid #eaecf0; padding-bottom: .8rem; margin-bottom: 1.2rem; }
+.mirror-meta code { color: #202122; }
+table { border-collapse: collapse; margin: 1rem 0; max-width: 100%; }
+td, th { border: 1px solid #a2a9b1; padding: .4rem .6rem; vertical-align: top; }
+th { background: #eaecf0; }
+img, video { max-width: 100%; height: auto; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1rem; overflow-x: auto; }
+code { background: #f8f9fa; padding: .1rem .25rem; }
+.toc, .navbox { background: #f8f9fa; border: 1px solid #a2a9b1; padding: .8rem; }
+.redirect { background: #f8f9fa; border-left: .3rem solid #36c; padding: .8rem 1rem; }</style>
+</head>
+<body>
+<div class="mirror-meta">
+<a href="../../_index.html">Mirror index</a> ·
+<a href="../../source/ns-0-main/p392--SuperMemo_Commander.wiki">View raw source</a> ·
+<a href="https://help.supermemo.org/wiki/SuperMemo_Commander">Official page</a> ·
+revision <a href="https://help.supermemo.org/index.php?title=SuperMemo%20Commander&amp;oldid=12452"><code>12452</code></a>
+</div>
+<h1>SuperMemo Commander</h1>
+<main id="mw-content-text"><div class="mw-parser-output"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" aria-label="Hide the table of contents"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introducing_SuperMemo_Commander"><span class="tocnumber">1</span> <span class="toctext">Introducing SuperMemo Commander</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Available_commands"><span class="tocnumber">2</span> <span class="toctext">Available commands</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#SuperMemo_Commander_dialog_box"><span class="tocnumber">3</span> <span class="toctext">SuperMemo Commander dialog box</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#SuperMemo_Commander_context_menu"><span class="tocnumber">4</span> <span class="toctext">SuperMemo Commander context menu</span></a></li>
+</ul>
+</div>
+
+<div class="mw-heading mw-heading2"><h2 id="Introducing_SuperMemo_Commander">Introducing SuperMemo Commander</h2></div>
+<p>Throughout its 24 year development (the Delphi line), SuperMemo for Windows has been enabled with a multitude of options available in a myriad of contexts. All of them implemented with an intention to improve the learning experience. The feature set is always being reorganized and often pruned. By embracing the NUI (Natural User Interface) design philosophy we have gone as far as to intentionally avoid adding new buttons, menu items, options, etc. Yet we keep receiving complaints from confused students.
+</p><p>Newer SuperMemos attempt to relieve the feature bloat by introducing <b>SuperMemo Commander</b> (available with <b><a href="p15--Toolkit_menu.html" title="Toolkit menu">Toolkit</a>&nbsp;: <a href="p15--Toolkit_menu.html#Commander" title="Toolkit menu">Commander</a></b>; alternatively, and more quickly, press <i>Ctrl+Enter</i>). The tool makes it possible for you to quickly execute (often deeply-buried) commands via mnemonic keyboard shortcuts. Only the hardest to access options have been included in <a href="#Available_commands">the Commander list</a>. The list is open to changes upon user suggestions. The names of commands can be changed by the user.
+</p>
+<div class="center">
+<p><span typeof="mw:File"><a href="../../source/ns-6-file/p410--SuperMemo_Commander.jpg.wiki" class="mw-file-description" title="SuperMemo: SuperMemo Commander (available with Toolkit : Commander; alternatively, and more quickly, with Ctrl+Enter) allows of fast execution of commands via mnemonic keyboard shortcuts"><img alt="SuperMemo: SuperMemo Commander (available with Toolkit : Commander; alternatively, and more quickly, with Ctrl+Enter) allows of fast execution of commands via mnemonic keyboard shortcuts" src="https://help.supermemo.org/images/thumb/7/78/SuperMemo_Commander.jpg/800px-SuperMemo_Commander.jpg" decoding="async" loading="lazy" width="800" height="355" class="mw-file-element" srcset="https://help.supermemo.org/images/thumb/7/78/SuperMemo_Commander.jpg/1200px-SuperMemo_Commander.jpg 1.5x, https://help.supermemo.org/images/7/78/SuperMemo_Commander.jpg 2x"></a></span>
+</p>
+</div>
+<p><br>
+For example, to open the <a href="p187--Sleep_Chart.html" class="mw-redirect" title="SleepChart">Sleep Chart</a> press:
+</p>
+<ol><li><i>Ctrl+Enter</i> - to open SuperMemo Commander</li>
+<li><i>S</i> - for <a href="p187--Sleep_Chart.html" class="mw-redirect" title="SleepChart">Sleep Chart</a> mnemonic. This will limit the list to only those commands beginning with <i>s</i></li>
+<li><i>Down arrow</i> repeatedly to move down to <i>Sleep Chart'</i></li>
+<li><i>Enter</i></li></ol>
+<p>You can create an alias for a selected mnemonic keyboard shortcut. To do that:
+</p>
+<ol><li>Select the command in the first <b>Command</b> column</li>
+<li>Click <b>Rename</b> (<i>Alt+R</i>) to the right</li>
+<li>In the <b>Command name</b> dialog box, type the new name, and click <b>OK</b></li></ol>
+<div class="mw-heading mw-heading2"><h2 id="Available_commands">Available commands</h2></div>
+<p>The command set is easily expandable in future updates to SuperMemo. If you cannot remember a shortcut or need to often use a command available from a deeply nested menu or a button that is not part of your layout, send your request for new commands via e-mail.
+</p>
+<ul><li><b>Alarm: Cancel</b> - cancel the alarm setting to make sure the alarm does not sound</li>
+<li><b>Alarm: Set</b> - determine the time that should elapse before the alarm is sounded</li>
+<li><b>Ancestors: Show</b> - show the window with the list of <a href="../ns-100-glossary/p255--Ancestor.html" title="Glossary:Ancestor">ancestors</a> of the current <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a> (same as <i>Ctrl+Shift+X</i>)</li>
+<li><b>Bullet</b> - insert a bullet into an <a href="p121--HTML_component.html" title="HTML component">HTML component</a> (same as <i>Ctrl+Shift+L</i>)</li>
+<li><b>Capitalize text</b> - convert a text to a lowercase with the first character in uppercase (Sentence case.)</li>
+<li><b>Compress images</b> - compress all images to a predetermined maximum size</li>
+<li><b>Concept: Link</b> - associate the current <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a> with a selected <a href="../ns-100-glossary/p532--Concept.html" title="Glossary:Concept">concept</a></li>
+<li><b>Concept: Make</b> - create a new <a href="../ns-100-glossary/p532--Concept.html" title="Glossary:Concept">concept</a> based on the current <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a></li>
+<li><b>Delete after cursor</b> - delete all text after the current selection or cursor position in an <a href="p121--HTML_component.html" title="HTML component">HTML component</a> (same as <i>Alt+.</i>)</li>
+<li><b><a href="p634--Delete_before_cursor.html" title="Delete before cursor">Delete before cursor</a></b> - delete all text before the current selection or cursor position in an <a href="p121--HTML_component.html" title="HTML component">HTML component</a> (same as <i>Alt+\</i>)</li>
+<li><b>Deprecate article</b> - mark an article reference as "outdated" so that its newer versions might be imported (e.g. from <a class="external text" href="https://en.wikipedia.org">Wikipedia</a>)</li>
+<li><b>Dismember</b> - separate <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">components</a> in individual <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">elements</a> (e.g. to split an e-mail with multiple attachments to separate elements each holding a single attachment)</li>
+<li><b>Done!</b> - delete all <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">components</a>, <a href="../ns-100-glossary/p273--Dismiss.html" title="Glossary:Dismiss">dismiss</a> the <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a>, or delete the childless element (same as <i>Ctrl+Shift+Enter</i>)</li>
+<li><b>Duplicate element</b> - create a copy of the current <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a> and make it a <a href="../ns-100-glossary/p262--Child.html" title="Glossary:Child">child</a> of the original (same as <i>Alt+D</i>)</li>
+<li><b>E-mail: Answer</b> - reply to a selected text or forward the current <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a> via e-mail (same as <i>Ctrl+Shift+E</i>)</li>
+<li><b>E-mail: Paste</b> - paste e-mail stored in the clipboard (Outlook, Windows (Live) Mail, etc.)</li>
+<li><b>Explain</b> - explain the current <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a> or text selection using AI (see: <a href="p752--Using_AI_in_SuperMemo.html" title="Using AI in SuperMemo">Using AI in SuperMemo</a>)</li>
+<li><b>Fit all pictures</b> - adjust the size of selected image <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">components</a> to the size of pictures</li>
+<li><b>Fit picture</b> - save space in the <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a> by reducing the size of the image <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">component</a> to the size of the picture</li>
+<li><b>Fit to component</b> - adjust the size of <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">components</a> around a selected component</li>
+<li><b>Highlight: Clear</b> - clear search highlights</li>
+<li><b>Highlight: Show</b> - show search highlights</li>
+<li><b>Highlighter font</b> - apply the highlighter font to the selected text</li>
+<li><b>Horizontal line</b> - insert a horizontal line into an <a href="p121--HTML_component.html" title="HTML component">HTML component</a> (same as <i>Shift+Alt+H</i>)</li>
+<li><b>Hyperlink: Element</b> - create a link from the selected text to an <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a> in the <a href="../ns-100-glossary/p265--Collection.html" title="Glossary:Collection">collection</a></li>
+<li><b>Import file</b> - import a file from the web or from a disk</li>
+<li><b>Link: Contents</b> - create a link between the <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a> and another one in the <a href="p86--Contents.html" title="Contents"><b>Contents</b> window</a></li>
+<li><b>Markdown</b> - transform plain text formatted in <a class="external text" href="https://en.wikipedia.org/wiki/Markdown">markdown</a> to <a class="external text" href="https://en.wikipedia.org/wiki/HTML">richly formatted text</a> (e.g. <i>"*Plaque Formation*: In Alzheimer's disease"</i> will become <i>"<b>Plaque Formation</b>: In Alzheimer's disease"')</i></li>
+<li><b>Occlusion test</b> - creates a set of occlusion tests based on a template item (see <a href="../../source/ns-6-file/p713--Learning_anatomy_with_occlusion_tests_in_SuperMemo_19.jpg.wiki" title="File:Learning anatomy with occlusion tests in SuperMemo 19.jpg">picture</a>)</li>
+<li><b>Outstanding</b> - show <a href="../ns-100-glossary/p317--Outstanding_element.html" title="Glossary:Outstanding element">outstanding element</a> in the <a href="p79--Browser.html" title="Browser">browser</a></li>
+<li><b>Parse HTML</b> - convert HTML code to formatted text (same as <i>Shift+Ctrl+1</i>)</li>
+<li><b>Paste: Article</b> - paste the text of an article stored in the clipboard into a new <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a> (same as <i>Ctrl+N</i>)</li>
+<li><b>Plan</b> - open the <a href="p106--Plan.html" title="Plan">plan</a> of the day (same as <i>Ctrl+P</i>)</li>
+<li><b>Pronunciation: Add</b> - add a new word-transcription pair to the phonetic <a href="../ns-100-glossary/p327--Registry.html" title="Glossary:Registry">registry</a></li>
+<li><b>Reference: Edit</b> - edit <a href="p126--References.html" title="References">references</a> associated with the <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a></li>
+<li><b>Reference: Show</b> - show <a href="p126--References.html" title="References">references</a> associated with the <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a></li>
+<li><b>Remove formatting: Front</b> - remove HTML formatting from before the text (all tags before the actual text will be removed)</li>
+<li><b>Remove formatting: Plain text</b> - remove HTML formatting from the entire text (same as <i>Shift+Ctrl+F12</i>)</li>
+<li><b>Remove formatting: Selection</b> - remove HTML formatting from the selected text</li>
+<li><b>Reopen favorite</b> - choose from a list of the most often used <a href="../ns-100-glossary/p265--Collection.html" title="Glossary:Collection">collections</a> (same as <i>Ctrl+O</i>)</li>
+<li><b>Save file</b> - save file associated with the current <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">component</a></li>
+<li><b>Search web</b> - search the web for the selected text with a chosen service (same as <i>Ctrl+F3</i>)</li>
+<li><b>Sleep Chart</b> - open the <a href="p187--Sleep_Chart.html" title="Sleep Chart">timeline of sleep and learning</a> (same as <i>F12</i>)</li>
+<li><b>Sort repetitions</b> - sort the <a href="../ns-100-glossary/p483--Outstanding_queue.html" title="Glossary:Outstanding queue">outstanding queue</a> using <a href="p5--Priority_queue.html#Sorting_repetitions" title="Priority queue">current sorting criteria</a></li>
+<li><b>Split: Split the article</b> - split the article into portions marked by <a href="../ns-100-glossary/p429--Splitmark.html" title="Glossary:Splitmark">split-marks</a></li>
+<li><b>Style: Apply style</b> - apply a selected style from the Style <a href="../ns-100-glossary/p327--Registry.html" title="Glossary:Registry">registry</a> to the currently selected HTML text</li>
+<li><b>Subset: Add</b> - add the current <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a> to a chosen <a href="../ns-100-glossary/p344--Subset.html" title="Glossary:Subset">subset</a></li>
+<li><b>Tasklist: Add task</b> - add a new <a href="../ns-100-glossary/p346--Task.html" title="Glossary:Task">task</a> to the current <a href="../ns-100-glossary/p347--Tasklist.html" title="Glossary:Tasklist">tasklist</a> (same as <i>Alt+F1</i>)</li>
+<li><b>Template: Apply</b> - choose a <a href="../ns-100-glossary/p348--Template.html" title="Glossary:Template">template</a> that should be used with the current <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a> (same as <i>Shift+Ctrl+M</i>)</li>
+<li><b>Template: Detach</b> - detach the <a href="../ns-100-glossary/p348--Template.html" title="Glossary:Template">template</a> from the current <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a> to expose the original looks</li>
+<li><b>Template: Impose</b> - detach the <a href="../ns-100-glossary/p348--Template.html" title="Glossary:Template">template</a> from the current <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a> without changing its looks (same as <i>Shift+Ctrl+F2</i>)</li>
+<li><b>Tile components</b> - arrange selected <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">components</a> in equally sizes rows and columns (same as <i>Shift+Alt+T</i>)</li>
+<li><b>Undo repetition</b> - undo the effects of the most recent <a href="../ns-100-glossary/p333--Repetition.html" title="Glossary:Repetition">repetition</a></li>
+<li><b>Unit: Convert</b> - performs all imperial unit conversions with 4 keystrokes</li>
+<li><b>Unzoom image</b> - remove trim/zoom from the current image</li>
+<li><b>Zoom image mode</b> - enter the <a href="../ns-100-glossary/p508--Zoom_trim_mode.html" title="Glossary:Zoom&amp;trim mode">zoom mode</a> for the current image to trim, zoom or crop images</li></ul>
+<div class="mw-heading mw-heading2"><h2 id="SuperMemo_Commander_dialog_box">SuperMemo Commander dialog box</h2></div>
+<p>In the top part of the dialog box, you can see the following three columns:
+</p>
+<ul><li><b>Command</b>
+<ul><li>Command text box - the text box which you start typing the name of the SuperMemo command you want to execute in</li>
+<li>Command list box - the list of available commands (the list gets filtered by the name that you can type in the text box above)</li></ul></li>
+<li><b>Custom name</b>
+<ul><li>Custom name text box - the text box which you start typing the custom name for the command you want to execute in (to quickly move to this field, press <i>Alt+U</i>)</li>
+<li>Custom name list box - the list of available custom names (the list gets filtered by the name that you type in the text box above)</li></ul></li>
+<li>Buttons
+<ul><li><b>OK</b> (<i>Enter</i>) - close the commander and execute the selected command</li>
+<li><b>Cancel</b> (<i>Esc</i>) - close the commander without executing any command</li>
+<li><b>Rename</b> (<i>Alt+R</i>) - give your own name to a given command (the custom names are stored in the <i>commands.ini</i> file located in the <i>[BIN]</i> subfolder of your SuperMemo installation)</li>
+<li><b>Default</b> - restore the default command names in the <b>Custom name</b> column (it effectively deletes the <i>commands.ini</i> file from the <i>[BIN]</i> subfolder)</li></ul></li></ul>
+<p>At the bottom, you can read the description of the currently selected command.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="SuperMemo_Commander_context_menu">SuperMemo Commander context menu</h2></div>
+<p>Right click anywhere within the dialog box to display the menu
+</p>
+<ul><li><b>Execute</b> (<code>Enter</code>) - execute the selected command and close the commander</li>
+<li><b>Close</b> (<code>Esc</code>) - close the commander without executing any command</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20260710125026
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.048 seconds
+Real time usage: 0.050 seconds
+Preprocessor visited node count: 81/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key guru_Help20:pcache:392:|#|:idhash:canonical and timestamp 20260710125026 and revision id 12452. Rendering was triggered because: page-view
+ -->
+</div></main>
+</body>
+</html>

@@ -1,0 +1,6 @@
+;<span id="Branch">branch</span>
+:in the [[Glossary:Contents_window|'''Contents''' window]], an [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|knowledge tree]] with all its [[Glossary:Descendant|descendants]] (incl. its [[Glossary:Child|children]]). All [[Glossary:Element|elements]] in a '''branch''' can be processed with [[subset operations]]. For example, if you would like to review your physics material before an exam, you could select the ''Physics'' '''branch''' in the [[Glossary:Contents_window|'''Contents''' window]], and click '''Learn''' (''Ctrl+L'') at the bottom of the window. You can add new '''branches''' with '''Add''' and '''Insert''' (''Ins'') in the [[Glossary:Contents_window|'''Contents''' window]]. A '''branch''' that is built automatically by adding [[Glossary:Element|elements]] to a [[Glossary:Concept|concept]] is called a [[Glossary:Concept_group|concept group]]. All [[Glossary:Concept|concepts]] are associated with their own '''branches/groups'''. By analogy to Windows, when a branch has no content and is use solely to hold other branches or elements, it may be called a '''folder'''.
+:See also:
+:*[[Building the knowledge tree]]
+:*[[Contents|'''Contents''' window]]
+:*[https://en.wikipedia.org/wiki/Tree_(data_structure) Tree structure] at Wikipedia

@@ -1,0 +1,1 @@
+Translation registry stores translation texts that correspond with the text registry in the currently selected translation language

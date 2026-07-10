@@ -1,0 +1,3 @@
+<blockquote>
+'''''Figure''': The unzoomed picture of the African political map used to illustrate [[Glossary:Element|elements]] related to Africa. You can see an [[Glossary:Element|element]] related to the assassination of the President Habyarimana extracted from the article about the [https://en.wikipedia.org/wiki/History_of_Rwanda history of Rwanda] originally imported from [http://en.wikipedia.org Wikipedia]. The [[Glossary:Element|element]] is illustrated with the political map of Africa on the right (the map is neither zoomed nor trimmed; just stretched proportionally within the image [[Glossary:Component|component]]).''
+</blockquote>

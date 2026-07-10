@@ -1,0 +1,87 @@
+__TOC__
+
+The '''View''' submenu on the [[main menu]] is available only on the '''Middle''' or higher [[Glossary:Level|levels]]. It makes it possible to open an [[Browser|element browser]] with various [[Glossary:Element_subset|element subsets]]. The following options are available: 
+
+== View menu items ==
+
+=== Outstanding ===
+
+*'''Outstanding''' - open the [[browser]] with all [[Glossary:Outstanding_element|elements scheduled for today's review]]. These include today's repetitions as well as repetitions from all recent days on which learning was not completed
+
+=== Link list ===
+
+*'''Link list''' - open the [[browser]] with the list of [[Glossary:Concept|concepts]] and [[Glossary:Element|elements]] linked to the element currently displayed in the [[element window]]
+
+=== Neural queue ===
+
+*'''Neural queue''' - open the [[browser]] with the current [[Glossary:Neural_queue|neural queue]] (or build a [[Glossary:Neural_queue|neural queue]] for the [[Glossary:Element|element]] currently displayed in the [[element window]])
+
+=== Priority queue ===
+
+*'''Priority queue''' - open the [[browser]] with the entire [[Glossary:Priority_queue|priority queue]] (starting from [[Glossary:Element|elements]] of the highest [[Glossary:Priority|priority]]: 0%)
+
+=== All ===
+
+*'''All''' - open the [[browser]] with all [[Glossary:Element|elements]] stored in the current [[Glossary:Collection|collection]]
+
+=== Memorized ===
+
+*'''Memorized''' - open the [[browser]] with all [[Glossary:Element|elements]] taking part in the learning process (i.e. elements that have been [[Glossary:Memorized_element|memorized]])
+
+=== Dismissed ===
+
+*'''Dismissed''' - open the [[browser]] with all [[Glossary:Element|elements]] that have been [[Glossary:Dismissed_element|dismissed]], i.e. definitely removed from the learning process (e.g. by pressing ''Ctrl+D'' in the [[element window]])
+
+=== Concepts ===
+
+*'''Concepts''' - open the [[browser]] with all [[Glossary:Element|elements]] that are [[Glossary:Concept|concepts]] (see: [[Items, topics, concepts, and tasks]])
+
+=== Topics ===
+
+*'''Topics''' - open the [[browser]] with all [[Glossary:Element|elements]] that are [[Glossary:Topic|topics]] (see: [[Items, topics, concepts, and tasks]])
+
+=== Items ===
+
+*'''Items''' - open the [[browser]] with all [[Glossary:Element|elements]] that are [[Glossary:Item|items]] (see: [[Items, topics, concepts, and tasks]])
+
+=== Tasks ===
+
+*'''Tasks''' - open the [[browser]] with all [[Glossary:Element|elements]] that are [[Glossary:Task|tasks]]. All tasks are displayed independent of which [[Glossary:Tasklist|tasklist]] they belong to. To view and sort [[Glossary:Task|tasks]] belonging to an individual [[Glossary:Tasklist|tasklist]], use the [[tasklist manager]] ('''[[Toolkit menu|Toolkit]] : [[Tasklist manager|Tasklist]]''' (''F4'')). To view these [[Glossary:Task|tasks]] in a [[browser]], press ''Shift+Ctrl+B'' in the [[tasklist manager]]
+
+=== Last browser ===
+
+*'''Last browser''' - open the [[browser]] with the contents of the most recently used browser
+
+=== Search results ===
+
+*'''Search results''' - open the [[browser]] with [[Glossary:Element|elements]] collected in the last search operation (executed with ''Ctrl+F'' or '''[[Search menu|Search]] : [[Find elements]]''')
+
+=== Subset ===
+
+*'''Subset''' - open the [[browser]] with [[Glossary:Element|elements]] stored in a [[Glossary:Element_subset|subset file]] (extension ''SUB''). Subset files can be created in the [[browser]] with options such as '''[[Browser menu#Subset|Subset]] : Save all''' or '''[[Browser menu#Select|Select]] : Save selection''', etc. Some [[Glossary:Element_subset|subsets]] are created automatically, for example, ''unpostponed.sub'' subset stores [[Glossary:Element|elements]] that have been skipped by [[Glossary:Auto-postpone|auto-postpone]]. For more see: [[Using subsets]]
+
+=== Filter ===
+
+*[[Element filter|'''Filter''']] - open the [[browser]] with all [[Glossary:Element|elements]] that meet certain criteria such as the number of repetitions, [[Glossary:Priority|priority]], current [[Glossary:Interval|interval]], [[Glossary:Forgetting_index|forgetting index]], status (e.g. [[Glossary:Pending_element|pending]], [[Glossary:Memorized_element|memorized]], etc.) and more
+
+=== Recent ===
+
+*'''Recent''' - open the [[browser]] with recently used [[Glossary:Element_subset|subset of elements]]
+**'''Learned''' - open the [[browser]] with [[Glossary:Element|elements]] recently used in [[subset learning]] 
+**'''Reviewed''' - open the [[browser]] with [[Glossary:Element|elements]] subject to the current [[subset review]] (e.g. with '''Review all'''). You can thus see the [[Glossary:Element|elements]] that have already been reviewed and the queue of elements that are still scheduled for further [[subset review]]. The [[Glossary:Element|elements]] that have already been reviewed have their ''Last Rep'' field showing the last repetition date (e.g. today). They can easily be filtered out (e.g. with '''[[Browser menu#Select|Select]] : Select browser range''' on the [[browser menu|browser menu]])
+**'''To postpone''' - open the [[browser]] with [[Glossary:Element|elements]] on which a recent '''[[Postpone]]''' procedure has been executed. [[Glossary:Auto-postpone|'''Auto-postpone''']] does not create this subset as all [[Glossary:Outstanding_element|outstanding elements]] are subject to auto-postpone. Not all [[Glossary:Element|elements]] in '''To postpone''' subset will actually be postponed (e.g. due to not meeting [[Postpone#Postpone dialog|postpone criteria]]). The subset file is: ''subsets\postponing.sub''
+**'''Postponed''' - open the [[browser]] with [[Glossary:Element|elements]] whose [[Glossary:Interval|intervals]] have recently been extended with '''[[Postpone]]'''. This subset can be created with manual '''[[Postpone]]''' or with [[Glossary:Auto-postpone|'''Auto-postpone''']]. After '''[[Postpone]]''' this subset will contain postponed [[Glossary:Element|elements]] and will be smaller or equal to '''To postpone''' subset. To see which [[Glossary:Element|elements]] have been auto-postponed, use '''Postponed'''. The subset file is: ''subsets\postponed.sub''
+**'''Not postponed''' - open the [[browser]] with [[Glossary:Element|elements]] that have been skipped in the recent postpone operation. The subset file is: ''subsets\unpostponed.sub''
+**'''Advanced''' - open the [[browser]] with [[Glossary:Topic|topics]] that have recently been [[Subset operations#Advance|advanced]] (i.e. had their [[Glossary:Interval|interval]] automatically shortened) 
+**'''Previous''' - open the last but one [[browser]]
+
+=== Other ===
+
+*'''Other''' - open the submenu with more specialized browsers: 
+**'''[[Leeches]]''' (''Shift+F3'') - open the [[browser]] with most difficult elements in the [[Glossary:Collection|collection]] (note that filter parameters are already set in a way which makes finding difficult [[Glossary:Item|items]] easy) 
+**'''Semi-leeches''' - open the [[browser]] with all [[Glossary:Element|elements]] that are [[Glossary:Leech|leeches]] or will become leeches if they are forgotten yet once 
+**'''Pending''' - open the [[browser]] with all [[Glossary:Pending_element|pending elements]], i.e. [[Glossary:Element|elements]] that are waiting for reading or memorization in the [[Glossary:Pending_queue|pending queue]] 
+**'''Drill''' - open the [[browser]] with all [[Glossary:Element|elements]] scheduled for the [[Glossary:Final_drill|final drill]] 
+**'''Range''' - open the [[browser]] with all [[Glossary:Element|elements]] that fall into a selected range (e.g. elements with numbers from 1 to 1000) 
+**'''History''' - open the [[browser]] with the list of [[Glossary:Element|elements]] that have recently been viewed in the [[element window]] 
+**'''Branch''' - open the [[browser]] with all [[Glossary:Descendant|descendants]] of the currently selected [[Glossary:Branch|branch]] in the [[Contents|'''Contents''' window]] (same as '''[[Contents menu#View|View]] : Branch''' (from the [[contents menu]] or ''Ctrl+Space'' in the [[Contents|'''Contents''' window]] or in the [[element window]])

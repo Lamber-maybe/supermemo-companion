@@ -1,0 +1,2 @@
+;<span id="Hierarchy">hierarchy</span>
+:see [[Glossary:Knowledge_tree|knowledge tree]] (outdated term that might be found in some older documentation files)

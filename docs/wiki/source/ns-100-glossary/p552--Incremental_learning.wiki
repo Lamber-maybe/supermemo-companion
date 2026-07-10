@@ -1,0 +1,2 @@
+;<span id="Incremental_learning">incremental learning</span>
+:set of learning techniques such as [[Glossary:Incremental_reading|incremental reading]], [[Glossary:Incremental_video|incremental video]], [[Glossary:Visual_learning|visual learning]], [[Glossary:Incremental_audio|incremental audio]], etc. '''Incremental learning easily ensures 95% recall of top-priority learning material for lifetime'''. For more see: [[Incremental learning]]

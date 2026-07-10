@@ -1,0 +1,49 @@
+== Installation ==
+
+To install SuperMemo on your computer do the following:
+
+=== Order and download ===
+
+# Order and download SuperMemo {{SMVER}}:
+## Go to the [https://supermemo.store SuperMemo Store] home page
+## Click '''Add to cart''' corresponding to ''SuperMemo {{SMVER}} for Windows'' (this will add SuperMemo {{SMVER}} to your shopping cart)
+## Click '''Check out'''
+## Click the large '''PayPal''' button at the ''Express checkout'' section at the top of the page. This will open a PayPal pop-up box which you will use to log into your PayPal account. Once you are in, review the displayed information, and click the '''Continue to Review Order''' at the bottom of the pop-up window. This will redirect you to the Payment page back in [https://supermemo.store SuperMemo Store]
+## Click '''Pay now'''
+## Once your order has been processed and you file(s) prepared, click '''Download Now''' under SuperMemo {{SMVER}}
+## In the '''Save As''' dialog box, in the '''Navigation pane''' along the left side of the dialog box, click the '''Desktop''' button, then click '''Save''' to download SuperMemo {{SMVER}} Install Wizard (i.e. ''sm{{SMVER}}inst.exe'') onto the desktop
+
+=== Installation ===
+
+# Run the downloaded installer file ''sm{{SMVER}}inst.exe'' to install and run SuperMemo {{SMVER}}
+# Click the "Click here to register SuperMemo" red bar
+# Fill out and send the registration form ([https://youtu.be/pwVCwCI1h80?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=108 video guide])
+# [[Unlock SuperMemo]] with your unlock password sent in response to your registration (within a business day)
+
+Not getting the key? Check [https://youtu.be/pwVCwCI1h80?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=343 this video guide]
+
+=== More details ===
+
+If you are a computer beginner, please read [[Installing SuperMemo (for Beginners)|Installing SuperMemo for Beginners]]. It offers step-by-step instructions for downloading, copying files, <!-- installing learning material, --> and upgrading from earlier versions of SuperMemo, or updating SuperMemo to the latest release build.
+
+== Uninstallation ==
+
+=== In 5 seconds (brute force) ===
+
+To uninstall, delete the folder in which you installed SuperMemo.
+
+Remember that this will likely delete everything related to SuperMemo: [[Glossary:Collection|collections]], plan schedules, sleep timeline, etc. Deleting the folder manually may still leave 2-3 entries in the Windows registry (if you let SuperMemo run in administrator mode).
+
+=== In 30 seconds (smart) ===
+
+You can uninstall SuperMemo (without removing your learning material) if you follow these steps:
+
+# Run '''Control Panel'''
+# In the '''Control Panel''' window, choose '''Uninstall program''' (in older Windows '''Uninstall or change a program''')
+# In the '''Uninstall or change a program''' window, scroll down to ''SuperMemo'', and choose '''Uninstall'''
+
+If you cannot find ''SuperMemo'' entry in the Control Panel, use ''sm{{SMVER}}unin.exe'' located in the SuperMemo folder (''C:\SuperMemo'' by default).
+
+The SuperMemo Uninstall program was designed to remove only the files added during installation. It should not delete your [[Glossary:Collection|collections]], plan schedules, sleep timeline, etc. If you want them removed, you will need to do it manually in your favorite file manager.
+
+See [https://youtu.be/NF7OdJ0nbSs?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=7347 Video Guide]

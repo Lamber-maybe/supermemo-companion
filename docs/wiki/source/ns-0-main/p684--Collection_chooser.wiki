@@ -1,0 +1,22 @@
+'''Collection chooser''' helps you quickly access your most frequently used [[Glossary:Collection|collection]]s. Unlike '''[[File]] : [[File#Open collection|Open collection]]''', in '''Favorites''' you need to find the location of the [[Glossary:Collection|collection]] on the hard disk only once. Later on, you only need to press a letter to open that collection.  In addition, in contrast to the [[File#Most_Recently_Used_(MRU)_list|most recently used (MRU) list]], rarely used [[Glossary:Collection|collections]] do not get added to the '''Favorites''' list. Only you can determine which [[Glossary:Collection|collections]] should be placed on this list and which should be removed.
+
+To open it in SuperMemo, select '''[[File menu|File]] : [[File menu#Favorites|Favorites]]''' from the [[main menu]] or click the '''Favorites''' icon in the [[navigation bar]] of the [[element window]]. You can also press ''Ctrl+O''.
+
+<div class="center">
+[[Image:Collection chooser.jpg|center|800px|SuperMemo: Collection chooser helps you quickly access your most frequently used collections]]
+{{:Image:Collection chooser.jpg}}
+</div>
+
+* '''Favorite collections''' - the list of favorite [[Glossary:Collection|collection]]s sorted in alphabetical order. Each collection can be assigned a letter that can be used to quickly select it in the list (e.g. ''a'' for ''All''). If two or more collections share the same quick-access letter, press it repeatedly until the collection you want to open is selected.
+* '''Favorite collection paths''' - the corresponding paths of the frequently used [[Glossary:Collection|collection]]s
+* '''Preview pane''' - displays the basic statistics for the currently selected often used [[Glossary:Collection|collection]] (e.g. ''Total'', ''Memorized'', etc.)
+* Toolbar
+** '''OK''' (''Enter'') - opens the currently selected favorite [[Glossary:Collection|collection]] and closes the dialog
+** '''Add''' - adds a new [[Glossary:Collection|collection]] to the list of frequently used collections for fast opening. Once you select the collection via the '''SuperMemo collection''' dialog box, you will be prompted to assign the letter that you will be able to use to quickly access the collection in the list. Unlike the pick-list of recently used [[Glossary:Collection|collections]] at the bottom of the [[File|'''File''' menu]], the letter needed to reopen a collection always stays the same. If you happen to use more collection with a letter, SuperMemo will circle between them in alphabetical order
+** '''Delete''' - removes the selected favorite [[Glossary:Collection|collection]] from the list
+** '''Cancel''' - closes the dialog
+** '''Incremental favorite collection search''' (''Ctrl+S'') -  search box to incrementally filter the favorite [[Glossary:Collection|collection]]s
+
+Right-click the '''Collection choose''' dialog to open its context menu:
+* '''Search''' (''Ctrl+S'') -  search box to incrementally filter the favorite [[Glossary:Collection|collection]]s
+* '''Close''' - closes the dialog (same as ''Esc'')

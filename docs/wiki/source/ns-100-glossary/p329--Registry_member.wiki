@@ -1,0 +1,2 @@
+;<span id="Registry_member">registry member</span>
+:one of the [[Glossary:Registry_object|objects]] stored in a [[Glossary:Registry|registry]] (e.g. a picture in the image registry or a word in the lexicon registry)

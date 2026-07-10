@@ -1,0 +1,147 @@
+__TOC__
+
+With the universal adoption of Unicode (since SuperMemo 15), fonts should no longer be a headache as was the case in earlier versions of SuperMemo.
+
+There is still a confusing array of choices of [[Glossary:Component|components]] and encodings. If in doubt, use the default [[HTML component]]. To start using fonts and richly formatted texts, you need to change nothing.
+
+== Why do I see so many different font sizes in SuperMemo? ==
+
+If you have ever wondered why SuperMemo displays texts in so many seemingly inconsistent styles and sizes, the answer lies in the fact that SuperMemo uses several distinct fonts for different purposes:
+
+* '''interface font''' — the main font you interact with (most likely the one that bothers you)
+* '''menu font''' — handled by the VCL framework via Windows, not directly by SuperMemo
+* '''caption font''' — handled by Windows, not SuperMemo
+* '''contents font''' — used for displaying titles in the [[Contents|Contents window]], Ancestors, Registry, etc. (useful e.g. for multilingual collections)
+* '''[[Glossary:Collection|collection]] font''' — the font used inside [[Glossary:Component|components]], which can span all imaginable typefaces and sizes
+
+To further complicate matters, SuperMemo sometimes needs to squeeze text into small areas (e.g. narrow panels or compact layouts). In such cases, the interface font may be automatically reduced in size. This is the source of the apparent mosaic of font sizes you may notice across different windows. It is by design, not a bug.
+
+If you still want to explore all options available, you may wish to know that the way you use fonts in SuperMemo depends on the type of the [[Glossary:Component|component]], the way the font is defined, and the way the texts are encoded. The number of possible combinations of these three may lead to substantial confusion (not only among SuperMemo beginners). If fonts and encodings are important for your learning material (e.g. if you learn foreign languages using non-Latin alphabets), it is important that you make good choices in the way you use fonts before you embark on a major expansion of your [[Glossary:Collection|collection]]. The summary overview below will help you understand the terminology of fonts as well as the pros and cons of different choices.
+
+== Where are the fonts defined? ==
+
+The way you see fonts in SuperMemo can be defined in a number of ways. Here are the most often used methods:
+
+#'''HTML (WYSIWYG)''': Inside the [[HTML component]] or [[WebView component]], which is the default text [[Glossary:Component|component]], you can change fonts by choosing options from the '''[[Component menu#Text|Text]] : Font''' submenu of the [[component menu]], or using shortcuts such as ''Ctrl+B'' for bold, ''Ctrl+]'' to increase the size of the font, etc. Note that those operations may override your stylesheet settings and might prevent global changes to fonts.
+#'''HTML code''': If you understand HTML, you can edit texts using a [[Glossary:Component|component]]'s HTML source code (e.g. by using ''Ctrl+Shift+F6'' over the component). Note that this method may override your stylesheet settings and might prevent global changes to fonts.
+#'''Font registry''': The font [[Glossary:Registry|registry]] can be used to store reusable fonts (e.g. for plain text [[Glossary:Component|components]], [[Glossary:Template|templates]], or frequently used font definitions for HTML). The font [[Glossary:Registry|registry]] can be inspected with '''[[Search menu|Search]] : [[Search menu#Other registries|Other registries]] : Font'''. You can use '''[[Component menu#Text|Text]] : Font : Edit font''' in text [[Glossary:Component|components]] to modify a font linked from the registry. '''[[Component menu#Text|Text]] : Font : New font''' can be used to define a new font. Finally, you can use '''[[Component menu#Text|Text]] : Font : Link font''' to link a [[Glossary:Component|component]] with an existing font definition in the registry. The registry and the font definitions are stored in the [[SuperMemo files#Collection files|''[REGISTRY]/font.* files'']]. A definition of a registry-stored font in SuperMemo includes the typeface (e.g. ''Arial'', ''Verdana'', etc.), size, color, and style (e.g. bold, italic, etc.).
+#'''Options''': '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Fonts tab in Options|Fonts]]''' makes it possible to define default fonts, the font displayed in the [[Contents|'''Contents''' window]], interface font, etc. If you check '''Use question and answer fonts in HTML''', you can define the font originally used when starting a new question or a new answer. Note that this font will override the stylesheet used in [[HTML component|HTML components]]. Definitions of fonts defined in '''[[Options]]''' are stored in INI files: [[SuperMemo files#Program files|''[BIN]\supermemo.ini'']] (if SuperMemo specific) and [[SuperMemo files#Collection files|''collection.ini'']] (if collection specific).
+#'''MSHTML (HTML component)''': The default font for [[HTML component|HTML components]] rendered via the MSHTML engine can be influenced through Windows settings. This font will affect HTML texts that do not define the ''&lt;font&gt;'' tag (i.e. have not been previously formatted) and do not use any stylesheet. Note that '''Accessibility''' settings in Windows can also affect the way fonts are displayed in [[HTML component|HTML components]].
+#'''Stylesheets''': Stylesheets in SuperMemo can be used to define fonts in [[HTML component|HTML components]] and [[WebView component|WebView components]]. Several classes can have their font defined (e.g. texts, <span class="extract">extracted texts</span>, <span class="SearchHighlight">search highlights</span>, <span class="reference">references</span>, etc.) in a SuperMemo stylesheet. The default stylesheet is defined in '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Fonts tab in Options|Fonts]] : Stylesheet'''. Individual [[Glossary:Component|components]] or [[Glossary:Template|templates]] can have their stylesheet changed with options on the [[component menu]] listed at '''[[Component menu#Text|Text]] : Style''' submenu. Stylesheets are your best way to globally change fonts in [[HTML component|HTML components]] and [[WebView component|WebView components]].
+
+== How are texts encoded? ==
+
+[http://en.wikipedia.org/wiki/Character_encoding Character encoding] is a code that matches a set of characters with a specific sequence of numbers. Computers store all texts as numbers. For example, in [http://en.wikipedia.org/wiki/ASCII ASCII] encoding, numbers 97, 98, and 99 code for characters ''a'', ''b'', and ''c''. Thus a sequence 97-98-99 codes for '''abc'''. SuperMemo uses 3 basic character encoding systems: [http://en.wikipedia.org/wiki/Code_page ANSI], [http://en.wikipedia.org/wiki/UTF-8 UTF-8] and 16-bit [http://en.wikipedia.org/wiki/Unicode Unicode]. ANSI is used to represent simple texts made of up to 255 characters taken from any number of 255-character sets. In ANSI encoding, interpretation of individual codes depends on the character encoding table called a [http://en.wikipedia.org/wiki/Code_page ''code page'']. [http://en.wikipedia.org/wiki/Unicode Unicode] is used to represent texts with virtually all commonly used characters. [http://en.wikipedia.org/wiki/UTF-8 UTF-8] encoding is used to represent Unicode characters with 8-bit characters in such a way that all ASCII texts are unchanged and all non-ASCII characters have the most significant bit set.
+
+Character encodings used in SuperMemo:
+
+*'''ANSI''': ANSI is only used in SuperMemo for compatibility with older versions of SuperMemo. Those texts cannot use more than 255 characters, but use minimum space. Fonts used with this encoding are also referred to as ''OEM fonts'' and can be defined with the help of code pages (some older [[Glossary:Collection|collections]] may still be based on code pages and OEM fonts). Internally, SuperMemo converts all character strings to Unicode (UTF-16).
+*'''Unicode''': UTF-16 encoding is used throughout SuperMemo as the default encoding. UTF-16 texts can use virtually all commonly used characters. [[HTML component|HTML components]] represent Unicode characters using HTML codes. For example: the letter µ is represented as a sequence of ASCII characters: ''&amp;#181;'' where 181 is its Unicode number. You can inspect the HTML representation of non-ASCII characters in [[HTML component|HTML components]] with ''Shift+Ctrl+F6'' ('''[[Component menu#File|File]] : View source''').
+*'''UTF-8''': To reduce the size of [[Glossary:Collection|collections]], UTF-8 is used to encode Unicode characters in the text [[Glossary:Registry|registry]] ('''[[Search menu|Search]] : [[Search menu#Texts|Texts]]'''). This makes it possible to uniformly encode all ANSI and Unicode texts and quickly search them using the same fast low-level search procedure (e.g. using '''[[Search menu|Search]] : [[Find elements]]'''). Use '''[[Registry menu#View|View]] : Encoding''' on the [[registry menu]] to inspect all encodings of a given registry member text:
+** Unicode name (i.e. the way the text is displayed for you),
+** Unicode double-byte codes (i.e. the numeric way the text is encoded internally in SuperMemo), and
+** UTF-8 encodings (i.e. the way the text is stored on the disk).
+Some Q&amp;A files may also be UTF-8 encoded. If so, you should decode these files on Q&amp;A import (check '''Decode UTF-8''' box in the '''Import Text''' dialog box).
+
+== Different components use fonts differently ==
+
+{| width="100%" border="1"
+|-
+| width="16%" bgcolor="#cccccc" | Component type
+| width="14%" | '''HTML'''
+| width="14%" | '''WebView'''
+| width="14%" | '''Text, sound, Spell-Pad'''
+| width="14%" | '''RTF'''
+| width="14%" | '''Image, Video'''
+| width="14%" | '''Binary, OLE'''
+|-
+| width="16%" bgcolor="#cccccc" | Rendering engine
+| width="14%" | MSHTML
+| width="14%" | WebView2 (Chromium)
+| width="14%" | Native
+| width="14%" | Native
+| width="14%" | Native
+| width="14%" | Server application
+|-
+| width="16%" bgcolor="#cccccc" | Encoding
+| width="14%" | Unicode
+| width="14%" | Unicode
+| width="14%" | Unicode
+| width="14%" | Unicode
+| width="14%" | No character encoding,<br>bitmapped
+| width="14%" | The server application, such as MS Word, PowerPoint, etc., determines how the fonts are displayed
+|-
+| width="16%" bgcolor="#cccccc" | Font definitions
+| width="14%" | Hard-wired into HTML code via typeface references, defined in stylesheets, or taken from default MSHTML settings
+| width="14%" | Hard-wired into HTML code via typeface references, or defined in stylesheets
+| width="14%" | Stored in the font [[Glossary:Registry|registry]] (unless the default font is used as determined in '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Fonts tab in Options|Fonts]]''')
+| width="14%" | Hard-wired into RTF files
+| width="14%" | No reusable font definition; font representation is part of the file
+| width="14%" | Depends on the server application
+|-
+| width="16%" bgcolor="#cccccc" | Modifiable
+| width="14%" | yes
+| width="14%" | yes
+| width="14%" | yes
+| width="14%" | yes
+| width="14%" | no (except dedicated image or video editors)
+| width="14%" | Depends on the server application
+|-
+| width="16%" bgcolor="#cccccc" | Globally modifiable
+| width="14%" | no (if defined in HTML)<br><br>yes (if defined in stylesheets or [[Glossary:Template|templates]])
+| width="14%" | no (if defined in HTML)<br><br>yes (if defined in stylesheets or [[Glossary:Template|templates]])
+| width="14%" | yes, by:
+#changing [[Glossary:Template|templates]]
+#modifying registry fonts themselves
+| width="14%" | no
+| width="14%" | no (except through object reuse)
+| width="14%" | no (except through object reuse)
+|-
+| width="16%" bgcolor="#cccccc" | Searchable
+| width="14%" | no (fonts are not registered with the font registry)
+| width="14%" | no (fonts are not registered with the font registry)
+| width="14%" | yes (except when the [[Fonts tab in Options|default question font or the default answer font]] is used)
+| width="14%" | no (fonts are not registered with the font [[Glossary:Registry|registry]])
+| width="14%" | no
+| width="14%" | no
+|-
+| width="16%" bgcolor="#cccccc" | Pros
+| width="14%" | Universal application, 25 years of refinement, supports Unicode, supports stylesheets, most compatible with existing [[Glossary:Collection|collections]]
+| width="14%" | Modern Chromium engine, supports MathJax, JavaScript, YouTube embeds, and other contemporary web standards; supports Unicode and stylesheets
+| width="14%" | Small size, speed
+| width="14%" | Unicode
+| width="14%" | All imaginable texts can be displayed
+| width="14%" | All imaginable texts can be displayed and be editable with the server application
+|-
+| width="16%" bgcolor="#cccccc" | Cons
+| width="14%" | May not be globally modifiable (if defined inside HTML); large size of [[Glossary:Collection|collections]] (if defined inside HTML)
+| width="14%" | May not be globally modifiable (if defined inside HTML); large size of [[Glossary:Collection|collections]] (if defined inside HTML); see [[WebView component]] for system requirements
+| width="14%" | Limited to 255 character sets (i.e. only 255 characters possible in a single [[Glossary:Component|component]])
+| width="14%" | Not globally modifiable; large size of [[Glossary:Collection|collections]]; format supported only for backward compatibility with earlier SuperMemos (may be phased out in the future)
+| width="14%" | Pictures are not an efficient way of representing texts (size, convenience of editing, etc.)
+| width="14%" | Depend on the server application;<br>not integrated with SuperMemo
+|-
+| width="16%" bgcolor="#cccccc" | Typical use
+| width="14%" | [[Glossary:Incremental_reading|Incremental reading]],<br>default text format,<br>most existing [[Glossary:Collection|collections]]
+| width="14%" | Elements requiring MathJax, JavaScript, YouTube, or other modern web features (available since SuperMemo 20)
+| width="14%" | Redistributable [[Glossary:Collection|collections]],<br>[[Glossary:Template|template]]-based collections with many [[Glossary:Element|elements]] (for small size),<br>language learning with [http://en.wikipedia.org/wiki/Code_page code page] fonts
+| width="14%" | Legacy [[Glossary:Collection|collections]]
+| width="14%" | Mathematical formulas, demos, presentations, etc.
+| width="14%" | Specialist applications that depend on the server application
+|}
+
+== Further reading ==
+
+*[[Using text components|Text components in SuperMemo]]
+*[https://super-memory.com/help/faq/texts.htm FAQ: Using texts and fonts in SuperMemo]
+*[https://supermemopedia.com/wiki/Finding_out_the_default_font_size_used_in_HTML_components FAQ: Which font is used in a component?]
+*[https://supermemopedia.com/wiki/Using_fonts_in_SuperMemo SuperMemopedia: Using fonts]
+*[https://supermemopedia.com/wiki/Why_so_many_different_fonts_in_SuperMemo Why so many fonts in SuperMemo]
+
+== Video example ==
+
+This is how you can change fonts with the use of [[stylesheet]]s:
+
+<youtube>
+A7hhUh9h0fQ
+</youtube>

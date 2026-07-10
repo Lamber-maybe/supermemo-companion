@@ -1,0 +1,2 @@
+;<span id="Component">component</span>
+:a container for objects placed within the visible field of an [[Glossary:Element|element]]. '''Components''' can contain texts, pictures, videos, PDF files, etc. They can also have a form of a shape, spell-pad, or [[Glossary:Script|script]]. You can add new '''components''' with '''[[Edit menu|Edit]] : [[Edit menu#Add components|Add components]]''' on the [[main menu]], or by using the [[Compose toolbar|'''Compose''' toolbar]] at the bottom of the [[element window]].

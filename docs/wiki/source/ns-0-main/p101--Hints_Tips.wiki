@@ -1,0 +1,112 @@
+== Beginner level  ==
+
+*To [[Add new|add a new question-answer item]] to SuperMemo press ''Alt+A'' and type in the texts. Use ''Esc'' to move from the question field to the answer field and to finish 
+*To review your learning material choose ''Ctrl+L'' or press the '''[[Learn]]''' button 
+*To search for all [[Glossary:Element|elements]] containing a given text, press ''Ctrl+F'', type the text, and press ''Enter'' 
+*Use the ''Esc'' key throughout SuperMemo to close windows, dialog boxes, and to restore defaults such as the default [[Glossary:Layout|layout]], [[Glossary:Presentation_mode|display mode]] (as opposed to [[Glossary:Editing_mode|editing mode]]), default [[Glossary:Element|element]], etc.
+*Success in SuperMemo is largely dependent on the way you formulate your knowledge. See: [http://www.super-memory.com/articles/20rules.htm Twenty Rules] and [http://www.super-memory.com/help/faq/ks.htm Twenty Rules FAQ]
+* See [https://youtu.be/pwVCwCI1h80?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=915 video guide]
+
+== Basic level  ==
+
+*To move from the [[Levels|beginner level]] to the [[Levels|basic level]], choose '''[[File menu|File]] : [[Levels|Level]] : Basic''' 
+*To see the [[Calendar|calendar of repetitions]], press ''Ctrl+W'' (same as '''[[Toolkit menu|Toolkit]] : [[Calendar]]''' on the [[main menu]]) 
+*To quickly open a [[Glossary:Collection|collection]] with a keystroke, use ''Ctrl+O''. Use the button '''Choose another''' to add your most important [[Glossary:Collection|collections]] to the list 
+*To master all fundamental skills needed to effectively use SuperMemo, read: [[Step-by-step to SuperMemo mastery|Step-by-Step Guide to SuperMemo]] 
+*If you are overloaded with repetitions, you can mark your most important [[Glossary:Element|elements]] as top-[[Glossary:Priority|priority]] [[Glossary:Element|elements]]. They will receive a priority in learning. Use ''Alt+P'' to set [[Glossary:Element|element]]'s [[Glossary:Priority|priority]]. For example, press ''Alt+P'' and then press ''2'' to tell SuperMemo that the presented [[Glossary:Element|element]] is more important than ''98%'' of the remaining [[Glossary:Element|elements]]
+*To move an [[Glossary:Element|element]] to another [[Glossary:Branch|branch]] in the [[Contents|'''Contents''' window]], press ''Ctrl+Shift+V'', select the new location in the [[Glossary:Knowledge_tree|tree]] and choose '''Accept''' (or ''Enter'') 
+*To send an [[Glossary:Element|element]] via e-mail press the e-mail button on the [[navigation bar]] 
+*Apart from simple question-answer repetitions, SuperMemo supports ''incremental reading'' - a technique that makes reading and learning yet more efficient. Read more: [[Incremental reading]] (see also [[#Incremental_reading|Incremental reading tips]] below) 
+*To completely remove an [[Glossary:Element|element]] from the learning process, press ''Ctrl+D''. This will make the [[Glossary:Element|element]] invisible to the learning process, but still available for browsing, search, etc. To completely delete the [[Glossary:Element|element]] from the [[Glossary:Collection|collection]] choose ''Shift+Ctrl+Enter'' ('''Done'''). To delete the [[Glossary:Element|element]] and all its [[Glossary:Child|children]], choose ''Shift+Ctrl+Del'' (simple ''Del'' will also work in most contexts) 
+*To edit texts in the currently displayed [[Glossary:Element|element]], click the text or press ''Q'' (question), ''A'' (answer), ''E'' or ''Ctrl+E'' (edit all fields), etc. (advanced level: in some commercial [[Glossary:Collection|collections]], those keys might not work if '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Mouse_tab_in_Options|Mouse]] : Edit components : Edit on click''' is unchecked)
+*If you suspect that some of the files in your [[Glossary:Collection|collection]] have been damaged, press ''Ctrl+F12'' and make a quick [[Repairing collections|checkup]] of your most important files
+* See [https://youtu.be/pwVCwCI1h80?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=1481 video guide]
+
+== Middle level  ==
+
+* To trim a picture, press ''Ctrl'', point to the edge that is to be cut out, press down the mouse, and move it in the direction of the area that is to be cut.
+*To extract a portion of video in YouTube-based incremental video, click '''Start''' and '''Stop''' buttons while playing the beginning or the end of the fragment to be extracted, and then click '''Extract''' (the actual extract will be created as a new [[Glossary:Element|element]] when you move on with learning, i.e. when you finish watching the current video). For more see: [[Incremental_video#Incremental_video_with_YouTube:_Outline|Incremental video]]
+*To extract a portion of video in off-line incremental video, click '''Start''' and '''Stop''' buttons while playing the beginning or the end of the fragment to be extracted, and then click '''Extract''' or press ''Alt+X''. For more see: [[Incremental_video#Incremental_video_with_video_files:_Outline|Incremental video]]
+* To import only a selected part of the article, select the relevant text in Microsoft Edge, switch to SuperMemo, choose '''[[Edit menu|Edit]] : [[Web import]]''' (''Shift+F8''), and press '''Import'''
+*To maximize your learning efficiency, read [http://super-memory.com/articles/decalog.htm SuperMemo Decalog] 
+*You can use [[Glossary:Layout|layouts]] to preserve your favorite location and size of windows. Arrange the windows the way you like it and choose '''[[Window menu|Window]] : [[Window menu#Layout|Layout]] : Save as default''' or simply press [[Keyboard shortcuts|''Shift+Ctrl+F5'']]. You can always come back to this [[Glossary:Layout|layout]] with ''Ctrl+F5''. In many contexts, repeated ''Esc'' will have the same effect 
+*To move a single [[Glossary:Element|element]] from one [[Glossary:Collection|collection]] to another [[Glossary:Collection|collection]], view the [[Glossary:Element|element]], press ''Shift+Ctrl+T,'' and choose the target [[Glossary:Collection|collection]]
+*To create or modify the structure of the [[Glossary:Knowledge_tree|knowledge tree]], read: [[Building the knowledge tree|Knowledge tree]] 
+*A green-yellow layout button on [[Browser toolbar|browser]] and [[Contents toolbar|contents]] toobars helps you quickly align the current window with the [[element window]] (for easy browsing or working with the [[Glossary:Knowledge_tree|knowledge tree]]) 
+*If you change the color of your [[Glossary:Element|element]], or the size of the [[Glossary:Component|components]], or their type, etc. you can preserve the "new look" by using [[Glossary:Template|templates]]. Save the present look as the default [[Glossary:Template|template]] with '''[[Element menu#Template|Template]] : Save as default''' on the [[element menu]]). Use ''Shift+Ctrl+M'' to apply an already exisiting [[Glossary:Template|template]]. Read more: [[Templates|Using templates]] 
+*If you want '''Add new''' (''Alt+A'') to add [[Glossary:Element|elements]] only to a given [[Glossary:Branch|branch]] in the [[Contents|'''Contents''' window]], select this [[Glossary:Branch|branch]] in the [[Contents|'''Contents''' window]] and press ''Ctrl+K''. This will create a new concept group in that [[Glossary:Branch|branch]]. To change the concept group in use, click the '''Choose the default concept group for adding new elements''' button on on the [[navigation bar]]. Use ''Shift+Ctrl+P'' to assign the currently displayed [[Glossary:Element|element]] to another concept group by changing the '''Group''' field. Read more: [[Concepts|Using concepts]] 
+*If you want to learn only the material belonging to a selected [[Glossary:Branch|branch]] in the [[Contents|'''Contents''' window]], choose this [[Glossary:Branch|branch]] and click [[Subset learning|'''Learn''']] at the bottom of the [[Contents|'''Contents''' window]] (i.e. not in the [[element window]]). See: [[Subset learning]] 
+*In editing texts, you can use ''Shift+Enter'' to start a new line single-spaced as opposed to double-spaced ''Enter''. This will work only in [[HTML component|HTML components]] and will inserts the ''&lt;br&gt;'' tag as opposed to the ''&lt;p&gt;'' tag
+*To change the interface font used by SuperMemo, choose '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Fonts tab in Options|Fonts]] : Interface font'''
+* See [https://youtu.be/NF7OdJ0nbSs?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=2738 video guide]
+
+== Professional level  ==
+
+*To display all learning [[statistics]], press ''F5'' 
+*Return to your default [[Glossary:Layout|layout]] with ''Ctrl+F5'' 
+*If you prefer to use the keyboard as opposed to the mouse, read about [[Keyboard shortcuts]] and [[SuperMemo Commander]]
+*If you had a break in learning and cannot cope with [[Glossary:Outstanding_element|outstanding repetitions]], use '''[[Learn menu|Learn]] : [[Postpone|Postpone]]''' or '''[[Toolkit menu|Toolkit]] : [[Mercy]]'''. You can also use '''Mercy''' if you plan to go for vacation and stay away from the computer. You can do a portion of your repetitions in advance 
+*To locate and get rid of the most difficult or badly-structured material use '''[[View menu|View]] : Other : [[Leeches]]''' or '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Leeches]] : Wizard'''. Read more: [[Leeches|Leeches in SuperMemo]] 
+*If you would like to move your repetitions to another SuperMemo, read about [http://super-memory.com/articles/soft/pocket.htm XML in SuperMemo] 
+*If you want to move an [[Glossary:Element|element]] to the end of the queue of elements awaiting memorization, right-click the '''Execute repetition''' button in the [[learnbar]] and choose '''Forget'''. This will delay the introduction of the [[Glossary:Element|element]] into the learning process until the time when all [[Glossary:Element|elements]] from the [[Glossary:Pending_queue|pending queue]] have been reviewed 
+*To turn on and off the [[status bar]], check or uncheck '''[[Window menu|Window]] : [[Status bar]]'''. The same applies to toolbars used in SuperMemo 
+*To introduce the currently displayed [[Glossary:Element|element]] into the learning process press [[Keyboard shortcuts|''Ctrl+M'']]. Note that ''Ctrl+M'' during repetitions is equivalent to re-memorizing the [[Glossary:Element|element]] and restarting repetitions all over again starting with short [[Glossary:Interval|intervals]]. You should use this option in case you substantially reedit the [[Glossary:Item|item]]. This will let SuperMemo know you are dealing with an entirely new piece of information 
+*To randomize repetitions on a given day, use ''Shift+Ctrl+F11'' ('''[[Learn menu|Learn]] : [[Learn menu#Random|Random]] : Randomize repetitions''') 
+*If you would like basic stats displayed on the status bar during repetitions (e.g. [[Glossary:Interval|interval]], [[Glossary:Priority|priority]], etc.), turn off hints by unchecking '''[[Window menu|Window]] : Hints''' (or by double-clicking the yellow hint display area on the [[status bar]]). [[Status bar]] is the best way to monitor the statistics if you need a maximized [[element window]]
+*You can turn your [[Glossary:Collection|collection]] into a jukebox. Run a music video from [http://youtube.com YouTube] in a loop and hide SuperMemo in the notification area by choosing '''[[Window menu|Window]] : Hide SuperMemo''' (''Shift+Ctrl+G''). Be sure to open all SuperMemos you plan to use. Starting a new SuperMemo always unhides an existing instance from the notification area first.
+* See [https://youtu.be/pwVCwCI1h80?list=PLPw7ZTjtZfQbmAPbAPr-B3HCyjcv-Jij1&t=1862 video guide]
+
+== Incremental reading  ==
+
+*To paste an article from your web browser to SuperMemo:
+*# switch to the browser,
+*# select the text (e.g. with ''Ctrl+A''),
+*# copy the text to the clipboard (e.g. with ''Ctrl+C''),
+*# switch back to SuperMemo (e.g. with ''Alt+Tab''),
+*# press ''Ctrl+N'' in SuperMemo 
+*To quickly create an [[Glossary:Extract|extract]] from the selected text in an article, use ''Alt+X'' (the same shortcut can be used to create [[Visual learning|picture extracts]], [[Incremental video|video extracts]], and [[Incremental learning#Incremental audio|audio extracts]]) 
+*To quickly create a [[Glossary:Cloze_deletion|cloze deletion]] from an [[Glossary:Extract|extract]] you are reviewing in SuperMemo, select a keyword and press ''Alt+Z'' 
+*To manually type in some notes use ''Alt+N'' 
+*To quickly import many articles (or selections in articles) from Internet Explorer, use ''Shift+Ctrl+A'' ('''[[Edit menu|Edit]] : [[Web import]] : All'''). You can also use this option to import links, pictures, live pages and more 
+*To import articles from [http://wikipedia.org Wikipedia], press ''Shift+Ctrl+W'' 
+*To import videos from [http://youtube.com YouTube], press ''Shift+Ctrl+Y'' (see [[Incremental_video|incremental video]])
+*To help you quickly recover context of an [[Glossary:Extract|extract]] or [[Glossary:Cloze deletion|cloze deletion]], take advantage of references (e.g. with '''[[Component menu#Reference|Reference]] : Select''' ''Alt+Q'' on the [[component menu]])
+*To quickly get images embedded in local pages imported from the net and make them local (i.e. put them to the image registry), use ''Ctrl+F8'' ('''Download images''' on the [[component menu]])(see the picture)
+
+[[Image:Download images.jpg|center|771px|SuperMemo: Download images dialog box makes it possible for you to get images embedded in local pages imported from the net and put them to the image registry]] 
+
+*To quickly search the net for terms and concept used in your [[Glossary:Collection|collection]], press ''Ctrl+F3''. By default you can search most popular dictionaries, encyclopedias or use the most effective search engines. However, you can also define your own one-key searches of specific databases, e.g. of movies, musicians, freeware software, mp3 files, news, newsgroups, and more. For example, if you want to search for movies in the Internet Movie Database add the following line to your search tools file with '''Define your own tools''': ''&amp;Movies, <nowiki>http://www.google.com/search?hl=en&q="%TheText%"+imdb</nowiki>'' 
+*To ensure the optimum proportion between reading and repetitions choose '''[[Learn menu|Learn]] : [[Learn menu#Sorting|Sorting]] : Sorting criteria''' and set '''Proportion of topics''' 
+*To review the material belonging to a single subject, open the subject in the [[browser]] (e.g. by searching for [[Glossary:Element|elements]] with ''Ctrl+F''), and use '''Learning : Learn''' (''Ctrl+L''), '''Learning : Review topics''' or '''Learning : Review all''' (''Shift+Ctrl+L'') from the [[Subset operations|subset processing menu]]. '''Review topics''' will let you review [[Glossary:Topic|topics]] related to the subject. '''Review all''' will additionally force [[Glossary:Mid-interval_repetition|mid-interval repetition]] of all [[Glossary:Item|items]] in the [[Glossary:Element_subset|subset]] (except those that have already been repeated today). '''Learning : Learn''' includes only the [[Glossary:Outstanding_element|outstanding material]] in the review. See: [[Subset learning]] 
+*To review material associated with a given element execute '''Learn : Go neural''' (this can be particularly useful if the element makes part of a [[Concepts|concept map]])
+*To let SuperMemo automatically handle learning material overload (i.e. excess number of elements listed as '''Outstanding'''), check '''[[Learn_menu|Learn]] : Postpone : Auto-postpone''' on the [[main menu]]
+*To postpone all outstanding articles ([[Glossary:Topic|topics]]) use:
+*# '''[[View menu|View]] : Outstanding''',
+*# '''[[Browser menu#Child|Child]] : Topics''' ([[browser menu]]), and
+*# '''[[Postpone]]''' ([[Subset operations|subset processing menu]]).
+:You can use this procedure each time you run out of time for repetitions. This way, you will be able to spend your last minutes on making repetitions of [[Glossary:Item|items]] (see: [[Glossary:Active_recall|active-recall]])
+*To postpone all [[Glossary:Item|items]] in a [[Glossary:Branch|branch]] (e.g. ''To Do'' branch):
+*# choose this branch in the [[Contents|'''Contents''' window]],
+*# choose '''[[Contents menu#View|View]] : Branch''' ([[contents menu]]),
+*# '''[[Browser menu#Child|Child]] : Items''' ([[browser menu]]), and
+*# '''[[Postpone]]''' ([[Subset operations|subset processing menu]])
+
+== Incremental video ==
+
+*To import [https://youtube.com YouTube] videos, open the videos in Internet Explorer and press ''Ctrl+Shift+Y''
+*To import video files, use '''[[File menu|File]] : [[File menu#Import|Import]] : Files and folders'''
+*To extract a portion of video, click '''Start''' and '''Stop/End''' buttons while playing the beginning or the end of the fragment to be extracted, and then click '''Extract''' (in case of YouTube videos, to prevent interruption, the actual [[Glossary:Extract|extract]] will be created only when you finish watching)
+
+You will find many more hints here: [[Incremental video]]
+
+== Incremental learning ==
+
+For more hints, see: [[Incremental_reading#Hints_and_tips|Advanced hints&tips]]
+
+== Further reading ==
+
+For more hints and ideas go to SuperMemopedia, e.g. [https://supermemopedia.com/wiki/FAQ FAQs]
+
+== Video hints ==
+
+[https://www.youtube.com/watch?v=A7hhUh9h0fQ This example] shows how to save a template with a chosen stylesheet that defines a specific font:

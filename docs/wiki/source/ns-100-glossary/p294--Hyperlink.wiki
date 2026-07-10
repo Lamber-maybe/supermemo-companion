@@ -1,0 +1,2 @@
+;<span id="Hyperlink">hyperlink</span>
+:connection established between a [[Glossary:Component|component]] and an [[Glossary:Element|element]] different than the element owning the component. '''Hyperlinks''' make it possible to navigate in knowledge hyperspace by clicking individual [[Glossary:Component|components]] or HTML links. You can set a '''hyperlink''' by using '''[[Component menu#Links|Links]] : Hyperlink''' on the [[component menu]] or '''[[HTML link menu|Insert HTML Link]] : Element''' on the HTML [[component menu]]

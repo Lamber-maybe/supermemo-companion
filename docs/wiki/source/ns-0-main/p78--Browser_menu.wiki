@@ -1,0 +1,147 @@
+== Accessing the browser menu ==
+
+The most important operations on the [[browser]] are available from the browser menu. To open this menu do any of the following:
+
+* right-click over the [[Browser|browser window]],
+* click the menu button on the [[browser toolbar]],
+* press [[Keyboard shortcuts|''Shift+F10'']] when in the [[Browser|browser window]], or
+* press ''Apps Key'' ([[Image:Application key.gif|Application key allows you to open a pop-up menu relevant for the current context]]) (context menu key left of the right ''Ctrl'' key).
+
+== Browser menu items ==
+
+The browser menu includes the following options: 
+
+=== (top level) ===
+
+*'''Learn''' (''Ctrl+L'') - make outstanding repetitions on [[Glossary:Element|elements]] included in the [[browser]]. The sequence of repetitions is determined by how [[Glossary:Element|elements]] are sorted in the [[browser]] (i.e. not by the global repetition schedule). Once outstanding repetitions are made, '''Learn''' will proceed with memorizing browser elements that are listed in the [[Glossary:Pending_queue|pending queue]]
+*'''Go neural''' (''Ctrl+F2'') - use the browser as the starting point for a neural review or add the browser to the current neural review queue if the review is in progress
+*'''View''' (''Enter'' or ''Ctrl+Enter'') - display the current [[Glossary#element|element]] in the [[element window]], and switch focus to that window. When the [[Browser toolbar#Synchronize_button|'''Synchronize''' button]] is down on the [[browser toolbar]], changing the selection in the [[browser]] will automatically change the [[Glossary:Element|element]] displayed in the [[element window]]
+
+=== Child ===
+
+*'''<span id="Child">Child</span>''' - open a child [[browser]] with a subset of [[Glossary:Element|elements]] stored in the currently used browser 
+**'''Priority''' - open a child browser with all elements whose [[Glossary:Priority|priority]] surpasses a selected value 
+**'''Selected''' - open a child browser with all elements that are marked with a checkmark in the leftmost column (see '''[[Browser menu#Select|Select]] : Select element''' below) 
+**'''Unselected''' - open a child browser with all elements that are unchecked in the leftmost column 
+**'''Sources''' - open a child browser that will include only the origin elements of [[Glossary:Extract|extracts]] and [[Glossary:Cloze_deletion|clozes]] listed in the [[browser]] (including sources not listed in the browser) 
+**'''Articles''' - open a child browser that will include only top-level articles. All [[Glossary:Extract|extracts]] and [[Glossary:Cloze_deletion|clozes]] will not be listed 
+**'''Extracts''' - open a child browser that will include only article [[Glossary:Extract|extracts]] (as opposed to top-level articles)
+**'''Descendants''' - open a child browser that includes all presently displayed [[Glossary:Element|elements]] and their [[Glossary:Descendant|descendants]] in the [[Glossary:Knowledge_tree|knowledge tree]] 
+**'''<span id="Child_:_Outstanding">Outstanding</span>''' - open a child browser with all [[Glossary:Outstanding_element|outstanding elements]] of the currently opened browser 
+**'''Memorized''' - open a child browser with all [[Glossary:Memorized_element|memorized elements]] contained in the current browser 
+**'''Pending''' - open a child browser with all [[Glossary:Pending_element|pending elements]] contained in the current browser 
+**'''Dismissed''' - open a child browser with all [[Glossary#Dismissed_element|dismissed elements]] contained in the current browser 
+**'''Items''' - open a child browser with all elements that are [[Glossary:Item|items]] 
+**'''Topics''' - open a child browser with all elements that are [[Glossary:Topic|topics]] 
+**'''Tasks''' - open a child browser with all elements that are [[Glossary:Task|tasks]] (i.e. belong to any of SuperMemo [[Glossary:Tasklist|tasklists]]) 
+**'''Tasks/Topics''' - open a child browser with all elements that are [[Glossary:Task|tasks]] or [[Glossary:Topic|topics]]
+**'''Filter''' - open a child browser with elements meeting a set of chosen [[Element filter|filter]] criteria 
+**'''Branch''' - open a child browser with all elements that both belong to the currently opened browser and a selected [[Glossary:Branch|branch]] in the [[Contents|'''Contents''' window]] (i.e. eliminate all elements that do not belong to the branch)
+
+=== Select ===
+
+*'''Select''' - select or unselect browser [[Glossary:Element|elements]] (read also: [[Using subsets]]) 
+**'''Select element''' - mark the current element as selected. Marking is most easily done with either ''Ins'' or ''Space'' (the difference between the two is that when you select the current element with ''Space'', the current selection will not move to the next element as is the case with ''Ins''). Marked elements have a checkmark in the leftmost column. You can later process marked element with other options such as '''[[Browser menu#Select|Select]] : Save selection''' or '''[[Browser menu#Child|Child]] : Selected''' 
+**'''Select all elements''' - mark all elements in the browser as selected 
+**'''Clear selection''' - unmark all elements 
+**'''Invert selection''' - unmark marked elements and mark unmarked elements 
+**'''Browser range''' - mark all elements in the rows numbered in a given range. For example, if you input the range 10-20, the elements in the rows numbered from 10 to 20 will be marked as selected 
+**'''Element range''' - mark all elements with numbers falling in a given range. Element number expresses the element's physical place in a given [[Glossary:Collection|collection]] and is used as a unique element identifier. Element number is displayed in the column ''ElNo'' 
+**'''Unselect browser range''' - unmark all elements in the rows numbered in a given range 
+**'''Unselect element range''' - mark all elements with numbers falling in a given range 
+**'''Unselect-Subtract''' - unmark all elements that belong to a given [[Using subsets|subset file]] 
+**'''Unselect-Intersect''' - unmark all elements that cannot be found in a given [[Using subsets|subset file]] 
+**'''Save selection''' - save all marked elements in a [[Using subsets|subset file]]  (see '''Select element''' above)
+
+=== Subset ===
+
+*'''<span id="subset">Subset</span>''' - subset operations (read also: [[Using subsets]]) 
+**'''Save all''' - save the whole contents of the [[browser]] in a subset file 
+**'''Add subset file''' - create a new browser with the sum of the current browser and a subset file 
+**'''Subtract subset file''' - create a new browser with the difference of the current browser and a subset file (i.e. containing all [[Glossary:Element|elements]] that belong to the browser and do not belong to the subset file) 
+**'''Intersect subset file''' - create a new browser with the intersection of the current browser and a subset file (i.e. containing all [[Glossary:Element|elements]] that belong to both the browser and the subset file) 
+**'''Intersperse subset''' - create a new browser that includes the current browser and a subset file mixed randomly in given proportions. For example, if you choose ''ratio of frequencies'' equal to 2, the browser will list two [[Glossary:Element|elements]] taken from the current browser for each element taken from the subset file. If you mix Chemistry and Math 3:1 (''frequency ratio'': 3.00) and then mix the resulting subset with Biology 1:1.5 (''frequency ratio'': 0.666), then for each 10 elements, you will get 6 Biology elements, 3 Chemistry elements and 1 Math element. The excess elements will be listed at the end of the subset 
+**'''Delete''' - delete a subset file
+
+=== Search ===
+
+*'''Search''' 
+**'''Search&nbsp;browser''' (''Ctrl+F'') - search for a text in all [[Glossary:Element|elements]] included in the [[browser]] 
+**'''Find title''' (''Alt+F'') - find the first element containing a given text in its title (starting with the current row) 
+**'''Find next '''(''F3'') - repeat the last search started with '''Find title''' 
+**'''Find all titles''' - find all elements containing a given text in their title and place these elements in a new browser 
+**'''Find current''' - locate the element from the [[element window]] in the browser
+**'''Search and replace''' (''Ctrl+R'') - search and replace texts in the browser
+
+=== Sort ===
+
+*'''<span id="Sort">Sort</span>''' - sort the [[browser]] by a given column 
+**'''For Review''' (''Ctrl+S'') - sort the browser using sorting criteria as defined by '''Learn&nbsp;: Sorting&nbsp;: Sorting criteria''' 
+**'''By interval''' - sort the browser by current [[Glossary:Interval|intervals]]
+**'''By stability''' - sort the browser by the [[Glossary:Stability|memory stability (S)]]
+**'''By retrievability''' - sort the browser by the [[Glossary:Retrievability|probability of recall (R)]]
+**'''By difficulty''' - sort the browser by the estimated [[Glossary:Element|difficulty]] of elements 
+**'''By first rep. date''' - sort the browser by the date of the first repetition
+**'''By last rep. date''' - sort the browser by the date of the last repetition 
+**'''By next rep. date''' - sort the browser by the date of the next repetition 
+**'''By memory lapses''' - sort the browser by the number of [[Glossary:Lapse|memory lapses]], i.e. the number of times each element was forgotten 
+**'''By postpone count''' - sort the browser by the number of times elements have been postponed by '''[[Postpone]]''' 
+**'''By priority''' - sort the browser by element [[Glossary:Priority|priority]] 
+**'''By repetition count''' - sort the browser by the number of repetitions afforded each element (i.e. the number of times each element was repeated) 
+**'''By text size''' - sort the browser by the size of texts included in the elements
+**'''By picture size''' - sort the browser by the size of pictures included in the elements
+**'''By tree''' - sort the browser by the precedence of elements in the [[Glossary:Knowledge_tree|knowledge tree]] (i.e. [[Glossary:Root_node|root]] first, first [[Glossary:Child|child]] of the root second, etc.)  
+**'''Other''' 
+***'''By title''' - sort the browser alphabetically by the element title 
+***'''By type''' - sort the browser by element type ([[Glossary:Item|item]], [[Glossary:Topic|topic]], [[Glossary:Task|task]] or [[Glossary:Concept|concept]])
+***'''By A-Factor''' - sort the browser by [[Glossary:A-Factor|A-Factor]] 
+***'''By element number''' - sort the browser by the element number (column ''ElNo'') 
+***'''By forgetting index''' - sort the browser by the [[Glossary:Requested_forgetting_index|requested forgetting index]] 
+***'''By ordinal number''' - sort the browser by [[Glossary:Ordinal_number|ordinal numbers]] 
+***'''By U-Factor''' - sort the browser by [[Glossary:U-Factor|U-Factor]]
+**'''Randomize''' (''Shift+Ctrl+F11'') - randomly mix up the contents of the browser
+
+=== Export ===
+
+*'''Export''' 
+**'''Transfer elements''' - copy all [[Glossary:Element|elements]] in the [[browser]] to another [[Glossary:Collection|collection]] 
+**'''Document''' - export browsed elements as a single HTML document 
+**'''Q&amp;A text file''' - export all [[Glossary:Item|items]] in the browser to a Q&amp;A text file. Such a file can later be imported to other versions of SuperMemo even if they do not support XML import. Q&amp;A files can thus be imported to [http://super-memory.com/articles/soft/sm6.htm SuperMemo 6 for DOS], [http://super-memory.com/articles/soft/sm7.htm SuperMemo 7 for Windows], [http://www.ceti.pl/~tss/smce/ SuperMemo for Pocket PC], [http://www.palmgear.com/software/showsoftware.cfm?prodID=6338 SuperMemo for Palm OS], [http://supermemopedia.com/wiki/Multimedia_SuperMemo Multimedia SuperMemo], [http://super-memory.com/articles/soft/smnet.htm supermemo.net], [http://super-memory.com/articles/soft/sm98.htm SuperMemo 98 Freeware], etc. 
+**'''XML''' - export browsed elements in the XML format that can be imported to other SuperMemos. See: [http://super-memory.com/articles/soft/pocket.htm Revolution in the pocket] 
+**'''Source text''' - export all elements in the browser as a text file with the learning process included. Such a file can later be imported to another [[Glossary:Collection|collection]]
+**'''Text subset''' - open the text registry subset corresponding with browser texts
+**'''Repetition history (CSV)''' - export the entire repetition history for the current subset to a CSV file
+**'''Repetition history (Text)''' - export the entire history of repetition for the currently displayed subset to a text file
+**'''Repetition history (AI)''' - export anonymized repetition history set with normalized grade output
+
+=== Random ===
+
+*'''Random''' 
+**'''Random review''' (''F11'') - jump to a randomly picked [[Glossary:Element|element]] in the [[browser]]. This option is useful in quickly reviewing the material contained in the browser 
+**'''Random test''' (''Ctrl+F11'') - start random test on the contents of the browser. All elements will be repeated in the standard way but the repetitions will have no effect on the learning process. Unless you review somebody else's [[Glossary:Collection|collection]], it is recommended you use [[Subset learning|subset review]] on a randomized browser rather than '''Random test''' 
+**'''Randomize browser''' (''Shift+Ctrl+F11'') - randomize the contents of the browser
+
+=== Tools ===
+
+*'''Tools''' 
+**'''Save pending''' - place all [[Glossary:Pending_element|pending elements]] from the [[browser]] at the end of the [[Glossary:Pending_queue|pending queue]]. You can use this option to [[#Sort|sort]] the pending queue by [[Glossary:Ordinal_number|ordinal numbers]], by title, by [[Glossary:Priority|priority]], by [[Glossary:Knowledge_tree|contents tree]], etc. For example, to sort the [[Glossary:Pending_queue|pending queue]] by [[Glossary:Difficulty|difficulty]]: (1) choose '''[[View menu|View]] : [[View menu#Outstanding|Outstanding]]''', (2) click the column ''Dif'', and (3) choose '''Tools : Save pending''' on the browser menu 
+**'''Save priority''' - save [[Glossary:Element|elements]] from the [[browser]] at the top of the [[Glossary:Priority_queue|priority queue]]
+**'''Save drill''' - save [[Glossary:Element|elements]] from the [[browser]] in the [[Glossary:Final_drill_queue|final drill queue]]. The old queue will be overwritten. You can use this option to drill a subset of elements (e.g. on the day before an important examination). Before you use the drill queue for cramming, use [[Subset learning|subset review]] 
+**'''Save repetitions''' - reschedule all outstanding browser elements along the current browser sorting order. You can use this option to sort [[Glossary:Outstanding_material|outstanding repetitions]] (e.g. for [[Glossary:Difficulty|difficulty]], length of the [[Glossary:Interval|interval]], number of [[Glossary:Lapse|memory lapses]], etc.) 
+**'''<span id="Swap_Q.26A">Swap Q&amp;A</span>''' - swap questions and answers in browser elements 
+**'''Total knowledge''' - compute the estimate of changes in subset knowledge over time
+**'''Memory model''' - compute memory model parameters for the browser subset
+**'''Repetitions graph''' - display a graph that shows the correlation between the number of repetitions and the [[Glossary:Interval|interval]] reached by [[Glossary:Element|elements]] included in the [[browser]]
+
+<div class="center">
+[[File:Repetitions_graph.png|800px|SuperMemo: Time flow of knowledge in the learning process]]
+{{:Image:Repetitions_graph.png}}
+</div>
+
+=== Process browser> ===
+
+*'''<span id="Process_all">Process browser></span>''' - process all [[Glossary:Element|elements]] in the [[browser]] using options available from the [[Subset operations|subset processing menu]]
+
+=== Close ===
+
+*'''Close''' (''Esc'') - close the [[browser]]

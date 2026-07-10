@@ -1,0 +1,1 @@
+{{Fig|The [[Alarm toolbar|'''Alarm''' toolbar]] at the bottom of the [[element window]]. In the picture, the '''Alarm countdown timer''' shows 14 min. and 21 sec. until the alarm is raised. The '''Learning time stopwatch''' shows the user have spent 3 sec., and 977 milisec. on answering questions since SuperMemo was last opened.}}

@@ -1,0 +1,2 @@
+;<span id="Leitner_system">Leitner system</span>
+:rudimentary method for [[Glossary:Spaced_repetition|spaced repetition]] used in a number of flashcard applications. The method has been proposed by [https://en.wikipedia.org/wiki/Sebastian_Leitner Sebastian Leitner] in the 1970s and can be considered a forerunner of [[Glossary:SuperMemo|SuperMemo]]

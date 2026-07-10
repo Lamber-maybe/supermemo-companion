@@ -1,0 +1,2 @@
+;<span id="Cloze_for_pictures">cloze for pictures</span>
+:see [[Glossary:Occlusion_test|occlusion test]]

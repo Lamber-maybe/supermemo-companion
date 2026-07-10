@@ -1,0 +1,5 @@
+;<span id="Root_node">root node</span>
+:'''root''' is a [[Glossary:Branch|branch]] in the [[Glossary:Contents_window|'''Contents''' window]] that keeps all [[Glossary:Element|elements]] of a given [[Glossary:Concept_group|concept group]]. For example, a [[Glossary:Node|node]] named ''Chemistry'' might be a '''root node''' of all [[Glossary:Element|elements]] related to chemistry.
+:The '''root node''' determines how deep SuperMemo can interfere into the structure of the tree when working with a [[Glossary:Concept_group|concept group]]. All elements under the '''root''' are subject to restructuring. All elements above the '''root''' are protected from changes.
+:The '''root''' is a [[Glossary:Node|node]] that keeps the [[Glossary:Hook_node|hook]] that parents all newly added [[Glossary:Element|elements]] in the [[Glossary:Concept_group|concept group]]. 
+:The '''root''' of the whole [[Glossary:Collection|collection]] is the '''root''' of the [[Glossary:Knowledge_tree|knowledge tree]]. This master root has a physical position of 1 in the [[Glossary:Collection|collection]] (Element #1)

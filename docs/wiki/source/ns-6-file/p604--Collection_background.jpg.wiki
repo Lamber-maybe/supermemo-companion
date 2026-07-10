@@ -1,0 +1,3 @@
+<blockquote>
+'''''Figure:''' In Windows 10 or later, SuperMemo background can be used as a nice visual collection chooser between active [[Glossary:Collection|collection]]s opened in separate instances of SuperMemo running simultaneously. Use Alt+Tab to switch between [[Glossary:Collection|collection]]s, or click the collection of your choice.''
+</blockquote>

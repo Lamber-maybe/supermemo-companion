@@ -1,0 +1,6 @@
+docs/wiki/source/** text eol=lf
+docs/wiki/rendered/** text eol=lf
+docs/wiki/manifest.jsonl text eol=lf
+docs/wiki/snapshot.json text eol=lf
+docs/wiki/_index.html text eol=lf
+scripts/*.py text eol=lf

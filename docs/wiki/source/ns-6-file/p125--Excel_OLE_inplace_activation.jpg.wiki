@@ -1,0 +1,1 @@
+An Excel spreadsheet being edited inside SuperMemo via OLE in-place activation

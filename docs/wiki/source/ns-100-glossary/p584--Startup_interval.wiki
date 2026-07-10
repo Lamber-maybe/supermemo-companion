@@ -1,0 +1,2 @@
+;<span id="Startup_interval">startup interval</span> (SI)
+:common first [[Glossary:Interval|interval]] for all new [[Glossary:Item|items]] determined by the [[Glossary:Forgetting_curve|forgetting curve]] for new heterogeneous material. See more: [https://supermemo.guru/wiki/Algorithm_SM-17#Startup_interval SuperMemo Algorithm]

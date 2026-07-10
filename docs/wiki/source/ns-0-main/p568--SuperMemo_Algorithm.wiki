@@ -1,0 +1,47 @@
+== The Algorithm ==
+
+SuperMemo had a fertile impact on the research of modeling long-term memory. One of the most interesting fruits of that research is the [https://www.super-memory.com/english/2vm.htm two component model of long-term memory]. Over the last two decades, it has been hinted on many occasions that the model may provide a sound theoretical basis for a better and more universal approach to [[Glossary:Spaced_repetition|spaced repetition]].
+
+SuperMemo 20 includes 5 algorithms to weigh up optimum intervals:
+* SM-2 (1987)
+* SM-15 (2011)
+* FSRS (developed by Jarrett Ye independent of SuperMemo)
+* SM-19 (2024)
+* SM-20 (2026) (based on machine learning)
+
+== Historical note: earlier releases of the algorithm  ==
+
+Although the presented algorithm may seem complex, you should find it easier to follow its steps once you understand the evolution of individual concepts such as [[Glossary:E-Factor|E-Factor]], matrix of optimum intervals, optimum factors, [[Glossary:Forgetting curve|forgetting curves]], mid-interval repetition, stability, retrievability, etc. 
+
+*'''1985''' - Paper-and-pencil version of SuperMemo is formulated ([http://super-memory.com/english/ol/beginning.htm#Algorithm Algorithm SM-0]). Repetitions of whole pages of material proceed along a fixed table of intervals. See also: [http://super-memory.com/articles/paper.htm Using SuperMemo without a computer] 
+*'''1987''' - [http://super-memory.com/articles/soft/sm2.htm First computer implementation] makes it possible to divide material into individual items. Items are classified into difficulty categories by means of [[Glossary:E-Factor|E-Factor]]. Each difficulty category has its own optimum spacing of repetitions ([http://super-memory.com/english/ol/sm2.htm Algorithm SM-2]) 
+*'''1989''' - SuperMemo 4 was able to modify the function of optimum intervals depending on the student's performance ([http://super-memory.com/english/ol/sm4.htm Algorithm SM-4]). This was then the first algorithm in which the function of optimal intervals was adaptable
+*'''1989''' - SuperMemo 5 replaced the matrix of optimum intervals with the matrix of optimal factors (an optimum factor is the ratio between successive intervals). This approach accelerated the adaptation of the function of optimum intervals ([http://super-memory.com/english/ol/sm5.htm Algorithm SM-5]) 
+*'''1991''' - [http://super-memory.com/articles/soft/sm6.htm SuperMemo 6] derived optimal factors from [[Glossary:Forgetting curve|forgetting curves]] plotted for each entry of the matrix of optimum factors. This could dramatically speed up the convergence of the function of optimum intervals to its ultimate value ([http://super-memory.com/english/ol/sm6.htm Algorithm SM-6]). This was then the first adaptable algorithm that would use regression to find the best fit to the actual memory performance data. Unlike SuperMemo 5, which could keep converging and diverging depending on the quality of the learning material and the learning process, SuperMemo 6 would get closer to the student's ultimate memory model with each day of learning 
+*'''1995''' - [http://super-memory.com/articles/soft/sm8.htm SuperMemo 8] capitalized on data collected by users of [http://super-memory.com/articles/soft/sm6.htm SuperMemo 6] and [http://super-memory.com/articles/soft/sm7.htm SuperMemo 7] and added a number of improvements that strengthened the theoretical validity of the function of optimum intervals and made it possible to accelerate its adaptation, esp. in the early stages of learning ([http://super-memory.com/english/algsm8.htm Algorithm SM-8]). New concepts: 
+**replacing [[Glossary:E-Factor|E-Factors]] with absolute difficulty factors: [[Glossary:A-Factor|A-Factors]]. Item difficulty was thus defined in terms of actual properties of human memory, and would not depend on the average difficulty of the learning material 
+**fast approximation of [[Glossary:A-Factor|A-Factors]] from the '''First Grade vs. A-Factor''' correlation graph and '''Grade vs. Forgetting index graph'''. This makes it possible to quickly guess item's difficulty before more data is available 
+**real-time adjustment of the matrix of optimal factors based on the power approximation of the decline of optimum factors 
+*'''2002''' - SuperMemo 2002 introduced the first SuperMemo algorithm that is resistant to interference from delay or advancement of repetitions. This makes it possible to safely delay repetitions ('''[[Postpone]]''') or advance repetitions ([[Subset learning|'''Review''']]): 
+**accounting for delayed repetitions by introducing the concept of repetition categories 
+**accounting for advanced repetitions by introducing O-Factor decrements derived from the concept of the ''spacing effect'' 
+*'''2005''' - [http://www.freewarefiles.com/SuperMemo_program_13849.html SuperMemo 2004] introduced boundaries on A and B parameters computed from the '''Grade vs. Forgetting Index''' data. This plugs up a weakness in the algorithm that showed when importing repetitions from other applications (e.g. open source MemAid). If a large number of easy repetitions occurred at unnaturally long intervals (as after pre-training with another application), the graph might show reversed monotonicity that would temporarily affect the estimation of [[Glossary:A-Factor|A-Factors]] (the speed of self-correction would be reversely proportional to the amount of flawed data). When boundaries are imposed, self-correction is instant, and the accuracy of [[Glossary:A-Factor|A-Factor]] estimation increases with each repetition executed in SuperMemo 
+*'''2011 '''- with [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm SM-15], SuperMemo 15 eliminated two weaknesses of Algorithm SM-11 that would show up in heavily overloaded collections with very large item delays: 
+** [[Glossary:U-Factor|U-Factors]] now allow of correctly interpreting repetition delays of up to 15 years (previously 60 days only)
+** [[Glossary:Forgetting curve|forgetting curves]] are now corrected for repetition delays beyond the maximum registered [[Glossary:U-Factor|U-Factor]] value (preventing failed grades in delayed repetitions decreasing the estimates of the [[Glossary:Optimum interval|optimum interval]] for standardly-scheduled items in the same category)
+*'''2015''' - [https://supermemo.guru/wiki/Algorithm_SM-17 Algorithm SM-17] is a successor to all prior versions of the algorithm in future SuperMemos. It had passed all important benchmarks, and was part of SuperMemo 17 in 2016 
+*'''2018''' - [https://supermemo.guru/wiki/Algorithm_SM-18 '''Algorithm SM-18'''] was an updated version of the spaced repetition algorithm introduced in SuperMemo 18 in 2019. The algorithm improved the way [https://supermemo.guru/wiki/Item_difficulty_in_Algorithm_SM-18 item difficulty is estimated]
+*'''2024''' - [https://supermemo.guru/wiki/Algorithm_SM-19 '''Algorithm SM-19'''] is an updated version of the spaced repetition algorithm introduced in SuperMemo 19. The new algorithm improved the way post-lapse stability is estimated. It also improved the metrics by taking the best of Algorithm SM-15 and Algorithm SM-17 in handling the first forgetting curve
+*'''2026''' - [https://supermemo.guru/wiki/Algorithm_SM-20 '''Algorithm SM-20'''] is the first algorithm based solely on the theoretical model of memory with all parameters computed by means of machine learning
+
+== See also ==
+* [https://supermemo.guru/wiki/History_of_spaced_repetition History of spaced repetition]
+* [https://supermemo.guru/wiki/History_of_SuperMemo_algorithm History of SuperMemo Algorithm]
+* [https://www.supermemopedia.com/wiki/Algorithm_SM-17_FAQs Algorithm SM-17 FAQs]
+* [https://supermemopedia.com/wiki/Algorithm_SM-20 Algorithm SM-20 FAQs]
+* [https://super-memory.com/english/ol/sm2.htm Algorithm SM-2 (first algorithm for spaced repetitions on a computer)]
+* [https://supermemopedia.com/wiki/Comparing_SuperMemo_with_other_applications_based_on_spaced_repetition Comparing SuperMemo with other applications based on spaced repetition]
+* [https://supermemopedia.com/wiki/Spaced_repetition_algorithm_metric Spaced repetition algorithm metric]
+* [https://supermemo.guru/wiki/First_fast-converging_spaced_repetition_algorithm:_Algorithm_SM-5#Criticism_of_Algorithm_SM-5 Superiority of SuperMemo over Anki]
+* [https://supermemopedia.com/wiki/Open_letter_to_spaced_repetition_developers Open letter to spaced repetition developers]
+* [https://www.supermemopedia.com/index.php?title=Algorithm_SM-17&action=history Collaborative edits history of this file at SuperMemopedia]

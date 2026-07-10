@@ -1,0 +1,2 @@
+;<span id="Level">level</span>
+:degree of complexity of [[Glossary:SuperMemo|SuperMemo]] exposed to users of different familiarity with the program. There are four levels with increasing complexity available from '''[[File menu|File]] : [[Levels|Level]]'''. These are: '''Beginner''', '''Basic''', '''Middle''' and '''Professional'''. Find out more: [[Levels]]

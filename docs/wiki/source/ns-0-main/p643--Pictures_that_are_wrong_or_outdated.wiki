@@ -1,0 +1,13 @@
+List here images that you think are wrong or need to be updated. Shift most glaring errors to the top. Explain the error. Don't forget to provide the link to the picture.
+
+'''Most glaring picture bugs''':
+
+* [[:File:Postpone outstanding elements Scope.jpg|'''Postpone : Scope''']]
+* [[:File:Postpone outstanding elements Parameters.jpg|'''Postpone : Parameters''']]
+
+'''Easy fixes''':
+* [[:File:Translation registry.jpg|Translation registry]]
+
+'''Plausible''':
+* [[:File:Email response.jpg|FAQ dialog]]
+* [[:File:Email_response2.jpg|FAQ dialog #2]]

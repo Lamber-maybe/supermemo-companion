@@ -1,0 +1,43 @@
+__NOTOC__
+
+The '''Contents''' window in SuperMemo displays the [[Glossary:Knowledge_tree|knowledge tree]] (for the current [[Glossary:Collection | collection]]).
+
+Operations on the [[Glossary:Knowledge_tree|knowledge tree]] are available from the [[contents menu]]. To open the [[contents menu]], right-click over the '''Contents''' window or press [[Keyboard shortcuts | ''Shift+F10'']].
+
+The '''Contents''' window displays:
+
+* [[Glossary#knowledge tree | Knowledge tree]] (in the middle of the window). If you would like to understand the meaning of individual icons or build your own [[Glossary:Knowledge_tree|knowledge tree]], read: [[Building the knowledge tree]] 
+* [[#Caption|Caption]] (at the top of the window)
+* [[#Toolbar|Toolbar]] (under the caption)
+* [[#Button panel|Button panel]] (at the bottom of the window)
+
+[[Image:Contents_window.jpg|558px|center|SuperMemo: The contents window displaying the knowledge tree (i.e. the hierarchical structure of elements) of a collection]]
+{{:Image:Contents_window.jpg}}
+
+== Caption ==
+
+The caption shows the name of the root element of the whole [[Glossary:Collection|collection]].
+
+== Toolbar ==
+
+The [[Contents toolbar|toolbar]] features buttons used in most frequent operations on the knowledge tree (visible on the picture)
+
+== Button panel ==
+
+* [[Subset learning|'''Learn''']] (''Ctrl+L'') - make repetitions for the selected [[Glossary:Branch|branch]] and memorize [[Glossary:Pending_element|pending elements]] belonging to the [[Glossary:Branch|branch]]
+* '''Add''' - add a new [[Glossary:Element|element]] as a [[Glossary:Child | child]] of the currently selected [[Glossary:Element|element]]. The type of the added [[Glossary:Child|child]] [[Glossary:Element|element]], whether is going to be an [[Glossary:Item|item]] or a [[Glossary:Topic|topic]], is determined by the current selection in the '''Element type''' combo box on the right. ''In the picture, the selected type is Topics. This means that if you click '''Add''' you are going to add a [[Glossary:Topic|topic]] [[Glossary:Child|child]] [[Glossary:Element|element]].''
+* '''Insert''' (''Ins'') - insert a new [[Glossary:Element|element]] in the place of the currently selected [[Glossary:Element|element]] (the current [[Glossary:Element|element]] moves one position down)
+* '''Accept''' (''Enter'') - accept the choice of the currently selected [[Glossary:Element|element]]. This button is active only if another option in SuperMemo requires selecting an [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|knowledge tree]]. In such a case, the '''Contents''' window is opened and you can point to the [[Glossary:Element|element]] of interest and click '''Accept'''). For example, choosing '''[[Component menu#Links|Links]] : Hyperlink''' on the [[component menu]] will open the '''Contents''' window and ask for selecting an [[Glossary:Element|element]] to link to. Similarly, ''Shift+Ctrl+V'' in the [[Glossary:Element_window|element window]] will ask you where the currently displayed [[Glossary:Element|element]] should be moved in the [[Glossary:Knowledge_tree|knowledge tree]]
+* '''View''' (''Shift+Enter'') - view the currently selected [[Glossary:Element|element]] in the [[Glossary:Element_window|element window]]
+* '''Delete''' (''Del'') - delete the currently selected [[Glossary:Element|element]] and all its [[Glossary:Child | children]] (if any)
+* '''Element type combo box''' - select the default type of [[Glossary:Element|elements]] added to the [[Glossary:Knowledge_tree | knowledge tree]]. If you choose ''Topics'', the button '''Add''' will keep adding [[Glossary:Topic|topics]]. ''Items'' will add [[Glossary:Item|items]].
+
+== Further reading ==
+
+* [[Building the knowledge tree]]
+* [https://super-memory.com/help/faq/tree.htm FAQ: Contents window]
+* [https://en.wikipedia.org/wiki/Tree_(data_structure) Tree structure] at Wikipedia
+
+== Video ==
+* [https://www.youtube.com/watch?v=IUCTq29ORnE Contents icons] at [https://supermemopedia.com/wiki/The_Pleasurable_Guide_To_SuperMemo The Pleasurable Guide To SuperMemo]
+* [https://youtube.com/watch?v=j-QkcJDVapk Button panel in Contents] at [https://supermemopedia.com/wiki/The_Pleasurable_Guide_To_SuperMemo The Pleasurable Guide To SuperMemo]

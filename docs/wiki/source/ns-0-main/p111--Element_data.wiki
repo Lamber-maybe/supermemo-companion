@@ -1,0 +1,163 @@
+__TOC__
+
+The '''Element data''' window can most conveniently be viewed by pressing ''F5'' ('''[[Window menu|Window]] : [[Window menu#Layout|Layout]] : Warrior layout'''). Note that you can collapse/expand individual data groups, and save your arrangement in a custom window [[Glossary:Layout|layout]].
+
+<div class="center">
+[[Image:Element_data.jpg|800px|center|SuperMemo: The Element data window for an item about immunity]]
+{{Image:Element data.jpg}}
+</div>
+
+== Available element data groups ==
+
+=== Priority ===
+
+{|style="width: 100%"
+|-
+| 
+;Priority
+:[[Glossary:Priority|priority]] of the [[Glossary:Element|element]] in percent in the [[Glossary:Priority_queue|priority queue]]. ''In the picture, the [[Glossary:Item|item]] has a [[Glossary:Priority|priority]] of 42.4888%. This means that over 40% of [[Glossary:Element|elements]] in the [[Glossary:Collection|collection]] have a higher [[Glossary:Priority|priority]].''
+;Posit
+:[[Glossary:Priority|priority]] of the [[Glossary:Element|element]] as a position in the [[Glossary:Priority_queue|priority queue]]. ''The [[Glossary:Item|item]] sits on the position 260,961 in the [[Glossary:Priority_queue|priority queue]]. This means that 260,960 [[Glossary:Element|elements]] in the [[Glossary:Collection|collection]] have a higher [[Glossary:Priority|priority]].''
+;New pr.
+:new [[Glossary:priority|priority]] in percent after just executed [[Glossary:Repetition|repetition]]. Good grades automatically decrease the [[Glossary:Priority|priority]] of [[Glossary:Item|items]]. [[Glossary:Priority|Priority]] of [[Glossary:Topic|topics]] is reduced gradually unless their [[Glossary:Interval|interval]] is shortened manually or some [[incremental reading]] operations are executed on the topic. ''There is no change to the [[Glossary:Priority|priority]] since no repetition has been executed on the [[Glossary:Item|item]] yet.''
+;New pos.
+:new [[Glossary:Priority|priority]] as a position after just executed [[Glossary:Repetition|repetition]].
+;<span id="Change">Change</span>
+:change in priority positions (i.e. the difference between '''Posit''' and '''New pos.''').
+| style="text-align: right;" | [[Image:Element Priority data group.jpg|SuperMemo: The Priority data group of the Element data window]]
+|}
+
+=== Dates ===
+
+{|style="width: 100%"
+|-
+| 
+;Next
+:date when the next [[Glossary:Repetition|repetition]] of the [[Glossary:Element|element]] should take place. If the review on the schedule date is missed, this field will remain unchanged unless auto-postpone changes the review date. ''In the picture, the next repetition has been scheduled for Apr 29, 2016. [[Glossary:Element|Elements]] which are due for review on a given day have their next repetition date additionally prefixed with Now:''
+;<span id="Last">Last</span>
+:date of the last [[Glossary:Repetition|repetition]]. ''The last repetition took place on Mar 12, 1997.''
+;<span id="Time">Time</span>
+:time of the last [[Glossary:Repetition|repetition]]. ''The precise time of the last repetition is unavailable since this piece of data has started being collected only with SuperMemo 13 (2006).''
+;<span id="First">First</span>
+:first [[Glossary:Repetition|repetition]] ever recorded in the [[repetition history]] (usually also: first ever repetition). ''The first repetition recorded in this [[Glossary:Item|item]]'s [[repetition history]] was made on Mar 12, 1997.'' '''Warning!''' [[Glossary:Item|Items]] repeated before 1996 may not carry repetition history record and the first repetition on the list may not be the first repetition ever made. ''In this particular case, the [[Glossary:Item|item]] was repeated 7 times before 1997 (before switching to SuperMemo with repetition history record). This information can be inspected only in the [[Glossary:Element|element]]'s [[Repetition history|'''Repetition history''' window]] (e.g. available with Ctrl+Shift+H)''.
+;<span id="Outstanding_Queue_Posit">Due (or Posit)</span>
+:position of the [[Glossary:Element|element]] in the [[Glossary:Outstanding_queue|outstanding queue]]. ''Here the [[Glossary:Item|item]] is the 3,147th [[Glossary:Element|element]] in the queue of 9,073 [[Glossary:Outstanding_element|outstanding elements]] scheduled for review on Apr 29, 2016.''
+;Workload
+:the number of [[Glossary:Element|elements]] scheduled for review on the day of the next repetition ('''Next'''). ''There are 9,073 [[Glossary:Element|elements]] scheduled for review on Apr 29, 2016.''
+| style="text-align: right;" | [[Image:Element Dates data group.jpg|SuperMemo: The Dates data group of the Element data window]]
+|}
+
+=== Interval ===
+
+{|style="width: 100%"
+|-
+|
+;Int
+:current [[Glossary:Interval|interval]] of the [[Glossary:Element|element]] (i.e. the number of days between '''Last''' and '''Next'''). ''The presented [[Glossary:Item|item]] has last been repeated in 1997 (for the 8th time) and the next repetition has been scheduled in 19 years 1 month and 18 days.''
+;Prev
+:previous [[Glossary:Interval|interval]]. ''The [[Glossary:Interval|interval]] between the 7th and 8th [[Glossary:Repetition|repetition]] lasted 3 years 11 months and 26 days (it was deduced from the value of [[Glossary:U-Factor|U-Factor]] [[#U-Factor|below]]).''
+;<span id="Passed">Passed</span>
+:the actual [[Glossary:Interval|interval]] that have passed since the last repetition (i.e. the time between ''now'' and '''Last'''). Note that this [[Glossary:Interval|interval]] may be as short as 10 sec. if you revisit the [[Glossary:Element|element]]'s data 10 seconds after the recently executed [[Glossary:Repetition|repetition]] (e.g. by pressing ''Alt+Left arrow''). ''19 years 1 month and 16 days have passed since the item was last repeated on Mar 12, 1997.''
+;New
+:new [[Glossary:Interval|interval]] that will separate the repetitions of the element. Note that the new interval may differ from the optimum interval ('''Int18''') due (1) the forgetting index different than 10% (compare '''Int (FI)'''), (2) random interval dispersion (most visible for short intervals)(compare '''Int (Disp)'''), (3) anti-cramming mechanisms that ensure sufficient interval increase, and (4) manual interventions in the length of the interval. If you reissue the grade several times, you will notice that '''Int18''' remains the same, while '''New''' keeps changing slightly at random. ''As the item has not been reviewed yet, its next repetition has not been scheduled, and '''New''' remains undefined.'' 
+;Int15
+:[[Glossary:Item|item]]'s next [[Glossary:Optimum_interval|optimum interval]] for the [[Glossary:Grade|grade]] '''Good''' (''4'') as proposed by the [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm 15]. '''Important!'''. This value is dispersed and is not adjusted for the [[forgetting index]]. This field is empty for [[Glossary:Topic|topics]]. ''Here, the [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm 15] would schedule the [[Glossary:Item|item]] to be repeated in 64 years 7 months and 1 day.''
+;Int19
+:[[Glossary:Item|item]]'s next [[Glossary:Optimum_interval|optimum interval]] for the [[Glossary:Grade|grade]] '''Good''' (''4'') if the repetition was to take place at the moment of inspection. The interval is set as proposed by the [https://supermemo.guru/wiki/Algorithm_SM-18 Algorithm 18] (on the basis of other fields, e.g. '''R''', '''S''', etc.). The optimum interval is based on the [[forgetting index]] of 10%. This field is empty for [[Glossary:Topic|topics]]. ''Here, the [https://supermemo.guru/wiki/Algorithm_SM-19 Algorithm 19] would schedule the [[Glossary:Item|item]] for repetition in 29 years 4 months and 1 day. Shorter [[Glossary:Interval|intervals]] for very high [[Glossary:Stability|stabilities]] occur pretty often in SuperMemo 19
+;<span id="Int18_vs_Int16">Int19 vs Int15</span>
+:percentage difference in [[Glossary:Optimum_interval|optimum intervals]] proposed by the two algorithms ('''(Int19-Int15)/Int15'''). This difference can be used to trigger manual choices of [[Glossary:Interval|interval]] by users who want to micromanage their intervals (the threshold values can be set in '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Learning tab in Options|Learning]] : Algorithm SM-20 Alerts''') or who want to be sure [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm SM-15] interval "cheating" is possible. ''Here, the [[Glossary:Item|item]]'s next [[Glossary:Optimum_interval|optimum interval]] proposed by [https://supermemo.guru/wiki/Algorithm_SM-19 Algorithm SM-19] is 55% shorter from the one suggested by the [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm SM-15].''
+| style="text-align: right;" | [[Image:Element Interval data group.jpg|SuperMemo: The Interval data group of the Element data window]]
+|}
+
+=== DSR Stats ===
+
+{|style="width: 100%"
+|-
+|
+;S
+:[[Glossary:Item|item]]'s current [[Glossary:Stability|stability]] expressed as the [[Glossary:Optimum_interval|optimum interval]] in [[Glossary:Spaced_repetition|spaced repetition]]. ''In the picture, the [[Glossary:Stability|stability]] for the [[Glossary:Item|item]] amounts to 18 years 9 months and 19 days. It might be lower than the current interval due to multiple postpones''
+;R
+:current estimation of present [[Glossary:Item|item]]'s [[Glossary:Retrievability|retrievability]]. If '''Passed''' is short as compared with '''S''', retrievability can be very high. ''The probability of recall of the [[Glossary:Item|item]] after the passed [[Glossary:Interval|interval]] of 19 years and 1 month stands at 89.8% (see: [https://supermemopedia.com/wiki/Apparent_discrepancy_in_the_Retrievability_displayed_in_the_UI Why is R so high?])''
+;SInc
+:best estimate of the [[Glossary:Item|item]]'s stability increase. ''Here the [[Glossary:Item|item]]'s [[Glossary:Stability|stability]] (expressed as the [[Glossary:Optimum_interval|optimum interval]]) is estimated to best increase at a factor of 1.5151 (i.e. 51%) after the repetition.''
+;SInc[]
+:entry in the [[Glossary:Stability_increase_matrix|stability increase matrix]]. ''Based on the corresponding entry in the [[Glossary:Stability_increase_matrix|stability increase matrix]], after the repetition the [[Glossary:Item|item]]'s [[Glossary:Stability|stability]] is expected to increase by a factor of 1.1711 (i.e. 17%). Note that where data is scarce (e.g. as in this case of unusually long [[Glossary:Interval|interval]]), the difference between '''SInc[]''' and '''SInc''' may be large due to a larger impact of neighboring entries and the theoretical prediction based on the SInc approximation.''
+;Next S
+:[[Glossary:Item|item]]'s expected new [[Glossary:Stability|stability]] after the scheduled next repetition ('''Next'''). <code>'''Next S''' := '''S''' * SInc('''Diff''','''Int''','''R''')</code>. ''The new stability (i.e. [[Glossary:Optimum_interval|optimum interval]]) of the [[Glossary:Item|item]] repeated on Apr 29, 2016 after the [[Glossary:Interval|interval]] of 19 years 1 month and 18 days is expected to be 10,403 days.''
+;Next R
+:[[Glossary:Item|item]]'s expected [[Glossary:Retrievability|retrievability]] after the scheduled next repetition ('''Next'''). If the date of '''Next''' results in an interval that is much larger than '''S''', '''Next R''' can be very low. ''The expected [[Glossary:Retrievability|retrievability]] (i.e. probability of recall) of the [[Glossary:Item|item]] at the next repetition in 10,403 days stands at 89.8%.''
+| style="text-align: right;" | [[Image:Element DSR Stats data group.jpg|SuperMemo: The DSR Stats data group of the Element data window]]
+|}
+
+=== Repetitions ===
+
+{|style="width: 100%"
+|-
+| 
+;<span id="Reps">Reps</span>
+:number of repetitions of the displayed [[Glossary:Element|element]]. For [[Glossary:Item|items]], once the item is forgotten, the count of repetitions begins from scratch (i.e. '''Reps''' equals 1 again). ''In the enclosed example, the [[Glossary:Item|item]] has been repeated with a passing grade 8 successive times.''
+;<span id="Lapses">Lapses</span>
+:number of [[Glossary:Lapse|memory lapses]]. ''0 lapses means the [[Glossary:Item|item]] has never been forgotten before.''
+;Grade
+:[[Glossary:Grade|grade]] used in the optimization procedure (the value used in parentheses shows the recent grade given by the user, which can be overridden in rare circumstances)
+;<span id="Postpones">Postpones</span>
+:total and recent number of times the [[Glossary:Element|element]] has been postponed. ''The presented [[Glossary:Item|item]] has been postponed 174 times since the last repetition, and 180 times in its lifetime. In this case, 6 postpones occurred since total postpone count begun as a result of implementing this new statistic starting with SuperMemo 17.''
+;Future
+:estimated number of [[Glossary:Repetition|repetitions]] of the [[Glossary:Item|item]] in the next 30 years. '''Future''' value is easily derived from the [[Glossary:DSR_model|DSR model]]. For [[Glossary:Topic|topics]], the number of presentations depends on '''[[Glossary:A-Factor|A-Factor]]''' only. Note that the value is the estimate from before the execution of a [[Glossary:Repetition|repetition]]. Note also that the estimate assumes no forgetting, and that the [[forgetting index]] matters only in estimating the length of intervals. ''After the repetition, the estimate is likely to go to zero, meaning, this [[Glossary:Item|item]] became a part of "permastore" (i.e. it might be remembered till the end of an average life). ''SuperMemo roughly predicts that there will still be 1 [[Glossary:Repetition|repetition]] of the presented [[Glossary:Item|item]] in the next 30 years.''
+;Future Sec
+:time needed for executing the estimated number of [[Glossary:Repetition|repetitions]] ('''Future''') of the [[Glossary:Item|item]] in the next 30 years. <code>Future Sec=Future*Avg time</code>. ''The [[Statistics|'''Statistics''' window]]'s [[Statistics#avg_time|'''Avg time''' parameter]] makes it possible to estimate the cost of retaining the presented [[Glossary:Item|item]] in memory until 2046 is 9 seconds on the assumption it will not be forgotten in the meantime.''
+;<span id="U-Factor">U-Factor</span>
+:quotient of the previous [[Glossary:Interval|interval]] and the next interval. In [[Glossary:Item|items]] that have been repeated only once, U-Factor equals the first [[Glossary:Interval|interval]] (in days).  ''Here U-Factor is 4.795.''
+| style="text-align: right;" | [[Image:Element Repetitions data group.jpg|SuperMemo: The Repetitions data group of the Element data window]]
+|}
+
+=== Difficulty ===
+
+{|style="width: 100%"
+|-
+| 
+;<span id="diff">Diff</span>
+:current estimation of the [[Glossary:Item|item]]'s absolute [[Glossary:Difficulty|difficulty]] estimated by [https://supermemo.guru/wiki/Algorithm_SM-17 Algorithm SM-17]. This number ranges from 0 (for easy [[Glossary:Item|items]]) to 1 (for difficult ones). ''In the picture, the [[Glossary:Item|item]]'s [[Glossary:Difficulty|difficulty]] is estimated to be at 0.0% which means it is very easy to remember.'' 
+;Old
+:heuristic measure of the [[Glossary:Item|item]]'s [[Glossary:Difficulty|difficulty]] known from SuperMemo 16 or earlier. It is estimated on the basis of the following parameters: '''Interval''', '''Lapses''', '''Repetitions''', '''A-Factor''', and '''First grade'''. The theoretical minimum for the difficulty is 0% and the theoretical maximum is 100%. This number decreases gradually with successful [[Glossary:Repetition|repetitions]]. Conversely, it increases with [[Glossary:Lapse|memory lapses]]. In a typical [[Glossary:Collection|collection]], the [[Glossary:Difficulty|difficulty]] of [[Glossary:Item|items]] usually ranges from 16% to 64%. If the [[Glossary:Difficulty|difficulty]] reaches beyond 65% you should have a closer look at the formulation of the [[Glossary:Item|item]] (e.g. memory interference, ambiguity, excessive wording, complex answer, etc.). See also: [http://super-memory.com/articles/20rules.htm 20 rules of formulating knowledge]. ''Here the [[Glossary:Item|item]] is estimated to be at 18.4% difficulty which indicates it is relatively easy to remember''. 
+;A-Factor
+:[[Glossary:A-Factor|A-Factor]] associated with the current [[Glossary:Element|element]]. In [https://supermemo.guru/wiki/Algorithm_SM-15 Algorithm SM-15], [[Glossary:A-Factor|A-Factor]] is a rough measure of [[Glossary:Difficulty|item difficulty]] and a measure of the rate at which inter-repetition [[Glossary:Interval|intervals]] increase. The higher the [[Glossary:A-Factor|A-Factor]], the faster the increase in [[Glossary:Interval|intervals]]. The most difficult [[Glossary:Item|items]] have [[Glossary:A-Factor|A-Factor]] equal to 1.2 while the easiest ones 6.9. For [[Glossary:Topic|topics]], [[Glossary:Concept|concepts]] and [[Glossary:Task|tasks]], [[Glossary:A-Factor|A-Factors]] equal the increase in [[Glossary:Interval|interval]] in a single [[Glossary:Review|review]] and may be as low as 1.01. Note that '''Diff''' ([[#Diff|above]]) is much more an accurate measure of [[Glossary:Difficulty|item difficulty]] (as perceived by the user). ''[[Glossary:A-Factor|A-Factor]] of 4.307 indicates that the [[Glossary:item|item]] is relatively easy to remember.''
+| style="text-align: right;" | [[Image:Element Difficulty data group.jpg|SuperMemo: The Difficulty data group of the Element data window]]
+|}
+
+=== Status ===
+
+{|style="width: 100%"
+|-
+|
+;Type
+:type of the [[Glossary:Element|element]]: [[Glossary:Item|item]], [[Glossary:Topic|topic]], [[Glossary:Concept|concept]] or [[Glossary:Task|task]] (see also: [[Items, topics, concepts, and tasks|Topics vs. items]]) and its current status: [[Glossary:Memorized_element|memorized]], [[Glossary:Dismissed_element|dismissed]] or [[Glossary:Pending_element|pending]]. See also: [[Building the knowledge tree#Status icons: pending, memorized and dismissed|Status icons: pending, memorized and dismissed]]. ''The [[Glossary:Element|element]] in the picture is an example of a [[Glossary:Memorized_element|memorized]] [[Glossary:Item|item]].''
+;<span id="Concept_group">Concept group</span>
+:name of the [[Glossary:Concept group|concept group]] to which the current [[Glossary:Element|element]] belongs. An element added to a concept group may, or may not have the group assignment set. In general, specific group transfers set the concept group affiliation. Mass element transfers, do not set the group affiliation even if the elements are added to a group hook. ''The current [[Glossary:Element|element]] is associated with the [[Glossary:Concept_group|concept group]] called "History collection".''
+;<span id="Template">Template</span>
+:[[Glossary:Template|template]] applied to the current [[Glossary:Element|element]]. ''Here the [[Glossary:Item|item]] uses a [[Glossary:Template|template]] called "History Picture".'' See also: [[Templates|Using templates]]
+;FI
+:maximum acceptable probability of forgetting the [[Glossary:Item|item]] at each [[Glossary:Repetition|repetition]] (in percent). [[Glossary:Forgetting_index|Forgetting index]] can be changed to a desired value (e.g. with ''Ctrl+Shift+P'' via '''[[Element parameters]]'''). If the [[Glossary:Forgetting_index|forgetting index]] is 10%, you stand a 90% chance that you will remember the [[Glossary:Item|item]] during the optimally scheduled [[Glossary:Repetition|repetition]]. The probability of forgetting will increase if you delay a [[Glossary:Repetition|repetition]]. ''Here the [[Glossary:Forgetting_index|forgetting index]] has been set at 10% (collection's default).'' See also: [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo Forgetting index]. Note that ('''Int (FI)''' is the optimum interval modified for the forgetting index, while '''Int (Rand)''' is the same interval after applying interval dispersion. 
+;Int (FI)
+:[[Glossary:Item|item]]'s next [[Glossary:Optimum_interval|optimum interval]] modified for the forgetting index for the [[Glossary:Grade|grade]] '''Good''' (''4'') (compare '''Int18'''). The optimum interval '''Int18''' is based on the [[forgetting index]] of 10%, while '''Int (FI''') is based on the requested forgetting index. This field is filled only at repetition time for items. ''Here, the [https://supermemo.guru/wiki/Algorithm_SM-18 Algorithm 18] would schedule the [[Glossary:Item|item]] for repetition in 42 years and 1 month for the forgetting index of 10%. Shorter [[Glossary:Interval|intervals]] for very low values of the forgetting index occur pretty often in SuperMemo ''
+;Int (Rand)
+:[[Glossary:Item|item]]'s next [[Glossary:Optimum_interval|optimum interval]] modified for the [[Glossary : forgetting index|forgetting index]] and dispersed randomly (compare '''Int18''' and '''Int (FI)'''). The optimum interval '''Int18''' is based on the [[forgetting index]] of 10%, while '''Int (Rand)''' is a dispersed value based on the [[Glossary:Requested forgetting index|requested forgetting index]]. This field is filled only at repetition time for items. ''In the picture, the [https://supermemo.guru/wiki/Algorithm_SM-18 Algorithm 18] would schedule the [[Glossary:Item|item]] for repetition in 42 years and 10 months for the forgetting index of 10% (which is collection's default). Value higher than 41 years and 1 month at '''Int (FI)''' is a result of random dispersion''. '''Important!''' This value is different each time you execute or cancel-and-repeat a repetition.
+;Ord
+:current [[Glossary:Ordinal number|ordinal number]] assigned to the [[Glossary:Element|element]]. You can use [[Glossary:Ordinal_number|ordinals]] to sort the [[Glossary:Pending_queue|pending queue]]. This is particularly useful if you plan to release your own [[Glossary:Collection|collection]] for use by others. You can change the [[Glossary:Ordinal_number|Ordinal]] by pressing ''Ctrl+Shift+P'' via '''[[Element parameters]]'''. ''The displayed [[Glossary:Item|item]] has [[Glossary:Ordinal_number|ordinal]] 819''.
+| style="text-align: right;" | [[Image:Element Status data group.jpg|SuperMemo: The Status data group of the Element data window]]
+|}
+
+== Element data context menu ==
+
+* '''Difficulty''' - show the estimation of the [[Glossary:Element|element]]'s [[Glossary:Difficulty|difficulty]]
+* '''Restore layout''' (''Ctrl+F5'') - restore the SuperMemo windows layout chosen as the default one
+* '''Element window''' (''Esc'') - shift focus to the [[element window]]
+* '''Format intervals''' - format [[Glossary:Interval|intervals]] as years, months, days, etc. If the formatted interval no longer fits within the field, click the field to display its entire value in a dialog box. Alternatively, hover the mouse over the field and read its value from the yellow hints panel in the [[status bar]] ('''[[Window menu|Window]] : [[Window menu#Hints|Hints]]''' must be checked for it to work).
+
+== Further reading ==
+
+* [[Statistics|'''Statistics''' window]]
+
+== FAQs ==
+
+* [https://supermemopedia.com/wiki/What_is_the_interpretation_of_New,_Int17,_and_S_in_Algorithm_SM-17%3F What is the interpretation of New, Int17, and S in Algorithm SM-17?]

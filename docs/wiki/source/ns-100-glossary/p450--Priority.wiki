@@ -1,0 +1,2 @@
+;<span id="Priority">priority</span>
+:number that reflects the importance of an [[Glossary:Element|element]] in [[Glossary:SuperMemo|SuperMemo]]. Most important [[Glossary:Element|elements]] have the '''priority''' 0%, while the least important elements have the '''priority''' 100%. '''Priority''' can be changed with '''[[Element menu#Priority|Priority]] : Modify''' (''Alt+P'') on the [[element menu]]. For more, see: [[Priority queue]]. Note that the term '''Priority''' is also used in reference to [[Glossary:Task|task]]s where it represents '''Value/Time'''

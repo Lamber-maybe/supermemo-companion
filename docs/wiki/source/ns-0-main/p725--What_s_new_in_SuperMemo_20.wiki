@@ -1,0 +1,116 @@
+== New features ==
+
+=== Performance ===
+
+* 64-bit: native Windows 11 APIs, hardened security, modern libraries, and an architecture ready for the next 20 years
+* High‑DPI: crisp rendering, correct scaling on 4K/8K monitors, and a UI that finally matches your hardware
+* [[WebView component]]
+* YouTube in WebView with original YouTube references
+* Recompiled with Delphi 13
+* [[Registry]] text file size limit increased to 4 GB (all registries, all *.rtx files)
+
+=== Algorithm ===
+
+* [[Algorithm Arena]] for the optimized balance between five algorithms: Algorithm SM-2, SM-15, SM-19, SM-20 and [[FSRS]] (see [https://supermemopedia.com/wiki/If_Algorithm_SM-20_is_so_strong,_why_do_we_need_an_Algorithm_Arena why?])
+* new [[Glossary:Spaced repetition|spaced repetition]] algorithm: [[Algorithm SM-20]] 
+* [[Glossary:Spaced repetition|spaced repetition]] algorithm: [[FSRS]] by Jarrett Ye
+* [[Glossary:R-Metric|R-Metric]] redefined to measure the power of algorithms in [[Algorithm Arena]] 
+* Heatmap of weighed up optimization indications for five algorithms: SM-2, SM-15, SM-19, SM-20 and FSRS
+* Accounting for [https://supermemo.guru/wiki/Bad_forgetting_curves "bad" forgetting curves] in Algorithm SM-19 and Algorithm SM-20
+* Algorithmic calibration curves (see: [[Analysis]])
+* Active [[Glossary:Final drill|final drill]] (cramming for exams will not disrupt your learning process)
+* All recall prediction optimizations use [[universal metric]] as opposed to standard machine learning metrics (Brier, log-loss, etc.)
+* '''Use''' graphs in '''[[Analysis]]''' to track algorithmic metrics (incl. the Arena)
+
+=== Imports ===
+
+* PDF import in native format (for [[incremental reading]])
+* Selection import mode (import only portions of articles from the web)
+* Full screen import mode (for intractable pages or pictures)
+* EPub imports
+* EML (Email) imports
+* Improved duplicate detection during import by automatically stripping advertising and tracking parameters from URLs (e.g. UTM, gclid, fbclid, affiliate IDs)
+* YouTube references and description retrieved via YouTube API
+* [[WebView]] makes it easy to browse the web and generate extract from pages on the web (see: [https://www.youtube.com/watch?v=Jn7ZPZNq8Rs video])
+
+=== AI ===
+See: [[Using AI in SuperMemo]]
+* '''AI : Explain''' for short and speedy answer from AI (in SuperMemo)
+* '''Explain [[Glossary:Extract|extract]]''' for extracts with a short AI explanation
+* '''Search : AI''' for speedy answers from Google overview AI (in the [[Glossary:Browser|browser]])
+
+=== Math ===
+* [[WebView component]] makes it easy to include mathematical formulas (e.g. from Wikipedia, [https://supermemopedia.com/wiki/Using_MathJax_in_SuperMemo_20 MathJax], and more)
+
+=== Styles ===
+
+* Predefined styles for [[Glossary:Stylesheet|stylesheet]] [[Glossary:Registry|registry]]
+* '''Apply style''' in [[Commander]]
+
+=== Other ===
+
+* Zipped backups
+* Three distinct image paste modes:
+*# into an image component,
+*# into HTML as a registered image, and
+*# into HTML as an unregistered image using Base64 encoding
+* '''Dark Mode''' sets a dark theme, and a dark [[Glossary:Stylesheet|stylesheet]] (no effect on [[Glossary:Template|template]] colors)
+* '''By Day''' option in [[Plan]] allows for long lists of slots assigned to consecutive days in the calendar
+
+== Improved Algorithm SM-19 ==
+* Improving the metric by combining the best of Algorithm SM-15 and Algorithm SM-18 for the first [[Glossary:Forgetting curve|forgetting curve]]
+* Optimum first interval distribution can be inspected in the first forgetting curve graph in '''[[Analysis]]'''
+* Computing a memory model for a [[Glossary:Subset|subset]]
+* Post-[[Glossary:Lapse|lapse]] [[Glossary:Forgetting curve|forgetting curves]] in '''[[Analysis]]'''
+* Capping MaxA in power regression in proportion to AverageRecall to limit [[Glossary:Optimum interval|first optimum interval]] to 365 days
+* Export option for [[Glossary:Forgetting curve|forgetting curve]] analysis
+* Multiple metrics for comparing algorithms [https://supermemo.guru/wiki/Algorithm_SM-2 SM-2], [https://supermemo.guru/wiki/Algorithm_SM-15 SM-15], [https://supermemo.guru/wiki/Algorithm_SM-19 SM-19], [https://supermemo.guru/wiki/Algorithm_SM-20 SM-20] and [[FSRS]]
+
+== New Algorithm SM-20 ==
+* Optimized with machine learning (see: [https://api.supermemo.com SuperMemo API])
+* Simple model with just 34 weights
+* Stunning performance on [https://supermemo.guru/wiki/Universal_metric_for_cross-comparison_of_spaced_repetition_algorithms universal metric]
+
+For details see: [https://supermemo.guru/wiki/Algorithm_SM-20 Algorithm SM-20]
+
+== Incremental reading ==
+* [[PDF|Incremental reading of PDF]] files
+* Picture extracts in PDF
+
+== Minor improvements ==
+* Saving last-filter [[Glossary:Subset|subset]] file
+* The entire registry is loaded to memory before search (as opposed to chunked buffers)(64-bit version only)
+* '''[[Plan]] : Activities : By day''' can have a long list of activities chosen by modulo day of the year
+
+== Bugs fixed ==
+* Mathematical formulas would not import from Wikipedia (using [[WebView component]] resolves this problem)
+* Wrong formatting of [[Glossary:Retrievability|retrievability]] in post-[[Glossary:Lapse|lapse]] [[Glossary:Interval|interval]] estimates
+* Images pasted directly into HTML components are now properly tracked in the image [[Glossary:Registry|registry]]. Previously, these images were left behind as orphaned files in the collection's filespace when the topic was deleted or marked as '''Done''' (see: [https://supermemopedia.com/wiki/Images_in_HTML_remain_in_the_Elements_folder_after_Done bug report])
+* The first repetition date record in [[Glossary:Item|items]] would get lost when transferring [[Glossary:Element|elements]] between [[Glossary:Collection|collections]]
+* Lazy loading images would not show in downloaded pages
+* <code><base href></code> would not be respected in resolving URLs
+* Images in <code><iframe></code> would not show in imported pages
+* The <code>A</code> shortcut now correctly triggers editing of the answer in [[Glossary:Contents window|Contents]]
+* Resolved errors occuring during the duplication of [[Glossary:Concept|concepts]]
+
+== Annoyances fixed ==
+* Interval choice dialog could not be cancelled (see also: [https://supermemopedia.com/wiki/How_can_I_get_rid_of_the_interval_choice_dialog%3F How to get rid of the interval choice dialog?])
+* One key press could delete the entire activity entry in [[Plan]]. Now ''Enter'' must precede editing ([https://supermemopedia.com/wiki/Bug:_SM20_Plan_interface_issues not everyone is happy])
+* Yellow bar at the bottom of [[Statistics]] for certain themes
+* The long list of missing hints and misspelled hints collected by Alex and Palace (thank you) was processed in one go with the help of AI
+
+== Warnings ==
+* High-DPI support may make the 64-bit SuperMemo UI feel too large on lower resolution screens (4K is recommended, but 1440p or 1080p should be usable).
+* Some users may still prefer the 32-bit application (e.g. for smaller UI elements at lower resolutions). You can download a separate 32-bit version, though its updates may lag slightly behind the main 64-bit release (download [here] xxx link to be provided when ready) 
+* SuperMemo 20 opens SuperMemo 19 [[Glossary:Collection|collections]], but SuperMemo 19 may struggle with SuperMemo 20 collection (e.g. due to the [[WebView]] component)
+* RTF components are now deprecated. You can still use old [[Glossary:Collection|collections]], but further use will be more difficult with some options removed
+* Some AI and YouTube options may require your own AppKey (available free from Google)
+* Optimizing FSRS or SM20 algorithms may require access to SuperMemo.com API
+
+== Pictures ==
+=== Interval heatmap ===
+[[File:Interval Heatmap in algorithmic contests in SuperMemo 20.png|800px|center]]
+{{:File:Interval Heatmap in algorithmic contests in SuperMemo 20.png}}
+=== Algorithmic metrics ===
+[[File:Predicting recall makes the basis of Universal Metrics for spaced repetition algorithms (incl. SM-20 and FSRS).png|800px|center]]
+{{:File:Predicting recall makes the basis of Universal Metrics for spaced repetition algorithms (incl. SM-20 and FSRS).png}}

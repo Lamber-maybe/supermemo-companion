@@ -1,0 +1,2 @@
+;<span id="Lapse">lapse</span>
+:memory lapse is a failure to recall an [[Glossary:item|item]]. When we say "''number of lapses''", we mean the number of times an individual [[Glossary:item|item]] has been forgotten, i.e. scored less than '''Pass (3)''' in repetitions

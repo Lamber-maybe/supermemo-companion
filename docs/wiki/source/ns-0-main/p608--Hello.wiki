@@ -1,0 +1,83 @@
+== Intro ==
+
+If these are your first hours with [https://supermemo.store/products/supermemo-20-for-windows SuperMemo {{SMVER}}], this page includes some startup information that you might find useful.
+
+== Download ==
+
+* you can download SuperMemo or SuperMemo [[Glossary:Collection|collection]]s at the time of purchase
+* in addition, in response to your order, you will receive an automatic e-mail message that will include a download link. Your product will be available there indefinitely (unless removed from the [https://supermemo.store Store])
+* if you lost the link, and you need to download or re-download, please [[#E-mail|write]] to receive assistance
+
+<div class="center">
+[[Image:Download Now in SuperMemo Store.jpg|300px|The '''Download Now''' button available at purchase or when following the download link sent via e-mail]]
+{{:Image:Download Now in SuperMemo Store.jpg}}
+</div>
+
+== Installation ==
+
+* run the downloaded file (''sm{{SMVER}}inst.exe'') to install SuperMemo. Note that newer Windows may complain of lack of digital signature marking the file as ''"Unknown Publisher"''. You can ignore that warning by choosing '''More info''', and '''Run anyway''' (in Windows)
+* if you know of a version update, and SuperMemo still downloads the old version, it is a result of caching. Try downloading in InPrivate/incognito window
+* if you have not installed SuperMemo yet, see [[Installation|installation instructions]]
+
+== Password ==
+
+* please use '''[[File menu|File]] : [[File#Installation|Installation]] : Input password''', or use ''Ctrl+i'', to insert the unlock password. New users receive their password via e-mail within a business day of [[registration]]
+* you are not likely to need the password again (unless you install on more than two computers). You can always get it from us via e-mail on request
+* if you cannot provide the password because '''[[File menu|File]] : [[File#Installation|Installation]] : Input password''' is inactive, your SuperMemo must have already been unlocked (or your version is compatible with the prior database format and requires no upgrade)
+* if you get a message "Wrong password" please check if you are using SuperMemo {{SMVER}} (i.e. not SuperMemo 2008, SuperMemo 15, or SuperMemo 19 Beta or Gamma, etc.). Choose '''[[Help menu|Help]] : [[Help#About|About]]''' in SuperMemo to see which version you are using. If you are still in trouble, please do not hesitate to [[#E-mail|write]]
+
+For more details see: [[Unlock_SuperMemo|Unlocking SuperMemo]]
+
+== First steps ==
+
+Please have a look at those text that should help you progress into advanced learning with SuperMemo:
+
+* [[Introduction|First steps]] (3 min)
+* [[Step-by-step_to_SuperMemo_mastery|Your top 20 skills]] (1 month)
+* [[Incremental learning]] (1 year and beyond)
+
+If you need to Google for help files, use ''Ctrl+F3'' in SuperMemo (e.g. '''Help Wiki (SuperMemo)'''), not straight Google. It is easy to hit wrong pages relevant to older versions of SuperMemo.
+
+== Help ==
+
+* use ''F1'' in SuperMemo to open help pages relevant to the context
+* you can post your questions at [https://supermemopedia.com/wiki/FAQ SuperMemopedia]. You can register under your name or use universal user: "SuperMemoUser" with password "SuperMemo2022". See [[#Supermemopedia|below]]
+
+== Bugs ==
+* for early releases, monitor bug reports at SuperMemopedia. You will read about bug alerts and requests to update SuperMemo to remedy a specific problem. For example, early problems in SuperMemo 20 are listed here: [https://supermemopedia.com/wiki/Bugs_in_SuperMemo_20 Bugs in SuperMemo 20]
+
+== E-mail ==
+
+If you need help, use '''[[Help menu|Help]] : [[Help menu#E-mail|E-mail]] : Bug report''' in SuperMemo to include your system data in your inquiries.
+
+Other useful e-mail addresses (in {{CURRENTYEAR}}):
+* use help{{CURRENTYEAR}}(AT)supermemo(DOT)org to get help
+* use bug{{CURRENTYEAR}}(AT)supermemo(DOT)org to report bugs and problems
+* use shop{{CURRENTYEAR}}(AT)supermemo(DOT)org to receive instructions, passwords, download links, etc.
+* use register{{CURRENTYEAR}}(AT)supermemo(DOT)org to register SuperMemo on a new computer
+
+For more see: [[E-mail|Useful e-mail addresses at supermemo.com]]
+
+If you do not get a reply to your inquiries, please check your mail spam folder, or write again. You can also use the [https://supermemo.store/pages/contact Contact Form] in the store. If you have problems with getting in touch via e-mail, you can always communicate your problems via [https://supermemopedia.com SuperMemopedia]. You can register under your name or use a universal user: "SuperMemoUser" with the password "SuperMemo2022". See [[#Supermemopedia|below]]
+
+== Upgrading collections ==
+
+* '''Very old collections:''' you may need to [http://supermemopedia.com/wiki/Download_SuperMemo download SuperMemo 16] to upgrade older collections. SuperMemo 16 is free for users of SuperMemo 17 and later 
+* '''Preserving Contents:''' see if your [[Glossary:Category|categories]] upgraded correctly to [[Glossary:Concept|concept]]s (e.g. to avoid [https://supermemopedia.com/wiki/SuperMemo_messed_up_my_Contents_structure pitfalls]). Check if the [[Glossary:Root node|root]] and [[Glossary:Hook node|hook]] settings are correct. Avoid using the main [[Glossary:Element|element]] as the root in large/complex [[Glossary:collection|collection]]s
+* '''Efficient learning:''' if you have a mature learning process going on in your [[Glossary:Collection|collection]], use ''F7'' and '''Compute''' to compute accurate [[Glossary:DSR_model|DSR model]] data (that makes the [https://supermemo.guru/wiki/SuperMemo_Algorithm new algorithm] run most effectively)
+* '''Learning performance:''' please have a peek at '''[[Toolkit menu|Toolkit]] : [[Toolkit#Statistics|Statistics]] : [[Analysis]] : [[Analysis#Use|Use]] [top] : Efficiency [bottom] : R-Metric [bottom]''' from time to time. As of SuperMemo 20, you do not need to worry about negative R-metric. It just shows that Algorithm SM-19 might still be converging faster than the combined power of [[Algorithm Arena]]
+
+== SuperMemopedia ==
+
+[https://supermemopedia.com SuperMemopedia] is your best place to receive help, report bugs and suggest improvements to SuperMemo.
+
+To post your questions:
+
+# Go to https://supermemopedia.com
+# Click "Log in" (top right corner)
+# Type Username: "SuperMemoUser"
+# Type Password: "SuperMemo2022"
+# Click the "Log in" button
+# Click Ask Your Question (on the left)
+
+Use '''[https://supermemopedia.com/wiki/Special:RecentChanges Recent changes]''' at SuperMemopedia to see recent edits to questions you have added

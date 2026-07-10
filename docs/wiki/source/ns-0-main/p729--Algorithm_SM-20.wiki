@@ -1,0 +1,48 @@
+== Overview ==
+
+'''SuperMemo Algorithm SM-20''' leverages advances in artificial intelligence to fulfill a long-standing vision: a "neural network SuperMemo" that dates back to the 1990s. Building on data from Algorithm SM-19 and extensive [[Glossary:Repetition history|repetition histories]] collected at supermemo.com, SM-20 represents a fundamental shift in how SuperMemo optimizes learning schedules.
+
+== Evolution from SM-17 to SM-19 ==
+
+=== The Pre-training Approach (SM-17) ===
+
+[[Algorithm SM-17]] can be understood through a machine learning lens as a model optimized during a pre-training stage. It employed approximately 30 hyperparameters that were tuned before release using gradient descent with a universal metric as the objective function.
+
+=== Reinforcement Learning Implementation (SM-17 through SM-19) ===
+
+The deployed algorithm uses reinforcement learning to optimize approximately 40,000 parameters, primarily stored in the ''Alg17'' folder of the [[Glossary:Collection|collection]] (4-8 bytes per parameter). Key characteristics include:
+* '''Reward signal''': User [[Glossary:Grade|grades]] serve as the reward function
+* '''Optimization method''': Rather than computationally intensive techniques like backpropagation, the algorithm directly modifies individual matrix entries (just 2-5 at a time)
+* '''Local propagation''': When appropriate, changes propagate from matrix entries to neighboring entries, maintaining model weights with minimal computational cost
+
+=== Performance as Overfitting ===
+
+The excellent performance of [[Algorithm SM-17|Algorithms SM-17 through SM-19]] can be interpreted as a form of '''benign overfitting''': the matrix-based function representations fit each user's unique memory characteristics and learning habits precisely, like a glove.
+
+== The SM-20 Paradigm Shift ==
+
+=== Simplification Through Theoretical Understanding ===
+
+'''Algorithm SM-20''' dramatically simplifies the complex hierarchical structure of its predecessors. Most model functions, such as the [[Glossary:Stabilization curve|stabilization curve]], have well-established theoretical foundations. This allows '''SM-20''' to move away from matrix representations with minimal impact on the [[Universal metric for cross-comparison of spaced repetition algorithms|objective function]].
+
+Through systematic simplification, the model has been reduced from 40,000 parameters to approximately 40 parameters. These parameters partially correspond to the pre-training hyperparameters used in SM-17, but with a crucial difference: they are now optimized through machine learning to achieve optimal fit to individual user data.
+
+=== Cross-User Generalization ===
+
+By analyzing patterns across different users and learning styles, combined with massive data collection enabled by supermemo.com, the model will hopefully be pruned down to 10-15 core parameters. Despite this dramatic reduction, AI-optimized fits achieve performance comparable and surpassing that of SM-19. 
+
+{{Important note|On Feb 27, 2026, '''Algorithm SM-20''' reached an unheard-of [[universal metric]] of '''0.000764%''' on a [https://x.com/SuperMemoWoz/status/2027374526984565201 million repetitions dataset]}}
+
+== Conceptual Inversion ==
+
+Where SM-19 treated model heuristics as hyperparameters and optimized model weights via reinforcement learning, SM-20 inverts this approach:
+* '''SM-19''': Uses fixed heuristics (hyperparameters) and optimizes weights via reinforcement learning
+* '''SM-20''': Trusts the theoretical memory model and uses machine learning to fit the parameters specifically to each user's data.
+
+At this level of algorithmic accuracy, a non-zero metric usually points to a flawed learning process rather than a flaw in the algorithm itself. Bad habits like cramming or skipping repetitions will cause these deviations. In SM-20, the metric serves as more of a diagnostic tool than a simple performance score.
+
+{{Important note|When the algorithm accurately predicts forgetting, the performance metric can be used to diagnose flaws in the user's learning process.}}
+
+== Comment ==
+* you can comment on Twitter [https://x.com/SuperMemoWoz/status/2027374526984565201 here]
+* you can ask questions at SuperMemopedia [https://supermemopedia.com/wiki/Algorithm_SM-20 here]

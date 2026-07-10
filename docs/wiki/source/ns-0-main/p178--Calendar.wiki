@@ -1,0 +1,105 @@
+__TOC__ 
+
+'''[[Toolkit menu|Toolkit]] : Calendar''' (''Ctrl+W'') can be used to inspect: 
+
+*the number of [[Glossary:Element|elements]] scheduled for review on individual days or months in the future (and which these elements are) 
+*the number of [[Glossary:Element|elements]] reviewed in the past on individual days or months (and which these elements are) 
+*daily [[Glossary:Retention|retention]] and [[Glossary:Consolidation|consolidation]] data
+
+and more. 
+
+== Toolbar  ==
+
+*'''Local menu''' - open the [[#Menu|Calendar menu]] otherwise available with a right-click over the '''Workload Calendar''' window 
+*'''Go to the beginning of the schedule''' - go to the panel with the first scheduled or executed [[Glossary:Element|element]]
+*'''Move 4 panels back''' - go 4 panels back 
+*'''Move 1 panel back''' - go 1 panel back 
+*'''Move 1 panel forward''' - go 1 panel forward 
+*'''Move 4 panels forward''' - go 4 panels forward 
+*'''Go to the furthest scheduled element''' - go to the panel with the latest scheduled [[Glossary:Element|element]]
+*'''Zoom in on the graph''' - cut off the right part of the graph to zoom in on the rest of it
+*'''Zoom out on the graph''' - extend the graph to the right
+*'''Smooth up the graph by averaging neighboring entries'''
+*'''Browse''' (''Enter'') - browse [[Glossary:Element|elements]] scheduled or reviewed on a given day 
+*'''Export''' - save the workload data to a CSV file (importable to Excel, for example, for further analysis) 
+*'''Display mode''' combo box 
+**'''Workload''' - display how many [[Glossary:Item|items]] and [[Glossary:Topic|topics]] are scheduled on individual days or months (displayed as "''items+topics''") 
+**'''Items only''' - display how many [[Glossary:Item|items]] are scheduled on individual days or months 
+**'''Topics only''' - display how many [[Glossary:Topic|topics]] are scheduled on individual days or months 
+**'''Retention''' - display the record of past [[Glossary:Retention|retention]] (displayed as "''retention -&gt; consolidation''" or as retention where no [[Glossary:Consolidation|consolidation]] data is available) 
+**'''Repetitions''' - display the record of past repetitions (displayed as "''items+topics''") 
+**'''New items''' - display how many new [[Glossary:Item|items]] were memorized on individual days
+*'''Next display mode''' - change the display mode to the next available (e.g. '''Topics only''' if '''Items only''' is currently selected) 
+*'''Date format''' combo box - makes it possible for you to change the format of dates displayed in the '''Workload''' window to the one you prefer 
+**'''Default''' (e.g. 5/4/2009, Mon) 
+**'''Full''' (e.g. May 04, 2009, Mon) 
+**'''Classic''' (e.g. 5/4/2009) 
+**'''Weekday''' (e.g. 04 - Mon) 
+**'''Simple''' (e.g. 04 May)
+
+== Menu  ==
+
+Right-click over the '''Workload Calendar''' window opens the workload menu: 
+
+*'''Daily workload '''(''Alt+D'') - switch to daily workload view 
+*'''Monthly workload '''(''Alt+M'') - switch to monthly workload view 
+*'''Workload graph''' (''Alt+G'') - switch to workload graph view 
+*'''Go to''' (''Ctrl+G'') - go to a selected day in the calendar of repetitions
+*'''Browse''' (''Enter'') - switch from monthly view to the selected month of the daily view (when in the monthly view) or browse through future or past repetitions scheduled for or executed on a given day (when in the daily view) 
+*'''Switch panels '''(''Ctrl+Tab'') - switch between view panels (from daily to monthly, from monthly to graph, from graph to daily, etc.) 
+*'''Export data''' - export past and future workload into an Excel file 
+*'''Close '''(''Esc'') - close the window
+
+== Tabs  ==
+
+=== Daily workload  ===
+<div class="center">
+[[Image:Daily workload.jpg|800px|SuperMemo: Toolkit : Calendar : Daily showing the record of repetitions executed over a three-month period]]
+{{:Image:Daily workload.jpg}}
+</div>
+
+=== Monthly workload  ===
+<div class="center">
+[[Image:Monthly workload.jpg|800px|SuperMemo: Toolkit : Calendar : Monthly showing the record of repetitions executed over a three-year period]] 
+{{:Image:Monthly workload.jpg}}
+</div>
+
+=== Workload graph  ===
+<div class="center">
+[[Image:Workload graph.jpg|800px|SuperMemo: Toolkit : Calendar : Graph showing the number of repetitions scheduled from Nov 16, 2013 until the next year's May]] 
+{{:Image:Workload graph.jpg}}
+</div>
+
+== FAQ ==
+
+=== Colors in the Workload Calendar window ===
+
+''Robert Drozd, Poland, Tuesday, November 05, 2002, asked:''
+
+'''Question'''
+
+What do the colors in the '''Calendar''' window mean?
+
+'''Answer'''
+
+Color intensity is used to correlate retention and repetition count (only in '''Daily''').
+
+If you look at '''Retention''', ignore lighter fields, which indicate ''little data collected''. Darker fields mean ''solid/reliable data''.
+
+If you look at '''Repetitions''', darker fields indicate ''good retention'', while lighter fields show ''sloppy days''.
+
+Using these colors you can also get an overview of repetition intensity in a month and retention level in a given month
+
+----
+
+=== Workload displays each item once ===
+
+''Eric E., February 10, 2007, asked:''
+
+'''Question'''
+
+When I select '''[[Toolkit menu| Toolkit]] : Workload''', the workload indicates I will be doing repetitions over the next few weeks, but never again after that. I advanced the workload calendar forward over a 20 year period, and no further repetitions are scheduled. Is this expected?
+
+'''Answer'''
+
+Yes. '''Calendar''' displays each item once. Items show up on the day on which they are expected to be reviewed. '''Calendar''' does not display predictions on future repetitions of those items. It is possible to predict the average outcome of the learning process. However, it is impossible to predict the outcome for each case. This is why '''Calendar''' displays scheduled repetitions, instead of trying to predict all possible future repetitions.

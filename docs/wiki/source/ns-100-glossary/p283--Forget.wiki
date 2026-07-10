@@ -1,0 +1,2 @@
+;<span id="Forget">Forget</span>
+:operation that removes an [[Glossary:Element|element]] from the learning process and places it at the end of the [[Glossary:Pending_queue|pending queue]] (compare with [[Glossary:Dismiss|'''Dismiss''']] and [[Glossary:Remember|'''Remember''']]). See: [https://youtube.com/watch?v=GjLh-YAR898 video]

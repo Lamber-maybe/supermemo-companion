@@ -1,0 +1,1 @@
+'''[[Element menu#Learning|Learning]] : Done''' will remove the article from the review process, and delete its contents (without deleting the extracted material)

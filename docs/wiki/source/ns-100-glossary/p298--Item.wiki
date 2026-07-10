@@ -1,0 +1,2 @@
+;<span id="Item">item</span>
+:simple [[Glossary:Element|element]], which often has a form of a question and an answer. '''Items''' ensure long-term recall of information. '''Items''' take part in [[Glossary:Active_recall|active learning]], which is opposed to [[Glossary:Passive_review|passive review]] or reading (done with the help of [[Glossary:Topic|topics]]). '''Items''' are often created by means of [[Glossary:Cloze_deletion|cloze deletion]]. See also: [[Items, topics, concepts, and tasks|Topics vs items]]

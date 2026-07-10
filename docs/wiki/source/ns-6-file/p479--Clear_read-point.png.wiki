@@ -1,0 +1,1 @@
+'''Clear read-point''' removes the read-point from the currently processed text

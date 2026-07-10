@@ -1,0 +1,2 @@
+;<span id="Matrix_smoothing">matrix smoothing</span>
+:mathematical procedure that converts a matrix of numbers into a "smoother version" (e.g. by averaging the neighboring entries). For example, if the row of the matrix is 1, 2, 3, 4, 666, 6, 7, 8, smoothing might convert it to 1, 2, 3, 6, 99, 9, 8. For more, see: [https://en.wikipedia.org/wiki/Smoothing Smoothing]

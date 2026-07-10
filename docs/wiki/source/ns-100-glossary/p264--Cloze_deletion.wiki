@@ -1,0 +1,9 @@
+;<span id="Cloze_deletion">cloze deletion</span> (cloze question; cloze item)
+:[[Glossary:Item|item]] in the [https://en.wikipedia.org/wiki/Cloze_test fill-in-the-blanks form]. In '''cloze deletions''', the question is replaced by three dots (<span class="cloze">[...]</span>) and moved to the answer field. For example: 
+:<blockquote>''Q: The highest literacy rate in Africa has been reached in <span class="cloze">[...](country)</span>(2009)?''<br>''A: Seychelles (93%)''</blockquote> 
+:'''Cloze items''' can effectively remedy knowledge complexity. If you have [[Glossary:Item|items]] that persistently cause recall problems, try using '''cloze deletion'''. SuperMemo simplifies creating '''cloze deletions''' by providing options such as:
+:* ''Alt+Z'' keyboard shortcut,
+:* '''Cloze''' on the [[learnbar]],
+:* '''[[Component menu#Reading|Reading]] : Remember cloze''' on the [[component menu]], or
+:* '''Remember cloze''' on the [[Read toolbar|'''Read''' toolbar]]
+:Read more: [[Incremental reading]]

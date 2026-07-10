@@ -1,0 +1,131 @@
+__TOC__
+
+''Subset review'' is a review of a portion of the learning material (e.g. before an exam, in problem solving, in creative writing, etc.). The portion can be determined with [[Find elements|search]], by [[Glossary:Branch|branch]] selection in '''[[Contents]]''', by [[Concepts|concept]], and other means that select a subset of [[Glossary:Element|elements]]. The reviewed subset material may be sorted by its position in the [[Glossary:Knowledge_tree|knowledge tree]] ('''[[Contents]]'''), [[Glossary:Priority|priority]], [[Glossary:Difficulty|difficulty]], [[Glossary:interval|interval]], recency, text size, etc. The review may also be [[#Semantic review|semantic]] or [[#Neural review|neural]] where connections between [[Glossary:Element|elements]] determine the sequence of review.
+
+== Review types ==
+
+=== Search and review ===
+
+Search and review in SuperMemo is a review of a subset of [[Glossary:Element|elements]] that contain a given search phrase. For example, before an exam in microbiology, a student may wish to review all his knowledge of viruses using the following method:
+
+# search for all [[Glossary:Element|elements]] containing the phrase ''virus'' (e.g. with ''Ctrl+F'')
+# review all those [[Glossary:Element|elements]] (e.g. with ''Ctrl+Shift+L'')
+
+The review may include all subset [[Glossary:Element|elements]] (e.g. '''[[Subset operations#Learning|Learning]] : Review all''' in the [[browser]] with ''Ctrl+Shift+L''), or only the elements that are outstanding for review on that particular day (e.g. '''[[Subset operations#Learning|Learning]] : Learn''' in the [[browser]] with ''Ctrl+L''). Before you execute the review, you can randomize the review material (''Ctrl+Shift+F11''), sort it by [[Glossary:Priority|priority]], by recency, by [[Glossary:Interval|interval]], by size, by age (in the learning process), etc. You can also apply your [[Priority queue#Sorting repetitions|default sorting criteria]] with ''Ctrl+S'' in the [[browser]]. All forms of review run on all [[Glossary:Element|elements]] except for (1) [[Glossary:Dismissed_element|dismissed elements]] and (2) those elements that have already been processed on this particular day. The latter condition makes sure that you can do a comprehensive review in various subsets without duplicating your work on a given day. You can overcome the block of double review on a given day by using ''Add to outstanding'' (see [[#Adding elements to the learning queue|below]]).
+
+'''If you build an extensive [[Glossary:Collection|collection]] of things worth learning, subset review may help you learn about Subject A, and do a value-rich review of your material across many others domains at the same time! You kill many birds with one stone'''. Instead of googling the entire universe of knowledge, you can review your private interest search space with untold benefits to productivity.
+
+'''[[Search menu|Search]] : [[Find elements]]''' (from the [[main menu]]) makes it possible to define OR-searches and to save search definitions. This way you can, for example, choose a set of terms that define your &quot;diabetes&quot; subset and use them each time you want to review your &quot;diabetes&quot; material.
+
+The parameter '''Subset''' in the [[Statistics|'''Statistics''' window]] indicates the progress of repetitions in ''subset learning''. This field displays the number of [[Glossary:Item|items]], the number of [[Glossary:Topic|topics]], and the number of [[Glossary:Pending_element|pending elements]] in subset learning. The name in the parentheses describes the currently processed subset.
+
+=== Branch review ===
+
+In the simplest case of branch review, the button '''Learn''' at the bottom of the [[Contents|'''Contents''' window]] can be used to execute outstanding repetitions on a selected [[Glossary:Branch|branch]] of the [[Glossary:Knowledge_tree|knowledge tree]]. For example, to make repetitions in the ''Medical Sciences'' [[Glossary:Branch|branch]], click that branch and then click '''Learn'''. Using '''Learn''' in the [[Contents|'''Contents''' window]] is like using '''[[Learn]]''' in the [[element window]], except only [[Glossary:Element|elements]] belonging to the selected [[Glossary:Branch|branch]] will be considered in making repetitions.
+
+To thoroughly review a [[Glossary:Branch|branch]] of knowledge (including non-outstanding [[Glossary:Element|elements]]), do the following:
+
+# Select the [[Glossary:Branch|branch]] in '''[[Contents]]'''
+# Choose '''[[Subset operations#Learning|Learning]] : Review all''' on the [[Subset operations|'''Process branch>'''
+menu]] (''Ctrl+Shift+L'')
+
+=== Random review ===
+
+To randomly review a [[Glossary:Branch|branch]] or a [[Glossary:Subset|subset]]:
+
+# open the [[Glossary:Branch|branch]] ('''[[Contents menu#View|View]] : Branch''' from the [[contents menu]]), or open a [[Glossary:Subset|subset]] ('''[[View menu|View]] : [[View menu#Subset|Subset]]''' from the [[main menu]]) in the [[browser]], or search for a set of elements (e.g. with ''Ctrl+F'')
+# randomize the content of the browser (e.g. ''Ctrl+Shift+F11'')
+# execute a review (e.g. '''[[Subset operations#Learning|Learning]] : Review all''' on the [[Subset operations|browser processing menu]])
+
+=== Semantic review ===
+
+If you want to semantically connect a group of [[Glossary:Element|elements]] related to a single subject in [[Glossary:Incremental_reading|incremental reading]], you can use subset review based on the elements' tree structure created in the incremental learning process. This way you can quickly review all [[Glossary:Element|elements]] related to a topic whose &quot;big picture&quot; became hazy.
+
+# go to any [[Glossary:Element|element]] that makes a part of the knowledge structure related to given problem
+# use the '''Reference link''' button ([[Image:Reference button.gif|SuperMemo: Reference button on the navigation bar in the element window]]) on the [[navigation bar]] to get to the original article
+# use '''[[Contents]]''' to find a relevant subbranch (or stay at the [[Glossary:Root_node|root]] of the article to review it all)
+# browse the selected [[Glossary:Branch|branch]] (e.g. with ''Ctrl+Space'')
+# choose '''[[Subset operations#Learning|Learning]] : Review all''' (''Shift+Ctrl+L'') to review all [[Glossary:Element|elements]] in the logical/semantic sequence (the sequence of branches reflects the order of processing of individual paragraphs in the article)
+
+You can also choose '''[[Element menu#Learning|Learning]] : [[Element menu#Learn branch|Learn branch]]''' on the [[element menu]] to begin [[Glossary:Branch|branch]] learning for one of the [[Glossary:Ancestor|ancestors]] of the currently displayed [[Glossary:Element|element]]. You can use this method if you encounter interesting material that you would like to refresh more thoroughly before you proceed with your standard learning process.
+
+=== Neural review ===
+
+[[Glossary:Neural review|Neural review]] is a subset review based on the concept of [[Glossary:Spreading_activation|spreading activation]] known from neural networks. Like impulses in the brain, spreading activation in a network of [[Glossary:Element|elements]] and [[Glossary:Concept|concepts]] feeds new elements into your incremental review. This way, if you choose '''Go Neural''' in SuperMemo (e.g. '''[[Learn menu|Learn]] : [[Learn menu#Go neural|Go neural]]''' from the [[main menu]] on the current element, or '''[[Registry menu#Go neural|Go neural]]''' on a selected registry member (e.g. picture) from the [[registry menu]]), it will serve you with associated ideas for the purpose of semantic review, big picture review, creativity, problem solving, etc. See: [[Neural creativity]]
+
+== Review modes ==
+
+In a [[Glossary:Subset|browser subset]], in a [[Glossary:Branch|contents branch]], or in the entire [[Glossary:Collection|collection]], there are 3 main ways of executing subset review:
+
+* '''review only the [[Glossary:Outstanding_element|outstanding material]]''': '''Learn''' (''Ctrl+L'') will execute only the outstanding repetitions, i.e. the elements that have been scheduled for review today or before today
+* '''review all the material''': '''Review all''' (''Shift+Ctrl+L'') will execute all outstanding repetitions as well as force [[Glossary:Mid-interval_repetition|mid-interval repetitions]] on all [[Glossary:Element|elements]] in a [[Glossary:Subset|subset]] (except those elements that have already been reviewed today). Review of non-outstanding elements is equivalent to '''[[Element menu#Learning|Learning]] : [[Element menu#Execute_repetition|Execute repetition]]''' (''Shift+Ctrl+R'') available from the [[element menu]]
+* '''review all topics''': '''Review topics''' works like '''Review all''' but it does not include [[Glossary:Item|items]], i.e. it forces a review of all [[Glossary:Topic|topics]] in a [[Glossary:Subset|subset]] (except topics that have already been reviewed today). Each time you do subset review on a set of [[Glossary:Item|items]], you add some extra time to the total cost of learning of that portion of the material. This is why you may wish to exclude [[Glossary:Item|items]] from a review that occurs often
+
+All the above options are available on '''[[Subset operations|Process collection&gt;]] : [[Subset operations#Learning|Learning]]''' submenu of the [[File menu|'''File''']] main menu item, '''[[Subset operations|Process branch&gt;]] : [[Subset operations#Learning|Learning]]''' submenu of the [[contents menu]], or '''[[Subset operations|Process browser&gt;]] : [[Subset operations#Learning|Learning]]''' submenu of the [[browser menu]].
+
+== Adding elements to the learning queue ==
+
+Instead of spending your time on a thorough review of a [[Glossary:Branch|branch]] or [[Glossary:Subset|subset]], you may prefer to intersperse the review material in your standard learning process. You can do it with '''[[Subset operations#Learning|Learning]] : Add to outstanding'''.
+
+'''[[Add to outstanding]]''' is a rationalization upon 2 extremes:
+
+# well-timed incremental learning (or classical [[Glossary:Spaced_repetition|spaced repetition]])
+# subset review (e.g. before an exam)
+
+On one hand you can proceed with your [[Glossary:Outstanding_queue|outstanding queue]], on the other, you can smuggle some subset review in between. For example, you might learn about the superiority of &quot;intermittent fasting&quot; over &quot;fasting&quot;. You will want to investigate the subject to perhaps employ it in your lifestyle. However, you do not want the subject to be buried in thousands of articles you keep reading. Nor do you want it to monopolize your learning time on a given day. You can import several articles on intermittent fasting and spread them sparsely in your [[Glossary:Outstanding_queue|outstanding queue]] with '''Add to outstanding'''. By the end of the day, you will have a peek at all those articles, have them all well prioritized, and integrated with the learning process (in proportion to the value of the newly discovered content).
+
+An alternative to '''Add to outstanding''' is to spread [[Glossary:Priority|priorities]] (with '''[[Subset operations#Priority|Priority]] : Spread'''), however, it has 2 flaws:
+
+* you will not get the instant gratification from the instant review of a hot topic
+* you risk that new imports will displace the articles of interest before you manage to give them a preview
+
+In other words, '''Add to outstanding''' is a more extreme version of '''[[Subset operations#Priority|Priority]] : Spread''', but not as radical as '''[[Subset operations#Learning|Learning]] : Spread''' in the [[browser]] (irreversible rescheduling), or subset review (reversible review).
+
+== Repeating items before topics ==
+
+If you ever neglect learning, you may wish to unload your [[Glossary:Item|item]] backlog ahead of your [[Glossary:Topic|topic]] backlog. You can optimally do it with a change to your [[Priority queue#Sorting repetitions|sorting criteria]]. However, you can also start your day from 100% item repetitions:
+
+# Choose '''[[View menu|View]] : [[View menu#Outstanding|Outstanding]]''' from the [[main menu]]
+# In the [[browser|element browser]], sort repetitions by type ([[Glossary:Item|items]] first)(e.g. by clicking the header of the '''Type''' column), or choose '''[[Browser menu#Child|Child]] : Items'''
+# Choose '''[[Browser menu#Learn|Learn]]''' on the [[browser menu]] to make repetitions (or '''[[Browser menu#Tools|Tools]] : Save repetitions''' on the same menu to make the sorting permanent)
+
+Ideally, in [[Glossary:Incremental_reading|incremental reading]], you should have [[Glossary:Item|items]] and [[Glossary:Topic|topics]] mixed up. This will help you achieve balance between [[Glossary:Retention|retention]] of the old material and the inflow of the new material. By working with [[Glossary:Item|items]] first, you risk slowing down learning by working on high [[Glossary:Retention|retention]]. That's a step back to classical SuperMemo.
+
+== Advance ==
+
+'''[[Subset operations#Advance|Advance]]''' is not a form of review. However, it makes it possible to shorten the [[Glossary:Interval|intervals]] and speed up the review. For example, if your exam comes in 100 days, you can shorten all [[Glossary:Interval|intervals]] in a [[Glossary:Subset|subset]] to less than 100 days with '''[[Subset operations#Advance|Advance]]'''.
+
+The '''[[Subset operations#Advance|Advance]]''' operation will not work on 2 kinds of [[Glossary:Topic|topics]]:
+
+* those whose [[Glossary:Interval|interval]] is shorter than the advance interval 
+* those who have been repeated today (use '''[[Subset operations#Learning|Learning]] : Add to outstanding''' if you need to go around this limitation)
+
+== Examples ==
+
+=== Example 1 ===
+
+If you would like to review the material related to ''Auguste Comte (1798-1857)'' do as follows:
+
+# Press ''Ctrl+F'' and paste ''Auguste Comte'' in the search box
+# Press ''Enter'' or click '''Find''' (this will search your [[Glossary:Collection|collection]] and open a [[browser]] with the results)
+# Choose one of the subset learning options:
+#* '''to prevent forgetting''': press ''Ctrl+L'' or choose '''[[Subset operations|Process browser>]] : [[Subset operations#Learning|Learning]] : Learn''' to review only the [[Glossary:Outstanding_material|outstanding material]]. This will help you review only the [[Glossary:Item|items]] that are most likely to be forgotten and a portion of [[Glossary:Topic|topics]] that have been scheduled for review for today
+#* '''to learn new things''': choose '''[[Subset operations|Process browser>]] : [[Subset operations#Learning|Learning]] : Review topics''' to review all [[Glossary:Topic|topics]] related to ''Auguste Comte''
+#* '''to maximize the review''' (e.g. before an important deadline): press ''Shift+Ctrl+L'' or choose '''[[Subset operations|Process browser>]] : [[Subset operations#Learning|Learning]] : Review all''' to review all [[Glossary:Topic|topics]] and to force a repetition on all [[Glossary:Item|items]] related to ''Auguste Comte''. Remember that premature review of [[Glossary:Item|items]] may paradoxically slow down your long-term learning
+
+=== Example 2 ===
+
+If your history exam is approaching and you cannot cope with all repetitions in the [[Glossary:Collection|collection]], make sure that at least your daily portion of history is thoroughly reviewed:
+
+# Select ''History'' [[Glossary:Branch|branch]] in the [[Contents|'''Contents''' window]]
+# Click '''Learn''' at the bottom of the window
+
+Repeat the procedure daily. However, in the last 3-5 days, you could follow that yet with '''[[Subset operations|Process branch>]] : [[Subset operations#Learning|Learning]] : Review all''' to protectively refresh the material that would optimally be scheduled after the exam. This strategy is not recommended for long-term learning! It departs from the optimum timing for review to consolidate memories. It should only be reserved for a situation when burning school situation forces you to neglect your long-term planning.
+
+If you have [[Glossary:Final_drill|final drill]] enabled, remember that subset learning does not keep a separate [[Glossary:Final_drill_queue|final drill queue]] and [[Glossary:Item|items]] that score less than '''Good (4)''' are put to the global [[Glossary:Final_drill_queue|final drill queue]].
+
+== Video ==
+
+The following example shows the review of a single branch in the [[Contents|'''Contents''' window]] titled ''History of Bitcoin'':
+
+{{#ev:youtube|1mzhbXx8DXE}}

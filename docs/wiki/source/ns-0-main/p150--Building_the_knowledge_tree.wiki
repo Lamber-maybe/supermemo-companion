@@ -1,0 +1,204 @@
+== Introducing the knowledge tree ==
+
+The ''knowledge tree'' is the hierarchical structure of [[Glossary:Element|elements]] displayed in the [[Contents|'''Contents''' window]] (as in the picture below). Before you get lost in details of the knowledge tree, remember that: 
+
+<div class="bs-callout bs-callout-warning">
+Knowledge tree is '''NOT''' essential for your success in learning!
+</div>
+
+The structure of the [[Glossary:Knowledge_tree|tree]] does not affect the learning process! Many beginners believe that a good structure of the [[Glossary:Knowledge_tree|tree]] will help them prioritize their learning; however, '''you should NOT begin your adventure with SuperMemo from studying the [[Glossary:Knowledge_tree|tree]], unless you have mastered [[Introduction|the ABC]]!''' 
+
+[[Image:Contents window.jpg|center|558px|SuperMemo: The contents window displaying the knowledge tree (i.e. the hierarchical structure of elements) of a collection]] 
+
+Being exposed to a mixture of material belonging to different subjects will only make learning more fun (''variety is the spice of life''). Despite a widespread myth, mixed up learning can improve your [[Glossary:Retention|retention]] (exceptions are discussed elsewhere at SuperMemo Website). '''Mixed up review of different subjects is the norm, not an exception in SuperMemo!''' 
+
+However, once you master the basics of SuperMemo, you can occasionally benefit from the [[Glossary:Knowledge_tree|knowledge tree]] by keeping various learning subjects separate. At times, it may help you handle a single subject as a whole (e.g. [[Subset learning|review]] a single subject before an exam, [[postpone]] a subject of lower priority, etc.). 
+
+<div style="background-color: #e3e300" class="inset">
+
+'''Why isn't knowledge tree a priority?''' 
+
+[[Glossary:Knowledge_tree|Knowledge tree]] helps you keep order in your [[Glossary:Collection|collection]] and process portions of material relating to different subjects. However, it '''does not''' reflect the structure of knowledge that you keep in your mind. The structure of knowledge that you remember is built gradually via semantic links between [[Glossary:Element|elements]]. You do not have to build those links in SuperMemo in any other way than by composing new [[Glossary:Item|items]] and [[Glossary:Topic|topics]] and understanding the meaning of inter-related concepts that you learn. In simple terms, you build the map of knowledge in your mind, not in SuperMemo! SuperMemo carries only tiny granules of knowledge and connections between pieces of knowledge. Those granules and connections help you effectively refresh the structure of knowledge that you want to store in your mind.
+
+</div>
+
+== Building the tree  ==
+
+'''Important!''' To understand this text you need to understand the [[Glossary:Knowledge_tree|tree]] terminology. It is quite intuitive as it refers to [[Glossary:Root_node|roots]], [[Glossary:Branch|branches]] and [[Glossary:Leaf|leaves]]. However, if you have any problems, see: [[#Tree_Glossary|Tree Glossary]]. Alternatively, hover the mouse over the green-colored glossary item, and its meaning will be displayed in a pop-up box next to it.
+
+There are two basic methods of building the [[Glossary:Knowledge_tree|knowledge tree]]: 
+
+#[[#Building_with_concepts|'''Using the contents window''']]. You can use operations such as '''Add''', '''Insert''' or '''Delete''' to build the [[Glossary:Knowledge_tree|tree]] directly in the [[Contents|'''Contents''' window]] 
+#[[#Building_with_concepts|'''Using concept groups''']]. If you want to add a large number of similarly looking [[Glossary:Item|items]] to a single [[Glossary:Branch|branch]], you will rather want to use [[concepts]]. Concepts automatically use [[templates]] to make sure that your [[Glossary:Element|elements]] are filled out with [[Glossary:Component|components]] of a desired look, number, size, etc.
+
+When you choose '''[[Add new]]''' in the [[element window]], new [[Glossary:Item|items]] are added to a single location determined by the current concept group (i.e. not by the current selection in the [[Contents|'''Contents''' window]]). Advanced users will always prefer using concept groups to save learning time. Usually you add all your material to a ''To Do'' [[Glossary:Branch|branch]]. Then you assign '''only the most important''' portions of knowledge to separate concept groups. 
+
+Once you create a [[Glossary:Knowledge_tree|tree]], you can always [[#Modifying_the_tree|modify it using drag&amp;drop operations]]. 
+
+=== <span id="Building_in_contents">Building the tree</span> in the window  ===
+
+In the [[element window]], if you see an [[Glossary:Element|element]] whose location in the [[Glossary:Knowledge_tree|knowledge tree]] is not satisfactory, you can quickly move it to a new location with '''[[Element menu#Edit|Edit]] : Move''' on the [[element menu]] (''Shift+Ctrl+V''). Simply find the desired location in the [[Glossary:Knowledge_tree|knowledge tree]] and click '''Accept''' at the bottom of the [[Contents|'''Contents''' window]] (or press ''Enter''). 
+
+If you build a small [[Glossary:Collection|collection]] with a complex [[Glossary:Knowledge_tree|tree]] structure, you may prefer to use the [[Contents|'''Contents''' window]] operations to build the [[Glossary:Knowledge_tree|tree]]: 
+
+#If you choose '''Add''', a new [[Glossary:Child|child]] will be added to the currently selected [[Glossary:Element|element]] (click '''Add''' several times to see how this option works) 
+#If you choose '''Insert''', you will add a new [[Glossary:Sibling|sibling]]. The new [[Glossary:Sibling|sibling]] will be inserted in the place of the currently selected [[Glossary:Element|element]]. The selected [[Glossary:Element|element]] will move one position down (press ''Ins'' a few times to see how this option works). You cannot insert a new [[Glossary:Element|element]] in the place of the [[Glossary:Knowledge_tree|tree]] [[Glossary:Root_node|root]] 
+#If you choose '''Delete''', you will delete the currently selected [[Glossary:Branch|branch]] (i.e. the selected [[Glossary:Element|element]] and all its [[Glossary:Descendant|descendants]]). You cannot delete the [[Glossary:Knowledge_tree|tree]] [[Glossary:Root_node|root]]
+
+Once you add an [[Glossary:Element|element]] or a few [[Glossary:Element|elements]], you can modify their titles. To do so, select the [[Glossary:Element|element]] by clicking and click it gently again. You can also press ''Alt+T'' to conveniently edit the title in the [[element window]]. If you fill out [[Glossary:Element|elements]] with texts (e.g. by typing questions and answers), SuperMemo will automatically generate titles for you. 
+
+When building the [[Glossary:Knowledge_tree|tree]] with '''Add''' and '''Insert''', the type of [[Glossary:Element|elements]] added is determined by ''Topics/Items'' setting on the button panel (bottom of the [[Contents|'''Contents''' window]]). If you select ''Items'', you will add simple question-and-answer [[Glossary:Item|items]]. If you chose ''Topics'', you will add article-type [[Glossary:Element|elements]] that can be filled with text. 
+
+The [[contents menu]] includes more operations for modifying the tree (e.g. '''[[Contents menu#New|New]] : Folder''', '''[[Contents menu#New|New]] : Item''', etc.). 
+
+Once you create a [[Glossary:Knowledge_tree|tree]], you can always [[#Modifying_the_tree|modify it using drag&amp;drop operations]].
+
+=== <span id="Building_with_concepts">Building the tree</span> using concepts  ===
+
+Concept groups are portions of the [[Glossary:Knowledge_tree|knowledge tree]] that use the same [[Templates|look]] of [[Glossary:Element|elements]]. These [[Glossary:Element|elements]] usually belong to a single subject. For example, you can define a concept group called ''Biology'' and keep there all [[Glossary:Item|items]] related to biology. <br>If you select a given concept group on the [[navigation bar]], each time you click '''[[Add new]]''' (or press ''Alt+A''), you will add a new [[Glossary:Item|item]] to that concept group. For more details see: [[Concepts|Using concepts]].
+
+== <span id="Modifying_the_tree">Modifying the tree</span> using drag&amp;drop operations  ==
+
+If you would like to modify the structure of the [[Glossary:Knowledge_tree|tree]], you can do it easily with drag&amp;drop operations in the [[Contents|'''Contents''' window]]. 
+
+Modifying a [[Glossary:Knowledge_tree|tree]] is as simple as dragging a [[Glossary:Branch|branch]] from one location to another (in the [[Contents|'''Contents''' window]] or between two contents windows):
+* To drag a [[Glossary:Branch|branch]], click it with the mouse, hold down the left mouse button, move the mouse to another [[Glossary:Branch|branch]] (still holding the mouse button) and release the left button once you are over the target [[Glossary:Branch|branch]]. The dragged [[Glossary:Branch|branch]] will be moved to the target [[Glossary:Branch|branch]]. During drag&amp;drop operations, SuperMemo will highlight the drop point (i.e. the place in the [[Glossary:Knowledge_tree|tree]] where the dragged [[Glossary:Branch|branch]] will be inserted).
+* If you would like a given [[Glossary:Element|element]] to be a [[Glossary:Child|child]] of another [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|knowledge tree]], left-click it and without releasing the mouse button drag it onto the target [[Glossary:Element|element]]. Once the target [[Glossary:Element|element]] gets highlighted (as if selected), release the left button so that the dragged [[Glossary:Element|element]] becomes the last [[Glossary:Child|child]] of the target [[Glossary:Element|element]].
+* If, on another occasion, you want to move another [[Glossary:Element|element]] ahead of the [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|tree]], left-click it again and without releasing the mouse drag the [[Glossary:Element|element]] to the level of the target [[Glossary:Element|element]] (i.e. the [[Glossary:Element|element]] you want the dragged [[Glossary:Element|element]] to be moved ahead of). Note that you need to point your mouse slightly to the left or right of the target [[Glossary:Element|element]] so that it does not get selected but a navy horizontal line showing you where the dragged [[Glossary:Element|element]] will be moved to is displayed. Once the navy horizontal line shows on top of the target [[Glossary:Element|element]], release the mouse button to move the dragged [[Glossary:Element|element]] to a desired location. You can also select more than one branch for dragging to a new location. 
+
+=== Important tips  ===
+
+#If you drag between remote [[Glossary:Branch|branches]], you can open a second [[Contents|'''Contents''' window]] and drag between the two windows. It is easier to open the source [[Glossary:Branch|branch]] in one window, and then open the target [[Glossary:Branch|branch]] in the other. To open a second [[Contents|'''Contents''' window]], click the blue '''Contents alignment''' icon on the [[contents toolbar]] 
+#You can select many [[Glossary:Branch|branches]] for dragging by holding the ''Ctrl'' key down while clicking the [[Glossary:Branch|branches]] that are to be moved 
+#You can always move a single [[Glossary:Element|element]] currently displayed in the [[element window]] with ''Shift+Ctrl+V'' (press ''Enter'' after selecting the new location in the [[Glossary:Knowledge_tree|knowledge tree]])
+
+== Status icons: pending, memorized and dismissed  ==
+
+All [[Glossary:Branch|branches]] in the [[Glossary:Knowledge_tree|tree]] are marked with small icons that indicate the status and type of a given [[Glossary:Element|element]] in the learning process: 
+
+*[[Image:Item memorized.gif|SuperMemo: An item taking part in the learning process]] '''L-plate''' icons indicate [[Glossary:Item|items]] 
+*[[Image:Topic dismissed.gif|SuperMemo: A topic which is ignored in the learning process and which is not kept in the pending queue]] '''T-plate''' icons indicate [[Glossary:Topic|topics]] 
+*[[Image:Concept dismissed.gif|SuperMemo: A concept which is ignored in the learning process and which is not kept in the pending queue]] '''Lightbulb''' icons indicate [[Glossary:Concept|concepts]]
+*[[Image:Topic memorized.gif|SuperMemo: A topic taking part in the learning process]] '''Green''' icons indicate [[Glossary:Topic|topics]] in the review process (e.g. articles that take part in [[incremental reading]]) 
+*[[Image:Item memorized.gif|SuperMemo: An item taking part in the learning process]] '''Blue''' icons indicate [[Glossary:Memorized_element|memorized]] [[Glossary:Item|items]] (e.g. question-answer items that take part in repetitions) 
+*[[Image:Concept memorized.gif|SuperMemo: A concept taking part in the learning process]] '''Orange''' icons indicate [[Glossary:Concept|concepts]] in the review process
+*[[Image:Topic pending.gif|SuperMemo: A topic awaiting memorization in the pending queue]] '''Sky blue''' icons indicate [[Glossary:Pending_element|pending]] [[Glossary:Element|elements]] (i.e. [[Glossary:Element|elements]] awaiting memorization or review). [[Glossary:Pending_element|Pending]] [[Glossary:Topic|topics]] are indicated by sky-blue T-plate icons, while [[Glossary:Pending_element|pending]] [[Glossary:Item|items]] are indicated by sky-blue L-plate icons 
+*[[Image:Topic dismissed.gif|SuperMemo: A topic which is ignored in the learning process and which is not kept in the pending queue]] '''Yellow''' icons indicate [[Glossary:Dismissed_element|dismissed]] [[Glossary:Topic|topics]], [[Glossary:Item|items]], or [[Glossary:Concept|concepts]]. Those [[Glossary:Element|elements]] do not participate in repetitions. [[Glossary:Dismissed_element|Dismissed]] [[Glossary:Item|items]] are indicated by yellow L-plate icons, [[Glossary:Dismissed_element|dismissed]] [[Glossary:Topic|topics]] are indicated by yellow T-plate icons, and [[Glossary:Dismissed_element|dismissed]] [[Glossary:Concept|concepts]] are indicated by yellow lightbulb icons
+*[[Image:Task.gif|SuperMemo: An element representing a to-do task]] '''Red''' icons indicate [[Glossary:Task|tasks]]
+
+Note that: 
+
+*'''memorized''': [[Glossary:Element|elements]] marked with a blue L-plate [[Image:Item memorized.gif|SuperMemo: An item taking part in the learning process]], green T-plate [[Image:Topic memorized.gif|SuperMemo: A topic taking part in the learning process]], or [[Image:Concept memorized.gif|SuperMemo: A concept taking part in the learning process]] icon have already been [[Glossary:Memorized_element|memorized]] and take part in the learning process 
+*'''pending''': [[Glossary:Element|elements]] marked with a sky blue L-plate [[Image:Item pending.gif|SuperMemo: An item awaiting memorization in the pending queue]] or sky blue T-plate [[Image:Topic pending.gif|SuperMemo: A topic awaiting memorization in the pending queue]] are waiting for review in the [[Glossary:Pending_queue|pending queue]]. Once they are [[Glossary:Memorized_element|memorized]], their icon will change to dark blue (for [[Glossary:Item|items]]) or green (for [[Glossary:Topic|topics]]) 
+*'''dismissed''': [[Glossary:Element|elements]] that do not take part in the learning process are marked yellow (e.g. [[Image:Topic dismissed.gif|SuperMemo: A topic which is ignored in the learning process and which is not kept in the pending queue]]). Usually they serve as holders of other [[Glossary:Item|items]] or [[Glossary:Branch|branches]] (e.g. ''Sciences'' or ''English'' in the picture) or they are kept only as reference or comment
+
+The plus sign to the left of the [[Glossary:Element|element]] indicates that the [[Glossary:Element|element]] has [[Glossary:Child|children]]. You can see the [[Glossary:Child|children]] when you click the plus sign. The minus sign to the left of the [[Glossary:Element|element]] indicates that the [[Glossary:Element|element]] with [[Glossary:Child|children]] can be collapsed. When you click the minus sign, all [[Glossary:Child|children]] will disappear from view and the minus sign will be replaced with a plus sign
+
+== Keyboard shortcuts  ==
+
+=== Showing/Hiding ===
+
+*''Alt+C'' - show the [[Contents|'''Contents''' window]] and highlight the current [[Glossary:Element|element]]
+*''Alt+F10'' - show the [[contents menu]] 
+*''Ctrl+F4''/''Esc'' - hide the [[Contents|'''Contents''' window]]
+
+=== Navigating ===
+
+*''Enter''
+** expand the current [[Glossary:Branch|branch]]
+** collapse the selected [[Glossary:Branch|branch]]
+*''Alt+Ctrl+Enter'' - collapse the current [[Glossary:Branch|branch]]. ''For example, if you have '''Sciences and Technology''' [[Glossary:Branch|branch]]/[[Glossary:Element|element]] which is a [[Glossary:Child|child]] of the '''Sciences''' [[Glossary:Branch|branch]]/[[Glossary:Element|element]], and the former is currently selected, you can press Alt+Ctrl+Enter to collapse the '''Sciences''' [[Glossary:Branch|branch]].''
+*''Up arrow'' - go to the previous [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|knowledge tree]]
+*''Down arrow'' - go the next [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|knowledge tree]]
+*''Ctrl+Up arrow'' - go to the parent of the current [[Glossary:Element|element]] 
+*''Ctrl+Down arrow'' - go to the first [[Glossary:Child|child]] of the selected [[Glossary:Element|element]]. If the current [[Glossary:Element|element]] does not have a [[Glossary:Child|child]], you will move to the next [[Glossary:Sibling|sibling element]].
+*''Ctrl+Home'' - go to the [[Glossary:Root_node|root element]] in the [[Glossary:Knowledge_tree|knowledge tree]]
+*''Ctrl+End'' - go to the last [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|knowledge tree]]
+
+=== Building ===
+
+*''Ins'' - insert an [[Glossary:Element|element]] at the current selection 
+*''Alt+D'' - duplicate the current [[Glossary:Element|element]] as its [[Glossary:Child|child]]
+*''Del'' - delete selected [[Glossary:Branch|branch]] and all its [[Glossary:Descendant|descendants]]
+
+=== Moving/Transferring ===
+
+*''Shift+Ctrl+V'' - move the selected [[Glossary:Element|element]] (and all its [[Glossary:Descendant|descendants]]) to a new location within the [[Glossary:Knowledge_tree|tree]]. After you specify to the new location, press ''Enter'' to accept it.
+*''Shift+Ctrl+T'' - replicate the selected [[Glossary:Branch|branch]] by transferring copies of its [[Glossary:Element|elements]] to another [[Glossary:Collection|collection]]
+
+=== Learning/Testing ===
+
+*''Ctrl+L'' - learn the selected [[Glossary:Branch|branch]] 
+*''Shift+Ctrl+L'' - review all [[Glossary:Element|elements]] belonging to the selected [[Glossary:Branch|branch]]
+*''Ctrl+D'' - [[Glossary:Dismiss|dismiss]] the selected [[Glossary:Element|element]] 
+*''F11'' - start a random test on the currently selected [[Glossary:Branch|branch]]
+
+=== Viewing ===
+
+*''Shift+Enter'' - view the currently selected [[Glossary:Element|element]] in the [[element window]]
+*''Ctrl+Space'' - view the [[Glossary:Descendant|descendants]] of a given [[Glossary:Branch|branch]] in the [[browser]]
+
+=== Searching ===
+
+*''F3'' - find the next expanded title containing a searched text
+*''Ctrl+F'' - search the current [[Glossary:Branch|branch]]
+
+=== Miscellaneous ===
+
+*''Shift+Ctrl+B'' - show statistics for the current [[Glossary:Branch|branch]]
+*''Ctrl+K'' - create a new concept group with the [[Glossary:Root_node|root]] in the currently selected [[Glossary:Element|element]]
+
+== <span id="Tree_Glossary">Tree Glossary</span>: what are roots, branches, children, and siblings  ==
+
+The [[Glossary:Knowledge_tree|tree]] presented in the picture begins with the [[Glossary:Root_node|root]] named ''All my knowledge'' at the top. 
+
+[[Image:Contents window.jpg|center|528px|SuperMemo: The contents window displaying the knowledge tree (i.e. the hierarchical structure of elements) of a collection]] 
+
+There are eight visible [[Glossary:Branch|branches]] growing from the [[Glossary:Root_node|root]]: ''Concepts'', ''Sciences'', ''English'', ''Private'', ''Other'', ''New Imports'', ''New collections'', and ''TO DO''. There are more [[Glossary:Branch|branches]] under ''TO DO'' that are not visible in the picture. All [[Glossary:Branch|branches]] growing from a given [[Glossary:Branch|branch]] are called [[Glossary:Child|children]]. The [[Glossary:Branch|branch]] ''Sciences'' has five [[Glossary:Child|children]] displayed in the picture: 
+
+#''Business, Law and Economics'' 
+#''Political and Social Sciences'' 
+#''Science and Technology'' 
+#''Medical Sciences'' 
+#''Computer Science''
+
+All the [[Glossary:Branch|branches]] listed above are their own [[Glossary:Sibling|siblings]]. For example, ''Medical Sciences'' is a [[Glossary:Sibling|sibling]] of ''Computer Science''. On the other hand, ''Sciences'' is the [[Glossary:Parent|parent]] of all its [[Glossary:Child|children]] (e.g. ''Business, Law and Economics''). 
+
+At the very bottom of the structure there are [[Glossary:Leaf|leaves]], i.e. [[Glossary:Child|children]] that do not have further [[Glossary:Child|children]]. 
+
+Please note that the [[Glossary:Root_node|root]], [[Glossary:Branch|branches]], [[Glossary:Child|children]], [[Glossary:Leaf|leaves]], etc. are all '''[[Glossary:Element|elements]]''' in SuperMemo. This means that you can view them in the [[element window]] and fill them out with [[Glossary:Component|components]] (such as texts, pictures, sounds, etc.). To view a given [[Glossary:Element|element]] in the [[element window]], select it and choose '''View''' at the bottom of the [[Contents|'''Contents''' window]] (or press ''Shift+Enter'')
+
+== FAQ ==
+
+=== Quick differentiation between memorized topics and items is valuable ===
+
+'''Question'''
+
+[[Glossary:Pending_element|Pending elements]] ([[Glossary:Topic|topics]] ([[Image:Topic pending.gif|SuperMemo: A topic awaiting memorization in the pending queue]]), [[Glossary:Item|items]] ([[Image:Item pending.gif|SuperMemo: An item awaiting memorization in the pending queue]])) have the aqua blue color.
+
+Dismissed elements ([[Image:Topic dismissed.gif|SuperMemo: A topic which is ignored in the learning process and which is not kept in the pending queue]], [[Image:Item dismissed.gif|SuperMemo: An item which is ignored in the learning process and which is not kept in the pending queue]], and [[Image:Concept dismissed.gif|SuperMemo: A concept which is ignored in the learning process and which is not kept in the pending queue]]) share the yellow color.
+
+The only exception are [[Glossary:Memorized_element|memorized elements]], where:
+* [[Glossary:Topic|topics]] are green ([[Image:Topic memorized.gif|SuperMemo: A topic taking part in the learning process]])
+* [[Glossary:Item|items]] are blue ([[Image:Item memorized.gif|SuperMemo: An item taking part in the learning process]])
+* [[Glossary:Concept|concepts]] are orange ([[Image:Concept memorized.gif|SuperMemo: A concept taking part in the learning process]])
+
+What is the rationale behind different colors for [[Glossary:Memorized_element|memorized]] [[Glossary:Topic|topics]], [[Glossary:Item|items]] and [[Glossary:Concept|concepts]]?
+
+'''Answer'''
+
+This is because [[Glossary:Memorized element|memorized elements]] are most important in the [[Glossary:Collection|collection]], and being able to quickly differentiate among [[Glossary:Memorized_element|memorized]] [[Glossary:Topic|topics]], [[Glossary:Memorized_element|memorized]] [[Glossary:Item|items]], and [[Glossary:Memorized_element|memorized]] [[Glossary:Concept|concepts]] by means of contrasting visual cues saves the student's time.
+
+[[Glossary:Pending element|Pending elements]] lost on their importance with the arrival of SuperMemo 2000. Featuring improved handling of material overflow (e.g. [[Postpone]]), it also minimized the use of [[Glossary:Pending queue|pending queue]] which was previously used as a means against [[Glossary:Overload|repetition overload]].
+
+Finally, [[Glossary:Dismissed element|dismissed elements]] do not take part in the learning process at all. As such, their use is rather limited (they may hold outdated knowledge which you decided to keep in your [[Glossary:Collection|collection]] for archival purposes, they may serve as parent [[Glossary:Node|nodes]] for other [[Glossary:Element|elements]], etc.)
+
+=== More FAQs ===
+
+See: [https://www.super-memory.com/archive/help16/faq/tree.htm FAQ Archive: knowledge tree]
+
+== Video ==
+
+Drag and drop operations in building a knowledge tree:
+
+{{#ev:youtube|knVDDx1x3DM}}

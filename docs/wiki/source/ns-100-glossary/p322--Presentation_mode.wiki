@@ -1,0 +1,2 @@
+;<span id="Presentation_mode">presentation mode</span> (display mode)
+:state of an [[Glossary:Element|element]]/[[Glossary:Component|component]], in which it looks as when seen by the user during browsing or learning the [[Glossary:Collection|collection]]. The other two basic modes are: [[Glossary:Editing_mode|editing mode]] ([[Glossary:Component|components]] are ready for editing, e.g. deleting texts, etc.) and [[Glossary:Dragging_mode|dragging mode]] ([[Glossary:Component|components]] can easily be dragged with the mouse)

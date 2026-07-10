@@ -1,0 +1,243 @@
+== Accessing the element menu ==
+
+The element menu can be used to execute operations on the currently displayed [[Glossary:Element|element]] in the [[element window]]. To open this menu do one of the following: 
+
+*press ''Alt+F10'' in the [[element window]], 
+*press ''Apps Key'' ([[Image:Application key.gif|Application key allows you to open a pop-up menu relevant for the current context]]) (context menu key left of the right ''Ctrl'' key), 
+*right-click over an empty element area (i.e. the area that is not covered by [[Glossary:Component|components]]), 
+*right click over the [[navigation bar]] at the top of the [[element window]] (note that several buttons (i.e. '''Search''', '''Find in article''', '''Search and replace''', '''E-mail''', '''SuperMemo Commander''', and '''Layout manager''') have their own context menus. This means that if you happen to right-click one of the aforementioned buttons, its context menu, instead of the [[element menu]], will open), or
+*click the first button on the [[Compose toolbar|'''Compose''']] or [[Edit toolbar|'''Edit''']] toolbars
+
+Note that clicking over a [[Glossary:Component|component]] will open the [[component menu]] instead. If your [[Glossary:Element|element]] is entirely filled with [[Glossary:Component|components]] or you are not sure which area is component free, right click over the [[navigation bar]] to open the element menu.
+
+== Element menu items ==
+
+The element menu includes the following options: 
+
+=== Learning ===
+
+*'''Learning''' 
+**'''<span id="Execute_repetition">Execute repetition</span>''' (''Shift+Ctrl+R'') - execute a repetition over the currently displayed [[Glossary:Element|element]]. If the element is not [[Glossary:Outstanding_element|outstanding]], [[Glossary:Mid-interval_repetition|mid-interval repetition]] will be executed. Use '''Execute repetition''' to review mission-critical material (e.g. before an exam). Using '''Execute repetition''' will prevent the review from being "wasted" in terms of the learning process. It will also prevent interference of the review with the [https://supermemo.guru/wiki/SuperMemo_Algorithm optimization algorithm] used by SuperMemo. Even if you accidentally preview an [[Glossary:Element|element]], it is recommended that you leave the trace of the event by using '''Execute repetition'''. In [[subset learning]], '''Execute repetition''' is performed on all non-outstanding elements 
+**'''<span id="Jump_interval">Reschedule</span>''' (''Ctrl+J'') - decide when to make the next repetition of the [[Glossary:Element|element]]. You should use this option with caution as all attempts to override the selection made by SuperMemo may negatively affect the accuracy of the repetition spacing algorithm. You will most likely use this option to affect the priority of articles in [[Glossary:Incremental_reading|incremental reading]]. In addition, in periods of intense repetition, e.g. after a vacation, you might manually increase [[Glossary:Interval|intervals]] of some less important [[Glossary:Item|items]] to make sure that the next repetition takes place after the busiest period 
+**'''Later today''' (''Shift+Ctrl+J'') - schedule the [[Glossary:Element|element]] to be reviewed later on the same day. This means placing it at a specific position in the [[Glossary:Outstanding_queue|outstanding queue]]
+**'''Add to drill''' (''Shift+Ctrl+D'') - add the displayed [[Glossary:Element|element]] to the [[Glossary:Final_drill_queue|final drill queue]]
+**'''Add to subset''' - add the currently displayed [[Glossary:Element|element]] to a selected [[Glossary:Subset|subset]]
+**'''<span id="Remember">Remember</span>''' (''Ctrl+M'') - introduce the displayed [[Glossary:Element|element]] into the learning process. Optionally, you can specify the first [[Glossary:Interval|interval]], e.g. if you believe you will remember the [[Glossary:Item|item]] in 2 months, you might save time by choosing the [[Glossary:Interval|interval]] 60 without much detriment to the learning process. Once you memorize an [[Glossary:Element|element]], it will periodically be presented for review by SuperMemo. '''Remember''' executed on a [[Glossary:Task|task]] will ask you if you would like to remove the task from the [[Glossary:Tasklist|tasklist]]. If you confirm, this operation will convert the [[Glossary:Task|task]] to a [[Glossary:Topic|topic]]
+**'''<span id="Forget">Forget</span>''' - remove the displayed [[Glossary:Element|element]] from the learning process and put it at the end of the [[Glossary:Pending_queue|pending queue]]. Optionally, you may specify the position in the pending queue (e.g. at 50% of its length) 
+**'''<span id="Dismiss">Dismiss</span>''' (''Ctrl+D'') - ignore the displayed [[Glossary:Element|element]] in the learning process. The element will still be available when browsing the [[Glossary:Collection|collection]] but it will not enter the learning process unless you explicitly choose '''[[#Learning|Learning]] : [[#Remember|Remember]]''' (above)
+**'''<span id="Done">Done</span>''' (''Shift+Ctrl+Enter'') - terminate the review of an article in [[Glossary:Incremental_reading|incremental reading]]. You can delete portions of the text or the whole text to save space. If the article has [[Glossary:Child|children]], SuperMemo will propose to [[Glossary:Dismiss|dismiss]] it. Otherwise it will propose to delete the article altogether 
+**'''<span id="Undo_repetition">Undo repetition</span>''' - undo the effects of the most recent [[Glossary:Repetition|repetition]] ('''Undo''' can also be done by editing [[repetition history]])
+**<span id="Learn_branch">'''[[Subset learning|Learn branch]]'''</span> - make repetitions only in the [[Glossary:Branch|branch]] to which the currently displayed [[Glossary:Element|element]] belongs. SuperMemo will propose the nearest [[Glossary:Ancestor|ancestor]] as the root of branch learning (i.e. starting point). Responding with ''Yes'' to ''Do you want to learn this branch'' will begin repetitions. Responding with ''No'' will make SuperMemo propose the next nearest [[Glossary:Ancestor|ancestor]] as the root. Select ''Cancel'' to abort this option. If you want to manually point to the root of the [[Glossary:Branch|branch]] to learn, select it in the [[Contents|'''Contents''' window]] and click '''Learn''' at the bottom of that window. You can do it also by opening the '''Ancestors''' window (''Shift+Ctrl+X''), clicking the selected [[Glossary:Ancestor|ancestor]], and pressing ''Ctrl+L'' 
+**'''<span id="Postpone_branch">Postpone branch</span>''' - postpone [[Glossary:Outstanding_material|outstanding repetitions]] in the [[Glossary:Branch|branch]] to which the displayed [[Glossary:Element|element]] belongs. SuperMemo will propose the nearest [[Glossary:Ancestor|ancestor]] as the root of the [[Glossary:Branch|branch]] that should be affected by '''[[Postpone]]'''. Responding with ''Yes'' to ''Do you want to postpone this branch'' will apply '''Postpone''' to the displayed [[Glossary:Branch|branch]]. Responding with ''No'' will make SuperMemo propose the next nearest [[Glossary:Ancestor|ancestor]] as the [[Glossary:Branch|branch]] to postpone. Select ''Cancel'' to abort this option. If you want to manually point to the root of the [[Glossary:Branch|branch]] to postpone, select it in the [[Contents|'''Contents''' window]] and choose '''Postpone''' on the [[Subset operations|subset processing menu]]. You can do it also by opening the '''Ancestors''' window (''Shift+Ctrl+X''), clicking the selected [[Glossary:Ancestor|ancestor]], and choosing '''Postpone branch''' from the context menu (right click)
+**'''Locate extracts''' - find all [[Glossary:Extract|extracts]] and [[Glossary:Cloze_deletion|clozes]] generated from the currently displayed article. As this operation is rather slow, you may prefer to use '''[[#Edit|Edit]] : Browse branch''' (''Ctrl+Space'') instead. '''Locate extracts''' is necessary only after you have moved some [[Glossary:Descendant|descendant elements]] to other [[Glossary:Branch|branches]] of the [[Glossary:Knowledge_tree|knowledge tree]] 
+**'''Statistics'''
+***'''[[Repetition history]]''' (''Shift+Ctrl+H'') - show the history of repetitions for the currently displayed [[Glossary:Element|element]] (see [[#Repetition_history|picture below]]) 
+*** '''Memory status''' - graph showing how two variables of long-term memory change in time ([[Glossary:Retrievability|retrievability]] and [[Glossary:Stability|stability]])(see [[#Memory_status|example below]])
+***'''Reset repetition history''' - delete the history of repetitions for the currently displayed [[Glossary:Element|element]]. You can opt for using this option once you substantially change the contents of the [[Glossary:Element|element]] so that you feel like learning a completely new piece of knowledge. You can also delete the repetition history by using '''Show repetition history''' and pressing ''Del'' (see also: [[Repetition history]])
+***[https://supermemopedia.com/wiki/Best_forgetting_index '''Best forgetting index'''] - display the impact of the [[Glossary:Forgetting_index|forgetting index]] on the number of future [[Glossary:Repetition|repetitions]] of the current [[Glossary:Item|item]]
+***'''Export forgetting index data''' - export the forgetting index data to a file
+***'''Next repetition stability''' - see how [[Glossary:Stability|stability]] increases at different [[Glossary:Interval|intervals]]
+***'''Difficulty analysis''' - export data used in determining [[Glossary:Item|item]] [[Glossary:Difficulty|difficulty]] in [[Algorithm SM-17]]
+
+=== Concepts ===
+
+*'''Concepts'''
+**'''Create concept''' - convert the currently displayed [[Glossary:Element|element]] into a [[Glossary:Concept|concept]]
+**'''Link concept''' - attach an existing [[Glossary:Concept|concept]] to the current [[Glossary:Element|element]]
+**'''Unlink concept''' - sever a link from the displayed [[Glossary:Element|element]] to a [[Glossary:Concept|concept]]
+**'''Create link''' - add the current [[Glossary:Element|element]] to the links [[Glossary:Registry|registry]] to enable linking to other elements
+**'''Link element''' - link the displayed [[Glossary:Element|element]] to another element using the links [[Glossary:Registry|registry]]
+**'''Link contents''' - link the current [[Glossary:Element|element]] with another element picked from the [[Contents|'''Contents''' window]]
+**'''Unlink element''' - sever a link from the current [[Glossary:Element|element]] to another element
+**'''List links''' - display all links of the displayed [[Glossary:Element|element]] in the [[browser]]
+**'''Map''' - display the map associated with the current [[Glossary:Concept|concept]] (see [[#Concept_map|example below]])
+
+=== Priority ===
+
+*'''Priority''' 
+**'''Modify''' (''Alt+P'') - open the element priority dialog box that makes it easy to modify the element's priority (by position or percent). It also makes it possible to modify the interval, forgetting index, etc. Once you choose a new priority, you can also see what elements precede or succeed that priority in the priority queue. You can also click to go to see those elements 
+**'''Increase''' (''Shift+Ctrl+Up'') - increase the priority of the element in the learning process. For topics, it will also reduce the A-Factor (down to the minimum of 1.01) 
+**'''Decrease''' (''Shift+Ctrl+Down'') - decrease the priority of the element
+
+=== Reference ===
+
+* '''Reference''' - process element [[references]]
+** '''Link''' - insert a reference taken from the reference [[Glossary:Registry|registry]] into the current [[Glossary:Element|element]]
+** '''Edit''' - modify the current [[Glossary:Element|element]]'s reference
+** '''Add''' - add new reference to the current [[Glossary:Element|element]]
+** '''Delete''' - delete the reference association from the current [[Glossary:Element|element]]
+** '''Deprecate''' - stop new web imports from considering the present reference as a duplicate (i.e. consider it outdated without deleting)
+** '''Copy''' - copy the current [[Glossary:Element|element]]'s reference data to the clipboard
+** '''Show''' - collect and display the current reference data for text [[Glossary:Component|components]]
+** '''Citation''' - process citation reference
+*** '''Show''' - show the current text's references in the citation format (e.g. ''David Beerling, (2004) Broad leaves might have evolved due to the fall in carbon dioxide. Proceedings of the National Academy of Sciences (vol 101 p 10360)''). Use the '''Copy''' button to copy the citation to the clipboard 
+*** '''Insert''' - insert the current reference in the citation format into the text of the current article
+
+=== E-mail ===
+
+*'''[[Incremental mail processing|E-mail]]''' - e-mail the displayed [[Glossary:Element|element]] to someone: 
+**'''Element''' - send the current [[Glossary:Element|element]] via e-mail (the same as the '''Mail''' button on the [[navigation bar]]) 
+**'''Attachment''' - send the element files as attachments (same as '''[[#E-mail|E-mail]] : Element''' except the texts are not pasted into e-mail body). Use this option to send formatted articles without loading the e-mail body with the unformatted copy of the text 
+**'''Q&amp;A''' - e-mail the [[Glossary:Element|element]] as question-and-answer text only 
+**'''Texts''' - e-mail all texts of the element in mail body 
+**'''HTML''' - convert the [[Glossary:Element|element]] to HTML and send it via e-mail. Only references to object files (such as pictures) will be sent. To send the object files, use '''[[#E-mail|E-mail]] : Element'''
+
+=== Template ===
+
+*'''Template''' - see: [[Templates|Using templates]] for details 
+**'''<span id="Save_as_template">Save as template</span>''' - save the currently displayed [[Glossary:Element|element]] as a [[Glossary:Template|template]] 
+**'''<span id="Save_as_default">Save as default</span>''' - save the current [[Glossary:Element|element]] as a [[Glossary:Template|template]] and make it the default template in the currently selected [[Glossary:Concept_group|concept group]] 
+**'''Save with objects''' - save the currently displayed [[Glossary:Element|element]] as a [[Glossary:Template|template]], and include references to texts, pictures, sounds and other objects associated with the element 
+**'''<span id="Apply_template">Apply template</span>''' (''Shift+Ctrl+M'') - use a selected [[Glossary:Template|template]] from the template [[Glossary:Registry|registry]] to modify the look of the [[Glossary:Element|element]] 
+**'''<span id="Detach_template">Detach template</span>''' - restore the original look of the [[Glossary:Element|element]] from before the time the [[Glossary:Template|template]] was applied with '''Apply template''' (above)
+**'''<span id="Impose_template">Impose template</span>''' (''Shift+Ctrl+F2'') - overwrite the source [[Glossary:Template|template]] with the currently applied template 
+**'''Add template''' - add [[Glossary:Component|components]] from a selected [[Glossary:Template|template]] to the currently displayed [[Glossary:Element|element]]
+**'''View source''' (''Shift+Ctrl+U'') - view the source [[Glossary:Template|template]] of the current [[Glossary:Element|element]]
+**'''Save to file''' - save the current [[Glossary:Element|element]] as a template file 
+**'''Load from file''' - load a [[Glossary:Template|template]] file saved with '''Save to file''' 
+**'''Copy template''' - copy the currently used [[Glossary:Template|template]] to the clipboard 
+**'''Paste template''' - paste the [[Glossary:Template|template]] from the clipboard 
+**'''<span id="template_flags">Template flags</span>''' - advanced users may want to determine in detail how [[Glossary:Template|templates]] are interpreted where the template does not match the source in terms of the number and type of [[Glossary:Component|components]]. Note that the template source is the definition of the [[Glossary:Element|element]] as before applying the [[Glossary:Template|template]]. Source and template do not need to match. 
+***'''Delete template extras''' - when applying a [[Glossary:Template|template]], delete all template [[Glossary:Component|components]] that do not match the source. This means that SuperMemo will not display those template components that cannot be found in the source. Use this flag if your [[Glossary:Template|template]] has [[Glossary:Component|components]] that cannot be found in the source and are then not needed. See: [https://supermemopedia.com/wiki/Bug_with_Template_Flag_%22delete_template_extras%22 Flag bug]
+***'''Skip source extras''' - When applying a [[Glossary:Template|template]], delete all source [[Glossary:Component|components]] that do not match the template. This means that source components that cannot be found in the template will not be displayed. Use this flag if you do not want source [[Glossary:Component|components]] to show through the [[Glossary:Template|template]]. If this flag is checked, '''Impose template''' will delete source components as well as their associated objects (unless they are used elsewhere). 
+***'''Check source''' - let the source template flags determine the way in which the [[Glossary:Template|template]] is applied 
+***'''Check template''' - let the template flags determine the way in which the [[Glossary:Template|template]] is applied
+
+=== Copy ===
+
+*'''Copy''' 
+**'''Element''' - copy the [[Glossary:Element|element]] to the clipboard. Elements are copied as source text and can be pasted to other [[Glossary:Collection|collections]] (object files are not stored in the clipboard and must be available in the source collection at paste time for the full element to be pasted) 
+**'''Q&amp;A''' - copy the question-and-answer texts to the clipboard 
+**'''Texts''' - copy the [[Glossary:Element|element]]'s texts to the clipboard 
+**'''Component''' - copy the contents of the current [[Glossary:Component|component]]
+
+=== Paste ===
+
+*'''Paste''' (''Ctrl+V'') - paste the contents of the clipboard into the [[Glossary:Element|element]]
+
+=== Edit ===
+
+*'''Edit''' 
+**'''<span id="Edit_parameters">Element parameters</span>''' (''Shift+Ctrl+P'') - open a [[Element parameters|dialog box with element parameters]]. This option is most useful for the following purposes: 
+***changing the [[Glossary:Concept_group|concept group]] to which the [[Glossary:Element|element]] belongs, 
+***changing the [[Glossary#A-Factor|A-Factor]] of topics taking part in [[Glossary:Incremental_reading|incremental reading]],
+***changing the [[Glossary:Forgetting_index|forgetting index]], 
+***changing the [[Glossary#Ordinal_number|ordinal number]] (most often used in sorting the [[Glossary:Pending_queue|pending queue]]), 
+***changing the priority of a [[Glossary:Task|task]], or 
+***changing the [[Glossary:Tasklist|tasklist]] to which the [[Glossary:Task|task]] belongs. In the case of changing the [[Glossary:Concept_group|concept group]], if you decide that your [[Glossary:Item|item]] would rather belong to ''Physics'' than to ''Chemistry'', you can select ''Physics'' in the '''Group''' box and the [[Glossary:Item|item]] will be moved to the appropriate [[Glossary:Branch|branch]] of the [[Glossary:Knowledge_tree|knowledge tree]] (when you choose '''OK''')
+**'''Title''' (''Alt+T'') - set a new title. Either use the currently selected text or open the title window to edit the [[Glossary:Element|element]]'s title. Use ''Alt+T'' to quickly generate a title from text selections or text fields in the [[Glossary:Element|element]]. Note that you can also edit titles in the [[Contents|'''Contents''' window]] by slowly clicking the title twice (click the [[Glossary:Element|element]] first to select it and then click it again to edit the title). In [[HTML component|HTML components]], if you select a text for generating a title, ''Alt+T'' will also insert the title reference tag (<span class="reference">#Title:</span>). Note that default titles given by SuperMemo, and titles that are identical to the first text in the [[Glossary:Element|element]] are automatically updated once you change the first text. Once you set a unique title, those updates will not take place. 
+**'''<span id="Duplicate">Duplicate</span>''' (''Alt+D'') - create a copy of the currently displayed [[Glossary:Element|element]] in the same place of the [[Glossary:Knowledge_tree|knowledge tree]] 
+**'''Move''' (''Shift+Ctrl+V'') - quickly move an [[Glossary:Element|element]] to a new location in the [[Contents|'''Contents''' window]]. After pressing ''Shift+Ctrl+V'', select the new destination in the [[Glossary:Knowledge_tree|knowledge tree]] and press ''Enter'' (or click '''Accept''' at the bottom of the [[Contents|'''Contents''' window]]). 
+**'''Transfer''' (''Shift+Ctrl+T'') - quickly transfer an [[Glossary:Element|element]] from one [[Glossary:Collection|collection]] to another. It is recommended that you keep all your learning material in a single [[Glossary:Collection|collection]]; however, you may keep separate [[Glossary:Collection|collections]] for testing purposes, for e-mail, for use with [[Glossary:Tasklist|tasklists]], etc. For example, if you receive an interesting article via e-mail, it may end up in your e-mail [[Glossary:Collection|collection]], while you would rather want to keep it in your learning collection. Instead of doing paste and copy and switching between the [[Glossary:Collection|collections]], press ''Shift+Ctrl+T'' and point to the collection to which the [[Glossary:Element|element]] should be transferred 
+**'''<span id="Swap_components">Swap Q&amp;A</span>''' (''Shift+Ctrl+S'') - swap the question with the answer (as in standard flashcard programs). More precisely, this option swaps texts and fonts between the first non-answer text [[Glossary:Component|component]] and the first answer text component. Usually you need this option to swap questions with answers when you learn bilingual pairs of vocabulary. It is most useful in conjunction with '''[[#Duplicate|Duplicate]]''' (above).
+**'''Dismember''' - create new [[Glossary:Element|elements]] from individual [[Glossary:Component|components]] in the currently displayed element. Before '''Dismember''' is executed, you should choose [[Glossary:Component|components]] that will propagate to all [[Glossary:Child|children elements]]. The remaining [[Glossary:Component|components]] will be used to produce new [[Glossary:Element|elements]] with one non-propagating [[Glossary:Component|component]] each. For example, if you receive an e-mail with multiple picture attachments, and you import it to SuperMemo, you may prefer to have each picture in a separate [[Glossary:Element|element]]. You can then choose '''Dismember''', and select the text of e-mail as the propagating [[Glossary:Component|component]]. This will make SuperMemo create as many [[Glossary:Element|elements]] as there are picture attachments. Each picture will be illustrated with the same e-mail text. You can also choose one of the pictures as the propagating [[Glossary:Component|components]] and use this picture to illustrate the context of all remaining pictures thus creating a set of picture pairs: attachment picture + context picture (see [https://www.youtube.com/watch?v=vF64xMIXSbU video])
+**'''Copy element''' - copy the [[Glossary:Element|element]] to the clipboard. Please note that large files and large texts are not copied to the clipboard. These are specified as the reference to files or texts on the disk. In other words, if you paste the contents of the clipboard containing an [[Glossary:Element|element]] to the body of an e-mail and send it to your colleague, he will not be able to paste images, sound files, long texts, etc. 
+**'''Paste element''' - paste the contents of the [[Glossary:Element|element]] stored in the clipboard with '''Copy element''' (above) to a newly added element in the current [[Glossary:Concept_group|concept group]]
+**'''Paste template''' - change the look of the current [[Glossary:Element|element]] by pasting the [[Glossary:Template|template]] of the element copied to the clipboard with '''Copy element''' (above). '''Paste template''' can work between [[Glossary:Collection|collections]] but in order to be complete it must be made on the same computer. This comes from the fact that '''Copy element''' stores the [[Glossary:Element|element]] in the clipboard with some reference to files on the hard disk. There must be a path match to the referenced files, otherwise those references will be ignored 
+**'''Browse branch''' (''Ctrl+Space'') - open the [[Glossary:Branch|branch]] rooted in the current [[Glossary:Element|element]] in the [[Browser|element browser]]
+**'''Background''' - determine the background image used in the currently selected [[Glossary:Element|element]]. If you want to change the background in all elements, use '''[[Toolkit menu|Toolkit]] : [[Options]] : [[SuperMemo tab in Options|SuperMemo]] : [[SuperMemo tab in Options#Background|Default background image]]''' 
+***'''Import file''' - import an image file to use as the background in the currently displayed [[Glossary:Element|element]]. This file will first be integrated with the image [[Glossary:Registry|registry]]
+***'''Link from registry''' - link the [[Glossary:Element|element]] with an image from the image [[Glossary:Registry|registry]]. The linked image will be displayed as the background 
+***'''Arrangement''' - determine the way the background image will be displayed 
+****'''Top-left''' - display the background image in the top-left corner of the element display area 
+****'''Center''' - display the background image in the center of the element display area 
+****'''Tile''' - tile background image throughout the element display area, i.e. fill the [[Glossary:Element|element]] with many copies of tightly aligned bitmap 
+****'''Stretch''' - stretch the background image to fill exactly the contents of the element display area. If the background image is smaller than the element it will be extended
+***'''Delete''' - remove the background image
+
+=== Color ===
+
+*'''Color''' - determine the background color of the [[Glossary:Element|element]] (see: [https://youtube.com/watch?v=PNmRf_DqKl0 video])
+
+=== Scaled ===
+
+*'''Scaled''' - determine if [[Glossary:Component|components]] should automatically resize in proportion when you resize the whole [[Glossary:Element|element]] (this will not affect [[OLE component|OLE components]])
+
+=== AutoPlay ===
+
+*'''AutoPlay''' - make sure the [[Glossary:Element|element]] plays its first playable [[Glossary:Component|component]] each time the element is displayed. Playable components are: sound, video, script and the binary component (when linked to executable files)
+
+=== Type ===
+
+*'''Type''' - determine the type of the [[Glossary:Element|element]]: [[Glossary:Item|item]], [[Glossary:Topic|topic]], [[Glossary:Concept|concept]] or [[Glossary:Task|task]]. See: [[Items, topics, concepts, and tasks]]
+**'''Item''' - this is the basic element type used in the learning process (often in the question-answer format) 
+**'''Topic''' - mark the current [[Glossary:Element|element]] as [[Glossary:Topic|topic]] (as opposed to an [[Glossary:Item|item]]). Topics are central to [[Glossary:Incremental_reading|incremental reading]] 
+**'''Concept''' - set the current [[Glossary:Element|element]] as [[Glossary:Concept|concept]] (for holding an idea)
+**'''Task''' - [[Glossary:Task|tasks]] are used in [[Tasklist manager|to-do lists]]. If you select this option, the current [[Glossary:Element|element]] will be added to the current [[Glossary:Tasklist|tasklist]] as a new [[Glossary:Task|task]]
+
+=== Components ===
+
+*'''Components''' 
+**'''Mode''' 
+***'''Presentation''' (''Esc'') - set all [[Glossary:Component|components]] in the [[Glossary:Presentation_mode|presentation mode]] for browsing/viewing
+***'''Editing''' - set all [[Glossary:Component|components]] in the [[Glossary:Editing_mode|editing mode]] for editing component contents
+***'''Dragging''' - set all [[Glossary:Component|components]] in the [[Glossary:Dragging_mode|dragging mode]] for sizing and moving components around
+***'''Switch''' (''Ctrl+E'') - switch from presentation to editing to dragging mode
+**'''<span id="Component_order">Component order</span>''' (''Shift+Ctrl+O'') - change the order of [[Glossary:Component|components]]. Order of components is important in tiling [[Glossary:Component|components]] one over the other. It is also important for '''[[#AutoPlay|AutoPlay]]''' (above). '''[[#AutoPlay|AutoPlay]]''' plays the first playable [[Glossary:Component|component]] in the component order. Similarly, SuperMemo automatically generates the [[Glossary:Element|element]]'s title by using the text of the first text [[Glossary:Component|component]] in the component order (see also: [https://supermemopedia.com/wiki/Component_Order_Editor_conventions details])
+**'''Tile components''' (''Shift+Alt+T'') - tile [[Glossary:Component|components]] (see: [[#Tiling_assistant|Tiling assistant below]]). By default, only [[Glossary:Component|components]] set in the [[Glossary:Editing_mode|editing]] or [[Glossary:Dragging_mode|dragging]] modes are tiled, however, you can change that by checking components on the component list. [[Glossary:Component|Components]] are tiled in the area demarcated by the top-left corner of the top-left component and the bottom-right corner of the bottom-right component (only selected components are considered in determining that area). Some options automatically tile selected [[Glossary:Component|components]] (e.g. pasting images may tile image components if you confirm that you want them tiled) 
+** '''Fit sizes''' - adjust the sizes of [[Glossary:Component|components]] to match the size of the current component
+** '''Fit pictures''' - adjust the size of all image [[Glossary:Component|components]] to match the size of the images
+** '''Compress images''' - compress all images in the [[Glossary:Element|element]] by specifying the maximum allowed size. Once all images are compressed, you will receive a detailed report on individual and total size gains
+** '''Alignment and size''' - align or size all selected [[Glossary:Component|components]] in [[Glossary:Editing_mode|editing]] and [[Glossary:Dragging_mode|dragging]] modes (see: [https://supermemopedia.com/wiki/Diference_between_%27centers%27_and_%27center_in_window%27_component_alignment_options FAQ])
+**'''Test repetition cycle''' (''Shift+Alt+L'') - test the repetition cycle without making a repetition. This makes it possible to see if all [[Glossary:Component|components]] show up in proper stages of the cycle: show answer, grade, next repetition, etc. 
+**'''Repeat Autoplay''' (''Ctrl+F10'') - play again the first playable [[Glossary:Component|component]] (the one played with '''[[#AutoPlay|AutoPlay]]'''). This can be useful in pronunciation exercises when you want to hear the learned word or sound again 
+**'''Next component''' (''Ctrl+T'') - select the next [[Glossary:Component|component]] and set it in the [[Glossary:Editing_mode|editing mode]] 
+**'''Previous component''' - select the previous [[Glossary:Component|component]] and set it in the [[Glossary:Editing_mode|editing mode]] (the currently selected component is set in the [[Glossary:Presentation_mode|presentation mode]]) 
+**'''Translate all''' (''Alt+U'') - translate all text and sound [[Glossary:Component|components]] to the currently selected language (in '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Language tab in Options|Language]] : Collection translation'''). If no language is selected or no translation is available, this option has no effect 
+**'''Transliterate all''' (''Alt+Y'') - display the phonetic transcription of all text [[Glossary:Component|components]] in the currently selected language (in '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Language tab in Options|Language]] : Phonetic transcription'''). If no phonetic [[Glossary:registry|registry]] is selected then this option has no effect. If the transcription of a given word is not found, a string of question marks will be displayed instead. This option can also be used for a quick spell-checking of your texts. Misspelled words will show as question marks. Naturally your phonetic transcription [[Glossary:Registry|registry]] setting must match the language in which you are writing your [[Glossary:Collection|collection]]. If your language is English, there is a 70,000-item phonetic transcription [[Glossary:Registry|registry]] available from [http://super-memo.com/mixes.html SuperMemo Library] included in the [[Glossary:Collection|collection]]: [http://super-memo.com/enpron.html ''English Pronunciation'']
+
+=== Delete components ===
+
+*'''Delete components''' - delete all [[Glossary:Component|components]] in the currently displayed [[Glossary:Element|element]]
+
+=== Delete element ===
+
+*'''Delete element''' (''Shift+Ctrl+Del'') - delete the currently displayed [[Glossary:Element|element]]. Note that all [[Glossary:Child|children]] of the current [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|knowledge tree]] will also be deleted
+
+=== Go to ===
+
+*'''Go to''' - display another [[Glossary:Element|element]] in the [[element window]] 
+**'''Element number '''(''Ctrl+G'') - display the current [[Glossary:Element|element]]'s ID number, and go to the element with a user chosen ID number
+**'''Next element''' (''Alt+PgDn'') - display the next [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|knowledge tree]] 
+**'''Previous element''' (''Alt+PgUp'') - display the previous [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|knowledge tree]]
+**'''First element''' (''Alt+Home'') - display the [[Glossary:Root_node|root node]] of the entire [[Glossary:Collection|collection]] 
+**'''Last element''' (''Alt+End'') - display the last [[Glossary:Element|element]] in the [[Glossary:Collection|collection]], i.e. the last [[Glossary:Child|child]] of the last child of the last child ... of the [[Glossary:Root_node|root node]] of the [[Glossary:Knowledge_tree|knowledge tree]]
+**'''Parent element''' (''Ctrl+Up'') - display the parent element of the current [[Glossary:Element|element]]
+** '''Next sibling''' (''Shift+Alt+PgDn'') - display the next [[Glossary:Sibling|sibling]] of the current [[Glossary:Element|element]]
+** '''Previous sibling''' (''Shift+Alt+PgUp'') - display the previous [[Glossary:Sibling|sibling]] of the current [[Glossary:Element|element]]
+** '''First child''' - go to the first child of the current [[Glossary:Element|element]] (if available)
+** '''Last child''' (''Ctrl+Down'') - go to the last child of the current [[Glossary:Element|element]] (if available)
+**'''Back''' (''Alt+Left'') - return to the previously visited [[Glossary:Element|element]]
+**'''Forward''' (''Alt+Right'') - backtrack [[Glossary:Element|elements]] revisited with '''Back''' (above) 
+**'''Ancestor''' (''Shift+Ctrl+X'') - open a window with the list of all [[Glossary:Ancestor|ancestors]] of the current [[Glossary:Element|element]] in the [[Glossary:Knowledge_tree|knowledge tree]]. You can then select an ancestor by double-clicking its title in the '''Ancestors''' window
+
+== Examples ==
+
+=== Concept map ===
+
+An exemplary [[Glossary:Concept_map|concept map]] displaying outgoing [[Glossary:Link|links]] from the current [[Glossary:Element|element]] (accessible with '''[[Element menu#Concepts|Concepts]] : Map''')
+
+[[Image:Concept map.jpg|800px|center|SuperMemo: An exemplary concept map displaying outgoing links from the current element]]
+
+
+=== Repetition history ===
+
+An exemplary [[Glossary:Element|element]]'s repetition history available with '''[[Element menu#Learning|Learning]] : Statistics : [[Repetition history]]''': 
+
+[[Image:Repetition history.jpg|center|800px|SuperMemo: Repetition history dialog box displaying the history of repetitions for the current element]]
+{{:Image:Repetition history.jpg}}
+
+=== Memory status ===
+
+Visualization of the memory status of an exemplary [[Glossary:Item|item]]:
+
+<div class="center">
+[[File:Memory status.jpg|800px|SuperMemo: Changes in two variables of long-term memory]]
+{{:File:Memory_status.jpg}}
+</div>
+
+=== Tiling assistant ===
+
+Tiling assistant makes it possible to choose different ways of tiling [[Glossary:Component|components]]: 
+
+[[Image:Tile arrangement.jpg|center|800px|SuperMemo: Tiling Rafael Nadal pictures with component tiling assistance]]

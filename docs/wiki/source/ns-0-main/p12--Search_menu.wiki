@@ -1,0 +1,115 @@
+__TOC__ 
+
+The '''Search''' submenu on the [[main menu]] is available at the '''Middle''' or higher [[Glossary:Level|levels]]. It can be used in searching your [[Glossary:Collection|collection]] for texts, pictures, fonts, etc. Many of those searches are done with the help of [[Glossary:Registry|registries]]. Those menu items that provide access to a [[Glossary:Registry|registry]], display the number of members in the registry in parentheses (for example, the '''Search''' menu in the picture (click to enlarge) shows that the exemplary [[Glossary:Collection|collection]] stores 1,115,375 texts with a lexicon of 1,299,913 distinct words - note that the number is so high because proper names, different numbers, etc., are all stored in the lexicon as separate words): 
+
+[[Image:Search menu.jpg|center|800px|SuperMemo: Search menu which you can use to search your collection for texts, images, sounds, templates, concepts, references, fonts, etc.]] 
+
+== Search menu items  ==
+
+The following menu items are available: 
+
+=== Find elements  ===
+
+*'''[[Find elements]]''' (''Ctrl+F'') - find all [[Glossary:Element|elements]] containing a given text. Note that some texts in SuperMemo can be displayed by means of images or [[OLE component|OLE objects]]. Those will not show up in the search. The results of the search will be displayed in the [[Browser|element browser]]. If you quit the [[browser]], you can always return to the results of your last search with '''[[View menu|View]] : [[View menu#Search results|Search results]]'''. The texts found in the search can also be viewed in the text [[Glossary:Registry|registry]] as the first [[Glossary:Registry_subset|registry subset]]. Remember that text searches run on text member names, not on actual HTML files. Text member names can be changed (e.g. in the text registry). This is why the search may find texts that, at first, do not seem to contain the searched string. If this happens, check the text's member name in the registry. If it differs from the text you see in SuperMemo, you can quickly bring them to alignment by just editing the text you see in [[HTML component|HTML text components]]. This means, that you can also hide HTML texts from search by changing their member names. This hiding will last, however, only until the next edit of the text. Again, all edits bring text member names back to alignment with their HTML equivalents. Too see both the member name and the HTML text, right-click the [[Glossary:Component|component]] and choose '''[[Component menu#Links|Links]] : Registry member''' on the [[component menu]] (or click and press ''Ctrl+Shift+K'').
+
+=== Find texts  ===
+
+*'''Find texts''' (''Ctrl+S'') - find all texts in the text [[Glossary:Registry|registry]] that contain a given string. Once you close the text registry, the results can be viewed later on by going to the first subset in the text [[Glossary:Registry|registry]] ('''[[Search menu|Search]] : [[Search menu#Texts|Texts]]''' followed by ''Alt+Right arrow''). Once the results are displayed, you can do AND-search by choosing ''Ctrl+S'' again and searching for the second string of the AND-search pair. Choosing ''Ctrl+S'' again will make SuperMemo search only through the results of the first search. Choosing ''Ctrl+R'' will make it possible to apply '''Search and replace''' in the currently selected subset of texts (this method is much faster than '''[[Search menu|Search]] : [[Search menu#Search and replace|Search and replace]]''')
+
+=== Find in arictle  ===
+
+*'''Find in article''' (''F3'') - find a string in the currently selected text [[Glossary:Component|component]]. Use this option to search the contents of particularly long articles. If you press ''F3'' after '''[[Find elements]]''', you will be able to locate the searched string in the text of [[Glossary:Element|elements]] that include the string
+
+=== Find selection  ===
+
+*'''Find selection''' - search for the currently selected text in the entire [[Glossary:Collection|collection]]
+
+=== Search and replace  ===
+
+*'''Search and replace''' (''Ctrl+R'') - search all entries of the text [[Glossary:Registry|registries]] and replace the occurrence of one string with another.
+
+=== Web search  ===
+
+*'''Web search''' (''Ctrl+F3'') - search for the currently selected string using search engines (e.g. [http://google.com Google]), [http://en.wikipedia.org Wikipedia], encyclopedias, dictionaries, or other web sources. You can also define your own search tools, to search for movies, actors, scientific papers, sportsmen, etc. For example, if you want to search for movies in the Internet Movie Database add the following line to your search tools file with '''Define your own tools''': ''<nowiki>&Movies, http://www.google.com/search?hl=en&q="%TheText%"+imdb</nowiki>''
+
+=== Concepts  ===
+
+*'''[[Concepts]]''' - open the concept registry
+
+=== Links ===
+
+*'''Links''' - open the [[Glossary:Registry|registry]] with all inter-[[Glossary:Element|element]] links
+
+=== Texts  ===
+
+*'''<span id="Text">Texts</span>''' - open the text [[Glossary:Registry|registry]] with all texts used in the [[Glossary:Collection|collection]]. The texts for the registry are contributed by the following [[Glossary:Component|components]]: plain text, Spell-Pad, RTF rich text, [[HTML component|HTML text]], and sound component
+
+=== Lexicon  ===
+
+*'''Lexicon''' - open the lexicon [[Glossary:Registry|registry]] (see: [[#lexicon_registry|picture]]) that makes it possible to locate individual words used in the [[Glossary:Collection|collection]] (except for words used in pictures, [[OLE component|OLE objects]], etc.). Note that if on-the-fly lexicon compilation is turned off (to speed up SuperMemo), some words might be missing from the list (see: '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Access tab in Options|Access]]''')! In such cases run: '''[[File menu|File]] : [[Repairing collections|Repair collection]]''' with '''Rebuild lexicon''' checked. Note also that the lexicon is built from text registry member names, not from the corresponding formatted texts. If those two differ (e.g. through rename in the text [[Glossary:Registry|registry]]), you may see words in [[HTML component|HTML components]] that will not be listed in the lexicon. To return the member name to the original text, edit the text in any way (e.g. by adding a single space)
+
+=== Images  ===
+
+*'''Images''' - open the image [[Glossary:Registry|registry]]. You can search for a particular image with ''Ctrl+S'' once the registry is opened. Also note that, with [[References#Image references|image references]], you can search for images with '''[[Find elements]]'''
+
+=== Sounds  ===
+
+*'''Sounds''' - open the sound [[Glossary:Registry|registry]]
+
+=== Templates  ===
+
+*'''[[Templates]]''' - open the [[Glossary:Template|template]] registry
+
+=== Tasklists  ===
+
+*'''Tasklists''' - open the tasklist [[Glossary:Registry|registry]]. A new [[Glossary:Tasklist|tasklist]] can be added within the current [[Glossary:Concept_group|concept group]] with '''Add'''. Tasklists can be edited in the [[tasklist manager]] ('''[[Toolkit menu|Toolkit]] : [[Tasklist manager|Tasklist]]''' (''F4'')). You can create a new tasklist with '''[[Edit menu|Edit]] : [[Edit menu#Create a tasklist|Create a tasklist]]'''
+
+=== References  ===
+
+*'''[[References]]''' - open the reference [[Glossary:Registry|registry]]
+
+=== Other registries  ===
+
+*'''Other registries''' 
+**'''Font''' - open the font [[Glossary:Registry|registry]] with fonts that are used by plain text [[Glossary:Component|components]], sound components and spelling components. These fonts can also be used in rich text component formatting; however, they are not registered with RTF or [[HTML component|HTML text components]]. Changing a given font in the [[Glossary:Registry|registry]] will only affect plain text [[Glossary:Component|components]] that use this font. Rich text components will not be modified. Their font is coded inside the text source (e.g. inside the HTML file) or in the stylesheet definition 
+**'''Translation''' - open the translation [[Glossary:Registry|registry]] if a translation language has been selected. The translation registry can be selected with '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Language tab in Options|Language]] : Collection translation'''. The actual name of this menu item depends on the name of the translation selected (e.g. '''French translation''', '''Spanish translation''', etc.) 
+**'''Pronunciation by word''' - open the lexical twin of the phonetic transcription [[Glossary:Registry|registry]] (if installed and selected in '''[[Options]]'''). The phonetic transcription [[Glossary:Registry|registry]] is selected with '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Language tab in Options|Language]] : Phonetic transcription''' 
+**'''Pronunciation by sound''' - open the transcription twin of the phonetic transcription [[Glossary:Registry|registry]] (if installed and selected in '''[[Options]]'''). The phonetic transcription [[Glossary:Registry|registry]] is selected with '''[[Toolkit menu|Toolkit]] : [[Options]] : [[Language tab in Options|Language]] : Phonetic transcription''' 
+**'''Comment''' - open the comment [[Glossary:Registry|registry]]. Comments are attached to [[Glossary:Element|elements]] with '''Comment''' on the [[Element parameters|'''Element parameters''' dialog box]] in '''[[Element menu#Edit|Edit]]: Element parameters''' (''Ctrl+Shift+P'') on the [[element menu]] 
+**'''Video''' - open the video [[Glossary:Registry|registry]]
+**'''Binary''' - open the binary [[Glossary:Registry|registry]], which can hold objects in all imaginable formats (incl. those that are not supported by SuperMemo or even Windows). Exemplary file formats: XLS, PDF, CHM, EXE, HLP, DOC, etc. 
+**'''Style''' - open the stylesheet [[Glossary:Registry|registry]]
+**'''Script''' - open the script [[Glossary:Registry|registry]]. Note that you can edit scripts directly in the script registry 
+**'''OLE''' - open the registry with [[OLE component|OLE objects]] created in other applications (e.g. MS Word, MS Excel, Mind Manager, etc.)
+
+=== Go to  element ===
+
+*'''Go to element''' (''Ctrl+G'') - go to an [[Glossary:Element|element]] of a given number, i.e. display it in the [[element window]]. All elements have unique numbers that correspond with their physical location in the [[Glossary:Collection|collection]]. You can also use this option to see the number of the currently displayed [[Glossary:Element|element]]. The number of the current element is also displayed in the caption of the [[Element data|'''Element data''' window]] as well as in the caption of the [[Element parameters|'''Element parameters''' dialog box]] (''Ctrl+Shift+P'')
+
+== Examples  ==
+
+=== Image registry  ===
+
+An exemplary image registry available with '''Search : [[#Images|Images]]''' (click to enlarge): 
+
+<div class="center">
+[[Image:Image registry.jpg|785px|SuperMemo: Image registry which you can use to review images used in your collection]]
+{{:File:Image registry.jpg}}
+</div>
+
+=== Concept registry  ===
+
+An exemplary concept [[Glossary:Registry|registry]] available with '''Search : [[Concepts]]''' (click to enlarge): 
+
+[[Image:Concept registry.jpg|center|744px|SuperMemo: Concept registry which you can use to execute neural review on selected members and change their properties]]
+
+=== Lexicon registry  ===
+
+An exemplary <span id="lexicon_registry">lexicon registry</span> available with '''Search : Lexicon''' (click to enlarge): 
+
+<div class="center">
+
+[[Image:Lexicon registry.jpg|center|711px|SuperMemo: Lexicon registry which you can use to find a word in your collection as well as all texts and elements that use this word]]
+
+<blockquote>'''''Figure:''' Lexicon [[Glossary:Registry|registry]]. In the picture, the registry keeps 955,655 words. On the left, in the top panel, an exemplary text from the [[Glossary:Collection|collection]] containing the word abbasid. In the panel below it, the word's Arabic phonetic transcription (showcasing SuperMemo's support for Unicode). In the bottom panel, the list of text [[Glossary:Registry_member|registry members]] with the word. Double-clicking the selected member in the list will open its corresponding entry in the text [[Glossary:Registry|registry]].''</blockquote>
+</div>

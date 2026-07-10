@@ -1,0 +1,1 @@
+Switch [[Glossary:Element|element]] from [[Glossary:Presentation_mode|presentation]] to [[Glossary:Editing_mode|editing]] to [[Glossary:Dragging_mode|drag&size mode]]

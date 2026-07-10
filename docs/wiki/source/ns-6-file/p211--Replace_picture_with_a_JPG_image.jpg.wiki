@@ -1,0 +1,1 @@
+The choice given to the user whether to mark the extracted portion with a bright yellow-red rectangle in the original picture

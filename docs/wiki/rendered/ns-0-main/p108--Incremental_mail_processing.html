@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Incremental mail processing — SuperMemo Help mirror</title>
+<style>body { font-family: Georgia, 'Times New Roman', serif; max-width: 1040px; margin: 0 auto; padding: 1.5rem; color: #202122; line-height: 1.58; }
+h1, h2, h3, h4, h5, h6 { font-family: system-ui, sans-serif; line-height: 1.25; }
+a { color: #0645ad; } a:visited { color: #0b0080; }
+.mirror-meta { color: #54595d; font: 0.85rem/1.45 system-ui, sans-serif; border-bottom: 1px solid #eaecf0; padding-bottom: .8rem; margin-bottom: 1.2rem; }
+.mirror-meta code { color: #202122; }
+table { border-collapse: collapse; margin: 1rem 0; max-width: 100%; }
+td, th { border: 1px solid #a2a9b1; padding: .4rem .6rem; vertical-align: top; }
+th { background: #eaecf0; }
+img, video { max-width: 100%; height: auto; }
+pre { background: #f8f9fa; border: 1px solid #eaecf0; padding: 1rem; overflow-x: auto; }
+code { background: #f8f9fa; padding: .1rem .25rem; }
+.toc, .navbox { background: #f8f9fa; border: 1px solid #a2a9b1; padding: .8rem; }
+.redirect { background: #f8f9fa; border-left: .3rem solid #36c; padding: .8rem 1rem; }</style>
+</head>
+<body>
+<div class="mirror-meta">
+<a href="../../_index.html">Mirror index</a> ·
+<a href="../../source/ns-0-main/p108--Incremental_mail_processing.wiki">View raw source</a> ·
+<a href="https://help.supermemo.org/wiki/Incremental_mail_processing">Official page</a> ·
+revision <a href="https://help.supermemo.org/index.php?title=Incremental%20mail%20processing&amp;oldid=10964"><code>10964</code></a>
+</div>
+<h1>Incremental mail processing</h1>
+<main id="mw-content-text"><div class="mw-parser-output"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" aria-label="Hide the table of contents"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#E-mail_in_SuperMemo:_Introduction"><span class="tocnumber">1</span> <span class="toctext">E-mail in SuperMemo: Introduction</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Sending_learning_data_to_others"><span class="tocnumber">2</span> <span class="toctext">Sending learning data to others</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Importing_mail_to_SuperMemo"><span class="tocnumber">3</span> <span class="toctext">Importing mail to SuperMemo</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Importing_mail_from_Windows_(Live)_Mail"><span class="tocnumber">3.1</span> <span class="toctext">Importing mail from Windows (Live) Mail</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Importing_mail_from_MS_Outlook"><span class="tocnumber">3.2</span> <span class="toctext">Importing mail from MS Outlook</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Importing_mail_from_other_applications"><span class="tocnumber">3.3</span> <span class="toctext">Importing mail from other applications</span></a>
+<ul>
+<li class="toclevel-3 tocsection-7"><a href="#Importing_mail_from_a_folder"><span class="tocnumber">3.3.1</span> <span class="toctext">Importing mail from a folder</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Importing_mail_by_copy&amp;paste"><span class="tocnumber">3.3.2</span> <span class="toctext">Importing mail by copy&amp;paste</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Importing_from_other_applications"><span class="tocnumber">3.3.3</span> <span class="toctext">Importing from other applications</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Reading_mail_incrementally"><span class="tocnumber">4</span> <span class="toctext">Reading mail incrementally</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#Advantages"><span class="tocnumber">4.1</span> <span class="toctext">Advantages</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Disadvantages"><span class="tocnumber">4.2</span> <span class="toctext">Disadvantages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="#Incremental_strategy_for_mail_processing"><span class="tocnumber">5</span> <span class="toctext">Incremental strategy for mail processing</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#Mail_processing_tips"><span class="tocnumber">6</span> <span class="toctext">Mail processing tips</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#You_can_sort_mail_by_interval,_priority_or_other_criteria"><span class="tocnumber">6.1</span> <span class="toctext">You can sort mail by interval, priority or other criteria</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-16"><a href="#Responding_with_FAQs"><span class="tocnumber">7</span> <span class="toctext">Responding with FAQs</span></a></li>
+</ul>
+</div>
+
+<div class="mw-heading mw-heading2"><h2 id="E-mail_in_SuperMemo:_Introduction">E-mail in SuperMemo: Introduction</h2></div>
+<p>SuperMemo makes it easy to resolve mail overload without neglecting the most important channels of communication.
+</p><p>In addition to prioritizing and managing the communication, SuperMemo helps you:
+</p>
+<ol><li>incorporate e-mail communication into your learning process (e.g. forwarding and discussing important pieces of knowledge)</li>
+<li>incorporate learning into your e-mail communication (e.g. memorizing important facts related to your mail communication)</li></ol>
+<p>To fully use e-mail functionality in SuperMemo you will need Windows (Live) Mail (or any other e-mail client that support EML) or MS Outlook 2000 or later. At the very minimum, MAPI compatible mail would be needed for sending SuperMemo <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">elements</a> or objects via mail.
+</p><p>Here are the most important ways you can use SuperMemo in mail processing, and use e-mail in communicating your SuperMemo work:
+</p>
+<ol><li><b>Prioritizing mail</b>: To make sure you always begin with the most important pieces, you should use the <a href="../ns-100-glossary/p449--Priority_queue.html" title="Glossary:Priority queue">priority queue</a> to prioritize mail. Possibly, you will not manage to answer all mail, however, you will always do your best in processing top-priority messages.</li>
+<li><b>Using incremental learning tools to process mail</b>: <a href="../ns-100-glossary/p295--Incremental_reading.html" title="Glossary:Incremental reading">Incremental reading</a> is a powerful tool that helps you prioritize, schedule, and process mail. As a result, you may decide that instead of using your mail software, it is more convenient and rational to use SuperMemo to read and respond to your e-mail. Users of Windows (Live) Mail or MS Outlook can now import all their mail to SuperMemo with a keystroke. If you receive more mail than you are able to effectively process, you can use overload tools. You will immediately process only the most important pieces and proceed with others according to their <a href="../ns-100-glossary/p450--Priority.html" title="Glossary:Priority">priority</a> in proportion of available time. As in the learning process, rescheduling and sorting happens in the background, so that you never lose sleep over delaying a reply or being slow with processing excess mail. You can respond to longer pieces incrementally.</li>
+<li><b>Sending learning data to others</b>: If you encounter valuable information in incremental learning (or when processing mail), you can send it to your colleagues, friends, partners or family with a single click for inspiration or further discussion. For example, while reading an article about decoding human genome, you might find out that <a class="external text" href="https://en.wikipedia.org/wiki/Craig_Venter">Craig Venter of Celera</a> comes from a Mormon family and that his father was eventually excommunicated. You can send such a note (or the whole article) from SuperMemo to your Mormon friend with a click of a button.</li>
+<li><b>Using mail material in incremental learning</b>: You may also incorporate snippets of mail in your learning process. You can treat most valuable pieces of e-mail as articles to read. If you receive highly inspirational messages, you may want to introduce it into incremental learning and memorize its portions to ensure long-term benefit. In other words, your mail may not only prompt action, but may also be used in learning to keep your memory up-to-date with things you care about. This way you can also learn from materials sent from others, esp. if those materials come in small portions extracted from an incremental learning process conducted by other people. You can also comment or respond to individual portions of the processed mail. You can do it while reading or when new ideas come to your mind upon review. You can use this process for the purpose of creativity (e.g. reviewing an inspiring idea or information in different contexts) or for the purpose of recall (e.g. trying to remember the university major of your cousin).</li></ol>
+<div class="mw-heading mw-heading2"><h2 id="Sending_learning_data_to_others">Sending learning data to others</h2></div>
+<p>Note: Sending e-mail does not work by default in Windows 10, even with a MAPI compliant client. Please <a class="external text" href="https://www.youtube.com/watch?v=VLe9MjhbmdU">watch this video</a> for instructions on how to get sending email working with SuperMemo (using registry string: Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows Messaging Subsystem)). 
+</p><p>To send an <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a> via e-mail, click the <b>E-mail</b> button (<span class="mw-default-size" typeof="mw:File"><a href="../../source/ns-6-file/p498--Send_e-mail.png.wiki" class="mw-file-description" title="SuperMemo: Send a copy of the element (or its part) in an e-mail message"><img alt="SuperMemo: Send a copy of the element (or its part) in an e-mail message" src="https://help.supermemo.org/images/e/e9/Send_e-mail.png" decoding="async" loading="lazy" width="16" height="16" class="mw-file-element"></a></span>) on the <a href="p46--Navigation_bar.html" title="Navigation bar">navigation bar</a> or press <i>Shift+Ctrl+E</i>. Element texts will be sent in the e-mail body (if you wish so), while formatted texts, pictures, and other files will be sent as attachments. You could also send texts without attachments by using <b><a href="p43--Element_menu.html#E-mail" title="Element menu">E-mail</a>&nbsp;: Texts</b> or <b><a href="p43--Element_menu.html#E-mail" title="Element menu">E-mail</a>&nbsp;: Q&amp;A</b> on the <a href="p43--Element_menu.html" title="Element menu">element menu</a>.
+</p><p>To send a selected fragment of an article via e-mail, right-click over the selection (to open the <a href="p76--Component_menu.html" title="Component menu">component menu</a>) and choose <b><a href="p76--Component_menu.html#Reading" title="Component menu">Reading</a>&nbsp;: E-mail</b> (<i>Shift+Ctrl+E</i>). Alternatively, you can also click the <b>E-mail</b> button (<span class="mw-default-size" typeof="mw:File"><a href="../../source/ns-6-file/p498--Send_e-mail.png.wiki" class="mw-file-description" title="SuperMemo: Send a copy of the element (or its part) in an e-mail message"><img alt="SuperMemo: Send a copy of the element (or its part) in an e-mail message" src="https://help.supermemo.org/images/e/e9/Send_e-mail.png" decoding="async" loading="lazy" width="16" height="16" class="mw-file-element"></a></span>) on the <a href="p434--Read_toolbar.html" title="Read toolbar"><b>Read</b> toolbar</a>. <b>Note:</b> SuperMemo sends only plain text mail, and formatted texts can only be sent as attachments.
+</p><p>To send a fragment of <a class="external text" href="https://youtube.com">YouTube</a> video, mark the fragment with <b>Start</b> and <b>Stop</b> buttons and click the <b>E-mail</b> button (<span class="mw-default-size" typeof="mw:File"><a href="../../source/ns-6-file/p498--Send_e-mail.png.wiki" class="mw-file-description" title="SuperMemo: Send a copy of the element (or its part) in an e-mail message"><img alt="SuperMemo: Send a copy of the element (or its part) in an e-mail message" src="https://help.supermemo.org/images/e/e9/Send_e-mail.png" decoding="async" loading="lazy" width="16" height="16" class="mw-file-element"></a></span>) on the <a href="p46--Navigation_bar.html" title="Navigation bar">navigation bar</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Importing_mail_to_SuperMemo">Importing mail to SuperMemo</h2></div>
+<div class="mw-heading mw-heading3"><h3 id="Importing_mail_from_Windows_(Live)_Mail"><span id="Importing_mail_from_Windows_.28Live.29_Mail"></span>Importing mail from Windows (Live) Mail</h3></div>
+<p>To import mail from Windows (Live) Mail, follow these steps:
+</p>
+<ol>
+<li>(optionally) Preview mail in your Windows (Live) Mail Inbox:
+<ul>
+<li>delete spam,</li>
+<li>process one-liners (mail that requires only short answers and is not worth archiving),</li>
+<li>categorize mail by moving it to separate folders (e.g. <i>Business</i>, <i>Family</i>, <i>Pictures</i>, <i>Learning</i>, etc.), forward mail that may be processed by others, etc.</li>
+</ul>
+</li>
+<li>(optionally) Move mail that is to be processed incrementally in a given <a href="../ns-100-glossary/p265--Collection.html" title="Glossary:Collection">collection</a> to a dedicated import folder. Use a top level import folder as SuperMemo only lists top folders on the pick-list (e.g. <i>Inbox</i>, <i>Sent items</i>, <i>Business</i> as opposed to <i>Inbox/Business</i>). Nested folders need to be picked manually (with <b>Change the import folder</b>).</li>
+<li>You can import mail from any folder by following these steps:
+<ol>
+<li>Choose <b><a href="p11--Edit_menu.html" title="Edit menu">Edit</a>&nbsp;: <a href="p11--Edit_menu.html#Import_mail" title="Edit menu">Import mail</a></b> (<i>Shift+F4</i>) on the <a href="p9--Main_menu.html" title="Main menu">main menu</a>, or <b>Import mail</b> from the import context menu on the <a href="p428--Learnbar.html" title="Learnbar">learnbar</a></li>
+<li>(when importing for the first time) select <b>Windows (Live) Mail</b> as your mail application</li>
+<li>(when importing for the first time) pick the account you want to import mail from</li>
+<li>(when importing for the first time) SuperMemo will ask you to specify the folder with e-mails to import
+<div class="center">
+<p><span class="mw-default-size" typeof="mw:File"><a href="../../source/ns-6-file/p499--Folder_selection_at_mail_import.jpg.wiki" class="mw-file-description" title="SuperMemo: A dialog with the list of top level folders to import mail from (displayed when importing mail for the first time)"><img alt="SuperMemo: A dialog with the list of top level folders to import mail from (displayed when importing mail for the first time)" src="https://help.supermemo.org/images/b/b3/Folder_selection_at_mail_import.jpg" decoding="async" loading="lazy" width="771" height="474" class="mw-file-element"></a></span>
+</p>
+<blockquote><p><i><b>Figure</b>: A dialog with the list of top level folders to import mail from (displayed when importing mail for the first time)</i></p></blockquote>
+</div>
+</li>
+<li>Pressing <b>OK</b> will import all mail to SuperMemo. E-mail attachments will be imported as separate <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">components</a> of the appropriate type. Binary <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">components</a> will be used to import attachments in formats that are not supported by SuperMemo (e.g. <i>PDF</i>, <i>URL</i>, <i>ZIP</i>, <i>MSG</i>, <i>MMP</i>, <i>XLS</i>, <i>DOC</i>, <i>MPA</i>, <i>WMA</i>, etc.). Mail that has been imported previously will be skipped (as long as it is located in the same import folder as used in the prior import)
+<div class="center">
+<p><span class="mw-default-size" typeof="mw:File"><a href="../../source/ns-6-file/p500--Progress_bar_at_mail_import.jpg.wiki" class="mw-file-description" title="SuperMemo: Progress bar displayed while importing mail"><img alt="SuperMemo: Progress bar displayed while importing mail" src="https://help.supermemo.org/images/9/9d/Progress_bar_at_mail_import.jpg" decoding="async" loading="lazy" width="686" height="253" class="mw-file-element"></a></span>
+</p>
+<blockquote><p><i><b>Figure</b>: Progress bar displayed while importing mail to SuperMemo</i></p></blockquote>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+<p>Note that you will only repeat steps 2-4 when changing the e-mail client or the import folder.
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Importing_mail_from_MS_Outlook">Importing mail from MS Outlook</h3></div>
+<p>To import mail from MS Outlook, do what follows:
+</p>
+<ol><li>(optionally) Preview mail in the Outlook Inbox</li>
+<li>(optionally) Move mail that is to be processed incrementally in a given <a href="../ns-100-glossary/p265--Collection.html" title="Glossary:Collection">collection</a> to a dedicated import folder. A disadvantage of importing directly from Outlook Inbox is that new mail may arrive during the import process</li>
+<li>You can import the content of your Inbox (or any other Outlook mail folder) by choosing <b><a href="p11--Edit_menu.html" title="Edit menu">Edit</a>&nbsp;: <a href="p11--Edit_menu.html#Import_mail" title="Edit menu">Import mail</a></b> (<i>Shift+F4</i>) on the <a href="p9--Main_menu.html" title="Main menu">main menu</a>. Choose <b>Import All</b> to import all mail to SuperMemo and move it to an archive folder in MS Outlook (see the picture below). E-mail attachments will be imported as separate <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">components</a> of the appropriate type. Binary <a href="../ns-100-glossary/p266--Component.html" title="Glossary:Component">components</a> will be used to import attachments in formats that are not supported by SuperMemo (e.g. <i>PDF</i>, <i>URL</i>, <i>ZIP</i>, <i>MSG</i>, <i>MMP</i>, <i>XLS</i>, <i>DOC</i>, <i>MPA</i>, etc.)</li></ol>
+<figure class="mw-halign-center" typeof="mw:File"><a href="../../source/ns-6-file/p109--Import_mail.jpg.wiki" class="mw-file-description" title="SuperMemo: Import Mail dialog box which you can import your mail from MS Outlook to SuperMemo through"><img alt="SuperMemo: Import Mail dialog box which you can import your mail from MS Outlook to SuperMemo through" src="https://help.supermemo.org/images/thumb/7/71/Import_mail.jpg/800px-Import_mail.jpg" decoding="async" loading="lazy" width="800" height="585" class="mw-file-element" srcset="https://help.supermemo.org/images/7/71/Import_mail.jpg 1.5x"></a><figcaption>SuperMemo: Import Mail dialog box which you can import your mail from MS Outlook to SuperMemo through</figcaption></figure>
+<div class="mw-heading mw-heading3"><h3 id="Importing_mail_from_other_applications">Importing mail from other applications</h3></div>
+<div class="mw-heading mw-heading4"><h4 id="Importing_mail_from_a_folder">Importing mail from a folder</h4></div>
+<p>If your mail application keeps mail on a local disk in the EML format, you can import it by pointing to the folder from which the mail should be imported:
+</p>
+<ol><li>choose <b><a href="p11--Edit_menu.html" title="Edit menu">Edit</a>&nbsp;: <a href="p11--Edit_menu.html#Import_mail" title="Edit menu">Import mail</a></b> (<i>Shift+F4</i>) from the <a href="p9--Main_menu.html" title="Main menu">main menu</a></li>
+<li>choose <b>Change the mailing program</b> (if you used other method previously, answer with <i><b>No</b></i> to whatever confirmation SuperMemo demands)</li>
+<li>choose <b>Other applications</b></li>
+<li>when SuperMemo asks "<i>Please point to the folder where you keep the mail that you want to import</i>", point to the folder where EML files reside</li></ol>
+<div class="mw-heading mw-heading4"><h4 id="Importing_mail_by_copy&amp;paste"><span id="Importing_mail_by_copy.26paste"></span>Importing mail by copy&amp;paste</h4></div>
+<p>If you do not use Windows (Live) Mail, nor MS Outlook, nor any other suitable application from where you can import mail, you can manually import individual pieces of mail.
+</p><p>To paste a piece of e-mail for <a href="../ns-100-glossary/p295--Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>, select the text in the e-mail body, copy this text to the clipboard and choose <b>E-Mail: Paste</b> in the <b><a href="p392--SuperMemo_Commander.html" title="SuperMemo Commander">Commander</a></b>.
+</p><p>If you want to respond to the original sender while incrementally reading his or her e-mail, paste the e-mail along with its header information (date, return address, subject, etc.).
+</p><p>For example, in Thunderbird:
+</p>
+<ol><li>click <b>Forward</b>,</li>
+<li>select the entire body of the message (e.g. with <i>Ctrl+A</i>),</li>
+<li>copy the selected text to the clipboard (e.g. with <i>Ctrl+C</i> or <i>Ctrl+Ins</i>)</li>
+<li>switch to SuperMemo, and choose <b>E-Mail: Paste</b> in the <b><a href="p392--SuperMemo_Commander.html" title="SuperMemo Commander">Commander</a></b>. This will automatically convert your e-mail to plain text (to save space, remove read-only attributes, etc.). It will also format the header for you. If you want to retain some formatting, select the text and re-paste the formatted fragment</li></ol>
+<div class="mw-heading mw-heading4"><h4 id="Importing_from_other_applications">Importing from other applications</h4></div>
+<p>See: <a class="external text" href="https://supermemopedia.com/wiki/Import_e-mail_into_SuperMemo_from_any_application">Importing mail from other applications</a>
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Reading_mail_incrementally">Reading mail incrementally</h2></div>
+<p>You can process e-mail incrementally in SuperMemo in a process analogous to <a href="../ns-100-glossary/p295--Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>.
+</p><p>Here are the pros and the cons:
+</p>
+<div class="mw-heading mw-heading3"><h3 id="Advantages">Advantages</h3></div>
+<ol><li><b>recall of important facts</b>: if you learn new things from e-mail sent by others, you can easily introduce the most valuable pieces into the learning process (via standard <b>Extract</b> or <i>Alt+X</i>). Those pieces will be reviewed as other pieces of knowledge in SuperMemo. If you decide to respond to a given inspirational fragment, the sender address will automatically be used when you click the <b>E-mail</b> button (<span class="mw-default-size" typeof="mw:File"><a href="../../source/ns-6-file/p498--Send_e-mail.png.wiki" class="mw-file-description" title="SuperMemo: Send a copy of the element (or its part) in an e-mail message"><img alt="SuperMemo: Send a copy of the element (or its part) in an e-mail message" src="https://help.supermemo.org/images/e/e9/Send_e-mail.png" decoding="async" loading="lazy" width="16" height="16" class="mw-file-element"></a></span>) on the <a href="p46--Navigation_bar.html" title="Navigation bar">navigation bar</a>. Incremental processing will help you remember names, contexts, events, and facts far better than when using other methods. You will not experience mental chaos caused by an overcrowded Inbox</li>
+<li><b>prioritization</b>: if you get more e-mail material than you are able to process, you can use incremental learning tools for prioritizing mail and its fragments. One of the greatest strengths of incremental learning is its unique system for efficiently determining the priority of the reading material with the help of the <a href="../ns-100-glossary/p449--Priority_queue.html" title="Glossary:Priority queue">priority queue</a>. Remember to politely inform everyone about your e-mail processing system. Otherwise you may easily be accused of acting as an <i>e-mail black hole</i></li>
+<li><b>handling overflow</b>: you can use <b><a href="p6--Postpone.html" title="Postpone">Postpone</a></b> and other rescheduling tools to resolve the excessive inflow of information without damage to your selected priority criteria. If you work in a team, it is a great idea to delegate some of your work; however, not all work can be delegated. Additionally, if you delegate, you do not learn from e-mail that you delegate. To answer the latter problem, you can choose a solution in the middle: delegate e-mail jobs and process inflowing pieces with the tools of incremental learning</li></ol>
+<div class="mw-heading mw-heading3"><h3 id="Disadvantages">Disadvantages</h3></div>
+<ol><li><b>splintering e-mail</b>: some people dislike <a class="external text" href="http://www.dictionary.com/search?q=splinter">splintered</a> responses. They prefer to have their e-mail analyzed as a whole and responded to as a whole (preferably within an hour&nbsp;:). As an act of kindness, try to remember people's preferences and do not use incremental e-mail processing (too much) on those who do not like it</li>
+<li><b>incremental approach is not transitive</b>: incremental e-mail processing shows the greatest power for longer pieces of mail, article forwards, etc. For very short e-mail messages, incremental e-mail processing delivers less value per unit time. Because incremental mail processing leads to short communication bursts, it undermines its own power when used at both ends of the communication channel. However, even if you communicate in short sentences (i.e. without SuperMemo), keep the record of mail in your <a href="../ns-100-glossary/p265--Collection.html" title="Glossary:Collection">collection</a> for <a href="p84--Subset_learning.html#Search_and_review" class="mw-redirect" title="Subset review">Search and review</a></li></ol>
+<div class="mw-heading mw-heading2"><h2 id="Incremental_strategy_for_mail_processing">Incremental strategy for mail processing</h2></div>
+<p>Incremental learning can be employed in mail processing.
+</p><p>The strategy will be different when processing mail from family or friends. It will be different when processing business mail. It will also be different, and perhaps most effective, when <a href="p470--Incremental_learning.html#Incremental_brainstorming" title="Incremental learning">brainstorming over e-mail</a>.
+</p><p>This is an exemplary strategy that might be used in nearly all imaginable applications:
+</p><p><b>Review stage</b>
+</p>
+<ol><li>(optionally) Preview mail in your Inbox: delete spam, process one-liners (mail that requires only short answers and is not worth archiving), categorize mail by moving it to separate folders (e.g. <i>Business</i>, <i>Family</i>, <i>Pictures</i>, <i>Learning</i>, <i>Music</i>, etc.), forward mail that may be processed by others, etc.</li>
+<li>import mail from a selected import folder (e.g. with <i>Shift+F4</i>). You may import different categories of mail to different <a href="../ns-100-glossary/p265--Collection.html" title="Glossary:Collection">collections</a> (e.g. business mail to Mail.kno, while family pictures to Photos.kno)</li>
+<li>prioritize mail. Use <b><a href="p83--Subset_operations.html#spread_priorities" title="Subset operations">Spread priorities</a></b> to assign a range of <a href="../ns-100-glossary/p450--Priority.html" title="Glossary:Priority">priority</a> to the imported subset of mail. Use <i>Alt+P</i> on most important pieces of mail to assign individual <a href="../ns-100-glossary/p450--Priority.html" title="Glossary:Priority">priorities</a>. For example, import the bulk in the 3%..6% range, and pick 5-10 most important pieces for higher priorities</li></ol>
+<p><b>Processing stage</b>
+</p>
+<ol><li>click <b><a href="p65--Learn.html" title="Learn">Learn</a></b>, and process mail using standard incremental reading tools (extract, re-prioritize, delay, etc.) combined with e-mail options (extract, send/reply, FAQ, article or picture forwards, etc.). As long as you use <a href="../ns-100-glossary/p353--Auto-sort.html" title="Glossary:Auto-sort">auto-sort</a> and <a href="../ns-100-glossary/p354--Auto-postpone.html" title="Glossary:Auto-postpone">auto-postpone</a>, your workload should be reasonable and you should always begin from top priority mail. If you have <b><a href="p13--Learn_menu.html" title="Learn menu">Learn</a>&nbsp;: <a href="p13--Learn_menu.html#Sorting" title="Learn menu">Sorting</a>&nbsp;: Auto-sort repetitions</b> checked, your mail will be sorted by <a href="../ns-100-glossary/p450--Priority.html" title="Glossary:Priority">priority</a> at the beginning of the day. If have <b><a href="p13--Learn_menu.html" title="Learn menu">Learn</a>&nbsp;: <a href="p13--Learn_menu.html#Postpone" title="Learn menu">Postpone</a>&nbsp;: Auto-postpone</b> checked, all the mail that you fail to process today will be redistributed into the future</li>
+<li>(optionally) once you run out of time, process some mail without responding to re-prioritize and reschedule the most important pieces manually (rather than leaving them to automatic rescheduling)</li></ol>
+<p>Naturally, as with <a href="../ns-100-glossary/p295--Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>, the time you choose to progress through individual stages is important for efficiency. <b>Processing stage</b> should fall into time slots with best alertness and mental performance. <b>Review stage</b> can be done at other times, incl. while multi-tasking. This approach eliminates the instant nature of mail, but makes the entire process more reasonable, esp. if volumes are far beyond manageable. Although many pieces of mail will get substantially delayed (or perhaps even neglected), top-priority mail will be processed in the first order, and damage done by urgency will be less. The above strategy may introduce an inevitable delay of up to 4 days in replying (Day #1 arrival, #2 review, #3 prioritizing, #4 processing); however, in <a href="../ns-100-glossary/p295--Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>, it is always the priority and quality that should come first ahead of speed and urgency. Those pieces that truly cannot wait can be handled at <b>Review stage</b> (if absolutely necessary).
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Mail_processing_tips">Mail processing tips</h2></div>
+<ol><li>Create a separate <a href="../ns-100-glossary/p265--Collection.html" title="Glossary:Collection">collection</a> for e-mail processing (unless you plan to combine e-mail work with standard repetitions)</li>
+<li>Import mail to your e-mail <a href="../ns-100-glossary/p265--Collection.html" title="Glossary:Collection">collection</a> with <i>Shift+F4</i></li>
+<li>Use the <a href="../ns-100-glossary/p449--Priority_queue.html" title="Glossary:Priority queue">priority queue</a> (<i>Alt+P</i>) to prioritize mail</li>
+<li>Use <b><a href="../ns-100-glossary/p353--Auto-sort.html" title="Glossary:Auto-sort">Auto-sort</a></b> and <b><a href="../ns-100-glossary/p354--Auto-postpone.html" title="Glossary:Auto-postpone">Auto-postone</a></b> to resolve <a href="../ns-100-glossary/p448--Overload.html" title="Glossary:Overload">overload</a> and prioritize mail automatically</li>
+<li>You can delay individual pieces of mail with <i>Ctrl+Shift+R</i> or <i>Ctrl+J</i>, and change their <a href="../ns-100-glossary/p450--Priority.html" title="Glossary:Priority">priority</a> with <i>Alt+P</i>. Use <i>Ctrl+Shift+R</i> on first reading to determine when you want to reply to an e-mail</li>
+<li>SuperMemo picks the earliest <i>[mailto:</i> tag from your e-mail text as the default response addressee. If you would like to send pieces of an article to a selected person, put this tag with the address anywhere in the text. For example: <i>[mailto:johndoe@hotmail.com]</i> (note the square brackets around the tag and the missing space between <i>mailto:</i> and the address). You can specify multiple recipients by separating their names with a semicolon. For example: <i>[mailto:miko;alex]</i> where <i>miko</i> and <i>alex</i> must be defined in your mail program's address book (e.g. Windows Live Mail address book). Adding the <i>[mailto:</i> tag is useful when you want to ask many questions or forward many pieces of a single mail to a single person whose address is complex and is not defined in your address book</li>
+<li>Optionally, add a degree of randomization in your <a href="p5--Priority_queue.html#Sorting_repetitions" title="Priority queue">Sorting criteria</a> to prevent "tunnel vision" in processing. For example, we all suffer from a <i>recency bias</i> where recently arrived mail is ranked higher in priority than mail that arrived earlier. Randomization helps to counteract this and similar biases</li>
+<li>In the e-mail review process (initiated with <b><a href="p65--Learn.html" title="Learn">Learn</a></b>), do the following:
+<ul><li>respond to the most important fragments with <b>E-mail</b> button (<span class="mw-default-size" typeof="mw:File"><a href="../../source/ns-6-file/p498--Send_e-mail.png.wiki" class="mw-file-description" title="SuperMemo: Send a copy of the element (or its part) in an e-mail message"><img alt="SuperMemo: Send a copy of the element (or its part) in an e-mail message" src="https://help.supermemo.org/images/e/e9/Send_e-mail.png" decoding="async" loading="lazy" width="16" height="16" class="mw-file-element"></a></span>)(on the <a href="p46--Navigation_bar.html" title="Navigation bar">navigation bar</a>)</li>
+<li>schedule less important fragments with <b>Schedule extract</b> (on the <a href="p434--Read_toolbar.html" title="Read toolbar"><b>Read</b> toolbar</a>)</li>
+<li>pass or delete unimportant fragments, or mark them with <b>Ignore</b> (on the <a href="p434--Read_toolbar.html" title="Read toolbar"><b>Read</b> toolbar</a>)</li>
+<li>if you jump to the next e-mail <a href="../ns-100-glossary/p278--Element.html" title="Glossary:Element">element</a> before completing the reading, select the current <a href="../ns-100-glossary/p477--Read-point.html" title="Glossary:Read-point">read-point</a> with <i>Ctrl+F7</i> (<b>Set read-point</b>)</li>
+<li>if you jump to the next e-mail before completing the reading, optionally, set the new <a href="../ns-100-glossary/p297--Interval.html" title="Glossary:Interval">interval</a> with <i>Shift+Ctrl+R</i></li>
+<li>if mail can be answered later, use <i>Alt+P</i> to reduce its <a href="../ns-100-glossary/p450--Priority.html" title="Glossary:Priority">priority</a></li>
+<li>use <b>Next repetition</b> or <b><a href="p65--Learn.html" title="Learn">Learn</a></b> to move on to the next piece of mail</li>
+<li>if you complete reading/processing a piece of e-mail, <a href="../ns-100-glossary/p273--Dismiss.html" title="Glossary:Dismiss">dismiss</a> it with <i>Ctrl+D</i>. You can also use <b>Done</b> on the <a href="p43--Element_menu.html" title="Element menu">element menu</a> (<i>Shift+Ctrl+Enter</i>) if you do not plan to archive a given piece of mail</li></ul></li>
+<li>To change the addressee, paste the new address in place of the old one in the <i>[mailto: ]</i> field. You can use short names (e.g. <i>[mailto:john]</i>) if you have the name in your <b>Address Book</b>. Unfortunately, you will have to paste the address to all splinter fragments generated in <a href="../ns-100-glossary/p295--Incremental_reading.html" title="Glossary:Incremental reading">incremental reading</a>. You could use <b>Search and Replace</b> (<i>Ctrl+R</i>) for that purpose.</li>
+<li>You can sort mail by <a href="../ns-100-glossary/p297--Interval.html" title="Glossary:Interval">interval</a>, date, and more. See: <a href="#You_can_sort_mail_by_interval,_priority_or_other_criteria">You can sort mail by interval, priority or other criteria</a></li>
+<li>You can safely remove texts that SuperMemo adds at the end of mail sent</li></ol>
+<div class="mw-heading mw-heading3"><h3 id="You_can_sort_mail_by_interval,_priority_or_other_criteria"><span id="You_can_sort_mail_by_interval.2C_priority_or_other_criteria"></span>You can sort mail by interval, priority or other criteria</h3></div>
+<p>You can sort mail by the length of the <a href="../ns-100-glossary/p297--Interval.html" title="Glossary:Interval">interval</a> using the following method:
+</p>
+<ol><li>choose <b><a href="p14--View_menu.html" title="View menu">View</a>&nbsp;: <a href="p14--View_menu.html#Outstanding" title="View menu">Outstanding</a></b></li>
+<li>click <i>Intrv</i> twice at the top of the <a href="p79--Browser.html" title="Browser">browser window</a> (to sort from the lowest to the highest <a href="../ns-100-glossary/p297--Interval.html" title="Glossary:Interval">intervals</a>)</li>
+<li>choose <b><a href="p78--Browser_menu.html#Tools" title="Browser menu">Tools</a>&nbsp;: Save repetitions</b> (on the <a href="p78--Browser_menu.html" title="Browser menu">browser menu</a>)</li></ol>
+<p>You can use this method in e-mail processing in the same way as in the learning process. You can also use this method to sort mail by <a href="../ns-100-glossary/p450--Priority.html" title="Glossary:Priority">priority</a>, last review date, etc. It is most convenient to use <b><a href="../ns-100-glossary/p353--Auto-sort.html" title="Glossary:Auto-sort">auto-sort</a></b> and <b><a href="../ns-100-glossary/p354--Auto-postpone.html" title="Glossary:Auto-postpone">auto-postpone</a></b> when processing mail. This way you can be sure that mail of highest <a href="../ns-100-glossary/p450--Priority.html" title="Glossary:Priority">priority</a> is scheduled at the beginning of the <a href="../ns-100-glossary/p483--Outstanding_queue.html" title="Glossary:Outstanding queue">outstanding queue</a>.
+</p>
+<div class="mw-heading mw-heading2"><h2 id="Responding_with_FAQs">Responding with FAQs</h2></div>
+<p>When processing e-mail, you can choose to reply to a question with an FAQ (i.e. a question-answer pair), which can then be stored in your FAQ database. Responding via FAQ is the best way to retain the context of the question, even if you reply with substantial delay.
+</p><p>Use <b><a href="p76--Component_menu.html#Reading" title="Component menu">Reading</a>&nbsp;: E-mail FAQ</b> on the <a href="p76--Component_menu.html" title="Component menu">component menu</a> or click the FAQ icon on the <a href="p434--Read_toolbar.html" title="Read toolbar"><b>Read</b> toolbar</a>. After providing the answer, click <b>OK</b>. Optionally, you can reword the question, change the addressee, or the title of the question. You can also have your FAQ saved in HTML or Wiki format for publishing on the web. Note that SuperMemo FAQs are generated with SuperMemo itself. This way, many users can benefit from a reply to a question asked by a single individual.
+</p><p>If you would like to publish your FAQs and change their formatting, modify the following files:
+</p>
+<ul><li><b>HTML</b>: <i>[SuperMemo folder]\bin\FAQ_template.htm</i></li>
+<li><b>Wiki</b>: <i>[SuperMemo folder]\bin\FAQ_wiki.txt</i></li></ul>
+<p>If you would like to use rich formatting in your FAQs that will be saved to a selected HTML file, toggle the <b>Rich formatting</b> button above the top right corner of the <b>Question</b> text area. You can recognize if the formatting is enabled by blue borders of the <b>Question</b> and <b>Answer</b> fields. You will then be able to use standard keyboard shortcuts for basic formatting (e.g. <i>Ctrl+B</i> to make the currently selected text <b>bold</b>, <i>Ctrl+I</i> to <i>italicize</i> the selected text, etc.)
+</p>
+<div class="center">
+<table>
+<tbody><tr>
+<td><figure class="mw-default-size mw-halign-none" typeof="mw:File/Thumb"><a href="../../source/ns-6-file/p168--Email_response.jpg.wiki" class="mw-file-description"><img src="https://help.supermemo.org/images/thumb/1/19/Email_response.jpg/600px-Email_response.jpg" decoding="async" loading="lazy" width="600" height="317" class="mw-file-element" srcset="https://help.supermemo.org/images/thumb/1/19/Email_response.jpg/900px-Email_response.jpg 1.5x, https://help.supermemo.org/images/thumb/1/19/Email_response.jpg/1200px-Email_response.jpg 2x"></a><figcaption>The <b>E-mail response</b> dialog box now supports richly formatted FAQs that can be formatted either as HTML...</figcaption></figure>
+</td>
+<td><figure class="mw-default-size mw-halign-none" typeof="mw:File/Thumb"><a href="../../source/ns-6-file/p417--Email_response2.jpg.wiki" class="mw-file-description"><img src="https://help.supermemo.org/images/thumb/3/32/Email_response2.jpg/600px-Email_response2.jpg" decoding="async" loading="lazy" width="600" height="316" class="mw-file-element" srcset="https://help.supermemo.org/images/thumb/3/32/Email_response2.jpg/900px-Email_response2.jpg 1.5x, https://help.supermemo.org/images/thumb/3/32/Email_response2.jpg/1200px-Email_response2.jpg 2x"></a><figcaption>or WYSIWYG</figcaption></figure>
+</td></tr>
+<tr>
+<td colspan="2"><i><b>Figire</b>: <b><a href="p76--Component_menu.html#Reading" title="Component menu">Reading</a>&nbsp;: E-mail FAQ</b> on the <a href="p76--Component_menu.html" title="Component menu">component menu</a> makes it possible to use the selected text as a question in an FAQ. The FAQ will be sent as a reply, and stored in FAQ files (as HTML and/or Wiki).</i>
+</td></tr></tbody></table>
+</div>
+<p>You can edit your FAQs in the <a href="p121--HTML_component.html" title="HTML component">HTML component</a>. Use <b>Horizontal line</b> in the <b><a href="p392--SuperMemo_Commander.html" title="SuperMemo Commander">Commander</a></b> to separate question from answer with a <a href="../ns-100-glossary/p429--Splitmark.html" title="Glossary:Splitmark">splitline</a> (you can use <b><a href="p76--Component_menu.html#Reading" title="Component menu">Reading</a>&nbsp;: Split&nbsp;: Insert splitline</b> on the <a href="p76--Component_menu.html" title="Component menu">component menu</a>, or <i>Shift+Alt+H</i>). Once the FAQ is largely complete, select both the question and the answer, and choose <b><a href="p76--Component_menu.html#Reading" title="Component menu">Reading</a>&nbsp;: E-mail FAQ</b> from the <a href="p76--Component_menu.html" title="Component menu">component menu</a> to polish its HTML, preview it in the WYSIWYG mode, and send it. The FAQ will be sent as a reply, and stored in FAQ files (as HTML and/or Wiki).
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20260710174044
+Cache expiry: 86400
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.064 seconds
+Real time usage: 0.068 seconds
+Preprocessor visited node count: 161/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/100
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 59/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key guru_Help20:pcache:108:|#|:idhash:canonical and timestamp 20260710174044 and revision id 10964. Rendering was triggered because: page-view
+ -->
+</div></main>
+</body>
+</html>

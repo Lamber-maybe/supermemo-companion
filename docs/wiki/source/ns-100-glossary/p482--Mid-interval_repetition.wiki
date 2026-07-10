@@ -1,0 +1,2 @@
+;<span id="Mid-interval_repetition">mid-interval repetition</span>
+:[[Glossary:Repetition|repetition]] that takes place ahead of its planned time. Newer SuperMemos make it possible to execute repetitions ahead of time, e.g. before an exam. The algorithm takes the necessary correction for the [[Glossary:Spacing_effect|spacing effect]].

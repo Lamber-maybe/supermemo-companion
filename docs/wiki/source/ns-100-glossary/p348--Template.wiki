@@ -1,0 +1,2 @@
+;<span id="Template">template</span>
+:a reusable definition of an [[Glossary:Element|element]]'s appearance. It may define the type and properties of individual [[Glossary:Component|components]] such as size, color, font, image files, alignment, etc. All '''templates''' used in a given [[Glossary:Collection|collection]] are kept in the template [[Glossary:Registry|registry]] available with '''[[Search menu|Search]] : [[Search menu#Templates|Templates]]''' from the [[main menu]]. Read more: [[Templates|Using templates]]

@@ -1,0 +1,1 @@
+Criteria used in sorting repetitions (priority, randomization, proportion of topics, etc.)

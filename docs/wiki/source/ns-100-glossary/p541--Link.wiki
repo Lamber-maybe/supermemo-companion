@@ -1,0 +1,7 @@
+;<span id="Link">link</span>
+:connection between [[Glossary:Component|components]], [[Glossary:Element|elements]], web pages, etc. There are five main kinds of links in SuperMemo:
+:# element-to-element link: link that connects [[Glossary:Element|elements]], e.g. as created with '''[[Element menu#Concepts|Concepts]] : Link contents''' on the [[element menu]]
+:# element-to-concept link: link that connects an [[Glossary:Element|element]] to a [[Glossary:Concept|concept]], e.g. as created with '''[[Element menu#Concepts|Concepts]] : Link concept''' on the [[element menu]]
+:# registry link: link from a [[Glossary:Component|component]] to an [[Glossary:Registry_object|object]] in the corresponding [[Glossary:Registry|registry]] such as a picture in the image registry, e.g. as created when pasting a picture to a component
+:# component hyperlink: link from a [[Glossary:Component|component]] to another [[Glossary:Element|element]], e.g. as created with '''[[Component menu#Links|Links]] : Hyperlink''' on the [[component menu]]
+:# HTML hyperlink: link from an HTML text to a webpage, or to an [[Glossary:Element|element]] in SuperMemo

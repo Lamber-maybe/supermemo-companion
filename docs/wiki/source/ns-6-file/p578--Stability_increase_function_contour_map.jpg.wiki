@@ -1,0 +1,3 @@
+<blockquote>
+'''''Figure:''' A "from above" view at the [[Glossary:Stability_increase_matrix|SInc[] matrix]] providing a [https://en.wikipedia.org/wiki/Contour_line contour map]. <span style="padding: 3px; color: #fff; background-color: red;">Red zones</span> indicate high stability increase at review. The picture shows that the greatest [[Glossary:Stability|stability]] increase occurs for lower stability levels and [[Glossary:Retrievability|retrievabilities]] around 70-90%.''
+</blockquote>

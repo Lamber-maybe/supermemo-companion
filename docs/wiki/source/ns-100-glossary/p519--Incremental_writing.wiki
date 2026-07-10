@@ -1,0 +1,2 @@
+;<span id="Incremental_writing">incremental writing</span>
+:process that combines [[Glossary:Incremental_reading|incremental reading]], creative writing, and elaborative writing, in which a text of an article or book is created incrementally. For a more detailed description, read: [[Creativity and problem solving in SuperMemo#Incremental_writing|Incremental writing]]

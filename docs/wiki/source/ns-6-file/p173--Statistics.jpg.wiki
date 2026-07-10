@@ -1,0 +1,1 @@
+{{Fig|The [[Statistics|'''Statistics''' window]] ('''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Statistics|Statistics]] : Statistics''') where the main learning process statistics of the currently opened [[Glossary:Collection|collection]] can be readily inspected.}}

@@ -1,0 +1,60 @@
+== Adding components (e.g. pictures, sound, etc.) ==
+
+The easiest way to add new [[Glossary:Component|components]] (e.g. texts, pictures, sounds, video, etc.) is to choose options from '''[[Edit menu|Edit]] : [[Edit menu#Add components|Add components]]''' submenu (you must choose '''[[File menu|File]] : [[Levels|Level]] : Middle''' or higher for the '''Edit''' item to be available on the [[main menu]]).
+
+The fastest way to add texts, pictures or sounds is to paste them directly from the clipboard (with ''Shift+Ins'' or ''Ctrl+V''). When you paste texts or pictures from the clipboard, SuperMemo will create new [[Glossary:Component|components]] for you. When you paste pictures, SuperMemo can also automatically apply the relevant picture [[Glossary:Template|template]] (e.g. ''Geography Picture'' if the default template is ''Geography''). To paste data to an [[Glossary:Element|element]] you may need to quit the editing of individual [[Glossary:Component|components]]. You can do so by pressing ''Esc'' a few times.
+
+You can also use the '''Compose''' toolbar to add new [[Glossary:Component|components]].
+
+<div class="center">
+[[Image:Compose_toolbar.jpg|SuperMemo: Compose toolbar for adding new components to your elements]]
+{{:Image:Compose_toolbar.jpg}}
+</div>
+
+If you must add the same [[Glossary:Component|components]] to many [[Glossary:Element|elements]] over and over again, read about [[Templates|Using templates]]. Templates automate the process of adding components to many elements.
+
+== Using the Compose toolbar ==
+
+All component buttons on the '''Compose''' toolbar make it possible to add new [[Glossary:Component|components]] to the element display area (the inside part of the [[element window]]). 
+
+To add a new [[Glossary:Component|component]] you just need to click the button corresponding to the component type on the '''Compose''' toolbar (e.g. [[#Text component|'''Text component''']] button).
+
+== Examples ==
+
+* to create a simple text [[Glossary:Component|component]]: click the [[#Text component|'''Text component''']] button on the '''Compose''' toolbar
+* to create an image [[Glossary:Component|component]], copy the image to the clipboard and choose ''Shift+Ins'' to paste the image. Drag the [[Glossary:Component|component]] with the pasted image to the right location
+* to create a simple sound [[Glossary:Component|component]]: click the Sound button on the '''Compose''' toolbar, right-click the newly created component rectangle, choose '''[[Component menu#File|File]] : Import file''' on the sound [[component menu]] and select a sound file to be played (e.g. ''mp3'' or ''wav'')
+* to create a simple video [[Glossary:Component|component]]: click the video button, right-click the newly created video rectangle, choose '''[[Component menu#File|File]] : Import file''' on the video [[component menu]] and select a video file to play (e.g. ''avi'' or ''mpeg'')
+
+== Compose toolbar buttons ==
+
+[[Image:Compose_toolbar.jpg|center|SuperMemo: Compose toolbar for adding new components to your elements]]
+
+Here is the use of individual buttons on the '''Compose''' toolbar:
+
+* '''Menu buttons''' - open menus available with a right mouse button click:
+** '''Element menu''' (''Alt+F10'') - open the [[element menu]] with operations related to the currently displayed [[Glossary:Element|element]]. This menu also opens with a right click over the empty element area or over the [[navigation bar]]
+** '''Component menu''' (''Alt+F12'') - open the [[component menu]] with operations related to the currently selected [[Glossary:Component|component]]. This menu also opens with a right click over the [[Glossary:Component|component]]
+* '''View source''' - show the source data of the displayed [[Glossary:Element|element]] (i.e. the appearance of the element before a [[Glossary:Template|template]] was applied). If no template was applied on the displayed element, this button has no effect
+* '''Component buttons''' - create [[Glossary:Component|components]] of various types such as text, picture, sound, etc.
+** '''[[HTML component]]''' - web browser [[Glossary:Component|component]] displaying formatted text, images, frames, tables, scripts (e.g. JavaScript), etc. This is the default component used in [[Glossary:Incremental_reading|incremental reading]]. Read about [[Using text components|text components]] to decide when to use [[HTML component|HTML text components]], and when to use other text components
+** '''[[WebView component]]''' - is a sister of the HTML component. It extends SuperMemo into areas enabled by modern Chromium‑based browsers.
+** '''<span id="Text component">Text component</span>''' - simple unformatted text [[Glossary:Component|component]]. Read about [[Using text components|text components]] to decide when to use simple (plain) text components
+** '''Spell-Pad component''' - text [[Glossary:Component|component]] that allows of text input and evaluation (e.g. for spelling exercises)
+** '''<span id="Image component">Image component</span>''' - picture [[Glossary:Component|component]]. You can paste images from the clipboard to automatically create an image component of the right size
+** '''Sound component''' - sound [[Glossary:Component|component]] that can play WAV, MP3, MIDI and other sound file formats
+** '''Video component''' - video [[Glossary:Component|component]] playing MP4, MPEG, WMV, AVI and other video file formats
+** '''Binary component''' - universal [[Glossary:Component|component]] that can hold any data that others component can't. It can hold help files, PDF files, e-mail messages, unsupported files, etc. You can also import simple programs to run from within your [[Glossary:Collection|collection]] (e.g. you can import ''C:\windows\system32\CALC.EXE'' to run '''Calculator''' from within your collection)
+** '''Script component''' - SuperMemo [[Scripts|script]] [[Glossary:Component|component]] that can add life to your [[Glossary:Collection|collections]] (e.g. by moving components, providing [[Test elements#Drag.26Match_tests|drag-and-drop exercises]], [[Test elements#Point.26Click_test|point-and-click exercises]], hiding and displaying components, playing sounds or other scripts, etc.). See: [[Scripts|Using scripts in SuperMemo]]
+** '''[[OLE component]]''' - universal [[Glossary:Component|component]] for displaying and editing objects created with other applications (such as Word documents, Excel spreadsheets, [http://www.mindman.com Mind Manager] mind-maps, Corel pictures, equations, structured formulas, and more). Whenever possible, use [[HTML component|HTML components]] rather than [[OLE component|OLE components]]
+** '''Ellipse component''' - ellipse shape
+** '''Rectangle component''' - rectangle shape
+** '''Rounded rectangle component''' - rounded rectangle shape
+* '''Component display mode buttons''' - change the way the [[Glossary:Component|components]] are displayed and acted upon:
+** [[Glossary:Editing_mode|'''Editing mode''']] - set all [[Glossary:Component|components]] in the mode that makes it possible to edit texts, edit [[OLE component|OLE objects]], etc.
+** [[Glossary:Dragging_mode|'''Dragging mode''']] - set all [[Glossary:Component|components]] in the mode that makes both dragging and sizing possible
+** [[Glossary:Presentation_mode|'''Presentation mode''']] - set all [[Glossary:Component|components]] in the way they will be seen by the student during repetitions
+** '''Switch mode''' (''Ctrl+E'') - cycle from [[Glossary:Presentation_mode|presentation]] to [[Glossary:Editing_mode|editing]] to [[Glossary:Dragging_mode|drag&size mode]]
+* '''Component tags''' - display component numbers, types, names and registry positions
+* '''Alignment and size'''- size and align all [[Glossary:Component|components]] that are currently in the [[Glossary:Editing_mode|editing]] or [[Glossary:Dragging_mode|dragging]] modes
+* '''Test repetition cycle''' (''Shift+Alt+L'') - see how the [[Glossary:Element|element]] behaves during repetitions (e.g. if it does show the answer at the right time, plays the sound, executes a script, etc.)

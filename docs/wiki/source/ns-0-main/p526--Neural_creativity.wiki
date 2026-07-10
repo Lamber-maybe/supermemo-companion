@@ -1,0 +1,246 @@
+== Neural learning with SuperMemo ==
+
+In neural learning ('''Learn : Go neural'''), SuperMemo serves the student with knowledge associated with a selected subject, article, picture, etc. Knowledge is served in a neural way, i.e. by sequentially exploring semantic connections in a network of information built automatically or manually in SuperMemo. SuperMemo takes inspiration from how the brain works. Creativity enhanced with SuperMemo is very slow, but it is targeted and methodical. '''Neural creativity works like a slow brain extended by memories stored in SuperMemo.''' Neural learning is particularly useful in research, problem solving, creative writing, explorative learning, etc. In other words, you may not find neural learning particularly useful in mastering a course of physics, however, if you are a physicist working on a complex problem that requires associating knowledge from different fields of physics and beyond, you will notice that this form of learning has a fantastic impact on your creative productivity.
+
+Neural learning was the main reason behind introducing a new type of [[Glossary:Element|elements]]: '''concepts'''. A concept in SuperMemo is an equivalent of an important idea, which can be connected with other elements (incl. other concepts). In addition to connections between concepts, neural learning also explores connections between elements using the [[Glossary:Knowledge_tree|knowledge tree]]. Elements connected via concepts form '''concept maps''', which, in addition to the knowledge tree, form the primary skeleton for explorations in neural learning.
+
+In the following sections, the essential terms and notions underlying neural learning will be introduced gradually: [[#Concepts|concepts]], [[#Spreading activation|spreading activation]], [[#Neural review|neural review]], etc. Even if this may sound overwhelming at first, remember that you can start neural learning now with just one keystroke: ''Ctrl+F2'' ('''Go neural'''). The following sections are only to explain how neural learning works and how its mechanisms can influence your decisions to make it work best for you.
+
+If you are not new to SuperMemo, and want to skip details, terminology, etc, you can jump directly to practical applications in: [[#Neural review|Neural review]]
+
+== Concepts ==
+
+A '''concept''' in SuperMemo is an [[Glossary:Element|element]] associated with an important idea. 
+
+A concept can serve as a bookmark, as a [[Glossary:Root_node|root]] of a [[Glossary:Branch|branch]] associated with a given subject, as a hub for connecting different portions of a [[Glossary:Collection|collection]], or as a starting point for a creative process (e.g. writing an article, solving a problem, etc.). 
+
+Concepts can be linked with other [[Glossary:Element|elements]]. The network of [[Glossary:Link|links]] based on concepts will be called a '''concept map'''.
+
+[[Image:Concept map.jpg|800px|center|SuperMemo: An exemplary concept map displaying outgoing links from the current element]]
+
+See: [https://en.wikipedia.org/wiki/Concept_map Concept maps] at Wikipedia.
+
+== Concepts: basic operations ==
+
+Here are the most useful operations you will need when working with [[Glossary:Concept|concepts]]:
+
+* To convert an [[Glossary:Element|element]] into a [[Glossary:Concept|concept]], use '''Concept: Make''' in the [[SuperMemo Commander|'''Commander''']]. 
+* To convert a contents element into a [[Glossary:Concept|concept]], press ''Ctrl+K'' in the [[Contents|'''Contents''' window]]. 
+* To link an [[Glossary:Element|element]] with the [[Glossary:Concept|concept]]:
+*# Use '''Concept: Link''' in the [[SuperMemo Commander|'''Commander''']]
+*# in the [[#Concept registry|concept registry]], in the left member pane, select the concept
+*# click '''Accept''' at the bottom of the [[registry window]] to create the link, and close the registry
+* To link an [[Glossary:Element|element]] with another element:
+*# use '''Link: Contents''' in the [[SuperMemo Commander|'''Commander''']]
+*# in the [[Contents|'''Contents''' window]], choose the element
+*# click '''Accept''' at the bottom of the window (or press ''Enter'')
+
+== Concepts: terminology ==
+
+The term '''concept''' is used in four main contexts in SuperMemo 17:
+
+;concept element
+:[[Glossary:Element|element]] used to build a portion of a [[Glossary:Concept_map|concept map]] (e.g. an idea, or an article from [http://en.wikipedia.org Wikipedia], etc.)
+;concept member
+:[[Glossary:Registry_member|member]] of the [[#Concept registry|concept registry]] used in concept housekeeping (esp. concept search uses when building a [[Glossary:Concept_map|concept map]]) 
+;concept group
+:[[Glossary:Branch|branch]] of [[Glossary:Element|elements]] rooted in a [[Glossary:Concept|concept]]. This is similar to [[Glossary:Category|category]] known from older SuperMemos. For performance reasons, [[Glossary:Element|elements]] in the '''concept group''' are not registered with a [[Glossary:Concept|concept]]. Even though '''concept groups''' are used in [[#Spreading activiation|spreading activation]] in neural creativity the links formed by [[Glossary:Parent|parent]]-[[Glossary:Child|child]]-[[Glossary:Sibling|sibling]] relationships are taken as only [[#Spreading activation algorithm|carrying minor priority]] (in comparison to [[Glossary:Concept|concept]]-concept, concept-[[Glossary:Element|element]] and element-element [[Glossary:Link|links]] set by the user) 
+;concept map
+:interlinked graph of [[Glossary:Element|elements]] used as the skeleton for [[#Spreading activation|spreading activation]]. It may also be used in reference to its diagrammatic representation
+
+Each [[Glossary:Concept|concept element]] has its corresponding [[Glossary:Registry_member|concept member]] in the [[#Concept registry|registry]]. Each [[Glossary:Concept_group|concept group]] is based on a single [[Glossary:Concept|concept element]]. Some [[Glossary:Concept|concepts]] ([[Glossary:Element|elements]] and [[Glossary:Registry_member|member]]) are created primarily for expanding the [[Glossary:Knowledge_tree|knowledge tree]] (via a [[Glossary:Concept_group|concept group]]). Other [[Glossary:Concept|concepts]] ([[Glossary:Element|elements]] and [[Glossary:Registry_member|members]]) are created primarily to form [[Glossary:Concept_map|concept maps]] for neural learning. [[Glossary:Concept|Concepts]] can play both roles: tree tools and concept map tools.
+
+== Concept groups ==
+
+When you work with a [[Glossary:Collection|collection]] which includes material belonging to different subjects, you may want to keep different subjects in different sections of the [[Glossary:Knowledge_tree|knowledge tree]] (in the [[Contents|'''Contents''' window]]). You may also want to design a different [[The look of elements|look for items]] related to literature, and a different look for questions related to mathematics. For example, you could use pictures to illustrate your anatomy [[Glossary:Branch|branch]], sounds to illustrate your foreign language section, spell-pads to make your spelling section work best, etc. 
+
+To help you organize different subjects in one [[Glossary:Collection|collection]], SuperMemo uses '''concept groups'''. A concept group can be seen as a tool for building a section of the [[Glossary:Knowledge_tree|knowledge tree]]. One concept group is used for adding material related to one subject. [[Glossary:Element|Elements]] added to a given concept group may use their own [[Glossary:Template|template]] that determines their look (e.g. images, sounds, colors, fonts, sizes of text fields, number of shape [[Glossary:Component|components]], etc.). See: [[Templates|Using templates]]. 
+
+In older SuperMemos, the role similar to concept groups was played by [[Glossary:Category|categories]].
+
+== Concept registry ==
+
+Concept [[Glossary:Registry|registry]] is used to keep the sorted list of [[Glossary:Concept|concepts]]. Each concept element is associated with a concept [[Glossary:Registry_member|registry member]]. Concept [[Glossary:Registry|registry]] makes it easy to find [[Glossary:Concept|concepts]], esp. when you want to link an [[Glossary:Element|element]] with a particular concept.
+
+In the registry, each [[Glossary:Concept|concept]] also shows a set of properties that can be used in managing a [[Glossary:Concept_group|concept group]]. 
+
+Each concept [[Glossary:Registry_member|registry member]] makes it possible to change the following properties: 
+
+* [[Glossary:Root_node|root]] - the [[Glossary:Branch|branch]] that is the [[Glossary:Parent|parent]] of all [[Glossary:Element|elements]] belonging to a [[Glossary:Concept_group|concept group]]
+* [[Glossary:Hook_node|hook]] - the [[Glossary:Branch|branch]] to which new [[Glossary:Element|elements]] are added when adding to a [[Glossary:Concept_group|concept group]] ('''hook''' is a [[Glossary:Descendant|descendant]] of the [[Glossary:Root_node|root]]) 
+* [[Glossary:Template|templates]] - templates used in the [[Glossary:Concept_group|concept group]]
+* other attributes (e.g. the default [[Glossary:Priority|priority]] of [[Glossary:Element|elements]] added to a [[Glossary:Concept_group|concept group]])
+
+Choose '''[[Search menu|Search]] : [[Search menu#Concepts|Concepts]]''' from the main menu to open the concept [[Glossary:Registry|registry]].
+
+[[Image:Concept_registry.jpg|744px|center|SuperMemo: Concept registry which you can use to execute neural review on selected members and change their properties]]
+
+== Link registry ==
+
+All inter-[[Glossary:Element|element]] [[Glossary:Link|links]] are stored in a dedicated link [[Glossary:Registry|registry]] (available with '''[[Search menu|Search]] : [[Search menu#Links|Links]]''' from the [[main menu]]). Link [[Glossary:Registry|registry]] is functionally similar to concept registry. The main difference is the greater significance of [[Glossary:Concept|concepts]] as compared to links. You are likely to use concept [[Glossary:Registry|registry]] often when making conceptual [[Glossary:Link|links]]. This why it is important to keep it less crowded and with good searchable name standards. To make inter-[[Glossary:Element|element]] [[Glossary:Link|links]], you will rather use the [[Contents|'''Contents''' window]]. Only [[Glossary:Concept|concepts]] can be used to group [[Glossary:Element|elements]] in [[Glossary:Branch|branches]] (with [[Glossary:Concept_group|concept groups]]). [[Glossary:Link|Links]] cannot play a similar role and do not appear on selectable concept group lists. In addition, concept [[Glossary:Link|links]] get much greater weight in [[Glossary:Spreading activation|spreading activation]] in [[Glossary:Neural_review|neural review]] (see [[#Spreading activation rules|below]]).
+
+== Neural review ==
+
+Neural review is a [[Subset learning|subset review]] that follows meaningful connections between pieces of knowledge. It takes inspiration from how the brain follows associated ideas. Neural review automates the review of knowledge associated with selected concepts or ideas, e.g. in problem solving, creative writing, etc. 
+
+For example, in a neural review of ''dogs'', there is a good chance of learning about ''puppies'' or ''pooddles'', but there is also a chance of learning about ''cats'' and somewhat lesser chance of learning about ''cars''. Similarly, if you see a picture of a banana plant, going neural on that picture will help you review associated elements (e.g. other pictures of plants, or articles about bananas, or [[Glossary:Element|elements]] associated with the same [[Glossary:Concept|concept]] such as ''gardening''). 
+
+A '''concept''' in SuperMemo is an important idea or subject. Concepts are a new type of [[Glossary:Element|element]] that can be linked with other elements. The network of [[Glossary:Link|links]] based on concepts will be called a '''concept map'''. [[Glossary:Element|Elements]] can also form [[Glossary:Link|links]] between each other. In SuperMemo, knowledge is also connected by inheritance, and the structure of the [[Glossary:Knowledge_tree|knowledge tree]]. 
+
+[[#Spreading activation|Spreading activation]] in neural networks is a method of searching the network with the use of network connections and weights. 
+
+Neural review follows the ''spread of neural activation'' in a network of inter-element connections. All the links and connections in SuperMemo can be used to simulate a spread of activation in the network of knowledge where individual [[Glossary:Element|elements]] play a role of neurons. 
+
+All [[Glossary:Link|links]] used in spreading activation receive weights based on their importance. In SuperMemo, weights are determined by [[Glossary:Priority|element priority]] and the priorities of individual knowledge associations (e.g. concept connections are of higher priority than the sibling relationship in the [[Glossary:Knowledge_tree|knowledge tree]]). 
+
+In spreading activation, we can sequence the propagation wave by the time of activation of individual nodes, which are formed by SuperMemo [[Glossary:Element|elements]]. Such a sequence can then be used as the basis of a semantic review in the incremental learning process. 
+
+Neural review can be initiated by executing '''[[Learn menu|Learn]] : [[Learn menu#Go neural|Go neural]]''' (''Ctrl+F2'') from the [[main menu]]. 
+
+Neural review carries a degree of randomness. As such it can be very helpful in associating ideas in neural creativity. Connectivity and randomness underlie the main rationale behind neural review: '''neural creativity''' and '''neural problem solving'''. In those approaches, we combine a creative process or a problem solving process with an exploration of new subjects, while executing [[incremental learning]] in the background. In other words, neural review serves learning that is to instantly bring benefits in the shape of new ideas and new problems solved in conditions of incomplete human knowledge and in combination with abundant and possibly contradictory computer-stored knowledge. A typical use of neural creativity would be to diagnose a rare disease on the basis of its symptoms (see [[#Examples of neural creativity|examples]]).
+
+We will use the following terms: 
+
+;neural review
+:[[incremental learning]] that follows the spreading of activation in a conceptual network 
+;neural creativity
+:creative process based on neural review (e.g. creative writing) 
+;neural problem solving
+:process of neural creativity targeted at solving a specific problem (e.g. solving a forensic case)
+
+== Neural review starter ==
+
+You can try neural learning on your own now.
+
+=== Pre-conditions ===
+
+All you need is (1) SuperMemo 17 (or later) and (2) a rich [[Glossary:Collection|collection]]. Small collections won't show the power of neural learning. If you start with a single article, neural review makes sense only if your article has already been splintered into smaller pieces. You can also do [[Component_menu#split_article|'''Split article''']] if this is a newly imported article, however, in that case your sub-articles need to be [[Glossary:Outstanding_element|outstanding]]. This is because neural review ends if the [[Glossary:Neural_queue|neural queue]] contains [[Glossary:Element|elements]] that have all been reviewed/imported/created on that given day. This means that for a newly split article, you need to use [[Subset operations#add_to_outstanding|'''Add to outstanding''']] or wait a day (for sub-articles to "mature" for review).
+
+=== Start ===
+
+Choose any of the following: 
+
+* when you see an [[Glossary:Element|element]] of interest, press ''Ctrl+F2'' or choose '''[[Learn menu|Learn]] : [[Learn menu#Go neural|Go neural]] on the [[main menu]]
+* view a [[Glossary:Concept|concept]] in the [[#Concept registry|concept registry]] and press ''Alt+N'', or choose '''Go neural''' on the [[registry menu]], or click '''Neural''' at the bottom of the [[registry window]]
+* view any [[Glossary:Registry_member|member]] in any [[Glossary:Registry|registry]] and press ''Alt+N'', or choose '''Go neural''' on the [[registry menu]], or click '''Neural''' at the bottom of the [[registry window]]
+* open any [[Glossary:Subset|subset]] in the [[browser]] and press ''Ctrl+F2'' or choose '''Go neural''' on the [[browser menu]]
+
+=== Review ===
+
+While in neural review, use the button '''[[Learn]]''' as in normal learning. While learning, the [[Statistics#Review|'''Review''' parameter]] in the [[Statistics|'''Statistics''' window]] shows ''Neuro=[Size]'', where ''Size'' is the number of [[Glossary:Element|elements]] in the [[Glossary:Neural_queue|neural queue]]. The size of the queue is limited for practical reasons. You are not likely to go beyond a few hundred [[Glossary:Element|elements]] in a single review. Moreover, at each [[Glossary:Repetition|repetition]], more layers of the conceptual networks are explored and the queue keeps being expanded in parallel with your learning.
+
+=== Add to review ===
+If you choose another subset of elements for neural review during neural review, you can choose to start from scratch or to add the new neural review to the old neural review (only in SuperMemo 19 dated Sep 2024 or later). If you add the new review to the old review, the queues will mix up as per priority of elements and will branch out neurally in the exact same fashion as if the sum of subsets was subject to review.
+
+=== Stop ===
+
+To end the review, press ''Esc''. The [[Statistics#Review|'''Review''' field]] in the [[Statistics|'''Statistics''' window]] is cleared. If you close the collection, you will later be asked if you want to resume the interrupted neural review (only in SuperMemo 19 dated Jan 2025 or later)
+
+=== Example===
+
+See: [https://www.youtube.com/watch?v=Ap-AT-f9Xv4 this video]
+
+== Costs of neural learning ==
+
+If you worry about the cost-vs-benefit equation in building [[Glossary:Concept_map|concept maps]] in SuperMemo, remember that properly executed [[incremental learning]] builds a semantic structure of the processed knowledge in the shape of the [[Glossary:Knowledge_tree|knowledge tree]]. [[Glossary:Parent|Parents]], [[Glossary:Sibling|siblings]] and [[Glossary:Child|children]] are related to each other in terms of their meaning. [[Glossary:Concept_map|Concept maps]] are the chief framework for [[#Spreading activation|spreading activation]] in neural SuperMemo, but the [[Glossary:Knowledge_tree|knowledge tree]] also forms a fine dendritic framework that helps you capitalize on all your prior work with [[incremental learning]]. If you are familiar with [https://en.wikipedia.org/wiki/Mind_map mind maps], you will be happy to know that the cost of building your [[Glossary:Concept_map|concept maps]] is far less. At times, all you need for your creative purposes is a conceptual link between two different subjects where you expect to find creative associations. To execute your neural review or to engage in neural creativity, pick your [[Glossary:Concept|concept]], [[Glossary:Element|element]] or a [[Glossary:Registry_member|registry member]] (e.g. a picture) and '''Go Neural'''.
+
+[[Glossary:Concept|Concepts]] and inter-element [[Glossary:Link|links]] form the primary framework for [[#Spreading activation|spreading activation]]. The [[Glossary:Knowledge_tree|knowledge tree]] comes next. Activation might actually be infinite if it was costless. SuperMemo goes into just a few layers of activation in a single [[Glossary:Repetition|repetition]] or when building the [[Glossary:Neural_queue|neural queue]] for the first time. This takes milliseconds on a fast PC, but might drag for a second on older computers. SuperMemo adds more layers of activation in successive [[Glossary:Repetition|repetitions]]. Those can be useful for remote associations, but you are unlikely to go through more than just a layer in a single session. The queue then becomes a tool for building your understanding how the activation is spreading in the network. 
+
+For example, if you are a doctor who is to make a diagnosis for a specific patient, you can set up a diagnostic [[Glossary:Concept|concept]] and link chief suspects in a [[Glossary:Concept_map|concept map]]. '''Go neural''' to see what new ideas come to your mind while learning new topics at the same time.
+
+== Spreading activation ==
+
+'''Spreading activation''' is an algorithm for activating nodes in a neural network, semantic network, directed graph, etc. In [[Glossary:SuperMemo|SuperMemo]], the graph is formed by semantic connections of the [[Glossary:Knowledge_tree|knowledge tree]], [[Glossary:Link|concept links and inter-element links]]. '''Spreading activation''' is used to sequence [[Glossary:Element|elements]] for [[Glossary:Neural_review|neural review]]. This is a new form of semantic review in [[Glossary:SuperMemo|SuperMemo]], where new [[Glossary:Element|elements]] are fed ''neurally'' for review. This approach is useful in enhancing creativity and problem solving. To get a taste of [[Glossary:Neural_review|neural review]] choose '''[[Learn menu|Learn]] : [[Learn menu#Go neural|Go neural]]''' (''Ctrl+F2'') from the [[main menu]]. For more, see Wikipedia: [https://en.wikipedia.org/wiki/Spreading_activation Spreading activation]
+
+=== Spreading activation rules ===
+
+Some rules for spreading activation in SuperMemo 17: 
+
+* [[Glossary:Link|concept links]] receive highest priority 
+* [[Glossary:Link|element links]] receive high priority 
+* high [[Glossary:Priority|priority]] [[Glossary:Element|elements]] "conduct" activation better (better chance of passing the "signal") 
+* [[Glossary:Sibling|siblings]] slow down activation (the further from the [[Glossary:Node|node]], the slower the conduction) 
+* [[Glossary:Child|children]] receive high priority 
+* [[Glossary:Parent|parents]] can also spread activation to neighboring nodes 
+* [[Glossary:Parent|parents]] that are [[Glossary:Root_node|roots]] of an article conduct at low probability (less chance of spreading activation to neighboring articles) 
+* only a few layers of activation are processed at single [[Glossary:Repetition|repetition]] (for performance reasons) 
+
+To get a feel of how activation spreads from a given [[Glossary:Element|element]], use '''[[View menu|View]] : [[View menu#Neural queue|Neural queue]]''' (from the [[main menu]]) to see an exemplary neural sequence associated with the current element. Note that this sequence will differ each time you create a new queue. Spreading activation is subject to "race conditions". This means that neural impulses race each other and the outcome may be different on each occasion. '''As much as your brain has "moods and modes", so does the neural review in SuperMemo!'''
+
+=== Spreading activation algorithm ===
+
+Neural review will go through the sequence determined by spreading activation. In that activation, [[Glossary:Concept|concepts]] have higher priority than [[Glossary:Link|links]], or [[Glossary:Knowledge_tree|knowledge tree]]. However, knowledge tree will be participating as well (with lower weights). Activation will spread slowly to unrelated [[Glossary:Sibling|sibling articles]] whose relative priorities will increase in absence of [[Glossary:Child|children]], [[Glossary:Link|concept links]], and the like. In other words, only small [[Glossary:Collection|collections]] will make neural review pointless. [[Glossary:Concept_map|Concept maps]] are not obligatory. 
+
+Priorities are combined to determine the spread of activation:
+
+# associated [[Glossary:Concept|concepts]] are added to the queue at <code>CombinePriority(Priority,0.01)</code>
+# [[Glossary:Link|links]] are added at <code>CombinePriority(Priority,0.05)</code>
+# [[Glossary:Descendant|descendants]] at <code>CombinePriority(Priority,0.16)</code>
+# [[Glossary:Sibling|siblings]] at <code>CombinePriority(Priority,0.26)</code> (or up to 0.5 for unrelated siblings containing full articles) 
+
+The procedure is repeated recursively with successive layers taking random picks from the queue such that a pick is more likely for a higher priority 
+
+ function CombinePriority(OriginalP,GroupP:real):real;
+ //e.g. element of P=0.2 for a group of P=0.6 should yield (1-0.2)(1-0.6)=0.32
+ var OP,GP:real;
+ begin
+    OP:=1-OriginalP;
+    GP:=1-GroupP;
+    Result:=1-OP*GP;
+ end;
+
+This is the status for Feb 26, 2016. The sequence, priorities, and other parameters will change in the future. It all depends on user feedback and field tests.
+
+== Neural creativity ==
+
+'''Neural creativity''' is creativity induced with the help of neural review. In neural review, SuperMemo successively feeds the user with knowledge associated with a selected topic or a chosen subset of topics. When a network of conceptual [[Glossary:Link|links]] connects areas of knowledge, they form semantic space that can be explored in a neural manner that helps forming new associations, and generate ideas. This process is conducive to research, invention, problem solving, etc. Metaphorically speaking, neural creativity helps emulate a thinking process in a human brain extended by knowledge stored in SuperMemo. 
+
+Neural creativity employs the incremental learning process to produce new ideas in a neural fashion. In neural creativity, closely related [[Glossary:Concept|concepts]] are more likely to show up when executing a neural review of a studied subject. If you are fluent in [[incremental learning]], you may wonder how a neural review differs from a [[Subset learning#Semantic review|semantic review]]. The main difference is that in semantic review the whole burden of juggling the semantics is in your hands. You need to know the tools of [[incremental learning]] to execute a [[Subset learning#Semantic review|semantic review]] well. In neural review, the whole process will be reduced to pressing a single button in SuperMemo.
+
+Unlike it is the case with semantic review in SuperMemo, or simply googling for knowledge, the whole process of associating pieces of knowledge is automated. To give it a try, pick a subject and '''Go neural''' (''Ctrl+F2'').
+
+== Incremental approach ==
+
+[[Incremental learning]] can be used to creatively come up with new ideas. This raises some skepticism. Here is an exemplary skeptical voice:
+<blockquote>
+''"How can interruption be good for creativity or problem solving? Isn't it that all great discoveries come from continual, persistent and focused effort? It is those who can dedicate themselves to a cause that achieve best results. Most people fail because they major in minor things. They do many things superficially. They are jacks of all trade and masters of none. Incremental learning seems like an effort to major in everything. Putting too much on one's own plate".''
+</blockquote>
+
+This question keeps popping back in various contexts. Here is an illustrative answer based on the fact that creativity and problem solving are based on forming new connections in your brain.
+
+'''Incremental recall: bringing back things to memory, piece by piece'''
+
+Imagine you had a very eventful day. For example, a visit to an exotic city, meeting an old good friend, or attending a breakthrough conference. Imagine that your inspiration is so rich that you want to write a detailed report of the day (assuming you did not capture it all with [https://en.wikipedia.org/wiki/Google_Glass Google Glass]). The first thing to do is to sit down to writing a report and list all essential keywords for rebuilding the memory of the day. Once you write the outline, you can quickly notice that it does not take long before you come up blank for new memories. You cannot recall any more details. This is normal. Sitting down over a blank piece of paper for an hour may not be the best use of your time. It may be pretty unproductive. However, if you keep your piece of paper handy, you may notice that it keeps filling up with new memories as they keep popping up in your head in different contexts. An image, a smell, or an article in press may all contribute to unexpected recall. If you happen to execute [[incremental learning]] in the meantime, you will notice that the process of recall is intensified. If your learning materials are rich, you are likely to read about dozens of unrelated subjects in a single day. All those subjects produce new associations. Your blank piece of paper will fill up much faster than it is the case in the course of ordinary life or if your learning was less varied. What you witness here is incremental recall. 
+
+There is a short step from incremental recall to incremental creativity. Both are based on incrementally building a mental structure in your mind. In case of recall, you will recover past memories. In case of creativity, you will additionally add
+# new pieces of knowledge acquired via [[incremental learning]] (e.g. neural review), and
+# new memories and/or ideas you have not experienced or thought of before.
+Finally, in problem solving, you will direct this creative process towards accomplishing a specific task: solving a problem, answering a question, etc.
+
+== Examples of neural creativity ==
+
+Neural tools in SuperMemo equip the user with a sort of Einstein's brain in slow motion. You can build a brain of knowledge as big as you wish. You can make your networks of ideas as complex as you wish. And then you can just press one button to start a train of thought at your own pace while watching all new ideas form in front of your eyes. Here are some examples of the neural approach in SuperMemo:
+
+=== Medical diagnosis ===
+
+Physicians and medical students always have a mountain of new health-related knowledge to process. This is also true of all individuals who care about health. A specific problem to solve, e.g. a medical diagnosis, may also be a good excuse for acquiring new knowledge neural style. For example, if a patient presents with a skin condition, a dedicated [[Glossary:Concept|concept]] might be created (e.g. ''Patient John Doe condition''). [[Glossary:Link|Conceptual links]] can then be made to relevant fields of knowledge, e.g. skin conditions, allergies, bacterial skin infections, mycoses, etc. Neural review will provide new inspiration for new areas to explore. Two birds can be killed with one stone:
+# new knowledge acquired for future use, and
+# zeroing in on the ultimate diagnosis.
+
+=== Solving a software problem ===
+
+Neural review has already been helpful in solving problems that pester users of SuperMemo (e.g. [http://supermemopedia.com/wiki/Cloze_deletions_get_shifted_by_one_character misaligned cloze deletion], due to bugs in Internet Explorer). When a pesky problem shows up, all related knowledge can be associated with a [[Glossary:Concept|concept]] that defines the problem (e.g. ''cloze bug'').
+
+In the case of the "cloze bug", several users sent their ideas on how to possibly solve the problem. None of these worked. In the end, all [https://en.wikipedia.org/wiki/Document_Object_Model DOM]-related ideas turned out to be a blind path. However, initiating neural review provided an ultimate incentive with a hope for a light in the tunnel. Could the problem be solved without neural review? Yes. Perhaps, neural review helped step out of the box in looking for solutions? If not, it might at least have had a psychological effect: ''"if nothing works, perhaps neural review will?"''.
+
+=== Creative writing ===
+
+[[Creativity and problem solving in SuperMemo#Incremental_writing|Incremental writing]] is useful if you want to compile a number of texts into a larger body. Neural approach may be useful if you want to combine that procedure with a degree of research. You may either want to research a topic (e.g. when looking for facts or literature related to your thesis), or research your own texts if they are too voluminous and highly repetitive (e.g. to look for simpler phrasing, more logical sequencing, clearer line of thought, etc.).
+
+=== Forensic science ===
+
+Forensics is an excellent example of where neural approach may appear useful. A complex case may involve a great deal of case-specific knowledge that needs to be combined with scientific and general knowledge. Wherever the size of knowledge goes well beyond the capacity of human memory, and where the solution may require thinking "out of the box", neural approach may act as an extension to the human mind. Once a case is solved, case-independent knowledge may be integrated with the main learning [[Glossary:Collection|collection]] to secure the long-term investment in knowledge.
+
+== See also ==
+* [https://www.youtube.com/watch?v=Ap-AT-f9Xv4 Neural review (video)]
+* [https://www.supermemo.com/en/blog/how-to-improve-creativity-with-SuperMemo SuperMemo Blog: Neural Creativity]

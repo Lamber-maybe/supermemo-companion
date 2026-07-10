@@ -1,0 +1,1 @@
+Import Mail dialog box which you can import your mail from MS Outlook to SuperMemo through

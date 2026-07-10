@@ -1,0 +1,6 @@
+;<span id="Stability_increase_matrix">stability increase matrix</span> (SInc matrix; SInc[])
+:the matrix that represents the function of interval/stability increase in [https://supermemo.guru/wiki/SuperMemo_Algorithm SuperMemo algorithm]. For any [[Glossary:Item|item]] at any time, the increase in [[Glossary:Stability|stability]] depends on:
+:#current stability,
+:#current [[Glossary:Retrievability|retrievability]], and
+:#current item [[Glossary:Difficulty|difficulty]].
+:This function can be inspected using: '''[[Toolkit menu|Toolkit]] : [[Toolkit menu#Memory|Memory]] : [[Memory graphs (4D)|4D Graphs]] : [[Memory graphs (4D)#Stability increase function|Stability]]''' in SuperMemo. The '''SInc[] matrix''' can be considered an extension of the [[Glossary:OF_matrix|OF matrix]] (from older SuperMemos) into the dimension of [[Glossary:Retrievability|retrievability]]. This means that the new [https://supermemo.guru/wiki/SuperMemo_Algorithm SuperMemo algorithm] can handle any [[Glossary:Repetition|repetition]] at any time, including freshly reviewed [[Glossary:Item|items]], as well as long-neglected items. [[Glossary:Retrievability|Retrievability]] is the dimension that reflects the time that has elapsed since the last repetition relative to the [[Glossary:Optimum_interval|optimum interval]]

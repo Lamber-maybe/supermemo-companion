@@ -1,0 +1,2 @@
+;<span id="Q&A_format">Q&amp;A format</span>
+:format of text files with questions and answers that can be imported to various versions of SuperMemo. See: '''[[File menu|File]] : [[File menu#Import|Import]] : [[File menu#qa_text|Q&amp;A text]]

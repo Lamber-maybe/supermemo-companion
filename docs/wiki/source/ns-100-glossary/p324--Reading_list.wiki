@@ -1,0 +1,2 @@
+;<span id="Reading_list">reading list</span>
+:prioritized list of articles imported to [[Glossary:SuperMemo|SuperMemo]] and scheduled for reading in the sequence of priority. A '''reading list''' is a form of a [[Glossary:Tasklist|tasklist]] in which each [[Glossary:Task|task]] is an article to read. In new [[Glossary:SuperMemo|SuperMemos]], '''reading lists''' have been largely made obsolete by [[Glossary:Incremental_reading|incremental reading]]

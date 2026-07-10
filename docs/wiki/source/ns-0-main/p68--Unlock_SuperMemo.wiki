@@ -1,0 +1,92 @@
+== Unlocking commercial SuperMemo ==
+
+If SuperMemo asks you for a password or there is a red registration bar below the [[navigation bar]], you are using a '''locked copy of SuperMemo''':
+
+<div class="inset" style="background-color: #D4D4D4;">
+This red registration bar indicates that SuperMemo is locked:
+<div style="color: white; background-color: red; text-align: center;">
+'''Click here to register SuperMemo (credit used: 23%)'''
+</div>
+</div>
+
+<div class="bs-callout bs-callout-warning">
+'''To unlock SuperMemo you will need an unlock password'''.
+</div>
+
+To receive the unlock password, click on the red bar, fill in your Order ID, and send your Machine identification code to [[SuperMemo World]] (automatically or manually via [[e-mail]] at address register{{CURRENTYEAR}}(@)supermemo.org). 
+
+<div class="bs-callout bs-callout-warning">
+'''To receive the password, you need to send your registration data via e-mail'''.
+</div>
+
+If you do not remember your order number, you can skip it as long as you use the same e-mail address as when ordering. You can also skip your Order ID if you are using a trial copy of SuperMemo.
+
+<div class="center">
+[[Image:Registering-SuperMemo.jpg|640px|Registering SuperMemo dialog, available upon clicking the red registration bar at the top of the element window, assists you in submitting your registration data in order to receive the unlock password]] 
+{{:Image:Registering-SuperMemo.jpg}}
+</div>
+
+You will receive the unlock password within a business day. Until then you can still fully explore SuperMemo without the password. You are unlikely to run out of credit in less than a week.
+
+To unlock SuperMemo, input the unlock password received in response to your order with '''[[File menu|File]] : [[File menu#Installation|Installation]] : Input password''' (''Ctrl+I''). Use can also click the button '''Password''' in the registration dialog used for sending your password request.
+
+You are unlikely to ever need to input your password twice unless you move to a new computer. In such a case, register your new computer using the same procedure as above.
+
+== Receiving assistance ==
+
+If you need assistance, or need your password resent, or you want to register on a new computer, [[E-mail|get in touch via e-mail]].
+
+<div class="bs-callout bs-callout-warning">
+'''Important!''' If you do not receive the unlock password within two business days, please [[E-mail|get in touch via e-mail]]. The most likely reason is that your mail was blocked by a spam filter, it was lost in delivery, or you have misspelled your e-mail address when purchasing the program. In case you cannot get in touch via e-mail, please send us an alternative e-mail address, or simply leave your message at [https://supermemopedia.com/wiki/FAQ SuperMemoPedia].
+</div>
+
+If you do not like the whole concept of commercial applications, passwords, etc., you can use [https://supermemopedia.com/wiki/Download_SuperMemo SuperMemo Freeware].
+
+== Mail options at registering ==
+
+If you press '''Send''' in the registration dialog, SuperMemo will yet ask you to choose your mail client. 
+
+'''If you are not sure what to choose, pick the default''' and ignore mail formatting (if unreadable). 
+
+You have the following options:
+* '''Send mail with spaces and line breaks''' (e.g. for Thunderbird). This option will encode any characters that are not allowed in a web address, such as spaces or line breaks, into a code that can be transmitted over the internet. For example, a space will be replaced by %20, and a line break will be replaced by %0D%0A. This option may work well with email clients that can decode these codes and display them correctly, such as Thunderbird. However, some email clients may not recognize these codes and display them as they are, making the message unreadable, such as Gmail.
+* '''Use the default MAPI mailer on your system''' (e.g. Outlook). This option will use the MAPI protocol to communicate with the email client that is set as the default on your system, such as Outlook. MAPI stands for Messaging Application Programming Interface, and it is a standard way of sending and receiving emails on Windows. This option may work well with email clients that support MAPI. However, some email clients may not support MAPI or may have some compatibility issues.
+* '''Format mail as a web page using HTML'''. This option will use HTML tags to format the message as a web page, such as using &lt;br&gt; or &lt;p&gt; for line breaks. HTML is a standard way of creating and displaying web pages. However, some email clients may not support HTML tags or may show them as plain text, such as Windows Live Mail.
+* '''Generate a file for sending later'''. This option will create a file that contains the registration message. You can send it later. This option may give you more flexibility and control over how you send your message. It is the same as clicking the button '''File''' in the registration dialog. That file is stored in the [[Glossary:collection|collection]]s ''\reports'' folder as ''register.txt'' (e.g. ''c:\SuperMemo\systems\Physics\reports\register.txt'')
+
+== Unlocking a demo of SuperMemo ==
+
+When you use a demo version of SuperMemo, you are given a credit of 100 points. Once this credit is used up, by using SuperMemo, you will be asked to input the unlock password. The credit available is displayed in the parentheses on the red registration bar (see above).
+
+You can use the following procedure to get help in unlocking your demo version of SuperMemo:
+
+# Click the red registration bar to open the registration dialog box
+# Fill out the fields '''Name''', '''Country''' and '''Contact'''
+# Click '''Send'''
+
+Those steps will result in sending an e-mail with your data. In response you will receive further instructions (e.g. how to get the unlock password, how to get SuperMemo in return for writing learning material, how to buy a license, etc.).
+
+== Spread SuperMemo among your friends ==
+
+The advantage of using the above complex lock/registration mechanism is that you can spread SuperMemo among your friends.
+
+<div class="bs-callout bs-callout-warning">
+'''Important!''' You can freely pass SuperMemo to your friends. It will automatically get locked on unregistered computers. 
+</div>
+
+If you want to redistribute your own [[Glossary:Collection|collections]], you can use '''[[File menu|File]] : [[File menu#Installation|Installation]] : Lock''' before putting your collections on the web or passing them to your friends. If you have questions about redistributing your own [[Glossary:Collection|collections]] with SuperMemo, please get in touch.
+
+== Apology ==
+
+We apologize for the inconvenience related to the registration process!
+
+The goal of SuperMemo World is to popularize SuperMemo. We are happy to welcome every new member in the SuperMemo family. We would love to provide customers with a free working version of SuperMemo. At the same time, we could not forget that the company has to earn for its operations. On one hand, we cannot make all SuperMemos free, on the other, we cannot reward "clever" users with an easy way to circumvent the license fee, as we do not want to contribute to a world where it pays to live by hook or by crook.
+
+Our experience shows that the shareware approach does not work for SuperMemo. [https://super-memory.com/english/company/decade.htm In the years 1991-2016], we have gained thousands of users of freeware versions of SuperMemo 2, SuperMemo 5, SuperMemo 6, SuperMemo 7, SuperMemo 9, SuperMemo 12, SuperMemo 15, and SuperMemo 16. At the same time, we received just a handful of shareware contributions while the number of support requests was a thousand times greater!
+
+'''Remember!''' If you cannot afford SuperMemo, you can always use a freeware version or get the latest version in return for your participation in beta-testing or similar programs.
+
+== See also ==
+
+* [https://supermemopedia.com/wiki/Shopping_FAQ Questions about ordering, registering, unlocking and installing SuperMemo]
+* [https://supermemopedia.com/wiki/Registering_SuperMemo_(FAQ) Registration problems]

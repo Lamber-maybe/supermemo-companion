@@ -1,0 +1,1 @@
+{{Fig|Matrix of optimum intervals derived from the [[Glossary:OF matrix|OF matrix]]. [[Glossary:Interval|Intervals]] for difficult items with [[Glossary:A-Factor|A-Factor]]{{=}}1.2 increase very slowly. It may take 20 [[Glossary:repetition|repetitions]] to get to one year interval. In contrast, east items with A-Factor{{=}}6.9 need only 6 reviews in lifetime}}

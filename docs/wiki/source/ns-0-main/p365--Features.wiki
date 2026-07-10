@@ -1,0 +1,53 @@
+== Main features  of SuperMemo {{SMVER}} ==
+
+*'''efficient learning:''' SuperMemo started in 1987 as the first freeware and later commercial software to implement [http://en.wikipedia.org/wiki/Spaced_repetition spaced repetition]. Spaced repetition is a method that maximizes the speed of learning by choosing the best moments for review of knowledge that is to be remembered 
+*'''Knowledge Machine''': SuperMemo implements a number of mechanisms inspired by the concept of [http://www.super-memory.com/english/ol/knowmachine.htm Knowledge Machine] described in Dr Wozniak's ''[http://www.super-memory.com/english/el.htm Economics of Learning]'' (1994). Knowledge Machine is a system for gathering, processing, and optimally learning all forms of knowledge
+*'''information management:''' SuperMemo helps you create a hypermedia database of flashcards, articles, pictures, videos, vocabulary, mail, etc. Up to 2 billion [[Glossary:Element|elements]] including up to 8 million hypermedia objects of virtually unlimited size 
+*'''incremental learning:''' as of 2000, SuperMemo implements the concept of [[incremental reading]]. With [[incremental reading]], you can read thousands of articles without getting lost, and convert the processed information into rock-solid knowledge. SuperMemo 2008 expanded the concept of incremental learning into the domains of [[incremental video]] and [[visual learning]]. SuperMemo 16 further expanded the incremental learning toolset by [[Incremental learning#Incremental audio|incremental audio]] and [[incremental video]] of local/offline video files. For more see: [[Incremental learning]]
+*'''contents tree:''' knowledge in SuperMemo is organized into a [[Building the knowledge tree|tree structure]]. In [[incremental reading]], the structure is created automatically and reflects the semantic connections between pieces of processed knowledge (as of 1995) 
+*'''concept maps:''' you can connect concepts of interest into a graph structure (as of 2016). This will help you organize knowledge and execute semantic learning (see '''neural learning''' below)
+*'''[[Neural creativity|neural learning and neural creativity]]:''' you can ask SuperMemo to '''Go neural''', and it will employ ''[https://en.wikipedia.org/wiki/Spreading_activation spreading activation]'' (as of 2016). This will help you learn in a neural way by following links in your SuperMemo [[Glossary:Collection|collection]]. In this case,[[Building the knowledge tree|knowledge tree]] structure and concept maps will play a role in guiding your semantic learning. The process of [[Glossary:Neural review|neural review]] can be used in enhancing creativity and problem-solving. Once you encounter a difficult problem, load SuperMemo with all the necessary knowledge and '''Go neural''' 
+*'''priority queue:''' all knowledge in SuperMemo is strictly [[Priority queue|prioritized]] to make sure that the quality of your knowledge is retained in conditions when you have to reduce the time spent on learning (as of 2006). Concepts such as '''[[Glossary:Auto-postpone|auto-postpone]]''' and '''[[Glossary:Auto-sort|auto-sort]]''' help you automatically reduce the learning load without affecting your top-priority knowledge 
+*'''element difficulty:''' all pieces of knowledge are automatically classified by [[Glossary:Difficulty|difficulty]], which is an integral part of the spaced repetition algorithm. Understanding difficulty helps you distinguish between knowledge that is easily remembered and knowledge that is poorly formulated and hard to learn. SuperMemo provides tools for the detection and resolution of material that is hard to learn (in the process called ''[[Leeches|leech hunting]]'') 
+*'''imports from the web:''' SuperMemo makes it easy to [[Web import|import knowledge from the web]]. Dedicated import filters are used to import from [https://en.wikipedia.org Wikipedia], [https://youtube.com YouTube], pictures, [https://supermemopedia.com SuperMemopedia], and more. You can also import all file archives for incremental processing 
+*'''references:''' [[References|knowledge references]] help you learn in context and to retrieve sources of information (as of 2002) 
+*'''levels:''' to minimize intimidation with complex functions of SuperMemo, you can use '''Beginner''' and '''Basic''' [[Levels|levels]] in which SuperMemo's interface is minimized to expose only the most essential options used in basic learning. You can move to higher [[Glossary:Level|levels]] with a single click 
+*'''rescheduling:''' SuperMemo helps you manage excess workload or breaks in learning with rescheduling tools such as '''Advance''' (to speed up learning before an exam), '''[[Postpone]]''' (to reduce the learning load), '''[[Mercy|Spread]]''' (to equally redistribute work over a period of time, e.g. after or before a break in learning), etc. 
+*'''review calendar:''' all future material review can be inspected in the [[Calendar|calendar of repetitions]]. This calendar also shows the history of past learning, [[Glossary:Retention|retention]], workload, and individual pieces of knowledge that were reviewed. History of repetitions as well as future review estimates, are also available for individual pieces of knowledge 
+*'''registries:''' so-called object [[Using registries|registries]] are used to minimize the size of the database with object reuse and automatic housekeeping. Exemplary registries include the lexicon, text registry, picture registry, sound registry, reference registry, or comment registry 
+*'''sleep analysis:''' sleep is vital for learning. Users of SuperMemo can optionally log their sleep data and use sleep analysis tools such as [[Sleep Chart|sleep timeline]], circadian cycle graphs, homeostatic sleep drive, alertness graph, 2-component sleep model graphs, and more (as of 2008). Sleep analysis tools can be used to optimize learning. They can also be used to optimize the timing of sleep for the best sleep quality 
+*'''statistics:''' SuperMemo holds rich knowledge [[statistics]] such as [[Glossary:Retention|retention]], learning speed, [[workload]], and [[Analysis|dozens of other parameters]]. [[Glossary:Forgetting_curve|Forgetting curve]] graphs help you see how your memory works (as of 1991). [https://supermemo.guru/wiki/SuperMemo_Algorithm SuperMemo Algorithm] adds [[Memory graphs (4D)|4D memory]] function visualizations (as of 2016)
+
+== Other functions ==
+
+* programmable degree of recall (as of 1991)(see: [https://supermemo.guru/wiki/Forgetting_index_in_SuperMemo Forgetting index])
+* various forms of knowledge [[Test elements|tests]] (e.g. spelling tests, multiple choice tests, [[Glossary:Occlusion_test|occlusion tests]], [[Glossary:Cloze_deletion|cloze deletions]], etc.) 
+* [[subset operations]] (memorize, forget, review, transfer, apply template, etc.)
+* [[Browser | element browser]] with table and thumb display modes 
+* workload management with [[Tasklists | tasklists]] (as of 1999) 
+* time management with [[Plan | schedule planning]] based on proportional time allocations (as of 2000)
+* [[Incremental mail processing| incremental e-mail processing]] (note that automated imports require Windows (Live) Mail (or other e-mail client supporting EML) or MS Outlook 2000 or later, otherwise manual imports are necessary)(as of 2000) 
+* learning timeline (automatically generated [http://en.wikipedia.org/wiki/Gantt_chart Gantt chart] analogous to the optional sleep timeline) 
+* functions typical to other Windows software: search&replace, copy&paste, clone, navigation tools (incl. history list), file pick list, templates, stylesheets, operations for the entire database: copy, move, merge, rename, etc.
+
+== SuperMemo in pictures ==
+
+See: [[SuperMemo Screenshot Tour]]
+
+== What's new: from SuperMemo 9 to SuperMemo 19 ==
+
+For details, see "What's new" of individual versions (note that some features have been removed over time): 
+
+*[http://super-memory.com/articles/soft/sm9.htm SuperMemo 9] (1998) 
+*[http://super-memory.com/articles/soft/sm10.htm SuperMemo 10] (2000) 
+*[http://super-memory.com/articles/soft/sm11.htm SuperMemo 11] (2002) 
+*[http://super-memory.com/articles/soft/sm12.htm SuperMemo 12] (2004) 
+*[http://super-memory.com/articles/soft/sm13.htm SuperMemo 13] (2006) 
+*[http://super-memory.com/articles/soft/sm14.htm SuperMemo 14] (2008)
+*[http://super-memory.com/articles/soft/sm15.htm SuperMemo 15] (2011)
+*[http://www.super-memory.com/archive/help16/new16.htm SuperMemo 16] (2013)
+*[http://super-memory.com/archive/help17/new.htm SuperMemo 17] (2017) 
+*[https://help18.supermemo.org/wiki/What's_new_in_SuperMemo_18? SuperMemo 18] (2020)
+*[[What's new in SuperMemo 19?|SuperMemo 19]] (2023)
+
+__NOTOC__

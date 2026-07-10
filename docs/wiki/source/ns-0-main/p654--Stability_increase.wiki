@@ -1,0 +1,1 @@
+'''Memory stabilization''' (abbreviated ''SInc'' for [[stability increase]]) is the increase in memory stability as a result of the retrieval of a memory (e.g. in review). The higher the stability, the lesser the increase. As the name implies, the memory tends to stabilize in the long-term storage.  For more see: [https://supermemo.guru/wiki/Stabilization Memory Stabilization]

@@ -1,0 +1,51 @@
+== Browser ==
+
+Browser toolbar appears at the top of the [[browser]] window. 
+
+[[Image:Element browser.jpg|center|570px|SuperMemo: Browser (with a toolbar at the top of it) with elements on History of War]] 
+
+== Buttons ==
+
+Here are the functions of individual toolbar buttons from left to right: 
+
+#'''Main menu''' (<kbd>Shift</kbd>+<kbd>F10</kbd>) - open the [[browser menu]] otherwise available with a right-click over the [[browser]] window 
+#'''Subset menu''' - open a [[Subset operations|subset processing menu]] with operations on browser [[Glossary:Element|elements]] (same as '''Process browser>''' on the [[browser menu]] available with a right-click) 
+#'''Align''' - align the [[browser]] window with the [[element window]] for convenient review of [[Glossary:Element|elements]] in the [[browser]]. Note that the '''Synchronize''' button ([[#Synchronize_button|below]]) must be down for displaying [[Glossary:Element|elements]] in the [[element window]] as the selection changes in the [[browser]]
+#'''Review all''' (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd>) - review all material in the [[browser]], e.g. before an exam (including [[Glossary:Element|elements]] that are not [[Glossary:Outstanding_element|outstanding]])
+#'''Review topics''' - review all [[Glossary:Topic|topics]] in the [[browser]] (including non-outstanding topics) 
+#'''Go neural''' (<kbd>Ctrl</kbd>+<kbd>F2</kbd>) - start a neural review using the [[browser]] contents or add the contents to the current review (if any)
+#'''Checked''' - open a child [[browser]] with all checked [[Glossary:Element|elements]] (checkmarks can be seen in the leftmost column of the [[browser]]). 
+#'''Unchecked''' - open a child [[browser]] with all unchecked [[Glossary:Element|elements]] 
+#'''Memorized''' - open a new [[browser]] with all [[Glossary:Memorized_element|memorized elements]] included in the present [[browser]]
+#'''Items''' - open a new [[browser]] with all [[Glossary:Item|items]] included in the present [[browser]]
+#'''Topics''' - open a new [[browser]] with all [[Glossary:Topic|topics]] included in the present [[browser]]
+#'''Sources''' - open sources of all [[Glossary:Element|elements]] in the [[browser]]. Sources are top-most [[Glossary:Topic|topics]] from which sub-topics, [[Glossary:Extract|extracts]], sentences, [[Glossary:Cloze_deletion|cloze deletions]] and/or Q&amp;A [[Glossary:Item|items]] have been generated in [[Glossary:Incremental_reading|incremental reading]] 
+#'''Sort by tree''' - sort the [[browser]] by the position of its [[Glossary:Element|elements]] in the [[Glossary:Knowledge_tree|contents tree]] ([[Glossary:Root_node|root]] first, first [[Glossary:Child|child]] of the root second, etc.)
+#'''Spread priorities''' - set the [[Glossary:Priority|priority]] of all [[Glossary:Element|elements]] in the [[browser]] (increase, decrease, or spread within a selected range) 
+#'''Advance topics''' - shorten the [[Glossary:Interval|interval]] of [[Glossary:Topic|topics]] listed in the [[browser]]. If you specify the maximum [[Glossary:Interval|interval]] as 100, all [[Glossary:Topic|topics]] with longer interval will receive intervals randomly dispersed within the 1..100 range. [[Glossary:Topic|Topics]] with [[Glossary:Interval|intervals]] shorter than 100 will remain untouched. '''Advance topics''' executes [[Glossary:Mid-interval_repetition|mid-interval repetition]] on the affected [[Glossary:Topic|topics]] (unlike '''Advance items'''). See: [[Advancing elements]] 
+#'''Advance items''' - shorten the [[Glossary:Interval|intervals]] of [[Glossary:Item|items]] listed in the [[browser]]. If you specify the maximum [[Glossary:Interval|interval]] as 1000, all [[Glossary:Item|items]] with interval longer than 1000 will receive intervals randomly shortened so that to schedule a repetition between today or the day when the interval reaches 1000 days. All [[Glossary:Item|items]] repeated before 1000 days ago, will be scheduled for repetition today. Unlike '''Advance topics''', '''Advance items''' shortens [[Glossary:Interval|intervals]] without executing a [[Glossary:Mid-interval_repetition|mid-interval repetition]] (which would be illegal from the learning process standpoint as no repetition can be considered executed without you actually reviewing it). '''Important!''' Abusing this option can lead to serious side effects in learning such as inadvertently sending important [[Glossary:Item|items]] to very long [[Glossary:Interval|intervals]] by lumped repetition of similar items in a very short period of time. See: [[Advancing elements]] 
+#'''[[Postpone]]''' - postpone all [[Glossary:Outstanding_element|outstanding elements]] included in the [[browser]]
+#'''Insert picture''' - add a selected picture to all [[Glossary:Element|elements]] in the [[browser]]
+#'''Visual browser''' - switch between table and thumbs modes (only in Windows Vista or later). In the thumbs mode, the [[browser]] displays element snapshots as thumbs (i.e. miniature images). The thumbs mode is useful when browsing through picture-rich [[Glossary:Collection|collections]] (e.g. photo albums) (see: [[#Visual browser | picture]])
+#'''Apply template''' - apply a selected [[Glossary:Template|template]] to all [[Glossary:Element|elements]] in the [[browser]]
+#'''Randomize''' (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F11</kbd>) - randomly mix up the contents of the [[browser]]. You can, for example, randomize the [[browser]] before scheduling its content for repetition with '''Schedule repetitions''' (below) 
+#'''Schedule repetitions''' - save the contents of the [[browser]] in today's repetition schedule. You will most likely want to use this button for optimizing the sequence of outstanding repetitions. You may, for example, begin the sequence with short-[[Glossary:Interval|interval]] [[Glossary:Item|items]], or with difficult items, or with most severely delayed items, or with long-interval [[Glossary:Topic|topics]], etc. 
+#'''Find''' (<kbd>Alt</kbd>+<kbd>F</kbd> and <kbd>F3</kbd>) - search for texts in the title column starting from the currently selected [[Glossary:Element|element]]
+#'''View''' (<kbd>Enter</kbd> or ''double-click'') - display the currently selected [[Glossary:Element|element]] in the [[element window]]. Note that you will not need this button if the '''Synchronize''' button (below) is down, in which case the [[element window]] will always display the [[Glossary:Element|element]] currently selected in the [[browser]]
+#'''Save subset''' - save the contents of the [[browser]] into a subset file 
+#'''<span id="Synchronize_button">Synchronize</span>''' - makes sure that each time you change the selection in the [[browser]], the selected [[Glossary:Element|element]] is displayed in the [[element window]]. When this button is up, changing the selection in the [[browser]] has no effect on the content of the [[element window]]
+
+== Visual browser ==
+
+<div class="center">
+[[Image:Visual_browser.jpg|800px|SuperMemo: Element browser in the thumbs mode]]
+<blockquote>
+'''''Figure:''' <span id="Visual browser">Element browser</span> in the thumbs mode''
+</blockquote>
+</div>
+
+== Video ==
+
+'''Add to outstanding''' in [[subset review]] (see 3:40):
+
+{{#ev:youtube|1mzhbXx8DXE}}

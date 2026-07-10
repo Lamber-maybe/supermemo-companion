@@ -1,0 +1,1 @@
+{{Fig|The [[Glossary:Recall_matrix|Recall[] matrix]] graph shows that the actual recall differs from predicted [[Glossary:Retrievability|retrievability]]. For higher [[Glossary:Stability|stabilities]] and [[Glossary:Difficulty|difficulties]], it is harder to reach the desired recall level.}}

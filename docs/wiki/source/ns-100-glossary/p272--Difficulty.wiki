@@ -1,0 +1,7 @@
+;<span id="Difficulty">difficulty</span>
+:estimation of an [[Glossary:Item|item]]'s difficulty in [[Glossary:SuperMemo|SuperMemo]]. The five main measures of '''difficulty''' are:
+:# '''[[Element data#Diff|Diff]] (SM-19 Difficulty):''' A dynamic, continuous value ranging from 0 (easiest) to 1 (hardest), optimized via [[Algorithm SM-19]].
+:# '''SM-20 Dificulty:''' A dynamic, continuous value ranging from 0 (easiest) to 1 (hardest), optimized via machine learning using the Binary Win Metric (Win - R).
+:# '''FSRS Difficulty:''' Used in FSRS mode, ranging from 1.0 (easiest) to 10.0 (hardest); mapped to the 0–1 range for consistent display in SuperMemo.
+:# '''[[Glossary:A-Factor|A-Factor]] (SM-15):''' The classic scheduling multiplier ranging from 1.2 (hardest) to 6.9+ (easiest), representing the item's bounded stabilization factor.
+:# '''[[Element data#Old|Old Heuristic]]:''' A static 0 to 1 value estimating difficulty using five raw database statistics (first grade, repetitions, lapses, interval, and A-Factor).

@@ -1,0 +1,2 @@
+;<span id="Flashcard">flashcard</span> (card)
+:term often used by users of [[Glossary:SuperMemo|SuperMemo]] to refer to an [[Glossary:Item|item]] or an [[Glossary:Element|element]]

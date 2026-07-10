@@ -1,0 +1,6 @@
+<p class="mail-header">
+    {{#if: {{{from}}} | '''From:''' {{{from}}} | }}
+    {{#if: {{{country}}} | <br />'''Country:''' {{{country}}} | }}
+    {{#if: {{{sent}}} | <br />'''Sent:''' {{{sent}}} | }}
+    {{#if: {{{subject}}} | <br />'''Subject:''' <span class="mail-subject">{{{subject}}}</span> | }}
+</p>

@@ -1,0 +1,27 @@
+<div class="center">
+[[Image:Options_SuperMemo.jpg|600px|SuperMemo: Toolkit : Options : SuperMemo tab]] 
+{{:Image:Options_SuperMemo.jpg}}
+</div>
+
+'''SuperMemo''' tab in '''[[Toolkit menu|Toolkit]] : [[Options]]''' provides the following options: 
+
+<ul>
+<li>'''<span id="Limit">Children limit per branch</span>''' - for performance reasons, SuperMemo makes it possible to limit the number of [[Glossary:Element|elements]] that can be [[Glossary:Child|children]] of a single element in the [[Contents|'''Contents''' window]]. If you keep this number in the range 20-100, you can be sure your [[Glossary:Collection|collection]] is easy to review and browsing it is significantly faster than for larger tree [[Glossary:Node|nodes]]</li>
+<li>'''Remove hidden formatting''' - remove formatting from formatted texts that are used only as unformatted texts. For example, if a formatted text is used only as an element title, its formatting is redundant and takes additional space. SuperMemo can remove this formatting when you execute '''[[File menu|File]] : [[Repairing collections|Repair collection]]'''. If you use a formatted text in a [[Using text components|plain text component]], this formatting is invisible and will be removed as well. However, if you would like to later change your [[Glossary:Template|template]] to rich text, you will only be able to view the plain text</li>
+<li>'''Component status border''' - use component borders to mark plain text in [[HTML component|HTML components]] (yellow), HTML code in [[HTML component|HTML components]] (gray), pictures in the [[Glossary:Zoom&trim_mode|zoom&amp;trim mode]] (green), zoomed pictures (red if not cropped after zoom&amp;trim), etc. </li>
+<li>'''Grade icons''' - replace the standard grade names ('''Great''', '''Pass''', '''Bad''', etc.) with vivid emojis
+<div class="center">
+[[File:Emoji-based_grade_panel.jpg|Emoji-based grade panel in SuperMemo 18]]
+{{:File:Emoji-based_grade_panel.jpg}}
+</div>
+</li>
+<li>'''<span id="background">Default background image</span>''' - define an image displayed by default in the background of all [[Glossary:Element|elements]] in the [[element window]]. For that purpose, type in the name of a selected image [[Glossary:Registry_member|registry member]]. To add an image to the [[Glossary:Registry|registry]], choose '''[[Search menu|Search]] : [[Search menu#Images|Images]]''' and choose '''[[Registry menu#Tools|Tools]] : Import files''' on the [[registry menu]] beforehand. Default background image is always tiled. If you would like to add individual backgrounds to particular [[Glossary:Element|elements]] or choose a given display mode, e.g. center, stretch, tile, etc. use '''[[Element menu#Edit|Edit]] : Background''' options on the [[element menu]] (''Alt+F10'' in the [[element window]])</li>
+<li>'''Sound feedback''' - decide the way in which SuperMemo will react to passing and failing [[Glossary:Grade|grades]]: 
+<ul>
+<li>'''None''' - provide no sound feedback</li>
+<li>'''Default''' - use default Windows sounds to indicate bad and good grades</li>
+<li>'''Custom''' - define your own sounds (see below)</li>
+</ul>
+</li>
+<li>'''Custom sounds''' - if the '''Custom''' option in '''[[Toolkit menu|Toolkit]] : [[Options]] : SuperMemo : Sound feedback''' is checked, '''Custom sounds''' makes it possible to pick sound [[Glossary:Registry_member|registry members]] for grade sound feedback. For example, if you have a low beep in the sound [[Glossary:Registry|registry]] named ''Fail'', and a cheerful Tada signal named ''Tada'', you can type in those two names at '''Custom sounds : Success'''=''Tada'', '''Failure'''=''Fail''. You can test the sounds by pressing play buttons on the right. To import sounds to sound [[Glossary:Registry|registry]] use '''[[Search menu|Search]] : [[Search menu#Sounds|Sounds]]''' and choose '''[[Registry menu#Tools|Tools]] : Import files''' on the [[registry menu]]</li>
+</ul>

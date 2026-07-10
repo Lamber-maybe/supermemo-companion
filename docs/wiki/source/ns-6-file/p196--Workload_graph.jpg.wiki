@@ -1,0 +1,1 @@
+{{Fig|In the presented picture above, the number of [[Glossary:Element|elements]] scheduled for repetition/review from Nov 16, 2013 until the next year's May. The data displayed at top right corner depends on the position of the mouse. In this example, it indicates that on Dec 31, 2013, there will be 1,514 elements scheduled for review.}}

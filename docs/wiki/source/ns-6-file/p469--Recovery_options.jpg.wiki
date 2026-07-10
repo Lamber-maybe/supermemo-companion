@@ -1,0 +1,1 @@
+The '''Repair Options''' dialog box displayed when you choose to perform the collection check-up and recovery

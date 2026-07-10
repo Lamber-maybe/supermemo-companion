@@ -1,0 +1,124 @@
+== Accessing the registry menu ==
+
+All [[Registry window|registries]] can be inspected via the [[Search menu|'''Search''']] submenu on the [[main menu]]. 
+
+Most important operations on registries are available from the registry menu. To open this menu:
+
+* right-click over the [[Glossary#registry_window|registry window]],
+* press [[Keyboard shortcuts|''Alt+F10'']],
+* click the registry menu button on the registry toolbar, or
+* press ''Apps Key'' ([[Image:Application key.gif|Application key allows you to open a pop-up menu relevant for the current context]]) (context menu key left of the right ''Ctrl'' key).
+
+== Registry menu items ==
+
+The registry menu includes the following options: 
+
+=== Go neural ===
+
+*'''Go neural''' (''Alt+N'') - begin a [[Subset learning#Neural review|neural review]] of a [[Glossary:Concept|concept]] or associated [[Glossary:Registry_member|registry members]]
+
+=== View ===
+
+*'''View''' 
+**'''List elements''' - list all [[Glossary:Element|elements]] that use the currently selected [[Glossary:Registry_member|registry member]] in the element list (bottom right of the [[registry window]])
+**'''View element''' - display the [[Glossary:Element|element]] selected in the element list or display the first user of the currently selected [[Glossary:Registry_member|registry member]] (if the element list is not shown). The [[Glossary:Element|element]] is shown in the [[element window]] without closing the [[Glossary:Registry|registry]]. Note that [[Glossary:Element|elements]] are displayed each time you click on the entries in the element list (which can be shown with '''List elements''' above)
+**'''Go to element''' - same as '''View element''' but the [[element window]] is put to the front of the [[registry window]]
+**'''Reference''' - view the reference associated with the currently displayed image in the image [[Glossary:Registry|registry]]
+**'''<span id="Browse_current">Browse current</span>''' (''Ctrl+B'') - display all [[Glossary:Element|elements]] that use the current [[Glossary:Registry_member|registry member]] in a [[browser]]
+**'''<span id="Browse_selected">Browse selected</span>''' (''Shift+Ctrl+B'') - display all [[Glossary:Element|elements]] that use the selected [[Glossary:Registry_member|registry members]], i.e. members with a checkmark on the left
+**'''<span id="Browse_all">Browse all</span>''' - display all [[Glossary:Element|elements]] that use all the members in the current [[Glossary:Registry_subset|registry subset]] in the [[Browser|element browser]]
+**'''Random pick''' (''F11'') - jump to a randomly picked [[Glossary:Registry_member|registry member]] in the current [[Glossary#Registry_subset|registry subset]]. This option can be used to quickly review the [[Glossary:Registry|registry]].
+**'''Go to position''' (''Ctrl+G'') - go to a [[Glossary:Registry_member|registry member]] by providing its physical position in the [[Glossary:Registry|registry]] (e.g. '''[[File menu|File]] : [[Repairing collections|Repair collection]]''' will often report registry problems by referring to individual members by their physical position) 
+**'''Path''' - display the path to the selected registry object file (e.g. image file). Show the availability of the file in the [[Glossary:Primary_storage|primary]] and [[Glossary:Secondary_storage|secondary storage]] (if these two differ), linked file path (if any), and file sizes 
+**'''Play''' (''Ctrl+F10'') - play the sound or video associated with the current [[Glossary:Registry_member|registry member]] in sound or video [[Glossary:Registry|registry]]
+**'''Encoding''' - display UTF-8 codes of the registry member name
+**'''Clear''' (''Esc'') - this option is useful in backtracking your operations on the [[registry window]]. This is the sequence of actions done by '''Clear''': 
+**#jump from the list of [[Glossary:Element|elements]] to the list of [[Glossary:Registry_member|registry members]] (if the focus is on the list of elements) 
+**#jump from the object editing fields to the list of [[Glossary:Registry_member|registry members]] (if the focus is on one of the editing fields) 
+**#jump from the member list to the editing combo-box at the top of the [[registry window]] (if the focus is on the member list) 
+**#clear the contents of the editing combo-box at the top of the [[registry window]] if the focus is on the editing combo-box 
+**#close the [[registry window]] if the focus is on the editing combo-box and the combo-box is empty
+
+=== Edit ===
+
+*'''Edit'''
+**'''Paste''' - paste an object from the clipboard into the [[Glossary:Registry|registry]]
+**'''Paste over''' - replace the object the selected [[Glossary:Registry_member|registry member]] points to with a new version available from the clipboard. For example, you can use this option to replace one picture with another. The replacement will show throughout the [[Glossary:Collection|collection]]
+**'''Overwrite file''' - replace the current member's object file with another file. This option is similar to '''Paste over''' with a difference that while '''Paste over''' uses the data from the clipboard, if you use '''Overwrite file''', you point the location of the new version of the file on your disk.
+**'''Edit text''' (''Ctrl+E'') - edit the text currently displayed in the text [[Glossary:Registry|registry]]
+**'''Edit translation''' (''Ctrl+T'') - edit the translation associated with the current text [[Glossary:Registry_member|registry member]]. Note that in translation registries, the meaning of '''Edit text''' and '''Edit translation '''is reversed, and '''Edit text''' is actually used to edit the translation 
+**'''Copy path''' - copy the path to the file associated with the current [[Glossary:Registry_member|registry member]] to the clipboard
+
+=== Search ===
+
+*'''Search''' 
+**'''<span id="Find">Find texts</span>''' (''Ctrl+S'') - find all members in the current [[Glossary:Registry_subset|registry subset]] whose names contain a given string. Place the search results in a newly created [[Glossary:Registry_subset|registry subset]]. Use ''Ctrl+S'' to search all [[Glossary:Registry_member|registry members]] for a string. Use it also for AND-search 
+**'''Find first''' (''Ctrl+F'') - find the first [[Glossary:Registry_member|registry member]] in the current subset whose name contains a given string. Search begins with the member that follows the currently selected member. You will find the shortcut for '''Find first''', ''Ctrl+F'', very useful here 
+**'''Find next''' (''F3'') - repeat the last '''Find first''' operation (you can repeat search with ''F3'') 
+**'''<span id="Find_and_replace">Search and replace</span>''' (''Ctrl+R'') - find members in the current [[Glossary:Registry_subset|registry subset]] whose names contain a given string and replace this string with another string. You can repeat this operation on all individual members with individual confirmations or replace all strings in one go. You can do global search and replace on texts in your [[Glossary:Collection|collection]] by using the text [[Glossary:Registry|registry]]. ''Caution'': all registry member names must be unique, if your replace operation generates a name that already exists, the new name will be modified by SuperMemo to make it unique. Usually this will result in the appearance of some meaningless code at the end of your new name (e.g. ''Geography#'', ''Geography@'', etc.) 
+**'''Apply filter''' - process the texts in the current [[Glossary:Registry|registry]] with a [[Filter files|filter file]] (e.g. replace a set of strings with another set of strings, remove delimited comments, etc.).
+
+=== Rename ===
+
+*'''Rename''' (''Alt+R'') - rename the currently selected [[Glossary:Registry_member|registry member]]
+
+=== Delete ===
+
+*'''Delete''' (''Del'') - delete the currently selected [[Glossary:Registry_member|registry member]]
+
+=== Tools ===
+
+*'''Tools''' 
+**'''Import files''' - import a number of files into the [[Glossary:Registry|registry]]. For example, if you have a set of ready-made pictures or sound files you can import them all to image or sound registry respectively before you use them in your [[Glossary:Element|elements]]
+**'''Import text''' - import the text with registry member names generated by '''Export as text''' (below). For example, after spell-checking 
+**'''Export file''' - export the file associated with the current member 
+**'''Export as text''' - export all registry member names into a text file. Most often you will want to do it to spell-check the contents of the [[Glossary:Registry|registry]] with your favorite spellchecker 
+**'''Sort for frequency''' - sort the [[Glossary:Registry|registry]] for the number of [[Glossary:Element|elements]] that use individual members 
+**'''Sort for size''' - sort the [[Glossary:Registry|registry]] for the size of files associated with individual members (e.g. to delete largest pictures from your bloated [[Glossary:Collection|collection]]) 
+**'''Sort for priority''' - sort the [[Glossary:Registry|registry]] for member priority. The priority here is determined by the ratio: (number of users)/(file size). This option is useful if you want to find the least used members that take most space (for example, [http://super-memory.com/english/ae.htm Advanced English 97] sound files have been trimmed with this option to fit the 650MB CD-ROM size limit) 
+**'''Externalize files''' - export all registry files to [[Glossary:Secondary_storage|secondary storage]]
+**'''Internalize files''' - move all files associated with the [[Glossary:Registry|registry]] from the [[Glossary:Secondary_storage|secondary storage]] to the [[Glossary:Primary_storage|primary storage]]. External files, i.e. files not associated with the [[Glossary:Collection|collection]], will also be internalized (external files are those which you linked with '''[[Component menu#Links|Links]] : External file''' on the [[component menu]]). You can use this option, for example, if you want to speed up access to a small [[Glossary:Collection|collection]] distributed on CD/DVD. '''Internalize files''' will move all files from CD/DVD to your hard disk. This way you will also be able to [[Access tab in Options#Secondary_storage|delete secondary storage path]] and give up using CD/DVD drive altogether 
+**'''Repair''' - recover twin registries. A twin registry is a pair of registries in which each member of one registry points to one or more members of the other registry. For example, the phonetic transcription registry is a twin registry and is composed of two registries: words and word transcriptions 
+**'''Delete unused''' - delete [[Glossary:Registry_member|registry members]] that are not used anywhere in the [[Glossary:Collection|collection]] (i.e. not linked to any [[Glossary:Component|component]]) 
+**'''Size statistics''' - compute the size of texts, files, linked files, HTML objects, etc. 
+**'''Add predefined templates''' - add predefined [[Glossary:Template|templates]] to the template [[Glossary:Registry|registry]] (e.g. ''Item'', ''Article'', ''Multiple Choice'', ''Spelling'', etc.) 
+**'''Add predefined styles''' - add all styles from the default stylesheets
+**'''Generate elements''' - insert all [[Glossary:Registry_member|registry members]] into newly created [[Glossary:Element|elements]] (e.g. to convert the whole picture registry to a branch of pictures)
+**'''Generate references''' - generate references from member names that carry reference data
+
+=== Selection ===
+
+*'''Selection''' 
+**'''Select all''' - select all [[Glossary:Registry_member|registry members]]
+**'''Unselect all''' - unselect all [[Glossary:Registry_member|registry members]]
+**'''Swap selection''' - unselect the selected [[Glossary:Registry_member|registry members]] and select the unselected ones
+**'''Select index range''' - select members by their index range
+**'''Select position range''' - select members in a range of registry positions
+**'''Extract to subset''' (''Shift+Ctrl+Enter'') - display the currently selected [[Glossary:Registry_member|registry members]] in a separate [[Glossary:Registry_subset|registry subset]] (selections are made by checking boxes to the left of registry member names)
+
+=== Subset ===
+
+*'''Subset''' 
+**'''Previous subset''' (''Alt+Left'') - open the superset of the current [[Glossary:Registry_subset|registry subset]] 
+**'''Next subset''' (''Alt+Right'') - open the nearest subset of the current [[Glossary:Registry_subset|registry subset]]. For example, if you do AND-search in the registry with ''Ctrl+S'', you can browse through all search stages with ''Alt+Left'' and ''Alt+Right'' 
+**'''Delete subset''' - delete the currently used [[Glossary:Registry_subset|registry subset]]. You cannot delete the first set which contains the entire registry 
+**'''<span id="Match_to_subset">Match to subset</span>''' - find all [[Glossary:Registry_member|registry members]] whose users belong to a given [[Glossary:Element_subset|element subset]] 
+**'''Select format''' - create a [[Glossary:Registry_subset|registry subset]] with members of a specific file format
+***'''HTML''' - select subset of texts in the HTML format
+***'''Text (plain)''' - select subset of texts in the plain text format
+***'''EML''' - select subset of texts in the EML format
+***'''RTF''' - select subset of texts in the RTF format
+***'''BMP''' - select subset of images in the BMP format
+***'''JPEG''' - select subset of images in the JPEG format
+***'''GIF''' - select subset of images in the GIF format
+***'''PNG''' - select subset of images in the PNG format
+**'''Size range''' - select members falling into a selected size range (in bytes) 
+**'''Select untranslated''' - generate a new [[Glossary:Registry_subset|registry subset]] in text [[Glossary:Registry|registry]] with all members who have not yet been translated. This option is useful when you translate your [[Glossary:Collection|collection]] and would like to quickly translate those texts that do not yet have translations associated in the translation [[Glossary:Registry|registry]]
+
+=== Use statistics ===
+
+*'''Use statistics''' - generate a file with the number of users of individual members
+
+=== Close ===
+
+*'''Close''' (''Ctrl+F4'') - close the [[registry window]]

@@ -1,0 +1,3 @@
+<blockquote>
+'''''Figure:''' The relationship between the first [[Glossary:Interval|interval]] after failure, [[Glossary:Retrievability|retrievability]] at review, and prior [[Glossary:Lapse|memory lapse]] count.''
+</blockquote>

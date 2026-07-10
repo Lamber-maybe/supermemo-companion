@@ -1,0 +1,1 @@
+{{Fig|xxx "bad forgetting curve" shows the optimum interval of 0.1 despite 45% recall after 1 year, [[Algorithm SM-19]] take a priority-based approach to resolving cost-vs-benefit where the [[forgetting index]] criterion does not pay}}
