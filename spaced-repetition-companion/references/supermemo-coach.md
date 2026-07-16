@@ -1,14 +1,11 @@
----
-name: supermemo-coach
-description: Answer any question about using SuperMemo (Windows, versions 17–20) — features, workflows, shortcuts, incremental reading, priorities, imports, options, design philosophy, troubleshooting — grounded in the official documentation. Use whenever the user asks "how do I … in SuperMemo?", "why is SuperMemo designed this way?", or hits a problem (overload, leeches, lost material).
----
-
 # SuperMemo coach
 
 Answer SuperMemo usage questions accurately, briefly, and only from
-verified facts. This skill exists to make SuperMemo's learning curve
-shallow — so the user's energy goes into reading and remembering, not
-into fighting the tool.
+verified facts. This side of the skill exists to make SuperMemo's
+learning curve shallow — so the user's energy goes into reading and
+remembering, not into fighting the tool. (For Anki or other SRS tools,
+this file does not apply — answer from general knowledge and say the
+bundled docs don't cover them.)
 
 ## Source-of-truth ladder
 
@@ -21,7 +18,7 @@ Work downward; stop at the first rung that fully answers.
    - `incremental-learning.md` — the method's philosophy, condensed
      from the official master document. Start there for "why is
      SuperMemo designed this way?" questions.
-2. **Bundled official docs in `docs/` (ship with this repo).**
+2. **Bundled official docs in `docs/` (ship with this skill).**
    `docs/wiki/` is a revision-pinned dual-layer mirror of SuperMemo Help:
    363 Main/Glossary documentation pages plus File metadata and Template
    dependencies (570 raw pages total). `rendered/` contains expanded HTML
@@ -84,7 +81,7 @@ the documented 3-point scale: ≈1% mission-critical, ≈33% core-domain
 default, ≈88% nice-to-have; when hesitating between two values, pick the
 lower priority (the higher percentage). If everything sits at 1–10%,
 priorities do nothing. Whether the material deserves attention *at all* is
-`skills/worth-learning/SKILL.md`'s question. Details: reference.md §
+`references/worth-learning.md`'s question. Details: reference.md §
 Priorities & overload.
 
 **"Why is SuperMemo designed this way?"** (design-philosophy questions)
@@ -114,7 +111,7 @@ Reformulation beats grinding. Find leeches with **Shift+F3**; remedies in
 order of item value: Delete → Dismiss → Forget → Postpone → Reschedule
 sooner. For an item worth keeping, the real fix is Edit/reformulate: have
 the user paste the item's question and answer plus one line on what goes
-wrong, then follow `skills/reading-advisor/SKILL.md` § Repair. For many
+wrong, then follow `references/card-craft.md` § Repair. For many
 leeches at once: export the leech browser via the browser menu's
 `Export : Q&A text file` and run the batch clinic from that same section.
 Details: reference.md § Leeches.
@@ -138,7 +135,7 @@ Only after the Q&A habit is solid. Import one real article (**Ctrl+N**
 paste or **Shift+F8** web import), set an honest priority (**Alt+P**), then
 per session: read a little → **Alt+X** extract what matters → **Alt+Z**
 cloze single sentences → stop early, on purpose. Stuck on *what* to
-extract or *how* to cloze: that's `skills/reading-advisor/SKILL.md`.
+extract or *how* to cloze: that's `references/card-craft.md`.
 Details: reference.md § Incremental reading.
 
 **"Where did my element go?" / "Did I delete it?"**
@@ -154,5 +151,6 @@ Details: reference.md § Element operations (states & scheduling).
   supermemo.com (the web/mobile service — a different product) or ancient
   versions, say it's out of scope and link the official site.
 - Method questions ("should I even learn this?") belong to
-  `skills/worth-learning/SKILL.md`; extract/cloze/wording advice and item
-  repair to `skills/reading-advisor/SKILL.md`. Route, don't duplicate.
+  `references/worth-learning.md`; card production, extract/cloze/wording
+  advice, and item repair to `references/card-craft.md`. Route, don't
+  duplicate.

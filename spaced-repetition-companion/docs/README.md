@@ -2,7 +2,7 @@
 
 Offline primary-source material for answering SuperMemo questions without
 depending on live access to help.supermemo.org. The site normally presents a
-Cloudflare JavaScript challenge to programmatic clients, so the repository
+Cloudflare JavaScript challenge to programmatic clients, so this skill
 ships a revision-pinned mirror.
 
 ## What is here
@@ -50,7 +50,7 @@ the official parser output.
   revision ID. The generated local links are also validated.
 
 All mirrored content remains © SuperMemo World / its respective authors. This
-project is not affiliated with SuperMemo World. The repository's MIT license
+project is not affiliated with SuperMemo World. This skill's MIT license
 does **not** cover `docs/`.
 
 ## Lookup

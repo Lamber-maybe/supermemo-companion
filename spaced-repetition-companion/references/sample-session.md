@@ -1,8 +1,9 @@
 # Sample sessions (condensed)
 
-What good exchanges look like in practice. Any capable agent following
-`AGENTS.md` should produce something of this shape. Throughout, notice who
-presses the keys: the user.
+What good exchanges look like in practice. Any capable agent following this
+skill's `SKILL.md` should produce something of this shape. Throughout,
+notice the gate running before anything is carded — and that inside the
+tool, the user presses the keys.
 
 ---
 
@@ -130,3 +131,39 @@ overload; deeper rationale in
 
 *What to notice: direct answer, the harmful pattern named gently, exact
 paths, a doc anchor — and no essay.*
+
+---
+
+## Scene 6 — Batch card production (an Anki user)
+
+**User:** I use Anki, not SuperMemo. Turn these study notes into cards:
+"DNS TTL caps how long resolvers cache a record. `dig +short` prints
+terse output. An A record maps a hostname to an IPv4 address."
+
+**Agent:** Gate first — three units, two survive:
+
+| Unit | Verdict | Why |
+|---|---|---|
+| TTL caps resolver caching | MEMORIZE | judgment anchor for stale-DNS incidents |
+| A record → IPv4 | MEMORIZE | core vocabulary |
+| `dig +short` | OFFLOAD | one-second lookup, verifiable on the spot — no card |
+
+Import file (`File > Import` in Anki):
+
+```
+#separator:tab
+#html:true
+#notetype:Basic
+DNS: what does a record's TTL limit?	how long resolvers may cache it
+DNS: which record type maps a hostname to an IPv4 address?	A record
+```
+
+Workload: 2 cards, negligible. Principle applied: **minimum information**
+— "caps how long resolvers cache a record" became a six-word answer.
+Networking is one of your core domains, so one note, once: wording cards
+yourself deepens retention — happy to switch to suggest-only mode
+whenever you like.
+
+*What to notice: the gate ran before any card existed, the skip was
+named with its reason, the output matched the user's tool, and the
+self-formulation nudge is one line, not a lecture.*

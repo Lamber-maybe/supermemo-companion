@@ -5,7 +5,7 @@ official master document — the ~91,000-word wiki page that explains why
 SuperMemo works the way it does. Distilled July 2026 and checked against
 the revision-pinned July 2026 mirror.
 
-- **Full expanded original, bundled in this repo:**
+- **Full expanded original, bundled in this skill:**
   `docs/wiki/rendered/ns-0-main/p470--Incremental_learning.html`.
 - **Exact View Source wikitext:**
   `docs/wiki/source/ns-0-main/p470--Incremental_learning.wiki` (the raw

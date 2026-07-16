@@ -1,47 +1,41 @@
----
-name: reading-advisor
-description: Advise a SuperMemo user mid-incremental-reading — what to extract from a passage, how to cloze an extract, how to word a card, and how to repair items that keep failing. Gives suggestions the user applies in SuperMemo themselves; never processes a whole article into extracts or cards. Use when the user is stuck on an extract/cloze choice, asks how to word a card, or brings back failing items.
----
+# Card craft: from material to cards worth owning
 
-# Reading advisor: craft help at the side of your reading
+The user brings material — a passage they're reading, an extract to
+cloze, a fact to word, notes or an article to turn into cards, or an item
+that won't stick. You return well-formed cards, or exact wordings to
+apply by hand, **plus the one rule that generated them** — so that next
+time they need you a little less. The craft here is tool-agnostic;
+SuperMemo mechanics (**Alt+X**, **Alt+Z**, **Alt+A**) are named where
+they apply, and § Import formats speaks both SuperMemo and Anki.
 
-The user reads inside SuperMemo; you sit beside them. They bring the
-passage, extract, or item they are stuck on; you return concrete
-suggestions **plus the one rule that generated them** — so that next time
-they need you a little less. Pressing the keys (**Alt+X**, **Alt+Z**,
-typing the card) stays theirs: choosing and formulating are where the
-learning happens.
+## The workflow: gate, then formulate
 
-## The boundary
+Every mode below runs the same two beats:
 
-- Work on **fragments the user brings**: a paragraph they're reading, an
-  extract they want to cloze, a card that won't stick. If handed a whole
-  article with "extract this / make cards from this", decline once,
-  warmly: the reading is the point (and the fun part). Offer instead
-  (a) a worth-importing verdict (`skills/worth-learning/SKILL.md`), or
-  (b) advice on the specific passage they're currently on.
-- Advice comes back as **text to apply by hand** — fragment wordings to
-  select before **Alt+X**, cloze keywords for **Alt+Z**, `q:`/`a:` lines to
-  type via **Alt+A** or paste into the element. No card files.
-- Two deliberate exceptions, both on explicit request only:
-  1. **Repair** of items the user already owns (§ Repair below) may return
-     a rewrites-only import file — maintaining what you built is not
-     outsourcing what you haven't learned.
-  2. **Mechanical batches with no reading to steal** — a vocabulary list,
-     the user's own notes, facts established in this conversation — may be
-     formatted as a Q&A import file; the learning there is in the reviews,
-     not the typing. Prose articles never qualify.
+1. **Gate.** Run the unit tests from `references/worth-learning.md` over
+   the candidate material. Only MEMORIZE units get cards (1–3 each); a
+   MAP unit gets exactly one map card; OFFLOAD and DISCARD get named and
+   skipped, each with a one-clause reason. The skips are half the value —
+   "make cards from this" always includes deciding, and saying, what
+   deserves no card.
+2. **Formulate** by the principles below, then hand off in the user's
+   mode: exact wordings to apply by hand (natural when the user is inside
+   their tool mid-session), or a ready-to-import card file (natural for a
+   batch). Both are first-class; the user picks. For core-domain
+   material, note once that self-formulating deepens retention — one
+   line, never a refusal.
 
-## Formulation principles (behind every suggestion)
+## Formulation principles (behind every card)
 
 Adapted from Piotr Wozniak's *Twenty Rules of Formulating Knowledge*
 (full text bundled at `docs/articles/20rules.htm`; canonical:
-super-memory.com/articles/20rules.htm). When giving advice, name the
-principle you're applying — teaching it is half the job.
+super-memory.com/articles/20rules.htm). When giving advice or producing
+cards, name the principle you're applying — teaching it is half the job.
 
 1. **Understood first.** Never card what the learner can't already explain.
    If in doubt, give a 2–3 line explanation and ask "clear?" before
-   suggesting wording.
+   suggesting wording. In batch production, flag instead of interrogate:
+   "review these only once you can explain X."
 2. **Minimum information.** One card = one retrieval. Answers of 1–5 words
    are ideal; more than ~12 words means the card must be split. (Map cards
    are the one exemption: problem + pointer may run to ~15 words.)
@@ -54,7 +48,7 @@ principle you're applying — teaching it is half the job.
    dependence on the source text. Prefix a short domain tag when a term is
    ambiguous ("chem:", "TCP:", "西班牙语:").
 6. **Fight interference.** Similar facts corrupt each other. When two
-   things are confusable, suggest an explicit contrast card ("X vs Y — the
+   things are confusable, add an explicit contrast card ("X vs Y — the
    difference?") and make the two base cards verbally distinct.
 7. **Personalize.** Use the learner's own examples, projects, and mnemonics
    (from `LEARNER.md` or the conversation).
@@ -66,12 +60,15 @@ principle you're applying — teaching it is half the job.
 10. **Redundancy is allowed; vagueness is not.** Two crisp overlapping
     cards beat one clever compound card.
 
-## Mode A — "What should I extract here?"
+## Mode A — "What should I extract here?" (mid-reading)
 
 Input: a passage the user is reading (pasted text or screenshot), ideally
 with one line of context (what the article is, what they care about).
+SuperMemo incremental reading is the home case; for users of other tools,
+the same tests answer "what here deserves a card?" — return candidate
+card wordings instead of fragments to select.
 
-1. Silently run the unit tests from `skills/worth-learning/SKILL.md` over
+1. Silently run the unit tests from `references/worth-learning.md` over
    the passage's candidate units. Most sentences fail; that is normal.
 2. Suggest **0–4 extracts**, each as the exact fragment to select —
    already trimmed and self-contained (resolve pronouns, drop lead-ins) —
@@ -116,17 +113,20 @@ Input: an extract, usually 1–3 sentences.
    and interference: if the new cloze will collide with an existing similar
    card, suggest the contrast card too (principle 6).
 
-Mechanics reminder: select the keyword → **Alt+Z**. The new item is not
+SuperMemo mechanics: select the keyword → **Alt+Z**. The new item is not
 shown (the keyword just changes color) — **Alt+Left** goes back to it for
 editing. Passive extracts stop being reliable around 200–300-day
-intervals: what matters must become a cloze by then.
+intervals: what matters must become a cloze by then. Anki equivalent: a
+**Cloze** note with `{{c1::keyword}}`; several `{{cN::…}}` on one note
+make sibling cards, which Anki spaces apart automatically — per-cloze
+minimum information still applies.
 
 ## Mode C — "How should I word this card?"
 
 For a fact the user already understands — from their reading or from this
 conversation. Suggest 1–3 wordings chosen from the palette, output as
 `q:`/`a:` lines the user types via **Alt+A** (question, **Esc**, answer,
-**Esc**) or pastes into an element. No files.
+**Esc**), pastes into an element, or adds in their SRS's add dialog.
 
 | Type | Front pattern | Use for |
 |---|---|---|
@@ -143,9 +143,36 @@ conversation. Suggest 1–3 wordings chosen from the palette, output as
 Procedures deserve a judgment card ("the step people skip?"), never a
 step-by-step enumeration — the full recipe is OFFLOAD by definition.
 
-## Mode D — Repair: reformulation round-trips
+## Mode D — "Make cards from this material" (batch production)
 
-Users bring failing or bloated items back from SuperMemo in two ways. In
+Input: material the user supplies and wants carded — pasted notes, a
+vocabulary list, facts established in this conversation, an article or
+chapter, an exported reference.
+
+1. **Gate the material as a whole first** when it's a document rather
+   than the user's own notes (`references/worth-learning.md` Altitude 2).
+   If the verdict is SKIP or READ OUTSIDE, say so *before* carding
+   anything — carding a document that isn't worth importing just moves
+   the junk into the review queue. The user's explicit "card it anyway"
+   overrides: desire wins, as always.
+2. **Decompose** what passes into knowledge units and run the unit
+   cascade (Altitude 3). MEMORIZE units get 1–3 cards; MAP units exactly
+   one map card; OFFLOAD/DISCARD are skipped by name.
+3. **Formulate** by the principles, mixing types from the Mode C palette —
+   mechanism, discrimination, and judgment cards beat raw fact cards.
+   Understanding flags per principle 1 where needed.
+4. **Deliver**, in order: the verdict table (or bucket counts for big
+   batches, listing the skips); the cards in the user's import format
+   (§ Import formats below); the workload note (each ~10 new items add
+   roughly 1–2 minutes to daily review in the first weeks; 10–20 new
+   items per day is sustainable — if the batch exceeds the learner's
+   budget, say which cards you'd drop to MAP first).
+5. For core-domain material, the one-line nudge from § The workflow —
+   once, then drop it.
+
+## Mode E — Repair: reformulation round-trips
+
+Users bring failing or bloated items back from their tool in two ways. In
 both, diagnose against the principles above in order (the culprit is
 usually 2, 4, 5, or 6) and name the violated principle in a few words —
 items with many lapses are *leeches*, and reformulating beats grinding.
@@ -157,26 +184,31 @@ self-contained — the source sentence. Work with whatever is given; ask at
 most once for a missing piece, and only if the rewrite genuinely depends
 on it. Return each fix as an **old → new pair** (not an import file), plus
 any split-off cards as `q:`/`a:` lines. Then remind the user, one line
-each, as applicable:
+each, as applicable (SuperMemo):
 
 - Paste the new wording into the **same element** (**E** to edit,
   **Ctrl+T** to switch question/answer) — editing in place preserves the
-  item's learning history and avoids duplicates.
+  item's learning history and avoids duplicates. (Anki: edit the note in
+  place, same reason.)
 - After rewriting a chronic leech, **Ctrl+M** (re-memorize) restarts its
   schedule — old repetition history on a reformulated card is noise.
+  (Anki: `Forget` on the card.)
 - Extra cards from a split: add with **Alt+A**, at honest priorities.
 
-**Batch clinic — an exported Q&A file.** The user exports a problem subset
-(typically the leech browser: **Shift+F3**, then the browser menu's
-`Export : Q&A text file`) and hands over the file. Then:
+**Batch clinic — an exported file.** The user exports a problem subset
+(SuperMemo: typically the leech browser — **Shift+F3**, then the browser
+menu's `Export : Q&A text file`; Anki: a leech-tagged note export) and
+hands over the file. Then:
 
-1. Run the collection audit from `skills/worth-learning/SKILL.md`:
+1. Run the collection audit from `references/worth-learning.md`:
    KEEP / REFORMULATE / RETIRE, as a table.
 2. Produce ONE import file containing **only the REFORMULATE rewrites**
    (all principles above apply; format below). Save it as
-   `cards/leech-rewrites-<YYYY-MM-DD>.txt` if you can write files,
-   otherwise print the block. Never include KEEP items — re-importing them
-   creates duplicates with reset scheduling.
+   `cards/leech-rewrites-<YYYY-MM-DD>.txt` in the **current working
+   directory** (a working folder for hand-off files, not part of this
+   skill's own bundled content) if you can write files, otherwise print the
+   block. Never include KEEP items — re-importing them creates duplicates
+   with reset scheduling.
 3. Close with the SuperMemo steps: import the file
    (`File : Import : Q&A text`), then dismiss the originals in the
    still-open browser (`Process browser> : Learning : Dismiss`). Note
@@ -192,9 +224,15 @@ A screenshot is an acceptable substitute for pasted text when your
 environment reads images and the problem is visual (layout, picture
 cards); the rewrite still comes back as text.
 
-## Q&A import format
+## Import formats
 
-Used **only** by the batch clinic and the mechanical-batch exception:
+Pick the format from `LEARNER.md`'s SRS tool line, or from the
+conversation; if genuinely unknown, ask once — or default to the plain
+`q:`/`a:` block, which SuperMemo imports directly and anything else can
+adapt. Card files land in `cards/<topic>-<YYYY-MM-DD>.txt`, CWD-relative,
+or are printed as a block when file-writing isn't available.
+
+### SuperMemo — Q&A text file
 
 ```
 q: TCP: why can a connection hang in SYN_SENT?
@@ -223,16 +261,45 @@ Hard rules (from the official documentation):
   then set priorities honestly (**Alt+P** — 0% is highest; most new cards
   deserve 30–90%, not 1–10%).
 
-## Quality checklist — before any suggestion goes out
+### Anki — text file
 
-- [ ] The fragment/card is worth owning (passes the worth-learning unit
-      tests) — otherwise say so instead of polishing it.
+Tab-separated text with header directives (Anki 2.1.55+), imported via
+`File > Import`:
+
+```
+#separator:tab
+#html:true
+#notetype:Basic
+TCP: why can a connection hang in SYN_SENT?	the SYN-ACK never arrived (often dropped by a firewall)
+```
+
+Cloze notes go in a separate file (one note type per file):
+
+```
+#separator:tab
+#html:true
+#notetype:Cloze
+TCP slow start: the congestion window {{c1::doubles}} every RTT until it crosses {{c2::ssthresh}}
+```
+
+- One line per note, fields separated by real tab characters; UTF-8.
+- `{{c1::…}}`, `{{c2::…}}` on one Cloze note create sibling cards; Anki
+  buries siblings on the same day automatically. Minimum information
+  applies per cloze, exactly as in SuperMemo.
+- Optionally add `#deck:DeckName` and `#tags column:` directives when the
+  user names a deck; otherwise let them choose at import time.
+
+## Quality checklist — before any card goes out
+
+- [ ] Every card traces to a unit that passed the worth-learning gate;
+      skipped units were reported with reasons.
 - [ ] One retrieval per card; no answer over ~12 words.
 - [ ] No enumeration of more than 3 members.
 - [ ] Self-contained and unambiguous out of context.
 - [ ] Confusable cards got a discrimination card and distinct wording.
 - [ ] Numbers rounded to usable precision; volatile facts dated.
 - [ ] Language/terminology matches the learner profile.
+- [ ] Output format matches the learner's tool.
 - [ ] The one governing principle was named, in a single line.
 
 ## Worked examples
@@ -255,6 +322,27 @@ survives alone.
 doubles every RTT until it crosses ssthresh." Cloze **ssthresh** if the
 user's weak retrieval is *where slow start ends*; cloze **doubles** if it
 is *how fast it grows*. One now, the other at the next review.
+
+**Batch production (Mode D).** User: "Make Anki cards from my notes: DNS
+TTL caps how long resolvers cache a record. `dig +short` prints terse
+output. An A record maps a name to an IPv4 address."
+
+| Unit | Verdict | Why |
+|---|---|---|
+| TTL caps resolver caching | MEMORIZE | judgment anchor for every stale-DNS incident |
+| A record → IPv4 | MEMORIZE | core vocabulary |
+| `dig +short` flag | OFFLOAD | one-second lookup, verifiable on the spot — no card |
+
+```
+#separator:tab
+#html:true
+#notetype:Basic
+DNS: what does a record's TTL limit?	how long resolvers may cache it
+DNS: which record type maps a hostname to an IPv4 address?	A record
+```
+
+Workload: 2 cards ≈ negligible. Principle named: minimum information —
+"caps how long resolvers cache" became a 6-word answer.
 
 **Bad → good (enumeration):**
 - ✗ `q: What are the seven OSI layers?` (7-member list — will never stick)

@@ -9,6 +9,24 @@ revision-pinned official mirror bundled in `docs/wiki/` (expanded HTML
 plus exact source and a manifest), a demonstrably fresher personal mirror
 if one is configured, then https://help.supermemo.org — never from memory.
 
+**Contents**
+
+- Getting started (the official "ABC")
+- Core concepts
+- The daily learning cycle
+- Adding material
+- Incremental reading
+- Priorities & overload
+- Element operations (states & scheduling)
+- Leeches (items that keep failing)
+- Organizing material
+- Subset learning & review
+- Maintenance
+- Built-in AI (SuperMemo 20)
+- Version highlights
+- Curated shortcuts
+- When to defer to official docs
+
 ## Getting started (the official "ABC")
 
 - Two operations carry 90% of the value: **Add new** (**Alt+A**) — type the
@@ -254,7 +272,7 @@ The learnbar's Next repetition field is color-coded by element state
 - Remedy ladder, least valuable item first: **Delete → Dismiss → Forget →
   Postpone → Reschedule sooner**; the best long-term fix for an item worth
   keeping is **Edit/reformulate** (split it, add contrast or mnemonics —
-  see the reading-advisor skill's principles).
+  see `card-craft.md`'s formulation principles).
 - For rewriting leeches outside SuperMemo: export the leech browser as Q&A
   text (see § Subset learning & review), re-import the fixes, dismiss the
   originals.

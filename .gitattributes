@@ -1,6 +1,6 @@
-docs/wiki/source/** text eol=lf
-docs/wiki/rendered/** text eol=lf
-docs/wiki/manifest.jsonl text eol=lf
-docs/wiki/snapshot.json text eol=lf
-docs/wiki/_index.html text eol=lf
-scripts/*.py text eol=lf
+spaced-repetition-companion/docs/wiki/source/** text eol=lf
+spaced-repetition-companion/docs/wiki/rendered/** text eol=lf
+spaced-repetition-companion/docs/wiki/manifest.jsonl text eol=lf
+spaced-repetition-companion/docs/wiki/snapshot.json text eol=lf
+spaced-repetition-companion/docs/wiki/_index.html text eol=lf
+spaced-repetition-companion/scripts/*.py text eol=lf
