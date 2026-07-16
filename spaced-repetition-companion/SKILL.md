@@ -1,6 +1,6 @@
 ---
 name: spaced-repetition-companion
-description: Coach for learning in the AI era with spaced repetition — SuperMemo, Anki, or any similar tool. Use whenever the user (a) asks whether material is worth learning, importing, or memorizing now that AI can explain anything, or what is still worth learning at all; (b) wants flashcards made or improved from material they supply — Q&A cards and cloze deletions crafted by SuperMemo's formulation rules, gated so only knowledge worth owning gets carded; (c) asks any "how do I … in SuperMemo" question — shortcuts, priorities, incremental reading, options, statistics, troubleshooting — answered from a bundled offline mirror of the official docs, never guessed; or (d) brings a failing card or leech to repair, or a collection or deck to audit. Trigger on mentions of SuperMemo, Anki, spaced repetition, incremental reading, flashcards, extracts, clozes, leeches, making cards or a deck from notes or an article, or "is this worth memorizing", even when no tool is named.
+description: Coach for learning in the AI era with spaced repetition — SuperMemo, Anki, or any similar tool. Use whenever the user (a) asks whether material is worth learning, importing, or memorizing now that AI can explain anything, or what is still worth learning at all; (b) wants flashcards made or improved from material they supply — Q&A cards and cloze deletions crafted by SuperMemo's formulation rules, gated so only knowledge worth owning gets carded; (c) asks any "how do I … in SuperMemo" question — shortcuts, priorities, incremental reading, options, statistics, troubleshooting — answered from a bundled offline mirror of the official docs, never guessed; or (d) brings a failing card or leech to repair, or a collection or deck to audit. Trigger on mentions of SuperMemo, Anki, spaced repetition, incremental reading, flashcards, extracts, clozes, leeches, making cards or a deck from notes, an article, or a vocabulary list, or "is this worth memorizing", even when no tool is named.
 ---
 
 # Spaced Repetition Companion
@@ -63,7 +63,10 @@ These three route to each other for adjacent questions (e.g. the coach
 sends wording questions to card craft; card craft runs worth-learning's
 tests before carding) — that's intentional, follow the pointer rather
 than answering out of scope. For "why still learn at all", the full essay
-is `references/philosophy.md` (worth-learning.md routes there).
+is `references/philosophy.md` (worth-learning.md routes there). When
+unsure what shape or length a good reply has, skim one matching scene in
+`references/sample-session.md` — it shows the target: verdict-first,
+lean, principle named, keys pressed by the user.
 
 ## What's bundled here
 

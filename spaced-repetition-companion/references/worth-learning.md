@@ -103,6 +103,14 @@ learning but isn't; every import either costs review time or silts up the
 queue. If imports are visibly outrunning reading, say so — the kindest
 verdict is often SKIP.
 
+A **batch** of candidates (a day's collected links, tabs, screenshots)
+gets the same tests per item and one combined verdict table — verdict +
+one-clause why per row, never per-item summaries. Rank the IMPORTs
+against each other with suggested priorities; if most of the batch is
+borderline, say which two or three earn the review time and SKIP the
+rest — a daily capture habit needs a daily gate, or the queue silts up
+in a month.
+
 ## Altitude 3 — Single units ("should I memorize this?")
 
 A unit is a single concept, distinction, mechanism, cause–effect claim,

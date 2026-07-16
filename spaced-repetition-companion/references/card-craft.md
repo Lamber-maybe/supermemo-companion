@@ -118,8 +118,8 @@ shown (the keyword just changes color) — **Alt+Left** goes back to it for
 editing. Passive extracts stop being reliable around 200–300-day
 intervals: what matters must become a cloze by then. Anki equivalent: a
 **Cloze** note with `{{c1::keyword}}`; several `{{cN::…}}` on one note
-make sibling cards, which Anki spaces apart automatically — per-cloze
-minimum information still applies.
+make sibling cards, which Anki can bury apart on the same day (deck
+options : Burying) — per-cloze minimum information still applies.
 
 ## Mode C — "How should I word this card?"
 
@@ -143,7 +143,35 @@ conversation. Suggest 1–3 wordings chosen from the palette, output as
 Procedures deserve a judgment card ("the step people skip?"), never a
 step-by-step enumeration — the full recipe is OFFLOAD by definition.
 
-## Mode D — "Make cards from this material" (batch production)
+### Language material (vocabulary, collocations, confusables)
+
+Language is the purest latency case — words must arrive at speaking
+speed — so vocabulary requests are common and deserve these adjustments
+on top of the palette:
+
+- **Direction follows use.** L2→meaning trains *reading*; meaning→L2
+  trains *speaking and writing*. Active recall of one direction does not
+  give you the other (the 20 rules make exactly this point with word
+  pairs), so pick the direction the learner's goal actually needs —
+  production-heavy goals (conversation, essays, oral exams) need
+  meaning→L2 — and make both only when both will be used (principle 8).
+- **Context beats naked pairs.** A word that keeps failing as a bare
+  pair gets re-carded as a cloze inside one short sentence — best of
+  all, a sentence from the learner's own reading (principle 7).
+  Collocations ("heavy rain", "commit a crime") are carded as a cloze
+  over the *collocate*, never as a translation pair: the collocate is
+  the retrieval that fails in real use.
+- **One sense per card.** A polysemous word gets one card per sense the
+  learner actually needs, each with a disambiguating context cue — a
+  card listing all senses is an enumeration in disguise (principle 4).
+- **Confusables get a contrast card.** False friends, near-synonyms,
+  and look-alikes (affect/effect, adopt/adapt) interfere exactly like
+  any similar pair (principle 6); card the *difference*, and make the
+  base cards verbally distinct.
+- **Word lists are material, not units.** A pasted vocabulary list is
+  decomposed word by word through the gate like anything else — common
+  words the learner clearly already knows are skips ("already-known"),
+  not filler cards.
 
 Input: material the user supplies and wants carded — pasted notes, a
 vocabulary list, facts established in this conversation, an article or
@@ -283,9 +311,10 @@ TCP slow start: the congestion window {{c1::doubles}} every RTT until it crosses
 ```
 
 - One line per note, fields separated by real tab characters; UTF-8.
-- `{{c1::…}}`, `{{c2::…}}` on one Cloze note create sibling cards; Anki
-  buries siblings on the same day automatically. Minimum information
-  applies per cloze, exactly as in SuperMemo.
+- `{{c1::…}}`, `{{c2::…}}` on one Cloze note create sibling cards;
+  same-day burying of siblings is a deck option (Burying), so don't
+  rely on it silently. Minimum information applies per cloze, exactly
+  as in SuperMemo.
 - Optionally add `#deck:DeckName` and `#tags column:` directives when the
   user names a deck; otherwise let them choose at import time.
 

@@ -8,3 +8,6 @@ cards/*
 # Local Python bytecode from documentation tooling
 __pycache__/
 *.py[cod]
+
+# Skill-creator eval workspace (local only)
+spaced-repetition-companion-workspace/
