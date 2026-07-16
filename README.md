@@ -55,9 +55,8 @@ this README.
 ## Install
 
 This repository's entire functionality lives in one self-contained
-directory: `spaced-repetition-companion/`. (The repository keeps its
-historical name; the skill directory is the thing you copy.) Two ways to
-use it:
+directory: `spaced-repetition-companion/` — that directory is the thing
+you copy. Two ways to use it:
 
 | Setup | How |
 |---|---|
@@ -243,7 +242,7 @@ this project's own files only.
 ## 安装
 
 本仓库的全部功能都在一个自包含目录里：`spaced-repetition-companion/`
-（仓库沿用旧名，你需要复制的是这个技能目录）。两种用法：
+——你需要复制的就是这个目录。两种用法：
 
 | 场景 | 做法 |
 |---|---|
